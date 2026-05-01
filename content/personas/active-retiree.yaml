@@ -1,0 +1,62 @@
+id: active-retiree
+display_name: Active retiree
+age_range: [65, 999]
+
+profile:
+  summary: >
+    Retired professional, in good health, with expertise or hobbies that could
+    become a small income stream. Accessibility-sensitive. Often reached by
+    family-member referral.
+  typical_situation: >
+    Drawing MPF or other retirement income. Looking for low-stakes side income
+    and continued mental engagement. Wary of complexity, fraud, and overcommitment.
+
+motivations:
+  - Modest supplemental income
+  - Staying mentally engaged and connected
+  - Sharing expertise with the next generation
+  - Light-touch business with clear boundaries
+
+friction:
+  - Small-text UI, complex jargon, time pressure all reduce engagement
+  - Wary of agreeing to anything binding without human confirmation
+  - May need an adult child or trusted person involved
+
+ui:
+  surface_priority: [desktop, tablet]
+  voice_io: enabled by default
+  type_size: extra-large by default
+  pacing: slow, with clear pause points
+  tone: warm, patient, no condescension
+  accessibility_defaults:
+    high_contrast: optional
+    captions: on
+    audio_speed: 0.9
+    no_time_pressure: true
+    confirm_before_proceed: true
+
+content_adaptation:
+  vocabulary: plain English; define every HK acronym (CR, IRD, BR, NNC1) on first use
+  examples_preferred:
+    - tutoring or mentoring
+    - hobby monetization (writing, calligraphy, food, crafts)
+    - light advisory in former field
+    - small-batch product or service
+  framing: low-stakes side income, with a real company behind it for protection
+  depth_targets:
+    incorporation: medium
+    tax: medium (focus on simplicity, two-tier rate)
+    audit: medium (acknowledge mandatory audit; the toolkit prepares papers)
+    succession: deep
+    agent_stack: light, demonstration-led
+
+success_signal: >
+  Completes Arc 1 with full comprehension and opts into the simulation without
+  feeling rushed.
+
+human_escalation:
+  available: true
+  trigger_phrases:
+    - "I want to talk to a person"
+    - "this is too much"
+    - "I'm not sure"

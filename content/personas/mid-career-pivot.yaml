@@ -1,0 +1,47 @@
+id: mid-career-pivot
+display_name: Mid-career pivot
+age_range: [35, 50]
+
+profile:
+  summary: >
+    AI-native professional, currently employed or freelancing, considering solo
+    incorporation as a deliberate career move. Time-poor, mobile-first, comfortable
+    with software.
+  typical_situation: >
+    Employed in a HK firm or working as a contractor, has 1-3 reliable client streams,
+    wants to formalize via a HK Ltd to access two-tier profits tax and limited liability.
+
+motivations:
+  - Tax efficiency on existing client revenue
+  - Limited-liability shield over personal assets
+  - Productizing a service line with AI agents
+  - Independence from a single employer
+
+friction:
+  - Time, not capability — needs concise content
+  - Reluctant to over-engineer the company before traction
+
+ui:
+  surface_priority: [mobile, desktop]
+  voice_io: optional
+  type_size: default
+  pacing: brisk
+  tone: terse, direct, peer-to-peer
+  accessibility_defaults: standard
+
+content_adaptation:
+  vocabulary: assume comfort with "P&L", "deferred tax", "API", "agent"
+  examples_preferred:
+    - solo SaaS / digital service
+    - agency-of-one
+    - freelance consulting productized
+  framing: ship in 30 days; minimum-viable-OPC
+  depth_targets:
+    incorporation: medium
+    tax: medium-deep
+    audit: medium
+    succession: light
+    agent_stack: deep
+
+success_signal: >
+  Files NNC1 within 90 days of completing Arc 2.
