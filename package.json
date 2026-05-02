@@ -1,0 +1,19 @@
+{
+  "name": "opc-tutor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Thin TypeScript CLI prototype of the OPC adaptive tutor.",
+  "scripts": {
+    "tutor": "tsx agents/tutor/cli.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.7.0"
+  }
+}
