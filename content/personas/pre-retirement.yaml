@@ -1,0 +1,51 @@
+id: pre-retirement
+display_name: Pre-retirement professional
+age_range: [50, 65]
+
+profile:
+  summary: >
+    Senior professional in finance, logistics, healthcare, education, trade or
+    similar. 20-35 years of domain expertise. Often facing retirement age policies
+    or restructuring. Wants to convert expertise into a sustainable solo vehicle
+    that complements MPF.
+  typical_situation: >
+    Currently employed or recently transitioned out. May already advise informally
+    or hold board seats. Network-rich. Considering whether to consult, to build a
+    small product, or to formally incorporate before re-engaging clients.
+
+motivations:
+  - Pension substitution (MPF is widely understood to be insufficient)
+  - Continuing to use deep expertise post-employment
+  - Limited liability when advising
+  - Succession / legacy planning for IP and client relationships
+
+friction:
+  - Skeptical of "AI hype"; needs concrete demonstrations
+  - Cautious about tax exposure and audit obligations
+  - May undervalue digital tools they have not personally used
+
+ui:
+  surface_priority: [desktop, mobile]
+  voice_io: available
+  type_size: large by default
+  pacing: measured
+  tone: respectful, expert-to-expert, no jargon-dropping
+  accessibility_defaults: enhanced contrast available
+
+content_adaptation:
+  vocabulary: assume strong domain expertise; explain agent / LLM concepts plainly
+  examples_preferred:
+    - senior consultant retainer
+    - board advisory
+    - subject-matter expert serving multinational clients
+    - knowledge product (course, book, framework)
+  framing: monetize 30 years of expertise without rebuilding a firm
+  depth_targets:
+    incorporation: deep
+    tax: deep
+    audit: deep
+    succession: deep
+    agent_stack: medium (with concrete demos)
+
+success_signal: >
+  Completes a full simulated tax year and produces a draft NNC1 + first-board minutes.

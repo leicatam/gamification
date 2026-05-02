@@ -4,3 +4,11 @@
 
 # LangGraph
 .langgraph_api/
+
+# Node / TypeScript
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Per-learner state written by the tutor CLI
+.opc-tutor-state.json
