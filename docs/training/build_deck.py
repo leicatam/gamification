@@ -1365,6 +1365,107 @@ content_slide(
                  "training purposes — they are not investment advice.",
     notes_text="Restate the four takeaways; point to the reading list.")
 
+# ======================================================================
+# APPENDIX — Glossary of abbreviations
+# ======================================================================
+def glossary_slide(kicker, title, lead, entries):
+    s = new_slide()
+    header(s, kicker, title)
+    tbox(s, 0.62, 1.24, 12.1, 0.5, [T(lead, 14, GREY, italic=True)])
+    half = (len(entries) + 1) // 2
+    cols = [entries[:half], entries[half:]]
+    for ci, col in enumerate(cols):
+        x = 0.66 + ci * 6.18
+        shp(s, RECT, x, 1.88, 0.09, 4.55, ACCENT)
+        tb = s.shapes.add_textbox(Inches(x + 0.26), Inches(1.80),
+                                  Inches(5.62), Inches(4.95))
+        tf = tb.text_frame
+        tf.word_wrap = True
+        for ei, (abbr, full, gloss) in enumerate(col):
+            p = tf.paragraphs[0] if ei == 0 else tf.add_paragraph()
+            p.space_before = Pt(0 if ei == 0 else 11)
+            r = p.add_run(); r.text = abbr
+            r.font.size = Pt(15); r.font.bold = True
+            r.font.color.rgb = ACCENT; r.font.name = MONO
+            r = p.add_run(); r.text = "   " + full
+            r.font.size = Pt(14.5); r.font.bold = True
+            r.font.color.rgb = NAVY; r.font.name = HEAD
+            g = tf.add_paragraph()
+            g.space_before = Pt(1)
+            r = g.add_run(); r.text = gloss
+            r.font.size = Pt(13); r.font.color.rgb = GREY; r.font.name = BODY
+    footer(s)
+    notes(s, "Glossary appendix — every abbreviation used in the deck spelled "
+             "out in full. Refer participants here whenever a term is unclear.")
+    return s
+
+
+glossary_slide(
+    "Appendix  ·  Glossary", "Abbreviations in full — valuation & finance",
+    "Every abbreviation used in this deck, spelled out and briefly explained.",
+    [
+        ("TRL", "Technology Readiness Level",
+         "Maturity scale from 1 (basic idea) to 9 (proven in use)."),
+        ("POS", "Probability of Success",
+         "The chance that a given milestone is achieved."),
+        ("CPOS", "Cumulative Probability of Success",
+         "Product of every milestone POS up to a given date."),
+        ("NPV", "Net Present Value",
+         "Future cash flows discounted to their value today."),
+        ("rNPV", "risk-adjusted Net Present Value",
+         "NPV weighted by CPOS; also called eNPV (expected NPV)."),
+        ("DCF", "Discounted Cash Flow",
+         "Valuation by discounting projected future cash flows."),
+        ("CF", "Cash Flow",
+         "CF in year t — the cash, or exit value, expected then."),
+        ("r", "Discount rate",
+         "Venture cost of capital — typically 15–40% early-stage."),
+        ("WACC", "Weighted Average Cost of Capital",
+         "Blended cost of equity and debt used to discount cash flows."),
+        ("EV", "Enterprise Value",
+         "The value of the whole business — debt plus equity."),
+        ("EBITDA", "Earnings Before Interest, Tax, Depreciation & Amortisation",
+         "A common proxy for operating cash earnings."),
+        ("P/E", "Price-to-Earnings ratio",
+         "Share price divided by earnings per share."),
+        ("VC", "Venture Capital",
+         "The ‘VC method’ values a venture back from its target exit."),
+        ("E[V]", "Expected Value",
+         "Probability-weighted average across the scenarios."),
+    ])
+
+glossary_slide(
+    "Appendix  ·  Glossary", "Abbreviations in full — market, science & deal",
+    "Continued — market-sizing, scientific, regulatory and programme terms.",
+    [
+        ("DTL", "Deep-Tech Lab",
+         "The venture-development programme this training supports."),
+        ("IP", "Intellectual Property",
+         "Patents, know-how and freedom-to-operate position."),
+        ("R&D", "Research and Development",
+         "The core scientific and engineering work of the venture."),
+        ("TAM", "Total Addressable Market",
+         "Total demand if the product reached every possible user."),
+        ("SAM", "Serviceable Available Market",
+         "The slice the product and channel can realistically serve."),
+        ("SOM", "Serviceable Obtainable Market",
+         "The market share the venture can actually win near-term."),
+        ("CAGR", "Compound Annual Growth Rate",
+         "Smoothed year-on-year growth rate over a period."),
+        ("GTM", "Go-To-Market",
+         "Commercial launch — first sales and channel activity."),
+        ("FDA", "US Food and Drug Administration",
+         "The United States medical-products regulator."),
+        ("510(k)", "FDA Premarket Notification",
+         "Clearance route for many Class II medical devices."),
+        ("MRI", "Magnetic Resonance Imaging",
+         "Imaging used by the diagnostic-venture worked example."),
+        ("WBI", "Wellbiz International",
+         "Real venture used in the valuation-comparison example."),
+        ("US$M", "US dollars, millions",
+         "Currency unit used throughout the worked examples."),
+    ])
+
 # ----------------------------------------------------------------------
 out = "Valuing_Deep_Tech_Ventures_DTL_Training.pptx"
 prs.save(out)
