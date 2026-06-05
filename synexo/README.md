@@ -1,8 +1,10 @@
 # Synapep — Business Plan & Valuation
 
 This folder contains the draft business plan and valuation for **Synapep**, a new company
-formed to commercialize **Synexo** technology — AI-designed peptides built on the
-**Synexo IT-exo** and **ai.peptide** core platforms.
+formed to commercialize **Synexo** technology — the **SynExo synthetic recombinant exosome**
+platform plus **AI-designed peptide/protein actives**, built on **IT-EXO®** (HLA-G immune-
+tolerant "stealth" exosomes) and **ai.peptide / CodeLife.AI** (the AI design platform). See
+[`context-from-drive.md`](./context-from-drive.md) for the grounding facts and sources.
 
 ## Contents
 
@@ -12,16 +14,22 @@ formed to commercialize **Synexo** technology — AI-designed peptides built on 
 | [`financial-model.md`](./financial-model.md) | Assumptions, unit economics, revenue ramp, P&L, sensitivities |
 | [`valuation.md`](./valuation.md) | Valuation by three methods + the recommended terms for the $1M raise |
 | [`pitch-outline.md`](./pitch-outline.md) | One-page investor teaser + 12-slide deck outline |
+| [`context-from-drive.md`](./context-from-drive.md) | **Grounding notes from the user's Google Drive** — real tech, IP, corporate structure, sources |
 | [`financial-model.csv`](./financial-model.csv) | The numbers in spreadsheet form |
 
-## Status: DRAFT v0.2
+## Status: DRAFT v0.3 — grounded in Drive
 
-Updated 2026-06-05 with confirmed inputs: **material cost < $5/vial** (modeled $4.50),
-**OEM / white-label** channel, products spanning **nutraceutical + therapeutic** grades.
-Gross margin now ~66%; recommended round price $3.5–4.5M pre-money. The remaining open items
-are commercial/qualitative (team, OEM partner pipeline, IP documentation) rather than
-financial — see the risks and "investment-grade" sections of `business-plan.md`. OpEx is
-still an `[ASSUMPTION]`.
+Updated 2026-06-05 after reviewing the user's Google Drive. **Synexo = SynExo synthetic
+recombinant exosome** (salmon-derived, HLA-G "stealth" = **IT-EXO®**); the AI platform is
+**ai.peptide / CodeLife.AI**. The tech, products, IP, and corporate structure (WBI owns the
+IP; NeuNova USA distributes) are captured in `context-from-drive.md` and folded into the plan.
+Financial assumptions unchanged: material < $5/vial (modeled $4.50), OEM/white-label, ~66%
+gross margin, recommended $3.5–4.5M pre-money.
+
+**Biggest open item:** the **WBI ↔ Synapep IP/licence structure** (§7a of `business-plan.md`)
+— it drives the valuation more than any number. Other opens: name the team, confirm the 5–6
+SKUs/volumes, and confirm cold-chain/fill-finish is inside the COGS formula. OpEx is still an
+`[ASSUMPTION]`.
 
 ## Inputs provided (as given)
 

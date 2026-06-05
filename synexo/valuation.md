@@ -1,8 +1,14 @@
-# Synapep — Valuation (Draft v0.2)
+# Synapep — Valuation (Draft v0.3)
 
 > All figures USD, illustrative, base case from `financial-model.md` (EXW $32.50, material
 > **$4.50**, OEM/white-label channel, ramp to 75% capacity by 2029). Valuation date: mid-2026
-> (pre-revenue). Updated with confirmed inputs 2026-06-05.
+> (pre-revenue). Grounded in Drive materials (`context-from-drive.md`), updated 2026-06-05.
+>
+> **IP assumption (critical):** the Synexo IP (IT-EXO / SynExo / CodeLife.AI) is owned by
+> **WBI**, not Synapep. This valuation assumes Synapep holds a **field/territory licence** to
+> that IP (the conservative case). If instead the IP is **assigned/contributed** to Synapep,
+> the pre-money should step up materially (it would own the platform, not rent it); if the
+> licence is **narrow or royalty-heavy**, step down. Settle structure (§7a) before pricing.
 
 ## Headline
 
