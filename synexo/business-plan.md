@@ -49,14 +49,38 @@ line carries the margin and valuation multiple.
 
 ## 3. Product & technology
 
-- **Synexo IT-exo** — `[describe: the core platform / IP. What does it do?]`
-- **ai.peptide** — `[describe: the AI design/optimization engine. Training data? Models?]`
-- **Portfolio** — 5–6 vialled peptide products, ~10–20K vials/month each, summing to the
-  50–100K/month line capacity.
+> **TEMPLATE — to be completed.** Fill the blanks; the surrounding narrative already frames why
+> this matters to valuation.
 
-The combination is the defensible asset: confirm what is **proprietary** (algorithms,
-training datasets, sequences, process know-how) and what is **protected** (patents, trade
-secrets). Valuation upside depends heavily on this.
+**Core platforms**
+
+- **Synexo IT-exo** — _What it is: ____________. What it does: ____________. Why it's hard to
+  replicate: ____________._
+- **ai.peptide** — _AI design/optimization engine. Models/approach: ____________. Training
+  data & data advantage: ____________. What it outputs: ____________._
+
+**Portfolio (5–6 SKUs)**
+
+| # | Product (working name) | Grade (nutra/therapeutic) | Indication / use | ~Vials/mo | EXW $ |
+|---|------------------------|---------------------------|------------------|----------:|------:|
+| 1 | ____ | ____ | ____ | ____ | ____ |
+| 2 | ____ | ____ | ____ | ____ | ____ |
+| 3 | ____ | ____ | ____ | ____ | ____ |
+| 4 | ____ | ____ | ____ | ____ | ____ |
+| 5 | ____ | ____ | ____ | ____ | ____ |
+| 6 | ____ | ____ | ____ | ____ | ____ |
+| | | | **Total** | 50–100K | |
+
+**Intellectual property**
+
+| Asset | Type (patent / trade secret / dataset / know-how) | Status (filed / granted / pending) | Notes |
+|-------|---------------------------------------------------|------------------------------------|-------|
+| ____ | ____ | ____ | ____ |
+| ____ | ____ | ____ | ____ |
+
+The combination is the defensible asset: state what is **proprietary** (algorithms, training
+datasets, sequences, process know-how) and what is **protected** (patents, trade secrets).
+Valuation upside depends heavily on this.
 
 ## 4. Go-to-market
 
@@ -82,9 +106,17 @@ secrets). Valuation upside depends heavily on this.
 
 ## 6. Team
 
-`[To be completed]` — key gaps a seed investor will check: (1) peptide chemistry / GMP
-manufacturing lead, (2) AI/ML lead owning ai.peptide, (3) regulatory/QA, (4) commercial/BD.
-Naming these de-risks the round and lifts valuation.
+> **TEMPLATE — to be completed.** A seed investor checks four boxes; fill the rows. Naming real
+> people (with track record) de-risks the round and lifts valuation.
+
+| Role | Name | Background / track record | Status (FT / PT / advisor / to-hire) |
+|------|------|---------------------------|--------------------------------------|
+| Founder / CEO | ____ | ____ | ____ |
+| Peptide chemistry / GMP manufacturing lead | ____ | ____ | ____ |
+| AI / ML lead (owns ai.peptide) | ____ | ____ | ____ |
+| Regulatory / QA | ____ | ____ | ____ |
+| Commercial / BD (OEM partners) | ____ | ____ | ____ |
+| Advisors / board | ____ | ____ | ____ |
 
 ## 7. Funding & use of funds
 

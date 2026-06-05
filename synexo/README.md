@@ -11,6 +11,7 @@ formed to commercialize **Synexo** technology — AI-designed peptides built on 
 | [`business-plan.md`](./business-plan.md) | Company, product, market, go-to-market, team, timeline, use of funds, risks |
 | [`financial-model.md`](./financial-model.md) | Assumptions, unit economics, revenue ramp, P&L, sensitivities |
 | [`valuation.md`](./valuation.md) | Valuation by three methods + the recommended terms for the $1M raise |
+| [`pitch-outline.md`](./pitch-outline.md) | One-page investor teaser + 12-slide deck outline |
 | [`financial-model.csv`](./financial-model.csv) | The numbers in spreadsheet form |
 
 ## Status: DRAFT v0.2
