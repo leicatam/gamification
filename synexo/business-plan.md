@@ -30,7 +30,8 @@ EBITDA by 2029** as volume climbs to 75% of capacity.
 
 Synapep is a **JV — WBI 70% (contributes the Synexo IP: IT-EXO / SynExo / CodeLife.AI) /
 Eyesel 30% (the manufacturing entity)** — so Synapep **owns/co-owns** the platform *and*
-controls production. **NeuNova USA** is the separate exclusive US distribution channel.
+controls production. It is valued **standalone at the ex-factory line**; downstream
+distributors are separate, non-consolidated entities and excluded from this valuation.
 
 **The ask:** $1.0M for the kickoff round. Recommended terms: **$5–7M pre-money** (JV/ownership
 case; ~14% for $1M at the $6M midpoint — see `valuation.md`).
@@ -115,11 +116,12 @@ AI-peptide active, ⑥ custom-cargo SynExo.
 ## 4. Go-to-market
 
 - **Channel — OEM / white-label (confirmed).** Synapep sells bulk/vialled product EXW to
-  partner brands, **aesthetic clinics, and med-spas** who relabel and hold the registration.
-  A natural anchor channel already exists in the ecosystem: **NeuNova USA** holds exclusive US
-  distribution for IT-Exo/Synexo products into US clinics and med-spas — a ready route to the
-  first 2–3 anchor accounts. Implications: a **lean BD team**, **stickier** revenue once a
-  partner qualifies the product, but **customer-concentration risk** and **longer deal cycles**.
+  independent distributors, partner brands, aesthetic clinics, and med-spas who relabel and
+  hold the registration. These are **arm's-length customers** that buy at the $30–35 EXW price;
+  their downstream margin is **not** Synapep's and is excluded from the valuation. (NeuNova USA,
+  a separate non-consolidated entity, is one such potential US distributor.) Implications: a
+  **lean BD team**, **stickier** revenue once a customer qualifies the product, but
+  **customer-concentration risk** and **longer deal cycles**.
 - **Ramp** — the constraint in 2027 is **partner acquisition/qualification, not capacity**.
   The model ramps from 2K vials in Feb 2027 to a 28K/month exit run-rate by Dec 2027, then
   50K (2028) → 75K (2029) → 100K (2030), each step driven by adding/expanding OEM partners.
@@ -164,16 +166,15 @@ fill-finish, QA/cold-chain). Synapep therefore **owns/co-owns** the platform *an
 in-house manufacturing — the strongest structure for valuation: investors buy a company that
 holds a real technology asset, controls its own production, and has near-term cosmetic revenue.
 
-**NeuNova USA** is the **distribution channel** (exclusive US clinic/med-spa route), not a
-Synapep shareholder — a ready go-to-market arm, kept separate from the JV equity.
+**Scope:** Synapep is valued and planned **standalone** — at the ex-factory (EXW) line only.
+Distributors (e.g. NeuNova USA) are **separate, non-consolidated** entities and arm's-length
+customers; their downstream margin is **not** part of Synapep's revenue or valuation.
 
 Points to lock down before close:
 - **IP contribution scope** — fields, territories, and exclusivity of the WBI-contributed
   rights; any reserved rights or royalties to WBI.
 - **Manufacturing/supply terms** — Eyesel's production cost basis, capacity commitment, and
   whether the "manufacturing 10% + second 10%" COGS formula reflects Eyesel's actual costs.
-- **Channel agreement** — NeuNova's US distribution dovetailed (not conflicting) with Synapep,
-  including transfer pricing between Synapep (ex-factory) and NeuNova (US resale).
 - **Investor entry** — the $1M kickoff dilutes WBI and Eyesel pro-rata (see cap table in §7).
 
 The valuation in `valuation.md` reflects this JV/ownership case (a step up from a bare licence).
@@ -212,9 +213,8 @@ Eyesel 30 → **WBI 60.0%, Eyesel 25.7%**. NeuNova (US distribution) sits outsid
 1. **IP contribution terms** — largely resolved by the JV (WBI contributes IP into Synapep),
    but the *scope* (fields, territories, exclusivity, reserved rights/royalties to WBI) still
    needs to be documented so investors know exactly what the company owns (§7a).
-2. **Partner concentration & ramp** — with an OEM model, revenue depends on a few anchor
-   partners; NeuNova USA helps, but landing/qualifying the first 2–3 accounts is make-or-break
-   in 2027.
+2. **Customer concentration & ramp** — with an OEM model, revenue depends on a few anchor
+   distributors/brands; landing and qualifying the first 2–3 accounts is make-or-break in 2027.
 3. **Regulatory** — the cosmetic skin-booster pathway is fast, but **exosome regulation is
    evolving** (FDA has flagged exosome products); the medical line needs FDA/KFDA work and
    real cost/time. Keep cosmetic and medical claims cleanly separated.
@@ -228,7 +228,7 @@ Eyesel 30 → **WBI 60.0%, Eyesel 25.7%**. NeuNova (US distribution) sits outsid
 ## 9. What would make this plan investment-grade
 
 Tech, market, channel, and IP inventory are now grounded in the Drive materials. The remaining
-top items: **(1) settle the WBI ↔ Synapep IP/licence structure (§7a)** — biggest single
-driver; **(2) name the core team** (the advisor bench already has real credibility);
-**(3) confirm the 5–6 SKUs, their volumes/prices, and a NeuNova-anchored partner pipeline**;
+top items: **(1) document the IP-contribution scope WBI assigns into the JV (§7a)** — biggest
+single driver; **(2) name the core team** (the advisor bench already has real credibility);
+**(3) confirm the 5–6 SKUs, their volumes/prices, and an anchor-customer pipeline**;
 **(4) confirm material cost and that cold-chain/fill-finish are inside the COGS formula.**

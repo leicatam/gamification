@@ -21,13 +21,14 @@ tolerant "stealth" exosomes) and **ai.peptide / CodeLife.AI** (the AI design pla
 
 Updated 2026-06-05 after reviewing the user's Google Drive. **Synexo = SynExo synthetic
 recombinant exosome** (salmon-derived, HLA-G "stealth" = **IT-EXO®**); the AI platform is
-**ai.peptide / CodeLife.AI**. The tech, products, IP, and corporate structure (WBI owns the
-IP; NeuNova USA distributes) are captured in `context-from-drive.md` and folded into the plan.
-**Structure (confirmed):** Synapep is a **JV — WBI 70% (contributes Synexo IP) / Eyesel 30%
-(manufacturing entity)**; NeuNova USA is the separate US distribution channel. Because the JV
-**owns/co-owns** the platform and controls manufacturing, the recommended raise steps up to
-**$5–7M pre-money** ($1M ≈ 14% at the $6M midpoint). Financial assumptions unchanged: material
-< $5/vial (modeled $4.50), OEM/white-label, ~66% gross margin.
+**ai.peptide / CodeLife.AI**. The tech, products, and IP are captured in
+`context-from-drive.md` and folded into the plan. **Structure (confirmed):** Synapep is a
+**JV — WBI 70% (contributes Synexo IP) / Eyesel 30% (manufacturing entity)**. It is valued
+**standalone at the ex-factory line**; downstream distributors (e.g. NeuNova USA) are separate,
+non-consolidated entities and excluded. Because the JV **owns/co-owns** the platform and
+controls manufacturing, the recommended raise steps up to **$5–7M pre-money** ($1M ≈ 14% at the
+$6M midpoint). Financial assumptions unchanged: material < $5/vial (modeled $4.50),
+OEM/white-label, ~66% gross margin.
 
 **Open items:** document the IP-contribution scope (fields/territories), name the team, confirm
 the 5–6 SKUs/volumes, and confirm cold-chain/fill-finish is inside the COGS formula. OpEx is

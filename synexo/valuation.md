@@ -4,10 +4,15 @@
 > **$4.50**, OEM/white-label channel, ramp to 75% capacity by 2029). Valuation date: mid-2026
 > (pre-revenue). Grounded in Drive materials (`context-from-drive.md`), updated 2026-06-05.
 >
-> **IP / structure (CONFIRMED):** Synapep is a **JV / subsidiary** with **WBI contributing the
-> Synexo IP** (IT-EXO / SynExo / CodeLife.AI) and likely NeuNova/Eric Lee the US channel. So
-> Synapep **owns/co-owns** the platform — a step up from a bare licence — which is why the
+> **IP / structure (CONFIRMED):** Synapep is a **JV — WBI 70% / Eyesel 30%**, with **WBI
+> contributing the Synexo IP** (IT-EXO / SynExo / CodeLife.AI) and **Eyesel** the manufacturing.
+> So Synapep **owns/co-owns** the platform — a step up from a bare licence — which is why the
 > recommended pre-money below is **$5–7M** (vs the $3.5–4.5M a pure-licence shell would get).
+>
+> **Scope of this valuation:** Synapep is valued **standalone** on its own ex-factory economics.
+> Downstream distribution (e.g. NeuNova in the US) is a *separate, non-consolidated* entity;
+> its clinic-level margin is **excluded** — distributors are simply arm's-length customers who
+> buy at the $30–35 EXW price.
 
 ## Headline
 
@@ -16,7 +21,8 @@ kick off. Two numbers:
 
 1. **Price *this* round at:** **$5–7M pre-money / $6–8M post-money** — $1.0M buys ~13–17%.
    (Stepped up from a pure-licence shell because, as a JV, Synapep holds the IP — patents
-   filed, ~66% gross margins, Feb-2027 cosmetic revenue, and a NeuNova-anchored US channel.)
+   filed, ~66% ex-factory gross margins, in-house manufacturing (Eyesel), and Feb-2027
+   cosmetic revenue.)
 2. **The prize if it executes:** a risk-*un*adjusted enterprise value of **~$30–40M** by
    ~2030–31 on the base-case model, plus **platform-licensing optionality** (WBI's thesis is
    to license the stealth-exosome platform to pharma). Upside story, not today's price.
@@ -26,7 +32,7 @@ kick off. Two numbers:
 A pre-revenue company **that owns differentiated biotech IP** (patents filed) with near-term
 revenue typically prices at **$4–8M pre-money** — above the $2–5M a no-IP team gets. Synapep
 sits mid-to-upper: filed IT-EXO/SynExo patents, CodeLife.AI, 5–6 SKUs, Feb-2027 revenue, ~66%
-gross margin, parent manufacturing, and the NeuNova channel. **Recommended: $5–7M pre-money.**
+ex-factory gross margin, and in-house manufacturing (Eyesel). **Recommended: $5–7M pre-money.**
 
 | Pre-money | Raise | Post-money | Investor % |
 |----------:|------:|-----------:|-----------:|
@@ -94,6 +100,7 @@ the $6M midpoint; at $7M pre it depends on limiting later dilution.
 
 > **Key structural insight (v0.3):** Synapep is a **JV that owns/co-owns the Synexo platform**
 > (WBI 70% contributing IT-EXO/SynExo/CodeLife.AI IP + R&D; **Eyesel 30%** as the manufacturing
-> entity), with **NeuNova** as the ready US clinic/med-spa channel. Owning the IP + in-house
-> manufacturing (Eyesel) + a distribution channel is what justifies pricing above a bare-
-> licence shell, and is the cleanest story to lead with for investors.
+> entity). Owning the IP **plus** in-house manufacturing (Eyesel) is what justifies pricing
+> above a bare-licence shell — and it's the cleanest story to lead with for investors. Synapep
+> is valued **standalone** at the ex-factory line; downstream distributors (e.g. NeuNova) are
+> non-consolidated, arm's-length customers and contribute no margin to this valuation.
