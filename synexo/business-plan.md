@@ -13,15 +13,17 @@ process qualification, regulatory/quality groundwork, first product registration
 
 The initial portfolio is **5–6 product types** sharing a manufacturing line with a combined
 capacity of **50,000–100,000 vials per month**, sold at an ex-factory price of
-**USD 30–35 per vial**. With a cost structure of ~20% of EXW plus material cost, the product
-line carries an estimated **~55–65% gross margin** (base case 61.5%).
+**USD 30–35 per vial**. Products span **nutraceutical/supplement and therapeutic** grades,
+sold **OEM / white-label** — Synapep designs and manufactures while the partner holds the
+product registration. With a confirmed material cost **under $5/vial**, the line carries an
+estimated **~66% gross margin** (base case 66.2%).
 
 To kick off, Synapep is raising **USD 1.0M**, funding a **USD 500K** initial Lab investment
 plus **USD 200K per half-year** of running capital through launch. The base-case model
-reaches EBITDA-positive in the launch year (2027) and scales toward **~$29M revenue / ~$9.5M
+reaches EBITDA-positive in the launch year (2027) and scales toward **~$29M revenue / ~$11M
 EBITDA by 2029** as volume climbs to 75% of capacity.
 
-**The ask:** $1.0M for the kickoff round. Recommended terms: **$3–4M pre-money**
+**The ask:** $1.0M for the kickoff round. Recommended terms: **$3.5–4.5M pre-money**
 (see `valuation.md`).
 
 ## 2. The opportunity
@@ -37,10 +39,13 @@ Synapep design, screen, and prioritize peptide candidates computationally before
 to synthesis, lowering R&D cost per product and shortening time-to-market. That is the moat:
 a **technology + data flywheel** wrapped around a capital-light manufacturing operation.
 
-> **To strengthen this section, specify:** which end-market(s) the 5–6 products serve
-> (therapeutic / cosmeceutical / nutraceutical / research-use-only), and the regulatory
-> pathway for each, since that drives timeline, cost, and valuation multiple far more than
-> the manufacturing numbers do.
+**Confirmed positioning:** the 5–6 products span **nutraceutical/supplement** (fast to
+market) and **therapeutic** (high value) grades, all sold **OEM / white-label**. This is the
+linchpin of the model: because OEM partners hold the product registration and bear the
+clinical/regulatory cost, Synapep operates as the **AI-design-and-manufacture supplier** — so
+even the therapeutic line can be supplied from **Feb 2027** without Synapep itself completing
+a multi-year drug approval. The nutraceutical line carries the early ramp; the therapeutic
+line carries the margin and valuation multiple.
 
 ## 3. Product & technology
 
@@ -55,13 +60,16 @@ secrets). Valuation upside depends heavily on this.
 
 ## 4. Go-to-market
 
-- **Channel** — sales are quoted **ex-factory (EXW)**, implying B2B sale to distributors,
-  clinics, compounding partners, or OEM/white-label buyers rather than direct-to-consumer.
-  Confirm the channel; it sets the sales-team cost and the ramp speed.
-- **Ramp** — the constraint in 2027 is **demand generation, not capacity**. The model assumes
-  a gradual ramp from 2K vials in Feb 2027 to a 28K/month exit run-rate by Dec 2027, then
-  50K (2028) → 75K (2029) → 100K (2030).
-- **Pricing** — $30–35/vial EXW; distributor/end markups sit on top.
+- **Channel — OEM / white-label (confirmed).** Synapep sells bulk/vialled product EXW to
+  partner brands who relabel and hold the registration. Implications: a **lean BD team**
+  (few, large contracts rather than a big sales force), **stickier** revenue once a partner
+  qualifies the product into their line, but **customer-concentration risk** and **longer
+  deal cycles** — landing the first 2–3 anchor partners is the critical-path activity.
+- **Ramp** — the constraint in 2027 is **partner acquisition/qualification, not capacity**.
+  The model ramps from 2K vials in Feb 2027 to a 28K/month exit run-rate by Dec 2027, then
+  50K (2028) → 75K (2029) → 100K (2030), each step driven by adding/expanding OEM partners.
+- **Pricing** — $30–35/vial EXW; large OEM contracts may price nearer the $30 floor, still at
+  ~65% gross margin.
 
 ## 5. Operations & timeline
 
@@ -97,18 +105,23 @@ ramp land near base case. A 2028 **Series A** is the likely next step to fund th
 
 ## 8. Key risks
 
-1. **Material cost unknown** — the biggest single driver of margin and valuation; not yet
-   specified. Margins span ~43%–68% across plausible values.
-2. **Demand ramp** — capacity is easy; selling 50–100K vials/month is the real challenge and
-   depends entirely on the (still-unspecified) channel and market.
-3. **Regulatory pathway** — undefined. Therapeutic peptides carry long, costly approval;
-   cosmeceutical / research-use are far faster. This swings both timeline and valuation.
-4. **IP defensibility** — value rests on what is genuinely proprietary in IT-exo / ai.peptide.
-5. **Capital adequacy** — $1M is enough to *kick off*; scaling to the modeled $29–39M revenue
-   will likely need a Series A. Under-capitalizing the ramp is the main execution risk.
+1. **Partner concentration & ramp** — now the #1 risk. With an OEM model, revenue depends on a
+   small number of anchor partners; losing or delaying one materially dents the ramp. Landing
+   and qualifying the first 2–3 partners is the make-or-break activity of 2027.
+2. **Therapeutic partner dependency** — the therapeutic margin/multiple relies on partners who
+   actually hold (or can obtain) the registration. If those partners are slow or scarce, the
+   mix shifts toward lower-multiple nutraceutical volume.
+3. **IP defensibility** — value rests on what is genuinely proprietary in IT-exo / ai.peptide
+   (algorithms, training data, sequences, process know-how). Document and protect it.
+4. **Capital adequacy** — $1M is enough to *kick off*; scaling to the modeled $29–39M revenue
+   will likely need a 2028 Series A. Under-capitalizing the ramp is the main execution risk.
+5. **Margin** — largely *de-risked*: confirmed sub-$5 material cost keeps gross margin in a
+   tight ~64–71% band even at the $30 EXW floor.
 
 ## 9. What would make this plan investment-grade
 
-See the checklist in the chat summary and the `[ASSUMPTION]` / `[describe]` tags throughout.
-Top three: **(1) real material cost per product, (2) target market + regulatory pathway per
-product, (3) the channel/sales model.**
+Margin, market, and channel are now confirmed. The remaining top three to make this
+investment-grade: **(1) name the core team** (peptide/GMP lead, AI/ML lead for ai.peptide,
+regulatory/QA, BD); **(2) a credible OEM partner pipeline** — even 2–3 named LOIs/prospects
+transform the ramp from assumption to evidence; **(3) describe and protect the IP** in IT-exo
+and ai.peptide (patents/trade secrets, proprietary datasets).

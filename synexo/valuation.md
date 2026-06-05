@@ -1,110 +1,88 @@
-# Synapep — Valuation (Draft v0.1)
+# Synapep — Valuation (Draft v0.2)
 
 > All figures USD, illustrative, base case from `financial-model.md` (EXW $32.50, material
-> $6.00 `[ASSUMPTION]`, ramp to 75% capacity by 2029). Valuation date: mid-2026 (pre-revenue).
+> **$4.50**, OEM/white-label channel, ramp to 75% capacity by 2029). Valuation date: mid-2026
+> (pre-revenue). Updated with confirmed inputs 2026-06-05.
 
 ## Headline
 
-Synapep today is a **pre-revenue, pre-product company** raising **$1.0M** to kick off. Two
-numbers matter and they are deliberately different:
+Synapep is a **pre-revenue, pre-product company** raising **$1.0M** to kick off. Two numbers:
 
-1. **What to price *this* round at:** **$3–4M pre-money / $4–5M post-money** — $1.0M buys
-   ~20–25%. This is the defensible seed price.
-2. **The prize if it executes:** a risk-*un*adjusted enterprise value of **~$25–35M** by
-   ~2030–31 on the base-case model. This is the upside story, not today's price.
+1. **Price *this* round at:** **$3.5–4.5M pre-money / $4.5–5.5M post-money** — $1.0M buys
+   ~18–22%. (Nudged up from the earlier $3–4M because the confirmed **sub-$5 material cost**
+   pushes margins to ~66% and the **therapeutic OEM optionality** raises the exit multiple.)
+2. **The prize if it executes:** a risk-*un*adjusted enterprise value of **~$30–40M** by
+   ~2030–31 on the base-case model. Upside story, not today's price.
 
-The gap between the two is normal early-stage risk discounting; the methods below show how
-both are derived and why they reconcile.
+## Method 1 — Seed-stage convention
 
----
-
-## Method 1 — Seed-stage convention (what comparable rounds price at)
-
-A pre-revenue company with proprietary AI + a credible path to manufacturing typically raises
-its first institutional/angel money at a **$2–5M pre-money** valuation. Drivers that push
-Synapep toward the **upper** half: differentiated AI IP (IT-exo, ai.peptide), a concrete
-product line (5–6 SKUs), near-term revenue (Feb 2027), and high gross margins. Drivers that
-pull **down**: unproven demand, undefined regulatory path, unspecified material cost, team not
-yet named.
-
-**Net: $3–4M pre-money is a fair, raiseable price for the $1M kickoff.**
+Pre-revenue AI + proprietary platform + near-term revenue typically prices at **$2–5M
+pre-money**. Synapep sits in the **upper half**: differentiated AI IP (IT-exo, ai.peptide),
+5–6 SKUs, Feb-2027 revenue, **~66% gross margin**, and an OEM model that offloads regulatory
+burden to partners. **Recommended: $3.5–4.5M pre-money.**
 
 | Pre-money | Raise | Post-money | Investor % |
 |----------:|------:|-----------:|-----------:|
-| $3.0M | $1.0M | $4.0M | 25.0% |
 | $3.5M | $1.0M | $4.5M | 22.2% |
 | $4.0M | $1.0M | $5.0M | 20.0% |
+| $4.5M | $1.0M | $5.5M | 18.2% |
 
----
+## Method 2 — Discounted cash flow ("if it works" EV)
 
-## Method 2 — Discounted cash flow (the "if it works" enterprise value)
-
-Base-case EBITDA, converted to a simplified free cash flow (after HK profits tax ~16.5%,
-working-capital build, and modest capex), discounted at **40%** (early-stage cost of capital).
+Base-case EBITDA → simplified FCF (after HK profits tax ~16.5%, working-capital build, modest
+capex), discounted at **40%**.
 
 | $000s | 2027 | 2028 | 2029 | 2030 | 2031 |
 |-------|-----:|-----:|-----:|-----:|-----:|
-| EBITDA | 560 | 6,000 | 9,500 | 13,500 | 14,000 |
-| ≈ Free cash flow | 300 | 4,000 | 6,500 | 10,000 | 11,000 |
+| EBITDA | 782 | 7,100 | 11,350 | 16,000 | 16,500 |
+| ≈ Free cash flow | 450 | 4,600 | 7,400 | 11,300 | 11,700 |
 | Discount factor @40% | 0.714 | 0.510 | 0.364 | 0.260 | 0.186 |
-| PV of FCF | 214 | 2,041 | 2,369 | 2,603 | 2,046 |
+| PV of FCF | 321 | 2,346 | 2,694 | 2,940 | 2,176 |
 
-- **PV of explicit FCF (2027–31): ≈ $9.3M**
-- **Terminal value** (exit end-2031 at **8× EBITDA** = $112M) → PV = $112M × 0.186 ≈ **$20.8M**
-- **Enterprise value (DCF) ≈ $30M** *(un-risk-adjusted — assumes full execution)*
-
-Risk-adjustment for a pre-revenue company (probability of reaching the base case ≈ **15%**):
-**$30M × 0.15 ≈ $4.5M** — which lands right on top of the seed-convention price above.
-
----
+- **PV of explicit FCF (2027–31): ≈ $10.5M**
+- **Terminal value** (exit end-2031 at **8× EBITDA** = $132M) → PV = $132M × 0.186 ≈ **$24.5M**
+- **Enterprise value (DCF) ≈ $35M** *(un-risk-adjusted)*
+- Risk-adjusted at ~15% success probability → **≈ $5.2M**, consistent with the seed price.
 
 ## Method 3 — Forward revenue / EBITDA multiple (cross-check)
 
-| Basis (2029, base case) | Value | Metric | EV (2029) |
-|-------------------------|------:|-------:|----------:|
-| Revenue $29.25M | × 2–4× | specialty/AI peptide | $58.5M – $117M |
-| EBITDA $9.5M | × 6–10× | | $57M – $95M |
+| Basis (2029, base) | Value | Metric | EV (2029) |
+|--------------------|------:|-------:|----------:|
+| Revenue $29.25M | × 2–4× | nutra (low) → therapeutic (high) | $58.5M – $117M |
+| EBITDA $11.35M | × 6–10× | | $68M – $114M |
 
-Discount a ~$60–95M 2029 EV back ~3 years at 40% (÷2.744) → **$21M – $35M** present
-(un-risk-adjusted). Risk-adjusted ×15–25% → **$3.2M – $8.7M** — again consistent with a
-$3–4M pre-money entry.
+> The **therapeutic** component justifies the upper end of the multiple range; pure
+> nutraceutical would sit at the lower end. Blended, use ~2.5–3.5× revenue.
 
----
+Discount a ~$70–100M 2029 EV back ~3 years at 40% (÷2.744) → **$25–37M** present
+(un-risk-adjusted). Risk-adjusted ×15–25% → **$3.8–9.1M** — consistent with a $3.5–4.5M entry.
 
 ## Reconciliation
 
-| Method | Un-risk-adjusted | Risk-adjusted | Implication for today's round |
-|--------|-----------------:|--------------:|-------------------------------|
-| Seed convention | — | $3–4M | direct |
-| DCF | ~$30M (EV) | ~$4.5M | matches |
-| Forward multiple | $21–35M (PV of EV) | $3–9M | matches |
+| Method | Un-risk-adjusted | Risk-adjusted | Today's round |
+|--------|-----------------:|--------------:|---------------|
+| Seed convention | — | $3.5–4.5M | direct |
+| DCF | ~$35M (EV) | ~$5.2M | matches |
+| Forward multiple | $25–37M (PV of EV) | $3.8–9.1M | matches |
 
-**Recommendation: price the $1.0M kickoff at $3–4M pre-money ($4–5M post).** Present the
-$25–35M execution case as the investor's upside, not the entry price.
+**Recommendation: price the $1.0M kickoff at $3.5–4.5M pre-money ($4.5–5.5M post).**
 
----
+## VC-method check
 
-## VC-method check (does the investor get a return?)
-
-A seed investor seeking ~10× wants ~$10M back. If Synapep exits ~2031 around **$80–112M**
+Seed investor seeking ~10× wants ~$10M back. If Synapep exits ~2031 at **$95–132M**
 (8× EBITDA) and the seed stake is diluted ~2× by a 2028 Series A, the investor needs roughly
-**18–25% today** to clear 10×. $1M at $3–4M pre-money gives **20–25%** — so the math works.
+**15–20% today**. $1M at $3.5–4.5M pre gives **18–22%** — the math clears 10×.
 
----
+## What changed vs v0.1 and why it matters
 
-## How material cost moves the valuation
+| Input | v0.1 (assumed) | v0.2 (confirmed) | Effect |
+|-------|----------------|------------------|--------|
+| Material cost | $6.00 | **$4.50 (<$5)** | GM 61.5% → 66.2%; EBITDA & EV up ~15% |
+| Channel | unknown | **OEM / white-label** | leaner OpEx; lumpier but stickier ramp; partner-concentration risk |
+| Market / pathway | unknown | **Nutraceutical + Therapeutic** | therapeutic lifts the exit multiple; OEM partners carry the registration, keeping Feb-2027 launch realistic |
+| Recommended pre-money | $3–4M | **$3.5–4.5M** | margin + therapeutic optionality justify the nudge |
 
-Because valuation is anchored to base-case cash flows, the unspecified material cost flows
-straight through. Holding everything else at base case and re-running 2029:
-
-| Material $/vial | 2029 GM% | 2029 GP | Rough EV impact |
-|----------------:|---------:|--------:|-----------------|
-| 4.00 | 67.7% | ~$19.8M | upside case, EV toward high end |
-| 6.00 (base) | 61.5% | ~$18.0M | base ~$30M EV (un-adj.) |
-| 9.00 | 52.3% | ~$15.3M | conservative, EV ~20–25% lower |
-| 12.00 | 43.1% | ~$12.6M | margin-pressured, revisit raise size |
-
-> **Bottom line:** the $3–4M pre-money recommendation is robust across the margin range
-> because seed pricing is set more by stage/risk than by a model that is itself built on an
-> assumed cost. Once you give the real material cost, the *upside* numbers (Methods 2 & 3)
-> tighten, but the recommended **entry** price for the $1M round stays ~$3–4M pre.
+> **Key structural insight:** because the therapeutic products are sold **OEM/white-label**,
+> the *partner* holds the drug registration and bears the clinical/regulatory cost. Synapep is
+> the AI-design-and-manufacture supplier. That is what makes a Feb-2027 therapeutic launch
+> credible — and it is the cleanest part of the story to lead with for investors.
