@@ -1,0 +1,53 @@
+Synapep Financial Model (USD) — base case: EXW $32.50, material $6.00 [ASSUMPTION], GP $20.00/vial
+,,,,,
+UNIT ECONOMICS ($/vial),,,,,
+Ex-factory price (EXW),32.50,,,,
+Manufacturing (10% x EXW),3.25,,,,
+Material cost [ASSUMPTION],6.00,,,,
+Second 10% (10% x EXW),3.25,,,,
+COGS,12.50,,,,
+Gross profit per vial,20.00,,,,
+Gross margin,61.5%,,,,
+,,,,,
+PRICE SENSITIVITY,EXW,COGS,GP/vial,GM%,
+,30.00,12.00,18.00,60.0%
+,32.50,12.50,20.00,61.5%
+,35.00,13.00,22.00,62.9%
+,,,,,
+MATERIAL SENSITIVITY (EXW 32.50),Material,COGS,GP/vial,GM%,
+,4.00,10.50,22.00,67.7%
+,6.00,12.50,20.00,61.5%
+,8.00,14.50,18.00,55.4%
+,10.00,16.50,16.00,49.2%
+,12.00,18.50,14.00,43.1%
+,,,,,
+ANNUAL P&L ($000s),2026 prep,2027,2028,2029,2030
+Vials sold (000s),0,148,600,900,1200
+Revenue,0,4810,19500,29250,39000
+COGS,0,1850,7500,11250,15000
+Gross profit,0,2960,12000,18000,24000
+Gross margin,,61.5%,61.5%,61.5%,61.5%
+OpEx [ASSUMPTION],700,2400,6000,8500,10500
+EBITDA,-700,560,6000,9500,13500
+EBITDA margin,,11.6%,30.8%,32.5%,34.6%
+,,,,,
+DCF ($000s),2027,2028,2029,2030,2031
+EBITDA,560,6000,9500,13500,14000
+Free cash flow (approx),300,4000,6500,10000,11000
+Discount factor @40%,0.714,0.510,0.364,0.260,0.186
+PV of FCF,214,2041,2369,2603,2046
+PV explicit FCF total,9273,,,,
+Terminal value (8x EBITDA 2031),112000,,,,
+PV of terminal value,20832,,,,
+Enterprise value (un-risk-adjusted),30105,,,,
+Risk-adjusted @15%,4516,,,,
+,,,,,
+ROUND TERMS,Pre-money,Raise,Post-money,Investor %,
+Option A,3000,1000,4000,25.0%
+Option B,3500,1000,4500,22.2%
+Option C,4000,1000,5000,20.0%
+,,,,,
+USE OF FUNDS ($),Amount,,,,
+Synapep Lab initial investment,500000,,,,
+Running capital x3 half-years,600000,,,,
+Total,1100000,,,,
