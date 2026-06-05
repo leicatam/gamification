@@ -4,34 +4,35 @@
 > **$4.50**, OEM/white-label channel, ramp to 75% capacity by 2029). Valuation date: mid-2026
 > (pre-revenue). Grounded in Drive materials (`context-from-drive.md`), updated 2026-06-05.
 >
-> **IP assumption (critical):** the Synexo IP (IT-EXO / SynExo / CodeLife.AI) is owned by
-> **WBI**, not Synapep. This valuation assumes Synapep holds a **field/territory licence** to
-> that IP (the conservative case). If instead the IP is **assigned/contributed** to Synapep,
-> the pre-money should step up materially (it would own the platform, not rent it); if the
-> licence is **narrow or royalty-heavy**, step down. Settle structure (§7a) before pricing.
+> **IP / structure (CONFIRMED):** Synapep is a **JV / subsidiary** with **WBI contributing the
+> Synexo IP** (IT-EXO / SynExo / CodeLife.AI) and likely NeuNova/Eric Lee the US channel. So
+> Synapep **owns/co-owns** the platform — a step up from a bare licence — which is why the
+> recommended pre-money below is **$5–7M** (vs the $3.5–4.5M a pure-licence shell would get).
 
 ## Headline
 
-Synapep is a **pre-revenue, pre-product company** raising **$1.0M** to kick off. Two numbers:
+Synapep is a **pre-revenue JV** that **owns/co-owns** the Synexo platform, raising **$1.0M** to
+kick off. Two numbers:
 
-1. **Price *this* round at:** **$3.5–4.5M pre-money / $4.5–5.5M post-money** — $1.0M buys
-   ~18–22%. (Nudged up from the earlier $3–4M because the confirmed **sub-$5 material cost**
-   pushes margins to ~66% and the **therapeutic OEM optionality** raises the exit multiple.)
+1. **Price *this* round at:** **$5–7M pre-money / $6–8M post-money** — $1.0M buys ~13–17%.
+   (Stepped up from a pure-licence shell because, as a JV, Synapep holds the IP — patents
+   filed, ~66% gross margins, Feb-2027 cosmetic revenue, and a NeuNova-anchored US channel.)
 2. **The prize if it executes:** a risk-*un*adjusted enterprise value of **~$30–40M** by
-   ~2030–31 on the base-case model. Upside story, not today's price.
+   ~2030–31 on the base-case model, plus **platform-licensing optionality** (WBI's thesis is
+   to license the stealth-exosome platform to pharma). Upside story, not today's price.
 
 ## Method 1 — Seed-stage convention
 
-Pre-revenue AI + proprietary platform + near-term revenue typically prices at **$2–5M
-pre-money**. Synapep sits in the **upper half**: differentiated AI IP (IT-exo, ai.peptide),
-5–6 SKUs, Feb-2027 revenue, **~66% gross margin**, and an OEM model that offloads regulatory
-burden to partners. **Recommended: $3.5–4.5M pre-money.**
+A pre-revenue company **that owns differentiated biotech IP** (patents filed) with near-term
+revenue typically prices at **$4–8M pre-money** — above the $2–5M a no-IP team gets. Synapep
+sits mid-to-upper: filed IT-EXO/SynExo patents, CodeLife.AI, 5–6 SKUs, Feb-2027 revenue, ~66%
+gross margin, parent manufacturing, and the NeuNova channel. **Recommended: $5–7M pre-money.**
 
 | Pre-money | Raise | Post-money | Investor % |
 |----------:|------:|-----------:|-----------:|
-| $3.5M | $1.0M | $4.5M | 22.2% |
-| $4.0M | $1.0M | $5.0M | 20.0% |
-| $4.5M | $1.0M | $5.5M | 18.2% |
+| $5.0M | $1.0M | $6.0M | 16.7% |
+| $6.0M | $1.0M | $7.0M | 14.3% |
+| $7.0M | $1.0M | $8.0M | 12.5% |
 
 ## Method 2 — Discounted cash flow ("if it works" EV)
 
@@ -61,23 +62,25 @@ capex), discounted at **40%**.
 > nutraceutical would sit at the lower end. Blended, use ~2.5–3.5× revenue.
 
 Discount a ~$70–100M 2029 EV back ~3 years at 40% (÷2.744) → **$25–37M** present
-(un-risk-adjusted). Risk-adjusted ×15–25% → **$3.8–9.1M** — consistent with a $3.5–4.5M entry.
+(un-risk-adjusted). Risk-adjusted at a **higher 18–22%** success probability (JV owns the IP,
+parent manufacturing, ready channel) → **$4.5–8.1M** — supporting the $5–7M entry.
 
 ## Reconciliation
 
-| Method | Un-risk-adjusted | Risk-adjusted | Today's round |
-|--------|-----------------:|--------------:|---------------|
-| Seed convention | — | $3.5–4.5M | direct |
-| DCF | ~$35M (EV) | ~$5.2M | matches |
-| Forward multiple | $25–37M (PV of EV) | $3.8–9.1M | matches |
+| Method | Un-risk-adjusted | Risk-adjusted (JV, ~20%) | Today's round |
+|--------|-----------------:|-------------------------:|---------------|
+| Seed convention (owns IP) | — | $5–7M | direct |
+| DCF | ~$35M (EV) | ~$6–7M | matches |
+| Forward multiple | $25–37M (PV of EV) | $5–8M | matches |
 
-**Recommendation: price the $1.0M kickoff at $3.5–4.5M pre-money ($4.5–5.5M post).**
+**Recommendation: price the $1.0M kickoff at $5–7M pre-money ($6–8M post), $6M midpoint.**
 
 ## VC-method check
 
 Seed investor seeking ~10× wants ~$10M back. If Synapep exits ~2031 at **$95–132M**
-(8× EBITDA) and the seed stake is diluted ~2× by a 2028 Series A, the investor needs roughly
-**15–20% today**. $1M at $3.5–4.5M pre gives **18–22%** — the math clears 10×.
+(8× EBITDA) and the seed stake is diluted ~1.5–2× by a 2028 Series A, the investor needs
+roughly **11–17% today**. $1M at $5–7M pre gives **13–17%** — the math still clears ~10× at
+the $6M midpoint; at $7M pre it depends on limiting later dilution.
 
 ## What changed vs v0.1 and why it matters
 
@@ -87,8 +90,10 @@ Seed investor seeking ~10× wants ~$10M back. If Synapep exits ~2031 at **$95–
 | Channel | unknown | **OEM / white-label** | leaner OpEx; lumpier but stickier ramp; partner-concentration risk |
 | Market / pathway | unknown | **Nutraceutical + Therapeutic** | therapeutic lifts the exit multiple; OEM partners carry the registration, keeping Feb-2027 launch realistic |
 | Recommended pre-money | $3–4M | **$3.5–4.5M** | margin + therapeutic optionality justify the nudge |
+| Structure (v0.3) | unknown | **JV: WBI 70% / Eyesel 30%; owns IP** | step up to **$5–7M pre** — owns the platform, not a licence |
 
-> **Key structural insight:** because the therapeutic products are sold **OEM/white-label**,
-> the *partner* holds the drug registration and bears the clinical/regulatory cost. Synapep is
-> the AI-design-and-manufacture supplier. That is what makes a Feb-2027 therapeutic launch
-> credible — and it is the cleanest part of the story to lead with for investors.
+> **Key structural insight (v0.3):** Synapep is a **JV that owns/co-owns the Synexo platform**
+> (WBI 70% contributing IT-EXO/SynExo/CodeLife.AI IP + R&D; **Eyesel 30%** as the manufacturing
+> entity), with **NeuNova** as the ready US clinic/med-spa channel. Owning the IP + in-house
+> manufacturing (Eyesel) + a distribution channel is what justifies pricing above a bare-
+> licence shell, and is the cleanest story to lead with for investors.

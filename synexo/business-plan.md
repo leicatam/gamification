@@ -28,8 +28,12 @@ plus **USD 200K per half-year** of running capital through launch. The base-case
 reaches EBITDA-positive in the launch year (2027) and scales toward **~$29M revenue / ~$11M
 EBITDA by 2029** as volume climbs to 75% of capacity.
 
-**The ask:** $1.0M for the kickoff round. Recommended terms: **$3.5–4.5M pre-money**
-(see `valuation.md`).
+Synapep is a **JV — WBI 70% (contributes the Synexo IP: IT-EXO / SynExo / CodeLife.AI) /
+Eyesel 30% (the manufacturing entity)** — so Synapep **owns/co-owns** the platform *and*
+controls production. **NeuNova USA** is the separate exclusive US distribution channel.
+
+**The ask:** $1.0M for the kickoff round. Recommended terms: **$5–7M pre-money** (JV/ownership
+case; ~14% for $1M at the $6M midpoint — see `valuation.md`).
 
 ## 2. The opportunity
 
@@ -152,25 +156,27 @@ AI-peptide active, ⑥ custom-cargo SynExo.
 Ecosystem credibility to leverage: **NET government award**, MORIMANA Scientific Advisory
 Board, and use by leading Korean clinics.
 
-## 7a. Corporate structure & relationship to WBI / NeuNova
+## 7a. Corporate structure (CONFIRMED: JV — WBI 70% / Eyesel 30%)
 
-> **This is the most important thing to settle before the raise.** The Synexo IP and
-> manufacturing sit with **WBI (Wellbiz International, Korea)**; **NeuNova USA** (CEO Eric Lee,
-> 20%→30% option; WBI 80%) holds exclusive US distribution. Where Synapep fits determines what
-> investors are actually buying.
+**Founding cap table:** **WBI 70%** (contributes the Synexo IP — IT-EXO® / SynExo /
+CodeLife.AI — and R&D) + **Eyesel 30%** (the **manufacturing entity** — handles production,
+fill-finish, QA/cold-chain). Synapep therefore **owns/co-owns** the platform *and* has
+in-house manufacturing — the strongest structure for valuation: investors buy a company that
+holds a real technology asset, controls its own production, and has near-term cosmetic revenue.
 
-Options to decide on:
+**NeuNova USA** is the **distribution channel** (exclusive US clinic/med-spa route), not a
+Synapep shareholder — a ready go-to-market arm, kept separate from the JV equity.
 
-1. **Licence + supply model** — Synapep licenses IT-EXO/SynExo/CodeLife.AI from WBI for a
-   defined field (AI-peptide + SynExo vials) and territory, and either manufactures under
-   transfer or buys bulk. *Lower IP risk for WBI; Synapep's value = the licence + execution.*
-2. **JV / subsidiary** — Synapep as a WBI (and/or NeuNova) JV or subsidiary, with IP
-   contributed or co-owned. *Cleaner story; needs WBI board agreement on equity split.*
-3. **Independent co. with assignment** — WBI assigns specific IP to Synapep. *Highest Synapep
-   valuation, hardest to get WBI to agree.*
+Points to lock down before close:
+- **IP contribution scope** — fields, territories, and exclusivity of the WBI-contributed
+  rights; any reserved rights or royalties to WBI.
+- **Manufacturing/supply terms** — Eyesel's production cost basis, capacity commitment, and
+  whether the "manufacturing 10% + second 10%" COGS formula reflects Eyesel's actual costs.
+- **Channel agreement** — NeuNova's US distribution dovetailed (not conflicting) with Synapep,
+  including transfer pricing between Synapep (ex-factory) and NeuNova (US resale).
+- **Investor entry** — the $1M kickoff dilutes WBI and Eyesel pro-rata (see cap table in §7).
 
-Until this is fixed, the valuation in `valuation.md` assumes Synapep holds a **licence** to the
-relevant IP (not outright ownership) — the conservative, most likely case.
+The valuation in `valuation.md` reflects this JV/ownership case (a step up from a bare licence).
 
 ## 7. Funding & use of funds
 
@@ -189,11 +195,23 @@ across 2027, so the $1M plus early revenue funds the company to scale **if** mat
 ramp land near base case. A 2028 **Series A** is the likely next step to fund the push from
 50K to 100K vials/month and broader product registration. See `financial-model.md`.
 
+**Illustrative post-raise cap table (JV case, pre-money $6.0M):**
+
+| Holder | Contribution | Founder % | % post-raise |
+|--------|--------------|----------:|-------------:|
+| WBI | Synexo IP (IT-EXO/SynExo/CodeLife.AI) + R&D | 70.0% | 60.0% |
+| Eyesel | manufacturing entity (production, fill-finish, QA) | 30.0% | 25.7% |
+| Kickoff investor(s) | $1.0M cash | — | 14.3% |
+| **Total** | | **100%** | **100%** |
+
+At **$6.0M pre / $7.0M post**, $1.0M buys **14.3%**; the founder block (85.7%) splits WBI 70 /
+Eyesel 30 → **WBI 60.0%, Eyesel 25.7%**. NeuNova (US distribution) sits outside this cap table.
+
 ## 8. Key risks
 
-1. **IP ownership / WBI dependency** — *new #1.* The core IP sits with WBI. Without a clear
-   licence/assignment to Synapep (§7a), investors are funding execution on someone else's
-   technology. Settle this first.
+1. **IP contribution terms** — largely resolved by the JV (WBI contributes IP into Synapep),
+   but the *scope* (fields, territories, exclusivity, reserved rights/royalties to WBI) still
+   needs to be documented so investors know exactly what the company owns (§7a).
 2. **Partner concentration & ramp** — with an OEM model, revenue depends on a few anchor
    partners; NeuNova USA helps, but landing/qualifying the first 2–3 accounts is make-or-break
    in 2027.

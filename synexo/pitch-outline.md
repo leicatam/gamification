@@ -15,9 +15,12 @@
   This is what makes a **Feb 2027** launch — including therapeutic grade — realistic.
 - **Economics:** ~**66% gross margin** (material cost < $5/vial). EBITDA-positive in launch year.
 - **Trajectory:** $4.8M (2027) → $19.5M (2028) → **$29M rev / ~$11M EBITDA (2029)** → $39M (2030).
-- **Ask:** **$1.0M** to kick off, at **$3.5–4.5M pre-money**. Use: $500K Lab + $600K running
-  capital through launch.
-- **Prize:** ~$30–40M enterprise value by 2030–31 if the base case executes.
+- **Structure:** JV — **WBI 70%** (contributes IT-EXO/SynExo/CodeLife.AI IP) / **Eyesel 30%**
+  (manufacturing); **NeuNova USA** = exclusive US distribution channel.
+- **Ask:** **$1.0M** to kick off, at **$5–7M pre-money** (~14% at $6M midpoint). Use: $500K Lab
+  + $600K running capital through launch.
+- **Prize:** ~$30–40M enterprise value by 2030–31 if the base case executes, plus platform-
+  licensing optionality.
 
 ## 12-slide deck outline
 

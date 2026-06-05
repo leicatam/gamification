@@ -45,10 +45,13 @@ cargo and of the AI-designed actives (see below).
   "IT-EXO® BioMimetic Exosomes". 15-year clinic heritage; first scalp-wellness studio
   ("MM STUDIO") planned in London.
 
-> **Open structuring question for the user:** where does **"Synapep"** sit relative to WBI /
-> NeuNova? Most likely Synapep needs an **IP licence + supply agreement from WBI** (who owns
-> the tech) to manufacture/sell the AI-peptide + SynExo vials. Whether Synapep *owns* IP or
-> *licenses* it materially changes the valuation — see `valuation.md`.
+> **Synapep structure (CONFIRMED by user):** Synapep is a **JV — WBI 70% / Eyesel 30%**.
+> WBI contributes the Synexo IP (IT-EXO/SynExo/CodeLife.AI) + R&D; **Eyesel is the
+> manufacturing entity** (production/fill-finish/QA). **Eyesel ≈ the manufacturer "에스테르
+> / Ester"** seen on the MORIMANA product labels (confirm spelling/legal name). **NeuNova USA**
+> is the separate exclusive US distribution channel, not a Synapep shareholder. Because the JV
+> *owns/co-owns* the platform and controls manufacturing, the valuation steps up vs a bare
+> licence — see `valuation.md` (recommended $5–7M pre-money).
 
 ## Product reality
 
