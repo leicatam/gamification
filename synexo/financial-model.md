@@ -1,9 +1,9 @@
 # Synapep — Financial Model
 
 > Currency: USD. Base case updated 2026-06-05 with confirmed inputs: material **< $5/vial**
-> (modeled at **$4.50**), **OEM / white-label** channel, products spanning
-> **nutraceutical/supplement + therapeutic** (Synapep supplies; OEM partner holds the
-> registration). All figures are illustrative projections, not guarantees.
+> (modeled at **$4.50**), **OEM / white-label** channel, SynExo + AI-peptide vials spanning
+> **cosmetic/aesthetic (first) → medical (later)** (Synapep supplies; OEM partner/clinic holds
+> the registration). All figures are illustrative projections, not guarantees.
 
 ## 1. Unit economics
 
@@ -64,7 +64,7 @@ line, volumes are stickier and more predictable.
 
 | Month | Vials | Note |
 |-------|------:|------|
-| Feb | 2,000 | first OEM partner live (nutraceutical line) |
+| Feb | 2,000 | first OEM partner live (cosmetic line) |
 | Mar | 4,000 | |
 | Apr | 6,000 | |
 | May | 8,000 | second partner qualifies |

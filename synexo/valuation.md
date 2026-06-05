@@ -55,11 +55,11 @@ capex), discounted at **40%**.
 
 | Basis (2029, base) | Value | Metric | EV (2029) |
 |--------------------|------:|-------:|----------:|
-| Revenue $29.25M | × 2–4× | nutra (low) → therapeutic (high) | $58.5M – $117M |
+| Revenue $29.25M | × 2–4× | cosmetic (low) → medical/platform (high) | $58.5M – $117M |
 | EBITDA $11.35M | × 6–10× | | $68M – $114M |
 
-> The **therapeutic** component justifies the upper end of the multiple range; pure
-> nutraceutical would sit at the lower end. Blended, use ~2.5–3.5× revenue.
+> The **medical / platform-licensing** component justifies the upper end of the multiple range;
+> pure cosmetic would sit at the lower end. Blended, use ~2.5–3.5× revenue.
 
 Discount a ~$70–100M 2029 EV back ~3 years at 40% (÷2.744) → **$25–37M** present
 (un-risk-adjusted). Risk-adjusted at a **higher 18–22%** success probability (JV owns the IP,

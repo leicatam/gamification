@@ -43,7 +43,7 @@ still an `[ASSUMPTION]`.
 - **5–6 product types** that together fill the 50–100K monthly capacity.
 - Manufacturing cost = **10% of EXW price + material cost + another 10%**.
 - Material cost: **under USD 5/vial** (modeled at $4.50).
-- Channel: **OEM / white-label**. Grades: **nutraceutical/supplement + therapeutic**.
+- Channel: **OEM / white-label**. Pathway: **cosmetic/aesthetic first → medical (FDA/KFDA)**.
 - Initial investment (Synapep Lab): **USD 500,000**.
 - Running capital: **USD 200,000 / half-year** (USD 400,000 / year).
 - Target raise: **USD 1,000,000** to kick off.

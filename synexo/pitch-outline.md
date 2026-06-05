@@ -9,8 +9,8 @@
 
 - **What:** A new company commercializing **Synexo** peptide technology via two AI platforms —
   **IT-exo** and **ai.peptide** — that compress peptide design from months to days.
-- **Product:** 5–6 vialled peptide SKUs (nutraceutical + therapeutic grade), 50–100K vials/mo
-  capacity, **$30–35/vial** ex-factory.
+- **Product:** 5–6 SynExo + AI-peptide vials / skin boosters (aesthetic → medical), 50–100K
+  vials/mo capacity, **$30–35/vial** ex-factory.
 - **Model:** OEM / white-label. Partners hold the registration; Synapep designs + manufactures.
   This is what makes a **Feb 2027** launch — including therapeutic grade — realistic.
 - **Economics:** ~**66% gross margin** (material cost < $5/vial). EBITDA-positive in launch year.
@@ -37,7 +37,7 @@
 | 9 | **Traction / roadmap** | 6–9 mo prep → Feb 2027 launch → ramp to 100K vials/mo by 2030. |
 | 10 | **Financials** | Revenue/EBITDA chart 2027–2030; unit economics; margin sensitivity. *(from financial-model)* |
 | 11 | **Team** | Core 4–5 + advisors. *(from §6 template)* |
-| 12 | **The ask** | $1.0M at $3.5–4.5M pre; use of funds; the ~$30–40M prize; path to Series A 2028. |
+| 12 | **The ask** | $1.0M at $5–7M pre (JV owns IP); use of funds; the ~$30–40M prize; path to Series A 2028. |
 
 ## Strongest things to lead with
 
