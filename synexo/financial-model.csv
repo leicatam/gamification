@@ -1,51 +1,47 @@
-Synapep Financial Model (USD) v0.2 — base case: EXW $32.50, material $4.50 (<$5 confirmed), GP $21.50/vial; OEM/white-label; nutraceutical+therapeutic
+Synapep Financial Model v0.4 (USD) — AI-personalised aesthetic medical devices: applicator device + recurring personalised kits
 ,,,,,
-UNIT ECONOMICS ($/vial),,,,,
+KIT UNIT ECONOMICS ($/kit),,,,,
 Ex-factory price (EXW),32.50,,,,
 Manufacturing (10% x EXW),3.25,,,,
 Material cost,4.50,,,,
 Second 10% (10% x EXW),3.25,,,,
 COGS,11.00,,,,
-Gross profit per vial,21.50,,,,
+Gross profit per kit,21.50,,,,
 Gross margin,66.2%,,,,
 ,,,,,
-PRICE SENSITIVITY (material 4.50),EXW,COGS,GP/vial,GM%,
-,30.00,10.50,19.50,65.0%
-,32.50,11.00,21.50,66.2%
-,35.00,11.50,23.50,67.1%
+DEVICE UNIT ECONOMICS,,,,,
+ASP per clinic,3000,,,,
+Gross margin,40%,,,,
+Gross profit per device,1200,,,,
 ,,,,,
-MATERIAL SENSITIVITY (EXW 32.50),Material,COGS,GP/vial,GM%,
-,3.00,9.50,23.00,70.8%
-,4.50,11.00,21.50,66.2%
-,5.00,11.50,21.00,64.6%
+VOLUME BUILD,2026 prep,2027,2028,2029,2030
+Clinics (cumulative),0,150,400,700,1000
+New clinics (devices sold),0,150,250,300,300
+Treatment kits (000s),0,148,600,900,1200
 ,,,,,
-ANNUAL P&L ($000s),2026 prep,2027,2028,2029,2030
-Vials sold (000s),0,148,600,900,1200
-Revenue,0,4810,19500,29250,39000
-COGS,0,1628,6600,9900,13200
-Gross profit,0,3182,12900,19350,25800
-Gross margin,,66.2%,66.2%,66.2%,66.2%
-OpEx [ASSUMPTION],700,2400,5800,8000,9800
-EBITDA,-700,782,7100,11350,16000
-EBITDA margin,,16.3%,36.4%,38.8%,41.0%
+P&L ($000s),2026,2027,2028,2029,2030
+Kit revenue,0,4810,19500,29250,39000
+Device revenue,0,450,750,900,900
+Total revenue,0,5260,20250,30150,39900
+Kit gross profit,0,3182,12900,19350,25800
+Device gross profit,0,180,300,360,360
+Total gross profit,0,3362,13200,19710,26160
+Blended gross margin,,63.9%,65.2%,65.4%,65.6%
+OpEx [ASSUMPTION],700,2600,6000,8200,10000
+EBITDA,-700,762,7200,11510,16160
+EBITDA margin,,14.5%,35.6%,38.2%,40.5%
 ,,,,,
-DCF ($000s),2027,2028,2029,2030,2031
-EBITDA,782,7100,11350,16000,16500
-Free cash flow (approx),450,4600,7400,11300,11700
-Discount factor @40%,0.714,0.510,0.364,0.260,0.186
-PV of FCF,321,2346,2694,2940,2176
-PV explicit FCF total,10477,,,,
-Terminal value (8x EBITDA 2031),132000,,,,
-PV of terminal value,24552,,,,
-Enterprise value (un-risk-adjusted),35029,,,,
-Risk-adjusted @15%,5254,,,,
+SCENARIOS (2029),Clinics,EXW,DeviceGM,Revenue,GrossProfit
+Conservative,500,30,35%,22000,14000
+Base,700,32.50,40%,30150,19710
+Upside,850,35,45%,38000,25000
 ,,,,,
-ROUND TERMS,Pre-money,Raise,Post-money,Investor %,
-Option A,3500,1000,4500,22.2%
-Option B,4000,1000,5000,20.0%
-Option C,4500,1000,5500,18.2%
+ROUND TERMS (Lens A),Pre-money,Raise,Post-money,Investor %,
+Option A,5000,1000,6000,16.7%
+Option B,6000,1000,7000,14.3%
+Option C,7000,1000,8000,12.5%
 ,,,,,
-USE OF FUNDS ($),Amount,,,,
-Synapep Lab initial investment,500000,,,,
-Running capital x3 half-years,600000,,,,
-Total,1100000,,,,
+CAP TABLE (post-raise at 6M pre),Founder %,Post-raise %,,,
+WBI,70.0%,60.0%,,,
+Eyesel,30.0%,25.7%,,,
+Kickoff investor,,14.3%,,,

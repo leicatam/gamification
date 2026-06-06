@@ -1,5 +1,12 @@
 # Synexo / Synapep — Grounding Notes from Google Drive
 
+> **v0.4 pivot note (2026-06-06):** Synapep's model is now **AI-personalised aesthetic medical
+> devices** — an applicator device + recurring CodeLife-configured peptide treatment kits
+> (microneedling + IM), launching **Korea → Hong Kong** via fast "modified device" / MDACS paths.
+> The AI engine (CodeLife.AI) + a compounding data flywheel is the moat and the basis for a future
+> **data-science company** and institutional-AI funding. See `business-plan.md` / `valuation.md`.
+> The grounding facts below (tech, IP, corporate structure, sources) remain valid.
+
 > Compiled 2026-06-05 from the user's Drive. This file records the **real** facts behind the
 > plan so the business plan and valuation are grounded, not invented. Source files linked.
 

@@ -1,129 +1,74 @@
-# Synapep — Financial Model
+# Synapep — Financial Model (v0.4)
 
-> Currency: USD. Base case updated 2026-06-05 with confirmed inputs: material **< $5/vial**
-> (modeled at **$4.50**), **OEM / white-label** channel, SynExo + AI-peptide vials spanning
-> **cosmetic/aesthetic (first) → medical (later)** (Synapep supplies; OEM partner/clinic holds
-> the registration). All figures are illustrative projections, not guarantees.
+> Currency: USD. Model for the **AI-personalised aesthetic medical device** business: an
+> applicator **device** placed in clinics + recurring **personalised treatment kits**
+> (razor-and-blades). Illustrative projections, not guarantees.
 
 ## 1. Unit economics
 
-### 1.1 Cost formula (as given)
+### 1.1 Treatment kit (the recurring "blade")
+
+Kit price ≈ **$30–35 ex-factory** (base $32.50). Cost formula unchanged from prior model:
 
 ```
-COGS / vial = (10% × EXW)      ← conversion / manufacturing labor & overhead
-            + material cost     ← API peptide + vial + lyophilization + packaging  (now $4.50)
-            + (10% × EXW)       ← second 10% (QC / overhead / distribution allowance)
-            = 20% × EXW + material cost
+COGS / kit = (10% × EXW) + material cost + (10% × EXW) = 20% × EXW + material
+           = $6.50 + $4.50 = $11.00   →   GP $21.50/kit, 66.2% margin
 ```
 
-### 1.2 Per-vial economics — base case
-
-Base case: EXW = **$32.50**, material cost = **$4.50** (confirmed < $5).
-
-| Line | $/vial |
-|------|-------:|
-| Ex-factory price (EXW) | 32.50 |
-| – Manufacturing (10% × EXW) | 3.25 |
-| – Material cost | 4.50 |
-| – Second 10% (10% × EXW) | 3.25 |
-| **= COGS** | **11.00** |
-| **Gross profit / vial** | **21.50** |
-| **Gross margin** | **66.2%** |
-
-> Note on OEM channel: white-label/OEM buyers often negotiate volume pricing, so realized EXW
-> may sit nearer the **$30** floor on large contracts. At EXW $30 / material $4.50, GP =
-> $19.50/vial (65.0%) — still strong. Margins are robust across the confirmed inputs.
-
-### 1.3 Price sensitivity (material held at $4.50)
-
-| EXW price | COGS | GP/vial | GM% |
-|----------:|-----:|--------:|----:|
+| EXW | COGS | GP/kit | GM% |
+|----:|-----:|-------:|----:|
 | $30.00 | 10.50 | 19.50 | 65.0% |
 | $32.50 | 11.00 | 21.50 | 66.2% |
 | $35.00 | 11.50 | 23.50 | 67.1% |
 
-### 1.4 Material-cost sensitivity (EXW held at $32.50)
+### 1.2 Applicator device (the "razor")
 
-| Material $/vial | COGS | GP/vial | GM% |
-|----------------:|-----:|--------:|----:|
-| 3.00 | 9.50 | 23.00 | 70.8% |
-| 4.50 (base) | 11.00 | 21.50 | 66.2% |
-| 5.00 | 11.50 | 21.00 | 64.6% |
+ASP **$3,000** per clinic, **40% gross margin** (GP $1,200/device). Sold/placed once per clinic;
+low-margin hardware that pulls high-margin recurring kits.
 
-> Confirmed material < $5, so the realistic margin band is now a tight **~64–71%** —
-> a meaningful upgrade from the earlier $6 placeholder, and it lifts the upside valuation.
+## 2. Volume build (bottom-up by clinics)
 
-## 2. Capacity & volume ramp
+Driver = clinics onboarded (Korea first, then Hong Kong) × ~**100–125 kits/clinic/month** at
+maturity. This reconciles to the ~50–100K kits/month capacity.
 
-Capacity is 50–100K vials/month. With an **OEM / white-label** model, the constraint is
-**landing and qualifying OEM partners** — fewer, larger contracts than distribution, so the
-ramp is *lumpier* but each win is bigger. Once a partner qualifies the product into their
-line, volumes are stickier and more predictable.
+| Driver | 2026 prep | 2027 | 2028 | 2029 | 2030 |
+|--------|----------:|-----:|-----:|-----:|-----:|
+| Clinics (cumulative) | 0 | 150 | 400 | 700 | 1,000 |
+| New clinics (devices sold) | 0 | 150 | 250 | 300 | 300 |
+| Treatment kits (000s) | 0 | 148 | 600 | 900 | 1,200 |
 
-### 2.1 2027 monthly ramp (launch year)
+## 3. P&L ($ thousands)
 
-| Month | Vials | Note |
-|-------|------:|------|
-| Feb | 2,000 | first OEM partner live (cosmetic line) |
-| Mar | 4,000 | |
-| Apr | 6,000 | |
-| May | 8,000 | second partner qualifies |
-| Jun | 10,000 | |
-| Jul | 12,000 | |
-| Aug | 15,000 | therapeutic-grade supply to registered partner begins |
-| Sep | 18,000 | |
-| Oct | 21,000 | |
-| Nov | 24,000 | |
-| Dec | 28,000 | |
-| **2027 total** | **148,000** | exit run-rate ≈ 56% of 50K floor |
-
-### 2.2 Annual volume
-
-| Year | Avg vials/mo | Vials/yr | % of 100K cap |
-|------|-------------:|---------:|--------------:|
-| 2027 | ~12,300 (ramp) | 148,000 | — |
-| 2028 | 50,000 | 600,000 | 50% |
-| 2029 | 75,000 | 900,000 | 75% |
-| 2030 | 100,000 | 1,200,000 | 100% |
-| 2031 | 100,000 | 1,200,000 | 100% |
-
-## 3. P&L (base case: EXW $32.50, material $4.50, GP $21.50/vial)
-
-OpEx note: OEM/white-label is **lean on sales headcount** (a small BD team closes large
-contracts) but still needs regulatory/QA support for therapeutic-grade partners, plus R&D for
-ai.peptide and G&A. OpEx below is modestly lower than a direct-sales model would require.
-
-| $ thousands | 2026 (prep) | 2027 | 2028 | 2029 | 2030 |
-|-------------|------------:|-----:|-----:|-----:|-----:|
-| Vials sold (000s) | 0 | 148 | 600 | 900 | 1,200 |
-| **Revenue** | 0 | 4,810 | 19,500 | 29,250 | 39,000 |
-| COGS | 0 | 1,628 | 6,600 | 9,900 | 13,200 |
-| **Gross profit** | 0 | 3,182 | 12,900 | 19,350 | 25,800 |
-| Gross margin | — | 66.2% | 66.2% | 66.2% | 66.2% |
-| OpEx (BD, R&D, QA/Reg, G&A) `[ASSUMPTION]` | 700 | 2,400 | 5,800 | 8,000 | 9,800 |
-| **EBITDA** | (700) | 782 | 7,100 | 11,350 | 16,000 |
-| EBITDA margin | — | 16.3% | 36.4% | 38.8% | 41.0% |
-
-### 3.1 Use of funds (kickoff, ~$1.0M raise)
-
-| Use | $ |
-|-----|--:|
-| Synapep Lab initial investment | 500,000 |
-| Running capital, 3 half-years (prep → launch) | 600,000 |
-| **Total committed** | **1,100,000** |
-
-With ~66% margins and an EBITDA-positive launch year, the $1.0M plus early 2027 gross profit
-($3.18M for the year) funds the kickoff and early ramp. A 2028 **Series A** still makes sense
-to fund the push to full capacity and to add OEM partners faster — but the company is **not**
-forced to raise it from a position of weakness.
+| Line | 2026 | 2027 | 2028 | 2029 | 2030 |
+|------|-----:|-----:|-----:|-----:|-----:|
+| Kit revenue ($32.50) | 0 | 4,810 | 19,500 | 29,250 | 39,000 |
+| Device revenue ($3k ASP) | 0 | 450 | 750 | 900 | 900 |
+| **Total revenue** | 0 | **5,260** | **20,250** | **30,150** | **39,900** |
+| Kit gross profit (66.2%) | 0 | 3,182 | 12,900 | 19,350 | 25,800 |
+| Device gross profit (40%) | 0 | 180 | 300 | 360 | 360 |
+| **Total gross profit** | 0 | **3,362** | **13,200** | **19,710** | **26,160** |
+| Blended gross margin | — | 63.9% | 65.2% | 65.4% | 65.6% |
+| OpEx (clinical sales, reg, R&D incl. AI, G&A) `[ASSUMPTION]` | 700 | 2,600 | 6,000 | 8,200 | 10,000 |
+| **EBITDA** | (700) | 762 | 7,200 | 11,510 | 16,160 |
+| EBITDA margin | — | 14.5% | 35.6% | 38.2% | 40.5% |
 
 ## 4. Scenarios (full-year 2029)
 
-| Scenario | EXW | Material | Vials/yr | Revenue | GP | GM% |
-|----------|----:|---------:|---------:|--------:|---:|----:|
-| Conservative | $30 | $5 | 720,000 (60% cap) | $21.6M | $14.0M | 65.0% |
-| **Base** | $32.50 | $4.50 | 900,000 (75% cap) | $29.25M | $19.35M | 66.2% |
-| Upside | $35 | $3 | 1,080,000 (90% cap) | $37.8M | $25.4M | 67.1% |
+| Scenario | Clinics | EXW | Device GM | Revenue | Gross profit |
+|----------|--------:|----:|----------:|--------:|-------------:|
+| Conservative | ~500 | $30 | 35% | ~$22M | ~$14M |
+| **Base** | 700 | $32.50 | 40% | $30.2M | $19.7M |
+| Upside | ~850 | $35 | 45% | ~$38M | ~$25M |
 
-The confirmed sub-$5 material cost means **even the conservative scenario clears 65% gross
-margin** — the downside is now driven by *volume/partner ramp*, not by unit economics.
+## 5. Upside not in the base case (Pillar 3)
+
+Data monetisation — licensing the CodeLife model/insights, physician outcome analytics, R&D
+partnerships — is deliberately **excluded** from the base P&L and treated as valuation upside
+(see `valuation.md`, Lens B).
+
+## 6. Open assumptions to confirm
+
+- **Device ASP / GM** ($3,000 / 40%) — confirm vs the chosen applicator.
+- **Clinic ramp** (150 → 1,000) and **kits/clinic/month** (~100–125) vs Korea/HK clinic counts.
+- **OpEx** — needs a real headcount/spend plan, including an **AI/data-science team** line.
+- **Material cost** ($4.50/kit) and that cold-chain/fill-finish sit inside the COGS formula.

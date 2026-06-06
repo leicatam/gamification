@@ -1,56 +1,46 @@
-# Synapep — Investor Teaser & Pitch Deck Outline
-
-> One-pager + 12-slide outline. Numbers pull from `financial-model.md` / `valuation.md`
-> (base case). `____` = fill from your team/IP/partner details.
+# Synapep — Investor Teaser & Pitch Outline (v0.4)
 
 ## One-page teaser
 
-**Synapep** — AI-designed peptides, manufactured at scale, sold OEM / white-label.
+**Synapep** — AI-personalised regenerative aesthetic medicine. CodeLife.AI lets physicians
+configure peptide microneedling/IM treatment kits to each clinical purpose, delivered as
+registered medical devices.
 
-- **What:** A new company commercializing **Synexo** peptide technology via two AI platforms —
-  **IT-exo** and **ai.peptide** — that compress peptide design from months to days.
-- **Product:** 5–6 SynExo + AI-peptide vials / skin boosters (aesthetic → medical), 50–100K
-  vials/mo capacity, **$30–35/vial** ex-factory.
-- **Model:** OEM / white-label. Partners hold the registration; Synapep designs + manufactures.
-  This is what makes a **Feb 2027** launch — including therapeutic grade — realistic.
-- **Economics:** ~**66% gross margin** (material cost < $5/vial). EBITDA-positive in launch year.
-- **Trajectory:** $4.8M (2027) → $19.5M (2028) → **$29M rev / ~$11M EBITDA (2029)** → $39M (2030).
-- **Structure:** JV — **WBI 70%** (contributes IT-EXO/SynExo/CodeLife.AI IP) / **Eyesel 30%**
-  (manufacturing). Valued **standalone at ex-factory**; distributors are separate, non-
-  consolidated customers.
-- **Ask:** **$1.0M** to kick off, at **$5–7M pre-money** (~14% at $6M midpoint). Use: $500K Lab
-  + $600K running capital through launch.
-- **Prize:** ~$30–40M enterprise value by 2030–31 if the base case executes, plus platform-
-  licensing optionality.
+- **Moat:** proprietary AI (CodeLife.AI) designs peptides that **outperform** generalised products,
+  with an AI quality/analytics suite and a compounding **data flywheel** → a future **data-science
+  company** on its own large model.
+- **Business:** razor-and-blades — applicator device + recurring personalised kits (~$30–35 EXW),
+  ~66% kit GM, ~65% blended.
+- **Market:** medical aesthetics ≈ $17–18.5B (2024), ~10–13% CAGR; injectables >40%.
+- **Regulatory edge:** Korea MFDS "modified device" (~3 months) → Hong Kong MDACS voluntary listing.
+- **Trajectory:** $5.3M (2027) → $20.3M (2028) → $30.2M (2029) → $39.9M (2030); EBITDA-positive yr 1.
+- **Structure:** JV — WBI 70% / Eyesel 30%; standalone at ex-factory.
+- **Ask:** **$1.0M** at **$5–7M pre** (~14% at $6M midpoint); premium institutional-AI Series A in 2028.
 
-## 12-slide deck outline
+## Deck outline
 
-| # | Slide | Key content |
-|---|-------|-------------|
-| 1 | **Title** | Synapep — AI peptides, OEM-supplied. Logo, one-line tagline, contact. |
-| 2 | **Problem** | Peptide discovery/optimization is slow and costly; brands lack AI design + reliable supply. |
-| 3 | **Solution** | Synexo IT-exo + ai.peptide design candidates computationally; Synapep manufactures and supplies OEM. |
-| 4 | **Technology / moat** | What's proprietary in IT-exo & ai.peptide; the data flywheel. *(from §3 template)* |
-| 5 | **Product portfolio** | The 5–6 SKUs, grades, indications, capacity split. *(from §3 table)* |
-| 6 | **Business model** | OEM / white-label; partner holds registration; EXW $30–35; ~66% margin. Why this enables Feb-2027 therapeutic launch. |
-| 7 | **Market** | Size & growth of target peptide segments *(add sourced figures)*; why now (AI + demand). |
-| 8 | **Go-to-market** | Anchor-partner strategy; pipeline of 2–3 named OEM prospects/LOIs *(to add)*. |
-| 9 | **Traction / roadmap** | 6–9 mo prep → Feb 2027 launch → ramp to 100K vials/mo by 2030. |
-| 10 | **Financials** | Revenue/EBITDA chart 2027–2030; unit economics; margin sensitivity. *(from financial-model)* |
-| 11 | **Team** | Core 4–5 + advisors. *(from §6 template)* |
-| 12 | **The ask** | $1.0M at $5–7M pre (JV owns IP); use of funds; the ~$30–40M prize; path to Series A 2028. |
+| # | Slide | Content |
+|---|-------|---------|
+| 1 | Title | Synapep — AI-personalised regenerative aesthetic medicine |
+| 2 | Problem | Generalised injectables (HA/botox) aren't personalised; physicians want purpose-built, outcome-driven treatments |
+| 3 | Solution | CodeLife.AI-configured peptide microneedling/IM kits as registered devices |
+| 4 | AI moat & data flywheel | Peptides that outperform generalised products; AI-QA; data → better model |
+| 5 | Vision | From devices to a data-science company on our own large model |
+| 6 | Market | $17–18.5B medical aesthetics, ~10–13% CAGR; Korea hub, HK gateway |
+| 7 | Regulatory edge | Korea "modified device" (~3 mo) → HK MDACS; personalised by purpose |
+| 8 | Business model | Razor-and-blades: device + recurring kits; ~65% blended GM |
+| 9 | Financials | $5.3M→$39.9M revenue; EBITDA-positive yr 1 |
+| 10 | Traction/roadmap | Korea launch Feb 2027 → 1,000 clinics by 2030 |
+| 11 | Team | Core + AI/data-science lead + advisors |
+| 12 | The ask | $1.0M at $5–7M pre; AI/data Series A 2028 thesis |
 
-## Strongest things to lead with
+## Lead with
+1. **AI that improves outcomes** (outperforms generalised products) + the **data flywheel**.
+2. **Regulatory speed** (Korea modified-device → HK MDACS).
+3. **Razor-and-blades** recurring economics at ~65% GM, EBITDA-positive in year one.
 
-1. **~66% gross margin** with a confirmed sub-$5 material cost — rare for a hardware-like
-   (manufactured) business.
-2. **OEM structure de-risks regulation** — partners carry the registration, so therapeutic-grade
-   revenue starts in 2027 without Synapep running a multi-year approval.
-3. **AI moat** (IT-exo + ai.peptide) gives a design/cost advantage that compounds with data.
-
-## Biggest questions investors will ask (prepare answers)
-
-- Who are the **anchor OEM partners**, and what's signed? (Pipeline / LOIs.)
-- What exactly is **proprietary and protected** in the AI platforms?
-- Can you really qualify a partner's line and reach **28K vials/mo by Dec 2027**?
-- What does the **2028 Series A** fund, and at what valuation step-up?
+## Investors will ask
+- Evidence the AI peptides **outperform** generalised products (head-to-head data)?
+- Is the injectable a **device or a drug**? (Regulatory split.)
+- What is the **own large model** today vs build plan, and the data/ML team?
+- Clinic pipeline and ramp in Korea/HK?
