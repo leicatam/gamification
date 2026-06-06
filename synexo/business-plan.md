@@ -98,7 +98,45 @@ botox — which remain ~$5–6.5B and still growing.
 | Ramp | 2027 | Scale Korea clinics; begin Hong Kong MDACS listing |
 | Scale | 2028–2030 | 150 → 1,000 clinics; build the dataset/own-model; Series A (AI round) in 2028 |
 
-## 7. Corporate structure & funding
+## 7. AI & data-science build plan & costs
+
+How Pillar 1 (the moat) actually gets built — and what it costs. All AI/data spend below is a
+**subset of the OpEx "R&D incl. AI" line** in `financial-model.md`, not additional.
+
+### 7.1 Roadmap
+
+| Phase | Window | Deliverables |
+|-------|--------|-------------|
+| **1 — Foundation** | 2026 | Data schema + device-side capture pipeline (consented inputs, settings, images); **CodeLife v1** configuration engine within the approved envelope; **AI-QA tooling** (batch/variant validation, anomaly detection). |
+| **2 — Data flywheel** | 2027–28 | Live outcome capture from clinics; supervised models linking formulation/device parameters → outcomes; the **proprietary dataset** begins compounding; physician dashboards (beta). |
+| **3 — Own large model** | 2029–30 | Train a proprietary **aesthetic-medicine model** on accumulated multimodal data (images + formulations + outcomes); ship physician **outcome-analytics products** (Pillar 3 upside). |
+
+### 7.2 Team & cost (AI/data subset of OpEx, $000s)
+
+| Year | AI/data FTE | Personnel | Compute & data ops | **Total AI spend** | (Total OpEx) |
+|------|-----------:|----------:|-------------------:|-------------------:|-------------:|
+| 2026 | 2 | 250 | 50 | **300** | (700) |
+| 2027 | 4 | 600 | 100 | **700** | (2,600) |
+| 2028 | 7 | 1,050 | 250 | **1,300** | (6,000) |
+| 2029 | 10 | 1,600 | 400 | **2,000** | (8,200) |
+| 2030 | 12 | 2,000 | 600 | **2,600** | (10,000) |
+
+Core roles: **ML/AI lead** (peptide design + model strategy), **data/ML engineers**, **data
+platform/MLOps**, **clinical-data/annotation**, **regulatory-aware ML** (SaMD). Recruit the ML/AI
+lead and a data engineer first (2026); scale annotation and MLOps as clinic data arrives.
+
+### 7.3 Data strategy & moat
+
+- **Source:** every CodeLife-configured treatment generates consented inputs, device parameters,
+  and (where permitted) outcome data — captured via the applicator device (the data endpoint).
+- **Compounding:** more treatments → better models → peptides that outperform generalised
+  products → more clinics → more data. The dataset, not the code, is the durable moat.
+- **Governance:** consent, de-identification, and Korea/HK data-protection compliance; SaMD-aware
+  model controls with the physician in the loop.
+- **Investor read:** this is the line item that converts Synapep from a medtech story (Lens A)
+  into an AI/data-company story (Lens B) and justifies institutional-AI capital.
+
+## 8. Corporate structure & funding
 
 JV — **WBI 70%** (contributes CodeLife.AI / IT-EXO / SynExo IP + R&D) / **Eyesel 30%** (the
 manufacturing entity). Synapep owns/co-owns the platform and controls production. Distributors
@@ -108,7 +146,7 @@ manufacturing entity). Synapep owns/co-owns the platform and controls production
 Likely **Series A in 2028** to fund multi-market registration, clinical salesforce, and the
 AI/data team. See `valuation.md` (two lenses; $5–7M pre, $6M midpoint).
 
-## 8. Team (template — to complete)
+## 9. Team (template — to complete)
 
 | Role | Name | Background | Status |
 |------|------|-----------|--------|
@@ -119,7 +157,7 @@ AI/data team. See `valuation.md` (two lenses; $5–7M pre, $6M midpoint).
 | Clinical / commercial (physician channel) | ____ | ____ | ____ |
 | Advisors | _e.g. Prof. Cho Hangrae (Pres., Korean Dermatological Society); Dr. Sidney Tam_ | derm/clinical & exosome science | advisor |
 
-## 9. Key risks
+## 10. Key risks
 
 1. **Device-vs-drug classification (#1).** An **IM injectable** peptide is very likely a
    **drug/biologic**, not a device. Lead the device fast-path with the microneedling/topical line
@@ -133,7 +171,7 @@ AI/data team. See `valuation.md` (two lenses; $5–7M pre, $6M midpoint).
 5. **Incumbents.** HA/botox are not displaced — position as a new adjacent category.
 6. **Capital adequacy.** $1M kicks off; scaling likely needs a 2028 Series A.
 
-## 10. What would make this investment-grade
+## 11. What would make this investment-grade
 
 1. Confirm the regulatory split (microneedling/topical device fast-path vs IM injectable drug).
 2. Produce head-to-head efficacy data and define the AI/data team + dataset plan behind the

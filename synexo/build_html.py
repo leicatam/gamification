@@ -121,8 +121,41 @@ A("<ul><li><b>Customers:</b> aesthetic/derm physicians &amp; clinics — Korea f
   "<li><b>Build:</b> a focused clinical/KOL salesforce in two concentrated markets; physician "
   "advocates and head-to-head efficacy data drive adoption.</li></ul>")
 
-# 6 Financial model
-A("<h2>6. Financial Model</h2>")
+# 6 AI & data-science build plan
+A("<h2>6. AI &amp; Data-Science Build Plan &amp; Costs</h2>")
+A("<p>How Pillar 1 (the moat) gets built — and what it costs. All AI/data spend below is a "
+  "<b>subset of the OpEx “R&amp;D incl. AI” line</b>, not additional.</p>")
+A(tbl(["Phase", "Window", "Deliverables"], [
+    ["1 — Foundation", "2026", "Data schema + device-side capture pipeline (consented inputs, "
+     "settings, images); <b>CodeLife v1</b> configuration engine within the approved envelope; "
+     "<b>AI-QA tooling</b> (batch/variant validation, anomaly detection)."],
+    ["2 — Data flywheel", "2027–28", "Live outcome capture from clinics; models linking "
+     "formulation/device parameters → outcomes; the <b>proprietary dataset</b> compounds; "
+     "physician dashboards (beta)."],
+    ["3 — Own large model", "2029–30", "Train a proprietary <b>aesthetic-medicine model</b> on "
+     "multimodal data (images + formulations + outcomes); ship physician outcome-analytics "
+     "products (Pillar 3 upside)."],
+]))
+A("<h3>6.1 Team &amp; cost (AI/data subset of OpEx, $000s)</h3>")
+A(tbl(["Year", "AI/data FTE", "Personnel", "Compute &amp; data ops", "Total AI spend", "(Total OpEx)"], [
+    ["2026", "2", "250", "50", "<b>300</b>", "(700)"],
+    ["2027", "4", "600", "100", "<b>700</b>", "(2,600)"],
+    ["2028", "7", "1,050", "250", "<b>1,300</b>", "(6,000)"],
+    ["2029", "10", "1,600", "400", "<b>2,000</b>", "(8,200)"],
+    ["2030", "12", "2,000", "600", "<b>2,600</b>", "(10,000)"],
+]))
+A("<p>Core roles: <b>ML/AI lead</b> (peptide design + model strategy), data/ML engineers, "
+  "data-platform/MLOps, clinical-data/annotation, and regulatory-aware ML (SaMD). Recruit the "
+  "ML/AI lead and a data engineer first (2026); scale annotation and MLOps as clinic data arrives.</p>")
+A("<p><b>Data moat:</b> every CodeLife-configured treatment generates consented inputs, device "
+  "parameters and (where permitted) outcome data via the applicator device. More treatments → "
+  "better models → peptides that outperform generalised products → more clinics → more data. The "
+  "<b>dataset, not the code, is the durable moat</b> — and the line item that turns Synapep from a "
+  "medtech story (Lens A) into an AI/data-company story (Lens B). Governance: consent, "
+  "de-identification, Korea/HK data-protection compliance, physician in the loop.</p>")
+
+# 7 Financial model
+A("<h2>7. Financial Model</h2>")
 A("<p>Bottom-up by <b>clinics</b> (~100–125 kits/clinic/month at maturity). Kit unit economics: "
   "COGS = 20%×EXW + $4.50 material = $11.00 at $32.50 → <b>GP $21.50, 66.2%</b>. Device ASP "
   "$3,000 at 40% GM. All figures USD; illustrative.</p>")
@@ -131,7 +164,7 @@ A(tbl(["Driver", "2026 prep", "2027", "2028", "2029", "2030"], [
     ["New clinics (devices sold)", "0", "150", "250", "300", "300"],
     ["Treatment kits (000s)", "0", "148", "600", "900", "1,200"],
 ]))
-A("<h3>6.1 P&amp;L ($ thousands)</h3>")
+A("<h3>7.1 P&amp;L ($ thousands)</h3>")
 A(tbl(["Line", "2026", "2027", "2028", "2029", "2030"], [
     ["Kit revenue ($32.50)", "0", "4,810", "19,500", "29,250", "39,000"],
     ["Device revenue ($3k ASP)", "0", "450", "750", "900", "900"],
@@ -143,7 +176,7 @@ A(tbl(["Line", "2026", "2027", "2028", "2029", "2030"], [
     ["OpEx (clinical sales, reg, R&amp;D incl. AI, G&amp;A)", "700", "2,600", "6,000", "8,200", "10,000"],
     ["<b>EBITDA</b>", "(700)", "<b>762</b>", "<b>7,200</b>", "<b>11,510</b>", "<b>16,160</b>"],
 ]))
-A("<h3>6.2 Scenarios (2029)</h3>")
+A("<h3>7.2 Scenarios (2029)</h3>")
 A(tbl(["Scenario", "Clinics", "EXW", "Revenue", "Gross profit"], [
     ["Conservative", "~500", "$30", "~$22M", "~$14M"],
     ["Base", "700", "$32.50", "$30.2M", "$19.7M"],
@@ -152,8 +185,8 @@ A(tbl(["Scenario", "Clinics", "EXW", "Revenue", "Gross profit"], [
 A("<p class='note'>Pillar-3 data monetisation (model/insight licensing, outcome analytics) is "
   "deliberately excluded from the base P&amp;L and treated as upside.</p>")
 
-# 7 Valuation
-A("<h2>7. Valuation — Two Lenses</h2>")
+# 8 Valuation
+A("<h2>8. Valuation — Two Lenses</h2>")
 A("<p><b>Lens A — device + consumables business (the floor; sets the kickoff price).</b> Recommend "
   "<b>$5–7M pre-money / $6–8M post</b>, $6M midpoint → $1.0M buys ~14.3%. Three methods reconcile: "
   "seed convention for an IP-owning JV ($5–7M); DCF (40% discount, 8× EBITDA exit) ≈ $35M "
@@ -164,7 +197,7 @@ A("<p><b>Lens B — AI / data-science company (the prize; attracts institutional
   "comparables shift from medtech to AI/data platforms — much higher multiples. This does not "
   "change the $1M kickoff price (priced on Lens A) but raises the valuation ceiling and reframes "
   "the <b>2028 Series A as a premium, institutional AI round</b>.</p>")
-A("<h3>7.1 Cap table (post-raise, $6.0M pre-money)</h3>")
+A("<h3>8.1 Cap table (post-raise, $6.0M pre-money)</h3>")
 A(tbl(["Holder", "Contribution", "Founder %", "% post-raise"], [
     ["WBI", "IP (CodeLife.AI/IT-EXO/SynExo) + R&amp;D", "70.0%", "60.0%"],
     ["Eyesel", "Manufacturing (production, fill-finish, QA)", "30.0%", "25.7%"],
@@ -174,8 +207,8 @@ A(tbl(["Holder", "Contribution", "Founder %", "% post-raise"], [
 A("<p class='note'>Recommendation: price the kickoff on Lens A ($6M midpoint); pitch Lens B as the "
   "prize and the Series A thesis. Optionally test institutional-AI appetite for a larger round.</p>")
 
-# 8 Risks
-A("<h2>8. Key Risks</h2><ul>"
+# 9 Risks
+A("<h2>9. Key Risks</h2><ul>"
   "<li><b>Device-vs-drug classification (#1).</b> An <b>IM injectable</b> peptide is very likely a "
   "<b>drug/biologic</b>, not a device, in Korea and HK. Lead the device fast-path with the "
   "<b>microneedling/topical</b> line + applicator system; run the IM/injectable line on a separate "
@@ -192,8 +225,8 @@ A("<h2>8. Key Risks</h2><ul>"
   "<li><b>Capital adequacy.</b> $1M kicks off; multi-market registration + clinical salesforce + AI "
   "team likely need a 2028 Series A.</li></ul>")
 
-# 9 Next steps
-A("<h2>9. What Would Make This Investment-Grade</h2><ul>"
+# 10 Next steps
+A("<h2>10. What Would Make This Investment-Grade</h2><ul>"
   "<li>Confirm the regulatory split: microneedling/topical (device fast-path) vs IM injectable (drug).</li>"
   "<li>Produce head-to-head efficacy data (AI-personalised vs generalised) and define the AI/data "
   "team and dataset plan behind the “own large model.”</li>"

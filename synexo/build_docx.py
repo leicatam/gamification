@@ -150,8 +150,41 @@ bullet(" place/sell the applicator device, then earn recurring revenue on person
 bullet(" a focused clinical/KOL salesforce in two concentrated markets; physician advocates and "
        "head-to-head efficacy data drive adoption.", "Build —")
 
-# 6 Financials
-doc.add_heading("6. Financial Model", level=1)
+# 6 AI & data-science build plan
+doc.add_heading("6. AI & Data-Science Build Plan & Costs", level=1)
+para("How Pillar 1 (the moat) gets built — and what it costs. All AI/data spend below is a subset "
+     "of the OpEx \"R&D incl. AI\" line, not additional.")
+table(["Phase", "Window", "Deliverables"],
+      [["1 — Foundation", "2026", "Data schema + device-side capture pipeline (consented inputs, "
+        "settings, images); CodeLife v1 configuration engine within the approved envelope; AI-QA "
+        "tooling (batch/variant validation, anomaly detection)."],
+       ["2 — Data flywheel", "2027–28", "Live outcome capture from clinics; models linking "
+        "formulation/device parameters → outcomes; proprietary dataset compounds; physician "
+        "dashboards (beta)."],
+       ["3 — Own large model", "2029–30", "Train a proprietary aesthetic-medicine model on "
+        "multimodal data (images + formulations + outcomes); ship physician outcome-analytics "
+        "products (Pillar 3 upside)."]],
+      widths=[1.5, 1.0, 4.0])
+doc.add_heading("6.1 Team & cost (AI/data subset of OpEx, $000s)", level=2)
+table(["Year", "AI/data FTE", "Personnel", "Compute & data ops", "Total AI spend", "(Total OpEx)"],
+      [["2026", "2", "250", "50", "300", "(700)"],
+       ["2027", "4", "600", "100", "700", "(2,600)"],
+       ["2028", "7", "1,050", "250", "1,300", "(6,000)"],
+       ["2029", "10", "1,600", "400", "2,000", "(8,200)"],
+       ["2030", "12", "2,000", "600", "2,600", "(10,000)"]],
+      widths=[0.7, 1.0, 1.0, 1.4, 1.2, 1.1])
+para("Core roles: ML/AI lead (peptide design + model strategy), data/ML engineers, "
+     "data-platform/MLOps, clinical-data/annotation, regulatory-aware ML (SaMD). Recruit the "
+     "ML/AI lead and a data engineer first (2026); scale annotation and MLOps as clinic data arrives.")
+para("Data moat: every CodeLife-configured treatment generates consented inputs, device parameters "
+     "and (where permitted) outcome data via the applicator device. More treatments → better models "
+     "→ peptides that outperform generalised products → more clinics → more data. The dataset, not "
+     "the code, is the durable moat — and the line item that turns Synapep from a medtech story "
+     "(Lens A) into an AI/data-company story (Lens B). Governance: consent, de-identification, "
+     "Korea/HK data-protection compliance, physician in the loop.")
+
+# 7 Financials
+doc.add_heading("7. Financial Model", level=1)
 para("Bottom-up by clinics (~100–125 kits/clinic/month at maturity). Kit unit economics: "
      "COGS = 20%×EXW + $4.50 material = $11.00 at $32.50 → GP $21.50, 66.2%. Device ASP $3,000 at "
      "40% GM. All figures USD; illustrative.")
@@ -160,7 +193,7 @@ table(["Driver", "2026 prep", "2027", "2028", "2029", "2030"],
        ["New clinics (devices sold)", "0", "150", "250", "300", "300"],
        ["Treatment kits (000s)", "0", "148", "600", "900", "1,200"]],
       widths=[2.0, 0.9, 0.8, 0.8, 0.8, 0.8])
-doc.add_heading("6.1 P&L ($ thousands)", level=2)
+doc.add_heading("7.1 P&L ($ thousands)", level=2)
 table(["Line", "2026", "2027", "2028", "2029", "2030"],
       [["Kit revenue ($32.50)", "0", "4,810", "19,500", "29,250", "39,000"],
        ["Device revenue ($3k ASP)", "0", "450", "750", "900", "900"],
@@ -172,7 +205,7 @@ table(["Line", "2026", "2027", "2028", "2029", "2030"],
        ["OpEx (sales, reg, R&D incl. AI, G&A)", "700", "2,600", "6,000", "8,200", "10,000"],
        ["EBITDA", "(700)", "762", "7,200", "11,510", "16,160"]],
       widths=[2.1, 0.8, 0.8, 0.85, 0.85, 0.85])
-doc.add_heading("6.2 Scenarios (2029)", level=2)
+doc.add_heading("7.2 Scenarios (2029)", level=2)
 table(["Scenario", "Clinics", "EXW", "Revenue", "Gross profit"],
       [["Conservative", "~500", "$30", "~$22M", "~$14M"],
        ["Base", "700", "$32.50", "$30.2M", "$19.7M"],
@@ -181,8 +214,8 @@ table(["Scenario", "Clinics", "EXW", "Revenue", "Gross profit"],
 para("Pillar-3 data monetisation (model/insight licensing, outcome analytics) is excluded from the "
      "base P&L and treated as upside.", italic=True, size=9.5)
 
-# 7 Valuation
-doc.add_heading("7. Valuation — Two Lenses", level=1)
+# 8 Valuation
+doc.add_heading("8. Valuation — Two Lenses", level=1)
 para("Lens A — device + consumables business (the floor; sets the kickoff price).", bold=True, space_after=2)
 para("Recommend $5–7M pre-money / $6–8M post, $6M midpoint → $1.0M buys ~14.3%. Three methods "
      "reconcile: seed convention for an IP-owning JV ($5–7M); DCF (40% discount, 8× EBITDA exit) "
@@ -193,7 +226,7 @@ para("With a proprietary model, an AI-QA/analytics suite, and a compounding data
      "comparables shift from medtech to AI/data platforms — much higher multiples. This does not "
      "change the $1M kickoff price (priced on Lens A) but raises the valuation ceiling and reframes "
      "the 2028 Series A as a premium, institutional AI round.")
-doc.add_heading("7.1 Cap table (post-raise, $6.0M pre-money)", level=2)
+doc.add_heading("8.1 Cap table (post-raise, $6.0M pre-money)", level=2)
 table(["Holder", "Contribution", "Founder %", "% post-raise"],
       [["WBI", "IP (CodeLife.AI/IT-EXO/SynExo) + R&D", "70.0%", "60.0%"],
        ["Eyesel", "Manufacturing (production, fill-finish, QA)", "30.0%", "25.7%"],
@@ -203,8 +236,8 @@ table(["Holder", "Contribution", "Founder %", "% post-raise"],
 para("Recommendation: price the kickoff on Lens A ($6M midpoint); pitch Lens B as the prize and the "
      "Series A thesis. Optionally test institutional-AI appetite for a larger round.", italic=True, size=9.5)
 
-# 8 Risks
-doc.add_heading("8. Key Risks", level=1)
+# 9 Risks
+doc.add_heading("9. Key Risks", level=1)
 for lead, rest in [
     ("Device-vs-drug classification (#1) — ", "an IM injectable peptide is very likely a "
      "drug/biologic, not a device, in Korea and HK. Lead the device fast-path with the "
@@ -222,8 +255,8 @@ for lead, rest in [
 ]:
     bullet(rest, lead)
 
-# 9 Next steps
-doc.add_heading("9. What Would Make This Investment-Grade", level=1)
+# 10 Next steps
+doc.add_heading("10. What Would Make This Investment-Grade", level=1)
 for lead, rest in [
     ("Confirm the regulatory split ", "— microneedling/topical (device fast-path) vs IM injectable (drug)."),
     ("Produce head-to-head efficacy data ", "(AI-personalised vs generalised) and define the AI/data "
