@@ -1,0 +1,15 @@
+Synapep Operating Financial Model (USD). Vial model; price $32.50, cost $7.00.
+
+2027 monthly ramp,,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec,TOTAL
+Active clinics,,0,10,20,30,40,50,70,85,100,105,108,110,-
+Vials,,0,1000,2000,3000,4000,5000,7000,8500,10000,10500,10800,11000,72800
+
+Annual P&L ($000s),2026,2027,2028,2029,2030
+Avg active clinics,0,61,165,285,415
+Vials,0,72800,198000,342000,498000
+Revenue,0,2366,6435,11115,16185
+COGS,0,510,1386,2394,3486
+Gross profit,0,1856,5049,8721,12699
+Gross margin %,0.0,78.5,78.5,78.5,78.5
+OpEx,460,900,1300,1600,1900
+EBITDA,-460,956,3749,7121,10799
