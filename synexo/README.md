@@ -12,6 +12,7 @@ delivered as registered medical devices, powered by **CodeLife.AI** (proprietary
 | [`business-plan.md`](./business-plan.md) | Company, AI moat, technology/IP, regulatory strategy (Korea→HK), GTM, ops, team, risks |
 | [`model-clarification.md`](./model-clarification.md) | How the Synapep Labs model (3 engines + 2 moats) maps to the exosome / synthetic-biotech aesthetics landscape and its regulatory reality |
 | [`financial-model.md`](./financial-model.md) | Unit economics (device + kits), clinic-driven volume, P&L, scenarios |
+| [`operating-financial-model.md`](./operating-financial-model.md) | **Bottom-up operating model** (vial economics, $7/vial, ~78.5% GM, 5-yr from Jul 2026; EBITDA-positive 2027) — standalone, not yet propagated to the deck/report |
 | [`multimarket-model.md`](./multimarket-model.md) | Multi-market revenue model — same Korean product across 12 markets, 3 scenarios (Conservative/Base/Upside), per-country clinic ramp |
 | [`valuation.md`](./valuation.md) | Two-lens valuation (device floor + AI/data-company upside), cap table |
 | [`export-strategy.md`](./export-strategy.md) | International expansion — KFDA as an export springboard (ASEAN+HK, GCC+Greater China) |
@@ -50,6 +51,7 @@ python3 synexo/build_report.py          # -> Synapep_Comprehensive_Report.docx (
 python3 synexo/build_pptx.py            # -> Synapep_Investor_Deck.pptx (14 slides; needs python-pptx)
 python3 synexo/build_deck_docx.py       # -> Synapep_Investor_Deck.docx (Word version of the deck)
 python3 synexo/build_master_docx.py     # -> Synapep_Master_Dossier.docx (all source docs merged into one)
+python3 synexo/build_financials.py      # -> operating-financials.csv/.md, Synapep_Financial_Model.docx (bottom-up vial model)
 ```
 
 Generated investor outputs: `Synapep_Comprehensive_Report.docx` (full report) and
