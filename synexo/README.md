@@ -47,6 +47,8 @@ python3 synexo/build_investor_docs.py   # -> Synapep_DD_Scorecard.docx, Synapep_
 python3 synexo/build_multimarket_model.py  # -> multimarket-model.csv/.md, Synapep_MultiMarket_Model.docx (3 scenarios)
 python3 synexo/build_report.py          # -> Synapep_Comprehensive_Report.docx (single-sources model numbers)
 python3 synexo/build_pptx.py            # -> Synapep_Investor_Deck.pptx (14 slides; needs python-pptx)
+python3 synexo/build_deck_docx.py       # -> Synapep_Investor_Deck.docx (Word version of the deck)
+python3 synexo/build_master_docx.py     # -> Synapep_Master_Dossier.docx (all source docs merged into one)
 ```
 
 Generated investor outputs: `Synapep_Comprehensive_Report.docx` (full report) and
