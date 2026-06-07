@@ -78,7 +78,7 @@ def header(s, title, kicker=None):
     textbox(s, 0.85, 0.18, 11.6, 0.9, [(title, 27, True, WHITE)], anchor=MSO_ANCHOR.MIDDLE)
     if kicker:
         textbox(s, 0.87, 0.86, 11.6, 0.3, [(kicker, 14, False, SKY)])
-    textbox(s, 12.4, 7.04, 0.8, 0.35, [(str(CURRENT[0]), 12, False, GREY)], align=PP_ALIGN.RIGHT)
+    textbox(s, 12.4, 7.04, 0.8, 0.35, [("A%d" % CURRENT[0], 12, False, GREY)], align=PP_ALIGN.RIGHT)
 
 
 def card(s, l, t, w, h, title, body, fill=WHITE, tcol=NAVY, bcol=GREY, tsz=18, bsz=16,
