@@ -48,9 +48,9 @@
 
 ## 4. Milestones (release Tranche 2)
 
-1. **Cold chain + COGS** — a validated stability/storage spec **viable at clinic level**
-   (target 2–8 °C or ambient; if −80 °C retained, a costed cold-chain plan) **plus a bottom-up
-   COGS bill of materials** with per-batch QC-release costs.
+1. **Stability dossier + COGS** — the **stability/shelf-life dossier** confirming the
+   **cold-chain-free (ambient/2–8 °C, lyophilised) clinic format** and batch reproducibility,
+   **plus a bottom-up COGS bill of materials** with per-batch QC-release costs.
 2. **Anchor clinics** — **5–10 anchor clinics live** with documented **kits/clinic/month and
    reorder** evidence.
 3. **Clinical readout** — one **prospective Synapep protocol** readout on the chosen beachhead
@@ -66,7 +66,7 @@
 |--------|---------|
 | Regulatory & legal | Korea/HK + first-export classification memo; JV/IP documentation; claims review |
 | Clinical / KOL | Anchor-clinic protocol, prospective beachhead study, testimony dossier, safety monitoring |
-| Manufacturing / chemistry | **Cold-chain/stability resolution**, COGS BOM, QA/release validation, initial inventory |
+| Manufacturing / chemistry | **Stabilisation/stability validation** (cold-chain-free format), COGS BOM, QA/release validation, initial inventory |
 | AI / data | CodeLife.AI v1, consent workflow, device-side capture, QA analytics |
 | Launch | KOL education, clinic onboarding, first-export distributor readiness |
 

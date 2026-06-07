@@ -125,7 +125,8 @@ table(["Core technology", "What it is"],
        ["IT-EXO®", "Immune-tolerant layer: surface HLA-G suppresses NK/T-cell attack, so efficacy "
         "compounds rather than declines."],
        ["SynExo", "Synthetic recombinant exosome (salmon-derived) carrying growth-factor/peptide "
-        "cargo; ~20B particles/mL, 30–150 nm, >95% purity; 12-month stability at −80 °C."]],
+        "cargo; ~20B particles/mL, 30–150 nm, >95% purity. Proprietary stabilisation (lyophilised) "
+        "delivers an ambient-/2–8 °C-stable clinic format — no −80 °C cold chain required."]],
       widths=[1.7, 4.8])
 
 # 3 Vision
@@ -248,10 +249,10 @@ para("Recommendation: price the kickoff on Lens A ($6M midpoint); pitch Lens B a
 doc.add_heading("9. What a Technical Investor Will Challenge (and Our Answer)", level=1)
 para("A chemical-engineer investor entering aesthetics will press these; pre-empting them:")
 table(["Challenge", "Our answer / action"],
-      [["Cold chain & COGS are asserted, not built (−80 °C is unshippable to clinics; COGS is "
-        "top-down with no BOM).", "Resolve stability to 2–8 °C / ambient (or cost the cold chain) "
-        "and publish a bottom-up BOM incl. per-batch QC-release cost; treat early-year margins as "
-        "lower until scale."],
+      [["Cold chain — resolved; substantiate it. Proprietary stabilisation gives an ambient-/2–8 °C "
+        "format (no −80 °C), a distribution/export advantage. COGS is still top-down with no BOM.",
+        "Provide the stability/shelf-life dossier confirming the cold-chain-free format, and publish "
+        "a bottom-up BOM incl. per-batch QC-release cost; treat early-year margins as lower until scale."],
        ["Personalisation vs \"same raw materials\" is a contradiction — real personalisation "
         "changes the active and breaks the device fast-path.", "Personalisation lives in a "
         "pre-cleared configuration envelope (delivery, depth, concentration range, option menu) — "
@@ -285,9 +286,9 @@ table(["Tier", "Markets & KFDA leverage"],
 para("Precedent: Korean salmon-PDRN boosters (e.g., Rejuran) exported across SEA/Middle East/Europe "
      "off a Korean approval — a near-exact analog. Sequence: Korea anchor → HK/Vietnam/Singapore "
      "(2027–28) → ASEAN + GCC (2028–29) → Taiwan/China (2029–30); each market needs a local "
-     "responsible person/distributor. Cold-chain caveat: −80 °C cross-border logistics is even "
-     "harder than domestic — solve stability (§9) before Wave 1. Effect: the clinic ramp becomes a "
-     "multi-market TAM, strengthening Lens A and the Series A.")
+     "responsible person/distributor. Cold-chain-free advantage: stabilisation removes the −80 °C "
+     "dependency, so cross-border distribution is far easier than for typical exosome products. "
+     "Effect: the clinic ramp becomes a multi-market TAM, strengthening Lens A and the Series A.")
 
 # 11 Risks
 doc.add_heading("11. Key Risks", level=1)

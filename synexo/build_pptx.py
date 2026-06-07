@@ -399,7 +399,7 @@ card(s, 0.7, 4.0, 5.7, 2.7, "Conditions precedent",
      "•  WBI IP assigned/licensed into the JV\n•  Verify the $25M sample (entity/product/channel)\n"
      "•  Clinic data-rights clause\n•  Clean cap table", line=NAVY, tsz=18, bsz=16)
 card(s, 7.35, 4.0, 5.3, 2.7, "Milestones (release Tranche 2)",
-     "•  Cold-chain spec + COGS BOM\n•  5–10 anchor clinics with reorders\n"
+     "•  Stability dossier + COGS BOM\n•  5–10 anchor clinics with reorders\n"
      "•  One prospective clinical readout\n•  Regulatory classification memo", line=ACCENT, tsz=18, bsz=16)
 
 # =================================================================== 12 ROADMAP TIMELINE
@@ -429,7 +429,7 @@ for i, (yr, ph, desc, col, up) in enumerate(phases):
 
 # =================================================================== 13 WHAT WE'LL PROVE
 s = slide(); header(s, "What we will prove (diligence-ready)", 13, "Turning the critique into milestones")
-items = [("RED", "Cold chain & COGS", "Reformulate to 2–8 °C / ambient; publish a bottom-up BOM", RED),
+items = [("✓", "Cold-chain-free", "Stabilisation removes −80 °C; document shelf-life + bottom-up BOM", TEAL),
          ("1", "Validation pack", "The $25M at entity/product/channel level + reorder cohorts", ACCENT),
          ("2", "Formulation envelope", "Clean AND clinically differentiating within the family", TEAL),
          ("3", "Exosome discipline", "Non-human (salmon/synthetic) origin; function-based claims", GOLD),

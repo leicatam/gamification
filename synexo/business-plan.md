@@ -29,6 +29,9 @@ medicine** sitting on a **portfolio of doctor-originated SKUs**.
   Korea's improved-device / **negative-list** regime and functional-cosmetic/quasi-drug routes
   (company target: **<3% formulation change, ~3-month cycle, <$30K per SKU**). In ~6 months → a
   portfolio of **~20 registered SKUs**, sellable across KFDA-recognising Asian markets.
+- **Cold-chain-free distribution:** proprietary **stabilisation** technology delivers an
+  **ambient-/2–8 °C-stable (lyophilised) format**, removing the −80 °C cold-chain dependency — a
+  real advantage for clinic delivery and cross-border export (most exosome products need cold chain).
 - **Economics:** ~65% blended gross margin; revenue $5.3M → $39.9M (2027–2030); EBITDA-positive
   in the launch year.
 - **Structure:** JV — **WBI 70%** (IP + R&D) / **Eyesel 30%** (manufacturing); valued standalone
@@ -96,7 +99,7 @@ liability — so it is built compliance-first.
 |-----------------|-----------|
 | **CodeLife.AI** | Proprietary AI platform/model designing peptides & proteins and optimising delivery within an approved envelope; basis of the data-science-company vision. |
 | **IT-EXO®** | Immune-tolerant layer: surface HLA-G suppresses NK/T-cell attack, so efficacy compounds rather than declines. |
-| **SynExo** | Synthetic recombinant exosome (salmon-derived) carrying growth-factor/peptide cargo; ~20B particles/mL, 30–150 nm, >95% purity; 12-month stability at −80 °C. |
+| **SynExo** | Synthetic recombinant exosome (salmon-derived) carrying growth-factor/peptide cargo; ~20B particles/mL, 30–150 nm, >95% purity. **Proprietary stabilisation (lyophilised) delivers an ambient-/2–8 °C-stable clinic format — no −80 °C cold chain required** (bulk may be held cold; the delivered product is stabilised). |
 
 **Intellectual property** (held by WBI, contributed into the JV — confirm scope):
 
@@ -150,7 +153,7 @@ injectable** line is a separate **drug/biologic** track and must not gate launch
 
 | Phase | Window | Milestones |
 |-------|--------|-----------|
-| Preparation | Jul 2026 – Jan 2027 (6–9 mo) | Device-family registration (Korea), CodeLife + AI-QA tooling, −80 °C cold-chain & fill-finish qualification, hire core + AI team |
+| Preparation | Jul 2026 – Jan 2027 (6–9 mo) | Device-family registration (Korea), CodeLife + AI-QA tooling, stabilisation/lyophilisation & fill-finish qualification (ambient/2–8 °C — cold-chain-free), hire core + AI team |
 | Launch | **Feb 2027** | First clinics live in Korea (device + kits) |
 | Ramp | 2027 | Scale Korea clinics; begin Hong Kong MDACS listing |
 | Scale | 2028–2030 | 150 → 1,000 clinics; build the dataset/own-model; Series A (AI round) in 2028 |
@@ -252,7 +255,8 @@ A chemical-engineer investor entering aesthetics will press these. Pre-empting t
 
 | Challenge | Our answer / action |
 |-----------|---------------------|
-| **Cold chain & COGS are asserted, not built.** −80 °C / 12-mo stability is unshippable to typical clinics; COGS is top-down (20%×EXW + $4.50) with no BOM and no cold-chain line. | **Resolve stability to 2–8 °C / ambient** (or cost the cold chain explicitly) and publish a **bottom-up BOM** incl. per-batch QC-release cost. Treat early-year margins as lower until scale. |
+| **Cold chain — resolved; substantiate it.** Proprietary stabilisation delivers an ambient-/2–8 °C clinic format, removing the −80 °C dependency (a distribution/export advantage, not a blocker). | Provide the **stability/shelf-life dossier** confirming the ambient-/2–8 °C format and batch reproducibility. |
+| **COGS needs a bottom-up BOM.** COGS is top-down (20%×EXW + $4.50). | Publish a **bottom-up BOM** incl. per-batch QC-release cost; treat early-year margins as lower until scale. |
 | **Personalisation vs "same raw materials" is a contradiction.** Meaningful AI personalisation that changes the active breaks the device fast-path and the batch-economics. | Personalisation lives in a **pre-cleared configuration envelope** (delivery, depth, concentration within range, option menu) — documented and defended as *both* regulatorily clean *and* clinically differentiating. |
 | **Exosomes are a regulatory/characterisation minefield.** Claims are restricted (Korea ad ban; EU human-exosome ban; US FDA warnings). | Lead with **non-human (salmon/synthetic) origin**; provide **COA, particle/potency/purity/stability/batch-repeatability**; market on function, not unsubstantiated medical claims. |
 | **"$25M exposure" is weasel-phrased.** It aggregates affiliated entities and may not be *this* product's demand. | Re-present at **entity/product/channel level** with reorder data in the validation pack; weight it as market signal, not Synapep revenue. |
@@ -275,6 +279,7 @@ vs device vs drug), leaning on **salmon/synthetic origin** and strict claim disc
 - **Precedent:** Korean salmon-PDRN boosters (e.g., Rejuran) exported across SEA/Middle East/Europe
   off a Korean approval — a near-exact analog.
 - **Sequence:** Korea anchor → HK/Vietnam/Singapore (2027–28) → ASEAN + GCC (2028–29) → Taiwan/China
-  (2029–30). Each market needs a **local responsible person/distributor**. **Cold-chain caveat:**
-  −80 °C cross-border logistics is even harder than domestic — solve stability (see §12) before
-  Wave 1. Effect: the clinic ramp is a **multi-market TAM**, strengthening Lens A and the Series A.
+  (2029–30). Each market needs a **local responsible person/distributor**. **Cold-chain-free
+  advantage:** stabilisation removes the −80 °C dependency, so cross-border distribution is far
+  easier than for typical exosome products. Effect: the clinic ramp is a **multi-market TAM**,
+  strengthening Lens A and the Series A.

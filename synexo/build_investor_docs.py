@@ -74,8 +74,8 @@ def build_scorecard():
            ["2", "Chemistry / formulation", "AMBER", "SynExo/IT-EXO treated as settled; the "
             "personalisation-vs-'same raw materials' envelope is asserted.", "Define the pre-cleared "
             "envelope — is variation clean AND clinically differentiating?"],
-           ["3", "Manufacturing & cold chain", "RED", "Top-down COGS, no BOM; −80 °C unshippable to "
-            "clinics; cold-chain cost absent from P&L.", "Reformulate to 2–8 °C or show cold-chain cost "
+           ["3", "Manufacturing & supply chain", "AMBER", "Stabilisation tech removes the −80 °C cold-chain "
+            "dependency (a distribution/export advantage); COGS still top-down, no BOM.", "Show the stability/shelf-life dossier "
             "+ BOM + per-batch QC release cost."],
            ["4", "Regulatory", "AMBER", "Strong topical-vs-IM segmentation (green-leaning); exosome "
             "scrutiny + SaMD pull to amber.", "Classification memo: does the device path survive the "
@@ -103,13 +103,13 @@ def build_scorecard():
     para(doc, "Conditional interest — diligence yes, their price no. The narrative is fundable and "
               "unusually disciplined (claim control, regulatory segmentation, validation-pack thinking). "
               "But incremental value rests on unverified commercial claims, and the parts a chemical "
-              "engineer judges best — cold chain, COGS BOM, formulation/personalisation, exosome status "
+              "engineer judges best — COGS BOM, formulation/personalisation, exosome status, royalty compliance "
               "— are least evidenced.")
     bullet(doc, " a validated-ecosystem, regulatory-segmented consumables business with a credible "
                 "data-upside option.", "What I'd underwrite today —")
     bullet(doc, " $5–6M pre, milestone-gated (not $7M, not the AI/data-company multiple yet).", "Price —")
-    bullet(doc, " resolve cold chain + COGS BOM (item 3) and produce the validation pack (items 1, 2, "
-                "8). Do that and amber→green across the board.", "Single biggest unlock —")
+    bullet(doc, " produce the validation pack (items 1, 2, 8) plus the stability dossier + COGS BOM "
+                "(item 3). Do that and amber→green across the board.", "Single biggest unlock —")
     doc.save(DIR + "Synapep_DD_Scorecard.docx")
     print("Saved Synapep_DD_Scorecard.docx")
 
@@ -152,9 +152,9 @@ def build_termsheet():
                 "data-ownership/usage rights.", "Data rights —")
     bullet(doc, " clean cap table, JV agreement, good standing, customary reps & warranties.", "Corporate —")
     doc.add_heading("4. Milestones (release Tranche 2)", level=2)
-    bullet(doc, " a validated stability/storage spec viable at clinic level (target 2–8 °C/ambient; "
-                "if −80 °C retained, a costed cold-chain plan) plus a bottom-up COGS BOM with per-batch "
-                "QC-release costs.", "Cold chain + COGS —")
+    bullet(doc, " the stability/shelf-life dossier confirming the cold-chain-free (ambient/2–8 °C, lyophilised) "
+                "clinic format and batch reproducibility, plus a bottom-up COGS BOM with per-batch "
+                "QC-release costs.", "Stability dossier + COGS —")
     bullet(doc, " 5–10 anchor clinics live with documented kits/clinic/month and reorder evidence.", "Anchor clinics —")
     bullet(doc, " one prospective Synapep protocol readout on the chosen beachhead indication.", "Clinical readout —")
     bullet(doc, " a classification memo (Korea + first export market) confirming the topical/microneedling "
@@ -163,7 +163,7 @@ def build_termsheet():
     table(doc, ["Bucket", "Purpose"],
           [["Regulatory & legal", "Korea/HK + first-export classification memo; JV/IP documentation; claims review"],
            ["Clinical / KOL", "Anchor-clinic protocol, prospective beachhead study, testimony dossier, safety monitoring"],
-           ["Manufacturing / chemistry", "Cold-chain/stability resolution, COGS BOM, QA/release validation, initial inventory"],
+           ["Manufacturing / chemistry", "Stabilisation/stability validation (cold-chain-free), COGS BOM, QA/release validation, initial inventory"],
            ["AI / data", "CodeLife.AI v1, consent workflow, device-side capture, QA analytics"],
            ["Launch", "KOL education, clinic onboarding, first-export distributor readiness"]],
           widths=[1.9, 4.6])
@@ -225,8 +225,8 @@ def build_export():
            ["Wave 3 (2029–30)", "Taiwan, China (Hainan → NMPA)", "Regional revenue base + Series A capital"]],
           widths=[1.4, 2.8, 2.3])
     para(doc, "Each market needs a local responsible person / authorised distributor, a per-market claims "
-              "map, and label/registration localisation. Cold-chain caveat: −80 °C international "
-              "distribution is even harder than domestic — solve stability (reformulate to 2–8 °C) "
+              "map, and label/registration localisation. Cold-chain-free advantage: stabilisation gives an "
+              "ambient/2–8 °C format, so cross-border distribution is far simpler than for typical "
               "before Wave 1.")
     doc.add_heading("5. Why this strengthens the investment case", level=2)
     bullet(doc, " converts a single-country plan into a multi-market clinic TAM (the 150→1,000 ramp is "
@@ -237,7 +237,7 @@ def build_export():
     bullet(doc, " a market may treat the kit as a drug/biologic (slower/heavier).", "Kit classification drift —")
     bullet(doc, " manage with non-human origin + claim discipline.", "Exosome scrutiny / ad limits —")
     bullet(doc, " recognition speeds review but local registration, fees, RP and post-market duties still apply.", "Reliance ≠ automatic —")
-    bullet(doc, " unresolved −80 °C logistics would cap export feasibility.", "Cold chain across borders —")
+    bullet(doc, " provide the shelf-life dossier confirming the cold-chain-free (ambient/2–8 °C) format.", "Stability substantiation —")
     para(doc, "Sources: HK MDACS reference recognition (Asia Actual, MedDeviceGuide); Vietnam MFDS "
               "reliance & ASEAN AMDD/CSDT (Cisema, Pacific Bridge); Thailand/Singapore reliance (Asia "
               "Actual); SFDA/UAE reliance (Emergo by UL, GSL); exosome regulation (FDA; EU Annex II; "

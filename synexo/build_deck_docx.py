@@ -153,12 +153,12 @@ slide(d, 11, "The ask — milestone-gated SAFE")
 B(d, "US$1.0M kickoff — post-money SAFE, $6.0M cap, 20% discount, MFN")
 B(d, "Two tranches: $400k at close · $600k on milestones", sub=True)
 B(d, "Conditions precedent: WBI IP into the JV; verify the $25M sample; clinic data-rights clause")
-B(d, "Milestones: cold-chain spec + COGS BOM; 5–10 anchor clinics w/ reorders; one prospective "
+B(d, "Milestones: stability dossier + COGS BOM; 5–10 anchor clinics w/ reorders; one prospective "
      "readout; classification memo")
 B(d, "Use of funds: Korea launch + Wave-1 export (HK/Vietnam/Singapore); CodeLife v1; QC/stability")
 
 slide(d, 12, "What we will prove (diligence-ready)")
-LB(d, "RED — cold chain & COGS: ", "reformulate to 2–8 °C / ambient; publish a bottom-up BOM")
+LB(d, "Cold-chain-free: ", "stabilisation removes the −80 °C dependency; document the shelf-life dossier + bottom-up COGS BOM")
 LB(d, "Validation pack: ", "the $25M at entity/product/channel level + reorder cohorts")
 LB(d, "Formulation envelope: ", "clean AND clinically differentiating within the approved family")
 LB(d, "Exosome discipline: ", "non-human (salmon/synthetic) origin; function-based claims")

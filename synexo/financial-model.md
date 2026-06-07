@@ -103,4 +103,5 @@ device routes differ.)*
 - **Device ASP / GM** ($3,000 / 40%) — confirm vs the chosen applicator.
 - **Clinic ramp** (150 → 1,000) and **kits/clinic/month** (~100–125) vs Korea/HK clinic counts.
 - **OpEx** — needs a real headcount/spend plan, including an **AI/data-science team** line.
-- **Material cost** ($4.50/kit) and that cold-chain/fill-finish sit inside the COGS formula.
+- **Material cost** ($4.50/kit) and that stabilisation/fill-finish sit inside the COGS formula
+  (the product is **cold-chain-free** — ambient/2–8 °C — so there is no −80 °C logistics cost line).

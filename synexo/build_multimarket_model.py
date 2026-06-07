@@ -209,8 +209,8 @@ def write_md():
                 "triples it — all on the **same product**, so the swing is distribution reach, not R&D.\n\n")
         f.write("**Caveats:** per-market ramps are assumptions pending anchor-clinic evidence; the "
                 "kit's regulatory class varies by market and exosome claims are restricted (see "
-                "`export-strategy.md`, business-plan §9); cold-chain/stability must be solved on the "
-                "single product spec before Wave 1.\n")
+                "`export-strategy.md`, business-plan §9). Distribution is **cold-chain-free** "
+                "(ambient/2–8 °C stabilised format) — substantiate with the shelf-life dossier.\n")
 
 
 def write_docx():
@@ -262,8 +262,8 @@ def write_docx():
                "near the Korea-only base (~$35M vs $39.9M/2030) but across 11 markets (less "
                "single-country risk); Base ~doubles it; Upside roughly triples it — all on the same "
                "product, so the swing is distribution reach, not R&D. Per-market ramps are assumptions "
-               "pending anchor-clinic evidence; kit regulatory class varies by market; cold-chain must "
-               "be solved on the single product spec before Wave 1.", italic=True, size=9, color=GREY)
+               "pending anchor-clinic evidence; kit regulatory class varies by market; distribution is "
+               "cold-chain-free (ambient/2–8 °C stabilised format).", italic=True, size=9, color=GREY)
     doc.save(DIR + "Synapep_MultiMarket_Model.docx")
 
 

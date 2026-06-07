@@ -106,7 +106,7 @@ B(d, " US$1.0M kickoff on a milestone-gated post-money SAFE, $6M cap / 20% disco
      "tranches ($400k close, $600k on milestones).", "Round —")
 B(d, " priced today on the device/consumables floor ($5–6M pre); the AI/data-company upside is the "
      "Series A thesis, not the seed price.", "Valuation —")
-B(d, " resolve cold-chain/COGS and produce the validation pack; stand up Korea + Wave-1 export "
+B(d, " produce the validation pack plus the stability dossier + COGS BOM; stand up Korea + Wave-1 export "
      "(HK, Vietnam, Singapore); ship CodeLife v1 + the data-rights clause.", "What $1M buys —")
 
 # ---------------- 2 Market & opportunity
@@ -133,8 +133,8 @@ NB(d, "'Same raw materials': personalise via device parameters within a pre-clea
       "new actives.", 2)
 NB(d, "Exosomes: lead with non-human (salmon/synthetic) origin and claim discipline (Korea ad ban; "
       "EU human-exosome ban; US FDA warnings).", 3)
-NB(d, "Cold chain & COGS: reformulate to 2–8 °C / ambient or cost the chain; publish a bottom-up "
-      "BOM. (This is the single biggest unlock.)", 4)
+NB(d, "Cold chain: stabilisation tech removes the −80 °C dependency (a distribution/export "
+      "advantage) — substantiate with a stability/shelf-life dossier; publish a bottom-up COGS BOM.", 4)
 NB(d, "'$25M exposure': re-present at entity/product/channel level; treat as market signal, not "
       "company revenue.", 5)
 
@@ -235,7 +235,7 @@ H1(d, "10. Diligence scorecard (technical-investor RAG)")
 T(d, ["Category", "RAG", "Gating question"],
   [["Commercial validation", "AMBER", "$25M by entity/product/channel + reorder data?"],
    ["Chemistry / formulation", "AMBER", "Is the personalisation envelope clean AND differentiating?"],
-   ["Manufacturing & cold chain", "RED", "2–8 °C reformulation or costed cold chain + BOM?"],
+   ["Manufacturing & supply chain", "AMBER", "Stability dossier (cold-chain-free) + bottom-up BOM?"],
    ["Regulatory", "AMBER", "Does the device path survive the envelope; claims controlled?"],
    ["AI / data moat", "AMBER", "Data-rights in the clinic contract; CodeLife v1 demo?"],
    ["Financials", "AMBER", "Rebuild base off anchor-clinic actuals?"],
@@ -246,7 +246,7 @@ T(d, ["Category", "RAG", "Gating question"],
    ["Physician benefit-sharing", "ORANGE", "FMV co-invention royalty, decoupled from usage; K-Sunshine?"]],
   widths=[2.0, 0.9, 3.6], fs=9)
 P(d, "Verdict: conditional interest — diligence yes, their price no. Price $5–6M, milestone-gated. "
-     "Resolve cold chain + COGS (RED) and the validation pack and amber→green across the board.",
+     "No red flags once the validation pack and the stability dossier + COGS BOM land; amber→green.",
   italic=True, size=9.5)
 
 # ---------------- 11 Proposed deal
@@ -257,7 +257,7 @@ T(d, ["Term", "Proposed"],
    ["Cap / discount", "$6.0M / 20% / MFN"],
    ["Conditions precedent", "IP into JV; $25M sample verification; clinic data-rights clause; "
     "physician co-development/IP-royalty framework + K-Sunshine compliance opinion; clean cap table"],
-   ["Milestones (Tranche 2)", "Cold-chain spec + COGS BOM; 5–10 anchor clinics w/ reorders; one "
+   ["Milestones (Tranche 2)", "Stability dossier + COGS BOM; 5–10 anchor clinics w/ reorders; one "
     "prospective readout; classification memo"],
    ["Governance", "Board observer; pro-rata; information rights"]],
   widths=[1.9, 4.6])
@@ -266,7 +266,7 @@ T(d, ["Term", "Proposed"],
 H1(d, "12. Key risks & mitigations")
 T(d, ["Risk", "Mitigation"],
   [["Device-vs-drug reclassification", "Lead device fast-path; IM on separate track; system registration"],
-   ["Cold-chain / COGS unproven", "Reformulate to 2–8 °C; bottom-up BOM; QC release costing"],
+   ["COGS needs a bottom-up BOM", "Stability dossier (cold-chain-free); bottom-up BOM; QC release costing"],
    ["Exosome claims restricted", "Non-human origin; function-based claims; per-market claims map"],
    ["Aggressive clinic ramp", "Rebuild base off anchor-clinic reorder cohorts"],
    ["Kit class varies by market", "Per-market regulatory wrapper; reliance where available"],
@@ -275,7 +275,7 @@ T(d, ["Risk", "Mitigation"],
 
 # ---------------- 13 Roadmap / asks
 H1(d, "13. Roadmap, use of funds & asks")
-B(d, " Korea registration + anchor clinics; cold-chain/COGS resolution; CodeLife v1 + data-rights; "
+B(d, " Korea registration + anchor clinics; stability dossier + COGS BOM; CodeLife v1 + data-rights; "
      "Wave-1 export prep (HK, Vietnam, Singapore).", "0–12 months ($1M) —")
 B(d, " ASEAN cascade + GCC; prospective beachhead readout; Series A (AI round) to fund multi-market "
      "registration + clinical salesforce.", "12–30 months —")

@@ -61,9 +61,9 @@ the gateway approval; let **Hong Kong/Vietnam** lead on direct MFDS reliance.
 | Wave 3 (2029–30) | **Taiwan, China (Hainan → NMPA)** | Regional revenue base + capital from Series A |
 
 **Each market needs:** a **local responsible person / authorised distributor**, a per-market
-**claims map**, and label/registration localisation. **Cold-chain caveat:** −80 °C international
-distribution is even harder than domestic — this **reinforces the reformulation-to-2–8 °C action
-item** (see business plan §12). Solve stability before Wave 1.
+**claims map**, and label/registration localisation. **Cold-chain-free advantage:** proprietary
+stabilisation delivers an ambient-/2–8 °C format, so cross-border distribution is far simpler and
+cheaper than for typical exosome products that require −80 °C logistics — a structural export edge.
 
 ## 5. Why this strengthens the investment case
 
@@ -80,7 +80,8 @@ item** (see business plan §12). Solve stability before Wave 1.
 - **Exosome scrutiny / advertising limits** — manage with non-human origin + claim discipline.
 - **Reliance ≠ automatic** — recognition speeds review but local registration, fees, RP and
   post-market duties still apply.
-- **Cold chain across borders** — unresolved −80 °C logistics would cap export feasibility.
+- **Stability substantiation** — provide the shelf-life dossier confirming the cold-chain-free
+  (ambient/2–8 °C) format; the −80 °C logistics constraint does not apply.
 
 *Sources: Hong Kong MDACS reference-country recognition (Asia Actual, MedDeviceGuide); Vietnam
 MFDS reliance and ASEAN AMDD/CSDT (Cisema, Pacific Bridge, MedDeviceGuide); Thailand/Singapore

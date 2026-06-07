@@ -29,7 +29,8 @@ cargo and of the AI-designed actives (see below).
 **SynExo technical specs (from the product/tech doc):**
 - ~20 billion particles/mL; size 30–150 nm (95% in range)
 - >95% exosome purity; >60% cargo encapsulation
-- Stability: **12 months at −80 °C** → implies a **cold-chain** cost the model must carry
+- Stability: **12 months** (bulk −80 °C); **proprietary stabilisation (lyophilised) yields an
+  ambient-/2–8 °C clinic format** → **no −80 °C cold-chain cost** (clarified by founder, 2026-06)
 - Cargo: EGF (tissue repair), bFGF (angiogenesis), VEGF (neovascularisation); mRNA (8 h
   intracellular stability, protein detected within 12 h); custom loading per application
 - IT-EXO effect: significant cytokine reduction (IL-1β ~1.8→0.8 ng/mL, TNF-α ~0.7→0.4

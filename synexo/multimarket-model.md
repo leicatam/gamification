@@ -59,4 +59,4 @@
 
 **Read-through:** the **Conservative** case (China excluded, slower ramp, lower price) lands near the Korea-only base (~$35M vs $39.9M/2030) but spread across 11 markets (less single-country risk); **Base** ~doubles the Korea-only base; **Upside** roughly triples it — all on the **same product**, so the swing is distribution reach, not R&D.
 
-**Caveats:** per-market ramps are assumptions pending anchor-clinic evidence; the kit's regulatory class varies by market and exosome claims are restricted (see `export-strategy.md`, business-plan §9); cold-chain/stability must be solved on the single product spec before Wave 1.
+**Caveats:** per-market ramps are assumptions pending anchor-clinic evidence; the kit's regulatory class varies by market and exosome claims are restricted (see `export-strategy.md`, business-plan §9). Distribution is **cold-chain-free** (ambient/2–8 °C stabilised format) — substantiate with the shelf-life dossier.
