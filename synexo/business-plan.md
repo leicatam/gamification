@@ -179,3 +179,36 @@ AI/data team. See `valuation.md` (two lenses; $5–7M pre, $6M midpoint).
 3. Document the IP-contribution scope WBI assigns into the JV.
 4. Confirm device ASP/GM, clinic ramp, kits/clinic/month; name the core team and an anchor-clinic
    pipeline in Korea/HK.
+
+## 12. What a technical investor will challenge (and our answer)
+
+A chemical-engineer investor entering aesthetics will press these. Pre-empting them:
+
+| Challenge | Our answer / action |
+|-----------|---------------------|
+| **Cold chain & COGS are asserted, not built.** −80 °C / 12-mo stability is unshippable to typical clinics; COGS is top-down (20%×EXW + $4.50) with no BOM and no cold-chain line. | **Resolve stability to 2–8 °C / ambient** (or cost the cold chain explicitly) and publish a **bottom-up BOM** incl. per-batch QC-release cost. Treat early-year margins as lower until scale. |
+| **Personalisation vs "same raw materials" is a contradiction.** Meaningful AI personalisation that changes the active breaks the device fast-path and the batch-economics. | Personalisation lives in a **pre-cleared configuration envelope** (delivery, depth, concentration within range, option menu) — documented and defended as *both* regulatorily clean *and* clinically differentiating. |
+| **Exosomes are a regulatory/characterisation minefield.** Claims are restricted (Korea ad ban; EU human-exosome ban; US FDA warnings). | Lead with **non-human (salmon/synthetic) origin**; provide **COA, particle/potency/purity/stability/batch-repeatability**; market on function, not unsubstantiated medical claims. |
+| **"$25M exposure" is weasel-phrased.** It aggregates affiliated entities and may not be *this* product's demand. | Re-present at **entity/product/channel level** with reorder data in the validation pack; weight it as market signal, not Synapep revenue. |
+| **"Own large model" overreaches.** A 2→12 FTE team can't build a foundation model; aesthetic outcomes are noisy. | Reframe as a **structured, consented outcomes dataset + decision-support analytics**; the moat is the data + **clinic data-rights clauses**, not a "large model." |
+| **Clinic ramp is aggressive.** 0→150 clinics in year one; the plan itself calls 150 "upside." | Rebuild the base case off **anchor-clinic actuals** (real kits/clinic/month + reorder cohorts) before scaling capital. |
+
+## 13. International expansion (KFDA as an export springboard)
+
+Synapep is **not a Korea-only play**: a Korean MFDS registration anchors a **reliance-led export**
+strategy. Full detail in `export-strategy.md`. Two-speed thesis — the **applicator device** travels
+widely on the Korean technical file; the **peptide/exosome kit** is wrapped **per market** (cosmetic
+vs device vs drug), leaning on **salmon/synthetic origin** and strict claim discipline.
+
+- **Tier 1 — ASEAN + Hong Kong (fastest):** Hong Kong MDACS **recognises Korea MFDS as a reference
+  regulator** (pair Korea + Singapore for the ≥2-reference expedited route); **Vietnam** accepts
+  MFDS certifications; **Singapore HSA** is the gateway; one **ASEAN AMDD/CSDT** dossier cascades to
+  Thailand, Malaysia, Indonesia, Philippines.
+- **Tier 2 — GCC + Greater China:** **Saudi SFDA** (GCC regional reference) + **UAE MOHAP**;
+  **Taiwan TFDA** (accepts Korean data); **China NMPA** via **Hainan/cross-border** first.
+- **Precedent:** Korean salmon-PDRN boosters (e.g., Rejuran) exported across SEA/Middle East/Europe
+  off a Korean approval — a near-exact analog.
+- **Sequence:** Korea anchor → HK/Vietnam/Singapore (2027–28) → ASEAN + GCC (2028–29) → Taiwan/China
+  (2029–30). Each market needs a **local responsible person/distributor**. **Cold-chain caveat:**
+  −80 °C cross-border logistics is even harder than domestic — solve stability (see §12) before
+  Wave 1. Effect: the clinic ramp is a **multi-market TAM**, strengthening Lens A and the Series A.

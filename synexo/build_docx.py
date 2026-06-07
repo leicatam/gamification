@@ -236,8 +236,53 @@ table(["Holder", "Contribution", "Founder %", "% post-raise"],
 para("Recommendation: price the kickoff on Lens A ($6M midpoint); pitch Lens B as the prize and the "
      "Series A thesis. Optionally test institutional-AI appetite for a larger round.", italic=True, size=9.5)
 
-# 9 Risks
-doc.add_heading("9. Key Risks", level=1)
+# 9 What a technical investor will challenge
+doc.add_heading("9. What a Technical Investor Will Challenge (and Our Answer)", level=1)
+para("A chemical-engineer investor entering aesthetics will press these; pre-empting them:")
+table(["Challenge", "Our answer / action"],
+      [["Cold chain & COGS are asserted, not built (−80 °C is unshippable to clinics; COGS is "
+        "top-down with no BOM).", "Resolve stability to 2–8 °C / ambient (or cost the cold chain) "
+        "and publish a bottom-up BOM incl. per-batch QC-release cost; treat early-year margins as "
+        "lower until scale."],
+       ["Personalisation vs \"same raw materials\" is a contradiction — real personalisation "
+        "changes the active and breaks the device fast-path.", "Personalisation lives in a "
+        "pre-cleared configuration envelope (delivery, depth, concentration range, option menu) — "
+        "defended as both regulatorily clean and clinically differentiating."],
+       ["Exosomes are a regulatory/characterisation minefield (Korea ad ban; EU human-exosome ban; "
+        "US FDA warnings).", "Lead with non-human (salmon/synthetic) origin; provide "
+        "COA/particle/potency/purity/stability/batch data; market on function, not medical claims."],
+       ["\"$25M exposure\" is weasel-phrased — it aggregates affiliated entities.", "Re-present at "
+        "entity/product/channel level with reorder data; weight as market signal, not Synapep revenue."],
+       ["\"Own large model\" overreaches for a 2→12 FTE team.", "Reframe as a structured, consented "
+        "outcomes dataset + decision-support analytics; moat is data + clinic data-rights clauses."],
+       ["Clinic ramp is aggressive (0→150 in year one; plan itself calls 150 'upside').",
+        "Rebuild the base off anchor-clinic actuals (real kits/clinic/month + reorder cohorts) "
+        "before scaling capital."]],
+      widths=[2.6, 3.9])
+
+# 10 International expansion
+doc.add_heading("10. International Expansion (KFDA as an Export Springboard)", level=1)
+para("Synapep is not a Korea-only play: a Korean MFDS registration anchors a reliance-led export "
+     "strategy (full detail in export-strategy.md). Two-speed thesis — the applicator device "
+     "travels widely on the Korean technical file; the peptide/exosome kit is wrapped per market "
+     "(cosmetic vs device vs drug), leaning on salmon/synthetic origin and strict claim discipline.")
+table(["Tier", "Markets & KFDA leverage"],
+      [["Tier 1 — ASEAN + Hong Kong (fastest)", "Hong Kong MDACS recognises Korea MFDS as a "
+        "reference regulator (pair Korea + Singapore for the ≥2-reference expedited route); Vietnam "
+        "accepts MFDS certifications; Singapore HSA is the gateway; one ASEAN AMDD/CSDT dossier "
+        "cascades to Thailand, Malaysia, Indonesia, Philippines."],
+       ["Tier 2 — GCC + Greater China", "Saudi SFDA (GCC regional reference) + UAE MOHAP; Taiwan "
+        "TFDA accepts Korean data; China NMPA via Hainan/cross-border first."]],
+      widths=[2.2, 4.3])
+para("Precedent: Korean salmon-PDRN boosters (e.g., Rejuran) exported across SEA/Middle East/Europe "
+     "off a Korean approval — a near-exact analog. Sequence: Korea anchor → HK/Vietnam/Singapore "
+     "(2027–28) → ASEAN + GCC (2028–29) → Taiwan/China (2029–30); each market needs a local "
+     "responsible person/distributor. Cold-chain caveat: −80 °C cross-border logistics is even "
+     "harder than domestic — solve stability (§9) before Wave 1. Effect: the clinic ramp becomes a "
+     "multi-market TAM, strengthening Lens A and the Series A.")
+
+# 11 Risks
+doc.add_heading("11. Key Risks", level=1)
 for lead, rest in [
     ("Device-vs-drug classification (#1) — ", "an IM injectable peptide is very likely a "
      "drug/biologic, not a device, in Korea and HK. Lead the device fast-path with the "
@@ -255,8 +300,8 @@ for lead, rest in [
 ]:
     bullet(rest, lead)
 
-# 10 Next steps
-doc.add_heading("10. What Would Make This Investment-Grade", level=1)
+# 12 Next steps
+doc.add_heading("12. What Would Make This Investment-Grade", level=1)
 for lead, rest in [
     ("Confirm the regulatory split ", "— microneedling/topical (device fast-path) vs IM injectable (drug)."),
     ("Produce head-to-head efficacy data ", "(AI-personalised vs generalised) and define the AI/data "
