@@ -10,6 +10,7 @@ delivered as registered medical devices, powered by **CodeLife.AI** (proprietary
 | File | What it covers |
 |------|----------------|
 | [`business-plan.md`](./business-plan.md) | Company, AI moat, technology/IP, regulatory strategy (Korea→HK), GTM, ops, team, risks |
+| [`model-clarification.md`](./model-clarification.md) | How the Synapep Labs model (3 engines + 2 moats) maps to the exosome / synthetic-biotech aesthetics landscape and its regulatory reality |
 | [`financial-model.md`](./financial-model.md) | Unit economics (device + kits), clinic-driven volume, P&L, scenarios |
 | [`multimarket-model.md`](./multimarket-model.md) | Multi-market revenue model — same Korean product across 12 markets, 3 scenarios (Conservative/Base/Upside), per-country clinic ramp |
 | [`valuation.md`](./valuation.md) | Two-lens valuation (device floor + AI/data-company upside), cap table |

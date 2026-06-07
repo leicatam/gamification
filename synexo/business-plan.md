@@ -6,22 +6,29 @@
 
 ## 1. Executive summary
 
-**Synapep** delivers **AI-personalised regenerative aesthetic treatments**. Physicians use
-**CodeLife.AI** — a proprietary aesthetic-medicine model — to configure peptide-based
-**microneedling** and **intramuscular (IM)** treatment **kits** to each clinical purpose,
-delivered as **registered medical devices** and powered by **IT-EXO®** (immune-tolerant stealth
-exosomes) and **SynExo** (synthetic recombinant exosomes).
+**Synapep Labs** is a **physician co-development lab** for regenerative aesthetic medicine. Elite,
+globally competitive **Korean aesthetic doctors** bring their clinical experience into the lab and
+**co-design purpose-built products** — personalised to the **physician's clinical purpose/case,
+not the individual patient**. Each design is powered by **CodeLife.AI** (a proprietary
+aesthetic-medicine model) and the **IT-EXO®** (immune-tolerant exosome) and **SynExo** (synthetic
+recombinant exosome) platforms, delivered through an applicator **device** plus
+physician-personalised **treatment kits**.
 
-The wedge is a **razor-and-blades** business: an applicator **device** placed in clinics plus
-recurring **personalised kits** (~$30–35 ex-factory). The durable asset is the **AI engine and
-the data it compounds** — peptides engineered to **outperform generalised products**, validated
-by proprietary AI quality/analytics tools. The long-run vision is a **data-science company in
-aesthetic medicine built on our own large model**.
+The company runs on **two co-equal moats**: (A) an **AI engine + compounding data flywheel** —
+peptides engineered to **outperform generalised products**, validated by proprietary AI
+quality/analytics; and (B) a **physician co-development engine** — elite Korean KOLs plus a
+**fast/low-cost regulatory "modification engine"** that turns each doctor's request into a
+**registered SKU**, and a **compliance-first benefit-sharing flywheel** in which the inventing
+physician champions the product to peers. The wedge is **razor-and-blades** (applicator device +
+recurring kits, ~$30–35 ex-factory); the long-run vision is a **data-science company in aesthetic
+medicine** sitting on a **portfolio of doctor-originated SKUs**.
 
 - **Market:** medical aesthetics ≈ $17–18.5B (2024), ~10–13% CAGR → ~$56B by 2033; injectables
   >40% of revenue. Korea is a global aesthetic hub; Hong Kong a gateway.
-- **Regulatory speed:** Korea MFDS **"modified device"** path (~3 months), then Hong Kong's light
-  **MDACS** voluntary listing. Personalised by **purpose, not per individual**.
+- **Regulatory speed:** a **modification engine** — minor changes to an approved product on
+  Korea's improved-device / **negative-list** regime and functional-cosmetic/quasi-drug routes
+  (company target: **<3% formulation change, ~3-month cycle, <$30K per SKU**). In ~6 months → a
+  portfolio of **~20 registered SKUs**, sellable across KFDA-recognising Asian markets.
 - **Economics:** ~65% blended gross margin; revenue $5.3M → $39.9M (2027–2030); EBITDA-positive
   in the launch year.
 - **Structure:** JV — **WBI 70%** (IP + R&D) / **Eyesel 30%** (manufacturing); valued standalone
@@ -29,23 +36,59 @@ aesthetic medicine built on our own large model**.
 - **Ask:** **$1.0M** at **$5–7M pre-money** ($6M midpoint → ~14.3%). AI/data thesis underpins a
   premium institutional-AI **Series A in 2028**.
 
-## 2. The opportunity & the AI moat
+## 2. Two co-equal moats
 
-Three pillars — the AI pillar is the spine; devices/kits are the wedge and the data-capture layer.
+Synapep Labs is defensible on **two fronts at once** — an AI/data moat *and* a physician-network +
+regulatory-process moat. Either alone is copyable; together they compound.
 
-- **Pillar 1 — AI engine & data flywheel (the moat).** CodeLife.AI designs personalised peptides
-  engineered to **outperform** generalised, off-the-shelf products (the differentiator is
-  *performance*, not just personalisation). A proprietary **AI quality-&-analytics suite**
-  validates every batch/variant and improves the model from each treatment — a compounding
-  **data flywheel** (inputs/outcomes → better model → better peptides). Built as physician
-  decision-support within a cleared envelope to manage SaMD exposure.
-- **Pillar 2 — Devices & kits (revenue wedge + data capture).** Applicator device + recurring
-  personalised kits, CodeLife-configured within an approved device family.
-- **Pillar 3 — Data monetisation (future upside).** Licensing the model/insights, physician
-  outcome analytics, R&D partnerships — the institutional-AI-investor story; not in the base P&L.
+**Moat A — AI engine & data flywheel.** CodeLife.AI designs personalised peptides engineered to
+**outperform** generalised, off-the-shelf products (the differentiator is *performance*, not just
+personalisation). A proprietary **AI quality-&-analytics suite** validates every batch/variant and
+improves the model from each treatment — a compounding **data flywheel** (inputs/outcomes → better
+model → better peptides). Built as physician decision-support within a cleared envelope to manage
+SaMD exposure. The dataset, not the code, is the durable asset.
+
+**Moat B — Physician co-development engine.** Elite Korean KOLs + a fast/cheap **regulatory
+modification engine** + a **compliance-first benefit-sharing flywheel** (see §2b). Hard to copy
+because it is a *relationship and process* asset, not just a formulation.
+
+- **Revenue wedge:** applicator **device** + recurring personalised **kits**, configured within an
+  approved device/SKU family — the data-capture layer for Moat A.
+- **Future upside (not in base P&L):** licensing the model/insights, physician outcome analytics,
+  R&D partnerships — the institutional-AI-investor story.
 
 **Positioning:** a **new adjacent regenerative category** beside (not replacing) HA fillers and
-botox — which remain ~$5–6.5B and still growing.
+botox — which remain ~$5–6.5B and still growing. See `model-clarification.md` for how the model
+maps to the exosome / synthetic-biotech aesthetics landscape and its regulatory reality.
+
+## 2b. The Synapep Labs model — three engines
+
+**Engine 1 — KOL co-development lab (doctor-personalised, not patient-personalised).** Korea's
+aesthetic physicians are world-class and intensely competitive on quality and service. Synapep
+Labs invites them to **co-develop products from the doctor's clinical perspective** — a variant
+tuned to a particular case/purpose a physician repeatedly faces. The asset is the **physician
+network + a structured co-development pipeline**; CodeLife.AI accelerates each design.
+
+**Engine 2 — Regulatory modification engine (the speed/cost moat).** Each doctor-requested variant
+is a **minor modification** of an approved product. Leveraging Korea's improved-device /
+**negative-list** change regime (only changes that materially affect safety/performance need prior
+approval) and **functional-cosmetic / quasi-drug** notification routes, the company targets
+**<3% formulation change, ~3-month cycle, <$30K per SKU** *(company working assumptions — to be
+validated; see Risks)*. In ~6 months this can yield **~20 registered SKUs** — a broad OTC/cosmetic
++ device portfolio, **ready to sell across KFDA-recognising markets** (HK, Vietnam, ASEAN, GCC; see
+`export-strategy.md`). Capital efficiency is the point: ~20 SKUs at <$30K ≈ **<$600K** total
+regulatory development.
+
+**Engine 3 — Doctor-driven KOL flywheel, benefit-shared (compliance-first).** Because each SKU is
+built for a specific clinical case, the **requesting physician** is its most credible champion and
+drives adoption among peers — Synapep's lowest-cost, highest-trust go-to-market. The inventing
+physician shares in the economics **as an arm's-length royalty for genuine IP co-invention at fair
+market value**, **decoupled from that physician's own usage/volume**, with written
+co-development/IP agreements, documented inventorship, and disclosure. This structure is designed
+to satisfy **Korea's anti-rebate / K-Sunshine rules and anti-kickback norms** — the "double-edged"
+nature of paying clinicians is managed by FMV-royalty design, *not* usage-linked payments (see
+Risks). Done right, Engine 3 is a self-reinforcing growth loop; done loosely, it is a compliance
+liability — so it is built compliance-first.
 
 ## 3. Technology & IP
 
@@ -68,26 +111,40 @@ botox — which remain ~$5–6.5B and still growing.
 > The registered **microneedling device** patent (KR 10-2654857) is a real asset for the
 > device-family fast path.
 
-## 4. Regulatory strategy (Korea → Hong Kong)
+## 4. Regulatory strategy (Korea → Hong Kong) + the modification engine
 
-- **Korea (MFDS) first** — register the **microneedling/topical applicator + kit** as a device
-  family; CodeLife variants register as **"modified devices"** (same intended use / mechanism /
-  raw materials) on the fast path (Class I ≈ 15 business days; Class II "modified" via conformity
-  bodies; ~3 months realistic).
-- **Hong Kong next** — light, voluntary **MDACS** listing; move while the voluntary window is open.
-- **Keep the fast path valid** — personalise via **device parameters** (delivery, depth,
-  concentration within an approved range, pre-cleared option menu), **not** by changing the
-  active molecule.
-- **Two tracks** — microneedling/topical carries the device fast-path; the **IM injectable** line
-  runs on a separate drug/cosmetic pathway (see Risks).
+**Product taxonomy (clarified).** Two regulated objects: (1) the **applicator device**
+(microneedling/ion) — registered as a **medical device** (improved-device fast path; the granted
+KR 10-2654857 anchors the family); (2) the **doctor-personalised topical/serum kits** (peptide /
+exosome) — wrapped as **functional cosmetic / quasi-drug** where claims permit, since topical
+exosome products in Korea sit largely **outside** device classification today. The **IM
+injectable** line is a separate **drug/biologic** track and must not gate launch.
 
-## 5. Go-to-market
+- **Korea (MFDS) first** — register the device family; each doctor-requested variant enters the
+  **modification engine**: minor changes under Korea's improved-device / **negative-list** regime
+  (only changes that materially affect safety/performance need prior approval) and **same-active
+  functional-cosmetic** notifications (often same-day, low/no fee). Company target per SKU:
+  **<3% formulation change, ~3-month cycle, <$30K** *(to be validated)*.
+- **Keep the fast path valid** — variation lives in **pre-cleared parameters** (delivery, depth,
+  concentration within an approved range, an option menu) and **<3% formulation deltas**, **not**
+  a new active molecule that would trigger a full new approval.
+- **Hong Kong + export** — light **MDACS** listing (MFDS is a recognised reference), then the
+  reliance cascade across ASEAN + GCC for the **whole SKU portfolio** (`export-strategy.md`).
+- **Claim discipline** — Korea **bans the word "exosome" in cosmetic advertising** (Jan 2025);
+  market on function/observed benefit; lean on **non-human (salmon/synthetic) origin**.
 
-- **Customers:** aesthetic/derm physicians & clinics — Korea first, then Hong Kong.
-- **Model:** place/sell the applicator device, then earn recurring kit revenue; CodeLife +
-  outcome data make the relationship sticky.
-- **Build:** focused clinical/KOL salesforce in two concentrated markets; physician advocates and
-  head-to-head efficacy data drive adoption.
+## 5. Go-to-market — the doctor-driven KOL flywheel
+
+- **Customers:** aesthetic/derm physicians & clinics — Korea first, then Hong Kong + export.
+- **Engine:** the **requesting physician** co-invents a SKU for a case they repeatedly face, then
+  champions it to peers; Synapep shares economics via an **FMV IP royalty decoupled from that
+  doctor's usage** (compliance-first; §2b, Risks). This is lower-cost and higher-trust than a cold
+  salesforce — peer-to-peer adoption among elite KOLs.
+- **Razor-and-blades:** place/sell the applicator device, then earn recurring kit revenue across a
+  growing **portfolio of doctor-originated SKUs**; CodeLife + outcome data make it sticky.
+- **Guardrails:** written co-development/IP agreements, documented inventorship, FMV opinions,
+  disclosure, and **K-Sunshine / anti-rebate** compliance — so the flywheel is an asset, not a
+  liability.
 
 ## 6. Operations & timeline
 
@@ -170,6 +227,15 @@ AI/data team. See `valuation.md` (two lenses; $5–7M pre, $6M midpoint).
    physician in the loop within a cleared envelope.
 5. **Incumbents.** HA/botox are not displaced — position as a new adjacent category.
 6. **Capital adequacy.** $1M kicks off; scaling likely needs a 2028 Series A.
+7. **Physician benefit-sharing / anti-kickback ("double-edged").** Paying KOLs who drive adoption
+   is the structure regulators scrutinise. Defensible **only** as an **FMV royalty for genuine IP
+   co-invention, decoupled from the inventor's own usage**, with documented inventorship and
+   **K-Sunshine / anti-rebate** compliance. Usage-linked payments would be a serious liability.
+8. **Modification-engine assumptions unverified.** The **<3% change / ~3-month / <$30K per SKU**
+   and **~20 SKUs in 6 months** figures are company working assumptions — confirm with a Korean
+   regulatory memo, and confirm which SKUs are **cosmetic/quasi-drug vs device** (different routes).
+9. **Portfolio QA/liability.** Many SKUs from many doctors multiplies QA, pharmacovigilance and
+   claim-consistency load; the AI-QA suite and one master spec must scale with the catalog.
 
 ## 11. What would make this investment-grade
 

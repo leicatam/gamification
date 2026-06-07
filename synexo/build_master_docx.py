@@ -17,6 +17,7 @@ BODY = RGBColor(0x22, 0x22, 0x22); MONO = RGBColor(0x80, 0x3A, 0x00)
 # Ordered parts: (file, Part title shown on divider)
 PARTS = [
     ("business-plan.md",      "Business Plan"),
+    ("model-clarification.md", "Model Clarification (exosome & synthetic-biotech)"),
     ("financial-model.md",    "Financial Model"),
     ("multimarket-model.md",  "Multi-Market Revenue Model"),
     ("valuation.md",          "Valuation"),

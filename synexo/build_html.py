@@ -36,25 +36,31 @@ A("</div><hr>")
 
 # 1 Executive summary
 A("<h2>1. Executive Summary</h2>")
-A("<p>Synapep delivers <b>AI-personalised regenerative aesthetic treatments</b>. Physicians use "
-  "<b>CodeLife.AI</b> — our proprietary aesthetic-medicine model — to configure peptide-based "
-  "microneedling and intramuscular (IM) treatment <b>kits</b> to each clinical purpose, "
-  "delivered as registered medical devices and powered by <b>IT-EXO&reg;</b> (immune-tolerant "
-  "stealth exosomes) and <b>SynExo</b> (synthetic recombinant exosomes).</p>")
-A("<p>The wedge is a <b>razor-and-blades</b> business — an applicator device placed in clinics "
-  "plus recurring personalised treatment kits (~$30–35 ex-factory). The durable asset is the "
-  "<b>AI engine and the data it compounds</b>: peptides engineered to <b>outperform generalised, "
-  "off-the-shelf products</b>, validated by our own AI quality-and-analytics tools. The long-run "
-  "vision is a <b>data-science company in aesthetic medicine built on our own large model</b>.</p>")
+A("<p><b>Synapep Labs</b> is a <b>physician co-development lab</b> for regenerative aesthetic "
+  "medicine. Elite, globally competitive <b>Korean aesthetic doctors</b> bring their clinical "
+  "experience into the lab and <b>co-design purpose-built products</b> — personalised to the "
+  "<b>physician's clinical case, not the individual patient</b> — powered by <b>CodeLife.AI</b>, "
+  "<b>IT-EXO&reg;</b> (immune-tolerant exosomes) and <b>SynExo</b> (synthetic recombinant "
+  "exosomes), delivered via an applicator device plus physician-personalised treatment kits.</p>")
+A("<p>The company runs on <b>two co-equal moats</b>: (A) an <b>AI engine + compounding data "
+  "flywheel</b> — peptides engineered to <b>outperform generalised products</b>, validated by "
+  "proprietary AI quality/analytics; and (B) a <b>physician co-development engine</b> — elite "
+  "Korean KOLs, a fast/cheap regulatory <b>‘modification engine’</b> that turns each doctor's "
+  "request into a registered SKU, and a <b>compliance-first benefit-sharing flywheel</b>. The "
+  "wedge is razor-and-blades (applicator device + recurring kits, ~$30–35 ex-factory); the "
+  "long-run vision is a data-science company on a <b>portfolio of doctor-originated SKUs</b>.</p>")
 A("<p><b>Why now / why this works.</b></p><ul>"
   "<li><b>Large, growing market:</b> medical aesthetics ≈ $17–18.5B (2024), ~10–13% CAGR → ~$56B "
   "by 2033; injectables are &gt;40% of revenue. Korea is a global aesthetic hub; Hong Kong a gateway.</li>"
-  "<li><b>Regulatory speed:</b> launch in <b>Korea</b> via the MFDS <b>“modified device”</b> path "
-  "(same intended use / mechanism / raw materials → fast registration, ~3 months), then <b>Hong "
-  "Kong</b> under the light, voluntary <b>MDACS</b> listing. Variants are personalised by "
-  "<b>purpose, not per individual</b>, so they stay inside a registered device family.</li>"
-  "<li><b>New category, not a me-too:</b> AI-personalised regenerative devices sit beside (not "
-  "replace) HA fillers and botox.</li></ul>")
+  "<li><b>Regulatory speed:</b> a <b>modification engine</b> — minor changes to approved products "
+  "on Korea's improved-device / <b>negative-list</b> regime and functional-cosmetic/quasi-drug "
+  "routes (target <b>&lt;3% change, ~3-month cycle, &lt;$30K per SKU</b>). ~6 months → <b>~20 "
+  "registered SKUs</b> across KFDA-recognising Asia. <i>(Working assumptions — to be validated.)</i></li>"
+  "<li><b>Doctor-driven flywheel:</b> the inventing physician champions each SKU to peers; "
+  "benefit-shared as an <b>FMV royalty for genuine IP co-invention, decoupled from the doctor's "
+  "own usage</b> (K-Sunshine compliant).</li>"
+  "<li><b>New category, not a me-too:</b> regenerative, doctor-personalised devices/kits sit "
+  "beside (not replace) HA fillers and botox.</li></ul>")
 A("<p><b>Structure &amp; scope.</b> JV — <b>WBI 70%</b> (IP: CodeLife.AI / IT-EXO / SynExo + R&amp;D) "
   "and <b>Eyesel 30%</b> (manufacturing). Valued <b>standalone at the ex-factory line</b>; "
   "distributors are separate, non-consolidated.</p>")

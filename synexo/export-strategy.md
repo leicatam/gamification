@@ -19,6 +19,11 @@ A single Korean approval does not auto-clear other markets, but it is a powerful
   the US FDA has issued 12 warning letters and approved none. Market everywhere on
   function/observed benefit, not unsubstantiated medical claims.
 
+**What's exported is a portfolio, not a single SKU.** The Korean **modification engine** (see
+`model-clarification.md`) produces a catalog of **doctor-originated SKUs** (applicator device +
+functional-cosmetic/quasi-drug kits). The reliance cascade below applies to that **portfolio** —
+each market takes the SKUs whose claims/classification fit, on the same Korean master dossiers.
+
 **Precedent that de-risks this:** Korean salmon-**PDRN** skin boosters (e.g., Rejuran,
 MFDS-approved 2014) used Korean approval to export across SEA, the Middle East and Europe — a
 near-exact analog to Synapep's model.

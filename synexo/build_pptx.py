@@ -29,7 +29,11 @@ SW, SH = prs.slide_width, prs.slide_height
 IN = Inches
 
 
+CURRENT = [0]
+
+
 def slide():
+    CURRENT[0] += 1
     return prs.slides.add_slide(BLANK)
 
 
@@ -76,7 +80,7 @@ def header(s, title, n, kicker=None):
     textbox(s, 0.85, 0.18, 11.6, 0.9, [(title, 27, True, WHITE)], anchor=MSO_ANCHOR.MIDDLE)
     if kicker:
         textbox(s, 0.87, 0.86, 11.6, 0.3, [(kicker, 12, False, SKY)])
-    textbox(s, 12.4, 7.04, 0.8, 0.35, [(str(n), 12, False, GREY)], align=PP_ALIGN.RIGHT)
+    textbox(s, 12.4, 7.04, 0.8, 0.35, [(str(CURRENT[0]), 12, False, GREY)], align=PP_ALIGN.RIGHT)
 
 
 def bullets(s, items, l=0.9, t=1.6, w=11.6, h=5.2, size=19):
@@ -183,8 +187,41 @@ textbox(s, 1.0, 5.35, 11.4, 1.0,
         [("Personalised by physician PURPOSE within an approved envelope — fast 'modified-device' "
           "registration, not bespoke per-patient devices.", 18, True, NAVY)], anchor=MSO_ANCHOR.MIDDLE)
 
-# =================================================================== 4 DATA FLYWHEEL
-s = slide(); header(s, "The moat — AI efficacy + data flywheel", 4,
+# =================================================================== TWO CO-EQUAL MOATS
+s = slide(); header(s, "Two co-equal moats", 0, "Either alone is copyable; together they compound")
+card(s, 0.7, 1.65, 5.85, 4.45, "Moat A · AI engine + data flywheel",
+     "CodeLife.AI designs peptides that outperform generalised products. An AI-QA suite validates "
+     "every batch and feeds a compounding outcomes dataset — the durable asset. Physician "
+     "decision-support within a cleared envelope (SaMD-aware).", line=ACCENT, tsz=20, bsz=17)
+card(s, 6.8, 1.65, 5.85, 4.45, "Moat B · Physician co-development engine",
+     "Elite Korean KOLs co-develop purpose-built SKUs. A fast/cheap regulatory 'modification "
+     "engine' registers each one. A compliance-first benefit-sharing royalty makes the inventing "
+     "doctor the champion. A relationship + process asset — hard to copy.", line=GOLD, tsz=20, bsz=17)
+band = rect(s, 0.7, 6.25, 11.95, 0.75, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+fill_text(band, [("Devices + kits = the revenue wedge and the data-capture layer for Moat A", 16,
+                  True, NAVY)])
+
+# =================================================================== THREE ENGINES
+s = slide(); header(s, "Synapep Labs — three engines", 0, "Moat B, in detail")
+card(s, 0.7, 1.6, 3.85, 3.95, "1 · KOL co-development lab",
+     "Korea's world-class physicians co-design products from the doctor's clinical perspective. "
+     "Doctor-personalised, not patient-personalised. CodeLife accelerates each design.",
+     line=ACCENT, tsz=18, bsz=15)
+card(s, 4.75, 1.6, 3.85, 3.95, "2 · Modification engine",
+     "Each variant is a minor change — Korea's improved-device / negative-list regime + same-active "
+     "functional-cosmetic / quasi-drug routes. Capital-efficient SKU factory.", line=TEAL, tsz=18,
+     bsz=15)
+card(s, 8.8, 1.6, 3.85, 3.95, "3 · KOL royalty flywheel",
+     "The inventing doctor champions the SKU to peers and shares economics as an FMV royalty for "
+     "genuine IP co-invention — DECOUPLED from their own usage. K-Sunshine / anti-rebate compliant.",
+     line=GOLD, tsz=18, bsz=15)
+specs = [("<3%", "formulation Δ", TEAL), ("~3 mo", "approval cycle", ACCENT),
+         ("<$30K", "per SKU", NAVY), ("~20", "SKUs / 6 mo", GOLD), ("<$600K", "total reg dev", DARK2)]
+for i, (big, lab, col) in enumerate(specs):
+    stat(s, 0.7 + i * 2.46, 5.8, 2.3, 1.05, big, lab, fill=col, bigsz=28, labsz=13)
+
+# =================================================================== MOAT A · DATA FLYWHEEL
+s = slide(); header(s, "Moat A — AI efficacy + data flywheel", 0,
                     "Performance, not merely personalisation")
 cx, cy = 6.55, 4.35
 o = rect(s, cx - 1.15, cy - 1.15, 2.3, 2.3, ACCENT, shape=MSO_SHAPE.OVAL, shadow=True)

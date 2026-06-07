@@ -42,6 +42,9 @@
 3. **Data rights** — a **clinic-contract template** embedding consent, de-identification and
    Synapep data-ownership/usage rights (the basis of the AI moat).
 4. **Corporate** — clean cap table, JV agreement, good standing, and customary reps & warranties.
+5. **Physician co-development & compliance** — a written **physician co-development / IP-royalty
+   framework** structured as **FMV royalty for genuine IP co-invention, decoupled from the
+   inventor's own usage**, with a **K-Sunshine / anti-rebate compliance** opinion.
 
 ## 4. Milestones (release Tranche 2)
 
@@ -52,8 +55,9 @@
    reorder** evidence.
 3. **Clinical readout** — one **prospective Synapep protocol** readout on the chosen beachhead
    indication (e.g., hair/scalp or post-procedure recovery).
-4. **Regulatory** — a **classification memo** (Korea + first export market) confirming the
-   topical/microneedling **device path holds for the personalisation envelope**, with the
+4. **Regulatory** — a **classification + modification-engine memo** (Korea + first export market)
+   confirming the device path and the **functional-cosmetic/quasi-drug** route for the kits,
+   validating the **<3% / ~3-month / <$30K per SKU** modification assumptions, with the
    IM/injectable line on a separate pathway.
 
 ## 5. Use of funds (tied to milestones)

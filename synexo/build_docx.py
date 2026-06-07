@@ -68,24 +68,32 @@ doc.add_page_break()
 
 # 1 Executive summary
 doc.add_heading("1. Executive Summary", level=1)
-para("Synapep delivers AI-personalised regenerative aesthetic treatments. Physicians use "
-     "CodeLife.AI — our proprietary aesthetic-medicine model — to configure peptide-based "
-     "microneedling and intramuscular (IM) treatment kits to each clinical purpose, delivered as "
-     "registered medical devices and powered by IT-EXO® (immune-tolerant stealth exosomes) and "
-     "SynExo (synthetic recombinant exosomes).")
-para("The wedge is a razor-and-blades business — an applicator device placed in clinics plus "
-     "recurring personalised treatment kits (~$30–35 ex-factory). The durable asset is the AI "
-     "engine and the data it compounds: peptides engineered to outperform generalised, off-the-"
-     "shelf products, validated by our own AI quality-and-analytics tools. The long-run vision is "
-     "a data-science company in aesthetic medicine built on our own large model.")
+para("Synapep Labs is a physician co-development lab for regenerative aesthetic medicine. Elite, "
+     "globally competitive Korean aesthetic doctors bring their clinical experience into the lab and "
+     "co-design purpose-built products — personalised to the physician's clinical case, not the "
+     "individual patient — powered by CodeLife.AI (our proprietary aesthetic-medicine model), "
+     "IT-EXO® (immune-tolerant exosomes) and SynExo (synthetic recombinant exosomes), delivered via "
+     "an applicator device plus physician-personalised treatment kits.")
+para("The company runs on two co-equal moats: (A) an AI engine + compounding data flywheel — "
+     "peptides engineered to outperform generalised products, validated by proprietary AI "
+     "quality/analytics; and (B) a physician co-development engine — elite Korean KOLs, a fast/cheap "
+     "regulatory 'modification engine' that turns each doctor's request into a registered SKU, and a "
+     "compliance-first benefit-sharing flywheel in which the inventing physician champions the "
+     "product to peers. The wedge is razor-and-blades (applicator device + recurring kits, ~$30–35 "
+     "ex-factory); the long-run vision is a data-science company sitting on a portfolio of "
+     "doctor-originated SKUs.")
 para("Why now / why this works.", bold=True, space_after=2)
 bullet(" medical aesthetics ≈ $17–18.5B (2024), ~10–13% CAGR → ~$56B by 2033; injectables >40% of "
        "revenue. Korea is a global aesthetic hub; Hong Kong a gateway.", "Large, growing market:")
-bullet(" Korea MFDS \"modified device\" path (same intended use / mechanism / raw materials → "
-       "~3 months), then Hong Kong's light, voluntary MDACS listing. Personalised by purpose, not "
-       "per individual, so variants stay inside a registered family.", "Regulatory speed:")
-bullet(" AI-personalised regenerative devices sit beside (not replace) HA fillers and botox.",
-       "New category:")
+bullet(" a modification engine — minor changes to approved products on Korea's improved-device / "
+       "negative-list regime and functional-cosmetic/quasi-drug routes (target <3% change, "
+       "~3-month cycle, <$30K per SKU). ~6 months → ~20 registered SKUs across KFDA-recognising "
+       "Asia. (Working assumptions — to be validated.)", "Regulatory speed:")
+bullet(" the inventing doctor champions each SKU to peers; benefit-shared as an FMV royalty for "
+       "genuine IP co-invention, decoupled from the doctor's own usage (K-Sunshine compliant).",
+       "Doctor-driven flywheel:")
+bullet(" regenerative, doctor-personalised devices/kits sit beside (not replace) HA fillers and "
+       "botox.", "New category:")
 para("Structure & scope.", bold=True, space_after=2)
 para("JV — WBI 70% (IP: CodeLife.AI / IT-EXO / SynExo + R&D) and Eyesel 30% (manufacturing). Valued "
      "standalone at the ex-factory line; distributors are separate, non-consolidated.")

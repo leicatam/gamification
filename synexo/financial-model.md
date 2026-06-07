@@ -87,6 +87,17 @@ are stable and R&D is not duplicated. The Conservative case lands near the Korea
 across 11 markets (less single-country risk). Per-market clinic ramps are assumptions pending
 anchor-clinic evidence; kit regulatory class varies by market (see `export-strategy.md`).
 
+## 5c. SKU-portfolio engine (capital efficiency)
+
+Revenue above is driven by the **clinic ramp**; the **product side** is a doctor-originated **SKU
+portfolio** built by the regulatory **modification engine** (see `model-clarification.md`). Company
+working assumptions: **<3% formulation change, ~3-month cycle, <$30K per SKU**, **~20 SKUs in ~6
+months** → **<$600K** total regulatory development for the whole catalog. This sits **inside** the
+R&D/regulatory OpEx lines (not additional), and makes the portfolio unusually capital-efficient:
+many doctor-personalised SKUs from one master spec + one applicator device family, each a minor
+modification rather than a new approval. *(Assumptions to be validated; cosmetic/quasi-drug vs
+device routes differ.)*
+
 ## 6. Open assumptions to confirm
 
 - **Device ASP / GM** ($3,000 / 40%) — confirm vs the chosen applicator.

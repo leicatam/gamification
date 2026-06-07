@@ -81,12 +81,14 @@ d.add_page_break()
 
 # ---------------- 1 Executive summary
 H1(d, "1. Executive summary")
-P(d, "Synapep sells AI-personalised aesthetic treatments to physician clinics: an applicator "
-     "device plus recurring, CodeLife-configured peptide/exosome treatment kits, registered as a "
-     "medical-device family. The product is developed for Korean physicians, registered with Korea "
-     "MFDS, then exported as-is — the same product — using MFDS as a reliance/recognition springboard "
-     "across Asia and the Gulf. The durable asset is a proprietary aesthetic-medicine AI model and a "
-     "compounding outcomes dataset (the data flywheel).")
+P(d, "Synapep Labs is a physician co-development lab for regenerative aesthetic medicine. Elite "
+     "Korean aesthetic doctors co-design purpose-built products (personalised to the physician's "
+     "clinical case, not the patient): an applicator device plus recurring CodeLife-configured "
+     "peptide/exosome kits. Each doctor request becomes a registered SKU via a fast/cheap regulatory "
+     "'modification engine'; the inventing physician then champions it to peers under a "
+     "compliance-first benefit-sharing royalty. The company is defensible on two co-equal moats — an "
+     "AI/data flywheel and a physician-network + regulatory-process engine — and registered in Korea "
+     "(MFDS), then exported across Asia and the Gulf on reliance pathways.")
 H2(d, "The numbers (multi-market, same product)")
 T(d, ["2030 outcome", "Conservative", "Base", "Upside"],
   [["Markets", "11 (China excl.)", "12", "12"],
@@ -137,16 +139,31 @@ NB(d, "'$25M exposure': re-present at entity/product/channel level; treat as mar
       "company revenue.", 5)
 
 # ---------------- 4 Business model
-H1(d, "4. Business model — three pillars")
-B(d, " CodeLife + a proprietary aesthetic-medicine model design personalised peptides engineered "
-     "to outperform generalised products; an AI-QA suite validates every batch and feeds the "
-     "flywheel. Configuration/decision-support within a cleared envelope (physician in the loop).",
-  "Pillar 1 — AI engine & data flywheel (the moat) —")
-B(d, " applicator device placed/sold to clinics (also the data-capture endpoint) + recurring "
-     "CodeLife-configured kits at ~$30–35 ex-factory within an approved family.",
-  "Pillar 2 — Devices & kits (revenue wedge) —")
-B(d, " licensing the model/insights, physician outcome analytics, R&D partnerships — the "
-     "institutional-AI-investor story (upside, not in base P&L).", "Pillar 3 — Data monetisation —")
+H1(d, "4. Business model — two co-equal moats")
+P(d, "Synapep Labs is a physician co-development lab, defensible on two fronts at once. Either "
+     "moat alone is copyable; together they compound. Devices/kits are the revenue wedge and the "
+     "data-capture layer.")
+B(d, " CodeLife.AI designs personalised peptides engineered to outperform generalised products; "
+     "an AI-QA suite validates every batch and feeds a compounding outcomes dataset (the durable "
+     "asset). Physician decision-support within a cleared envelope (SaMD-aware).",
+  "Moat A — AI engine & data flywheel —")
+B(d, " elite Korean KOLs co-develop purpose-built SKUs (doctor-personalised, not patient), "
+     "registered fast/cheap via a regulatory 'modification engine', and spread through a "
+     "compliance-first benefit-shared KOL flywheel. A relationship + process asset, hard to copy.",
+  "Moat B — Physician co-development engine —")
+H2(d, "Moat B — the three engines")
+NB(d, "KOL co-development lab — Korea's world-class physicians co-design products from the doctor's "
+      "clinical perspective; CodeLife accelerates each design.", 1)
+NB(d, "Modification engine — each variant is a minor change under Korea's improved-device / "
+      "negative-list regime and functional-cosmetic/quasi-drug routes (company target <3% change, "
+      "~3-month cycle, <$30K/SKU → ~20 SKUs in ~6 months; <$600K total — to be validated).", 2)
+NB(d, "Benefit-shared KOL flywheel (compliance-first) — the inventing physician champions the SKU "
+      "to peers and shares economics as an FMV royalty for genuine IP co-invention, DECOUPLED from "
+      "their own usage; K-Sunshine / anti-rebate compliant. The 'double-edged' risk is managed by "
+      "design.", 3)
+P(d, "See the Model Clarification annex for how this maps to the exosome / synthetic-biotech "
+     "aesthetics landscape (ExoCoBio, Brexogen, designer exosomes) and its regulatory reality.",
+  size=9.5, italic=True, color=GREY)
 
 # ---------------- 5 Technology & AI moat
 H1(d, "5. Technology & the AI moat")
@@ -159,14 +176,14 @@ B(d, " 'own large model' is a direction, not a day-one claim for a small team; t
      "now is the dataset + data-rights + analytics, not a foundation model.", "Honest framing —")
 
 # ---------------- 6 Regulatory
-H1(d, "6. Regulatory strategy (Korea → Hong Kong → export)")
-T(d, ["Line", "Pathway", "Speed / note"],
-  [["Microneedling/topical kit + applicator", "Korea MFDS modified-device; HK MDACS listing",
-    "Fast (~months); the lead, registrable family"],
-   ["IM / injectable peptide", "Drug/biologic (separate track) or cosmetic where permitted",
-    "Slower; do not gate the device launch on it"],
-   ["CodeLife software", "Configuration/decision-support in a cleared envelope",
-    "Manage SaMD exposure; physician in the loop"]],
+H1(d, "6. Regulatory strategy + the modification engine")
+T(d, ["Regulated object", "Class / pathway", "Speed / note"],
+  [["Applicator (microneedling/ion)", "Medical device — improved-device / negative-list change",
+    "Fast; KR 10-2654857 anchors the family"],
+   ["Doctor-personalised topical/exosome kit", "Functional cosmetic / quasi-drug (mostly outside device class)",
+    "Same-active notification; <3% deltas; the SKU engine"],
+   ["IM / injectable peptide", "Drug / biologic (separate track)", "Slower; must not gate launch"],
+   ["CodeLife software", "Config/decision-support in a cleared envelope", "Manages SaMD exposure"]],
   widths=[2.4, 2.3, 1.8])
 
 # ---------------- 7 Export
@@ -225,8 +242,9 @@ T(d, ["Category", "RAG", "Gating question"],
    ["Valuation / deal", "AMBER", "What price holds before the validation pack exists?"],
    ["IP & JV", "AMBER", "WBI IP assignment/licence schedule into the JV?"],
    ["Team / capital adequacy", "AMBER", "Which milestones can $1M actually hit?"],
-   ["Market reach & export", "AMBER", "Per-market kit class; salmon/synthetic clears bans?"]],
-  widths=[2.0, 0.8, 3.7], fs=9)
+   ["Market reach & export", "AMBER", "Per-market kit class; salmon/synthetic clears bans?"],
+   ["Physician benefit-sharing", "ORANGE", "FMV co-invention royalty, decoupled from usage; K-Sunshine?"]],
+  widths=[2.0, 0.9, 3.6], fs=9)
 P(d, "Verdict: conditional interest — diligence yes, their price no. Price $5–6M, milestone-gated. "
      "Resolve cold chain + COGS (RED) and the validation pack and amber→green across the board.",
   italic=True, size=9.5)
@@ -237,7 +255,8 @@ T(d, ["Term", "Proposed"],
   [["Instrument", "Post-money SAFE (milestone tranches)"],
    ["Amount", "US$1.0M — $400k close / $600k milestone"],
    ["Cap / discount", "$6.0M / 20% / MFN"],
-   ["Conditions precedent", "IP into JV; $25M sample verification; clinic data-rights clause; clean cap table"],
+   ["Conditions precedent", "IP into JV; $25M sample verification; clinic data-rights clause; "
+    "physician co-development/IP-royalty framework + K-Sunshine compliance opinion; clean cap table"],
    ["Milestones (Tranche 2)", "Cold-chain spec + COGS BOM; 5–10 anchor clinics w/ reorders; one "
     "prospective readout; classification memo"],
    ["Governance", "Board observer; pro-rata; information rights"]],
