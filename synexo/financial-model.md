@@ -66,6 +66,23 @@ Data monetisation — licensing the CodeLife model/insights, physician outcome a
 partnerships — is deliberately **excluded** from the base P&L and treated as valuation upside
 (see `valuation.md`, Lens B).
 
+## 5b. Multi-market view (same product, more markets)
+
+The base P&L above is the **Korea-anchored** single-line view. A bottom-up **multi-market** model —
+the **same** Korean-developed device + CodeLife kit exported across 12 markets (no per-market
+product development) — is in [`multimarket-model.md`](./multimarket-model.md) /
+`Synapep_MultiMarket_Model.docx`. Because the product (and therefore unit economics) is identical
+everywhere, the uplift comes purely from **distribution reach**:
+
+| | Korea-only base | Multi-market (12 markets) |
+|---|--:|--:|
+| 2030 clinics | ~1,000 | ~2,020 |
+| 2030 revenue | $39.9M | ~$75.1M |
+| Blended GM | ~65.6% | ~65.3% |
+
+Margins are unchanged and R&D is not duplicated. Per-market clinic ramps are assumptions pending
+anchor-clinic evidence; kit regulatory class varies by market (see `export-strategy.md`).
+
 ## 6. Open assumptions to confirm
 
 - **Device ASP / GM** ($3,000 / 40%) — confirm vs the chosen applicator.

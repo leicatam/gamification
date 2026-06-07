@@ -1,0 +1,28 @@
+Synapep Multi-Market Model — SAME Korean-developed product across all markets (USD)
+Assumptions,EXW $32.50,KitGM 66.2%,DeviceASP $3000,DeviceGM 40%,Kits/clinic/yr 1400
+
+CUMULATIVE CLINICS BY MARKET,2027,2028,2029,2030
+Korea (anchor),120,250,400,550
+Hong Kong,20,60,100,140
+Vietnam,10,50,110,180
+Singapore,10,35,60,85
+Thailand,0,40,120,220
+Malaysia,0,20,70,130
+Indonesia,0,15,70,150
+Philippines,0,10,45,100
+Saudi Arabia (SFDA),0,20,70,140
+UAE (MOHAP),0,15,50,95
+Taiwan,0,0,35,90
+China (Hainan->NMPA),0,0,40,140
+TOTAL CLINICS,160,515,1170,2020
+
+P&L ($000s),2027,2028,2029,2030
+New clinics (devices),160,355,655,850
+Treatment kits (000s),112,472,1180,2233
+Kit revenue,3640,15356,38334,72572
+Device revenue,480,1065,1965,2550
+Total revenue,4120,16421,40299,75122
+Total gross profit,2602,10592,26163,49063
+Blended gross margin,63.1%,64.5%,64.9%,65.3%
+OpEx [ASSUMPTION],3000,7000,11000,16000
+EBITDA,-398,3592,15163,33063
