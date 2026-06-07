@@ -2,7 +2,8 @@
 """Build the investor deck -> Synapep_Investor_Deck.pptx.
 
 Graphic-driven, large-type deck. Numbers single-sourced from build_multimarket_model (RESULTS).
-Body text >=18pt; rich vector graphics (flow, flywheel, hub-spoke, chevrons, timeline, charts).
+Main-body text floor 14pt (target 16+); only page numbers stay smaller. Rich vector graphics
+(flow, flywheel, hub-spoke, chevrons, timeline, charts).
 """
 import math
 from pptx import Presentation
@@ -79,7 +80,7 @@ def header(s, title, n, kicker=None):
     rect(s, 0.55, 0.34, 0.14, 0.52, ACCENT)
     textbox(s, 0.85, 0.18, 11.6, 0.9, [(title, 27, True, WHITE)], anchor=MSO_ANCHOR.MIDDLE)
     if kicker:
-        textbox(s, 0.87, 0.86, 11.6, 0.3, [(kicker, 12, False, SKY)])
+        textbox(s, 0.87, 0.86, 11.6, 0.3, [(kicker, 14, False, SKY)])
     textbox(s, 12.4, 7.04, 0.8, 0.35, [(str(CURRENT[0]), 12, False, GREY)], align=PP_ALIGN.RIGHT)
 
 
@@ -96,7 +97,7 @@ def bullets(s, items, l=0.9, t=1.6, w=11.6, h=5.2, size=19):
     return tb
 
 
-def card(s, l, t, w, h, title, body, fill=WHITE, tcol=NAVY, bcol=GREY, tsz=18, bsz=15,
+def card(s, l, t, w, h, title, body, fill=WHITE, tcol=NAVY, bcol=GREY, tsz=18, bsz=16,
          line=ACCENT, shape=MSO_SHAPE.ROUNDED_RECTANGLE):
     sp = rect(s, l, t, w, h, fill, line=line, line_w=1.5, shape=shape, shadow=True)
     tf = sp.text_frame; tf.word_wrap = True; tf.vertical_anchor = MSO_ANCHOR.TOP
@@ -146,8 +147,8 @@ textbox(s, 1.35, 2.45, 9.5, 1.3, [("SYNAPEP", 56, True, WHITE)])
 textbox(s, 1.4, 3.85, 9.5, 0.9, [("AI-Personalised Aesthetic Medical Devices", 26, False, SKY)])
 textbox(s, 1.4, 4.75, 9.5, 0.6, [("Korea-anchored, export-led  ·  Investor Deck", 17, False,
                                   RGBColor(0x9F, 0xB6, 0xCB))])
-textbox(s, 1.4, 6.5, 10, 0.5, [("Illustrative — not investment advice. Figures are v0.4 scenario "
-                                "estimates.", 12, False, RGBColor(0x86, 0x9C, 0xB4))])
+textbox(s, 1.4, 6.5, 10.5, 0.5, [("Illustrative — not investment advice. Figures are v0.4 scenario "
+                                 "estimates.", 14, False, RGBColor(0x86, 0x9C, 0xB4))])
 
 # =================================================================== 2 OPPORTUNITY
 s = slide(); header(s, "A large, fast-growing market", 2, "Medical aesthetics — global")
@@ -167,21 +168,21 @@ stat(s, 8.0, 3.35, 2.2, 1.35, "10–13%", "CAGR", fill=TEAL, bigsz=30)
 stat(s, 10.4, 3.35, 2.2, 1.35, ">40%", "injectables share", fill=GOLD, labcol=WHITE, bigsz=30)
 card(s, 8.0, 4.9, 4.6, 1.75, "Why now",
      "Commodity injectables (HA, botox) keep growing but commoditise. Buyers want differentiated, "
-     "regenerative, AI-personalised outcomes — a new lane, not a replacement.", bsz=15)
+     "regenerative, AI-personalised outcomes — a new lane, not a replacement.", bsz=16)
 
 # =================================================================== 3 SOLUTION FLOW
 s = slide(); header(s, "The solution — device + kits + AI", 3, "A razor-and-blades medical-device business")
 y0 = 2.3; bw = 3.5; bh = 2.2
 card(s, 0.7, y0, bw, bh, "1 · Applicator device",
-     "Placed/sold to clinics. Also the data-capture endpoint. ~$3,000 ASP.", line=ACCENT, tsz=18, bsz=15)
+     "Placed/sold to clinics. Also the data-capture endpoint. ~$3,000 ASP.", line=ACCENT, tsz=18, bsz=16)
 arrow(s, 4.32, y0 + 0.8, 0.75, 0.6, ACCENT)
 card(s, 5.15, y0, bw, bh, "2 · Personalised kits",
      "Recurring CodeLife-configured peptide/exosome treatment kits. ~$30–35 ex-factory, ~65% GM.",
-     line=TEAL, tsz=18, bsz=15)
+     line=TEAL, tsz=18, bsz=16)
 arrow(s, 8.77, y0 + 0.8, 0.75, 0.6, TEAL)
 card(s, 9.6, y0, bw, bh, "3 · AI + data",
      "Every treatment feeds CodeLife — the model improves, the peptides improve, lock-in deepens.",
-     line=GOLD, tsz=18, bsz=15)
+     line=GOLD, tsz=18, bsz=16)
 rect(s, 0.7, 5.2, 11.93, 1.25, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 textbox(s, 1.0, 5.35, 11.4, 1.0,
         [("Personalised by physician PURPOSE within an approved envelope — fast 'modified-device' "
@@ -206,38 +207,37 @@ s = slide(); header(s, "Synapep Labs — three engines", 0, "Moat B, in detail")
 card(s, 0.7, 1.6, 3.85, 3.95, "1 · KOL co-development lab",
      "Korea's world-class physicians co-design products from the doctor's clinical perspective. "
      "Doctor-personalised, not patient-personalised. CodeLife accelerates each design.",
-     line=ACCENT, tsz=18, bsz=15)
+     line=ACCENT, tsz=18, bsz=16)
 card(s, 4.75, 1.6, 3.85, 3.95, "2 · Modification engine",
      "Each variant is a minor change — Korea's improved-device / negative-list regime + same-active "
      "functional-cosmetic / quasi-drug routes. Capital-efficient SKU factory.", line=TEAL, tsz=18,
-     bsz=15)
+     bsz=16)
 card(s, 8.8, 1.6, 3.85, 3.95, "3 · KOL royalty flywheel",
      "The inventing doctor champions the SKU to peers and shares economics as an FMV royalty for "
      "genuine IP co-invention — DECOUPLED from their own usage. K-Sunshine / anti-rebate compliant.",
-     line=GOLD, tsz=18, bsz=15)
+     line=GOLD, tsz=18, bsz=16)
 specs = [("<3%", "formulation Δ", TEAL), ("~3 mo", "approval cycle", ACCENT),
          ("<$30K", "per SKU", NAVY), ("~20", "SKUs / 6 mo", GOLD), ("<$600K", "total reg dev", DARK2)]
 for i, (big, lab, col) in enumerate(specs):
-    stat(s, 0.7 + i * 2.46, 5.8, 2.3, 1.05, big, lab, fill=col, bigsz=28, labsz=13)
+    stat(s, 0.7 + i * 2.46, 5.8, 2.3, 1.05, big, lab, fill=col, bigsz=28, labsz=14)
 
 # =================================================================== MOAT A · DATA FLYWHEEL
 s = slide(); header(s, "Moat A — AI efficacy + data flywheel", 0,
                     "Performance, not merely personalisation")
-cx, cy = 6.55, 4.35
-o = rect(s, cx - 1.15, cy - 1.15, 2.3, 2.3, ACCENT, shape=MSO_SHAPE.OVAL, shadow=True)
+cx, cy = 6.55, 3.95
+o = rect(s, cx - 1.1, cy - 1.1, 2.2, 2.2, ACCENT, shape=MSO_SHAPE.OVAL, shadow=True)
 fill_text(o, [("DATA", 20, True, WHITE), ("FLYWHEEL", 20, True, WHITE)])
-nodes = [("Treatments\n& outcomes", 5.3, 1.7), ("Bigger\nconsented dataset", 9.6, 3.6),
-         ("Better\nAI model", 6.4, 6.0), ("Better\npeptides", 2.4, 3.6)]
+# symmetric nodes (top, right, bottom, left) around the hub centre
+nodes = [("Treatments & outcomes", 5.3, 1.45), ("Bigger consented dataset", 9.35, 3.45),
+         ("Better AI model", 5.3, 5.4), ("Better peptides", 1.25, 3.45)]
 ncol = [TEAL, NAVY, GOLD, DARK2]
-boxes = []
 for (txt, l, t), col in zip(nodes, ncol):
-    sp = rect(s, l, t, 2.5, 1.05, col, shape=MSO_SHAPE.ROUNDED_RECTANGLE, shadow=True)
-    fill_text(sp, [(line, 15, True, WHITE) for line in [txt.replace("\n", " ")]])
-    boxes.append((l + 1.25, t + 0.52))
-# clockwise curved arrows around the hub
-for (al, at, rot) in [(7.7, 2.5, 35), (8.0, 5.0, 125), (4.6, 5.2, 215), (4.3, 2.6, 305)]:
-    a = rect(s, al, at, 1.0, 0.55, ACCENT, shape=MSO_SHAPE.RIGHT_ARROW); a.rotation = rot
-textbox(s, 0.7, 6.75, 12, 0.5,
+    sp = rect(s, l, t, 2.5, 1.0, col, shape=MSO_SHAPE.ROUNDED_RECTANGLE, shadow=True)
+    fill_text(sp, [(txt, 16, True, WHITE)])
+# clockwise arrows in the four diagonal gaps around the hub
+for (al, at, rot) in [(7.75, 2.55, 35), (7.75, 4.7, 125), (4.05, 4.7, 215), (4.05, 2.55, 305)]:
+    a = rect(s, al, at, 1.05, 0.55, ACCENT, shape=MSO_SHAPE.RIGHT_ARROW); a.rotation = rot
+textbox(s, 0.7, 6.8, 12, 0.5,
         [("Day-one asset: the consented dataset + data-rights + analytics. 'Own large model' is the "
           "direction, not the seed-stage claim.", 14, False, GREY)])
 
@@ -260,36 +260,36 @@ for px, py, mk in positions:
 for px, py, mk in positions:
     chip = rect(s, px - 0.72, py - 0.28, 1.44, 0.56, LIGHT, line=ACCENT, line_w=1.0,
                 shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    fill_text(chip, [(mk, 13, True, NAVY)])
+    fill_text(chip, [(mk, 14, True, NAVY)])
 hub = rect(s, hub_x - 1.15, hub_y - 0.85, 2.3, 1.7, NAVY, shape=MSO_SHAPE.OVAL, shadow=True)
 fill_text(hub, [("KOREA", 19, True, WHITE), ("MFDS", 19, True, WHITE),
-                ("master dossier", 12, False, SKY)])
+                ("master dossier", 14, False, SKY)])
 # right column points
 card(s, 7.4, 1.7, 5.3, 1.25, "No per-market R&D",
-     "Personalisation is by physician purpose within the SAME approved envelope.", bsz=15)
+     "Personalisation is by physician purpose within the SAME approved envelope.", bsz=16)
 card(s, 7.4, 3.05, 5.3, 1.25, "Identical unit economics",
-     "Only the clinic base and timing change country-to-country.", bsz=15, line=TEAL)
+     "Only the clinic base and timing change country-to-country.", bsz=16, line=TEAL)
 card(s, 7.4, 4.4, 5.3, 1.25, "Scale + data benefits",
-     "One production / QC / stability spec; one comparable global dataset.", bsz=15, line=GOLD)
+     "One production / QC / stability spec; one comparable global dataset.", bsz=16, line=GOLD)
 card(s, 7.4, 5.75, 5.3, 1.2, "Reliance pathway",
-     "The Korean technical file is the master dossier for every export filing.", bsz=15, line=DARK2)
+     "The Korean technical file is the master dossier for every export filing.", bsz=16, line=DARK2)
 
 # =================================================================== 6 REGULATORY CHEVRON
 s = slide(); header(s, "Regulatory strategy", 6, "Korea → Hong Kong → export, with the right product on the fast path")
-steps = [("KOREA MFDS", "'Modified-device' route for the microneedling/topical kit + applicator (~months)", ACCENT),
+steps = [("KOREA MFDS", "Device family + 'modification engine' (improved-device / negative-list)", ACCENT),
          ("HONG KONG MDACS", "Light voluntary listing; MFDS is a recognised reference regulator", TEAL),
          ("EXPORT", "Reliance/recognition across ASEAN + GCC on the same Korean file", GOLD)]
 for i, (t1, t2, col) in enumerate(steps):
     l = 0.7 + i * 4.15
-    cv = rect(s, l, 2.0, 4.0, 1.7, col, shape=MSO_SHAPE.CHEVRON, shadow=True)
-    fill_text(cv, [(t1, 19, True, WHITE), (" ", 6, False, WHITE), (t2, 13, False, WHITE)])
-card(s, 0.7, 4.3, 12.0, 1.0, "Lead with the device family",
-     "Microneedling/topical kit + applicator registers fast as a device. The IM/injectable line is "
-     "likely a drug/biologic — run it on a separate, slower track so it never gates launch.",
-     bsz=15, line=NAVY)
+    cv = rect(s, l, 1.95, 4.0, 2.0, col, shape=MSO_SHAPE.CHEVRON, shadow=True)
+    fill_text(cv, [(t1, 18, True, WHITE), (" ", 6, False, WHITE), (t2, 14, False, WHITE)])
+card(s, 0.7, 4.35, 12.0, 1.05, "Device vs kit — the right wrapper for each",
+     "The applicator registers as a medical device; the doctor-personalised topical/exosome kits "
+     "are functional-cosmetic / quasi-drug; the IM/injectable line is a separate drug/biologic that "
+     "never gates launch.", bsz=16, line=NAVY)
 card(s, 0.7, 5.5, 12.0, 1.0, "CodeLife = configuration within a cleared envelope",
      "Physician in the loop; manages Software-as-a-Medical-Device exposure. Claim discipline on "
-     "exosomes (non-human salmon/synthetic origin; function-based claims).", bsz=15, line=NAVY)
+     "exosomes (non-human salmon/synthetic origin; function-based claims).", bsz=16, line=NAVY)
 
 # =================================================================== 7 EXPORT TIERS
 s = slide(); header(s, "Export springboard — KFDA reliance", 7, "Two tiers off one Korean registration")
@@ -301,19 +301,19 @@ def chips(s, items, l, t, w, per_row=2, cw=2.35, ch=0.62, gap=0.12, col=LIGHT):
         fill_text(sp, [(it, 14, True, NAVY)])
 p1 = rect(s, 0.7, 1.65, 6.0, 5.1, LIGHT, line=ACCENT, line_w=1.5, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 textbox(s, 0.95, 1.8, 5.5, 0.8, [("TIER 1 · ASEAN + Hong Kong", 19, True, ACCENT),
-                                 ("Fastest — reliance-led off the Korean file", 13, False, GREY)])
+                                 ("Fastest — reliance-led off the Korean file", 14, False, GREY)])
 chips(s, ["Hong Kong", "Vietnam", "Singapore", "Thailand", "Malaysia", "Indonesia", "Philippines"],
       0.95, 3.05, 5.5, per_row=2)
 textbox(s, 0.95, 6.1, 5.5, 0.6,
-        [("HK MDACS reference · VN accepts MFDS · ASEAN CSDT cascade", 12, False, GREY)])
+        [("HK MDACS reference · VN accepts MFDS · ASEAN CSDT cascade", 14, False, GREY)])
 p2 = rect(s, 7.0, 1.65, 5.6, 5.1, RGBColor(0xEE, 0xE9, 0xDD), line=GOLD, line_w=1.5,
           shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 textbox(s, 7.25, 1.8, 5.2, 0.8, [("TIER 2 · GCC + Greater China", 19, True, GOLD),
-                                 ("Large, attractive, more work per market", 13, False, GREY)])
+                                 ("Large, attractive, more work per market", 14, False, GREY)])
 chips(s, ["Saudi (SFDA)", "UAE (MOHAP)", "Taiwan", "China"], 7.25, 3.05, 5.2, per_row=2,
       col=RGBColor(0xF6, 0xF1, 0xE5))
 textbox(s, 7.25, 6.1, 5.2, 0.6,
-        [("SFDA regional reference · TFDA uses Korean data · China via Hainan", 12, False, GREY)])
+        [("SFDA regional reference · TFDA uses Korean data · China via Hainan", 14, False, GREY)])
 
 # =================================================================== 8 FINANCIALS CHART
 s = slide(); header(s, "Multi-market revenue — 3 scenarios", 8, "Same product; scenarios flex ramp, price, utilisation")
@@ -383,18 +383,18 @@ for pt, col in zip(pts, [NAVY, ACCENT, GOLD]):
 dl = ch.plots[0].data_labels; dl.number_format = '0.0"%"'; dl.number_format_is_linked = False
 dl.font.size = Pt(15); dl.font.bold = True; dl.font.color.rgb = WHITE
 ch.plots[0].has_data_labels = True
-textbox(s, 6.9, 6.55, 5.8, 0.4, [("Cap table at $6.0M pre / $1.0M kickoff", 13, False, GREY)],
+textbox(s, 6.9, 6.55, 5.8, 0.4, [("Cap table at $6.0M pre / $1.0M kickoff", 14, False, GREY)],
         align=PP_ALIGN.CENTER)
 
 # =================================================================== 11 THE ASK
 s = slide(); header(s, "The ask — milestone-gated SAFE", 11, "US$1.0M post-money SAFE · $6.0M cap · 20% discount · MFN")
 t1 = rect(s, 0.7, 1.8, 5.7, 2.0, NAVY, shape=MSO_SHAPE.ROUNDED_RECTANGLE, shadow=True)
 fill_text(t1, [("$400k", 40, True, WHITE), ("Tranche 1 — at close", 16, True, SKY),
-               ("Conditions precedent (below)", 13, False, SKY)])
+               ("Conditions precedent (below)", 14, False, SKY)])
 arrow(s, 6.55, 2.55, 0.7, 0.55, ACCENT)
 t2 = rect(s, 7.35, 1.8, 5.3, 2.0, ACCENT, shape=MSO_SHAPE.ROUNDED_RECTANGLE, shadow=True)
 fill_text(t2, [("$600k", 40, True, WHITE), ("Tranche 2 — on milestones", 16, True, WHITE),
-               ("Released when proven (below)", 13, False, WHITE)])
+               ("Released when proven (below)", 14, False, WHITE)])
 card(s, 0.7, 4.0, 5.7, 2.7, "Conditions precedent",
      "•  WBI IP assigned/licensed into the JV\n•  Verify the $25M sample (entity/product/channel)\n"
      "•  Clinic data-rights clause\n•  Clean cap table", line=NAVY, tsz=18, bsz=16)
@@ -457,11 +457,11 @@ rect(s, 11.0, 1.2, 2.2, 2.2, DARK2, shape=MSO_SHAPE.OVAL)
 rect(s, 11.8, 4.6, 1.4, 1.4, ACCENT, shape=MSO_SHAPE.OVAL)
 rect(s, 0.95, 2.6, 0.2, 1.6, ACCENT)
 textbox(s, 1.35, 2.5, 10.5, 1.2, [("Same product. More markets. A data moat.", 36, True, WHITE)])
-textbox(s, 1.4, 3.95, 10.8, 1.6,
+textbox(s, 1.4, 3.95, 10.8, 1.3,
         [("Base case ~$%.0fM revenue / ~$%.0fM EBITDA by 2030 across 12 markets on one "
           "Korean-developed product." % (R["Base"][0][2030]["tot_rev"] / 1e6,
                                          R["Base"][0][2030]["ebitda"] / 1e6), 20, False, SKY)])
-textbox(s, 1.4, 5.5, 10.8, 0.7, [("$1.0M milestone-gated kickoff · $6.0M cap · 20% discount", 18,
+textbox(s, 1.4, 5.9, 10.8, 0.7, [("$1.0M milestone-gated kickoff · $6.0M cap · 20% discount", 18,
                                   True, WHITE)])
 
 prs.save(DIR + "Synapep_Investor_Deck.pptx")
