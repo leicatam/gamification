@@ -11,7 +11,7 @@ delivered as registered medical devices, powered by **CodeLife.AI** (proprietary
 |------|----------------|
 | [`business-plan.md`](./business-plan.md) | Company, AI moat, technology/IP, regulatory strategy (Korea→HK), GTM, ops, team, risks |
 | [`financial-model.md`](./financial-model.md) | Unit economics (device + kits), clinic-driven volume, P&L, scenarios |
-| [`multimarket-model.md`](./multimarket-model.md) | Multi-market revenue model — same Korean product across 12 markets, per-country clinic ramp |
+| [`multimarket-model.md`](./multimarket-model.md) | Multi-market revenue model — same Korean product across 12 markets, 3 scenarios (Conservative/Base/Upside), per-country clinic ramp |
 | [`valuation.md`](./valuation.md) | Two-lens valuation (device floor + AI/data-company upside), cap table |
 | [`export-strategy.md`](./export-strategy.md) | International expansion — KFDA as an export springboard (ASEAN+HK, GCC+Greater China) |
 | [`dd-scorecard.md`](./dd-scorecard.md) | Independent technical-investor RAG diligence scorecard |
@@ -44,5 +44,11 @@ evidence + own-model build plan; IP-contribution scope; device ASP/GM, clinic ra
 python3 synexo/build_docx.py            # -> Synapep_Business_Plan_and_Valuation.docx
 python3 synexo/build_html.py            # -> Synapep_Business_Plan_and_Valuation.html (source for the Drive Word .doc)
 python3 synexo/build_investor_docs.py   # -> Synapep_DD_Scorecard.docx, Synapep_Term_Sheet.docx, Synapep_Export_Strategy.docx
-python3 synexo/build_multimarket_model.py  # -> multimarket-model.csv/.md, Synapep_MultiMarket_Model.docx
+python3 synexo/build_multimarket_model.py  # -> multimarket-model.csv/.md, Synapep_MultiMarket_Model.docx (3 scenarios)
+python3 synexo/build_report.py          # -> Synapep_Comprehensive_Report.docx (single-sources model numbers)
+python3 synexo/build_pptx.py            # -> Synapep_Investor_Deck.pptx (14 slides; needs python-pptx)
 ```
+
+Generated investor outputs: `Synapep_Comprehensive_Report.docx` (full report) and
+`Synapep_Investor_Deck.pptx` (deck) both import figures from `build_multimarket_model.py`, so the
+report, model and deck never drift.

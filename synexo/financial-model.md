@@ -74,13 +74,17 @@ product development) — is in [`multimarket-model.md`](./multimarket-model.md) 
 `Synapep_MultiMarket_Model.docx`. Because the product (and therefore unit economics) is identical
 everywhere, the uplift comes purely from **distribution reach**:
 
-| | Korea-only base | Multi-market (12 markets) |
-|---|--:|--:|
-| 2030 clinics | ~1,000 | ~2,020 |
-| 2030 revenue | $39.9M | ~$75.1M |
-| Blended GM | ~65.6% | ~65.3% |
+| 2030 metric | Korea-only base | Multi-market: Conservative | Base | Upside |
+|---|--:|--:|--:|--:|
+| Markets | 1 | 11 (China excl.) | 12 | 12 |
+| Clinics | ~1,000 | ~1,167 | ~2,020 | ~2,626 |
+| Revenue | $39.9M | ~$35.0M | ~$75.1M | ~$112.2M |
+| EBITDA | $16.2M | ~$10.3M | ~$33.0M | ~$55.5M |
+| Blended GM | ~65.6% | ~63.8% | ~65.3% | ~66.4% |
 
-Margins are unchanged and R&D is not duplicated. Per-market clinic ramps are assumptions pending
+Scenarios flex only the **clinic ramp, price and utilisation** — never the product — so margins
+are stable and R&D is not duplicated. The Conservative case lands near the Korea-only base but
+across 11 markets (less single-country risk). Per-market clinic ramps are assumptions pending
 anchor-clinic evidence; kit regulatory class varies by market (see `export-strategy.md`).
 
 ## 6. Open assumptions to confirm
