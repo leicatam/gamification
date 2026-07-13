@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alpine Coordination Game — Stage 3 Short-Run Build v2.1</title>
+<title>Alpine Coordination Game — Stage 3 Short-Run Build v2.2</title>
 <style>
   :root{
     --snow:#FBF7EF; --ice:#DCE9EE; --pine:#1F4A38; --pine-dk:#123027;
@@ -60,7 +60,7 @@
 <body>
 <header>
   <h1>Alpine Coordination Game</h1>
-  <span class="tag">STAGE 3 SHORT-RUN BUILD v2.1</span>
+  <span class="tag">STAGE 3 SHORT-RUN BUILD v2.2</span>
   <span class="pill" id="modePill">Zero-failure mode</span>
   <button class="btn-soft" id="sndBtn" style="padding:4px 12px;font-size:.85rem">🔊 Sound on</button>
 </header>
@@ -71,7 +71,11 @@
       <h2>Session setup</h2>
       <div class="row">
         <label>Participant ID <input type="text" id="pid" placeholder="e.g. 3001" autocomplete="off"></label>
-        <label>Session № <select id="sessno"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></label>
+        <label>Session № <select id="sessno">
+          <option value="1">1 of 5</option><option value="2">2 of 5</option><option value="3">3 of 5</option>
+          <option value="4">4 of 5</option><option value="5">5 of 5</option>
+          <option value="6">6 — return visit</option><option value="7">7 — return visit</option>
+        </select></label>
         <label>Run length <select id="goal"><option value="200" selected>200 m</option><option value="400">400 m</option></select></label>
         <button class="btn-go" id="startBtn">Start run</button>
         <button class="btn-soft" id="endBtn" style="display:none">End run early</button>
@@ -83,6 +87,9 @@
         </div>
         <div class="row">
           <span class="toggle"><input type="checkbox" id="agentic" checked> Agentic AI difficulty (Claude decides; automatic rule fallback if offline)</span>
+        </div>
+        <div class="row">
+          <span style="font-size:.8rem; color:#6E6A5E">Sessions 1–5 are the study's five-attempt protocol; the game itself is identical each time. Session 6+ records a voluntary return visit. The number is a data label written into the exported CSV.</span>
         </div>
         <div class="row">
           <span id="padStatus"><span class="dot" id="padDot"></span>No controller detected — press a button or move the stick / foot pad to pair. Keyboard ← → also works.</span>
@@ -205,6 +212,12 @@ function pollInput(){
   }
   return Math.max(-1,Math.min(1,dir));
 }
+document.getElementById('pid').addEventListener('change',()=>{
+  const pid=document.getElementById('pid').value.trim();
+  if(!pid) return;
+  const last=+localStorage.getItem('alpine_last_sess_'+pid)||0;
+  if(last>0) document.getElementById('sessno').value=String(Math.min(7,last+1));
+});
 document.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft')keyDir=-1; if(e.key==='ArrowRight')keyDir=1; });
 document.addEventListener('keyup',e=>{ if(e.key==='ArrowLeft'&&keyDir<0)keyDir=0; if(e.key==='ArrowRight'&&keyDir>0)keyDir=0; });
 setInterval(()=>{ if(padIndex===null){ const gps=navigator.getGamepads?navigator.getGamepads():[];
@@ -306,7 +319,16 @@ function laneToX(lane,d,W){ return W*0.5 + lane*halfW(d,W); }
 /* ============ GAME LOOP ============ */
 function spawn(dt){
   const rate = 0.75*S.diff*S.obFactor;                        // obstacles per second (bumps thin this)
-  if(Math.random()<rate*dt){ S.obstacles.push({lane:-0.85+1.7*Math.random(), z:VIEW_M, type:Math.random()<0.7?'tree':'rock', checked:false, wob:Math.random()*7}); S.spawned++; S.evalWindow.spawned++; }
+  if(Math.random()<rate*dt){
+    const rockP = Math.min(0.45, 0.30 + 0.17*(S.diff-0.6));         // stones more common as difficulty rises
+    const type = Math.random()<rockP ? 'rock' : 'tree';
+    const lane = -0.85+1.7*Math.random();
+    S.obstacles.push({lane, z:VIEW_M, type, checked:false, wob:Math.random()*7}); S.spawned++; S.evalWindow.spawned++;
+    if(type==='rock' && S.diff>=0.9 && Math.random()<0.35){          // boulder pair at higher difficulty
+      S.obstacles.push({lane:Math.max(-0.9,Math.min(0.9,lane+(Math.random()<0.5?-0.3:0.3))), z:VIEW_M+3, type:'rock', checked:false, wob:Math.random()*7});
+      S.spawned++; S.evalWindow.spawned++;
+    }
+  }
   if(Math.random()<0.9*dt){ S.coinsArr.push({lane:-0.8+1.6*Math.random(), z:VIEW_M, checked:false, ph:Math.random()*7}); }
   if(Math.random()<8*dt){ S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02}); }
   if(Math.random()<2.2*dt){ S.scenery.push({side:Math.random()<0.5?-1:1, off:0.12+0.55*Math.random(), z:VIEW_M, kind:Math.random()<0.8?'tree':'rock', big:0.8+0.6*Math.random()}); }
@@ -353,7 +375,7 @@ function step(dt){
   S.obstacles=S.obstacles.filter(o=>{
     if(!o.checked && o.z<=skierZ+1.5){
       o.checked=true;
-      if(Math.abs(o.lane-S.skierLane)<0.17){
+      if(Math.abs(o.lane-S.skierLane) < (o.type==='rock'?0.24:0.17)){
         S.hits++; S.evalWindow.hits++;
         SND.bump(); S.flashUntil=S.playT+0.6;
         if(S.zeroFail){ easeAfterBump(); }
@@ -565,7 +587,7 @@ function draw(){
       else drawRock(x,y,sc*it.o.big*0.8);
     }
     else if(it.kind==='tree') drawTree(laneToX(it.o.lane,d,W),y,sc,it.o.wob);
-    else if(it.kind==='rock') drawRock(laneToX(it.o.lane,d,W),y,sc);
+    else if(it.kind==='rock') drawRock(laneToX(it.o.lane,d,W),y,sc*1.35);
     else drawCoin(laneToX(it.o.lane,d,W),y,sc,it.o.ph);
   }
   // snow spray
@@ -581,7 +603,7 @@ function draw(){
   // HUD
   document.getElementById('hudL').textContent=Math.round(S.dist)+' m / '+S.goal+' m';
   document.getElementById('hudM').textContent='⏱ '+Math.max(0,(S.cap-S.playT)).toFixed(0)+' s   ×'+S.diff.toFixed(2);
-  document.getElementById('hudR').textContent='🪙 '+S.coins+'   balance '+curBalance().toFixed(0)+'%';
+  document.getElementById('hudR').textContent='🪙 '+S.coins+'   '+(S.coins*10+Math.round(S.dist))+' pts';
 }
 function loop(ts){
   if(!running) return;
@@ -609,6 +631,9 @@ function endRun(early){
   SND.finish();
   document.getElementById('endBtn').style.display='none';
   const avgBal = S.balSamples.length? S.balSamples.reduce((a,b)=>a+b,0)/S.balSamples.length : curBalance();
+  const goalHit = S.endReason==='distance goal reached';
+  S.score = S.coins*10 + Math.round(S.dist) + (goalHit?50:0);
+  try{ if(S.pid && S.pid!=='UNSET') localStorage.setItem('alpine_last_sess_'+S.pid, String(S.sessNo)); }catch(e){}
   S.result={
     Participant_ID:S.pid, Session_No:S.sessNo,
     Session_Date:new Date().toISOString().slice(0,10),
@@ -619,15 +644,45 @@ function endRun(early){
     Max_Speed:+S.maxSpeed.toFixed(1),
     AI_DiffMult:+S.diff.toFixed(2),
     Reached_GameOver: S.gameOver? 'TRUE':'FALSE',
+    Score:S.score,
     Post_FRA_Index:'', Notes:(S.zeroFail?'zero-failure':'classic')+'; cap='+S.cap+'s; end: '+(S.endReason||'unknown')+'; state changes='+S.stateChanges.length
   };
   const dl=document.getElementById('sumList'); dl.innerHTML='';
   for(const[k,v] of Object.entries(S.result)){ dl.insertAdjacentHTML('beforeend',`<dt>${k}</dt><dd>${v===''?'—':v}</dd>`); }
   document.getElementById('summary').style.display='block';
+  drawEndOverlay(goalHit);
   coach(S.gameOver? 'The run ended — and that is completely fine. Every run teaches the slope about you.'
        : S.endReason==='distance goal reached'
          ? `You made it — ${S.goal} m! ${S.coins} coins, balance ${avgBal.toFixed(0)}%.`
          : `Time! ${Math.round(S.dist)} m in ${S.cap} seconds, ${S.coins} coins, balance ${avgBal.toFixed(0)}%. Every run is a fresh start.`);
+}
+
+function drawEndOverlay(goalHit){
+  const W=cv.width,H=cv.height;
+  draw();                                        // final scene behind the card
+  ctx.fillStyle='rgba(18,48,39,0.35)'; ctx.fillRect(0,0,W,H);
+  const cw=W*0.62, chh=H*0.52, cx=(W-cw)/2, cy=(H-chh)/2;
+  ctx.fillStyle='rgba(251,247,239,0.97)';
+  ctx.beginPath(); ctx.roundRect(cx,cy,cw,chh,22); ctx.fill();
+  ctx.strokeStyle='#E8A64B'; ctx.lineWidth=4; ctx.stroke();
+  const greets = goalHit
+    ? ['Congratulations!','Fantastic run!','You made it!','Bravo!']
+    : ['Well done!','Great effort!','Nice riding!','Lovely run!'];
+  const g = greets[Math.floor(Math.random()*greets.length)];
+  ctx.textAlign='center'; ctx.fillStyle='#1F4A38';
+  ctx.font='bold 44px "Trebuchet MS",Verdana';
+  ctx.fillText('🎉 '+g, W/2, cy+64);
+  ctx.font='bold 64px "Trebuchet MS",Verdana'; ctx.fillStyle='#C2483A';
+  ctx.fillText(S.score+' points', W/2, cy+140);
+  ctx.font='20px Verdana'; ctx.fillStyle='#22302B';
+  ctx.fillText(Math.round(S.dist)+' m skied   ·   '+S.coins+' coins ×10   ·   '+(goalHit?'+50 goal bonus':'time complete'), W/2, cy+180);
+  ctx.fillText('Balance '+(S.balSamples.length?(S.balSamples.reduce((a,b)=>a+b,0)/S.balSamples.length):curBalance()).toFixed(0)+'%', W/2, cy+210);
+  ctx.font='16px Verdana'; ctx.fillStyle='#6E6A5E';
+  ctx.fillText('Press “Start run” whenever you are ready for another go.', W/2, cy+chh-26);
+  // celebratory snow burst
+  ctx.fillStyle='#E8A64B';
+  for(let i=0;i<26;i++){ const a=Math.random()*6.28, r=40+Math.random()*90;
+    ctx.beginPath(); ctx.arc(W/2+Math.cos(a)*r*2, cy+70+Math.sin(a)*r*0.6, 2.5+Math.random()*2.5,0,7); ctx.fill(); }
 }
 
 /* ============ EXPORT ============ */
@@ -648,7 +703,7 @@ document.getElementById('expStates').onclick=()=>{
 
 /* idle scene so the canvas looks alive before the first run */
 S=newSession();
-(function idle(){ if(!running){ sceneT+=1/40;
+(function idle(){ if(!running && !(S&&S.result)){ sceneT+=1/40;
   if(Math.random()<0.15) S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02});
   for(const f of S.flakes){ f.y+=0.004+0.002*f.s; }
   S.flakes=S.flakes.filter(f=>f.y<1.05);
