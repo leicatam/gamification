@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alpine Coordination Game — Stage 3 Short-Run Build</title>
+<title>Alpine Coordination Game — Stage 3 Short-Run Build v2.1</title>
 <style>
   :root{
     --snow:#FBF7EF; --ice:#DCE9EE; --pine:#1F4A38; --pine-dk:#123027;
@@ -60,8 +60,9 @@
 <body>
 <header>
   <h1>Alpine Coordination Game</h1>
-  <span class="tag">STAGE 3 SHORT-RUN BUILD v2.0</span>
+  <span class="tag">STAGE 3 SHORT-RUN BUILD v2.1</span>
   <span class="pill" id="modePill">Zero-failure mode</span>
+  <button class="btn-soft" id="sndBtn" style="padding:4px 12px;font-size:.85rem">🔊 Sound on</button>
 </header>
 
 <main>
@@ -93,7 +94,7 @@
       <canvas id="cv" width="840" height="560"></canvas>
       <div class="hud">
         <div class="box" id="hudL">0 m</div>
-        <div class="box" id="hudM">⏱ 20 s</div>
+        <div class="box" id="hudM">⏱ 30 s</div>
         <div class="box" id="hudR">🪙 0</div>
       </div>
     </div>
@@ -123,13 +124,13 @@
 </main>
 
 <footer>
-  Research instrument for the Stage 3 decoupling study (coordination-game framing), short-run build: a run ends when the distance goal (200 m or 400 m) is reached <em>or</em> at the 20-second cap — whichever comes first. Controls: USB joystick or foot pad via the browser Gamepad API (left/right axis or D-pad), or keyboard arrows. All telemetry stays in this browser until you export it. The agentic mode calls the Claude API with aggregate game parameters only; if the call fails or times out, the built-in rule agent takes over — the same fail-safe as the Phase 1 five-layer architecture. Exported CSV columns match the Stage 3 logbook "Game Telemetry" sheet.
+  Research instrument for the Stage 3 decoupling study (coordination-game framing), short-run build: a run ends when the distance goal is reached <em>or</em> at the time cap — 30 s for the 200 m run, 60 s for the 400 m run — whichever comes first. In zero-failure mode a bump never slows the player; it clears obstacles ahead and eases the slope instead. All sound is synthesized in the browser (toggle with the 🔊 button). Controls: USB joystick or foot pad via the browser Gamepad API (left/right axis or D-pad), or keyboard arrows. All telemetry stays in this browser until you export it. The agentic mode calls the Claude API with aggregate game parameters only; if the call fails or times out, the built-in rule agent takes over — the same fail-safe as the Phase 1 five-layer architecture. Exported CSV columns match the Stage 3 logbook "Game Telemetry" sheet.
 </footer>
 
 <script>
 "use strict";
 /* ============ CONFIG ============ */
-const TIME_CAP_S    = 20;            // hard cap: run ends at 20 s
+const TIME_CAPS     = {200:30, 400:60};  // time cap scales with run length
 const EVAL_INTERVAL_S = 6;           // agent evaluates every 6 s (fits inside a 20 s run)
 const DIFF_MIN = 0.30, DIFF_MAX = 1.50;
 const BASE_SPEED = 18;               // m/s at diff 1.0 (200 m reachable inside 20 s)
@@ -151,11 +152,12 @@ function newSession(){
     zeroFail: document.getElementById('zeroFail').checked,
     agentic: document.getElementById('agentic').checked,
     goal: +document.getElementById('goal').value,
+    cap: TIME_CAPS[+document.getElementById('goal').value] || 30,
     t0: Date.now(), playT:0, dist:0, coins:0, hits:0, livesLost:0,
     maxSpeed:0, diff:0.60,
     skierLane:0, vx:0, obstacles:[], coinsArr:[], flakes:[], scenery:[], spray:[],
     onTrailT:0, offTrailT:0, avoided:0, spawned:0,
-    slowUntil:0, gameOver:false, endReason:'',
+    obFactor:1.0, flashUntil:0, gameOver:false, endReason:'',
     lastEval:0, evalWindow:{hits:0, avoided:0, spawned:0, coins:0},
     stateChanges:[], balSamples:[]
   };
@@ -208,6 +210,46 @@ document.addEventListener('keyup',e=>{ if(e.key==='ArrowLeft'&&keyDir<0)keyDir=0
 setInterval(()=>{ if(padIndex===null){ const gps=navigator.getGamepads?navigator.getGamepads():[];
   for(const g of gps){ if(g){ padIndex=g.index; padUI(true,g.id); break; } } } },1000);
 
+
+/* ============ SOUND (Web Audio, synthesized — no external files) ============ */
+let AC=null, windGain=null, soundOn=true;
+function audioInit(){
+  if(AC) { if(AC.state==='suspended') AC.resume(); return; }
+  try{
+    AC=new (window.AudioContext||window.webkitAudioContext)();
+    // gentle wind: looped filtered noise, gain follows speed
+    const len=2*AC.sampleRate, buf=AC.createBuffer(1,len,AC.sampleRate), ch=buf.getChannelData(0);
+    for(let i=0;i<len;i++) ch[i]=Math.random()*2-1;
+    const src=AC.createBufferSource(); src.buffer=buf; src.loop=true;
+    const lp=AC.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=420;
+    windGain=AC.createGain(); windGain.gain.value=0;
+    src.connect(lp); lp.connect(windGain); windGain.connect(AC.destination); src.start();
+  }catch(e){ AC=null; }
+}
+function tone(freq,dur,type,vol,when=0,glide=null){
+  if(!AC||!soundOn) return;
+  const t=AC.currentTime+when, o=AC.createOscillator(), g=AC.createGain();
+  o.type=type; o.frequency.setValueAtTime(freq,t);
+  if(glide) o.frequency.exponentialRampToValueAtTime(glide,t+dur);
+  g.gain.setValueAtTime(0.0001,t);
+  g.gain.exponentialRampToValueAtTime(vol,t+0.015);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+  o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+dur+0.05);
+}
+const SND={
+  coin(){ tone(1046,0.09,'sine',0.18); tone(1568,0.14,'sine',0.15,0.07); },
+  bump(){ tone(140,0.22,'triangle',0.22,0,80);                       // soft thud, not a punishment
+          tone(90,0.18,'sine',0.12,0.02); },
+  up(){   tone(660,0.10,'sine',0.12); tone(880,0.14,'sine',0.12,0.09); },
+  down(){ tone(520,0.16,'sine',0.10,0,390); },
+  finish(){ [523,659,784,1046].forEach((f,i)=>tone(f,0.22,'sine',0.16,i*0.13)); }
+};
+document.getElementById('sndBtn').onclick=()=>{
+  soundOn=!soundOn; if(soundOn) audioInit();
+  if(windGain&&!soundOn) windGain.gain.value=0;
+  document.getElementById('sndBtn').textContent = soundOn?'🔊 Sound on':'🔇 Sound off';
+};
+
 /* ============ AGENT ============ */
 const RULES = (w, diff)=>{
   const faced = w.hits + w.avoided;
@@ -221,7 +263,7 @@ async function agentEvaluate(){
   const payload={window_s:EVAL_INTERVAL_S, obstacles_hit:w.hits, obstacles_avoided:w.avoided,
     coins:w.coins, distance_m:Math.round(S.dist), balance_pct:+curBalance().toFixed(1),
     current_difficulty:+S.diff.toFixed(2), zero_failure_mode:S.zeroFail,
-    time_left_s:+(TIME_CAP_S-S.playT).toFixed(1)};
+    time_left_s:+(S.cap-S.playT).toFixed(1)};
   let applied=null, src='rules';
   if(S.agentic){
     try{
@@ -229,7 +271,7 @@ async function agentEvaluate(){
       const res=await fetch("https://api.anthropic.com/v1/messages",{
         method:"POST", headers:{"Content-Type":"application/json"}, signal:ctrl.signal,
         body:JSON.stringify({model:"claude-sonnet-4-6", max_tokens:1000, messages:[{role:"user",
-          content:`You are the adaptive-difficulty agent for a short-run research skiing game (20-second runs) played by adults aged 25-80. Zero-failure design: keep the player in flow; never let them fail repeatedly. Given this performance window, reply with ONLY a JSON object, no markdown fences: {"difficulty_multiplier": number between 0.30 and 1.50, "reason": short string <=60 chars}. Current data: ${JSON.stringify(payload)}. Adjust gently (max ±0.15 per step). If they hit obstacles, ease off; if they avoided nearly all, step up slightly; otherwise hold.`}]})
+          content:`You are the adaptive-difficulty agent for a short-run research skiing game (30–60 second runs) played by adults aged 25-80. Zero-failure design: keep the player in flow; never let them fail repeatedly. Given this performance window, reply with ONLY a JSON object, no markdown fences: {"difficulty_multiplier": number between 0.30 and 1.50, "reason": short string <=60 chars}. Current data: ${JSON.stringify(payload)}. Adjust gently (max ±0.15 per step). If they hit obstacles, ease off; if they avoided nearly all, step up slightly; otherwise hold.`}]})
       });
       clearTimeout(to);
       const data=await res.json();
@@ -243,10 +285,12 @@ async function agentEvaluate(){
   }
   if(!applied){ applied=RULES(w,oldD); src = S.agentic?'fallback':'rules'; }
   S.diff=applied.d;
+  if(S.diff>oldD) SND.up(); else if(S.diff<oldD) SND.down();
   logState(oldD,S.diff,applied.r,src);
   coach(applied.d>oldD?`Nice riding — the slope opens up a little. (${applied.r})`
        :applied.d<oldD?`The coach eased the slope so you can find your rhythm. (${applied.r})`
        :`Holding steady — you're in the flow band. (${applied.r})`);
+  if(S.evalWindow.hits===0 && S.obFactor<1) S.obFactor=Math.min(1, S.obFactor+0.15);
   S.evalWindow={hits:0,avoided:0,spawned:0,coins:0};
 }
 function coach(msg){ document.getElementById('coach').innerHTML='<b>Coach:</b> '+msg; }
@@ -261,17 +305,29 @@ function laneToX(lane,d,W){ return W*0.5 + lane*halfW(d,W); }
 
 /* ============ GAME LOOP ============ */
 function spawn(dt){
-  const rate = 0.75*S.diff;                                   // obstacles per second
+  const rate = 0.75*S.diff*S.obFactor;                        // obstacles per second (bumps thin this)
   if(Math.random()<rate*dt){ S.obstacles.push({lane:-0.85+1.7*Math.random(), z:VIEW_M, type:Math.random()<0.7?'tree':'rock', checked:false, wob:Math.random()*7}); S.spawned++; S.evalWindow.spawned++; }
   if(Math.random()<0.9*dt){ S.coinsArr.push({lane:-0.8+1.6*Math.random(), z:VIEW_M, checked:false, ph:Math.random()*7}); }
   if(Math.random()<8*dt){ S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02}); }
   if(Math.random()<2.2*dt){ S.scenery.push({side:Math.random()<0.5?-1:1, off:0.12+0.55*Math.random(), z:VIEW_M, kind:Math.random()<0.8?'tree':'rock', big:0.8+0.6*Math.random()}); }
 }
+function easeAfterBump(){
+  // zero-failure response: speed stays exactly the same — only the slope thins out
+  S.obFactor=Math.max(0.40, S.obFactor*0.75);
+  const skierZ=VIEW_M*(1-SKIER_D);
+  let cleared=0;
+  S.obstacles=S.obstacles.filter(o=>{
+    if(o.z>skierZ+4 && o.z<skierZ+32 && Math.random()<0.6){ cleared++; return false; }
+    return true;
+  });
+  logState(S.diff,S.diff,`bump → cleared ${cleared} obstacle(s), density ×${S.obFactor.toFixed(2)} (speed unchanged)`,'bump');
+  coach('A bump — no slowing down here. The slope just got a little clearer for you.');
+}
 function step(dt){
   sceneT+=dt;
-  const slowed = S.playT < S.slowUntil;
-  const spd = BASE_SPEED * S.diff * (slowed?0.45:1);
+  const spd = BASE_SPEED * S.diff;
   S.maxSpeed=Math.max(S.maxSpeed,spd);
+  if(windGain&&soundOn) windGain.gain.value=Math.min(0.055, spd/380);
   S.dist += spd*dt;
   S.playT += dt;
 
@@ -299,7 +355,8 @@ function step(dt){
       o.checked=true;
       if(Math.abs(o.lane-S.skierLane)<0.17){
         S.hits++; S.evalWindow.hits++;
-        if(S.zeroFail){ S.slowUntil=S.playT+1.2; coach('A bump — the run keeps going. Bumps are how the slope learns your level.'); }
+        SND.bump(); S.flashUntil=S.playT+0.6;
+        if(S.zeroFail){ easeAfterBump(); }
         else { S.livesLost++; if(S.livesLost>=3){ S.gameOver=true; S.endReason='three bumps'; } }
         return false;
       } else { S.avoided++; S.evalWindow.avoided++; }
@@ -309,7 +366,7 @@ function step(dt){
   S.coinsArr=S.coinsArr.filter(c=>{
     if(!c.checked && c.z<=skierZ+1.5){
       c.checked=true;
-      if(Math.abs(c.lane-S.skierLane)<0.20){ S.coins++; S.evalWindow.coins++; return false; }
+      if(Math.abs(c.lane-S.skierLane)<0.20){ S.coins++; S.evalWindow.coins++; SND.coin(); return false; }
     }
     return c.z>-4;
   });
@@ -322,7 +379,7 @@ function step(dt){
 
   // END CONDITIONS: distance goal OR 20-second cap, whichever first
   if(S.dist>=S.goal){ S.endReason='distance goal reached'; endRun(); }
-  else if(S.playT>=TIME_CAP_S){ S.endReason='20 s time cap'; endRun(); }
+  else if(S.playT>=S.cap){ S.endReason=S.cap+' s time cap'; endRun(); }
   else if(S.gameOver){ endRun(); }
 }
 
@@ -451,7 +508,7 @@ function drawCoin(x,y,s,ph){
 function drawSkier(W,H){
   const d=SKIER_D, x=laneToX(S.skierLane,d,W), y=depthY(d,H);
   const lean=Math.max(-0.5,Math.min(0.5,S.vx*0.55));
-  const slowed=S.playT<S.slowUntil;
+  const slowed=S.playT<S.flashUntil;
   // ski tracks trailing to bottom edge
   ctx.strokeStyle='rgba(160,185,200,0.55)'; ctx.lineWidth=3;
   [-7,7].forEach(off=>{
@@ -523,7 +580,7 @@ function draw(){
 
   // HUD
   document.getElementById('hudL').textContent=Math.round(S.dist)+' m / '+S.goal+' m';
-  document.getElementById('hudM').textContent='⏱ '+Math.max(0,(TIME_CAP_S-S.playT)).toFixed(0)+' s   ×'+S.diff.toFixed(2);
+  document.getElementById('hudM').textContent='⏱ '+Math.max(0,(S.cap-S.playT)).toFixed(0)+' s   ×'+S.diff.toFixed(2);
   document.getElementById('hudR').textContent='🪙 '+S.coins+'   balance '+curBalance().toFixed(0)+'%';
 }
 function loop(ts){
@@ -535,18 +592,21 @@ function loop(ts){
 
 /* ============ RUN CONTROL ============ */
 document.getElementById('startBtn').onclick=()=>{
+  audioInit();
   S=newSession(); tPrev=0; running=true;
   document.getElementById('stateBody').innerHTML='';
   document.getElementById('summary').style.display='none';
   document.getElementById('endBtn').style.display='inline-block';
   document.getElementById('modePill').textContent = S.zeroFail?'Zero-failure mode':'Classic mode (3 bumps end run)';
   logState(S.diff,S.diff,'run start — gentle floor (winnable first run)','init');
-  coach('Off we go. Lean left and right to carve between the trees. The run lasts at most 20 seconds — short, safe and repeatable.');
+  coach('Off we go. Lean left and right to carve between the trees. The run lasts at most '+S.cap+' seconds — short, safe and repeatable.');
   requestAnimationFrame(loop);
 };
 document.getElementById('endBtn').onclick=()=>{ if(running){ S.endReason='ended early by staff'; endRun(true); } };
 function endRun(early){
   running=false;
+  if(windGain) windGain.gain.value=0;
+  SND.finish();
   document.getElementById('endBtn').style.display='none';
   const avgBal = S.balSamples.length? S.balSamples.reduce((a,b)=>a+b,0)/S.balSamples.length : curBalance();
   S.result={
@@ -559,7 +619,7 @@ function endRun(early){
     Max_Speed:+S.maxSpeed.toFixed(1),
     AI_DiffMult:+S.diff.toFixed(2),
     Reached_GameOver: S.gameOver? 'TRUE':'FALSE',
-    Post_FRA_Index:'', Notes:(S.zeroFail?'zero-failure':'classic')+'; end: '+(S.endReason||'unknown')+'; state changes='+S.stateChanges.length
+    Post_FRA_Index:'', Notes:(S.zeroFail?'zero-failure':'classic')+'; cap='+S.cap+'s; end: '+(S.endReason||'unknown')+'; state changes='+S.stateChanges.length
   };
   const dl=document.getElementById('sumList'); dl.innerHTML='';
   for(const[k,v] of Object.entries(S.result)){ dl.insertAdjacentHTML('beforeend',`<dt>${k}</dt><dd>${v===''?'—':v}</dd>`); }
@@ -567,7 +627,7 @@ function endRun(early){
   coach(S.gameOver? 'The run ended — and that is completely fine. Every run teaches the slope about you.'
        : S.endReason==='distance goal reached'
          ? `You made it — ${S.goal} m! ${S.coins} coins, balance ${avgBal.toFixed(0)}%.`
-         : `Time! ${Math.round(S.dist)} m in 20 seconds, ${S.coins} coins, balance ${avgBal.toFixed(0)}%. Every run is a fresh start.`);
+         : `Time! ${Math.round(S.dist)} m in ${S.cap} seconds, ${S.coins} coins, balance ${avgBal.toFixed(0)}%. Every run is a fresh start.`);
 }
 
 /* ============ EXPORT ============ */
