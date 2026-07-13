@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpine Coordination Game — Stage 3 Short-Run Build</title>
+<style>
+  :root{
+    --snow:#FBF7EF; --ice:#DCE9EE; --pine:#1F4A38; --pine-dk:#123027;
+    --sun:#E8A64B; --coral:#D96A4E; --ink:#22302B; --card:#FFFFFF;
+    --ok:#3E8E5F; --warn:#C25438;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{
+    font-family:"Avenir Next","Trebuchet MS","Segoe UI",Verdana,sans-serif;
+    background:linear-gradient(180deg,#F2E8D8 0%,var(--snow) 40%);
+    color:var(--ink); min-height:100vh; display:flex; flex-direction:column; align-items:center;
+  }
+  header{width:100%; max-width:1180px; padding:18px 20px 6px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  header h1{font-size:1.5rem; letter-spacing:.02em; color:var(--pine-dk); font-weight:700}
+  header .tag{font-size:.78rem; background:var(--pine); color:var(--snow); padding:3px 10px; border-radius:999px; letter-spacing:.06em}
+  main{width:100%; max-width:1180px; padding:10px 20px 30px; display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,1fr); gap:16px}
+  @media (max-width:900px){ main{grid-template-columns:1fr} }
+  .panel{background:var(--card); border:1px solid #E5DECF; border-radius:14px; padding:16px; box-shadow:0 2px 10px rgba(31,74,56,.06)}
+  .panel h2{font-size:.95rem; text-transform:uppercase; letter-spacing:.1em; color:var(--pine); margin-bottom:10px}
+  #gameWrap{position:relative}
+  canvas{display:block; width:100%; border-radius:14px; border:1px solid #E5DECF; background:var(--ice); touch-action:none}
+  .hud{position:absolute; top:12px; left:12px; right:12px; display:flex; justify-content:space-between; pointer-events:none; font-weight:700; color:var(--pine-dk)}
+  .hud .box{background:rgba(251,247,239,.9); border-radius:10px; padding:7px 14px; font-size:1.05rem; border:1px solid #E5DECF}
+  .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:10px}
+  label{font-size:.9rem; font-weight:600}
+  input[type=text], select{padding:9px 11px; border:1px solid #CFC6B4; border-radius:8px; font-size:.95rem; background:#FFFDF8}
+  input[type=text]{width:110px}
+  button{cursor:pointer; border:none; border-radius:10px; padding:11px 20px; font-size:1rem; font-weight:700; letter-spacing:.02em}
+  .btn-go{background:var(--pine); color:var(--snow)}
+  .btn-go:hover{background:var(--pine-dk)}
+  .btn-soft{background:#EFE8D8; color:var(--pine-dk)}
+  .btn-soft:hover{background:#E5DCC7}
+  .btn-coral{background:var(--coral); color:#fff}
+  .toggle{display:flex; align-items:center; gap:8px; font-size:.85rem; font-weight:600}
+  .pill{font-size:.75rem; padding:2px 8px; border-radius:999px; background:var(--ice); color:var(--pine-dk)}
+  details{font-size:.85rem; margin-top:4px}
+  details summary{cursor:pointer; font-weight:700; color:var(--pine); margin-bottom:8px}
+  #coach{min-height:74px; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-size:.95rem; line-height:1.45}
+  #coach b{color:var(--pine)}
+  #stateLog{max-height:300px; overflow-y:auto; font-size:.78rem; border:1px solid #E5DECF; border-radius:10px}
+  #stateLog table{width:100%; border-collapse:collapse}
+  #stateLog th,#stateLog td{padding:5px 7px; border-bottom:1px solid #F0EADB; text-align:left; vertical-align:top}
+  #stateLog th{position:sticky; top:0; background:var(--pine); color:var(--snow); font-weight:600}
+  .up{color:var(--ok); font-weight:700} .down{color:var(--warn); font-weight:700}
+  #padStatus{font-size:.8rem}
+  .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; background:#B9B2A2}
+  .dot.on{background:var(--ok)}
+  footer{font-size:.72rem; color:#6E6A5E; max-width:1180px; padding:0 20px 24px; line-height:1.5}
+  #summary{display:none}
+  #summary dl{display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:.86rem}
+  #summary dt{font-weight:700; color:var(--pine-dk)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Alpine Coordination Game</h1>
+  <span class="tag">STAGE 3 SHORT-RUN BUILD v2.0</span>
+  <span class="pill" id="modePill">Zero-failure mode</span>
+</header>
+
+<main>
+  <section>
+    <div class="panel" id="setup">
+      <h2>Session setup</h2>
+      <div class="row">
+        <label>Participant ID <input type="text" id="pid" placeholder="e.g. 3001" autocomplete="off"></label>
+        <label>Session № <select id="sessno"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></label>
+        <label>Run length <select id="goal"><option value="200" selected>200 m</option><option value="400">400 m</option></select></label>
+        <button class="btn-go" id="startBtn">Start run</button>
+        <button class="btn-soft" id="endBtn" style="display:none">End run early</button>
+      </div>
+      <details>
+        <summary>Research settings</summary>
+        <div class="row">
+          <span class="toggle"><input type="checkbox" id="zeroFail" checked> Zero-failure mode (no game-over; bumps become learning moments)</span>
+        </div>
+        <div class="row">
+          <span class="toggle"><input type="checkbox" id="agentic" checked> Agentic AI difficulty (Claude decides; automatic rule fallback if offline)</span>
+        </div>
+        <div class="row">
+          <span id="padStatus"><span class="dot" id="padDot"></span>No controller detected — press a button or move the stick / foot pad to pair. Keyboard ← → also works.</span>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel" id="gameWrap" style="margin-top:14px">
+      <canvas id="cv" width="840" height="560"></canvas>
+      <div class="hud">
+        <div class="box" id="hudL">0 m</div>
+        <div class="box" id="hudM">⏱ 20 s</div>
+        <div class="box" id="hudR">🪙 0</div>
+      </div>
+    </div>
+
+    <div class="panel" id="summary" style="margin-top:14px">
+      <h2>Run summary — transcribe or export</h2>
+      <dl id="sumList"></dl>
+      <div class="row" style="margin-top:10px">
+        <button class="btn-go" id="expSession">Export session row (CSV)</button>
+        <button class="btn-coral" id="expStates">Export state-change log (CSV)</button>
+      </div>
+    </div>
+  </section>
+
+  <aside>
+    <div class="panel">
+      <h2>AI coach</h2>
+      <div id="coach">The coach watches how you ride and adjusts the slope. It never sends your name or health data — only run numbers like speed and misses.</div>
+    </div>
+    <div class="panel" style="margin-top:14px">
+      <h2>Difficulty state changes</h2>
+      <div id="stateLog"><table><thead><tr>
+        <th>Play&nbsp;time</th><th>Change</th><th>Reason</th><th>Src</th>
+      </tr></thead><tbody id="stateBody"></tbody></table></div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  Research instrument for the Stage 3 decoupling study (coordination-game framing), short-run build: a run ends when the distance goal (200 m or 400 m) is reached <em>or</em> at the 20-second cap — whichever comes first. Controls: USB joystick or foot pad via the browser Gamepad API (left/right axis or D-pad), or keyboard arrows. All telemetry stays in this browser until you export it. The agentic mode calls the Claude API with aggregate game parameters only; if the call fails or times out, the built-in rule agent takes over — the same fail-safe as the Phase 1 five-layer architecture. Exported CSV columns match the Stage 3 logbook "Game Telemetry" sheet.
+</footer>
+
+<script>
+"use strict";
+/* ============ CONFIG ============ */
+const TIME_CAP_S    = 20;            // hard cap: run ends at 20 s
+const EVAL_INTERVAL_S = 6;           // agent evaluates every 6 s (fits inside a 20 s run)
+const DIFF_MIN = 0.30, DIFF_MAX = 1.50;
+const BASE_SPEED = 18;               // m/s at diff 1.0 (200 m reachable inside 20 s)
+const VIEW_M   = 70;                 // metres of slope visible ahead
+const HORIZON  = 0.30;               // horizon line as fraction of canvas height
+const SKIER_D  = 0.86;               // skier depth position (0 = horizon, 1 = bottom)
+const DEADZONE = 0.18;
+
+/* ============ STATE ============ */
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let running=false, tPrev=0;
+let S=null;
+let sceneT=0;                        // global time for idle animation
+
+function newSession(){
+  return {
+    pid: document.getElementById('pid').value.trim() || 'UNSET',
+    sessNo: +document.getElementById('sessno').value,
+    zeroFail: document.getElementById('zeroFail').checked,
+    agentic: document.getElementById('agentic').checked,
+    goal: +document.getElementById('goal').value,
+    t0: Date.now(), playT:0, dist:0, coins:0, hits:0, livesLost:0,
+    maxSpeed:0, diff:0.60,
+    skierLane:0, vx:0, obstacles:[], coinsArr:[], flakes:[], scenery:[], spray:[],
+    onTrailT:0, offTrailT:0, avoided:0, spawned:0,
+    slowUntil:0, gameOver:false, endReason:'',
+    lastEval:0, evalWindow:{hits:0, avoided:0, spawned:0, coins:0},
+    stateChanges:[], balSamples:[]
+  };
+}
+function logState(oldD,newD,reason,src){
+  const e={t:+S.playT.toFixed(1), playMin:+(S.playT/60).toFixed(2),
+    oldDiff:+oldD.toFixed(2), newDiff:+newD.toFixed(2),
+    dist:Math.round(S.dist), coins:S.coins, hits:S.hits,
+    balance:+curBalance().toFixed(1), reason, src};
+  S.stateChanges.push(e);
+  const dir = newD>oldD?'up':(newD<oldD?'down':'');
+  const arrow = newD>oldD?'▲':(newD<oldD?'▼':'▬');
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${e.t}s</td><td class="${dir}">${arrow} ${e.oldDiff}→${e.newDiff}</td><td>${reason}</td><td>${src}</td>`;
+  document.getElementById('stateBody').prepend(tr);
+}
+function curBalance(){
+  const tot=S.onTrailT+S.offTrailT;
+  const trail= tot>0 ? 100*S.onTrailT/tot : 100;
+  const avoid= S.spawned>0 ? 100*S.avoided/Math.max(1,(S.avoided+S.hits)) : 100;
+  return 0.5*trail+0.5*avoid;
+}
+
+/* ============ INPUT ============ */
+let padIndex=null, keyDir=0;
+window.addEventListener('gamepadconnected', e=>{ padIndex=e.gamepad.index; padUI(true, e.gamepad.id); });
+window.addEventListener('gamepaddisconnected', ()=>{ padIndex=null; padUI(false); });
+function padUI(on, id){
+  document.getElementById('padDot').className='dot'+(on?' on':'');
+  document.getElementById('padStatus').lastChild.textContent = on
+    ? ' Controller paired: '+ (id||'').slice(0,40) +' (axis 0 / D-pad → steer)'
+    : ' No controller detected — press a button or move the stick / foot pad to pair. Keyboard ← → also works.';
+}
+function pollInput(){
+  let dir=keyDir;
+  if(padIndex!==null){
+    const gp=navigator.getGamepads()[padIndex];
+    if(gp){
+      let ax=gp.axes[0]||0;
+      if(Math.abs(ax)<DEADZONE) ax=0;
+      if(gp.buttons[14]&&gp.buttons[14].pressed) ax=-1;
+      if(gp.buttons[15]&&gp.buttons[15].pressed) ax=1;
+      if(ax!==0) dir=ax;
+    }
+  }
+  return Math.max(-1,Math.min(1,dir));
+}
+document.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft')keyDir=-1; if(e.key==='ArrowRight')keyDir=1; });
+document.addEventListener('keyup',e=>{ if(e.key==='ArrowLeft'&&keyDir<0)keyDir=0; if(e.key==='ArrowRight'&&keyDir>0)keyDir=0; });
+setInterval(()=>{ if(padIndex===null){ const gps=navigator.getGamepads?navigator.getGamepads():[];
+  for(const g of gps){ if(g){ padIndex=g.index; padUI(true,g.id); break; } } } },1000);
+
+/* ============ AGENT ============ */
+const RULES = (w, diff)=>{
+  const faced = w.hits + w.avoided;
+  const avoidRate = faced>0 ? w.avoided/faced : 1;
+  if(avoidRate>0.8 && faced>=2) return {d:Math.min(DIFF_MAX,diff+0.10), r:`avoid rate ${(100*avoidRate)|0}% > 80% → step up`};
+  if(avoidRate<0.4 && faced>=2) return {d:Math.max(DIFF_MIN,diff-0.15), r:`avoid rate ${(100*avoidRate)|0}% < 40% → ease off`};
+  return {d:diff, r:`avoid rate ${(100*avoidRate)|0}% in band → hold`};
+};
+async function agentEvaluate(){
+  const w=S.evalWindow, oldD=S.diff;
+  const payload={window_s:EVAL_INTERVAL_S, obstacles_hit:w.hits, obstacles_avoided:w.avoided,
+    coins:w.coins, distance_m:Math.round(S.dist), balance_pct:+curBalance().toFixed(1),
+    current_difficulty:+S.diff.toFixed(2), zero_failure_mode:S.zeroFail,
+    time_left_s:+(TIME_CAP_S-S.playT).toFixed(1)};
+  let applied=null, src='rules';
+  if(S.agentic){
+    try{
+      const ctrl=new AbortController(); const to=setTimeout(()=>ctrl.abort(),3000);
+      const res=await fetch("https://api.anthropic.com/v1/messages",{
+        method:"POST", headers:{"Content-Type":"application/json"}, signal:ctrl.signal,
+        body:JSON.stringify({model:"claude-sonnet-4-6", max_tokens:1000, messages:[{role:"user",
+          content:`You are the adaptive-difficulty agent for a short-run research skiing game (20-second runs) played by adults aged 25-80. Zero-failure design: keep the player in flow; never let them fail repeatedly. Given this performance window, reply with ONLY a JSON object, no markdown fences: {"difficulty_multiplier": number between 0.30 and 1.50, "reason": short string <=60 chars}. Current data: ${JSON.stringify(payload)}. Adjust gently (max ±0.15 per step). If they hit obstacles, ease off; if they avoided nearly all, step up slightly; otherwise hold.`}]})
+      });
+      clearTimeout(to);
+      const data=await res.json();
+      const txt=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').replace(/```json|```/g,'').trim();
+      const j=JSON.parse(txt);
+      let d=+j.difficulty_multiplier;
+      if(!isFinite(d)) throw new Error('bad value');
+      d=Math.max(DIFF_MIN,Math.min(DIFF_MAX, Math.max(oldD-0.15,Math.min(oldD+0.15,d))));
+      applied={d, r:(j.reason||'agent decision').slice(0,60)}; src='Claude';
+    }catch(err){ applied=null; }
+  }
+  if(!applied){ applied=RULES(w,oldD); src = S.agentic?'fallback':'rules'; }
+  S.diff=applied.d;
+  logState(oldD,S.diff,applied.r,src);
+  coach(applied.d>oldD?`Nice riding — the slope opens up a little. (${applied.r})`
+       :applied.d<oldD?`The coach eased the slope so you can find your rhythm. (${applied.r})`
+       :`Holding steady — you're in the flow band. (${applied.r})`);
+  S.evalWindow={hits:0,avoided:0,spawned:0,coins:0};
+}
+function coach(msg){ document.getElementById('coach').innerHTML='<b>Coach:</b> '+msg; }
+
+/* ============ PERSPECTIVE HELPERS ============ */
+/* depth d: 0 at horizon, 1 at bottom of canvas */
+const easeD = d=>Math.pow(d,1.65);
+function depthY(d,H){ return H*(HORIZON + (1-HORIZON)*easeD(d)); }
+function halfW(d,W){ return W*(0.045 + 0.315*easeD(d)); }     // trail half-width
+function scaleAt(d){ return 0.14 + 0.86*easeD(d); }
+function laneToX(lane,d,W){ return W*0.5 + lane*halfW(d,W); }
+
+/* ============ GAME LOOP ============ */
+function spawn(dt){
+  const rate = 0.75*S.diff;                                   // obstacles per second
+  if(Math.random()<rate*dt){ S.obstacles.push({lane:-0.85+1.7*Math.random(), z:VIEW_M, type:Math.random()<0.7?'tree':'rock', checked:false, wob:Math.random()*7}); S.spawned++; S.evalWindow.spawned++; }
+  if(Math.random()<0.9*dt){ S.coinsArr.push({lane:-0.8+1.6*Math.random(), z:VIEW_M, checked:false, ph:Math.random()*7}); }
+  if(Math.random()<8*dt){ S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02}); }
+  if(Math.random()<2.2*dt){ S.scenery.push({side:Math.random()<0.5?-1:1, off:0.12+0.55*Math.random(), z:VIEW_M, kind:Math.random()<0.8?'tree':'rock', big:0.8+0.6*Math.random()}); }
+}
+function step(dt){
+  sceneT+=dt;
+  const slowed = S.playT < S.slowUntil;
+  const spd = BASE_SPEED * S.diff * (slowed?0.45:1);
+  S.maxSpeed=Math.max(S.maxSpeed,spd);
+  S.dist += spd*dt;
+  S.playT += dt;
+
+  // steering (carve feel: velocity-damped lane movement)
+  const dir=pollInput();
+  S.vx += dir*5.2*dt; S.vx*=Math.pow(0.015,dt);
+  S.skierLane = Math.max(-1.05,Math.min(1.05, S.skierLane + S.vx*dt*2.2));
+  if(Math.abs(S.skierLane)<0.95) S.onTrailT+=dt; else S.offTrailT+=dt;
+  // snow spray when carving
+  if(Math.abs(S.vx)>0.45 && Math.random()<22*dt){
+    S.spray.push({lane:S.skierLane+(Math.random()-0.5)*0.06, d:SKIER_D+0.015, vy:0.10+0.22*Math.random(), vx:(S.vx>0?-1:1)*(0.03+0.10*Math.random()), life:0.5});
+  }
+
+  spawn(dt);
+  for(const o of S.obstacles) o.z-=spd*dt;
+  for(const c of S.coinsArr) c.z-=spd*dt;
+  for(const s of S.scenery) s.z-=spd*dt;
+  for(const f of S.flakes){ f.y+=dt*(0.16+0.1*f.s); f.x+=f.drift*dt*10; }
+  for(const p of S.spray){ p.life-=dt; p.lane+=p.vx*dt; p.d+=p.vy*dt*0.15; }
+
+  // collisions where object depth crosses the skier line
+  const skierZ = VIEW_M*(1-SKIER_D);   // metres ahead corresponding to skier band
+  S.obstacles=S.obstacles.filter(o=>{
+    if(!o.checked && o.z<=skierZ+1.5){
+      o.checked=true;
+      if(Math.abs(o.lane-S.skierLane)<0.17){
+        S.hits++; S.evalWindow.hits++;
+        if(S.zeroFail){ S.slowUntil=S.playT+1.2; coach('A bump — the run keeps going. Bumps are how the slope learns your level.'); }
+        else { S.livesLost++; if(S.livesLost>=3){ S.gameOver=true; S.endReason='three bumps'; } }
+        return false;
+      } else { S.avoided++; S.evalWindow.avoided++; }
+    }
+    return o.z>-4;
+  });
+  S.coinsArr=S.coinsArr.filter(c=>{
+    if(!c.checked && c.z<=skierZ+1.5){
+      c.checked=true;
+      if(Math.abs(c.lane-S.skierLane)<0.20){ S.coins++; S.evalWindow.coins++; return false; }
+    }
+    return c.z>-4;
+  });
+  S.scenery=S.scenery.filter(s=>s.z>-6);
+  S.flakes=S.flakes.filter(f=>f.y<1.05);
+  S.spray=S.spray.filter(p=>p.life>0);
+
+  if(S.playT - S.lastEval >= EVAL_INTERVAL_S){ S.lastEval=S.playT; agentEvaluate(); }
+  if(S.balSamples.length < Math.floor(S.playT)){ S.balSamples.push(curBalance()); }
+
+  // END CONDITIONS: distance goal OR 20-second cap, whichever first
+  if(S.dist>=S.goal){ S.endReason='distance goal reached'; endRun(); }
+  else if(S.playT>=TIME_CAP_S){ S.endReason='20 s time cap'; endRun(); }
+  else if(S.gameOver){ endRun(); }
+}
+
+/* ============ ART ============ */
+function drawBackdrop(W,H){
+  // sky
+  const g=ctx.createLinearGradient(0,0,0,H*HORIZON+40);
+  g.addColorStop(0,'#BFDCEC'); g.addColorStop(0.7,'#E9F2F0'); g.addColorStop(1,'#F6EFDF');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H*HORIZON+40);
+  // sun
+  ctx.fillStyle='rgba(244,196,110,0.9)';
+  ctx.beginPath(); ctx.arc(W*0.78,H*0.12,26,0,7); ctx.fill();
+  ctx.fillStyle='rgba(244,196,110,0.25)';
+  ctx.beginPath(); ctx.arc(W*0.78,H*0.12,42,0,7); ctx.fill();
+  // far ridge
+  ctx.fillStyle='#C9D8DE';
+  ctx.beginPath(); ctx.moveTo(0,H*HORIZON);
+  ctx.lineTo(W*0.10,H*0.16); ctx.lineTo(W*0.22,H*HORIZON-14);
+  ctx.lineTo(W*0.34,H*0.11); ctx.lineTo(W*0.46,H*HORIZON-8);
+  ctx.lineTo(W*0.60,H*0.15); ctx.lineTo(W*0.74,H*HORIZON-16);
+  ctx.lineTo(W*0.88,H*0.13); ctx.lineTo(W,H*HORIZON);
+  ctx.closePath(); ctx.fill();
+  // snow caps
+  ctx.fillStyle='#FFFFFF';
+  [[0.10,0.16],[0.34,0.11],[0.60,0.15],[0.88,0.13]].forEach(([fx,fy])=>{
+    ctx.beginPath(); ctx.moveTo(W*fx,H*fy);
+    ctx.lineTo(W*fx-16,H*fy+22); ctx.lineTo(W*fx-6,H*fy+18);
+    ctx.lineTo(W*fx,H*fy+26); ctx.lineTo(W*fx+7,H*fy+17);
+    ctx.lineTo(W*fx+16,H*fy+22); ctx.closePath(); ctx.fill();
+  });
+  // near ridge
+  ctx.fillStyle='#DEE9EC';
+  ctx.beginPath(); ctx.moveTo(0,H*HORIZON+2);
+  ctx.lineTo(W*0.16,H*0.20); ctx.lineTo(W*0.30,H*HORIZON);
+  ctx.lineTo(W*0.52,H*0.21); ctx.lineTo(W*0.70,H*HORIZON);
+  ctx.lineTo(W*0.86,H*0.22); ctx.lineTo(W,H*HORIZON+2);
+  ctx.lineTo(W,H*HORIZON+30); ctx.lineTo(0,H*HORIZON+30);
+  ctx.closePath(); ctx.fill();
+}
+function drawPiste(W,H){
+  // snowfield
+  ctx.fillStyle='#EFF3F1'; ctx.fillRect(0,H*HORIZON,W,H*(1-HORIZON));
+  // groomed trail (converging trapezoid)
+  ctx.beginPath();
+  ctx.moveTo(W*0.5-halfW(0,W),depthY(0,H));
+  ctx.lineTo(W*0.5+halfW(0,W),depthY(0,H));
+  ctx.lineTo(W*0.5+halfW(1,W),H);
+  ctx.lineTo(W*0.5-halfW(1,W),H);
+  ctx.closePath();
+  const pg=ctx.createLinearGradient(0,H*HORIZON,0,H);
+  pg.addColorStop(0,'#F3F7F8'); pg.addColorStop(1,'#FFFFFF');
+  ctx.fillStyle=pg; ctx.fill();
+  // groomed corduroy lines
+  ctx.strokeStyle='rgba(190,210,218,0.45)'; ctx.lineWidth=1.5;
+  for(let i=1;i<7;i++){
+    const lane=-1+2*i/7;
+    ctx.beginPath();
+    ctx.moveTo(laneToX(lane,0,W),depthY(0,H));
+    ctx.lineTo(laneToX(lane,1,W),H);
+    ctx.stroke();
+  }
+  // trail edges (safety fencing dashes)
+  ctx.strokeStyle='#B7CCD4'; ctx.lineWidth=3; ctx.setLineDash([12,9]);
+  ctx.beginPath();
+  ctx.moveTo(W*0.5-halfW(0,W),depthY(0,H)); ctx.lineTo(W*0.5-halfW(1,W),H);
+  ctx.moveTo(W*0.5+halfW(0,W),depthY(0,H)); ctx.lineTo(W*0.5+halfW(1,W),H);
+  ctx.stroke(); ctx.setLineDash([]);
+}
+function shadow(x,y,r){
+  ctx.fillStyle='rgba(120,150,165,0.25)';
+  ctx.beginPath(); ctx.ellipse(x,y,r,r*0.32,0,0,7); ctx.fill();
+}
+function drawTree(x,y,s,wob){
+  const sway=Math.sin(sceneT*1.2+wob)*1.5*s;
+  shadow(x+4*s,y+4*s,26*s);
+  ctx.fillStyle='#7A5230'; ctx.fillRect(x-3.5*s,y-4*s,7*s,12*s);       // trunk
+  const tier=(w,h,dy,col)=>{ ctx.fillStyle=col; ctx.beginPath();
+    ctx.moveTo(x+sway*0.4,y-dy-h); ctx.lineTo(x-w+sway*0.2,y-dy); ctx.lineTo(x+w+sway*0.2,y-dy);
+    ctx.closePath(); ctx.fill(); };
+  tier(26*s,30*s,2*s,'#1E4A38');                                       // bottom
+  tier(20*s,26*s,20*s,'#276048');
+  tier(14*s,22*s,36*s,'#2F7355');                                      // top
+  // snow on tiers
+  ctx.fillStyle='rgba(255,255,255,0.85)';
+  [[26,2],[20,20],[14,36]].forEach(([w,dy])=>{
+    ctx.beginPath();
+    ctx.moveTo(x-w*s*0.55+sway*0.2, y-dy*s-6*s);
+    ctx.quadraticCurveTo(x+sway*0.3, y-dy*s-13*s, x+w*s*0.55+sway*0.2, y-dy*s-6*s);
+    ctx.quadraticCurveTo(x+sway*0.3, y-dy*s-3*s, x-w*s*0.55+sway*0.2, y-dy*s-6*s);
+    ctx.fill();
+  });
+}
+function drawRock(x,y,s){
+  shadow(x+3*s,y+5*s,20*s);
+  ctx.fillStyle='#8E98A0';
+  ctx.beginPath();
+  ctx.moveTo(x-18*s,y+6*s); ctx.lineTo(x-12*s,y-9*s); ctx.lineTo(x-2*s,y-14*s);
+  ctx.lineTo(x+10*s,y-10*s); ctx.lineTo(x+17*s,y+1*s); ctx.lineTo(x+13*s,y+7*s);
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle='#A9B2B9';                                             // lit facet
+  ctx.beginPath(); ctx.moveTo(x-12*s,y-9*s); ctx.lineTo(x-2*s,y-14*s);
+  ctx.lineTo(x+2*s,y-2*s); ctx.lineTo(x-8*s,y+1*s); ctx.closePath(); ctx.fill();
+  ctx.fillStyle='#6E7880';                                             // shaded facet
+  ctx.beginPath(); ctx.moveTo(x+10*s,y-10*s); ctx.lineTo(x+17*s,y+1*s);
+  ctx.lineTo(x+13*s,y+7*s); ctx.lineTo(x+2*s,y-2*s); ctx.closePath(); ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,0.9)';                               // snow cap
+  ctx.beginPath();
+  ctx.moveTo(x-12*s,y-9*s); ctx.quadraticCurveTo(x-4*s,y-17*s,x+10*s,y-10*s);
+  ctx.quadraticCurveTo(x+2*s,y-8*s,x-12*s,y-9*s); ctx.fill();
+}
+function drawCoin(x,y,s,ph){
+  const sq=Math.abs(Math.cos(sceneT*2.4+ph));                          // spin: squash x
+  shadow(x,y+11*s,10*s);
+  ctx.save(); ctx.translate(x,y); ctx.scale(Math.max(0.25,sq),1);
+  ctx.fillStyle='#D99A2B'; ctx.beginPath(); ctx.arc(0,0,10*s,0,7); ctx.fill();   // rim
+  ctx.fillStyle='#F2BE4C'; ctx.beginPath(); ctx.arc(0,0,7.6*s,0,7); ctx.fill();  // face
+  ctx.strokeStyle='#B67C18'; ctx.lineWidth=1.6*s;
+  ctx.beginPath(); ctx.arc(0,0,7.6*s,0,7); ctx.stroke();
+  ctx.fillStyle='#B67C18'; ctx.font=`bold ${9*s}px Verdana`;
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('★',0,0.5*s);
+  ctx.restore();
+  // sparkle
+  ctx.fillStyle='rgba(255,255,255,0.9)';
+  ctx.beginPath(); ctx.arc(x-4*s,y-5*s,1.6*s,0,7); ctx.fill();
+}
+function drawSkier(W,H){
+  const d=SKIER_D, x=laneToX(S.skierLane,d,W), y=depthY(d,H);
+  const lean=Math.max(-0.5,Math.min(0.5,S.vx*0.55));
+  const slowed=S.playT<S.slowUntil;
+  // ski tracks trailing to bottom edge
+  ctx.strokeStyle='rgba(160,185,200,0.55)'; ctx.lineWidth=3;
+  [-7,7].forEach(off=>{
+    ctx.beginPath(); ctx.moveTo(x+off,y+18);
+    ctx.quadraticCurveTo(x+off-lean*60, y+70, x+off-lean*140, H+10);
+    ctx.stroke();
+  });
+  shadow(x,y+20,26);
+  ctx.save(); ctx.translate(x,y); ctx.rotate(lean);
+  // skis (bright, with turned-up tips pointing away/up-slope)
+  ctx.strokeStyle='#C2483A'; ctx.lineWidth=5; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(-9,18); ctx.lineTo(-13,-16); ctx.moveTo(9,18); ctx.lineTo(13,-16); ctx.stroke();
+  ctx.fillStyle='#C2483A';
+  ctx.beginPath(); ctx.arc(-13,-16,3,0,7); ctx.fill();
+  ctx.beginPath(); ctx.arc(13,-16,3,0,7); ctx.fill();
+  // legs
+  ctx.strokeStyle='#27435C'; ctx.lineWidth=7;
+  ctx.beginPath(); ctx.moveTo(-6,14); ctx.lineTo(-5,2); ctx.moveTo(6,14); ctx.lineTo(5,2); ctx.stroke();
+  // body (jacket)
+  ctx.fillStyle= slowed? '#D96A4E' : '#2D6A8E';
+  ctx.beginPath();
+  ctx.moveTo(-10,4); ctx.quadraticCurveTo(-12,-16,0,-18);
+  ctx.quadraticCurveTo(12,-16,10,4); ctx.quadraticCurveTo(0,9,-10,4);
+  ctx.fill();
+  ctx.strokeStyle='rgba(255,255,255,0.5)'; ctx.lineWidth=1.5;          // zip line
+  ctx.beginPath(); ctx.moveTo(0,-16); ctx.lineTo(0,5); ctx.stroke();
+  // arms + poles angled back
+  ctx.strokeStyle= slowed? '#B65540' : '#245676'; ctx.lineWidth=5;
+  ctx.beginPath(); ctx.moveTo(-9,-10); ctx.lineTo(-17,-2); ctx.moveTo(9,-10); ctx.lineTo(17,-2); ctx.stroke();
+  ctx.strokeStyle='#7A5230'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.moveTo(-17,-2); ctx.lineTo(-21,16); ctx.moveTo(17,-2); ctx.lineTo(21,16); ctx.stroke();
+  // head: helmet + goggles band
+  ctx.fillStyle='#F1C79B'; ctx.beginPath(); ctx.arc(0,-24,7.5,0,7); ctx.fill();
+  ctx.fillStyle='#EFEFEA'; ctx.beginPath(); ctx.arc(0,-26,7.8,Math.PI,0); ctx.fill();
+  ctx.fillStyle='#22303B'; ctx.fillRect(-7,-27,14,4);
+  ctx.restore();
+}
+function draw(){
+  const W=cv.width,H=cv.height;
+  drawBackdrop(W,H);
+  drawPiste(W,H);
+
+  // depth-sorted world: scenery (off-trail), obstacles, coins
+  const items=[];
+  for(const s of S.scenery){ const d=1-s.z/VIEW_M; if(d>0&&d<1.15) items.push({d,kind:'scene',o:s}); }
+  for(const o of S.obstacles){ const d=1-o.z/VIEW_M; if(d>0&&d<1.15) items.push({d,kind:o.type,o}); }
+  for(const c of S.coinsArr){ const d=1-c.z/VIEW_M; if(d>0&&d<1.15) items.push({d,kind:'coin',o:c}); }
+  items.sort((a,b)=>a.d-b.d);
+  for(const it of items){
+    const d=Math.min(1,it.d), sc=scaleAt(d), y=depthY(d,H);
+    if(it.kind==='scene'){
+      const x= W*0.5 + it.o.side*(halfW(d,W)+ it.o.off*W*0.22*easeD(d)+10);
+      if(it.o.kind==='tree') drawTree(x,y,sc*it.o.big,it.o.z);
+      else drawRock(x,y,sc*it.o.big*0.8);
+    }
+    else if(it.kind==='tree') drawTree(laneToX(it.o.lane,d,W),y,sc,it.o.wob);
+    else if(it.kind==='rock') drawRock(laneToX(it.o.lane,d,W),y,sc);
+    else drawCoin(laneToX(it.o.lane,d,W),y,sc,it.o.ph);
+  }
+  // snow spray
+  for(const p of S.spray){
+    ctx.fillStyle=`rgba(255,255,255,${Math.max(0,p.life*1.6)})`;
+    ctx.beginPath(); ctx.arc(laneToX(p.lane,p.d,W),depthY(Math.min(1,p.d),H)-6,3.2,0,7); ctx.fill();
+  }
+  drawSkier(W,H);
+  // falling flakes (screen-space, in front)
+  ctx.fillStyle='rgba(255,255,255,.85)';
+  for(const f of S.flakes){ ctx.beginPath(); ctx.arc(f.x*W,f.y*H,2.1*f.s,0,7); ctx.fill(); }
+
+  // HUD
+  document.getElementById('hudL').textContent=Math.round(S.dist)+' m / '+S.goal+' m';
+  document.getElementById('hudM').textContent='⏱ '+Math.max(0,(TIME_CAP_S-S.playT)).toFixed(0)+' s   ×'+S.diff.toFixed(2);
+  document.getElementById('hudR').textContent='🪙 '+S.coins+'   balance '+curBalance().toFixed(0)+'%';
+}
+function loop(ts){
+  if(!running) return;
+  if(!tPrev) tPrev=ts;
+  const dt=Math.min(0.05,(ts-tPrev)/1000); tPrev=ts;
+  step(dt); if(running){ draw(); requestAnimationFrame(loop); }
+}
+
+/* ============ RUN CONTROL ============ */
+document.getElementById('startBtn').onclick=()=>{
+  S=newSession(); tPrev=0; running=true;
+  document.getElementById('stateBody').innerHTML='';
+  document.getElementById('summary').style.display='none';
+  document.getElementById('endBtn').style.display='inline-block';
+  document.getElementById('modePill').textContent = S.zeroFail?'Zero-failure mode':'Classic mode (3 bumps end run)';
+  logState(S.diff,S.diff,'run start — gentle floor (winnable first run)','init');
+  coach('Off we go. Lean left and right to carve between the trees. The run lasts at most 20 seconds — short, safe and repeatable.');
+  requestAnimationFrame(loop);
+};
+document.getElementById('endBtn').onclick=()=>{ if(running){ S.endReason='ended early by staff'; endRun(true); } };
+function endRun(early){
+  running=false;
+  document.getElementById('endBtn').style.display='none';
+  const avgBal = S.balSamples.length? S.balSamples.reduce((a,b)=>a+b,0)/S.balSamples.length : curBalance();
+  S.result={
+    Participant_ID:S.pid, Session_No:S.sessNo,
+    Session_Date:new Date().toISOString().slice(0,10),
+    Duration_Min:+(S.playT/60).toFixed(2),
+    Distance_m:Math.round(S.dist), Coins:S.coins,
+    Obstacles_Hit:S.hits, Lives_Lost:S.livesLost,
+    Avg_Balance_pct:+avgBal.toFixed(1),
+    Max_Speed:+S.maxSpeed.toFixed(1),
+    AI_DiffMult:+S.diff.toFixed(2),
+    Reached_GameOver: S.gameOver? 'TRUE':'FALSE',
+    Post_FRA_Index:'', Notes:(S.zeroFail?'zero-failure':'classic')+'; end: '+(S.endReason||'unknown')+'; state changes='+S.stateChanges.length
+  };
+  const dl=document.getElementById('sumList'); dl.innerHTML='';
+  for(const[k,v] of Object.entries(S.result)){ dl.insertAdjacentHTML('beforeend',`<dt>${k}</dt><dd>${v===''?'—':v}</dd>`); }
+  document.getElementById('summary').style.display='block';
+  coach(S.gameOver? 'The run ended — and that is completely fine. Every run teaches the slope about you.'
+       : S.endReason==='distance goal reached'
+         ? `You made it — ${S.goal} m! ${S.coins} coins, balance ${avgBal.toFixed(0)}%.`
+         : `Time! ${Math.round(S.dist)} m in 20 seconds, ${S.coins} coins, balance ${avgBal.toFixed(0)}%. Every run is a fresh start.`);
+}
+
+/* ============ EXPORT ============ */
+function dlFile(name, text){
+  const b=new Blob([text],{type:'text/csv'}); const a=document.createElement('a');
+  a.href=URL.createObjectURL(b); a.download=name; a.click(); URL.revokeObjectURL(a.href);
+}
+document.getElementById('expSession').onclick=()=>{
+  const r=S.result, cols=Object.keys(r);
+  dlFile(`session_${r.Participant_ID}_s${r.Session_No}.csv`,
+     cols.join(',')+'\n'+cols.map(c=>`"${String(r[c]).replace(/"/g,'""')}"`).join(','));
+};
+document.getElementById('expStates').onclick=()=>{
+  const cols=['t','playMin','oldDiff','newDiff','dist','coins','hits','balance','reason','src'];
+  const rows=S.stateChanges.map(e=>cols.map(c=>`"${String(e[c]).replace(/"/g,'""')}"`).join(','));
+  dlFile(`states_${S.result.Participant_ID}_s${S.result.Session_No}.csv`, cols.join(',')+'\n'+rows.join('\n'));
+};
+
+/* idle scene so the canvas looks alive before the first run */
+S=newSession();
+(function idle(){ if(!running){ sceneT+=1/40;
+  if(Math.random()<0.15) S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02});
+  for(const f of S.flakes){ f.y+=0.004+0.002*f.s; }
+  S.flakes=S.flakes.filter(f=>f.y<1.05);
+  draw(); setTimeout(()=>requestAnimationFrame(idle),25); } })();
+</script>
+</body>
+</html>
