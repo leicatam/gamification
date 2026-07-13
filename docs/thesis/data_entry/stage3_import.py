@@ -70,15 +70,31 @@ SCOLS = ["Participant_ID","Session_No","Session_Date","Duration_Min","Distance_m
          "Obstacles_Hit","Lives_Lost","Avg_Balance_pct","Max_Speed","AI_DiffMult",
          "Reached_GameOver","Post_FRA_Index","Notes"]
 GCOLS = ["Participant_ID","Session_No","Play_Time_s","Old_DiffMult","New_DiffMult","Reason"]
+OCOLS = ["Participant_ID","Staff_Dropout_Observed","Dropout_Date",
+         "Staff_Return_Observed","Return_Date","Observer_Initials","Notes"]
 QCOLS = ["Participant_ID","Q4_Date","Q1_AI_Difficulty","Q2_Persistence","Q3_Features",
          "Q4_Enjoyment","Q5_SelfEfficacy","Q6_LearnReframe","Q7_CoordFrame",
          "Q8_ReturnRecommend","Q9_LikedMost","Q9_WouldChange"]
+
+def coerce(v):
+    """Give Excel real types: int, float, ISO date, boolean; else the string."""
+    if v is None or isinstance(v, (int, float, datetime.date, datetime.datetime, bool)):
+        return v
+    s = str(v).strip()
+    if s == "": return None
+    if s.upper() == "TRUE": return True
+    if s.upper() == "FALSE": return False
+    if re.fullmatch(r"-?\d+", s): return int(s)
+    if re.fullmatch(r"-?\d*\.\d+", s): return float(s)
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", s):
+        return datetime.datetime.strptime(s, "%Y-%m-%d").date()
+    return s
 
 def write_sheet(ws, rows, start=2, skip_cols=()):
     for i, row in enumerate(rows):
         for j, v in enumerate(row, 1):
             if j in skip_cols: continue
-            ws.cell(row=start+i, column=j, value=(v if v != "" else None))
+            ws.cell(row=start+i, column=j, value=coerce(v))
 
 def compute_stints(sessions, gap_days, five):
     """Exact stint logic: sessions sorted by date per participant; a gap
@@ -107,6 +123,7 @@ def main():
     ap.add_argument("--template", default="Stage3_Data_Entry_Template.xlsx")
     ap.add_argument("--participants"); ap.add_argument("--sessions")
     ap.add_argument("--states"); ap.add_argument("--questionnaire")
+    ap.add_argument("--observations", help="staff_observations.csv (dropout/return events)")
     ap.add_argument("--out", default=None)
     ap.add_argument("--demo", action="store_true",
                     help="pipeline test using the synthetic TEST- workbook")
@@ -132,6 +149,7 @@ def main():
         states= sheet_rows("State_Changes", 6)
         q4    = sheet_rows("Q4 Responses", 12)
         outs  = sheet_rows("Outcomes", 10)
+        obsrows = []
         # guard: demo data must be TEST- prefixed
         assert all(str(r[0]).startswith("TEST-") for r in parts), "demo expects TEST- IDs"
         print("DEMO MODE: synthetic TEST- data — pipeline verification only.")
@@ -140,6 +158,7 @@ def main():
         sess   = remap(load_rows(a.sessions), SCOLS) if a.sessions else []
         states = remap(load_rows(a.states), GCOLS) if a.states else []
         q4     = remap(load_rows(a.questionnaire), QCOLS) if a.questionnaire else []
+        obsrows = remap(load_rows(a.observations), OCOLS) if a.observations else []
 
     if parts:
         ep = wb["ENTRY_Participants"]
@@ -156,6 +175,22 @@ def main():
     if q4:
         write_sheet(wb["RAW_Questionnaire"], q4)
         print(f"questionnaires written: {len(q4)}")
+    if not a.demo and obsrows:
+        eo = wb["ENTRY_Observations"]
+        # align observation rows to participant order; unknown IDs appended below
+        order = {p[0]: i for i, p in enumerate(parts)}
+        extra = len(parts)
+        for orow in obsrows:
+            i = order.get(orow[0])
+            if i is None:
+                i = extra; extra += 1
+            row = 2 + i
+            eo.cell(row=row, column=1, value=orow[0])
+            for j, v in enumerate(orow[1:], start=2):
+                b = str(v).strip().upper()
+                eo.cell(row=row, column=j,
+                        value=(True if b == "TRUE" else False if b == "FALSE" else (v or None)))
+        print(f"staff observations written: {len(obsrows)}")
     if a.demo and outs:
         eo = wb["ENTRY_Observations"]
         idx = {r[0]: r for r in outs}
