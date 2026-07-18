@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V11)
+# Pending Items — Tam EngD Thesis (V12)
 
 Per the author's request, the verbose highlighted placeholder boxes were
 removed from the document at V11; brief neutral markers remain at each
@@ -25,6 +25,13 @@ supplied before final binding, with the exact insertion location for each.
 6. Transcription of surviving Stage-3 primary records into
    `Stage3_Data_Logbook_120cases_with_Reconciliation.xlsx` (IDs 3001–3120,
    from paper questionnaires / staff logs / terminal exports only).
+   At V12 the register band sizes were corrected to the author's rebuilt
+   figures (25–44 = 38, 45–64 = 41, 65–80 = 41); the transcription must
+   confirm these against the primary records.
+6b. Published Paper 3 (Table 1) printed band sizes 35 / 40 / 45, which now
+   differ from the rebuilt register (38 / 41 / 41). Author to consider a
+   brief corrigendum / reconciliation note for the published paper; the
+   thesis and logbook already carry the reconciliation statement.
 7. Stage-1 survey response file (CSV) → G.1.
 8. Stage-2 session-level telemetry with timestamps + AI-call logs → G.2
    addendum, if retained; otherwise one sentence in §8.9 stating not retained.
