@@ -70,3 +70,25 @@ rests on the author's register; the published Paper 3 (Table 1) printed
 transcription from the primary records is complete, the Reconciliation
 sheet must show MATCH on all indicators, including the three band counts.
 A brief corrigendum note to the journal for Paper 3 remains advisable.
+
+## E. Update (19 Jul 2026, later) — Paper 3 is unpublished
+
+Per the author, Paper 3 was never published. Consequences, applied at V16:
+
+1. Section D's corrigendum recommendation is **void** — there is no public
+   record carrying the superseded 35/40/45 figures.
+2. The register (38 / 41 / 41) is the sole authoritative Stage-3 record.
+   The thesis's §6.4 register-reconciliation note (which existed to explain
+   a divergence from a published summary) was deleted; all remaining
+   "published aggregate / published summary" wording was changed to
+   "preliminary aggregate" (V16, zero occurrences remaining).
+3. Logbook: sheet `Published_Summary` renamed `Preliminary_Summary`; its
+   band sizes and derived percentages corrected to the register (38/41/41;
+   31.7/34.2/34.2%; dropout 17.1/39.0%; non-return 4.9/14.6%; retention
+   95.1/85.4%; intention 65.8/68.3/56.1%); table labels P3-x renamed S3-x;
+   Codebook provenance note rewritten (collection complete, analysis in
+   progress, transcription-only data-entry rule retained); Reconciliation
+   header "Published target" renamed "Register target".
+4. Section C.3's verbatim-transcription caution is likewise moot for an
+   unpublished manuscript, and the sheet is no longer described as a
+   transcription of Paper 3.

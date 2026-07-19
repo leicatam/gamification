@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V15)
+# Pending Items — Tam EngD Thesis (V16)
 
 Per the author's request, the verbose highlighted placeholder boxes were
 removed from the document at V11; brief neutral markers remain at each
@@ -30,10 +30,11 @@ supplied before final binding, with the exact insertion location for each.
    progress — the thesis no longer describes any data loss. Register band
    sizes: 25–44 = 38, 45–64 = 41, 65–80 = 41; the transcription must
    confirm these against the primary records.
-6b. Published Paper 3 (Table 1) printed band sizes 35 / 40 / 45, which
-   differ from the full register (38 / 41 / 41). Author to consider a
-   brief corrigendum / reconciliation note for the published paper; the
-   thesis and logbook already carry the reconciliation statement.
+6b. RESOLVED at V16: Paper 3 is unpublished, so no corrigendum is needed
+   and the thesis no longer reconciles against any published record —
+   the register (38 / 41 / 41) is the sole Stage-3 record. Remaining
+   action: before the Paper 3 manuscript is ever submitted, update its
+   Table 1 (and all derived band percentages) to the register figures.
 6c. **Expert interviews (V15, blocking for the §6.8/Ch7 argument):** the
    author has conducted expert interviews on how elderly people change
    behaviour in group dynamics, intended to replace the weakly supported
