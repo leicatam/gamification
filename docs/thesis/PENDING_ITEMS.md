@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V12)
+# Pending Items — Tam EngD Thesis (V15)
 
 Per the author's request, the verbose highlighted placeholder boxes were
 removed from the document at V11; brief neutral markers remain at each
@@ -22,16 +22,27 @@ supplied before final binding, with the exact insertion location for each.
    reliability (α) → Appendix D.
 
 ## C. Stage-3 data and AI record (Appendix G, §8.9)
-6. Transcription of surviving Stage-3 primary records into
+6. Transcription of the Stage-3 primary records into
    `Stage3_Data_Logbook_120cases_with_Reconciliation.xlsx` (IDs 3001–3120,
-   from paper questionnaires / staff logs / terminal exports only).
-   At V12 the register band sizes were corrected to the author's rebuilt
-   figures (25–44 = 38, 45–64 = 41, 65–80 = 41); the transcription must
+   from paper questionnaires / staff logs / terminal exports only). Per the
+   author (V15): data collection is complete, preliminary aggregates were
+   released and reported, and the full participant-level analysis is in
+   progress — the thesis no longer describes any data loss. Register band
+   sizes: 25–44 = 38, 45–64 = 41, 65–80 = 41; the transcription must
    confirm these against the primary records.
-6b. Published Paper 3 (Table 1) printed band sizes 35 / 40 / 45, which now
-   differ from the rebuilt register (38 / 41 / 41). Author to consider a
+6b. Published Paper 3 (Table 1) printed band sizes 35 / 40 / 45, which
+   differ from the full register (38 / 41 / 41). Author to consider a
    brief corrigendum / reconciliation note for the published paper; the
    thesis and logbook already carry the reconciliation statement.
+6c. **Expert interviews (V15, blocking for the §6.8/Ch7 argument):** the
+   author has conducted expert interviews on how elderly people change
+   behaviour in group dynamics, intended to replace the weakly supported
+   commitment-gap speculation. The material is not yet in any draft.
+   Needed from the author: number and roles of experts, recruitment and
+   consent record, interview protocol, and transcripts or structured
+   summaries. Planned insertion points: §3.2/§3.4 (method + ethics),
+   new findings subsection after §6.8, §7.1–7.3 (design rationale),
+   §8.5 (alternative explanations), and a new appendix for the protocol.
 7. Stage-1 survey response file (CSV) → G.1.
 8. Stage-2 session-level telemetry with timestamps + AI-call logs → G.2
    addendum, if retained; otherwise one sentence in §8.9 stating not retained.
