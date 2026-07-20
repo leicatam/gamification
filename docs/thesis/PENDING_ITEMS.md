@@ -1,9 +1,12 @@
-# Pending Items — Tam EngD Thesis (V19)
+# Pending Items — Tam EngD Thesis (V20)
 
-Per the author's request, the verbose highlighted placeholder boxes were
-removed from the document at V11; brief neutral markers remain at each
-insertion point. This file is the master checklist of what is still to be
-supplied before final binding, with the exact insertion location for each.
+At V20, on examiner instruction, ALL remaining placeholder markers,
+figure stubs and 'in progress' statements were removed from the document
+itself. THIS FILE IS NOW THE SOLE TRACKER of what is still to be supplied
+and where it goes. Items inserted later must also be re-added to the List
+of Figures/Tables where applicable (figure numbers 4.1B, 5.1A, 5.1B, 5.3A
+and 6.0A are reserved for the photographs and were removed from the
+document with their captions at V20).
 
 ## A. Ethics (blocking for examination)
 1. **HSESC approval reference number + date + coverage statement** → §3.4
@@ -54,7 +57,8 @@ supplied before final binding, with the exact insertion location for each.
     perceived-benefit estimates, and the mapping of "understood and accepted"
     to "failure" → §4.2.
 
-## D. Photographs and screenshots (five markers in the document)
+## D. Photographs and screenshots (no markers remain in the document —
+insert at the sections listed; captions to be restored with the images)
 11. Figure 4.1B — the InBody FRA510S machine at the Guangzhou facility.
 12. Figure 5.1A — the Stage-2 play station (panel + screen).
 13. Figure 5.1B — skiing-game screenshots at each difficulty level
