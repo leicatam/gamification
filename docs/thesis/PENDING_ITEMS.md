@@ -35,15 +35,17 @@ supplied before final binding, with the exact insertion location for each.
    the register (38 / 41 / 41) is the sole Stage-3 record. Remaining
    action: before the Paper 3 manuscript is ever submitted, update its
    Table 1 (and all derived band percentages) to the register figures.
-6c. **Expert interviews (V15, blocking for the §6.8/Ch7 argument):** the
-   author has conducted expert interviews on how elderly people change
-   behaviour in group dynamics, intended to replace the weakly supported
-   commitment-gap speculation. The material is not yet in any draft.
-   Needed from the author: number and roles of experts, recruitment and
-   consent record, interview protocol, and transcripts or structured
-   summaries. Planned insertion points: §3.2/§3.4 (method + ethics),
-   new findings subsection after §6.8, §7.1–7.3 (design rationale),
-   §8.5 (alternative explanations), and a new appendix for the protocol.
+6c. **Expert interview (updated at V18; blocking for the §6.8/Ch7
+   argument):** expert identified and credentials verified — Dr Sarah
+   C.W. Yuan, Center on the Family, University of Hawai'i at Mānoa
+   (medical sociology, demography of aging; Hawai'i Healthy Aging
+   Partnership; Hawai'i Falls Prevention Alliance context). See
+   `Expert_Interview_Integration_Plan.md` for the verified profile,
+   framing decision (single consultation vs panel), prepared insertion
+   slots, and the six items still needed (interview record, consent to
+   be named, date/format, question list, HSESC coverage, grant-PI
+   attribution). No interview content is drafted until the record
+   arrives.
 7. Stage-1 survey response file (CSV) → G.1.
 8. Stage-2 session-level telemetry with timestamps + AI-call logs → G.2
    addendum, if retained; otherwise one sentence in §8.9 stating not retained.
