@@ -79,3 +79,13 @@ their identities and the framing scales up accordingly.
 Integrity rule (unchanged): no interview content will be drafted, summarised
 or paraphrased into the thesis until the actual record arrives. The slots
 above are the complete preparation possible today.
+
+
+## 5. Status update (19 Jul 2026, later) — INTEGRATED at V19
+
+The author supplied structured notes of the conversation (seven points).
+Integration is complete per Section 3 of this plan; the summary of the
+notes is reproduced verbatim-in-substance at Appendix H.3. Framing used:
+single expert consultation, interpretive evidence, named with consent
+(written confirmation to be appended at H.2). Outstanding for binding:
+date/format/language, question list, written attribution confirmation.

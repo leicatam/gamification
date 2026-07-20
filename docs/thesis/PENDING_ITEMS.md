@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V18)
+# Pending Items — Tam EngD Thesis (V19)
 
 Per the author's request, the verbose highlighted placeholder boxes were
 removed from the document at V11; brief neutral markers remain at each
@@ -35,17 +35,16 @@ supplied before final binding, with the exact insertion location for each.
    the register (38 / 41 / 41) is the sole Stage-3 record. Remaining
    action: before the Paper 3 manuscript is ever submitted, update its
    Table 1 (and all derived band percentages) to the register figures.
-6c. **Expert interview (updated at V18; blocking for the §6.8/Ch7
-   argument):** expert identified and credentials verified — Dr Sarah
-   C.W. Yuan, Center on the Family, University of Hawai'i at Mānoa
-   (medical sociology, demography of aging; Hawai'i Healthy Aging
-   Partnership; Hawai'i Falls Prevention Alliance context). See
-   `Expert_Interview_Integration_Plan.md` for the verified profile,
-   framing decision (single consultation vs panel), prepared insertion
-   slots, and the six items still needed (interview record, consent to
-   be named, date/format, question list, HSESC coverage, grant-PI
-   attribution). No interview content is drafted until the record
-   arrives.
+6c. **Expert consultation — INTEGRATED at V19.** The consultation with
+   Dr Sarah C.W. Yuan is now in the thesis: §3.2 (method), §3.4 (ethics
+   sentence), new §6.8A (interpretation of the commitment gap through
+   group dynamics), §7.5.3 (L6 coaching-layer support), §8.5 (candidate
+   moderators) and Appendix H (full record from the author's notes,
+   H.1–H.4). Remaining for Appendix H before binding: interview date,
+   format and language; the question list used (or a reconstruction
+   marked as such); and Dr Yuan's written confirmation of named
+   attribution (an email suffices). The hifallsprevention.org grant-PI
+   question is moot — no grant attribution appears in the thesis.
 7. Stage-1 survey response file (CSV) → G.1.
 8. Stage-2 session-level telemetry with timestamps + AI-call logs → G.2
    addendum, if retained; otherwise one sentence in §8.9 stating not retained.
