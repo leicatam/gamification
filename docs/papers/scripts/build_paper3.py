@@ -303,7 +303,44 @@ P("Decoupling did not answer every engagement question. Half of the "
   "pairs behavioural follow-up with measures of each.")
 
 # ---------------- VI ----------------
-H1("VI. Limitations")
+H1("VI. Design Implications for Practitioners")
+P("The account and the present associations translate into four design "
+  "levers for any gamified health technology serving older users. They "
+  "are stated as design guidance derived from the programme's evidence "
+  "and theory; their causal confirmation belongs to the study of "
+  "Section VIII.")
+P("First, engineer the attribution pathway. Whether feedback from a "
+  "failure flows into the participant's model of the task or their "
+  "model of themselves is set by the framing — the activity's name, "
+  "the on-screen metrics, staff language and the ambient narrative of "
+  "the deployment site. If the pathway is not designed, the "
+  "environment will set it, and in elderly care settings it will set "
+  "it toward health-deficit. The coordination-challenge framing "
+  "evaluated here is one engineered pathway; 71.7% endorsement "
+  "indicates most participants received it.")
+P("Second, keep the belief structure open. Present performance as "
+  "inherently variable ('your response will differ each session — "
+  "that is normal'), emphasise ranges rather than single summary "
+  "scores, and never let one failure read as a verdict.")
+P("Third, respect the endowment boundary. The vulnerable moments are "
+  "the initial framing before the first session, the first failure "
+  "event, and the between-session reflection in which the "
+  "participant decides whether to return. Each deserves explicit "
+  "design attention: a success-guaranteeing first session, immediate "
+  "mastery-oriented reframing at failure, and a return path that "
+  "requires no renewed self-justification.")
+P("Fourth, design feedback for its interpretive affordance, not only "
+  "its information content. A difficulty reduction presented "
+  "silently, or in clinical terms, reads as 'the system detected my "
+  "weakness'; the same adjustment presented as 'finding the right "
+  "speed for your reactions' reads as help. No output shown to the "
+  "participant should be readable as a health verdict. The "
+  "commitment-gap finding adds the forward-looking lever: install a "
+  "visible personal trajectory, so that returning has a positive "
+  "reason and not merely the absence of a negative one.")
+
+# ---------------- VII ----------------
+H1("VII. Limitations")
 P("The comparison with [2] is between-cycle and between-cohort, without "
   "randomisation; the decoupling is a multi-component package; the "
   "proposed mechanisms (endowment, mental accounting, stereotype threat) "
@@ -315,8 +352,8 @@ P("The comparison with [2] is between-cycle and between-cohort, without "
   "telemetry was collected, so no claim about clinical outcomes under "
   "decoupling is made.")
 
-# ---------------- VII ----------------
-H1("VII. Future Work: The Within-Cohort Confirmatory Study")
+# ---------------- VIII ----------------
+H1("VIII. Future Work: The Within-Cohort Confirmatory Study")
 P("A three-arm randomised within-cohort study is pre-specified to convert "
   "the present associations into causal tests: Arm 1, the coupled game "
   "(control); Arm 2, the decoupled coordination-challenge framing; Arm 3, "
@@ -328,8 +365,8 @@ P("A three-arm randomised within-cohort study is pre-specified to convert "
   "harmonised session-level logging with timestamps. Hypotheses and "
   "endpoints will be pre-registered before data collection begins.")
 
-# ---------------- VIII ----------------
-H1("VIII. Conclusion")
+# ---------------- IX ----------------
+H1("IX. Conclusion")
 P("Offered the same game without the clinical attachment, a separate "
   "cohort of 120 adults — including 41 aged 65-80 — accepted it at the "
   "levels the gamification literature predicts, and most older "
@@ -401,7 +438,7 @@ cp.comments = ("R1 (19 Jul 2026): full rewrite of the Key Contexts scaffold "
                "future work. All figures follow thesis V20.")
 
 OUT = ("/tmp/claude-0/-home-user-gamification/3d8a50e8-9258-51ce-a7d6-"
-       "194da50f9a04/scratchpad/Paper3_R1_Stage3_Manuscript.docx")
+       "194da50f9a04/scratchpad/Paper3_R2_Full_Rewrite.docx")
 d.save(OUT)
 print("saved", OUT)
 

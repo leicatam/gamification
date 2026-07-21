@@ -117,3 +117,48 @@ completion if the venue asks for more than the preliminary aggregates.
   participant-facing redesign package in a separate cohort" used in both
   Paper 3 and the thesis; AI positioned as enabling technology in both
   papers' acknowledgments.
+
+## Update (19 Jul 2026, later) — Paper 1 clarification and full R2 rewrites
+
+**Paper 1 (SS-293, accepted) — alignment with V20 confirmed.** Checked
+line-by-line: its Stage-1 record (survey N ≈ 200, aged 65-88; 39% ever
+used; ~74% first-attempt failure; ~82% non-return; FIDS→FIAS
+terminological correction) matches thesis V20 Chapter 4 and both R2
+papers exactly. It contains none of the withdrawn statistics and no
+LODF. Two cosmetic notes only:
+1. SS-293 dates the survey "June 2024"; thesis §4.2 says administered
+   "July and August 2024". Align the thesis to the primary records
+   (or to "mid-2024") at the final proofread — the paper is locked.
+2. SS-293's future-work section promises "testing of the FIAS
+   hypothesis through survival analysis". The Stage-2 archive turned
+   out to hold no time variable, so Paper 2 R2 explains why no survival
+   analysis is reported and moves time-to-event analysis to the
+   pre-registered confirmatory study (which adds timestamped logging).
+   A promise superseded by a documented data limitation is not an
+   inconsistency; no action needed on SS-293.
+
+**R2 full rewrites (supersede the R1 files).**
+- `Paper2_R2_Full_Rewrite.docx` (~7,200 words): complete rewrite, not a
+  patch. Clean prose throughout (the garbled Discussion/RQ2 passages of
+  the submission version are gone), all V20-verified statistics, the
+  single withdrawal statement in §VII-A, session-based definitions,
+  composite as descriptive case identification, leaderboard as
+  qualitative observation, AI as enabling technology, and a fully
+  renumbered reference list [1]-[46] with in-text citations written
+  against it (this resolves the ±2 numbering drift of the submitted
+  version). SS-293 cited as [46].
+- `Paper3_R2_Full_Rewrite.docx` (~3,100 words): the Stage-3 manuscript
+  with a new Section VI "Design Implications for Practitioners"
+  carrying the four-component guidance (attribution pathway, belief
+  structure, endowment boundary, feedback interpretive affordance) as
+  claim-disciplined design guidance, plus the R1 content: methods
+  (decoupling package, coordination-challenge framing rationale),
+  results at the register values, calibrated discussion, limitations,
+  three-arm future work.
+
+Remaining before submission (unchanged in kind): venue/template
+selection and formatting; figure files for Paper 2 (game interface,
+participant flow, mechanism diagram, three-arm design — the originals
+can be reused; the K-M figure must NOT be); author-list confirmation;
+and the Paper 2 / Paper 3 cross-citation status wording once either is
+submitted.
