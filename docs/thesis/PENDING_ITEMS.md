@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V20)
+# Pending Items — Tam EngD Thesis (V21)
 
 At V20, on examiner instruction, ALL remaining placeholder markers,
 figure stubs and 'in progress' statements were removed from the document
@@ -61,8 +61,13 @@ document with their captions at V20).
 insert at the sections listed; captions to be restored with the images)
 11. Figure 4.1B — the InBody FRA510S machine at the Guangzhou facility.
 12. Figure 5.1A — the Stage-2 play station (panel + screen).
-13. Figure 5.1B — skiing-game screenshots at each difficulty level
-    (can be generated from the game build on request).
+13. RESOLVED at V21: Figure 5.1B inserted — a five-panel composite of
+    screenshots at difficulty multipliers x0.40-x1.40, captured from the
+    archived game build (docs/thesis/figures/fig_5_1B.png; capture
+    script in scripts/). The caption states the provenance (successor
+    build in the Stage-2 design lineage). If original Stage-2 Pygame
+    captures exist, they may be swapped in with the caption's
+    provenance sentence removed.
 14. Figure 5.3A — participants playing (consented; faces obscurable).
 15. Figure 6.0A — the Hong Kong Stage-3 site.
 
