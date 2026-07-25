@@ -16,6 +16,13 @@ Added 25 Jul 2026 (second batch):
 |---|---|---|
 | `FRA_station_Guangzhou_IMG_0886_original.jpeg` | The FRA balance station in the Guangzhou facility rehabilitation room: dark glass four-load-cell platform (same unit as the demo video) in an anti-slip base plate with dual support rails; monitor + keyboard on a mobile cart; simplified-Chinese signage (OT training area, balance test, rehabilitation room). Used as thesis Figure 4.1B (V23). | 4284x5712; no EXIF (stripped in transit). |
 
+Added 25 Jul 2026 (third batch — expert-consultation record):
+
+| File | Content | Notes |
+|---|---|---|
+| `Consent_Form_Sarah_Yuan_signed_2026-07-22.pdf` | Two-page participant information sheet + consent form for the expert interview. All nine numbered statements initialled "SY"; participant signature present; typed dates 7/22/2026. | Gaps: identification-preference boxes (anonymous vs named) BOTH blank — named attribution not yet authorised; researcher signature line unsigned; "Draft prepared for ethics review" banner on both pages. |
+| `Consent_Form_Yuan_email_provenance_screenshot.jpeg` | Screenshot of the transmittal email: from Sarah Yuan (cwlau@hawaii.edu, Specialist, Center on the Family, CTAHR, University of Hawai'i at Mānoa) to Sidney Tam's PolyU inbox, subject "Interview consent", body "Attached is the signed consent form for the interview", with the 1.8 MB PDF attached. | Establishes chain of custody for the signed form. Does not itself authorise named attribution. |
+
 Candidate figure frames extracted to `../figures/`:
 `fig_5_1A_candidate_platform_demo.jpg` (platform + screen + player) and
 `fig_game_actual_build_frame.jpg` (game screen with HUD).

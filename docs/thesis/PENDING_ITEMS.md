@@ -73,6 +73,10 @@ document with their captions at V20).
    confirm all institutional contacts, retention periods and withdrawal
    limits before use" — regenerate a clean final version or note the
    banner in the archive record.
+   PROVENANCE CLOSED 25 Jul 2026: transmittal email screenshot archived
+   (from cwlau@hawaii.edu to the author's PolyU inbox, subject
+   "Interview consent") — chain of custody for the signed form is
+   established; gaps (i)-(iii) above still stand.
    Still needed for Appendix H: interview date, format and language, and
    the question list used (or a reconstruction marked as such).
 7. Stage-1 survey response file (CSV) → G.1.
