@@ -60,7 +60,11 @@ document with their captions at V20).
 ## D. Photographs and screenshots (no markers remain in the document —
 insert at the sections listed; captions to be restored with the images)
 11. Figure 4.1B — the InBody FRA510S machine at the Guangzhou facility.
-12. Figure 5.1A — the Stage-2 play station (panel + screen).
+12. Figure 5.1A — the Stage-2 play station (panel + screen). CANDIDATE
+    available: docs/thesis/figures/fig_5_1A_candidate_platform_demo.jpg
+    (frame from the author's 2024-08-27 demo video, evidence/). Office
+    demo setting — caption must say so; see evidence/README.md open
+    questions (build lineage, device identity, consent) before binding.
 13. RESOLVED at V21: Figure 5.1B inserted — a five-panel composite of
     screenshots at difficulty multipliers x0.40-x1.40, captured from the
     archived game build (docs/thesis/figures/fig_5_1B.png; capture
