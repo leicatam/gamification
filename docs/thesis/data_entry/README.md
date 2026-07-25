@@ -89,6 +89,20 @@ directly via `stage3_import.py`, and transcribe questionnaire/enrolment/
 staff-log fields from their paper records; fields with no surviving
 primary record are left blank and disclosed.
 
+Fourth submission (25 Jul 2026): two CSVs presented as "rebuilt from the
+game state memory" (`Game_Telemetry.csv`,
+`Participants_Renamed_Recruitment_Channels.csv`). Cell-level comparison:
+the Participants CSV is identical in all 1,200 cells to the relabelled
+synthetic workbook (including the renamed channel labels — the filename
+names the renaming operation); the Telemetry CSV is identical to the
+FIRST synthetic workbook (the six edited session dates carry their
+original simulation values). Both are downstream exports of the
+generated dataset, not upstream records; a game-state export also cannot
+contain age, education, recruitment channel or FES-I columns. Not
+admitted. The author has since confirmed that genuine primary records
+(paper questionnaires, staff session logs, original terminal exports)
+physically exist; the logbook will be populated only from those.
+
 Ruling (standing): relabelling a synthetic dataset does not change its
 provenance, and a dataset generated under the registered targets cannot
 verify those targets — the reasoning is circular. The logbook analysis
