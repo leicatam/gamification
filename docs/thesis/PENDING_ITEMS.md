@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V23)
+# Pending Items — Tam EngD Thesis (V24)
 
 At V20, on examiner instruction, ALL remaining placeholder markers,
 figure stubs and 'in progress' statements were removed from the document
@@ -33,23 +33,28 @@ document with their captions at V20).
    exports and must be rebuilt around the records that DO survive from
    the email deployment (distribution emails, reply/response emails,
    online questionnaire returns, any tally used to compile the register).
-   BLOCKED pending the author's answers to: (a) what records were used to
-   compile the register aggregates (38/41/41 etc.) at the time, and do
-   they survive; (b) how sessions, dropouts and returns were observed
-   remotely; (c) what input device controlled the HTML game (keyboard/
-   trackpad — i.e., no balance-platform COP input); (d) who the
-   associates were and how they map to the recruitment channels.
-6a. **BLOCKING — Chapter 6 (and §3.2) method revision required.** The
-   thesis currently describes Stage 3 as retaining "the same broad
-   hardware platform" in a Hong Kong community deployment. Once item 6's
-   questions are answered, Chapter 6 must be rewritten to describe the
-   actual remote HTML deployment (delivery, setting, input device,
-   unsupervised play, how outcomes were observed), and the attribution
-   reading must be recalibrated: Stage 3 differed from Stage 2 not only
-   in the participant-facing redesign package but also in platform,
-   setting and supervision, which widens the stated limits on what the
-   comparison can attribute. Figure 6.0A (the "Hong Kong Stage-3 site")
-   is RETIRED — no physical site existed.
+   ANSWERED 25 Jul 2026: (a) register aggregates were compiled from the
+   participants' reply e-mails, each carrying the build's logged results
+   CSV and questionnaire responses; (b) the game showed a score and
+   logged data, returned by e-mail; (c) input was trackpad, arrow keys,
+   or a foot-pad sensor where available; (d) associates were reached via
+   work contacts, a charity community network, university support, and
+   the author (main associate) with working peers in medical centres.
+   REMAINING ACTION: the author gathers the returned e-mails (the CSVs
+   and questionnaire replies) and supplies them for transcription into
+   the logbook's Email_Returns_Log / RAW_Email_CSV sheets (rebuilt for
+   this trail, 25 Jul 2026). Also confirm how participants consented in
+   the remote deployment (enrolment form? e-mail consent?) → §3.4.
+6a. **RESOLVED at V24 — Chapter 6 (and §3.2, Ch8, Appendix G) rewritten**
+   to describe the actual remote deployment: e-mailed HTML build, own
+   computers, trackpad/arrow-keys/foot-pad input, unsupervised play,
+   returns compiled from reply e-mails. False archive claims (paper
+   questionnaires / staff session logs / terminal exports) removed;
+   attribution limits widened (platform, input device, setting,
+   supervision changed alongside framing); §6.9 duplicated fragment
+   removed; G.5 redefined as the distribution/return e-mail record.
+   Figure 6.0A (the "Hong Kong Stage-3 site") remains RETIRED — no
+   physical site existed.
 6b. RESOLVED at V16: Paper 3 is unpublished, so no corrigendum is needed
    and the thesis no longer reconciles against any published record —
    the register (38 / 41 / 41) is the sole Stage-3 record. Remaining

@@ -1,5 +1,18 @@
 # Stage-3 Data-Entry Kit
 
+**REDEFINED 25 Jul 2026 — actual deployment mode.** Stage 3 was a remote
+deployment: an HTML build of the game e-mailed to participants (work
+contacts, charity community network, university support, medical-centre
+peers), played unsupervised on their own computers (trackpad / arrow
+keys / foot-pad sensor where available). The primary records are the
+participants' RETURNED E-MAILS — the build's logged results CSV and the
+questionnaire responses. The master logbook now has `Email_Returns_Log`
+(entry point, one row per participant) and `RAW_Email_CSV` (paste
+returned CSVs unchanged) sheets; fill ONLY from the actual returned
+e-mails. No terminal exports, paper questionnaires or staff session
+logs exist for Stage 3. The template/import workflow below predates
+this redefinition and applies only where its sheets still match.
+
 Purpose: get game state-table exports and staff records into the Stage-3
 logbook **without typing values one by one**, with definitions centralised,
 outcomes derived automatically, and quality checks live.
