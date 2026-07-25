@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V24)
+# Pending Items — Tam EngD Thesis (V25)
 
 At V20, on examiner instruction, ALL remaining placeholder markers,
 figure stubs and 'in progress' statements were removed from the document
@@ -43,8 +43,15 @@ document with their captions at V20).
    REMAINING ACTION: the author gathers the returned e-mails (the CSVs
    and questionnaire replies) and supplies them for transcription into
    the logbook's Email_Returns_Log / RAW_Email_CSV sheets (rebuilt for
-   this trail, 25 Jul 2026). Also confirm how participants consented in
-   the remote deployment (enrolment form? e-mail consent?) → §3.4.
+   this trail, 25 Jul 2026). Consent procedure RESOLVED at V25: §3.4 now
+   states the informed, implied-consent model per the author (e-mails
+   explained purpose and use of replies; voluntary, unpaid; returning
+   results constituted consent; no written instrument — acknowledged
+   limitation). Paper 3 R3 carries the matching statement. Still to
+   file: one copy of the distribution e-mail (recipient redacted) as the
+   G.5 anchor artifact, and the de-identified G.5 index. HSESC coverage
+   of the remote Stage-3 procedure to be confirmed with the supervisor
+   (see item A.1).
 6a. **RESOLVED at V24 — Chapter 6 (and §3.2, Ch8, Appendix G) rewritten**
    to describe the actual remote deployment: e-mailed HTML build, own
    computers, trackpad/arrow-keys/foot-pad input, unsupervised play,
