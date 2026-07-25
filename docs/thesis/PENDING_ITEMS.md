@@ -57,9 +57,14 @@ document with their captions at V20).
    physical site existed.
 6b. RESOLVED at V16: Paper 3 is unpublished, so no corrigendum is needed
    and the thesis no longer reconciles against any published record —
-   the register (38 / 41 / 41) is the sole Stage-3 record. Remaining
-   action: before the Paper 3 manuscript is ever submitted, update its
-   Table 1 (and all derived band percentages) to the register figures.
+   the register (38 / 41 / 41) is the sole Stage-3 record. Tables were
+   updated to the register figures at R2. UPDATED 25 Jul 2026: Paper 3
+   rewritten as R3 (Paper3_R3_Aligned_V24.docx), aligned with the V24
+   account of the remote e-mailed HTML deployment — R3 supersedes R2 and
+   R1, which must NOT be submitted. Hold submission until the
+   participant-level compilation from the returned e-mails (item 6) is
+   complete or the manuscript's "compilation continues" wording is
+   re-confirmed as accurate at submission time.
 6c. **Expert consultation — INTEGRATED at V19.** The consultation with
    Dr Sarah C.W. Yuan is now in the thesis: §3.2 (method), §3.4 (ethics
    sentence), new §6.8A (interpretation of the commitment gap through
