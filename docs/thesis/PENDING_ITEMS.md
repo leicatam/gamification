@@ -72,12 +72,13 @@ document with their captions at V20).
    moderators) and Appendix H (full record from the author's notes,
    H.1–H.4). CONSENT FORM received 25 Jul 2026 (signed 22 Jul 2026;
    archived in evidence/): all nine numbered statements are initialled
-   "SY" and the participant signature line is signed. THREE GAPS remain
-   before Appendix H can rely on it for NAMED attribution:
-   (i) the identification-preference boxes (anonymous vs "identify me by
-   name and professional affiliation") are BOTH un-initialled — named
-   attribution is therefore not yet authorised; obtain her tick/initial
-   on the second option or a confirming email;
+   "SY" and the participant signature line is signed.
+   (i) RESOLVED 25 Jul 2026 (correction): re-examination of the PDF's
+   vector layer found a drawn tick on the second identification option —
+   "I give permission to identify me by name and professional
+   affiliation in agreed outputs." NAMED ATTRIBUTION IS AUTHORISED by
+   the signed form. (The tick is a small vector stroke; the first
+   image-based inspection missed it.) Two minor gaps remain:
    (ii) the researcher signature line is unsigned (author to sign);
    (iii) both pages carry the banner "Draft prepared for ethics review —
    confirm all institutional contacts, retention periods and withdrawal
@@ -86,7 +87,7 @@ document with their captions at V20).
    PROVENANCE CLOSED 25 Jul 2026: transmittal email screenshot archived
    (from cwlau@hawaii.edu to the author's PolyU inbox, subject
    "Interview consent") — chain of custody for the signed form is
-   established; gaps (i)-(iii) above still stand.
+   established.
    Still needed for Appendix H: interview date, format and language, and
    the question list used (or a reconstruction marked as such).
 7. Stage-1 survey response file (CSV) → G.1.

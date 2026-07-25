@@ -20,7 +20,7 @@ Added 25 Jul 2026 (third batch — expert-consultation record):
 
 | File | Content | Notes |
 |---|---|---|
-| `Consent_Form_Sarah_Yuan_signed_2026-07-22.pdf` | Two-page participant information sheet + consent form for the expert interview. All nine numbered statements initialled "SY"; participant signature present; typed dates 7/22/2026. | Gaps: identification-preference boxes (anonymous vs named) BOTH blank — named attribution not yet authorised; researcher signature line unsigned; "Draft prepared for ethics review" banner on both pages. |
+| `Consent_Form_Sarah_Yuan_signed_2026-07-22.pdf` | Two-page participant information sheet + consent form for the expert interview. All nine numbered statements initialled "SY"; participant signature present; typed dates 7/22/2026. CORRECTED 25 Jul 2026: a drawn tick (vector stroke at the second checkbox, verified in the PDF object layer) selects "I give permission to identify me by name and professional affiliation in agreed outputs" — named attribution IS authorised. | Remaining gaps: researcher signature line unsigned; "Draft prepared for ethics review" banner on both pages. |
 | `Consent_Form_Yuan_email_provenance_screenshot.jpeg` | Screenshot of the transmittal email: from Sarah Yuan (cwlau@hawaii.edu, Specialist, Center on the Family, CTAHR, University of Hawai'i at Mānoa) to Sidney Tam's PolyU inbox, subject "Interview consent", body "Attached is the signed consent form for the interview", with the 1.8 MB PDF attached. | Establishes chain of custody for the signed form. Does not itself authorise named attribution. |
 
 Candidate figure frames extracted to `../figures/`:
