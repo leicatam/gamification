@@ -61,3 +61,23 @@ legitimate role — proving the pipeline — is hereby fulfilled.
 The template and script move data; they never create it. RAW and ENTRY sheets
 may contain only values exported from the game or transcribed from primary
 records.
+
+## Provenance log — rejected uploads (July 2026)
+
+Three files supplied as Stage-3 study data were examined and NOT admitted to
+the logbook analysis sheets. They are retained here, renamed to state their
+status, so the audit trail is complete:
+
+| Archived file | Received | Finding |
+|---|---|---|
+| `UNVERIFIED_Gameplay_Summary_19072026_provenance_unconfirmed.xlsx` | 19 Jul 2026 | Aggregate summary whose totals match the register but whose per-band indicators contradict it in 10 places (gender 52/68 vs register 48/72; dropouts 0/6/17 vs 0/7/16; intention 38/24/14 vs 25/28/23; band labelled "65-85"); contains construction annotations. Staged read-only in the logbook's RAW_Import_UNVERIFIED sheet with warnings. |
+| `SYNTHETIC_Constrained_Simulation_21072026_NOT_STUDY_DATA.xlsx` | 21 Jul 2026 | Participant-level dataset whose own Validation sheet declares "Dataset status: Synthetic / constrained simulation"; all 26 indicators PASS by construction (targets were inputs, not outcomes). |
+| `SYNTHETIC_Constrained_Simulation_V2_relabelled_21072026_NOT_STUDY_DATA.xlsx` | 25 Jul 2026 | Presented as "the clean version". Cell-level comparison against the file above: Q4 Responses, Outcomes and Registered Results sheets byte-identical; Participants differs only in 94 renamed Recruit_Channel labels; Game Telemetry differs only in 6 edited session dates (introducing a new anomaly — participant 3005's sessions 2-5 all dated 2026-03-07); the single substantive change is the Validation "Dataset status" cell, edited from "Synthetic / constrained simulation" to "converted from game state CVS raw dataset". The construction notes ("Participant IDs: Randomly distributed across behavioural groups"; retention target "implemented") remain. Same dataset, relabelled. |
+
+Ruling (standing): relabelling a synthetic dataset does not change its
+provenance, and a dataset generated under the registered targets cannot
+verify those targets — the reasoning is circular. The logbook analysis
+sheets remain empty pending transcription from primary records (paper
+questionnaires, staff session logs, terminal exports), and the thesis
+continues to rest on the preliminary aggregate register (38/41/41), which
+it reports accurately.
