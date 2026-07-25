@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V22)
+# Pending Items — Tam EngD Thesis (V23)
 
 At V20, on examiner instruction, ALL remaining placeholder markers,
 figure stubs and 'in progress' statements were removed from the document
@@ -64,7 +64,12 @@ document with their captions at V20).
 
 ## D. Photographs and screenshots (no markers remain in the document —
 insert at the sections listed; captions to be restored with the images)
-11. Figure 4.1B — the InBody FRA510S machine at the Guangzhou facility.
+11. RESOLVED at V23: Figure 4.1B inserted — the author's photograph of
+    the FRA balance station in the Guangzhou rehabilitation room
+    (original archived in evidence/; EXIF absent in transit). The photo
+    shows the modular platform + rails + cart configuration, matching
+    the §4.1A HUR-lineage description; the caption cross-references
+    Figure 5.1A (same platform under game control).
 12. RESOLVED at V22: Figure 5.1A inserted (between Figures 5.1 and 5.1B) —
     frame from the author's 2024-08-27 demo video; caption states the
     control-person/development-office provenance and the facility privacy

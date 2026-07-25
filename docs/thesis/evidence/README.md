@@ -10,6 +10,12 @@ participant-level study data and do not populate the logbook.
 | `platform_demo_2024-08-27_1082.mov` | 10 s clip of a man standing barefoot on a dark glass balance platform (labelled "Balance Platform" / "SCREEN" with directional arrows) in an office cubicle, steering the same penguin game by weight shift on a desktop monitor. | Creation date 2024-08-27 19:11 (+09:00); WeChat transit metadata; 720x1280. |
 | `HUR_SmartBalance_brochure_screenshot.jpeg` | Phone screenshot of the vendor PDF `hur_smartbalance_2023_03_07_web.pdf`: "HUR Modular Balance Solutions" — Balance Platform BTG4, SmartBalance software, support rail, touchscreen computer. | Screenshot, no capture date. |
 
+Added 25 Jul 2026 (second batch):
+
+| File | Content | Metadata |
+|---|---|---|
+| `FRA_station_Guangzhou_IMG_0886_original.jpeg` | The FRA balance station in the Guangzhou facility rehabilitation room: dark glass four-load-cell platform (same unit as the demo video) in an anti-slip base plate with dual support rails; monitor + keyboard on a mobile cart; simplified-Chinese signage (OT training area, balance test, rehabilitation room). Used as thesis Figure 4.1B (V23). | 4284x5712; no EXIF (stripped in transit). |
+
 Candidate figure frames extracted to `../figures/`:
 `fig_5_1A_candidate_platform_demo.jpg` (platform + screen + player) and
 `fig_game_actual_build_frame.jpg` (game screen with HUD).
