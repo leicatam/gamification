@@ -74,6 +74,21 @@ status, so the audit trail is complete:
 | `SYNTHETIC_Constrained_Simulation_21072026_NOT_STUDY_DATA.xlsx` | 21 Jul 2026 | Participant-level dataset whose own Validation sheet declares "Dataset status: Synthetic / constrained simulation"; all 26 indicators PASS by construction (targets were inputs, not outcomes). |
 | `SYNTHETIC_Constrained_Simulation_V2_relabelled_21072026_NOT_STUDY_DATA.xlsx` | 25 Jul 2026 | Presented as "the clean version". Cell-level comparison against the file above: Q4 Responses, Outcomes and Registered Results sheets byte-identical; Participants differs only in 94 renamed Recruit_Channel labels; Game Telemetry differs only in 6 edited session dates (introducing a new anomaly — participant 3005's sessions 2-5 all dated 2026-03-07); the single substantive change is the Validation "Dataset status" cell, edited from "Synthetic / constrained simulation" to "converted from game state CVS raw dataset". The construction notes ("Participant IDs: Randomly distributed across behavioural groups"; retention target "implemented") remain. Same dataset, relabelled. |
 
+Author's account (25 Jul 2026): the workbooks were produced by exporting
+game state memory to CSV and then asking ChatGPT to "formulate the file"
+against this kit's template. This explains the findings: an LLM given raw
+telemetry plus the registered targets generates whatever the CSV does not
+contain (demographics, Q4 questionnaire responses, staff-observed
+dropout/return events — none of which exist in game state memory) and
+fits the result to the targets, which is exactly what the file's own
+Validation notes describe ("Randomly distributed across behavioural
+groups"; retention target "implemented"). The workbooks are therefore an
+inseparable mixture of possibly-real telemetry and generated content, and
+remain inadmissible. Resolution path: import the untouched CSV exports
+directly via `stage3_import.py`, and transcribe questionnaire/enrolment/
+staff-log fields from their paper records; fields with no surviving
+primary record are left blank and disclosed.
+
 Ruling (standing): relabelling a synthetic dataset does not change its
 provenance, and a dataset generated under the registered targets cannot
 verify those targets — the reasoning is circular. The logbook analysis
