@@ -25,14 +25,31 @@ document with their captions at V20).
    reliability (α) → Appendix D.
 
 ## C. Stage-3 data and AI record (Appendix G, §8.9)
-6. Transcription of the Stage-3 primary records into
-   `Stage3_Data_Logbook_120cases_with_Reconciliation.xlsx` (IDs 3001–3120,
-   from paper questionnaires / staff logs / terminal exports only). Per the
-   author (V15): data collection is complete, preliminary aggregates were
-   released and reported, and the full participant-level analysis is in
-   progress — the thesis no longer describes any data loss. Register band
-   sizes: 25–44 = 38, 45–64 = 41, 65–80 = 41; the transcription must
-   confirm these against the primary records.
+6. **REDEFINED 25 Jul 2026 by the author's account of the actual Stage-3
+   deployment:** Stage 3 was NOT run at Hong Kong sites. The game was
+   ported to HTML, sent out by email, and associates played it on their
+   own computers; the system did not export telemetry, so no terminal
+   exports exist. The logbook therefore cannot be filled from terminal
+   exports and must be rebuilt around the records that DO survive from
+   the email deployment (distribution emails, reply/response emails,
+   online questionnaire returns, any tally used to compile the register).
+   BLOCKED pending the author's answers to: (a) what records were used to
+   compile the register aggregates (38/41/41 etc.) at the time, and do
+   they survive; (b) how sessions, dropouts and returns were observed
+   remotely; (c) what input device controlled the HTML game (keyboard/
+   trackpad — i.e., no balance-platform COP input); (d) who the
+   associates were and how they map to the recruitment channels.
+6a. **BLOCKING — Chapter 6 (and §3.2) method revision required.** The
+   thesis currently describes Stage 3 as retaining "the same broad
+   hardware platform" in a Hong Kong community deployment. Once item 6's
+   questions are answered, Chapter 6 must be rewritten to describe the
+   actual remote HTML deployment (delivery, setting, input device,
+   unsupervised play, how outcomes were observed), and the attribution
+   reading must be recalibrated: Stage 3 differed from Stage 2 not only
+   in the participant-facing redesign package but also in platform,
+   setting and supervision, which widens the stated limits on what the
+   comparison can attribute. Figure 6.0A (the "Hong Kong Stage-3 site")
+   is RETIRED — no physical site existed.
 6b. RESOLVED at V16: Paper 3 is unpublished, so no corrigendum is needed
    and the thesis no longer reconciles against any published record —
    the register (38 / 41 / 41) is the sole Stage-3 record. Remaining
@@ -43,11 +60,21 @@ document with their captions at V20).
    sentence), new §6.8A (interpretation of the commitment gap through
    group dynamics), §7.5.3 (L6 coaching-layer support), §8.5 (candidate
    moderators) and Appendix H (full record from the author's notes,
-   H.1–H.4). Remaining for Appendix H before binding: interview date,
-   format and language; the question list used (or a reconstruction
-   marked as such); and Dr Yuan's written confirmation of named
-   attribution (an email suffices). The hifallsprevention.org grant-PI
-   question is moot — no grant attribution appears in the thesis.
+   H.1–H.4). CONSENT FORM received 25 Jul 2026 (signed 22 Jul 2026;
+   archived in evidence/): all nine numbered statements are initialled
+   "SY" and the participant signature line is signed. THREE GAPS remain
+   before Appendix H can rely on it for NAMED attribution:
+   (i) the identification-preference boxes (anonymous vs "identify me by
+   name and professional affiliation") are BOTH un-initialled — named
+   attribution is therefore not yet authorised; obtain her tick/initial
+   on the second option or a confirming email;
+   (ii) the researcher signature line is unsigned (author to sign);
+   (iii) both pages carry the banner "Draft prepared for ethics review —
+   confirm all institutional contacts, retention periods and withdrawal
+   limits before use" — regenerate a clean final version or note the
+   banner in the archive record.
+   Still needed for Appendix H: interview date, format and language, and
+   the question list used (or a reconstruction marked as such).
 7. Stage-1 survey response file (CSV) → G.1.
 8. Stage-2 session-level telemetry with timestamps + AI-call logs → G.2
    addendum, if retained; otherwise one sentence in §8.9 stating not retained.
@@ -86,7 +113,9 @@ insert at the sections listed; captions to be restored with the images)
     photography of participants was not permitted under the facility's
     privacy rules, so no Figure 5.3A imagery exists. The Figure 5.1A
     caption now states this; the figure number stays retired.
-15. Figure 6.0A — the Hong Kong Stage-3 site.
+15. RETIRED 25 Jul 2026: Figure 6.0A ("the Hong Kong Stage-3 site")
+    cannot exist — per the author, no physical Stage-3 site was used;
+    the deployment was remote (HTML build by email). See item 6a.
 
 ## E. Final production pass (after A–D arrive)
 16. Regenerate Table of Contents, List of Figures, List of Tables and page
