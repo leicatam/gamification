@@ -14,24 +14,19 @@ Candidate figure frames extracted to `../figures/`:
 `fig_5_1A_candidate_platform_demo.jpg` (platform + screen + player) and
 `fig_game_actual_build_frame.jpg` (game screen with HUD).
 
-## Open questions (author to confirm before figures are bound)
+## Open questions — RESOLVED by the author, 25 Jul 2026 (thesis V22)
 
-1. **Which build is this?** The recorded game (belly-sliding penguin,
-   fish collection, red flags, fish-counter HUD) closely resembles the
-   open-source Tux Racer / Extreme Tux Racer lineage. The thesis
-   describes the Stage-2 game as a custom AI-assisted skiing game; if
-   the deployed build adapted an open-source engine, §5 should say so
-   explicitly (and credit the licence). This affects wording, not the
-   contribution — the behavioural findings and the platform-game
-   coupling stand either way.
-2. **Which FRA device?** Pending Figure 4.1B is specified as the InBody
-   FRA510S at the Guangzhou facility, but the brochure shows a HUR
-   SmartBalance/BTG4 system and the platform in the video is consistent
-   with a modular balance platform. Confirm which device(s) were
-   actually at the site(s), and align §4/§5 device naming.
-3. **Setting and consent.** The demo video is an office (development)
-   setting, dated 2024-08-27, and the person appears to be the author or
-   a colleague, not a study participant. If used as Figure 5.1A, the
-   caption must say "demonstration of the platform-game coupling
-   (development office, August 2024)" — it cannot be captioned as the
-   Stage-2 care-facility play station.
+1. **Build lineage:** the earliest development phase used the open-source
+   Tux Racer game to validate the platform-to-game coupling; the aesthetic
+   later changed to a human avatar, and the deployed Stage-2 build is the
+   custom 2D Pygame game described in §5.3. Disclosed in §5.3.9 at V22.
+2. **Device:** per the author, the InBody FRA line derives from the HUR
+   SmartBalance solution (European origin); InBody holds the Asian market
+   rights and the Asia-market units add a game mode. Stated as the
+   author's account in §4.1A at V22, with this brochure as the archived
+   support (Appendix G, item G.8).
+3. **Setting and consent:** the video shows one of two control persons,
+   recorded in 2024 during game design; participants could not be filmed
+   under the elderly-housing facility's privacy rules. Figure 5.1A was
+   inserted at V22 with a caption stating exactly this. Still to file:
+   the control person's written consent (email suffices).

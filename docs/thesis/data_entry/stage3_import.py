@@ -46,11 +46,24 @@ def load_rows(path):
     with open(p, newline="", encoding="utf-8-sig") as f:
         return [dict(r) for r in csv.DictReader(f)]
 
+# Known machine-export header synonyms (seen in the author's format sample
+# telemetry_export_machine_v1.csv, 25 Jul 2026), mapped onto template columns.
+ALIASES = {
+    "machinetimestamp": "sessiondate",
+    "hits": "obstacleshit",
+    "difficulty": "aidiffmult",
+    "gameover": "reachedgameover",
+    "ageband": "ageband",
+}
+
 def remap(rows, wanted):
     """Map arbitrary export headers onto template columns (case/space-insensitive)."""
     out = []
     for r in rows:
-        lut = {norm(k): v for k, v in r.items()}
+        lut = {}
+        for k, v in r.items():
+            nk = norm(k)
+            lut[ALIASES.get(nk, nk)] = v
         out.append([lut.get(norm(w), "") for w in wanted])
     return out
 

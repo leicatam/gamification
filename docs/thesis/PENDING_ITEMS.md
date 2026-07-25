@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V21)
+# Pending Items — Tam EngD Thesis (V22)
 
 At V20, on examiner instruction, ALL remaining placeholder markers,
 figure stubs and 'in progress' statements were removed from the document
@@ -53,6 +53,11 @@ document with their captions at V20).
    addendum, if retained; otherwise one sentence in §8.9 stating not retained.
 9. Deployed AI endpoint record: vendor, model, version/dated endpoint,
    prompts, LangChain configuration, settings → §8.9 + G.7 archive.
+9b. NEW at V22 — Appendix G, item G.8: the two 2024-08-27 development
+   videos, the HUR SmartBalance brochure (all in docs/thesis/evidence/),
+   and the control person's written consent (pending, see item 12).
+   §4.1A and §5.3.9 now cite G.8; add the G.8 entry to Appendix G's list
+   when the appendix is assembled.
 10. Item-level source verification for Table 4.1's access and
     perceived-benefit estimates, and the mapping of "understood and accepted"
     to "failure" → §4.2.
@@ -60,11 +65,11 @@ document with their captions at V20).
 ## D. Photographs and screenshots (no markers remain in the document —
 insert at the sections listed; captions to be restored with the images)
 11. Figure 4.1B — the InBody FRA510S machine at the Guangzhou facility.
-12. Figure 5.1A — the Stage-2 play station (panel + screen). CANDIDATE
-    available: docs/thesis/figures/fig_5_1A_candidate_platform_demo.jpg
-    (frame from the author's 2024-08-27 demo video, evidence/). Office
-    demo setting — caption must say so; see evidence/README.md open
-    questions (build lineage, device identity, consent) before binding.
+12. RESOLVED at V22: Figure 5.1A inserted (between Figures 5.1 and 5.1B) —
+    frame from the author's 2024-08-27 demo video; caption states the
+    control-person/development-office provenance and the facility privacy
+    rule. Remaining action: written consent of the control person shown
+    (an email suffices) → file with Appendix G, item G.8.
 13. RESOLVED at V21: Figure 5.1B inserted — a five-panel composite of
     screenshots at difficulty multipliers x0.40-x1.40, captured from the
     archived game build (docs/thesis/figures/fig_5_1B.png; capture
@@ -72,7 +77,10 @@ insert at the sections listed; captions to be restored with the images)
     build in the Stage-2 design lineage). If original Stage-2 Pygame
     captures exist, they may be swapped in with the caption's
     provenance sentence removed.
-14. Figure 5.3A — participants playing (consented; faces obscurable).
+14. RESOLVED at V22 as CANNOT-EXIST: per the author (25 Jul 2026),
+    photography of participants was not permitted under the facility's
+    privacy rules, so no Figure 5.3A imagery exists. The Figure 5.1A
+    caption now states this; the figure number stays retired.
 15. Figure 6.0A — the Hong Kong Stage-3 site.
 
 ## E. Final production pass (after A–D arrive)
