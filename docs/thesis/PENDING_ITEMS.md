@@ -1,4 +1,4 @@
-# Pending Items — Tam EngD Thesis (V25)
+# Pending Items — Tam EngD Thesis (V26)
 
 At V20, on examiner instruction, ALL remaining placeholder markers,
 figure stubs and 'in progress' statements were removed from the document
@@ -107,9 +107,17 @@ document with their captions at V20).
    and the control person's written consent (pending, see item 12).
    §4.1A and §5.3.9 now cite G.8; add the G.8 entry to Appendix G's list
    when the appendix is assembled.
-10. Item-level source verification for Table 4.1's access and
-    perceived-benefit estimates, and the mapping of "understood and accepted"
-    to "failure" → §4.2.
+10. RESOLVED at V26 (author's edit): the unverifiable working-table
+    access and perceived-benefit estimates were removed from the text
+    with a disclosed reason ("those figures cannot be verified"), so no
+    item-level source verification is required. V26 also retires H3
+    (social comparison — not isolated as a test; H1, H2 and H4 renumber
+    references consistently), corrects the Tsai et al. (2020) and
+    Koivisto & Malik (2021) citations (both web-verified), trims the
+    §8.10 broader-AI essay and its references (no orphans), adds §8.5.8
+    (input-modality/embodiment alternative), and adds a verified
+    five-of-eight single-session divergence statement (reproduced from
+    FRA_Raw_Data_N30).
 
 ## D. Photographs and screenshots (no markers remain in the document —
 insert at the sections listed; captions to be restored with the images)
