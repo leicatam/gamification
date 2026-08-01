@@ -27,8 +27,9 @@ content identical to the verified R2 statistics, restructured to JMIR).
 
 1. Create an account / log in at https://games.jmir.org and start a new
    submission as an **Original Paper**.
-2. Enter metadata: title, both authors with ORCID (create ORCIDs if you
-   don't have them — JMIR asks), affiliations, corresponding author
+2. Enter metadata: title, both authors with ORCID — Sidney K. T. Tam:
+   0009-0006-0423-4148; Prof. Cheung's ORCID still to be obtained from
+   him — affiliations, corresponding author
    (sidney.tam@connect.polyu.hk), abstract (paste the structured
    abstract), keywords.
 3. Upload the manuscript .docx as the main document. Figures are already
