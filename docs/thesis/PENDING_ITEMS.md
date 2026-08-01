@@ -39,20 +39,21 @@ document with their captions at V20).
    was recorded AFTER the eight-week window, at the small rewards
    presentation for those who stayed — i.e., all written consent was
    retrospective. Include this fact in the HSESC characterisation.
-1c. **BLOCKING — F4 interview verification (1 Aug 2026).** The author,
-   asked about "the six interviewed dropouts", did not recognise the
-   Stage-2 F4 interviews and stated "I didn't do interviews with them"
-   (while earlier stating "I do have their interview results"). The
-   thesis (Appendix C: nine-question semi-structured protocol,
-   "administered ... three to five days after the abandoned session",
-   Mandarin/Cantonese, quiet meeting room) and Paper 2 (F4 Interviews
-   section + protocol table) assert these interviews as fact. AWAITING
-   the author's answer on which is true: (1) formal interviews happened
-   (supply records); (2) informal conversations only (rewrite as field
-   conversations; relabel protocol as designed-not-administered);
-   (3) never happened (remove from Appendix C, §5.6 cross-refs, and the
-   JMIR manuscript before any submission). No document changes until
-   answered.
+1c. **RESOLVED at V28 — F4 interviews were never conducted.** Per the
+   author (1 Aug 2026): the interviews actually done in Stage 2 were
+   (i) an after-game paper questionnaire completed by ALL thirty
+   players (source of the satisfaction data), and (ii) intensive
+   post-deployment interviews with the PERSISTENT participants (stayed
+   the eight weeks, failed and returned, positive recorded FRA change),
+   which informed the learn-to-earn orientation. The nine-question F4
+   protocol was designed but never administered (the F4 residents'
+   negative reaction made a research interview inappropriate). V28
+   corrects Appendix C (heading + body), §5.6, and the ToC entry;
+   the JMIR manuscript's F4 section is corrected to match. REMAINING:
+   author to supply, for Appendix C accuracy and the ethics record —
+   the after-game questionnaire instrument (the paper form used), and
+   the persistent-participant interview details (how many interviewed,
+   when, language, format, what records exist: notes/audio/paper).
 
 ## B. Instruments and coding records (Appendices A–D)
 2. Verbatim Mandarin wording of the six Stage-1 survey items + back-translation
