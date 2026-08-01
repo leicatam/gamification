@@ -49,11 +49,15 @@ document with their captions at V20).
    protocol was designed but never administered (the F4 residents'
    negative reaction made a research interview inappropriate). V28
    corrects Appendix C (heading + body), §5.6, and the ToC entry;
-   the JMIR manuscript's F4 section is corrected to match. REMAINING:
-   author to supply, for Appendix C accuracy and the ethics record —
-   the after-game questionnaire instrument (the paper form used), and
-   the persistent-participant interview details (how many interviewed,
-   when, language, format, what records exist: notes/audio/paper).
+   the JMIR manuscript's F4 section is corrected to match. DETAILS
+   SUPPLIED 1 Aug 2026 and written into Appendix C + JMIR manuscript:
+   all nine persistent participants interviewed 1-2 days after the
+   eight-week cycle (after the rewards presentation), paper interview
+   questionnaire, Mandarin/Cantonese, author's notes primary record;
+   plus three centre-manager interviews. REMAINING: photos/scans of the
+   two paper instruments (after-game questionnaire; persistent-player
+   interview questionnaire) → Appendix C; the author's interview notes
+   → Appendix G archive.
 
 ## B. Instruments and coding records (Appendices A–D)
 2. Verbatim Mandarin wording of the six Stage-1 survey items + back-translation
