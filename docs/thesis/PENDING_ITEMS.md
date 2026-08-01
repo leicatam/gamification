@@ -12,6 +12,29 @@ document with their captions at V20).
 1. **HSESC approval reference number + date + coverage statement** → §3.4
    (marker: "Approval reference and coverage statement to be inserted").
    Status: in progress internally per author.
+1b. **BLOCKING — Stage-2 consent procedure must be re-described (author's
+   account, 1 Aug 2026).** Participants were invited by the facility to
+   try the gamified FRA as a facility activity and were NOT told at the
+   time that play was part of a research project — deliberately, because
+   research/assessment framing would have triggered the very
+   health-examination fear under study (incomplete disclosure with a
+   scientific rationale). The arrangement was made with, and known to,
+   the centre operators, nurses and general manager (conversation
+   recorded at research start). Written individual consent exists only
+   from the persistent players; dropouts did not sign. Current §3.4 and
+   Paper 2 wording ("participated with informed consent") is therefore
+   inaccurate as written and MUST NOT stand in any submitted document.
+   Required sequence: (i) author briefs Prof. Cheung; (ii) HSESC is
+   asked how to characterise the design (incomplete-disclosure /
+   consent-waiver provisions for minimal-risk observational phases are
+   the standard mechanism; gatekeeper consent from the facility is
+   documented); (iii) author gathers the artifacts — the recorded
+   facility conversation/agreement, the persistent players' signed
+   forms (with dates), the F4 interview consents; (iv) §3.4, Paper 2
+   (JMIR) Ethical Considerations, and SS-293's consent statement (check
+   what the published text says) are then rewritten to state exactly
+   what happened. JMIR SUBMISSION IS ON HOLD until this is resolved —
+   the submission form asks for the consent procedure.
 
 ## B. Instruments and coding records (Appendices A–D)
 2. Verbatim Mandarin wording of the six Stage-1 survey items + back-translation
