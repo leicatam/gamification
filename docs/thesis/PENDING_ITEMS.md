@@ -146,18 +146,26 @@ document with their captions at V20).
    Expert_Interview_Guide_2026.docx) is reproduced compactly as
    Appendix H.5. Still needed for Appendix H: the Yuan interview's
    date, format and language.
-6d. **Expert panel expansion (author, 1 Aug 2026).** Two further expert
-   consultations planned, using the same guide and consent template:
-   (i) "Gary" — Associate Dean, HKUMED, stroke surgeon, gamification
-   rehabilitation focus (FULL NAME AND EXACT TITLE NEEDED); (ii) Thomas
-   Wong — former chairman, HK physiotherapy professional body (exact
-   body name and title to confirm). Draft consent forms and tailored
-   guides prepared in docs/thesis/expert_panel/ (placeholders to be
-   completed before sending). Integration on receipt of each signed
-   form (identification box ticked!) + interview record: §3.2 method
-   count, new Ch8 consultation text, Appendix H.6/H.7. Positioning
-   rule: expert input is interpretation/practice-validation and
-   confirmatory-design review — never a substitute for sample size.
+6d. **Expert panel — all three consultations ALREADY CONDUCTED (author,
+   1 Aug 2026): Thomas Wong March 2026 (first), Dr Gary Kui-Kai Lau
+   June 2026, Dr Sarah Yuan 25 July 2026.** What is being collected
+   retrospectively is the documentation. Gary Lau identity verified
+   (Assistant Dean (Education Innovations), Clinical Associate
+   Professor, Division of Neurology, HKUMED; ORCID 0000-0002-8657-2418;
+   note: stroke NEUROLOGIST, not surgeon). Thomas Wong: PolyU MPhil +
+   BSc (Hons) Physiotherapy (Rehabilitation Science); former-chairman
+   body name and exact title STILL TO CONFIRM. Consent forms prepared
+   in docs/thesis/expert_panel/ (Gary's completed except e-mail;
+   Thomas's has bracketed placeholders). Because both interviews
+   predate their consent forms, each Appendix H record must state BOTH
+   dates (interview; consent) plainly, as H.2 now does for Dr Yuan.
+   Still needed per expert: signed form (identification box ticked),
+   the author's interview notes, format (in person/online) and
+   language; for Sarah, format and language only. Integration on
+   receipt: §3.2 method (three consultations, dated), Ch8 consultation
+   text, Appendix H.6/H.7. Positioning rule: expert input is
+   interpretation/practice-validation and confirmatory-design review —
+   never a substitute for sample size.
 7. Stage-1 survey response file (CSV) → G.1.
 8. Stage-2 session-level telemetry with timestamps + AI-call logs → G.2
    addendum, if retained; otherwise one sentence in §8.9 stating not retained.
