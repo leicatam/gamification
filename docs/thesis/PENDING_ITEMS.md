@@ -144,8 +144,8 @@ document with their captions at V20).
    QUESTION LIST RESOLVED at V29: the author's interview guide
    (Expert_Interview_List_2026.docx, archived in evidence/ as
    Expert_Interview_Guide_2026.docx) is reproduced compactly as
-   Appendix H.5. Still needed for Appendix H: the Yuan interview's
-   date, format and language.
+   Appendix H.5. Yuan interview details COMPLETE at V29: 25 Jul 2026,
+   telephone, English, ~35 minutes (H.2).
 6d. **Expert panel — all three consultations ALREADY CONDUCTED (author,
    1 Aug 2026): Thomas Wong March 2026 (first), Dr Gary Kui-Kai Lau
    June 2026, Dr Sarah Yuan 25 July 2026.** What is being collected
@@ -161,7 +161,7 @@ document with their captions at V20).
    dates (interview; consent) plainly, as H.2 now does for Dr Yuan.
    Still needed per expert: signed form (identification box ticked),
    the author's interview notes, format (in person/online) and
-   language; for Sarah, format and language only. Integration on
+   language; Sarah's record is COMPLETE (25 Jul 2026, telephone, English, ~35 minutes — H.2 updated). Integration on
    receipt: §3.2 method (three consultations, dated), Ch8 consultation
    text, Appendix H.6/H.7. Positioning rule: expert input is
    interpretation/practice-validation and confirmatory-design review —
