@@ -35,6 +35,24 @@ document with their captions at V20).
    what the published text says) are then rewritten to state exactly
    what happened. JMIR SUBMISSION IS ON HOLD until this is resolved —
    the submission form asks for the consent procedure.
+   TIMING CLARIFIED 1 Aug 2026: the persistent players' written consent
+   was recorded AFTER the eight-week window, at the small rewards
+   presentation for those who stayed — i.e., all written consent was
+   retrospective. Include this fact in the HSESC characterisation.
+1c. **BLOCKING — F4 interview verification (1 Aug 2026).** The author,
+   asked about "the six interviewed dropouts", did not recognise the
+   Stage-2 F4 interviews and stated "I didn't do interviews with them"
+   (while earlier stating "I do have their interview results"). The
+   thesis (Appendix C: nine-question semi-structured protocol,
+   "administered ... three to five days after the abandoned session",
+   Mandarin/Cantonese, quiet meeting room) and Paper 2 (F4 Interviews
+   section + protocol table) assert these interviews as fact. AWAITING
+   the author's answer on which is true: (1) formal interviews happened
+   (supply records); (2) informal conversations only (rewrite as field
+   conversations; relabel protocol as designed-not-administered);
+   (3) never happened (remove from Appendix C, §5.6 cross-refs, and the
+   JMIR manuscript before any submission). No document changes until
+   answered.
 
 ## B. Instruments and coding records (Appendices A–D)
 2. Verbatim Mandarin wording of the six Stage-1 survey items + back-translation
