@@ -141,8 +141,23 @@ document with their captions at V20).
    (from cwlau@hawaii.edu to the author's PolyU inbox, subject
    "Interview consent") — chain of custody for the signed form is
    established.
-   Still needed for Appendix H: interview date, format and language, and
-   the question list used (or a reconstruction marked as such).
+   QUESTION LIST RESOLVED at V29: the author's interview guide
+   (Expert_Interview_List_2026.docx, archived in evidence/ as
+   Expert_Interview_Guide_2026.docx) is reproduced compactly as
+   Appendix H.5. Still needed for Appendix H: the Yuan interview's
+   date, format and language.
+6d. **Expert panel expansion (author, 1 Aug 2026).** Two further expert
+   consultations planned, using the same guide and consent template:
+   (i) "Gary" — Associate Dean, HKUMED, stroke surgeon, gamification
+   rehabilitation focus (FULL NAME AND EXACT TITLE NEEDED); (ii) Thomas
+   Wong — former chairman, HK physiotherapy professional body (exact
+   body name and title to confirm). Draft consent forms and tailored
+   guides prepared in docs/thesis/expert_panel/ (placeholders to be
+   completed before sending). Integration on receipt of each signed
+   form (identification box ticked!) + interview record: §3.2 method
+   count, new Ch8 consultation text, Appendix H.6/H.7. Positioning
+   rule: expert input is interpretation/practice-validation and
+   confirmatory-design review — never a substitute for sample size.
 7. Stage-1 survey response file (CSV) → G.1.
 8. Stage-2 session-level telemetry with timestamps + AI-call logs → G.2
    addendum, if retained; otherwise one sentence in §8.9 stating not retained.
