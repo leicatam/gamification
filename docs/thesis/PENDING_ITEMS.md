@@ -89,7 +89,20 @@ document with their captions at V20).
    REMAINING ACTION: the author gathers the returned e-mails (the CSVs
    and questionnaire replies) and supplies them for transcription into
    the logbook's Email_Returns_Log / RAW_Email_CSV sheets (rebuilt for
-   this trail, 25 Jul 2026). Consent procedure RESOLVED at V25: §3.4 now
+   this trail, 25 Jul 2026).
+   COLLECTION STRUCTURE CLARIFIED 3 Aug 2026: two-tier snowball —
+   direct e-mail returns from the author's own circle, PLUS compiled
+   sub-logbooks from forwarding distributors (charity network,
+   medical-centre peers, etc.), which the author integrated into a
+   master file built on the simulation template. RULING: integrated
+   masters are not admissible (integration is unverifiable); the
+   compilation must be rebuilt from the AS-RECEIVED inputs — (a) each
+   distributor's sub-logbook file byte-for-byte as attached, with its
+   transmittal e-mail (sender redactable, date visible); (b) the direct
+   -return e-mails (.eml); (c) a channel map (which distributor covered
+   roughly how many participants). §6.4 and Paper 3's "each participant
+   e-mailed back" sentence must be corrected to the two-tier account
+   once the channel map is confirmed. Consent procedure RESOLVED at V25: §3.4 now
    states the informed, implied-consent model per the author (e-mails
    explained purpose and use of replies; voluntary, unpaid; returning
    results constituted consent; no written instrument — acknowledged
