@@ -116,6 +116,18 @@ admitted. The author has since confirmed that genuine primary records
 (paper questionnaires, staff session logs, original terminal exports)
 physically exist; the logbook will be populated only from those.
 
+Fifth submission (3 Aug 2026): `Stage3_Alpine_Simulation_N120.xlsx` —
+archived here as `Stage3_Alpine_Simulation_N120_SYNTHETIC_pipeline_demo.xlsx`.
+HONESTLY SELF-LABELLED for the first time: "stochastic register · seed
+20260302 · headless engine replay", with a Sim_Skill_Parameter column and
+register targets (38/41/41, 23/15/8, 48M/72F) declared as calibration
+inputs. NOT admitted as study data (same circularity ruling), but
+retained for three legitimate uses: (1) its live COUNTIFS/Wilson-CI
+Retention Statistics sheet as the model for the logbook's reconciliation
+formulas; (2) format model for the game's returned-CSV schema (incl.
+Score and state-change columns); (3) clearly-captioned illustration of
+what the completed participant-level logbook will look like.
+
 Ruling (standing): relabelling a synthetic dataset does not change its
 provenance, and a dataset generated under the registered targets cannot
 verify those targets — the reasoning is circular. The logbook analysis
