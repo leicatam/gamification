@@ -128,6 +128,14 @@ formulas; (2) format model for the game's returned-CSV schema (incl.
 Score and state-change columns); (3) clearly-captioned illustration of
 what the completed participant-level logbook will look like.
 
+Sixth submission (3 Aug 2026): three CSVs presented as "the three
+groups csv" for band 65-80 (`Telemetry_6580_batch05_P3104P3109.csv`,
+`batch06_P3110P3115`, `batch07_P3116P3120`). All 59 rows are present in
+the Alpine simulation workbook's Game Telemetry sheet for the same
+(participant, session) keys; 52 identical cell-for-cell, 7 differing
+only in numeric formatting ("55.0" vs "55"). They are slices of the
+seeded simulation repackaged as batch files. Not admitted.
+
 Ruling (standing): relabelling a synthetic dataset does not change its
 provenance, and a dataset generated under the registered targets cannot
 verify those targets — the reasoning is circular. The logbook analysis
