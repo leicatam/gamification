@@ -61,3 +61,30 @@ content identical to the verified R2 statistics, restructured to JMIR).
   hypothesis registry.
 - Do NOT reuse the IJKM anonymous manuscript or its APA reference
   format — JMIR uses numbered references and is not double-blind.
+
+---
+
+# ADDENDUM — JIKM route (supervisor's recommendation, Aug 2026)
+
+`Paper2_JIKM_Manuscript.docx` is the Journal of Information & Knowledge
+Management (World Scientific) build: KM framing retained, APA 7th
+citations (JIKM requirement), unblinded title/author block, the 200-word
+KM-framed abstract, and both Stage-2 corrections ported (F4 protocol
+designed-not-administered + real qualitative record; ethics block
+rewritten to procedure-as-conducted with the HSESC characterisation
+noted as in progress).
+
+Submission: via Editorial Manager at worldscientific.com/page/jikm —
+select the article category at submission. Figures: upload from
+`figures_submission/` (PNG); tables are embedded. Adapt the IJKM fit
+statement if a cover letter is requested (swap journal name; JIKM scope
+is broader — information processing, KM, AI applications).
+
+DO NOT SUBMIT until the HSESC approval reference exists: the ethics
+paragraph currently states the characterisation is "being completed" —
+editors and the EM form will ask for the reference number, and an
+in-progress answer risks an administrative reject. The paragraph is
+written so that inserting the reference is a one-sentence change.
+
+Strategy note: JMIR Serious Games build remains ready as the fallback
+venue. Never under review at both simultaneously.
