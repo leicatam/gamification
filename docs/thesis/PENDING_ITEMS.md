@@ -102,7 +102,19 @@ document with their captions at V20).
    -return e-mails (.eml); (c) a channel map (which distributor covered
    roughly how many participants). §6.4 and Paper 3's "each participant
    e-mailed back" sentence must be corrected to the two-tier account
-   once the channel map is confirmed. Consent procedure RESOLVED at V25: §3.4 now
+   once the channel map is confirmed. DISTRIBUTOR INVITATIONS ARCHIVED
+   3 Aug 2026 (evidence/): genuine Mail screenshots of two
+   distributor-tier invitations ("Dear Daisy" — distribute to ages
+   18-45; "Dear Kevin" — ages 45+), subject "Invitation to the Game
+   Play Research Workshop". FINDING: the invitation disclosed the
+   research context INCLUDING the fall-risk origin, while presenting
+   the game as a purely-fun coordination game. V35 + Paper 3 corrected
+   accordingly (artefact-level decoupling, not concealment). STILL
+   NEEDED: (i) screenshot versions with the SENT DATE visible;
+   (ii) answer: distributor targets were 18-45/45+, but register bands
+   start at 25 — were under-25 players excluded at compilation, or did
+   none participate? (iii) what wording did end participants receive
+   from distributors (forwarded same text, or their own)? Consent procedure RESOLVED at V25: §3.4 now
    states the informed, implied-consent model per the author (e-mails
    explained purpose and use of replies; voluntary, unpaid; returning
    results constituted consent; no written instrument — acknowledged
