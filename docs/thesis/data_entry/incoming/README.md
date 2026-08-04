@@ -23,3 +23,33 @@ questionnaire answers (D1 endorsement, D2 intention) and NO enrolment
 data (age band, gender, education). Each distributor's pile must also
 include those returns — the register's endorsement (86) and intention
 (76) counts are uncomputable from telemetry.
+
+## Dated distribution evidence (received as in-chat images, 4 Aug 2026 —
+image files to be re-sent as attachments for archiving)
+
+1. Invitation to Daisy (daisylo731010@gmail.com), "Invitation to the
+   Game Play Research Workshop", sent from leicatam@gmail.com,
+   **26 March 2026 14:30**. Brief: distribute to ages 18-45, collect
+   game-state files. Research context disclosed incl. fall-risk origin;
+   activity framed as purely-fun coordination game; references an
+   "attached research introduction".
+2. Invitation to Ms Tang (Tangpikwai@gmail.com), "Invitation to Play —
+   Alpine Coordination Game (PolyU EngD Research Study)", sent
+   **8 April 2026 14:50**. Brief: distribute to ages 45+, collect
+   records. Same disclosure pattern; references an "attached research
+   introduction". Ms Tang is a previously unnamed distributor.
+
+### Open contradictions blocking admission of Daisy batch1
+
+- TIMELINE: Daisy batch1 (P3001-P3008) session dates run 3-27 March
+  2026, but Daisy's invitation is dated 26 March 2026 — nearly all
+  sessions precede the invitation. Await author's resolution:
+  (a) batch mislabelled / not Daisy's chain; (b) Daisy engaged earlier
+  by another channel, e-mail was a formalisation; (c) session dates
+  not real. No admission until resolved.
+- ATTACHMENT: both invitations reference an "attached research
+  introduction", but the author stated on 2 Aug 2026 that no research
+  introduction existed before Claude drafted one that day. Await the
+  identity of the actual attachment (information sheet? nothing?).
+- AGE RANGE: Daisy's brief is 18-45; register bands start at 25.
+  Were under-25 returns received/excluded, or none received?
