@@ -241,17 +241,31 @@ document with their captions at V20).
    consultations when rewritten. Gary Lau identity verified
    (Assistant Dean (Education Innovations), Clinical Associate
    Professor, Division of Neurology, HKUMED; ORCID 0000-0002-8657-2418;
-   note: stroke NEUROLOGIST, not surgeon). Thomas Wong: PolyU MPhil +
-   BSc (Hons) Physiotherapy (Rehabilitation Science); former-chairman
-   body name and exact title STILL TO CONFIRM. Consent forms prepared
-   in docs/thesis/expert_panel/ (Gary's completed except e-mail;
-   Thomas's has bracketed placeholders). Because both interviews
-   predate their consent forms, each Appendix H record must state BOTH
-   dates (interview; consent) plainly, as H.2 now does for Dr Yuan.
-   Still needed per expert: signed form (identification box ticked),
-   the author's interview notes, format (in person/online) and
-   language; Sarah's record is COMPLETE (25 Jul 2026, telephone, English, ~35 minutes — H.2 updated). Integration on
-   receipt: §3.2 method (three consultations, dated), Ch8 consultation
+   note: stroke NEUROLOGIST, not surgeon).
+   THOMAS WONG FORM RECEIVED 4 Aug 2026 (evidence/): all 9 statements
+   initialled; participant signed/dated 4/8/2026; researcher
+   countersigned on-screen (annotation verified); "Dr" struck on the
+   Mr/Dr line — he signs as MR. **IDENTIFICATION: ANONYMOUS box
+   ticked — named attribution REFUSED. All public-facing text (thesis
+   §3.2/Ch8, papers, Appendix H) must PSEUDONYMISE Wong (e.g. "a
+   senior physiotherapist and former chair of a Hong Kong
+   professional physiotherapy body"), withhold name and identifying
+   CV detail (exact body name, MPhil years), and use quotations only
+   anonymised (statement 8). His identity lives ONLY in the
+   confidential consent record; the former-chairman body name is now
+   an internal-record item, not a thesis item.** Dual-dating:
+   interview March 2026, consent 4 Aug 2026. WhatsApp transmittal
+   archived (incl. his first incomplete return, corrected the same
+   evening). The printed form retains template placeholders
+   ("[TITLE TO BE CONFIRMED]" etc.) — regularise with HSESC pass.
+   Because interviews predate consent forms (Wong, Lau, Yuan), each
+   Appendix H record must state BOTH dates plainly, as H.2 does.
+   STILL NEEDED: Gary Lau's signed form (identification box) — the
+   LAST outstanding panel form; per-expert author's interview notes;
+   Wong + Lau format and language; Sarah's record COMPLETE (25 Jul
+   2026, telephone, English, ~35 minutes — H.2 updated); Choy's
+   COMPLETE except author's notes. Integration on
+   receipt: §3.2 method (four consultations, dated), Ch8 consultation
    text, Appendix H.6/H.7. Positioning rule: expert input is
    interpretation/practice-validation and confirmatory-design review —
    never a substitute for sample size.

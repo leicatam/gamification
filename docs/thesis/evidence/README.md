@@ -111,6 +111,13 @@ Remaining on the Choy record: the author's interview notes; the
 "Draft prepared for ethics review" banner to be regularised with the
 HSESC characterisation (as for all panel forms).
 
+Added 4 Aug 2026 (Thomas Wong consent — third panel form in):
+
+| File | Content | Notes |
+|---|---|---|
+| `Consent_Form_Thomas_Wong_signed_countersigned_2026-08-04.pdf` | Two scanned pages: participant information sheet + consent form, both printed WITH the template placeholders still visible ("Mr/Dr Thomas Wong [TITLE TO BE CONFIRMED]", "[email to be completed]", affiliation "Former Chairman, Hong Kong Physiotherapy Association [name of body to be confirmed]"). All nine statements initialled by hand; information-sheet date and participant signature both dated 4/8/2026; on the name line the "Dr" of "Mr/Dr" is struck through — Wong signs as MR. Researcher countersignature "4/8/26" + Tam signature added as an on-screen /Stamp annotation (extracted and verified). | **IDENTIFICATION: the FIRST box is ticked — "I prefer to remain anonymous/pseudonymous." Named attribution is REFUSED. All thesis/paper/appendix text must pseudonymise Wong** (statement 8 permits anonymised quotations). Interview was March 2026, consent 4 Aug 2026 → dual-dating applies (both dates in the H record). Draft-banner footer present as on all panel forms. |
+| `Wong_consent_WhatsApp_transmittal_2026-08-04.png` | iPhone screenshot of the Thomas Wong WhatsApp thread, 4 Aug 2026: Wong sent "1.pdf" (2 pp, 108 KB) 7:34 PM; author replied 7:44 PM "the initial signs were missing. Please use this version." attaching the blank Consent_Form_ThomasWong.pdf; Wong returned the completed scan "Title of Project.pdf" (2 pp, 8.1 MB) 7:58 PM. | Chain of custody INCLUDING the first, incomplete return — an honest trail. The 8.1 MB "Title of Project.pdf" is the file archived at left (received here as wong.pdf). |
+
 ## Open questions — RESOLVED by the author, 25 Jul 2026 (thesis V22)
 
 1. **Build lineage:** the earliest development phase used the open-source
