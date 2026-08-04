@@ -68,7 +68,13 @@ document with their captions at V20).
 4. Verbatim bilingual F4 interview wording, consent script, one anonymised
    transcript → Appendix C.
 5. Verbatim Cantonese/Mandarin/English wording of items D1–D2 + scale
-   reliability (α) → Appendix D.
+   reliability (α) → Appendix D. PARTIAL RESOLUTION 4 Aug 2026: the
+   author's Stage-3 invitation document (evidence/) confirms the
+   after-game questionnaire had TWO items ("good coordination
+   challenge" = D1 endorsement; "willing to play it regularly" = D2
+   intention) — the 2-item rebuild is correct, the 9-item draft is
+   not. Response scale (5 vs 7 points) and exact/bilingual wording
+   still unconfirmed.
 
 ## C. Stage-3 data and AI record (Appendix G, §8.9)
 6. **REDEFINED 25 Jul 2026 by the author's account of the actual Stage-3
@@ -125,11 +131,18 @@ document with their captions at V20).
    for evidence/; (i-b) RESOLVED 4 Aug 2026 — the invitation
    attachment was the author's OWN research introduction (authored
    from 2024); the Claude-drafted Aug 2026 document is a separate
-   expert-interview reference record. NEW ACTIONS: obtain the author's
-   own introduction AS-ATTACHED (exact Mar-Apr 2026 version) for
-   evidence/ and as the verbatim appendix instrument; verify its
-   wording against the V35 artefact-level-decoupling account (did end
-   participants receive it, and does it carry clinical framing?);
+   expert-interview reference record. DOCUMENT RECEIVED 4 Aug 2026:
+   Research_Participant_Invitation_Decoupled_Skiing_Game.docx —
+   archived in evidence/ with full analysis (confirms 2-item D1/D2
+   questionnaire, enrolment fields, V35 disclosure boundary; but the
+   FILE was created 2026-08-04, so it is the author's account of the
+   content, not yet the as-sent artifact). STILL NEEDED on this
+   document: the as-sent Mar-Apr 2026 original (e-mail attachment or
+   contemporaneous file) for the appendix; author to resolve the
+   "research staff will show you how to start" wording (leftover
+   in-person draft text, or did distributors run facilitated
+   sessions? — affects §6.4 unsupervised-play account) and the
+   "touch-screen" input claim (v2.2 build was keyboard-only);
    if the polished Aug 2026 version is appended at all, label it a
    post-hoc reference record, never the distributed document;
    (ii) answer: distributor targets were 18-45/45+, but register bands

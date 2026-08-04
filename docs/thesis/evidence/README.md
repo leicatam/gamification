@@ -27,6 +27,51 @@ Candidate figure frames extracted to `../figures/`:
 `fig_5_1A_candidate_platform_demo.jpg` (platform + screen + player) and
 `fig_game_actual_build_frame.jpg` (game screen with HUD).
 
+Added 4 Aug 2026 (Stage-3 participant-facing invitation):
+
+| File | Content | Notes |
+|---|---|---|
+| `Research_Participant_Invitation_Decoupled_Skiing_Game_as_received_2026-08-04.docx` | One-page PolyU-headed invitation, "Come and Play the Skiing Game! — Invitation to Participate in an Action Research Study, From March to April 2026". Project title "Leveraging Gamification as a Proactive Approach for Continuous Improvement and Innovation Enhancement". Discloses the fall-prevention motivation and the game's FRA-platform origin, presents the study version as web-based with the platform decoupled; 3 steps (enrolment: age band/gender/education; play 20-30 s runs, 5-10 min; TWO post-game ratings); voluntary/anonymous/aggregate-reporting statements; contact block (author, supervisor, PolyU e-mail, phone). Presented by the author as (adapted from) the research introduction attached to the Mar-Apr 2026 distributor invitations. | **METADATA CAVEAT: docx created 2026-08-04 05:14, modified 07:13 ("TAM, Sidney [Student]") — the file as received was made the same day it was supplied.** It is archived as the author's account of the invitation content, NOT yet as the as-sent artifact. The as-sent original (the actual e-mail attachment from Mar-Apr 2026, or a file with contemporaneous timestamps) is still required for the appendix/ethics record. |
+
+### What the invitation CONFIRMS (against the thesis record)
+
+1. **Two-item after-game questionnaire** — Step 3: "two statements …
+   whether you found it a good coordination challenge, and whether you
+   would be willing to play it regularly" = D1 endorsement / D2
+   intention. This resolves the questionnaire item-count review
+   question: 2 items, matching the rebuilt Stage3 questionnaire, NOT
+   the 9-item draft. (Response scale still unstated — 5 vs 7 open.)
+2. **Enrolment fields** age band / gender / education match the
+   register's demographic columns.
+3. **Disclosure boundary matches V35 artefact-level decoupling**: the
+   participant-facing text discloses the fall-risk/FRA origin while
+   framing the activity itself as a fun web coordination game with the
+   platform decoupled — consistent with §6.4 as rewritten.
+4. **Consent framing** ("With your permission, game performance data
+   and questionnaire responses will be collected"; voluntary; withdraw
+   any time; anonymised, aggregate reporting) is consistent with the
+   §3.4 implied-consent account. Ethics sentence says the study
+   "follows the research ethics requirements" of PolyU — a compliance
+   claim, not an approval claim; flag to HSESC in the characterisation.
+
+### Discrepancies to resolve
+
+- **"our research staff will show you how to start"** — Stage 3 was
+  unsupervised remote play; no staff were present. Combined with the
+  Daisy invitation subject ("Game Play Research Workshop") this
+  suggests either leftover in-person-draft wording, or that some
+  distributors actually ran facilitated in-person sessions. If the
+  latter, §6.4's unsupervised-play account and the attribution-limits
+  paragraph need widening. AUTHOR TO CONFIRM which it is.
+- **"keyboard arrow keys or a touch-screen"** — the distributed v2.2
+  build had no touch controls (touch build first created Aug 2026).
+  Confirm no participant actually played by touch, or identify what
+  build they used.
+- **"players of all ages"** vs distributor briefs (18-45 / 45+) and
+  register bands (25-80) — the under-25 question remains open.
+- Project title on the invitation to be checked against the registered
+  EngD project title.
+
 ## Open questions — RESOLVED by the author, 25 Jul 2026 (thesis V22)
 
 1. **Build lineage:** the earliest development phase used the open-source
