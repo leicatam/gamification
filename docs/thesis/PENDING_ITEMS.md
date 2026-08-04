@@ -147,8 +147,9 @@ document with their captions at V20).
    post-hoc reference record, never the distributed document;
    (ii) RESOLVED 4 Aug 2026: Daisy is 18 herself but invited no one
    under 25, so no under-25 returns exist; brief range was target,
-   not achieved sample. Follow-up: confirm Daisy's own plays (if any)
-   are not in batch1 — she is outside the register bands.
+   not achieved sample. Follow-up CLOSED: Daisy played but her data
+   was never logged — not in batch1. Channel-map note: distributor
+   self-plays existed and were excluded at source.
    (iii) what wording did end participants receive
    from distributors (forwarded same text, or their own)?
    (iv) which participant IDs came through Ms Tang's chain (invited

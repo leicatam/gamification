@@ -84,9 +84,9 @@ image files to be re-sent as attachments for archiving)
   is 18, but she invited no one younger than 25, so no under-25
   returns exist and the register's 25-80 bands are consistent with
   her chain. The 18-45 brief was the invitation's target range, not
-  the achieved sample. FOLLOW-UP CHECK: confirm Daisy herself does
-  NOT appear among the participants — as an 18-year-old she is
-  outside the register bands, so any sessions she played (including
-  try-outs of the build she was handed in early March) must be
-  excluded from batch1 and disclosed as distributor test plays if
-  they are in the file.
+  the achieved sample. FOLLOW-UP RESOLVED 4 Aug 2026 (author's
+  account): Daisy did play the game herself, but her data was never
+  logged — her sessions are not in batch1 and she is not among the
+  P3001-P3008 participants. Note for the channel map / §6.4
+  disclosure: distributors could and did play the build themselves;
+  distributor plays were excluded from the study record at source.
