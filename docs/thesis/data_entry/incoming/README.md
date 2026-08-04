@@ -80,5 +80,13 @@ image files to be re-sent as attachments for archiving)
   own version VERBATIM as distributed — the polished August document
   cannot stand in for the historical artifact (it may be included
   separately only if labelled as a post-hoc reference record).
-- AGE RANGE: Daisy's brief is 18-45; register bands start at 25.
-  Were under-25 returns received/excluded, or none received?
+- AGE RANGE — RESOLVED 4 Aug 2026 (author's account): Daisy herself
+  is 18, but she invited no one younger than 25, so no under-25
+  returns exist and the register's 25-80 bands are consistent with
+  her chain. The 18-45 brief was the invitation's target range, not
+  the achieved sample. FOLLOW-UP CHECK: confirm Daisy herself does
+  NOT appear among the participants — as an 18-year-old she is
+  outside the register bands, so any sessions she played (including
+  try-outs of the build she was handed in early March) must be
+  excluded from batch1 and disclosed as distributor test plays if
+  they are in the file.

@@ -145,9 +145,11 @@ document with their captions at V20).
    "touch-screen" input claim (v2.2 build was keyboard-only);
    if the polished Aug 2026 version is appended at all, label it a
    post-hoc reference record, never the distributed document;
-   (ii) answer: distributor targets were 18-45/45+, but register bands
-   start at 25 — were under-25 players excluded at compilation, or did
-   none participate? (iii) what wording did end participants receive
+   (ii) RESOLVED 4 Aug 2026: Daisy is 18 herself but invited no one
+   under 25, so no under-25 returns exist; brief range was target,
+   not achieved sample. Follow-up: confirm Daisy's own plays (if any)
+   are not in batch1 — she is outside the register bands.
+   (iii) what wording did end participants receive
    from distributors (forwarded same text, or their own)?
    (iv) which participant IDs came through Ms Tang's chain (invited
    8 Apr — sessions after that date)? Consent procedure RESOLVED at V25: §3.4 now
