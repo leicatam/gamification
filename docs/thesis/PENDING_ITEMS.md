@@ -109,12 +109,28 @@ document with their captions at V20).
    Play Research Workshop". FINDING: the invitation disclosed the
    research context INCLUDING the fall-risk origin, while presenting
    the game as a purely-fun coordination game. V35 + Paper 3 corrected
-   accordingly (artefact-level decoupling, not concealment). STILL
-   NEEDED: (i) screenshot versions with the SENT DATE visible;
+   accordingly (artefact-level decoupling, not concealment). DATED
+   VERSIONS FOUND 4 Aug 2026 (in-chat images; re-send as files):
+   Daisy invited 26 Mar 2026 14:30; Ms Tang (Tangpikwai@gmail.com,
+   45+ brief) invited 8 Apr 2026 14:50 — a previously unnamed
+   distributor. TIMELINE RESOLVED 4 Aug 2026: Daisy is the author's
+   FAMILY member, given the game directly before the e-mail; the
+   26 Mar e-mail was a retrospective formalisation, so batch1 session
+   dates from 3 Mar are explained. CONSEQUENCE: the thesis channel
+   list (work contacts / charity network / university support /
+   medical-centre peers) omits family-personal contacts — add
+   "family and personal contacts" in §6.1, §6.4, Ch.9 summary and
+   Paper 3 when the two-tier wording correction is applied. STILL
+   NEEDED: (i) the invitation screenshots re-sent as file attachments
+   for evidence/; (i-b) identity of the "attached research
+   introduction" both invitations reference (author stated 2 Aug none
+   existed — what was actually attached?);
    (ii) answer: distributor targets were 18-45/45+, but register bands
    start at 25 — were under-25 players excluded at compilation, or did
    none participate? (iii) what wording did end participants receive
-   from distributors (forwarded same text, or their own)? Consent procedure RESOLVED at V25: §3.4 now
+   from distributors (forwarded same text, or their own)?
+   (iv) which participant IDs came through Ms Tang's chain (invited
+   8 Apr — sessions after that date)? Consent procedure RESOLVED at V25: §3.4 now
    states the informed, implied-consent model per the author (e-mails
    explained purpose and use of replies; voluntary, unpaid; returning
    results constituted consent; no written instrument — acknowledged

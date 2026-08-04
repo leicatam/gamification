@@ -41,12 +41,25 @@ image files to be re-sent as attachments for archiving)
 
 ### Open contradictions blocking admission of Daisy batch1
 
-- TIMELINE: Daisy batch1 (P3001-P3008) session dates run 3-27 March
-  2026, but Daisy's invitation is dated 26 March 2026 — nearly all
-  sessions precede the invitation. Await author's resolution:
-  (a) batch mislabelled / not Daisy's chain; (b) Daisy engaged earlier
-  by another channel, e-mail was a formalisation; (c) session dates
-  not real. No admission until resolved.
+- TIMELINE — RESOLVED 4 Aug 2026 (author's account): Daisy is the
+  author's family member (nephew/niece), given the game directly in
+  person/by family channel BEFORE the formal invitation; the 26 March
+  e-mail was sent later "to confirm the invitation" once the author
+  realised a written record was needed. Resolution is variant (b):
+  earlier engagement by another channel; the e-mail is a retrospective
+  formalisation, not the distribution event. CONSEQUENCES:
+  (1) the invitation e-mail cannot serve as the transmittal evidence
+  for batch1 — the wrapper still needs Daisy's RETURN transmittal
+  (dated e-mail/Drive/USB record of her sending the compiled batch);
+  (2) the channel map must record Daisy's chain as FAMILY, and the
+  thesis channel list ("work contacts, a charity community network,
+  university support channels and working peers in medical centres" —
+  paras in §6.1/§6.4/summary) currently omits family/personal
+  contacts — wording fix queued with the two-tier collection
+  correction; (3) session dates from 3 March are consistent with the
+  early hand-off, so the date anomaly is explained, not evidence of
+  fabrication. The 26 Mar e-mail remains valuable as dated evidence of
+  the DISCLOSURE WORDING used with distributors.
 - ATTACHMENT: both invitations reference an "attached research
   introduction", but the author stated on 2 Aug 2026 that no research
   introduction existed before Claude drafted one that day. Await the
