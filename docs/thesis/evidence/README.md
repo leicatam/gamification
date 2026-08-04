@@ -80,9 +80,16 @@ Added 4 Aug 2026 (fourth expert consultation — Dr Philip Choy):
 | `Biodata_2022_Philip_Choy.pdf` | Two-page 2022 biodata: portrait + bilingual credential list — Certified Naturopathic Physician (ANMCB 06394, 2008), Doctor of Natural Medicine (ACN, 2008), President of HK Academy of Naturopath (2010), ANMCB HK/Macau Examiner, Certified Clinical Dietitian (NHI-PRC, 2007), Osteopath (OCO Canada, 2015), faculty roles (Osteopathic College of Ontario; Da Vinci Institute of Holistic Medicine), and related complementary-medicine certifications. | Basis for the exact standpoint description: naturopathic/complementary-medicine practitioner (doctoral title from the ND qualification), NOT a registered medical practitioner under the HK Medical Registration Ordinance. Thesis wording must match. |
 
 Interview summary drafted from the author's seven-point account:
-`../expert_panel/Expert_Interview_Summary_Choy_DRAFT.docx`. Interview
-date/mode/duration/language still to be confirmed (dual-dating rule if
-the conversation predates the 4 Aug consent).
+`../expert_panel/Expert_Interview_Summary_Choy_DRAFT.docx`.
+LOGISTICS CONFIRMED 4 Aug 2026: telephone interview, ~30 minutes,
+4 Aug 2026 — same day as consent, so no dual-dating is required (the
+only panel record where consent is contemporaneous with the
+interview). Transmittal chain documented by the author's WhatsApp
+screen capture (in-chat image, to be re-sent as a file): voice call
+12:02; blank Consent_Form_DrChoy.docx sent 16:07 with request to
+return by e-mail; acknowledged 16:09; signed scan returned via
+WhatsApp 16:26. Still open: interview language; audio yes/no;
+identification-preference tick; researcher countersignature.
 
 ## Open questions — RESOLVED by the author, 25 Jul 2026 (thesis V22)
 

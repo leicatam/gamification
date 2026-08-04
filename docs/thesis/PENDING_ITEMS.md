@@ -212,9 +212,10 @@ document with their captions at V20).
    telephone, English, ~35 minutes (H.2).
 6d. **Expert panel — NOW FOUR consultations: Thomas Wong March 2026
    (first), Dr Gary Kui-Kai Lau June 2026, Dr Sarah Yuan 25 July 2026,
-   and Dr Philip Choy (consent signed 4 Aug 2026; interview
-   date/mode/duration/language TO CONFIRM — dual-dating rule applies
-   if the conversation predates the consent).** What is being collected
+   and Dr Philip Choy (interviewed 4 Aug 2026 by telephone, ~30 min;
+   consent signed same day — the only record needing no dual-dating;
+   WhatsApp transmittal chain captured: call 12:02, blank form 16:07,
+   signed scan returned 16:26; language + audio yes/no TO CONFIRM).** What is being collected
    retrospectively is the documentation.
    CHOY RECORD (4 Aug 2026): certified naturopathic physician (ANMCB
    06394), Doctor of Natural Medicine (ACN), President of the HK
