@@ -60,9 +60,25 @@ image files to be re-sent as attachments for archiving)
   early hand-off, so the date anomaly is explained, not evidence of
   fabrication. The 26 Mar e-mail remains valuable as dated evidence of
   the DISCLOSURE WORDING used with distributors.
-- ATTACHMENT: both invitations reference an "attached research
-  introduction", but the author stated on 2 Aug 2026 that no research
-  introduction existed before Claude drafted one that day. Await the
-  identity of the actual attachment (information sheet? nothing?).
+- ATTACHMENT — RESOLVED 4 Aug 2026 (author's account): the attachment
+  was the AUTHOR'S OWN research introduction, authored from 2024 when
+  the research began. The apparent contradiction dissolved: the
+  document Claude drafted on 2 Aug 2026
+  (Research_Introduction_Expert_Interviews.docx) is a separate, later
+  reference record for the EXPERT-INTERVIEW file; the invitation
+  attachment was a different, pre-existing document. FOLLOW-UPS:
+  (1) obtain the author's own introduction AS-ATTACHED (the exact
+  version circulated Mar-Apr 2026) for evidence/ — it is a
+  participant-facing disclosure artifact, so its verbatim wording
+  matters for the ethics record and the HSESC characterisation;
+  (2) VERIFY its wording against the artefact-level decoupling
+  account (V35): if it was forwarded beyond distributors to end
+  participants and carries clinical/fall-risk framing, the
+  disclosure-boundary description in §6.4/Paper 3 must be checked;
+  (3) APPENDIX RULE: if a research introduction goes in the thesis
+  appendix as "what participants received", it must be the author's
+  own version VERBATIM as distributed — the polished August document
+  cannot stand in for the historical artifact (it may be included
+  separately only if labelled as a post-hoc reference record).
 - AGE RANGE: Daisy's brief is 18-45; register bands start at 25.
   Were under-25 returns received/excluded, or none received?

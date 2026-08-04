@@ -122,9 +122,16 @@ document with their captions at V20).
    "family and personal contacts" in §6.1, §6.4, Ch.9 summary and
    Paper 3 when the two-tier wording correction is applied. STILL
    NEEDED: (i) the invitation screenshots re-sent as file attachments
-   for evidence/; (i-b) identity of the "attached research
-   introduction" both invitations reference (author stated 2 Aug none
-   existed — what was actually attached?);
+   for evidence/; (i-b) RESOLVED 4 Aug 2026 — the invitation
+   attachment was the author's OWN research introduction (authored
+   from 2024); the Claude-drafted Aug 2026 document is a separate
+   expert-interview reference record. NEW ACTIONS: obtain the author's
+   own introduction AS-ATTACHED (exact Mar-Apr 2026 version) for
+   evidence/ and as the verbatim appendix instrument; verify its
+   wording against the V35 artefact-level-decoupling account (did end
+   participants receive it, and does it carry clinical framing?);
+   if the polished Aug 2026 version is appended at all, label it a
+   post-hoc reference record, never the distributed document;
    (ii) answer: distributor targets were 18-45/45+, but register bands
    start at 25 — were under-25 players excluded at compilation, or did
    none participate? (iii) what wording did end participants receive
