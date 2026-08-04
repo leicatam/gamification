@@ -88,8 +88,15 @@ interview). Transmittal chain documented by the author's WhatsApp
 screen capture (in-chat image, to be re-sent as a file): voice call
 12:02; blank Consent_Form_DrChoy.docx sent 16:07 with request to
 return by e-mail; acknowledged 16:09; signed scan returned via
-WhatsApp 16:26. Still open: interview language; audio yes/no;
-identification-preference tick; researcher countersignature.
+WhatsApp 16:26. Language: Cantonese and English; not audio-recorded —
+researcher's written notes are the primary record (confirmed 4 Aug).
+NOTE 4 Aug 2026: a second PDF ("Sidney_Tam_Consent2.pdf") was supplied
+as the corrected form, but its page image is PIXEL-IDENTICAL to the
+first scan (zero-pixel difference verified) — the identification
+preference is still unticked and the researcher line still blank. The
+genuinely corrected scan is still awaited; not archived to avoid a
+duplicate. Still open: identification-preference tick; researcher
+countersignature.
 
 ## Open questions — RESOLVED by the author, 25 Jul 2026 (thesis V22)
 
