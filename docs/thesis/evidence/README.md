@@ -90,13 +90,26 @@ screen capture (in-chat image, to be re-sent as a file): voice call
 return by e-mail; acknowledged 16:09; signed scan returned via
 WhatsApp 16:26. Language: Cantonese and English; not audio-recorded —
 researcher's written notes are the primary record (confirmed 4 Aug).
-NOTE 4 Aug 2026: a second PDF ("Sidney_Tam_Consent2.pdf") was supplied
-as the corrected form, but its page image is PIXEL-IDENTICAL to the
-first scan (zero-pixel difference verified) — the identification
-preference is still unticked and the researcher line still blank. The
-genuinely corrected scan is still awaited; not archived to avoid a
-duplicate. Still open: identification-preference tick; researcher
-countersignature.
+FORM COMPLETED 4 Aug 2026 —
+`Consent_Form_Philip_Choy_signed_countersigned_2026-08-04.pdf`: the
+completed version carries the SAME scanned page image plus TWO PDF
+annotation (/Stamp) objects added on-screen, per the author's account
+(Dr Choy ticked on his device and returned the file; the author
+signed on an iPhone screen): (1) a handwritten tick positioned
+exactly over the second identification checkbox — "I give permission
+to identify me by name and professional affiliation" — NAMED
+ATTRIBUTION AUTHORISED (second panel member after Dr Yuan);
+(2) handwritten "4 Aug 26" + signature spanning the researcher
+Date/Signature lines — COUNTERSIGNED. Verification note: a first
+comparison wrongly reported the file unchanged because it diffed only
+the embedded scan image and page-content stream; the marks live in
+the /Annots layer (each stamp draws a nested image XObject, both
+extracted and visually verified). Forensic rule extended: check
+image, content stream, vector layer AND annotations. The
+first-received scan is retained alongside for the audit trail.
+Remaining on the Choy record: the author's interview notes; the
+"Draft prepared for ethics review" banner to be regularised with the
+HSESC characterisation (as for all panel forms).
 
 ## Open questions — RESOLVED by the author, 25 Jul 2026 (thesis V22)
 

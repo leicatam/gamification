@@ -225,11 +225,15 @@ document with their captions at V20).
    Medical Registration Ordinance — the thesis must state his
    standpoint exactly (practice-based elderly health-behaviour
    insight) alongside the panel's gerontology/neurology/physiotherapy
-   standpoints. Consent form: all 9 statements initialled, signed
-   4 Aug 2026; OUTSTANDING: identification preference NEITHER box
-   ticked (named attribution NOT yet authorised — treat as anonymous
-   until he selects); researcher countersignature blank; draft-banner
-   footer. Summary drafted from the author's 7-point account:
+   standpoints. Consent form COMPLETE 4 Aug 2026 (evening): all 9
+   statements initialled; identification tick added on-screen
+   selecting NAMED ATTRIBUTION (verified in the PDF /Annots layer,
+   positioned over the "identify me by name" box); researcher
+   countersignature + date added the same way. Choy is the second
+   panel member cleared for named attribution (after Dr Yuan). Only
+   the draft-banner footer remains (regularise with HSESC, all panel
+   forms); remaining item: the author's interview notes.
+   Summary drafted from the author's 7-point account:
    expert_panel/Expert_Interview_Summary_Choy_DRAFT.docx (key value:
    independent practice-based statement that FIAS arises from the
    health verdict, not game failure). Consent PDF + 2022 biodata
