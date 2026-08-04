@@ -72,6 +72,18 @@ Added 4 Aug 2026 (Stage-3 participant-facing invitation):
 - Project title on the invitation to be checked against the registered
   EngD project title.
 
+Added 4 Aug 2026 (fourth expert consultation — Dr Philip Choy):
+
+| File | Content | Notes |
+|---|---|---|
+| `Consent_Form_Philip_Choy_signed_2026-08-04.pdf` | Scanned signed consent form (single photographed page): project title, researcher, supervisor correct; participant Dr Philip Choy; information-sheet date and signature date both 4 Aug 2026; all nine consent statements initialled. | Identification preference: NEITHER box selected — named attribution NOT yet authorised (checked in the scanned image; no vector layer exists in a photographed page). Researcher countersignature blank; "Draft prepared for ethics review" footer present (as on the Yuan form). |
+| `Biodata_2022_Philip_Choy.pdf` | Two-page 2022 biodata: portrait + bilingual credential list — Certified Naturopathic Physician (ANMCB 06394, 2008), Doctor of Natural Medicine (ACN, 2008), President of HK Academy of Naturopath (2010), ANMCB HK/Macau Examiner, Certified Clinical Dietitian (NHI-PRC, 2007), Osteopath (OCO Canada, 2015), faculty roles (Osteopathic College of Ontario; Da Vinci Institute of Holistic Medicine), and related complementary-medicine certifications. | Basis for the exact standpoint description: naturopathic/complementary-medicine practitioner (doctoral title from the ND qualification), NOT a registered medical practitioner under the HK Medical Registration Ordinance. Thesis wording must match. |
+
+Interview summary drafted from the author's seven-point account:
+`../expert_panel/Expert_Interview_Summary_Choy_DRAFT.docx`. Interview
+date/mode/duration/language still to be confirmed (dual-dating rule if
+the conversation predates the 4 Aug consent).
+
 ## Open questions — RESOLVED by the author, 25 Jul 2026 (thesis V22)
 
 1. **Build lineage:** the earliest development phase used the open-source

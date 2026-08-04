@@ -210,10 +210,30 @@ document with their captions at V20).
    Expert_Interview_Guide_2026.docx) is reproduced compactly as
    Appendix H.5. Yuan interview details COMPLETE at V29: 25 Jul 2026,
    telephone, English, ~35 minutes (H.2).
-6d. **Expert panel — all three consultations ALREADY CONDUCTED (author,
-   1 Aug 2026): Thomas Wong March 2026 (first), Dr Gary Kui-Kai Lau
-   June 2026, Dr Sarah Yuan 25 July 2026.** What is being collected
-   retrospectively is the documentation. Gary Lau identity verified
+6d. **Expert panel — NOW FOUR consultations: Thomas Wong March 2026
+   (first), Dr Gary Kui-Kai Lau June 2026, Dr Sarah Yuan 25 July 2026,
+   and Dr Philip Choy (consent signed 4 Aug 2026; interview
+   date/mode/duration/language TO CONFIRM — dual-dating rule applies
+   if the conversation predates the consent).** What is being collected
+   retrospectively is the documentation.
+   CHOY RECORD (4 Aug 2026): certified naturopathic physician (ANMCB
+   06394), Doctor of Natural Medicine (ACN), President of the HK
+   Academy of Naturopath, 25+ years clinical practice, >1,000 elderly
+   patients (chronic disease). POSITIONING: naturopathic/complementary
+   practitioner, NOT a registered medical practitioner under the HK
+   Medical Registration Ordinance — the thesis must state his
+   standpoint exactly (practice-based elderly health-behaviour
+   insight) alongside the panel's gerontology/neurology/physiotherapy
+   standpoints. Consent form: all 9 statements initialled, signed
+   4 Aug 2026; OUTSTANDING: identification preference NEITHER box
+   ticked (named attribution NOT yet authorised — treat as anonymous
+   until he selects); researcher countersignature blank; draft-banner
+   footer. Summary drafted from the author's 7-point account:
+   expert_panel/Expert_Interview_Summary_Choy_DRAFT.docx (key value:
+   independent practice-based statement that FIAS arises from the
+   health verdict, not game failure). Consent PDF + 2022 biodata
+   archived in evidence/. §3.2 and Ch8 integration must say FOUR
+   consultations when rewritten. Gary Lau identity verified
    (Assistant Dean (Education Innovations), Clinical Associate
    Professor, Division of Neurology, HKUMED; ORCID 0000-0002-8657-2418;
    note: stroke NEUROLOGIST, not surgeon). Thomas Wong: PolyU MPhil +
