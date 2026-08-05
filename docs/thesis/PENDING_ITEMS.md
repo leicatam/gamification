@@ -312,15 +312,14 @@ document with their captions at V20).
    the Alpine_Coordination_Game_v2.3_touch build (42 KB html) at
    3:50 PM with the ask "drop me a message if you think it's worth
    to implement it for fall risk assessment purposes and balancing
-   abilities check". TIMING QUESTION for the author: the follow-up
-   call preceded the 3:50 PM transmission — was Wong's "suitable for
-   FRA" judgement given after actually playing (when, and which
-   build?), or is his considered verdict PENDING his written reply
-   to this message? Section 3A.1 must match the true sequence.
-   WHEN WONG REPLIES: archive the reply screenshot as the durable
-   artifact of his judgement. GAPS NOW CLOSED:
-   game reaction (subject to the timing answer); FRA-practice
-   context. STILL OPEN (acceptable, do
+   abilities check". TIMING RESOLVED 5 Aug 2026: Wong PLAYED the
+   v2.3 touch build on his own device after the 3:50 PM transmission
+   and replied by RETURN PHONE CALL (no written reply exists) —
+   3A.1 rewritten with the exact sequence; the author's notes of the
+   call-back are the primary record and the WhatsApp transmittal is
+   the documented stimulus. GAPS NOW CLOSED: game reaction (played
+   the actual build); FRA-practice context. Transmittal screenshot
+   still to re-send as a file for evidence/. STILL OPEN (acceptable, do
    not over-claim): the direct verdict-vs-game-failure attribution
    question was still not put to Wong — caution (i) STANDS; zero-
    failure view and measurement-trust also unasked. STILL NEEDED:
