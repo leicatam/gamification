@@ -12,7 +12,22 @@ document with their captions at V20).
 1. **HSESC approval reference number + date + coverage statement** → §3.4
    (marker: "Approval reference and coverage statement to be inserted").
    Status: in progress internally per author.
-   DEVELOPMENT 5 Aug 2026 (author's report): HSESC raised that it has
+   APPLICATION CREATED 5 Aug 2026 in the HSEARS system:
+   **Application ID HSEARS20260518023**, title "Gamification as
+   Proactive Approach for Continuous Improvement and Innovation ...",
+   type CLINICAL / EXPEDITED REVIEW, status **DRAFT (not yet
+   submitted)**. Dashboard screenshot archived in ethics/. Drafted
+   support documents ready: Basics answers (Q1-5, 7-10, 30-32) +
+   Research Proposal and Protocol (Part A as-conducted / Part B
+   to-be-performed). NEXT: complete remaining form sections; Prof.
+   Cheung reviews (esp. §7.2 incomplete-disclosure characterisation
+   request); replace two bracketed reference stubs; SUBMIT; then
+   await outcome. RULES UNCHANGED: DRAFT ≠ submitted; application ≠
+   approval — nothing in the thesis or papers may cite an approval
+   until the Committee issues one; the application ID may be cited
+   as "under review, application HSEARS20260518023" only AFTER
+   actual submission.
+   EARLIER DEVELOPMENT 5 Aug 2026 (author's report): HSESC raised that it has
    no ethics-requirement pathway for PART-TIME postgraduate students
    (part-time research presumed industrial/sponsored) — the author
    cannot obtain approval in his own name. AGREED PLAN (recorded):
