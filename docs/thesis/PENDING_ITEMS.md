@@ -306,8 +306,21 @@ document with their captions at V20).
    willing to join complicated assessments; difficulty or slow
    results at entry → never come back. RECONCILIATION recorded:
    entry-stage difficulty vs retention-stage rewards (two-stage
-   reading, researcher's analysis, kept distinct). GAPS NOW CLOSED:
-   game reaction; FRA-practice context. STILL OPEN (acceptable, do
+   reading, researcher's analysis, kept distinct).
+   GAME TRANSMITTAL DOCUMENTED 5 Aug 2026 (WhatsApp screenshot,
+   in-chat image — re-send as file for evidence/): author sent Wong
+   the Alpine_Coordination_Game_v2.3_touch build (42 KB html) at
+   3:50 PM with the ask "drop me a message if you think it's worth
+   to implement it for fall risk assessment purposes and balancing
+   abilities check". TIMING QUESTION for the author: the follow-up
+   call preceded the 3:50 PM transmission — was Wong's "suitable for
+   FRA" judgement given after actually playing (when, and which
+   build?), or is his considered verdict PENDING his written reply
+   to this message? Section 3A.1 must match the true sequence.
+   WHEN WONG REPLIES: archive the reply screenshot as the durable
+   artifact of his judgement. GAPS NOW CLOSED:
+   game reaction (subject to the timing answer); FRA-practice
+   context. STILL OPEN (acceptable, do
    not over-claim): the direct verdict-vs-game-failure attribution
    question was still not put to Wong — caution (i) STANDS; zero-
    failure view and measurement-trust also unasked. STILL NEEDED:
