@@ -292,9 +292,28 @@ document with their captions at V20).
    consent covers it; record as dated follow-up): attribution
    question; FRA practice/clinical-workflow fit; reaction to the
    actual game (could send v2.3 build); zero-failure view;
-   measurement-validity trust. STILL NEEDED: Gary
-   Lau's signed form (identification box) — the LAST outstanding
-   panel form, awaiting his reply; Lau's content account.
+   measurement-validity trust.
+   WONG FOLLOW-UP CONDUCTED (early Aug 2026; exact date/mode to
+   confirm, presumed telephone; summary section 3A added): (1) he
+   PLAYED the game — judged it "suitable for FRA", would return to
+   play regularly if installed in the system (artifact-level
+   validation; mirrors D2 intention); (2) HK does NOT do fall-risk
+   assessment regularly — community doesn't see the importance;
+   ease-of-use, lack of reference, promotion and economic factors as
+   barriers (strengthens problem statement); plus recalled point from
+   original interview: health tech must be easy to use to be
+   promotable; (3) restated failure/complexity account — few elderly
+   willing to join complicated assessments; difficulty or slow
+   results at entry → never come back. RECONCILIATION recorded:
+   entry-stage difficulty vs retention-stage rewards (two-stage
+   reading, researcher's analysis, kept distinct). GAPS NOW CLOSED:
+   game reaction; FRA-practice context. STILL OPEN (acceptable, do
+   not over-claim): the direct verdict-vs-game-failure attribution
+   question was still not put to Wong — caution (i) STANDS; zero-
+   failure view and measurement-trust also unasked. STILL NEEDED:
+   Gary Lau's signed form (identification box) — the LAST outstanding
+   panel form, awaiting his reply; Lau's content account; exact
+   date/mode of the Wong follow-up.
    OPTIONAL ARCHIVAL STRENGTHENING (not blocking): photos/scans of
    the author's original written notes for the confidential file —
    the drafted summaries are the working record. Integration on
