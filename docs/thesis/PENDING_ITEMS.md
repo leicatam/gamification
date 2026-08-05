@@ -270,9 +270,16 @@ document with their captions at V20).
    March 2026 (dual-dated with 4 Aug consent). LAU LOGISTICS
    CONFIRMED 4 Aug 2026: in person, ~1 hour, Cantonese mixed with
    English, June 2026; consent form SENT, awaiting his reply.
-   STILL NEEDED: Gary Lau's signed form (identification box) — the
-   LAST outstanding panel form, awaiting his reply; Wong's content
-   account (in progress) then Lau's.
+   WONG CONTENT ACCOUNT RECEIVED 4 Aug 2026 → pseudonymised summary
+   drafted: expert_panel/Expert_Interview_Summary_ExpertP_Physio_
+   DRAFT.docx (key values: 2-week-to-2-month abandonment window;
+   abandonment NOT tech-difficulty — rewards/slow progress/loss of
+   faith; necessary complexity of balance/fall-risk/cognitive
+   assessment; infantilisation risk; observed-failure/ego effect
+   supporting private play; reward contradiction across educated vs
+   working-class elderly; willing to trial). STILL NEEDED: Gary
+   Lau's signed form (identification box) — the LAST outstanding
+   panel form, awaiting his reply; Lau's content account.
    OPTIONAL ARCHIVAL STRENGTHENING (not blocking): photos/scans of
    the author's original written notes for the confidential file —
    the drafted summaries are the working record. Integration on
