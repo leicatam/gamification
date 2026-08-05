@@ -335,7 +335,16 @@ document with their captions at V20).
    and replied by RETURN PHONE CALL (no written reply exists) —
    3A.1 rewritten with the exact sequence; the author's notes of the
    call-back are the primary record and the WhatsApp transmittal is
-   the documented stimulus. GAPS NOW CLOSED: game reaction (played
+   the documented stimulus.
+   MEMBER CHECK COMPLETE 5 Aug 2026: the pseudonymised summary was
+   sent to Wong at 16:38 ("no disclosure of your personal
+   information"); he replied "Perfect" at 17:06 — the record is
+   participant-validated, the panel's first member-checked summary.
+   RECOMMENDED: replicate member-checking for Choy (send his summary
+   for review) and for Lau's summary once drafted; Yuan's H.3 could
+   be member-checked by e-mail. Member checking is a quotable
+   rigour step for §3.2. Screenshot (game + summary transmittals +
+   "Perfect") to re-send as a file for evidence/. GAPS NOW CLOSED: game reaction (played
    the actual build); FRA-practice context. Transmittal screenshot
    still to re-send as a file for evidence/. STILL OPEN (acceptable, do
    not over-claim): the direct verdict-vs-game-failure attribution
