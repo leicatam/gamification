@@ -267,10 +267,12 @@ document with their captions at V20).
    (Expert_Interview_Summary_Choy_DRAFT.docx); Wong IN PROGRESS
    (author writing it up); Lau NOT YET SENT. WONG LOGISTICS COMPLETE
    4 Aug 2026: telephone, ~25 minutes, Cantonese mixed with English,
-   March 2026 (dual-dated with 4 Aug consent). STILL NEEDED: Gary
-   Lau's signed form (identification box) — the LAST outstanding
-   panel form; Wong's content account (in progress) then Lau's;
-   Lau's format (in person/phone/online) and duration.
+   March 2026 (dual-dated with 4 Aug consent). LAU LOGISTICS
+   CONFIRMED 4 Aug 2026: in person, ~1 hour, Cantonese mixed with
+   English, June 2026; consent form SENT, awaiting his reply.
+   STILL NEEDED: Gary Lau's signed form (identification box) — the
+   LAST outstanding panel form, awaiting his reply; Wong's content
+   account (in progress) then Lau's.
    OPTIONAL ARCHIVAL STRENGTHENING (not blocking): photos/scans of
    the author's original written notes for the confidential file —
    the drafted summaries are the working record. Integration on
