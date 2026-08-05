@@ -265,10 +265,12 @@ document with their captions at V20).
    English). CONTENT ACCOUNTS (the texted interview summaries used
    for drafting): Sarah DONE (integrated as Appendix H.3); Choy DONE
    (Expert_Interview_Summary_Choy_DRAFT.docx); Wong IN PROGRESS
-   (author writing it up); Lau NOT YET SENT. STILL NEEDED: Gary
+   (author writing it up); Lau NOT YET SENT. WONG LOGISTICS COMPLETE
+   4 Aug 2026: telephone, ~25 minutes, Cantonese mixed with English,
+   March 2026 (dual-dated with 4 Aug consent). STILL NEEDED: Gary
    Lau's signed form (identification box) — the LAST outstanding
    panel form; Wong's content account (in progress) then Lau's;
-   Wong + Lau format (in person/phone/online) and duration.
+   Lau's format (in person/phone/online) and duration.
    OPTIONAL ARCHIVAL STRENGTHENING (not blocking): photos/scans of
    the author's original written notes for the confidential file —
    the drafted summaries are the working record. Integration on
