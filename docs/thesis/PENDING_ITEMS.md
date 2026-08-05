@@ -12,6 +12,24 @@ document with their captions at V20).
 1. **HSESC approval reference number + date + coverage statement** → §3.4
    (marker: "Approval reference and coverage statement to be inserted").
    Status: in progress internally per author.
+   DEVELOPMENT 5 Aug 2026 (author's report): HSESC raised that it has
+   no ethics-requirement pathway for PART-TIME postgraduate students
+   (part-time research presumed industrial/sponsored) — the author
+   cannot obtain approval in his own name. AGREED PLAN (recorded):
+   (1) obtain HSESC's actual position IN WRITING via the supervisor —
+   distinguish "no pathway exists" from "students cannot apply in
+   their own name"; (2) preferred fix: Prof. Cheung applies as PI
+   (supervisor-as-PI is the standard mechanism for student research;
+   briefing note ready); (3) if HSESC confirms in writing that no
+   pathway exists for this category, that written confirmation IS the
+   ethics record — §3.4 and both papers then state the documented
+   position + procedures-as-conducted; (4) THIRD-PARTY/EXTERNAL IRB
+   REJECTED: no retrospective approval, no jurisdiction over PolyU
+   research, ethics-shopping/predatory-board risk. NEVER claim an
+   approval or reference number that does not exist. Venue note: an
+   honest documented-position statement is likelier workable at JIKM
+   (with supervisor co-author) than at JMIR, which may require a
+   formal number/waiver — keep JMIR as fallback.
 1b. **BLOCKING — Stage-2 consent procedure must be re-described (author's
    account, 1 Aug 2026).** Participants were invited by the facility to
    try the gamified FRA as a facility activity and were NOT told at the
