@@ -27,11 +27,11 @@ document with their captions at V20).
    until the Committee issues one; the application ID may be cited
    as "under review, application HSEARS20260518023" only AFTER
    actual submission.
-   SUBMITTED 5 Aug 2026: the author submitted the application; the
+   SUBMITTED 5 Aug 2026 — **submitted application ID HSEARS20260805008** (the earlier HSEARS20260518023 was the draft record, created 18 May 2026); all citations updated to the submitted ID. The author submitted the application; the
    system routes to Prof. Cheung for ENDORSEMENT (author has informed
    him). Awaiting: endorsement → committee outcome. On submission,
    all three manuscripts' ethics statements were updated to "under
-   review (application HSEARS20260518023)". CRITICAL FIX during that
+   review (application HSEARS20260805008)". CRITICAL FIX during that
    update: the JMIR manuscript's Ethical Considerations still carried
    the PRE-CORRECTION account ("Ethical approval was obtained";
    written information sheets; caregiver-witnessed verbal consent;
