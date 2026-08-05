@@ -277,7 +277,22 @@ document with their captions at V20).
    faith; necessary complexity of balance/fall-risk/cognitive
    assessment; infantilisation risk; observed-failure/ego effect
    supporting private play; reward contradiction across educated vs
-   working-class elderly; willing to trial). STILL NEEDED: Gary
+   working-class elderly; willing to trial).
+   WONG INTEGRATION CAUTIONS (4 Aug 2026): (i) do NOT claim Wong
+   corroborates the verdict-attribution claim — he was never asked
+   the game-failure-vs-health-verdict question; only Choy provides
+   that; (ii) "trained in local medical school" is inaccurate for a
+   physiotherapist — render as "trained locally"; (iii) the ego
+   observation is his clinical impression, never asserted in the
+   thesis voice; (iv) his (and Choy's) private-practice clientele is
+   a shared sampling frame — acknowledge when citing their
+   demographic convergence; (v) the 2-week-to-2-month window comes
+   from post-surgical rehab patients — analogy, not corroboration,
+   for Stage-2 timing. GAPS (candidate 10-15 min follow-up call,
+   consent covers it; record as dated follow-up): attribution
+   question; FRA practice/clinical-workflow fit; reaction to the
+   actual game (could send v2.3 build); zero-failure view;
+   measurement-validity trust. STILL NEEDED: Gary
    Lau's signed form (identification box) — the LAST outstanding
    panel form, awaiting his reply; Lau's content account.
    OPTIONAL ARCHIVAL STRENGTHENING (not blocking): photos/scans of
