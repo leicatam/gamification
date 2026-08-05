@@ -260,11 +260,14 @@ document with their captions at V20).
    ("[TITLE TO BE CONFIRMED]" etc.) — regularise with HSESC pass.
    Because interviews predate consent forms (Wong, Lau, Yuan), each
    Appendix H record must state BOTH dates plainly, as H.2 does.
-   STILL NEEDED: Gary Lau's signed form (identification box) — the
-   LAST outstanding panel form; per-expert author's interview notes;
-   Wong + Lau format and language; Sarah's record COMPLETE (25 Jul
-   2026, telephone, English, ~35 minutes — H.2 updated); Choy's
-   COMPLETE except author's notes. Integration on
+   LANGUAGES CONFIRMED 4 Aug 2026: Wong and Lau interviews were in
+   Cantonese mixed with English (Choy: Cantonese and English; Yuan:
+   English). STILL NEEDED: Gary Lau's signed form (identification
+   box) — the LAST outstanding panel form; per-expert author's
+   interview notes; Wong + Lau format (in person/phone/online) and
+   duration; Sarah's record COMPLETE (25 Jul 2026, telephone,
+   English, ~35 minutes — H.2 updated); Choy's COMPLETE except
+   author's notes. Integration on
    receipt: §3.2 method (four consultations, dated), Ch8 consultation
    text, Appendix H.6/H.7. Positioning rule: expert input is
    interpretation/practice-validation and confirmatory-design review —
