@@ -293,8 +293,8 @@ document with their captions at V20).
    question; FRA practice/clinical-workflow fit; reaction to the
    actual game (could send v2.3 build); zero-failure view;
    measurement-validity trust.
-   WONG FOLLOW-UP CONDUCTED (early Aug 2026; exact date/mode to
-   confirm, presumed telephone; summary section 3A added): (1) he
+   WONG FOLLOW-UP CONDUCTED 5 Aug 2026, by telephone (summary
+   section 3A added): (1) he
    PLAYED the game — judged it "suitable for FRA", would return to
    play regularly if installed in the system (artifact-level
    validation; mirrors D2 intention); (2) HK does NOT do fall-risk
@@ -312,8 +312,7 @@ document with their captions at V20).
    question was still not put to Wong — caution (i) STANDS; zero-
    failure view and measurement-trust also unasked. STILL NEEDED:
    Gary Lau's signed form (identification box) — the LAST outstanding
-   panel form, awaiting his reply; Lau's content account; exact
-   date/mode of the Wong follow-up.
+   panel form, awaiting his reply; Lau's content account.
    OPTIONAL ARCHIVAL STRENGTHENING (not blocking): photos/scans of
    the author's original written notes for the confidential file —
    the drafted summaries are the working record. Integration on
