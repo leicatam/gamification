@@ -27,6 +27,22 @@ document with their captions at V20).
    until the Committee issues one; the application ID may be cited
    as "under review, application HSEARS20260518023" only AFTER
    actual submission.
+   SUBMITTED 5 Aug 2026: the author submitted the application; the
+   system routes to Prof. Cheung for ENDORSEMENT (author has informed
+   him). Awaiting: endorsement → committee outcome. On submission,
+   all three manuscripts' ethics statements were updated to "under
+   review (application HSEARS20260518023)". CRITICAL FIX during that
+   update: the JMIR manuscript's Ethical Considerations still carried
+   the PRE-CORRECTION account ("Ethical approval was obtained";
+   written information sheets; caregiver-witnessed verbal consent;
+   fall-free eligibility) — all inaccurate per the corrected Stage-2
+   record. Rewritten 5 Aug to the as-conducted account (ported from
+   JIKM); also removed the unverified "all API requests were logged"
+   claim and softened the PIPL sentence to design-intent. Paper 3
+   gained the under-review sentence (its implied-consent statement
+   was already accurate). WHEN OUTCOME ISSUES: replace the
+   under-review sentence with the approval reference in all three
+   manuscripts + thesis §3.4.
    EARLIER DEVELOPMENT 5 Aug 2026 (author's report): HSESC raised that it has
    no ethics-requirement pathway for PART-TIME postgraduate students
    (part-time research presumed industrial/sponsored) — the author
