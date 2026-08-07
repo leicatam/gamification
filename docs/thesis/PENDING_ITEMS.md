@@ -8,7 +8,24 @@ of Figures/Tables where applicable (figure numbers 4.1B, 5.1A, 5.1B, 5.3A
 and 6.0A are reserved for the photographs and were removed from the
 document with their captions at V20).
 
-## A. Ethics (blocking for examination)
+## A. Ethics — **APPROVED 6-7 Aug 2026. NO LONGER BLOCKING.**
+**HSESC APPROVAL RECEIVED (screenshot of the approval e-mail to the PI
+archived in ethics/): Application Reference HSEARS20260805008; Initiating
+Unit: Dept of Industrial and Systems Engineering; Type: Non-Clinical,
+Acad.; Principal Investigator: Cheung Chi Fai; Submission Date
+06-Aug-2026.** Propagated at V36 (thesis §3.4: approval statement +
+Stage-2 consent-as-conducted paragraph) and into all three manuscripts
+("was approved ... HSEARS20260805008"). REMAINING SUB-ITEMS:
+(a) download the official APPROVAL MEMO PDF from HSEARS → ethics/ (the
+durable artifact; also gives the exact approval date — currently stated
+as "August 2026"); (b) regularise the four expert consent forms (remove
+"Draft prepared for ethics review" banner) now that the approved
+application exists; (c) JIKM SUBMISSION NOW UNBLOCKED — remaining gates:
+Benny's go-ahead + the SS-293 published consent-statement check;
+(d) update the JMIR guide's DO-NOT-SUBMIT note. Note: the approval
+e-mail screenshot shows the submitted type as Non-Clinical Acad.
+(the 18-May draft record had said Clinical/Expedited).
+
 1. **HSESC approval reference number + date + coverage statement** → §3.4
    (marker: "Approval reference and coverage statement to be inserted").
    Status: in progress internally per author.
