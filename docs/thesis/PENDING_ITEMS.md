@@ -18,7 +18,13 @@ Stage-2 consent-as-conducted paragraph) and into all three manuscripts
 ("was approved ... HSEARS20260805008"). REMAINING SUB-ITEMS:
 (a) download the official APPROVAL MEMO PDF from HSEARS → ethics/ (the
 durable artifact; also gives the exact approval date — currently stated
-as "August 2026"); (b) regularise the four expert consent forms (remove
+as "August 2026"). STATUS INDEPENDENTLY CONFIRMED 7 Aug 2026: the
+author's own researcher-account HSEARS dashboard shows
+HSEARS20260805008 / Non-Clinical Acad. / **APPROVED** / ISE / PI
+Cheung Chi Fai (screenshot shown in-chat; re-send as file). MEMO
+ROUTE: the download notice was addressed to the PI — author to try
+the application row's detail/⋮ menu first, else ask Prof. Cheung to
+download and forward the memo PDF; (b) regularise the four expert consent forms (remove
 "Draft prepared for ethics review" banner) now that the approved
 application exists; (c) JIKM SUBMISSION NOW UNBLOCKED — remaining gates:
 Benny's go-ahead + the SS-293 published consent-statement check;
