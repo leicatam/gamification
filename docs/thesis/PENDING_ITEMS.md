@@ -22,6 +22,20 @@ as "August 2026"); (b) regularise the four expert consent forms (remove
 "Draft prepared for ethics review" banner) now that the approved
 application exists; (c) JIKM SUBMISSION NOW UNBLOCKED — remaining gates:
 Benny's go-ahead + the SS-293 published consent-statement check;
+SS-293 IDENTIFIED 7 Aug 2026 (acceptance letter shown as in-chat
+image — re-send as file/PDF for evidence/ and as an extension-
+application attachment): "Investigating Low Utilisation of Fall Risk
+Assessment Among Elderly Users: A Critical Review Through TAM and
+Octalysis Frameworks with Gamification Approach", Tam & Cheung,
+ICMSS 2026 (10th Int. Conf. on Management Engineering, Software
+Engineering and Service Sciences), Wuhan, 20-22 Mar 2026; CPS,
+submitted to IEEE Xplore (Ei Compendex/Scopus). TITLE CORRECTION
+APPLIED 7 Aug: all four citing documents (thesis Ch4 attribution,
+JIKM ref, JMIR [46], Paper 3 [1]) had cited it as "A study of
+utilisation..." — corrected to the accepted title with full venue.
+Consent-statement check still open: obtain the FINAL submitted/
+published SS-293 text and verify its Stage-1/Stage-2 consent wording
+against the corrected record;
 (d) update the JMIR guide's DO-NOT-SUBMIT note. Note: the approval
 e-mail screenshot shows the submitted type as Non-Clinical Acad.
 (the 18-May draft record had said Clinical/Expedited).
