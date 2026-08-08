@@ -1,5 +1,35 @@
 # Incoming Stage-3 batches — staged, provenance pending
 
+## aug2026_test_exports/ — NOT STUDY DATA (received 8 Aug 2026)
+
+Four CSVs supplied as "raw data from playing game" for logbook
+processing. NOT ADMITTED — the files are self-dating and their dates
+fall OUTSIDE the study window: `session_30102_s3` is dated 2026-08-05
+and `session_30103_s3_` is dated 2026-08-08 (the days they were
+received), while Stage-3 study returns date March-April 2026. Under the
+standing rule, fresh play cannot enter the study record. Additional
+markers of ad-hoc test runs: the two session files claim the SAME
+participant (30102) and session number (3) with different dates and
+metrics; the filename of one says 30103 while its content says 30102;
+participant IDs 3010x sit outside the register's 3001-3120 range;
+run durations are 20-33 s single runs; `sessions.csv` is the template
+sample containing SAMPLE-DELETE-ME rows.
+
+What the files ARE good for (retained for these purposes only):
+1. FORMAT EXEMPLARS — they confirm the current build's export schema
+   (session summary incl. Score column, plus a per-run state-change
+   log), matching the staged batch format.
+2. RULE-AGENT CORROBORATION — the states file's `src` column reads
+   "fallback"/"init" with rule-text reasons ("avoid rate 100% > 80% →
+   step up"), directly corroborating the §8.9/V34 account that in-run
+   difficulty adaptation runs on the deterministic rule agent (no AI
+   call). Score arithmetic verified: 560 = 11×10 + 400 + 50 ✓.
+3. Possible cross-reference: the 5 Aug 2026 play date coincides with
+   the day the v2.3 build was sent to the expert panel physiotherapist
+   — AUTHOR TO CONFIRM who played these runs (author's own test?
+   expert's returned files?); if they are the expert's, they belong in
+   the consultation record as his validation plays, NOT here.
+
 Files received as candidate participant-level returns, held here
 as-received. NOT admitted to the logbook analysis sheets until each
 file's provenance wrapper arrives: (1) channel-map line for the
