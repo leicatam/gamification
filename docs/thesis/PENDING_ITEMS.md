@@ -145,6 +145,32 @@ e-mail screenshot shows the submitted type as Non-Clinical Acad.
    interview questionnaire) → Appendix C; the author's interview notes
    → Appendix G archive.
 
+## A2. STAGE 3B — decided 8 Aug 2026 (agreed with supervisor input)
+The author will conduct Stage 3B: the FIRST FIELD DEPLOYMENT of the
+Chapter 7 adaptive-learning framework, with AI strictly as a
+facilitating tool. Agreed structure: the March-April Stage-3 record
+stays reported as conducted (pilot/first deployment); Stage 3B is a
+separately labelled collection, NOT merged and NOT a replication —
+it tests H-3B: adaptive calibration + trajectory display + coaching
+sustain engagement EVEN WITH visible measurement (the Figure 8.1
+middle ground made real; addresses the self-concept/psychological
+mechanism, the thesis's central finding). Protocol drafted:
+stage3b/Stage3B_Mini_Protocol_DRAFT.docx (two-arm adaptive-vs-static
+recommended at N>=40; recorded in-build consent; one-file export;
+D1/D2 kept for comparability + F1/F2 framework items; AI-transparency
+commitments incl. full call logging). GATES before recruitment:
+(1) ethics-scope check — author to supply the approved application
+SNAPSHOT from the approval e-mail (if it contains no
+completion/no-new-collection statements, covered by HSEARS20260805008;
+else short change request via the HSEARS Change Requests tab);
+(2) Benny signs the protocol; (3) v3.0 build ready (consent screen,
+in-game enrolment, adaptive layer, end-screen questionnaire,
+single-file export — to be built on the v2.3 touch base). Window:
+~4 weeks, within research period ending Oct 2026. Thesis impact when
+done: new Stage-3B section + §8.8 rewritten from proposed to
+first-deployment-conducted. The old-record wrapper chase (item C.6)
+becomes archive-completion work, no longer the critical path.
+
 ## B. Instruments and coding records (Appendices A–D)
 2. Verbatim Mandarin wording of the six Stage-1 survey items + back-translation
    + inter-rater administration records → Appendix A.
