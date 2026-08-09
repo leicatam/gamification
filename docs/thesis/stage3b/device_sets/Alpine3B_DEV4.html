@@ -328,6 +328,9 @@ const I18N={
   pts:' points',
   endStat:(m,c,goal)=>`${m} m skied · ${c} coins ×10 · `+(goal?'+50 goal bonus':'time complete'),
   endHint:'Press "Play again" whenever you are ready.',
+  endCoachOver:(m,c)=>`Three bumps ended this run at ${m} m — that happens to everyone! Every run teaches you the slope. Have another go!`,
+  gOver:['Good try!','So close!','Nearly there!','Nice effort!'],
+  endStatOver:(m,c)=>`${m} m skied · ${c} coins ×10 · three bumps ended the run`,
   fNext:"🔄 Next player on this device"
  },
  zh:{
@@ -378,6 +381,9 @@ const I18N={
   pts:' 分',
   endStat:(m,c,goal)=>`${m} 米 · ${c} 金幣 ×10 · `+(goal?'+50 達標獎勵':'時間完成'),
   endHint:'準備好就按「再玩一局」。',
+  endCoachOver:(m,c)=>`碰了三下,這一局在 ${m} 米結束——人人都會遇到!每一局都讓你更熟悉雪道。再來一局吧!`,
+  gOver:['好嘗試!','就差一點!','幾乎成功!','不錯的努力!'],
+  endStatOver:(m,c)=>`${m} 米 · ${c} 金幣 ×10 · 碰了三下結束`,
   fNext:"🔄 此裝置下一位玩家"
  },
  zhs:{
@@ -428,6 +434,9 @@ const I18N={
   pts:' 分',
   endStat:(m,c,goal)=>`${m} 米 · ${c} 金币 ×10 · `+(goal?'+50 达标奖励':'时间完成'),
   endHint:'准备好就按「再玩一局」。',
+  endCoachOver:(m,c)=>`碰了三下,这一局在 ${m} 米结束——人人都会遇到!每一局都让你更熟悉雪道。再来一局吧!`,
+  gOver:['好尝试!','就差一点!','几乎成功!','不错的努力!'],
+  endStatOver:(m,c)=>`${m} 米 · ${c} 金币 ×10 · 碰了三下结束`,
   fNext:"🔄 此设备下一位玩家"
  }
 };
@@ -481,7 +490,7 @@ function newSession(){
     pid: (P3B&&P3B.pid)||'UNSET',
     sessNo: Math.min(99,nRuns+1),
     arm: (P3B&&P3B.arm)||'A',
-    zeroFail: true,
+    zeroFail: (P3B&&P3B.failMode)!=='GO',
     agentic: false,
     goal: 200,
     cap: TIME_CAPS[200] || 30,
@@ -976,7 +985,9 @@ function draw(){
   // HUD
   document.getElementById('hudL').textContent=Math.round(S.dist)+' m / '+S.goal+' m';
   document.getElementById('hudM').textContent='⏱ '+Math.max(0,(S.cap-S.playT)).toFixed(0)+' s   ×'+S.diff.toFixed(2);
-  document.getElementById('hudR').textContent='🪙 '+S.coins+'   '+(S.coins*10+Math.round(S.dist))+' pts';
+  document.getElementById('hudR').textContent=
+    (S.zeroFail?'':'💚'.repeat(Math.max(0,3-S.livesLost))+'  ')+
+    '🪙 '+S.coins+'   '+(S.coins*10+Math.round(S.dist))+' pts';
 }
 function loop(ts){
   if(!running) return;
@@ -1045,7 +1056,8 @@ function endRun(early){
   } else { tb.style.display='none'; }
   document.getElementById('summary').style.display='block';
   drawEndOverlay(goalHit);
-  coach(goalHit? T('endCoachGoal')(S.goal,S.coins,avgBal.toFixed(0))
+  coach(S.gameOver? T('endCoachOver')(Math.round(S.dist),S.coins)
+       : goalHit? T('endCoachGoal')(S.goal,S.coins,avgBal.toFixed(0))
        : T('endCoachTime')(Math.round(S.dist),S.cap,S.coins));
 }
 
@@ -1057,7 +1069,7 @@ function drawEndOverlay(goalHit){
   ctx.fillStyle='rgba(251,247,239,0.97)';
   ctx.beginPath(); ctx.roundRect(cx,cy,cw,chh,22); ctx.fill();
   ctx.strokeStyle='#E8A64B'; ctx.lineWidth=4; ctx.stroke();
-  const greets = goalHit? T('gGoal') : T('gTime');
+  const greets = S.gameOver? T('gOver') : goalHit? T('gGoal') : T('gTime');
   const g = greets[Math.floor(Math.random()*greets.length)];
   ctx.textAlign='center'; ctx.fillStyle='#1F4A38';
   ctx.font='bold 44px "Trebuchet MS",Verdana';
@@ -1065,7 +1077,8 @@ function drawEndOverlay(goalHit){
   ctx.font='bold 64px "Trebuchet MS",Verdana'; ctx.fillStyle='#C2483A';
   ctx.fillText(S.score+T('pts'), W/2, cy+140);
   ctx.font='20px Verdana'; ctx.fillStyle='#22302B';
-  ctx.fillText(T('endStat')(Math.round(S.dist),S.coins,goalHit), W/2, cy+180);
+  ctx.fillText(S.gameOver? T('endStatOver')(Math.round(S.dist),S.coins)
+    : T('endStat')(Math.round(S.dist),S.coins,goalHit), W/2, cy+180);
   ctx.font='16px Verdana'; ctx.fillStyle='#6E6A5E';
   ctx.fillText(T('endHint'), W/2, cy+chh-26);
   // celebratory snow burst
@@ -1096,7 +1109,7 @@ function buildExport(){
   return JSON.stringify({
     build:'Alpine_Coordination_Game_v3.0_Stage3B',
     device_id:DEVICE_ID||null,
-    participant_code:P3B.pid, arm:P3B.arm, language:P3B.lang,
+    participant_code:P3B.pid, arm:P3B.arm, failure_mode:P3B.failMode||'ZF', language:P3B.lang,
     consent:{agreed:true, timestamp:P3B.consent_ts},
     enrolment:P3B.enrol,
     sessions:P3B.runs,
@@ -1172,6 +1185,7 @@ document.getElementById('consentYes').onclick=()=>{
   P3B.consent_ts=new Date().toISOString();
   if(!P3B.pid) P3B.pid=newPid();
   if(!P3B.arm) P3B.arm=Math.random()<0.5?'A':'B';
+  if(!P3B.failMode) P3B.failMode=Math.random()<0.5?'ZF':'GO';
   saveP3B(); showOvl('ovlEnrol');
 };
 document.getElementById('consentNo').onclick=()=>{
