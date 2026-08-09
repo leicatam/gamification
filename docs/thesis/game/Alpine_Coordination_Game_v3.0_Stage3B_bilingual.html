@@ -165,6 +165,10 @@
   <h2 data-i18n="fTitle"></h2>
   <p data-i18n="fP1"></p>
   <button class="btn-go big" id="shareBtn" data-i18n="fShare"></button>
+  <div class="optRow">
+    <button class="optBtn" id="copyBtn" data-i18n="fCopy"></button>
+    <button class="optBtn" id="dlBtn" data-i18n="fDownload"></button>
+  </div>
   <p class="muted" data-i18n="fP2"></p>
 </div></div>
 
@@ -282,9 +286,12 @@ const I18N={
   q4:"Seeing my progress made me want to continue.",
   lik1:"strongly disagree", lik5:"strongly agree",
   fTitle:"Thank you for playing!",
-  fP1:"Tap the button below to share your anonymous results file with the researcher — it is one small file and takes one step.",
+  fP1:"Tap Share and choose WhatsApp or Mail — your results go as a normal message. Nothing to save, nothing to attach.",
   fShare:"📤 Share my results",
-  fP2:"If the share window does not open, the file downloads instead — please e-mail it to sidney.tam@connect.polyu.hk. Thank you!",
+  fCopy:"📋 Copy results",
+  fCopied:"Copied! Now paste into WhatsApp or e-mail",
+  fDownload:"💾 Save as file",
+  fP2:"Send to: sidney.tam@connect.polyu.hk (or WhatsApp the researcher). Please send the text exactly as it is. Thank you!",
   startRun:"▶ Start run", tiltOff:"📱 Enable tilt", tiltOn:"📱 Tilt ON", endEarly:"End run early",
   howSteer:"Steer with the ← → keys, the big buttons, touching the left/right side of the slope, or tilt.",
   sumTitle:"Run finished", again:"⛷ Play again", finish:"✅ Finish & answer questions",
@@ -327,9 +334,12 @@ const I18N={
   q4:"看到自己的進步令我更想繼續玩。",
   lik1:"非常不同意", lik5:"非常同意",
   fTitle:"多謝你的參與!",
-  fP1:"請按下面的按鈕,一步把你的匿名結果檔案分享給研究員——只是一個小檔案。",
+  fP1:"按「分享」再選 WhatsApp 或郵件——你的結果會以普通訊息傳送,毋須儲存檔案、毋須附件。",
   fShare:"📤 分享我的結果",
-  fP2:"如果分享視窗沒有彈出,檔案會自動下載——請把它電郵至 sidney.tam@connect.polyu.hk。謝謝!",
+  fCopy:"📋 複製結果",
+  fCopied:"已複製!請貼上到 WhatsApp 或電郵",
+  fDownload:"💾 儲存為檔案",
+  fP2:"傳送至:sidney.tam@connect.polyu.hk(或 WhatsApp 給研究員)。請把文字原封不動送出。謝謝!",
   startRun:"▶ 開始滑雪", tiltOff:"📱 開啟傾側操控", tiltOn:"📱 傾側操控已開", endEarly:"提前結束",
   howSteer:"操控方法:← → 方向鍵、大按鈕、觸碰雪道左右兩邊,或傾側裝置。",
   sumTitle:"這一局完成了", again:"⛷ 再玩一局", finish:"✅ 完成並回答問題",
@@ -372,9 +382,12 @@ const I18N={
   q4:"看到自己的进步令我更想继续玩。",
   lik1:"非常不同意", lik5:"非常同意",
   fTitle:"多谢你的参与!",
-  fP1:"请按下面的按钮,一步把你的匿名结果文件分享给研究员——只是一个小文件。",
+  fP1:"按「分享」再选 WhatsApp 或邮件——你的结果会以普通消息发送,毋须保存文件、毋须附件。",
   fShare:"📤 分享我的结果",
-  fP2:"如果分享窗口没有弹出,文件会自动下载——请把它电邮至 sidney.tam@connect.polyu.hk。谢谢!",
+  fCopy:"📋 复制结果",
+  fCopied:"已复制!请粘贴到 WhatsApp 或电邮",
+  fDownload:"💾 保存为文件",
+  fP2:"发送至:sidney.tam@connect.polyu.hk(或 WhatsApp 给研究员)。请把文字原封不动发出。谢谢!",
   startRun:"▶ 开始滑雪", tiltOff:"📱 开启倾侧操控", tiltOn:"📱 倾侧操控已开", endEarly:"提前结束",
   howSteer:"操控方法:← → 方向键、大按钮、触碰雪道左右两边,或倾侧装置。",
   sumTitle:"这一局完成了", again:"⛷ 再玩一局", finish:"✅ 完成并回答问题",
@@ -1071,14 +1084,36 @@ function buildExport(){
     exported_ts:new Date().toISOString()
   },null,1);
 }
+function buildExportText(){
+  const hdr = LANG==='zh' ? '【滑雪遊戲研究結果 '+P3B.pid+'——請原封不動傳送給研究員】'
+           : LANG==='zhs' ? '【滑雪游戏研究结果 '+P3B.pid+'——请原封不动发送给研究员】'
+           : '[ALPINE GAME STUDY RESULTS '+P3B.pid+' — please send exactly as it is]';
+  return hdr+'\n'+JSON.stringify(JSON.parse(buildExport()));
+}
 async function shareExport(){
-  const name=`alpine3B_${P3B.pid}.json`, text=buildExport();
-  const b=new Blob([text],{type:'application/json'});
-  const f=new File([b],name,{type:'application/json'});
-  if(navigator.canShare && navigator.canShare({files:[f]})){
-    try{ await navigator.share({files:[f], title:name, text:T('shareText')}); return; }
+  const text=buildExportText();
+  if(navigator.share){
+    try{ await navigator.share({title:'Alpine 3B '+P3B.pid, text}); return; }
     catch(e){ if(e && e.name==='AbortError') return; }
   }
+  copyExport();   /* no share sheet (desktop): fall back to copy */
+}
+async function copyExport(){
+  const text=buildExportText();
+  let ok=false;
+  try{ await navigator.clipboard.writeText(text); ok=true; }
+  catch(e){
+    try{ const ta=document.createElement('textarea'); ta.value=text;
+      document.body.appendChild(ta); ta.select(); ok=document.execCommand('copy');
+      ta.remove(); }catch(e2){}
+  }
+  const b=document.getElementById('copyBtn');
+  if(ok){ b.textContent=T('fCopied'); setTimeout(()=>{ b.textContent=T('fCopy'); },4000); }
+  else dlExport();
+}
+function dlExport(){
+  const name=`alpine3B_${P3B.pid}.json`, text=buildExport();
+  const b=new Blob([text],{type:'application/json'});
   try{ const a=document.createElement('a');
     a.href=URL.createObjectURL(b); a.download=name; a.click(); URL.revokeObjectURL(a.href);
   }catch(e){ const w=window.open('about:blank');
@@ -1171,6 +1206,8 @@ document.getElementById('questGo').onclick=()=>{
   saveP3B(); showOvl('ovlFinal');
 };
 document.getElementById('shareBtn').onclick=()=>{ shareExport(); };
+document.getElementById('copyBtn').onclick=()=>{ copyExport(); };
+document.getElementById('dlBtn').onclick=()=>{ dlExport(); };
 document.getElementById('tiltBtn').addEventListener('click',()=>{
   const b=document.getElementById('tiltBtn');
   if(b.textContent.includes('ON')||b.textContent.includes('已開')) b.textContent=T('tiltOn');
