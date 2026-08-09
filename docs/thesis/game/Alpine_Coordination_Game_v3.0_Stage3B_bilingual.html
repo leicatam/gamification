@@ -163,7 +163,8 @@
 
 <div class="ovl" id="ovlFinal"><div class="card">
   <h2 data-i18n="fTitle"></h2>
-  <p data-i18n="fP1"></p>
+  <p data-i18n="fP1" id="fP1"></p>
+  <p id="wxHint" style="display:none; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-weight:600"></p>
   <button class="btn-go big" id="shareBtn" data-i18n="fShare"></button>
   <div class="optRow">
     <button class="optBtn" id="copyBtn" data-i18n="fCopy"></button>
@@ -292,6 +293,7 @@ const I18N={
   fCopied:"Copied! Now paste into WhatsApp or e-mail",
   fDownload:"💾 Save as file",
   fP2:"Send to: sidney.tam@connect.polyu.hk (or WhatsApp the researcher). Please send the text exactly as it is. Thank you!",
+  fWx:"You are in WeChat: tap 'Copy results', then paste into your WeChat chat with the researcher and send. That's all!",
   startRun:"▶ Start run", tiltOff:"📱 Enable tilt", tiltOn:"📱 Tilt ON", endEarly:"End run early",
   howSteer:"Steer with the ← → keys, the big buttons, touching the left/right side of the slope, or tilt.",
   sumTitle:"Run finished", again:"⛷ Play again", finish:"✅ Finish & answer questions",
@@ -340,6 +342,7 @@ const I18N={
   fCopied:"已複製!請貼上到 WhatsApp 或電郵",
   fDownload:"💾 儲存為檔案",
   fP2:"傳送至:sidney.tam@connect.polyu.hk(或 WhatsApp 給研究員)。請把文字原封不動送出。謝謝!",
+  fWx:"你正在微信中:按「複製結果」,然後貼上到與研究員的微信對話並發送,就完成了!",
   startRun:"▶ 開始滑雪", tiltOff:"📱 開啟傾側操控", tiltOn:"📱 傾側操控已開", endEarly:"提前結束",
   howSteer:"操控方法:← → 方向鍵、大按鈕、觸碰雪道左右兩邊,或傾側裝置。",
   sumTitle:"這一局完成了", again:"⛷ 再玩一局", finish:"✅ 完成並回答問題",
@@ -388,6 +391,7 @@ const I18N={
   fCopied:"已复制!请粘贴到 WhatsApp 或电邮",
   fDownload:"💾 保存为文件",
   fP2:"发送至:sidney.tam@connect.polyu.hk(或 WhatsApp 给研究员)。请把文字原封不动发出。谢谢!",
+  fWx:"你正在微信中:按「复制结果」,然后粘贴到与研究员的微信对话并发送,就完成了!",
   startRun:"▶ 开始滑雪", tiltOff:"📱 开启倾侧操控", tiltOn:"📱 倾侧操控已开", endEarly:"提前结束",
   howSteer:"操控方法:← → 方向键、大按钮、触碰雪道左右两边,或倾侧装置。",
   sumTitle:"这一局完成了", again:"⛷ 再玩一局", finish:"✅ 完成并回答问题",
@@ -414,6 +418,7 @@ const I18N={
 let LANG='en';
 function T(k){ const v=I18N[LANG][k]; return v===undefined?k:v; }
 function applyI18n(){
+  setTimeout(()=>{ try{ applyWxMode(); }catch(e){} },0);
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const v=I18N[LANG][el.dataset.i18n];
     if(typeof v==='string') el.textContent=v;
@@ -1212,6 +1217,18 @@ document.getElementById('tiltBtn').addEventListener('click',()=>{
   const b=document.getElementById('tiltBtn');
   if(b.textContent.includes('ON')||b.textContent.includes('已開')) b.textContent=T('tiltOn');
 });
+
+/* WeChat in-app browser: no share sheet — make Copy the primary path */
+const IS_WECHAT = /MicroMessenger/i.test(navigator.userAgent);
+function applyWxMode(){
+  if(!IS_WECHAT) return;
+  const hint=document.getElementById('wxHint');
+  hint.textContent=T('fWx'); hint.style.display='block';
+  document.getElementById('fP1').style.display='none';
+  const share=document.getElementById('shareBtn'), copy=document.getElementById('copyBtn');
+  share.style.display='none';
+  copy.className='btn-go big'; copy.style.flex='none'; copy.style.width='100%';
+}
 
 /* boot: resume where the participant left off */
 (function boot(){
