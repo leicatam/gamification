@@ -97,6 +97,7 @@
   <h2>Alpine Coordination Game 滑雪協調小遊戲</h2>
   <p>Please choose your language 請選擇語言</p>
   <button class="btn-go big" id="langZh">繁體中文</button>
+  <button class="btn-go big" id="langZhs" style="background:#3E6E56">简体中文</button>
   <button class="btn-soft big" id="langEn">English</button>
 </div></div>
 
@@ -272,11 +273,23 @@ const I18N={
   howSteer:"Steer with the ← → keys, the big buttons, touching the left/right side of the slope, or tilt.",
   sumTitle:"Run finished", again:"⛷ Play again", finish:"✅ Finish & answer questions",
   coachTitle:"Coach",
-  coachStart:"Off we go! Lean left and right to carve between the trees. Each run is short — under a minute.",
+  coachStart:"Off we go! Lean left and right to carve between the trees. Each run is 30 seconds.",
   runLineGoal:(m,c)=>`You reached ${m} m and collected ${c} coins!`,
   runLineTime:(m,c)=>`${m} m and ${c} coins — lovely run!`,
   trajTitle:"Your runs so far", trajBest:"best",
-  shareText:"Alpine Coordination Game — my anonymous results file. Please e-mail this file to sidney.tam@connect.polyu.hk"
+  shareText:"Alpine Coordination Game — my anonymous results file. Please e-mail this file to sidney.tam@connect.polyu.hk",
+  coachGoalCont:"200 m! Keep going — collect more coins!",
+  coachUp:"Nice riding — the slope opens up a little.",
+  coachDown:"The coach eased the slope so you can find your rhythm.",
+  coachHold:"Holding steady — you're in the flow band.",
+  coachBump:"A bump — no slowing down here. The slope just got a little clearer for you.",
+  endCoachGoal:(g,c,b)=>`You made it past ${g} m! ${c} coins, balance ${b}%.`,
+  endCoachTime:(m,cap,c)=>`Time! ${m} m in ${cap} seconds, ${c} coins. Every run is a fresh start.`,
+  gGoal:['Congratulations!','Fantastic run!','You made it!','Bravo!'],
+  gTime:['Well done!','Great effort!','Nice riding!','Lovely run!'],
+  pts:' points',
+  endStat:(m,c,goal)=>`${m} m skied · ${c} coins ×10 · `+(goal?'+50 goal bonus':'time complete'),
+  endHint:'Press "Play again" whenever you are ready.'
  },
  zh:{
   cTitle:"參加研究——請先閱讀",
@@ -305,11 +318,68 @@ const I18N={
   howSteer:"操控方法:← → 方向鍵、大按鈕、觸碰雪道左右兩邊,或傾側裝置。",
   sumTitle:"這一局完成了", again:"⛷ 再玩一局", finish:"✅ 完成並回答問題",
   coachTitle:"教練",
-  coachStart:"出發!左右傾就可以在樹林間穿插。每局很短——不足一分鐘。",
+  coachStart:"出發!左右傾就可以在樹林間穿插。每局 30 秒。",
   runLineGoal:(m,c)=>`你滑到 ${m} 米,收集了 ${c} 個金幣!`,
   runLineTime:(m,c)=>`${m} 米、${c} 個金幣——滑得真好!`,
   trajTitle:"你的每一局", trajBest:"最佳",
-  shareText:"滑雪協調小遊戲——我的匿名結果檔案。請把此檔案電郵至 sidney.tam@connect.polyu.hk"
+  shareText:"滑雪協調小遊戲——我的匿名結果檔案。請把此檔案電郵至 sidney.tam@connect.polyu.hk",
+  coachGoalCont:"200米達標!繼續滑,收集更多金幣!",
+  coachUp:"滑得真好——雪道稍為放開了一點。",
+  coachDown:"教練把雪道調得柔和一點,讓你找到節奏。",
+  coachHold:"保持穩定——你正處於最合適的狀態。",
+  coachBump:"碰了一下——完全不用慢下來,前面的雪道反而更清爽了。",
+  endCoachGoal:(g,c,b)=>`你滑過了 ${g} 米!${c} 個金幣,平衡度 ${b}%。`,
+  endCoachTime:(m,cap,c)=>`時間到!${cap} 秒內滑了 ${m} 米、${c} 個金幣。每一局都是新開始。`,
+  gGoal:['恭喜你!','滑得漂亮!','你做到了!','太棒了!'],
+  gTime:['做得好!','很不錯!','滑得真好!','好一局!'],
+  pts:' 分',
+  endStat:(m,c,goal)=>`${m} 米 · ${c} 金幣 ×10 · `+(goal?'+50 達標獎勵':'時間完成'),
+  endHint:'準備好就按「再玩一局」。'
+ },
+ zhs:{
+  cTitle:"参加研究——请先阅读",
+  cP1:"这个游戏是香港理工大学工程博士研究生谭国滔(指导老师:张志辉教授)博士研究的一部分,探讨游戏如何令健康科技更具吸引力。此游戏最初为跌倒风险评估平台而设计。",
+  cP2:"如你同意参加,游戏会记录你的游玩数据(距离、金币、操控平衡)及四条简短问题的答案。不会收集姓名或联络资料;结果只以整体统计形式发表。你可随时关闭页面退出。",
+  cP3:"完成后,只需按一下即可把匿名结果文件分享给研究员。参与纯属自愿。",
+  cRef:"已获理大人类实验对象操守小组委员会批准——申请编号 HSEARS20260805008。查询:sidney.tam@connect.polyu.hk",
+  cAgree:"我同意——开始玩", cDecline:"不参加,谢谢",
+  eTitle:"三条小问题", eNote:"毋须姓名——只用作描述玩家群组。",
+  eAge:"你的年龄组别", eGender:"性别", eM:"男", eF:"女",
+  eEdu:"教育程度", eEdu1:"中学", eEdu2:"专上", eEdu3:"学士或以上",
+  ePrior:"你今年较早前有没有玩过这个滑雪游戏?", eNo:"没有", eYes:"有",
+  eGo:"继续前往游戏",
+  qTitle:"四条简短问题", qNote:"1 = 非常不同意 · 5 = 非常同意",
+  qGo:"完成——最后一步",
+  q1:"这个游戏是一个很好的协调力挑战。",
+  q2:"我愿意定期玩这个游戏。",
+  q3:"游戏的难度适合我的能力。",
+  q4:"看到自己的进步令我更想继续玩。",
+  lik1:"非常不同意", lik5:"非常同意",
+  fTitle:"多谢你的参与!",
+  fP1:"请按下面的按钮,一步把你的匿名结果文件分享给研究员——只是一个小文件。",
+  fShare:"📤 分享我的结果",
+  fP2:"如果分享窗口没有弹出,文件会自动下载——请把它电邮至 sidney.tam@connect.polyu.hk。谢谢!",
+  startRun:"▶ 开始滑雪", tiltOff:"📱 开启倾侧操控", tiltOn:"📱 倾侧操控已开", endEarly:"提前结束",
+  howSteer:"操控方法:← → 方向键、大按钮、触碰雪道左右两边,或倾侧装置。",
+  sumTitle:"这一局完成了", again:"⛷ 再玩一局", finish:"✅ 完成并回答问题",
+  coachTitle:"教练",
+  coachStart:"出发!左右倾就可以在树林间穿插。每局 30 秒。",
+  runLineGoal:(m,c)=>`你滑到 ${m} 米,收集了 ${c} 个金币!`,
+  runLineTime:(m,c)=>`${m} 米、${c} 个金币——滑得真好!`,
+  trajTitle:"你的每一局", trajBest:"最佳",
+  shareText:"滑雪协调小游戏——我的匿名结果文件。请把此文件电邮至 sidney.tam@connect.polyu.hk",
+  coachGoalCont:"200米达标!继续滑,收集更多金币!",
+  coachUp:"滑得真好——雪道稍为放开了一点。",
+  coachDown:"教练把雪道调得柔和一点,让你找到节奏。",
+  coachHold:"保持稳定——你正处于最合适的状态。",
+  coachBump:"碰了一下——完全不用慢下来,前面的雪道反而更清爽了。",
+  endCoachGoal:(g,c,b)=>`你滑过了 ${g} 米!${c} 个金币,平衡度 ${b}%。`,
+  endCoachTime:(m,cap,c)=>`时间到!${cap} 秒内滑了 ${m} 米、${c} 个金币。每一局都是新开始。`,
+  gGoal:['恭喜你!','滑得漂亮!','你做到了!','太棒了!'],
+  gTime:['做得好!','很不错!','滑得真好!','好一局!'],
+  pts:' 分',
+  endStat:(m,c,goal)=>`${m} 米 · ${c} 金币 ×10 · `+(goal?'+50 达标奖励':'时间完成'),
+  endHint:'准备好就按「再玩一局」。'
  }
 };
 let LANG='en';
@@ -369,7 +439,7 @@ function newSession(){
     maxSpeed:0, diff: ((P3B&&P3B.arm)==='B') ? 0.85 : 0.60,
     skierLane:0, vx:0, obstacles:[], coinsArr:[], flakes:[], scenery:[], spray:[],
     onTrailT:0, offTrailT:0, avoided:0, spawned:0,
-    obFactor:1.0, flashUntil:0, gameOver:false, endReason:'',
+    obFactor:1.0, flashUntil:0, gameOver:false, endReason:'', goalReached:false,
     lastEval:0, evalWindow:{hits:0, avoided:0, spawned:0, coins:0},
     stateChanges:[], balSamples:[]
   };
@@ -547,15 +617,7 @@ async function agentEvaluate(){
   S.diff=applied.d;
   if(S.diff>oldD) SND.up(); else if(S.diff<oldD) SND.down();
   logState(oldD,S.diff,applied.r,src);
-  if(LANG==='zh'){
-    coach(applied.d>oldD?'滑得真好——雪道稍為放開了一點。'
-         :applied.d<oldD?'教練把雪道調得柔和一點,讓你找到節奏。'
-         :'保持穩定——你正處於最合適的狀態。');
-  }else{
-    coach(applied.d>oldD?'Nice riding — the slope opens up a little.'
-         :applied.d<oldD?'The coach eased the slope so you can find your rhythm.'
-         :"Holding steady — you're in the flow band.");
-  }
+  coach(applied.d>oldD?T('coachUp'):applied.d<oldD?T('coachDown'):T('coachHold'));
   if(S.evalWindow.hits===0 && S.obFactor<1) S.obFactor=Math.min(1, S.obFactor+0.15);
   S.evalWindow={hits:0,avoided:0,spawned:0,coins:0};
 }
@@ -599,8 +661,7 @@ function easeAfterBump(){
     return true;
   });
   logState(S.diff,S.diff,`bump → cleared ${cleared} obstacle(s), density ×${S.obFactor.toFixed(2)} (speed unchanged)`,'bump');
-  coach(LANG==='zh' ? '碰了一下——完全不用慢下來,前面的雪道反而更清爽了。'
-       : 'A bump — no slowing down here. The slope just got a little clearer for you.');
+  coach(T('coachBump'));
 }
 function step(dt){
   sceneT+=dt;
@@ -656,9 +717,13 @@ function step(dt){
   if(S.arm!=='B' && S.playT - S.lastEval >= EVAL_INTERVAL_S){ S.lastEval=S.playT; agentEvaluate(); }
   if(S.balSamples.length < Math.floor(S.playT)){ S.balSamples.push(curBalance()); }
 
-  // END CONDITIONS: distance goal OR 20-second cap, whichever first
-  if(S.dist>=S.goal){ S.endReason='distance goal reached'; endRun(); }
-  else if(S.playT>=S.cap){ S.endReason=S.cap+' s time cap'; endRun(); }
+  // END CONDITION (v3.0): every run lasts the full time cap; the distance
+  // goal is a mid-run bonus, not an early end
+  if(!S.goalReached && S.dist>=S.goal){
+    S.goalReached=true; SND.up();
+    coach(T('coachGoalCont'));
+  }
+  if(S.playT>=S.cap){ S.endReason=S.cap+' s complete'+(S.goalReached?' (goal reached)':''); endRun(); }
   else if(S.gameOver){ endRun(); }
 }
 
@@ -890,7 +955,7 @@ function endRun(early){
   SND.finish();
   document.getElementById('endBtn').style.display='none';
   const avgBal = S.balSamples.length? S.balSamples.reduce((a,b)=>a+b,0)/S.balSamples.length : curBalance();
-  const goalHit = S.endReason==='distance goal reached';
+  const goalHit = !!S.goalReached;
   S.score = S.coins*10 + Math.round(S.dist) + (goalHit?50:0);
   try{ if(S.pid && S.pid!=='UNSET') localStorage.setItem('alpine_last_sess_'+S.pid, String(S.sessNo)); }catch(e){}
   S.result={
@@ -926,13 +991,8 @@ function endRun(early){
   } else { tb.style.display='none'; }
   document.getElementById('summary').style.display='block';
   drawEndOverlay(goalHit);
-  if(LANG==='zh'){
-    coach(goalHit? `你滑到 ${S.goal} 米!${S.coins} 個金幣,平衡度 ${avgBal.toFixed(0)}%。`
-        : `時間到!${S.cap} 秒內滑了 ${Math.round(S.dist)} 米、${S.coins} 個金幣。每一局都是新開始。`);
-  }else{
-    coach(goalHit? `You made it — ${S.goal} m! ${S.coins} coins, balance ${avgBal.toFixed(0)}%.`
-        : `Time! ${Math.round(S.dist)} m in ${S.cap} seconds, ${S.coins} coins. Every run is a fresh start.`);
-  }
+  coach(goalHit? T('endCoachGoal')(S.goal,S.coins,avgBal.toFixed(0))
+       : T('endCoachTime')(Math.round(S.dist),S.cap,S.coins));
 }
 
 function drawEndOverlay(goalHit){
@@ -943,21 +1003,17 @@ function drawEndOverlay(goalHit){
   ctx.fillStyle='rgba(251,247,239,0.97)';
   ctx.beginPath(); ctx.roundRect(cx,cy,cw,chh,22); ctx.fill();
   ctx.strokeStyle='#E8A64B'; ctx.lineWidth=4; ctx.stroke();
-  const greets = LANG==='zh'
-    ? (goalHit? ['恭喜你!','滑得漂亮!','你做到了!','太棒了!'] : ['做得好!','很不錯!','滑得真好!','好一局!'])
-    : (goalHit? ['Congratulations!','Fantastic run!','You made it!','Bravo!'] : ['Well done!','Great effort!','Nice riding!','Lovely run!']);
+  const greets = goalHit? T('gGoal') : T('gTime');
   const g = greets[Math.floor(Math.random()*greets.length)];
   ctx.textAlign='center'; ctx.fillStyle='#1F4A38';
   ctx.font='bold 44px "Trebuchet MS",Verdana';
   ctx.fillText('🎉 '+g, W/2, cy+64);
   ctx.font='bold 64px "Trebuchet MS",Verdana'; ctx.fillStyle='#C2483A';
-  ctx.fillText(S.score+(LANG==='zh'?' 分':' points'), W/2, cy+140);
+  ctx.fillText(S.score+T('pts'), W/2, cy+140);
   ctx.font='20px Verdana'; ctx.fillStyle='#22302B';
-  ctx.fillText(LANG==='zh'
-    ? Math.round(S.dist)+' 米 · '+S.coins+' 金幣 ×10 · '+(goalHit?'+50 達標獎勵':'時間完成')
-    : Math.round(S.dist)+' m skied · '+S.coins+' coins ×10 · '+(goalHit?'+50 goal bonus':'time complete'), W/2, cy+180);
+  ctx.fillText(T('endStat')(Math.round(S.dist),S.coins,goalHit), W/2, cy+180);
   ctx.font='16px Verdana'; ctx.fillStyle='#6E6A5E';
-  ctx.fillText(LANG==='zh'?'準備好就按「再玩一局」。':'Press "Play again" whenever you are ready.', W/2, cy+chh-26);
+  ctx.fillText(T('endHint'), W/2, cy+chh-26);
   // celebratory snow burst
   ctx.fillStyle='#E8A64B';
   for(let i=0;i<26;i++){ const a=Math.random()*6.28, r=40+Math.random()*90;
@@ -1016,6 +1072,7 @@ function pickLang(l){
   showOvl(P3B.consent_ts ? (P3B.enrol? null : 'ovlEnrol') : 'ovlConsent');
 }
 document.getElementById('langZh').onclick=()=>pickLang('zh');
+document.getElementById('langZhs').onclick=()=>pickLang('zhs');
 document.getElementById('langEn').onclick=()=>pickLang('en');
 document.getElementById('consentYes').onclick=()=>{
   P3B.consent_ts=new Date().toISOString();
@@ -1025,8 +1082,10 @@ document.getElementById('consentYes').onclick=()=>{
 };
 document.getElementById('consentNo').onclick=()=>{
   const c=document.querySelector('#ovlFinal .card');
-  c.innerHTML='<h2>'+(LANG==='zh'?'完全沒有問題——多謝你!':'No problem at all — thank you!')+'</h2><p>'+
-    (LANG==='zh'?'你可以直接關閉此頁面。':'You can simply close this page.')+'</p>';
+  const dec = LANG==='zh' ? ['完全沒有問題——多謝你!','你可以直接關閉此頁面。']
+           : LANG==='zhs' ? ['完全没有问题——多谢你!','你可以直接关闭此页面。']
+           : ['No problem at all — thank you!','You can simply close this page.'];
+  c.innerHTML='<h2>'+dec[0]+'</h2><p>'+dec[1]+'</p>';
   showOvl('ovlFinal');
 };
 const ENROL={};
