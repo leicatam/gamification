@@ -86,6 +86,21 @@
   .likert button.sel{background:var(--pine); color:var(--snow)}
   .likLbl{display:flex; justify-content:space-between; font-size:.72rem; color:#6E6A5E; margin-top:3px}
   #trajBox{margin-top:12px; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-size:.95rem; display:none}
+  /* full-screen play mode */
+  body.playmode header, body.playmode footer, body.playmode #setup,
+  body.playmode #sidePanels, body.playmode #summary{display:none}
+  body.playmode main{display:block; max-width:none; padding:0}
+  body.playmode #gameWrap{position:fixed; inset:0; z-index:40; margin:0 !important;
+    border-radius:0; border:none; padding:8px; display:flex; flex-direction:column;
+    background:var(--card)}
+  body.playmode canvas{margin:0 auto; border-radius:10px}
+  body.playmode #touchRow{margin-top:8px}
+  body.playmode .steerBtn{max-width:none; font-size:2.4rem; padding:20px 0}
+  #coachFloat{display:none}
+  body.playmode #coachFloat{display:block; position:absolute; left:12px; right:12px;
+    bottom:118px; background:rgba(251,247,239,.92); border:1px dashed var(--ok);
+    border-radius:10px; padding:8px 12px; font-size:.95rem; pointer-events:none}
+  body.playmode #coachFloat:empty{display:none}
   #trajBox .bar{height:10px; background:var(--pine); border-radius:5px; margin:3px 0}
   .muted{font-size:.8rem; color:#6E6A5E}
 </style>
@@ -194,6 +209,7 @@
         <div class="box" id="hudM">⏱ 30 s</div>
         <div class="box" id="hudR">🪙 0</div>
       </div>
+      <div id="coachFloat"></div>
       <div id="touchRow">
         <button class="steerBtn" id="leftBtn" aria-label="Steer left">◀</button>
         <button class="steerBtn" id="rightBtn" aria-label="Steer right">▶</button>
@@ -624,6 +640,7 @@ async function agentEvaluate(){
 function coach(msg){
   if(S && S.arm==='B') return;                       /* static arm: no coaching */
   document.getElementById('coach').innerHTML='<b>'+T('coachTitle')+':</b> '+msg;
+  document.getElementById('coachFloat').textContent=msg;
 }
 
 /* ============ PERSPECTIVE HELPERS ============ */
@@ -945,12 +962,15 @@ document.getElementById('startBtn').onclick=()=>{
   document.getElementById('coachPanel').style.display = (S.arm==='B')?'none':'block';
   document.getElementById('modePill').textContent='';
   logState(S.diff,S.diff,'run start — arm '+S.arm+(S.arm==='B'?' (static ×0.85)':' (adaptive, gentle floor)'),'init');
+  document.getElementById('coachFloat').textContent='';
+  document.body.classList.add('playmode'); fitCanvas();
   coach(T('coachStart'));
   requestAnimationFrame(loop);
 };
 document.getElementById('endBtn').onclick=()=>{ if(running){ S.endReason='ended early by staff'; endRun(true); } };
 function endRun(early){
   running=false;
+  document.body.classList.remove('playmode'); fitCanvas();
   if(windGain) windGain.gain.value=0;
   SND.finish();
   document.getElementById('endBtn').style.display='none';
@@ -1064,6 +1084,23 @@ async function shareExport(){
   }catch(e){ const w=window.open('about:blank');
     if(w){ w.document.write('<pre>'+text.replace(/</g,'&lt;')+'</pre>'); w.document.title=name; } }
 }
+
+/* fit the canvas to the viewport in play mode, preserving aspect */
+function fitCanvas(){
+  if(!document.body.classList.contains('playmode')){
+    cv.style.width=''; cv.style.height=''; return;
+  }
+  const wrap=document.getElementById('gameWrap');
+  const tr=document.getElementById('touchRow');
+  const availW=wrap.clientWidth-16;
+  const availH=wrap.clientHeight - tr.offsetHeight - 30;
+  const ar=cv.width/cv.height;
+  let w=availW, h=w/ar;
+  if(h>availH){ h=availH; w=h*ar; }
+  cv.style.width=Math.max(200,w)+'px'; cv.style.height=Math.max(140,h)+'px';
+}
+window.addEventListener('resize',()=>setTimeout(fitCanvas,60));
+window.addEventListener('orientationchange',()=>setTimeout(fitCanvas,250));
 
 /* ============ v3.0 STAGE 3B: flow wiring ============ */
 loadP3B();
