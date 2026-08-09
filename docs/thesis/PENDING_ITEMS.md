@@ -163,9 +163,20 @@ commitments incl. full call logging). GATES before recruitment:
 SNAPSHOT from the approval e-mail (if it contains no
 completion/no-new-collection statements, covered by HSEARS20260805008;
 else short change request via the HSEARS Change Requests tab);
-(2) Benny signs the protocol; (3) v3.0 build ready (consent screen,
-in-game enrolment, adaptive layer, end-screen questionnaire,
-single-file export — to be built on the v2.3 touch base). Window:
+(2) Benny signs the protocol; (3) v3.0 build — **BUILT AND
+SMOKE-TESTED 9 Aug 2026**
+(game/Alpine_Coordination_Game_v3.0_Stage3B_bilingual.html; private
+test artifact
+https://claude.ai/code/artifact/4b23f9d3-bef4-40a3-bdc5-12d976792fc3):
+bilingual 繁中/EN; recorded consent citing HSEARS20260805008;
+enrolment band/gender/education/prior-play; silent random A/B arms
+persisted locally (A: rule-agent + trajectory + coaching; B: static
+×0.85, no coach); D1/D2 + F1/F2 on 5-point end screen; one-file JSON
+export via share sheet; resume-on-reload; no external calls in play.
+Verified: full journey both languages, both arms; score arithmetic;
+static arm truly static across eval intervals; zero JS errors.
+Campaign pack EN+ZH and bilingual game description ready
+(stage3b/). Window:
 ~4 weeks, within research period ending Oct 2026. Thesis impact when
 done: new Stage-3B section + §8.8 rewritten from proposed to
 first-deployment-conducted. The old-record wrapper chase (item C.6)
