@@ -208,8 +208,12 @@ graphic flagged yellow — author to regenerate or approve if the
 graphic carries the construct name.
 FINAL SWEEP must include a forward-results AND forward-constructs
 scan of Chapters 1-3.
-NOTE: heading renames (1.7, 2.5, 2.5.6) require ToC field refresh
-(checklist 15).
+NOTE: heading renames (1.7, 2.5, 2.5.6, 6.8A retitle) and the NEW
+§6.12 "The Expert Consultation Panel (March–August 2026)" (panel
+paragraphs moved out of §6.8A to close Chapter 6 in timeline order,
+after 6.11 Consolidated Statistical Results) plus new Table 3.1A
+(programme timeline after Figure 3.1) require ToC field refresh
+(checklist 15). Table 3.1A "Reported in" cell points to §6.12.
 
 ## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
 The InBody FRA is an assess-then-train business model; the study covers
