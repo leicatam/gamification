@@ -470,11 +470,23 @@ becomes archive-completion work, no longer the critical path.
    interview June 2026; consent 10-11 Aug 2026. Transmittal +
    election screenshot to re-send as a file for evidence/. Panel attribution ledger FINAL: Yuan named, Choy
    named, Lau named, Wong pseudonymised (Expert P).
-   STILL NEEDED: Lau's content account (the author's summary of the
-   June interview — the LAST panel content item); transmittal
-   evidence of Gary's return (e-mail/WhatsApp screenshot); then the
-   §3.2 four-consultation write-up + Ch8 passages + H.6/H.7 in one
-   pass, and the draft-banner regularisation across all four forms.
+   LAU CONTENT ACCOUNT RECEIVED 11 Aug 2026 → summary drafted:
+   expert_panel/Expert_Interview_Summary_GaryLau_DRAFT.docx (key
+   values: coaching best-but-unscalable — the strongest practice
+   justification for the L6 coaching layer and AI's enabling role;
+   'no progressive positive signs' → trajectory element; patience as
+   the scarce resource; honest uncertainty recorded; timing nuance —
+   stroke-rehab abandonment comes LATE, unlike FRA's early pattern —
+   flagged as adjacent-population, not FIDS corroboration; prior
+   Lau-Tam collaboration disclosed; attribution caution stands:
+   Choy alone carries the verdict-attribution corroboration).
+   **ALL FOUR PANEL CONTENT ACCOUNTS NOW COMPLETE.** NEXT (the
+   integration pass, ready to run): §3.2 four-consultation method
+   text + Ch8 consultation passages + Appendix H.6/H.7 in one pass;
+   draft-banner regularisation across the four forms; member-check
+   Lau's and Choy's summaries; re-send as files: Lau election
+   screenshot, Choy WhatsApp chain, Wong transmittal/game/'Perfect'
+   thread, dated invitations, HSEARS dashboard, ICMSS letter.
    OPTIONAL ARCHIVAL STRENGTHENING (not blocking): photos/scans of
    the author's original written notes for the confidential file —
    the drafted summaries are the working record. Integration on
