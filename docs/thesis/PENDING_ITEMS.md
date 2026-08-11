@@ -182,6 +182,20 @@ done: new Stage-3B section + §8.8 rewritten from proposed to
 first-deployment-conducted. The old-record wrapper chase (item C.6)
 becomes archive-completion work, no longer the critical path.
 
+## A0. STANDING WRITING-LOGIC STANDARD (author's rule, 12 Aug 2026)
+Earlier chapters NEVER state data, numbers or outcomes that a later
+chapter obtains. Earlier chapters may state: structure, frameworks,
+hypotheses (incl. H0), design, construct NAMES, and "reported in
+Chapter X" pointers. Applied to the whole of Chapter 1 at V37-review
+(ten rewrites: 1.6 survey numbers removed; 1.7 F4/paradox converted
+to design+question, heading renamed; 1.8 stage findings and return
+counts removed; 1.9 "H0 stood rejected" and all Stage-3 results
+removed; 1.12 contribution outcome-claims pointed to Chapters 5/6/8;
+1.13 rewritten data-free in conditional voice). Literature figures
+and pre-research archival facts (facility records) are permitted.
+FINAL SWEEP must include a forward-results scan of Chapters 1-3.
+NOTE: 1.7 heading rename requires ToC field refresh (checklist 15).
+
 ## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
 The InBody FRA is an assess-then-train business model; the study covers
 the assessment gate only. DEFENCE = declare and justify, in the
