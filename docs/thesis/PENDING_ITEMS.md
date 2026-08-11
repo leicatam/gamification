@@ -460,10 +460,15 @@ becomes archive-completion work, no longer the critical path.
    text layer; signature image on the participant line dated
    10 Aug 2026; researcher countersigned via stamp annotation
    (tick + Tam signature) with FreeText date 11.8.2026.
-   **IDENTIFICATION: NAMED ATTRIBUTION AUTHORISED** (tick
-   coordinate-mapped to the second option at PDF (421,307) on the
-   preference line). Dual-dating: interview June 2026; consent
-   10-11 Aug 2026. Panel attribution ledger FINAL: Yuan named, Choy
+   **IDENTIFICATION: NAMED ATTRIBUTION AUTHORISED — provenance
+   corrected 11 Aug 2026: Gary returned the form with neither box
+   marked; asked "which one?" by annotated photo, he replied in
+   writing "Ok to be identified" (WhatsApp, 09:15). The tick at PDF
+   (421,307) is the researcher's transcription of that written
+   election, applied at countersignature — the authorising artifact
+   is the message, and the record states both.** Dual-dating:
+   interview June 2026; consent 10-11 Aug 2026. Transmittal +
+   election screenshot to re-send as a file for evidence/. Panel attribution ledger FINAL: Yuan named, Choy
    named, Lau named, Wong pseudonymised (Expert P).
    STILL NEEDED: Lau's content account (the author's summary of the
    June interview — the LAST panel content item); transmittal
