@@ -182,6 +182,25 @@ done: new Stage-3B section + §8.8 rewritten from proposed to
 first-deployment-conducted. The old-record wrapper chase (item C.6)
 becomes archive-completion work, no longer the critical path.
 
+## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
+The InBody FRA is an assess-then-train business model; the study covers
+the assessment gate only. DEFENCE = declare and justify, in the
+author's own voice, before any examiner raises it: (1) Ch4 scoping
+statement — describe the full assess-train model, then declare the
+assessment gate as the study object BECAUSE it is the binding
+constraint (abandonment at assessment means training never begins);
+(2) §8.7 explicit limitation with the four-layer rationale (binding
+constraint; FIAS mechanism generalises to training verdicts; practical
+scope of a part-time EngD; declared extension); (3) future-work line —
+framework extension into the training loop (§8.8; Mirror-project
+convergence); (4) viva dossier Q&A entry. Ready to draft as the next
+thesis version on the author's word.
+PANEL USE DOCTRINE (restated for the §3.2 integration pass): the four
+consultations are a FOURTH DATA-COLLECTION activity (method §3.2;
+records Appendix H; thematic convergence/divergence analysis feeding
+Ch8 discussion) — NOT literature review, and never evidence for the
+hypotheses or a sample-size substitute.
+
 ## B. Instruments and coding records (Appendices A–D)
 2. Verbatim Mandarin wording of the six Stage-1 survey items + back-translation
    + inter-rater administration records → Appendix A.
