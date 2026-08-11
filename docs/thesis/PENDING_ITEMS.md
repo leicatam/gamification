@@ -222,6 +222,21 @@ only appear retrospectively (Ch9); Ch3's Table 3.1A stays
 findings-free. Yellow cells in Table 9.1: Stage-2 exact dates,
 Stage 3B window dates, Stage 3B produced/nullified cells (open until
 window closes). §9.2A also needs the ToC field refresh.
+AESTHETIC NORMALISATION (13 Aug 2026): document-wide pass applied —
+headings stripped of stray run overrides (size 10-16pt, bold, italic
+on 5 chapter titles) and heading STYLES set to Times New Roman
+(16/14/12 bold); ~29 body paragraphs at 14pt bold reset to TNR 12
+regular; 86 body paragraphs justified; captions unified to
+FigureCaption style, centred; mixed font sizes inside 12 tables
+normalised; ToC/LoF/LoT run overrides cleared. Table 3.1A RELOCATED:
+it had been inserted into the List of Figures (anchored on the LoF
+entry for Figure 3.1, not the body caption) — now sits in §3.3 after
+the Figure 3.1 caption, before §3.4. Title page left untouched
+(intentional sizes). REMAINING for final production: the ToC/LoF/LoT
+are manually built lists with hand-typed page numbers — convert to
+Word-generated fields (References > Insert Table of
+Contents/Figures) at the checklist-15 refresh; page numbers are
+stale after all V37 insertions.
 
 ## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
 The InBody FRA is an assess-then-train business model; the study covers
