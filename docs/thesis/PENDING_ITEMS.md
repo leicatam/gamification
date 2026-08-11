@@ -193,8 +193,23 @@ counts removed; 1.9 "H0 stood rejected" and all Stage-3 results
 removed; 1.12 contribution outcome-claims pointed to Chapters 5/6/8;
 1.13 rewritten data-free in conditional voice). Literature figures
 and pre-research archival facts (facility records) are permitted.
-FINAL SWEEP must include a forward-results scan of Chapters 1-3.
-NOTE: 1.7 heading rename requires ToC field refresh (checklist 15).
+EXTENDED 12 Aug 2026 — CONSTRUCTS OBEY THE SAME CHRONOLOGY AS DATA:
+a construct may appear only from the chapter where the journey
+produced it. FIDS (pre-research conjecture) is Chapter-1 material;
+FIAS emerged from Stage-2 field testing and appears from Chapter 4
+onward — the FIDS-to-FIAS transition is a guarded journey finding.
+Applied at V37-review: 22 edits removed every FIAS mention from
+Chapters 1-2 (incl. renaming headings 2.5 and 2.5.6, Table 2.1
+caption and two header cells, and de-resulting para 2.6's 70%/6.7%/
+29.3pp quotes); Ch1-2 now use "the abandonment construct (Chapters
+4-5)" / "failure-associated non-return". The abbreviations table
+keeps its FIAS glossary entry (front matter, structural). Figure 1.1
+graphic flagged yellow — author to regenerate or approve if the
+graphic carries the construct name.
+FINAL SWEEP must include a forward-results AND forward-constructs
+scan of Chapters 1-3.
+NOTE: heading renames (1.7, 2.5, 2.5.6) require ToC field refresh
+(checklist 15).
 
 ## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
 The InBody FRA is an assess-then-train business model; the study covers
