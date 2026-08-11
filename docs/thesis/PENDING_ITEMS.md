@@ -454,9 +454,22 @@ becomes archive-completion work, no longer the critical path.
    still to re-send as a file for evidence/. STILL OPEN (acceptable, do
    not over-claim): the direct verdict-vs-game-failure attribution
    question was still not put to Wong — caution (i) STANDS; zero-
-   failure view and measurement-trust also unasked. STILL NEEDED:
-   Gary Lau's signed form (identification box) — the LAST outstanding
-   panel form, awaiting his reply; Lau's content account.
+   failure view and measurement-trust also unasked.
+   GARY LAU FORM RECEIVED 11 Aug 2026 (evidence/) — ALL FOUR PANEL
+   FORMS NOW IN. Native-digital completion: nine "GL" initials in the
+   text layer; signature image on the participant line dated
+   10 Aug 2026; researcher countersigned via stamp annotation
+   (tick + Tam signature) with FreeText date 11.8.2026.
+   **IDENTIFICATION: NAMED ATTRIBUTION AUTHORISED** (tick
+   coordinate-mapped to the second option at PDF (421,307) on the
+   preference line). Dual-dating: interview June 2026; consent
+   10-11 Aug 2026. Panel attribution ledger FINAL: Yuan named, Choy
+   named, Lau named, Wong pseudonymised (Expert P).
+   STILL NEEDED: Lau's content account (the author's summary of the
+   June interview — the LAST panel content item); transmittal
+   evidence of Gary's return (e-mail/WhatsApp screenshot); then the
+   §3.2 four-consultation write-up + Ch8 passages + H.6/H.7 in one
+   pass, and the draft-banner regularisation across all four forms.
    OPTIONAL ARCHIVAL STRENGTHENING (not blocking): photos/scans of
    the author's original written notes for the confidential file —
    the drafted summaries are the working record. Integration on
