@@ -214,6 +214,14 @@ paragraphs moved out of §6.8A to close Chapter 6 in timeline order,
 after 6.11 Consolidated Statistical Results) plus new Table 3.1A
 (programme timeline after Figure 3.1) require ToC field refresh
 (checklist 15). Table 3.1A "Reported in" cell points to §6.12.
+NEW §9.2A "The Programme Diary: How the Knowledge Evolved and What
+Was Nullified" + Table 9.1 (five-column knowledge-evolution diary,
+2023 - Oct 2026) inserted after §9.2. Placement rationale: the diary
+STATES findings and nullifications, so under the A0 standard it can
+only appear retrospectively (Ch9); Ch3's Table 3.1A stays
+findings-free. Yellow cells in Table 9.1: Stage-2 exact dates,
+Stage 3B window dates, Stage 3B produced/nullified cells (open until
+window closes). §9.2A also needs the ToC field refresh.
 
 ## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
 The InBody FRA is an assess-then-train business model; the study covers
