@@ -237,6 +237,25 @@ are manually built lists with hand-typed page numbers — convert to
 Word-generated fields (References > Insert Table of
 Contents/Figures) at the checklist-15 refresh; page numbers are
 stale after all V37 insertions.
+TABLE LAYOUT PASS (13 Aug 2026): all 24 tables set to full usable
+page width, fixed layout, content-proportional column widths,
+repeating header rows. Three dense tables placed on LANDSCAPE pages
+via dedicated sections: Table 2.2 (literature synthesis), Table 5.3
+(QFD matrix), Table 9.1 (programme diary). Document now has 8
+sections; page numbering verified continuous (roman front matter,
+arabic restart at Chapter 1, no restarts at landscape sections).
+NEW LITERATURE-SYNTHESIS TABLES (13 Aug 2026): Table 2.2 (five-stage
+literature journey: establishes / question left open / where the
+programme takes it up) and Table 2.3 (each empirical activity traced
+back to the literature stage it tests) added at the end of §2.8 with
+a linking paragraph. Both comply with A0 (questions + chapter
+pointers, no forward-stated results). NOTE: §2.3.5 ("That is exactly
+what the data show") and §2.8 paras still contain forward-stated
+results - queued for the A0 final sweep of Ch1-3. Ch2 prose
+CONDENSATION now possible against the two tables - awaiting author's
+go-ahead on which sections to trim (candidates: 2.2.2, 2.4.2, 2.7).
+Tables 2.2/2.3 also need adding to the List of Tables at the
+field-refresh step.
 
 ## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
 The InBody FRA is an assess-then-train business model; the study covers
