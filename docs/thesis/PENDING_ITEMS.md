@@ -285,6 +285,28 @@ work / natural industrial collaboration with Dr Migar post-submission.
 NOTE: FID/FIA terminology from his comments NOT adopted (construct
 proliferation). New heading 8.5.9 joins the ToC field-refresh list.
 
+## A5. PAPERS 2 & 3 FINAL-PUBLICATION REVISION (13 Aug 2026)
+V37 improvements propagated to all four manuscript files (JIKM,
+IJKM-anonymous, JMIR, Paper 3 V24). Overclaim scan came back clean -
+papers were already calibrated. EDITS APPLIED to each Paper-2 variant:
+(1) FIDS/FIAS terminology bridge in the RQ3 mechanism paragraph
+(aligns papers' two-step usage with thesis §4.6 correction);
+(2) Limitations: attrition rival answered (abrupt clustering, 0/21,
+paradox; residual conceded without timestamps) + group-narrative
+rival conceded with group-level design requirement;
+(3) future-work: Stage 3B 2x2 noted as launched, three-arm coupling
+study remains decisive; (4) conclusion: candidate boundary condition
+for gamification theory (hypothesis register, companion study
+"reported separately"). PAPER 3: (5) boundary-condition statement in
+Discussion V-A; (6) Limitations: attrition frame-indifference + the
+DISPERSED-COHORT insight (Stage-3 participants played alone, so
+decoupling also removed the group-narrative environment - honest new
+package component); (7) future-work: Stage 3B noted + group-level
+instrumentation added to confirmatory requirements.
+STILL GATED before submission: Benny go-ahead; SS-293 camera-ready
+consent-statement check; exact HSEARS approval date (replaces
+"August 2026"); JMIR full consistency sweep.
+
 ## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
 The InBody FRA is an assess-then-train business model; the study covers
 the assessment gate only. DEFENCE = declare and justify, in the
