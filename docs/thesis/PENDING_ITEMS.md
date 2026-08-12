@@ -257,6 +257,34 @@ go-ahead on which sections to trim (candidates: 2.2.2, 2.4.2, 2.7).
 Tables 2.2/2.3 also need adding to the List of Tables at the
 field-refresh step.
 
+## A4. INDUSTRIAL-PARTNER REVIEW EDITS (13 Aug 2026, Dr Migar)
+Dr Migar (industrial partner) reviewed V37; his comments file archived
+at evidence level as draft feedback (NOT panel data - four-expert
+ledger stays final; if his input should become citable, it needs the
+full consent-and-record process; otherwise Acknowledgements).
+Boundary-condition contribution: ALREADY PRESENT in §8.1/§9.7 (he
+independently converged) - no edit needed. FOUR EDITS APPLIED:
+(1) new §8.5.9 Attrition-Like Dropout - named rival with
+discriminating evidence (abrupt exits, 0/21 re-engagement, paradox,
+Stage-3 frame differential), calibrated residual;
+(2) §8.6B closing para - group-narrative rival conceded (cannot be
+nullified; explains pre-emptive never-use, 61% no prior use;
+complementary to FIAS via §6.8A; converts to design requirement);
+(3) §8.8 three-paragraph proposition - AI-managed invisible role-play:
+constraints (non-gamers, cognitive load, individual clinical acts),
+principle (high system intelligence / low user cognitive burden),
+role as adaptive variable, social layer decoupled from clinical act,
+metrics-never-socially-visible + non-infantilising constraints,
+capstone three-link hypothesis chain (transfer = hard link,
+shield-to-bridge fading), continuation of §9.8B;
+(4) §9.8B closing sentence cross-linking the role-adaptive proposition.
+DECISION RECORDED: RPG prototype NOT to be built/tested inside the
+thesis window (Stage 3B is the committed final stage; ethics scope;
+underpowered add-on would weaken the proposition) - it is future
+work / natural industrial collaboration with Dr Migar post-submission.
+NOTE: FID/FIA terminology from his comments NOT adopted (construct
+proliferation). New heading 8.5.9 joins the ToC field-refresh list.
+
 ## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
 The InBody FRA is an assess-then-train business model; the study covers
 the assessment gate only. DEFENCE = declare and justify, in the
