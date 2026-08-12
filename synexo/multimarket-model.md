@@ -1,4 +1,4 @@
-# Synapep — Multi-Market Revenue Model (3 scenarios)
+# GenApep — Multi-Market Revenue Model (3 scenarios)
 
 > **Same product, more markets.** One product family — the applicator **device** + **CodeLife-configured peptide/exosome kit** developed for **Korean physicians** — is exported **as-is**. Personalisation is by *physician purpose within the same approved envelope*; there is **no per-market product development**, so unit economics are **identical in every market**. Scenarios flex only the **clinic ramp, price and utilisation** — not the product. Illustrative; USD.
 

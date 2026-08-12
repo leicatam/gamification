@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Synapep operating financial model (bottom-up, founder inputs Jun 2026).
+"""GenApep operating financial model (bottom-up, founder inputs Jun 2026).
 
 Vial-based razor-and-blades consumable model. 5-year horizon: H2-2026 prep, production from Feb 2027.
-Outputs: operating-financials.csv, operating-financial-model.md, Synapep_Financial_Model.docx
+Outputs: operating-financials.csv, operating-financial-model.md, GenApep_Financial_Model.docx
 """
 from docx import Document
 from docx.shared import Pt, RGBColor, Inches
@@ -85,7 +85,7 @@ def m(x):
 
 # ------------------------------------------------------------------ CSV
 with open(DIR + "operating-financials.csv", "w") as f:
-    f.write("Synapep Operating Financial Model (USD). Vial model; price $%.2f, cost $%.2f.\n\n" % (PRICE, COST))
+    f.write("GenApep Operating Financial Model (USD). Vial model; price $%.2f, cost $%.2f.\n\n" % (PRICE, COST))
     f.write("2027 monthly ramp,," + ",".join(MONTHS_2027) + ",TOTAL\n")
     f.write("Active clinics,," + ",".join(str(c) for c in CLINICS_2027) + ",-\n")
     vm = [c * VIALS_PER_CLINIC_MO for c in CLINICS_2027]
@@ -105,7 +105,7 @@ def row(label, vals):
     return "| " + label + " | " + " | ".join(vals) + " |\n"
 
 with open(DIR + "operating-financial-model.md", "w") as f:
-    f.write("# Synapep — Operating Financial Model (bottom-up)\n\n")
+    f.write("# GenApep — Operating Financial Model (bottom-up)\n\n")
     f.write("> 5-year plan from **July 2026** (prep, training, regulatory applications, cGMP/ISO). "
             "**First production readiness February 2027.** Vial-based razor-and-blades consumable "
             "model. Built from founder operating inputs; 2028–2030 clinic counts are assumptions. "
@@ -135,8 +135,8 @@ with open(DIR + "operating-financial-model.md", "w") as f:
     f.write(row("OpEx", [f"{opex_total(y):,}" for y in YEARS]))
     f.write(row("**EBITDA**", ["**%s**" % f"{k(P[y]['ebitda']):,}" for y in YEARS]))
     f.write("\n## Unit economics\n\n")
-    f.write("- **Per vial (Synapep):** price $%.2f − cost $%.0f = **$%.2f GP (%.1f%%)**.\n" % (PRICE, COST, GP_VIAL, GP_VIAL / PRICE * 100))
-    f.write("- **Per clinic / year (Synapep):** %d vials × $%.2f = **$%s revenue / $%s GP**.\n" % (VIALS_PER_CLINIC_MO * 12, PRICE, f"{int(VIALS_PER_CLINIC_MO*12*PRICE):,}", f"{int(VIALS_PER_CLINIC_MO*12*GP_VIAL):,}"))
+    f.write("- **Per vial (GenApep):** price $%.2f − cost $%.0f = **$%.2f GP (%.1f%%)**.\n" % (PRICE, COST, GP_VIAL, GP_VIAL / PRICE * 100))
+    f.write("- **Per clinic / year (GenApep):** %d vials × $%.2f = **$%s revenue / $%s GP**.\n" % (VIALS_PER_CLINIC_MO * 12, PRICE, f"{int(VIALS_PER_CLINIC_MO*12*PRICE):,}", f"{int(VIALS_PER_CLINIC_MO*12*GP_VIAL):,}"))
     f.write("- **Channel (clinic):** buys $%.0f–%.0f, sells end-user $%.0f–%.0f → ~50%% clinic margin (~$%s/month gross per clinic).\n" % (PRICE_LO, PRICE_HI, ENDUSER_LO, ENDUSER_HI, f"{int(VIALS_PER_CLINIC_MO*PRICE):,}"))
     f.write("\n## Price sensitivity (2030 & 5-yr cumulative)\n\n")
     f.write(row("Ex-factory price", ["$30.00", "$32.50", "$35.00"])); f.write("|---|---|---|---|\n")
@@ -198,7 +198,7 @@ def tbl(doc, headers, rows, widths=None, fs=9.5, hl_rows=()):
 
 
 doc = nd()
-para(doc, "SYNAPEP", size=26, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
+para(doc, "GENAPEP", size=26, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
 para(doc, "Operating Financial Model (5-year, bottom-up)", size=14, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
 para(doc, "From July 2026 (prep) · first production Feb 2027 · vial consumable model. Illustrative — not investment advice.",
      size=9, italic=True, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=12)
@@ -268,10 +268,10 @@ para(doc, "Founder inputs: Jul-2026 start (prep/training/regulatory/cGMP/ISO); f
           "4 lab + 2 shared staff; Eyesel bottoming $4 + production $3 = $7/vial; 60K/month capacity; "
           "100 vials/clinic/month; MOQ 300; price $30–35; end-user $60–70; first wave 20–40 Korea + 20 "
           "(HK/VN/MY); second wave Q3-2027 → 100 clinics.", size=9, italic=True, color=GREY)
-doc.save(DIR + "Synapep_Financial_Model.docx")
+doc.save(DIR + "GenApep_Financial_Model.docx")
 
 for y in YEARS:
     print("%d: clinics %.0f, vials %s, rev $%.2fM, GP $%.2fM (%.1f%%), OpEx $%.2fM, EBITDA $%.2fM"
           % (y, avg_active(y), f"{P[y]['vials']:,}", m(P[y]["rev"]), m(P[y]["gp"]),
              P[y]["gm"] * 100 if P[y]["rev"] else 0, opex_total(y) / 1000.0, m(P[y]["ebitda"])))
-print("Saved operating-financials.csv, operating-financial-model.md, Synapep_Financial_Model.docx")
+print("Saved operating-financials.csv, operating-financial-model.md, GenApep_Financial_Model.docx")

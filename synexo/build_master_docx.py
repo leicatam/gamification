@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Merge all Synapep source documents into ONE Word file -> Synapep_Master_Dossier.docx.
+"""Merge all GenApep source documents into ONE Word file -> GenApep_Master_Dossier.docx.
 
 Renders the markdown sources (single source of truth) so the dossier never drifts from the
 standalone docs. Run build_multimarket_model.py / build_docx.py first if sources changed.
@@ -195,7 +195,7 @@ def main():
     # Cover
     d.add_paragraph().paragraph_format.space_after = Pt(60)
     c = d.add_paragraph(); c.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = c.add_run("SYNAPEP"); r.font.size = Pt(40); r.bold = True; r.font.color.rgb = NAVY
+    r = c.add_run("GENAPEP"); r.font.size = Pt(40); r.bold = True; r.font.color.rgb = NAVY
     s = d.add_paragraph(); s.alignment = WD_ALIGN_PARAGRAPH.CENTER
     rs = s.add_run("Master Investor Dossier"); rs.font.size = Pt(20); rs.font.color.rgb = GREY
     s2 = d.add_paragraph(); s2.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -219,8 +219,8 @@ def main():
         # drop the file's own first H1 (we show the Part title divider instead)
         text = re.sub(r'^\s*#\s+.*\n', '', text, count=1)
         render_markdown(d, text)
-    d.save(DIR + "Synapep_Master_Dossier.docx")
-    print("Saved Synapep_Master_Dossier.docx (%d parts)" % len(PARTS))
+    d.save(DIR + "GenApep_Master_Dossier.docx")
+    print("Saved GenApep_Master_Dossier.docx (%d parts)" % len(PARTS))
 
 
 if __name__ == "__main__":

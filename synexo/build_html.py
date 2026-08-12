@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the Synapep v0.4 plan as a single self-contained HTML file (for Drive -> Word .doc)."""
+"""Render the GenApep v0.4 plan as a single self-contained HTML file (for Drive -> Word .doc)."""
 
 CSS = """
 body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#222;line-height:1.4;}
@@ -22,11 +22,11 @@ def tbl(headers, rows):
 
 P = []; A = P.append
 A("<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'>")
-A(f"<head><meta charset='utf-8'><title>Synapep Business Plan and Valuation</title><style>{CSS}</style></head><body>")
+A(f"<head><meta charset='utf-8'><title>GenApep Business Plan and Valuation</title><style>{CSS}</style></head><body>")
 
 # Title
 A("<div class='center'>")
-A("<h1>SYNAPEP</h1>")
+A("<h1>GENAPEP</h1>")
 A("<p class='sub'>Business Plan &amp; Valuation</p>")
 A("<p><i>AI-personalised regenerative aesthetic medicine — physician-configured peptide treatments</i></p>")
 A("<p class='note'>Powered by CodeLife.AI (proprietary model) · IT-EXO&reg; · SynExo</p>")
@@ -36,7 +36,7 @@ A("</div><hr>")
 
 # 1 Executive summary
 A("<h2>1. Executive Summary</h2>")
-A("<p><b>Synapep Labs</b> is a <b>physician co-development lab</b> for regenerative aesthetic "
+A("<p><b>GenApep Labs</b> is a <b>physician co-development lab</b> for regenerative aesthetic "
   "medicine. Elite, globally competitive <b>Korean aesthetic doctors</b> bring their clinical "
   "experience into the lab and <b>co-design purpose-built products</b> — personalised to the "
   "<b>physician's clinical case, not the individual patient</b> — powered by <b>CodeLife.AI</b>, "
@@ -100,7 +100,7 @@ A(tbl(["Core technology", "What it is"], [
 # 3 Vision
 A("<h2>3. Vision — From Devices to a Data-Science Company</h2>")
 A("<p>Devices and kits are the wedge that puts CodeLife into clinics and starts the data flywheel. "
-  "As personalised treatments and their outcomes accumulate, Synapep builds a proprietary "
+  "As personalised treatments and their outcomes accumulate, GenApep builds a proprietary "
   "aesthetic-medicine dataset and <b>its own large model</b> — the durable, compounding asset. "
   "The endpoint is a <b>data-science company in aesthetic medicine</b>: AI-designed, "
   "outcome-validated, continuously improving — and fundable by institutional AI investors.</p>")
@@ -157,7 +157,7 @@ A("<p>Core roles: <b>ML/AI lead</b> (peptide design + model strategy), data/ML e
 A("<p><b>Data moat:</b> every CodeLife-configured treatment generates consented inputs, device "
   "parameters and (where permitted) outcome data via the applicator device. More treatments → "
   "better models → peptides that outperform generalised products → more clinics → more data. The "
-  "<b>dataset, not the code, is the durable moat</b> — and the line item that turns Synapep from a "
+  "<b>dataset, not the code, is the durable moat</b> — and the line item that turns GenApep from a "
   "medtech story (Lens A) into an AI/data-company story (Lens B). Governance: consent, "
   "de-identification, Korea/HK data-protection compliance, physician in the loop.</p>")
 
@@ -230,7 +230,7 @@ A(tbl(["Challenge", "Our answer / action"], [
      "US FDA warnings).", "Lead with non-human (salmon/synthetic) origin; provide "
      "COA/particle/potency/purity/stability/batch data; market on function, not medical claims."],
     ["“$25M exposure” is weasel-phrased — it aggregates affiliated entities.", "Re-present at "
-     "entity/product/channel level with reorder data; weight as market signal, not Synapep revenue."],
+     "entity/product/channel level with reorder data; weight as market signal, not GenApep revenue."],
     ["“Own large model” overreaches for a 2→12 FTE team.", "Reframe as a structured, consented "
      "outcomes dataset + decision-support analytics; moat is data + clinic data-rights clauses."],
     ["Clinic ramp is aggressive (0→150 in year one; plan itself calls 150 ‘upside’).", "Rebuild the "
@@ -239,7 +239,7 @@ A(tbl(["Challenge", "Our answer / action"], [
 
 # 10 International expansion
 A("<h2>10. International Expansion (KFDA as an Export Springboard)</h2>")
-A("<p>Synapep is <b>not a Korea-only play</b>: a Korean MFDS registration anchors a reliance-led "
+A("<p>GenApep is <b>not a Korea-only play</b>: a Korean MFDS registration anchors a reliance-led "
   "export strategy (full detail in <i>export-strategy.md</i>). Two-speed thesis — the applicator "
   "<b>device travels widely</b> on the Korean technical file; the peptide/exosome <b>kit is wrapped "
   "per market</b> (cosmetic vs device vs drug), leaning on <b>salmon/synthetic origin</b> and strict "
@@ -293,6 +293,6 @@ A("<p class='note'>Sources — medical aesthetics market: MarketsandMarkets, P&a
 
 A("</body></html>")
 html = "".join(P)
-with open("/home/user/gamification/synexo/Synapep_Business_Plan_and_Valuation.html", "w") as f:
+with open("/home/user/gamification/synexo/GenApep_Business_Plan_and_Valuation.html", "w") as f:
     f.write(html)
 print("HTML bytes:", len(html))

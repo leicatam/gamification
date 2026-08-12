@@ -1,7 +1,7 @@
-# Synapep — Valuation (v0.4)
+# GenApep — Valuation (v0.4)
 
 > USD, illustrative. Base case from `financial-model.md` (device + recurring kits; ~65% blended
-> GM; revenue $5.3M→$39.9M 2027–2030). Valuation date mid-2026 (pre-revenue). Synapep valued
+> GM; revenue $5.3M→$39.9M 2027–2030). Valuation date mid-2026 (pre-revenue). GenApep valued
 > **standalone at the ex-factory line**; distributors (e.g. NeuNova) are non-consolidated.
 
 ## Two lenses
@@ -52,7 +52,7 @@ the $1M kickoff price (still pre-revenue, priced on Lens A), but it:
 
 ## VC-method check
 
-Seed investor seeking ~10× wants ~$10M back. If Synapep exits ~2031 at ~$95–130M (8× EBITDA, or
+Seed investor seeking ~10× wants ~$10M back. If GenApep exits ~2031 at ~$95–130M (8× EBITDA, or
 materially higher on a Lens-B AI multiple) and the seed stake is diluted ~1.5–2× by the 2028
 round, the investor needs ~11–17% today. $1M at $5–7M pre gives **13–17%** → clears ~10× at the
 $6M midpoint, with meaningful upside if Lens B holds.

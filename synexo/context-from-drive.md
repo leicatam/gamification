@@ -1,6 +1,6 @@
-# Synexo / Synapep — Grounding Notes from Google Drive
+# Synexo / GenApep — Grounding Notes from Google Drive
 
-> **v0.4 pivot note (2026-06-06):** Synapep's model is now **AI-personalised aesthetic medical
+> **v0.4 pivot note (2026-06-06):** GenApep's model is now **AI-personalised aesthetic medical
 > devices** — an applicator device + recurring CodeLife-configured peptide treatment kits
 > (microneedling + IM), launching **Korea → Hong Kong** via fast "modified device" / MDACS paths.
 > The AI engine (CodeLife.AI) + a compounding data flywheel is the moat and the basis for a future
@@ -53,11 +53,11 @@ cargo and of the AI-designed actives (see below).
   "IT-EXO® BioMimetic Exosomes". 15-year clinic heritage; first scalp-wellness studio
   ("MM STUDIO") planned in London.
 
-> **Synapep structure (CONFIRMED by user):** Synapep is a **JV — WBI 70% / Eyesel 30%**.
+> **GenApep structure (CONFIRMED by user):** GenApep is a **JV — WBI 70% / Eyesel 30%**.
 > WBI contributes the Synexo IP (IT-EXO/SynExo/CodeLife.AI) + R&D; **Eyesel is the
 > manufacturing entity** (production/fill-finish/QA). **Eyesel ≈ the manufacturer "에스테르
 > / Ester"** seen on the MORIMANA product labels (confirm spelling/legal name). **NeuNova USA**
-> is the separate exclusive US distribution channel, not a Synapep shareholder. Because the JV
+> is the separate exclusive US distribution channel, not a GenApep shareholder. Because the JV
 > *owns/co-owns* the platform and controls manufacturing, the valuation steps up vs a bare
 > licence — see `valuation.md` (recommended $5–7M pre-money).
 
@@ -70,7 +70,7 @@ Two distinct revenue surfaces:
    (incl. Copper Tripeptide-1, Acetyl Tetrapeptide-3), 7 ceramides, 23 plant extracts.
 2. **SynExo vials / skin boosters / ampoules** — the higher-value aesthetic & medical line.
    **This is the most likely match for the "$30–35/vial, 50–100K vials/month, 5–6 product
-   types" in the Synapep plan.**
+   types" in the GenApep plan.**
 
 ## Regulatory & go-to-market (from the WBI "Trinity Protocol" white paper)
 

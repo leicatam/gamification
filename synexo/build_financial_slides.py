@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a 3-slide financial summary -> Synapep_Financial_Slides.pptx.
+"""Build a 3-slide financial summary -> GenApep_Financial_Slides.pptx.
 
 Three slides off the bottom-up operating model: (1) Assumptions, (2) Baseline P&L,
 (3) ROI / returns. Numbers single-sourced from build_financials (P, pnl, YEARS, ...).
@@ -268,7 +268,7 @@ textbox(s, 0.7, 6.95, 12.0, 0.4,
         [("Illustrative only — not investment advice. Equity ROI excludes dilution from future rounds; "
           "exit multiples are scenario placeholders.", 11, False, GREY)])
 
-prs.save(DIR + "Synapep_Financial_Slides.pptx")
-print("Saved Synapep_Financial_Slides.pptx — %d slides" % len(prs.slides._sldIdLst))
+prs.save(DIR + "GenApep_Financial_Slides.pptx")
+print("Saved GenApep_Financial_Slides.pptx — %d slides" % len(prs.slides._sldIdLst))
 print("cum EBITDA $%.2fM | 2030 EBITDA $%.2fM | own %.1f%% | payback %s" %
       (m(cum_eb), m(eb2030), OWN * 100, payback_year))

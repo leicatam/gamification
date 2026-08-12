@@ -1,4 +1,4 @@
-# Synapep — Financial Model (v0.4)
+# GenApep — Financial Model (v0.4)
 
 > Currency: USD. Model for the **AI-personalised aesthetic medical device** business: an
 > applicator **device** placed in clinics + recurring **personalised treatment kits**
@@ -71,7 +71,7 @@ partnerships — is deliberately **excluded** from the base P&L and treated as v
 The base P&L above is the **Korea-anchored** single-line view. A bottom-up **multi-market** model —
 the **same** Korean-developed device + CodeLife kit exported across 12 markets (no per-market
 product development) — is in [`multimarket-model.md`](./multimarket-model.md) /
-`Synapep_MultiMarket_Model.docx`. Because the product (and therefore unit economics) is identical
+`GenApep_MultiMarket_Model.docx`. Because the product (and therefore unit economics) is identical
 everywhere, the uplift comes purely from **distribution reach**:
 
 | 2030 metric | Korea-only base | Multi-market: Conservative | Base | Upside |

@@ -55,7 +55,7 @@ def table(doc, headers, rows, widths=None):
 
 
 def title(doc, line1, line2):
-    para(doc, "SYNAPEP", size=26, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, space_after=2)
+    para(doc, "GENAPEP", size=26, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, space_after=2)
     para(doc, line1, size=15, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, space_after=2)
     para(doc, line2, size=9, italic=True, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, space_after=14)
 
@@ -110,8 +110,8 @@ def build_scorecard():
     bullet(doc, " $5–6M pre, milestone-gated (not $7M, not the AI/data-company multiple yet).", "Price —")
     bullet(doc, " produce the validation pack (items 1, 2, 8) plus the stability dossier + COGS BOM "
                 "(item 3). Do that and amber→green across the board.", "Single biggest unlock —")
-    doc.save(DIR + "Synapep_DD_Scorecard.docx")
-    print("Saved Synapep_DD_Scorecard.docx")
+    doc.save(DIR + "GenApep_DD_Scorecard.docx")
+    print("Saved GenApep_DD_Scorecard.docx")
 
 
 # ---------------------------------------------------------------- Term sheet
@@ -124,7 +124,7 @@ def build_termsheet():
               "v0.4 financials.", italic=True, size=9.5)
     doc.add_heading("1. Headline terms", level=2)
     table(doc, ["Term", "Proposed"],
-          [["Company", "Synapep (JV — WBI 70% / Eyesel 30%; IP-owning entity)"],
+          [["Company", "GenApep (JV — WBI 70% / Eyesel 30%; IP-owning entity)"],
            ["Investor", "[Lead investor / SPV]"],
            ["Instrument", "Post-money SAFE (YC post-money form, modified for milestone tranches)"],
            ["Total amount", "US$1,000,000, funded in two tranches"],
@@ -145,10 +145,10 @@ def build_termsheet():
               "or renegotiated. Both tranches share the same cap/discount.", italic=True, size=9.5)
     doc.add_heading("3. Conditions precedent (before Tranche 1)", level=2)
     bullet(doc, " executed assignment or exclusive license of WBI IP (CodeLife.AI, IT-EXO®, SynExo, "
-                "know-how, patents/trademarks) into Synapep, with a contribution schedule.", "IP into the JV —")
+                "know-how, patents/trademarks) into GenApep, with a contribution schedule.", "IP into the JV —")
     bullet(doc, " independent verification of a representative sample of the \"US$25M+\" sales at "
                 "entity/product/channel level.", "Commercial verification —")
-    bullet(doc, " a clinic-contract template embedding consent, de-identification and Synapep "
+    bullet(doc, " a clinic-contract template embedding consent, de-identification and GenApep "
                 "data-ownership/usage rights.", "Data rights —")
     bullet(doc, " clean cap table, JV agreement, good standing, customary reps & warranties.", "Corporate —")
     doc.add_heading("4. Milestones (release Tranche 2)", level=2)
@@ -156,7 +156,7 @@ def build_termsheet():
                 "clinic format and batch reproducibility, plus a bottom-up COGS BOM with per-batch "
                 "QC-release costs.", "Stability dossier + COGS —")
     bullet(doc, " 5–10 anchor clinics live with documented kits/clinic/month and reorder evidence.", "Anchor clinics —")
-    bullet(doc, " one prospective Synapep protocol readout on the chosen beachhead indication.", "Clinical readout —")
+    bullet(doc, " one prospective GenApep protocol readout on the chosen beachhead indication.", "Clinical readout —")
     bullet(doc, " a classification memo (Korea + first export market) confirming the topical/microneedling "
                 "device path holds for the personalisation envelope; IM/injectable on a separate pathway.", "Regulatory —")
     doc.add_heading("5. Use of funds (tied to milestones)", level=2)
@@ -182,8 +182,8 @@ def build_termsheet():
     para(doc, "Prepared as a planning artifact reflecting the independent technical-investor evaluation. "
               "Final terms subject to definitive documentation and the Company's counsel review.",
          italic=True, size=9, color=GREY)
-    doc.save(DIR + "Synapep_Term_Sheet.docx")
-    print("Saved Synapep_Term_Sheet.docx")
+    doc.save(DIR + "GenApep_Term_Sheet.docx")
+    print("Saved GenApep_Term_Sheet.docx")
 
 
 # ---------------------------------------------------------------- Export strategy
@@ -242,8 +242,8 @@ def build_export():
               "reliance & ASEAN AMDD/CSDT (Cisema, Pacific Bridge); Thailand/Singapore reliance (Asia "
               "Actual); SFDA/UAE reliance (Emergo by UL, GSL); exosome regulation (FDA; EU Annex II; "
               "Korea MFDS); PDRN/Rejuran precedent (industry press).", italic=True, size=9, color=GREY)
-    doc.save(DIR + "Synapep_Export_Strategy.docx")
-    print("Saved Synapep_Export_Strategy.docx")
+    doc.save(DIR + "GenApep_Export_Strategy.docx")
+    print("Saved GenApep_Export_Strategy.docx")
 
 
 if __name__ == "__main__":

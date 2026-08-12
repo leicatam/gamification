@@ -1,4 +1,4 @@
-# Synapep — International Expansion / Export Strategy
+# GenApep — International Expansion / Export Strategy
 
 > KFDA/MFDS registration as an **export springboard**, not a Korea-only play. Scope: **Tier 1
 > (ASEAN + Hong Kong)** and **Tier 2 (GCC + Greater China)**. Tier 3 (EU/US/Japan) is long-term
@@ -26,7 +26,7 @@ each market takes the SKUs whose claims/classification fit, on the same Korean m
 
 **Precedent that de-risks this:** Korean salmon-**PDRN** skin boosters (e.g., Rejuran,
 MFDS-approved 2014) used Korean approval to export across SEA, the Middle East and Europe — a
-near-exact analog to Synapep's model.
+near-exact analog to GenApep's model.
 
 ## 2. Tier 1 — ASEAN + Hong Kong (reliance-led, fastest)
 

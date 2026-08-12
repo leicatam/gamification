@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Word version of the investor deck -> Synapep_Investor_Deck.docx (one section per slide).
+"""Word version of the investor deck -> GenApep_Investor_Deck.docx (one section per slide).
 Numbers single-sourced from build_multimarket_model (RESULTS)."""
 from docx import Document
 from docx.shared import Pt, RGBColor, Inches
@@ -64,7 +64,7 @@ def TBL(d, headers, rows, widths=None):
 
 d = init()
 # Cover
-P(d, "SYNAPEP", size=28, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
+P(d, "GENAPEP", size=28, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
 P(d, "Investor Deck — Word version", size=15, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
 P(d, "AI-Personalised Aesthetic Medical Devices · Korea-anchored, export-led", size=11.5,
   italic=True, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
@@ -180,5 +180,5 @@ P(d, "Base case ~$%.0fM revenue / ~$%.0fM EBITDA by 2030 across 12 markets on on
                                                 R["Base"][0][2030]["ebitda"] / 1e6),
   size=12, color=GREY)
 
-d.save(DIR + "Synapep_Investor_Deck.docx")
-print("Saved Synapep_Investor_Deck.docx")
+d.save(DIR + "GenApep_Investor_Deck.docx")
+print("Saved GenApep_Investor_Deck.docx")

@@ -1,4 +1,4 @@
-# Synapep — Operating Financial Model (bottom-up)
+# GenApep — Operating Financial Model (bottom-up)
 
 > 5-year plan from **July 2026** (prep, training, regulatory applications, cGMP/ISO). **First production readiness February 2027.** Vial-based razor-and-blades consumable model. Built from founder operating inputs; 2028–2030 clinic counts are assumptions. Illustrative; USD.
 
@@ -36,8 +36,8 @@
 
 ## Unit economics
 
-- **Per vial (Synapep):** price $32.50 − cost $7 = **$25.50 GP (78.5%)**.
-- **Per clinic / year (Synapep):** 1200 vials × $32.50 = **$39,000 revenue / $30,600 GP**.
+- **Per vial (GenApep):** price $32.50 − cost $7 = **$25.50 GP (78.5%)**.
+- **Per clinic / year (GenApep):** 1200 vials × $32.50 = **$39,000 revenue / $30,600 GP**.
 - **Channel (clinic):** buys $30–35, sells end-user $60–70 → ~50% clinic margin (~$3,250/month gross per clinic).
 
 ## Price sensitivity (2030 & 5-yr cumulative)

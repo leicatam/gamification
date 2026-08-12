@@ -1,13 +1,13 @@
-# Synapep Labs — Model Clarification (exosome & synthetic-biotech aesthetics)
+# GenApep Labs — Model Clarification (exosome & synthetic-biotech aesthetics)
 
-> Grounds the Synapep Labs model in how exosome / synthetic-biotech aesthetic products are actually
+> Grounds the GenApep Labs model in how exosome / synthetic-biotech aesthetic products are actually
 > regulated and commercialised, and maps the three engines to that reality. Research-backed and
 > deliberately honest about what is validated vs a company working assumption. Illustrative; verify
 > each pathway with Korean regulatory counsel.
 
 ## 1. The model in one paragraph
 
-Synapep Labs is a **physician co-development lab**: elite Korean aesthetic doctors co-design
+GenApep Labs is a **physician co-development lab**: elite Korean aesthetic doctors co-design
 **purpose-built products** (personalised to the *physician's clinical case*, not the patient),
 which are registered fast and cheaply via a **regulatory modification engine**, then spread through
 a **benefit-shared KOL flywheel**. It runs co-equal with an **AI/data moat** (CodeLife.AI + a
@@ -64,7 +64,7 @@ target. The defensible structure (US OIG practice + **Korea's anti-rebate / K-Su
 - **Documented & disclosed** — written co-development/IP agreements, transparency filings.
 
 Framed this way, Engine 3 is an **FMV co-invention royalty**, not a usage rebate — a growth flywheel
-that survives diligence. Framed loosely, it is a liability. Synapep builds it **compliance-first**.
+that survives diligence. Framed loosely, it is a liability. GenApep builds it **compliance-first**.
 
 ## 5. How the three engines map to the landscape
 

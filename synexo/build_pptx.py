@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the investor deck -> Synapep_Investor_Deck.pptx.
+"""Build the investor deck -> GenApep_Investor_Deck.pptx.
 
 Graphic-driven, large-type deck. Numbers single-sourced from build_multimarket_model (RESULTS).
 Main-body text floor 14pt (target 16+); only page numbers stay smaller. Rich vector graphics
@@ -143,7 +143,7 @@ rect(s, 0, 7.22, 13.333, 0.28, ACCENT)
 for (cx, cy, d, col) in [(11.4, 1.5, 2.6, DARK2), (12.2, 5.6, 1.8, DARK2), (10.6, 6.4, 1.0, ACCENT)]:
     o = rect(s, cx, cy, d, d, col, shape=MSO_SHAPE.OVAL)
 rect(s, 0.95, 2.55, 0.2, 1.9, ACCENT)
-textbox(s, 1.35, 2.45, 9.5, 1.3, [("SYNAPEP", 56, True, WHITE)])
+textbox(s, 1.35, 2.45, 9.5, 1.3, [("GENAPEP", 56, True, WHITE)])
 textbox(s, 1.4, 3.85, 9.5, 0.9, [("AI-Personalised Aesthetic Medical Devices", 26, False, SKY)])
 textbox(s, 1.4, 4.75, 9.5, 0.6, [("Korea-anchored, export-led  ·  Investor Deck", 17, False,
                                   RGBColor(0x9F, 0xB6, 0xCB))])
@@ -203,7 +203,7 @@ fill_text(band, [("Devices + kits = the revenue wedge and the data-capture layer
                   True, NAVY)])
 
 # =================================================================== THREE ENGINES
-s = slide(); header(s, "Synapep Labs — three engines", 0, "Moat B, in detail")
+s = slide(); header(s, "GenApep Labs — three engines", 0, "Moat B, in detail")
 card(s, 0.7, 1.6, 3.85, 3.95, "1 · KOL co-development lab",
      "Korea's world-class physicians co-design products from the doctor's clinical perspective. "
      "Doctor-personalised, not patient-personalised. CodeLife accelerates each design.",
@@ -464,5 +464,5 @@ textbox(s, 1.4, 3.95, 10.8, 1.3,
 textbox(s, 1.4, 5.9, 10.8, 0.7, [("$1.0M milestone-gated kickoff · $6.0M cap · 20% discount", 18,
                                   True, WHITE)])
 
-prs.save(DIR + "Synapep_Investor_Deck.pptx")
-print("Saved Synapep_Investor_Deck.pptx — %d slides" % len(prs.slides._sldIdLst))
+prs.save(DIR + "GenApep_Investor_Deck.pptx")
+print("Saved GenApep_Investor_Deck.pptx — %d slides" % len(prs.slides._sldIdLst))

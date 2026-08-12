@@ -1,8 +1,8 @@
-# Synapep — Investor Teaser & Pitch Outline (v0.4)
+# GenApep — Investor Teaser & Pitch Outline (v0.4)
 
 ## One-page teaser
 
-**Synapep** — AI-personalised regenerative aesthetic medicine. CodeLife.AI lets physicians
+**GenApep** — AI-personalised regenerative aesthetic medicine. CodeLife.AI lets physicians
 configure peptide microneedling/IM treatment kits to each clinical purpose, delivered as
 registered medical devices.
 
@@ -21,7 +21,7 @@ registered medical devices.
 
 | # | Slide | Content |
 |---|-------|---------|
-| 1 | Title | Synapep — AI-personalised regenerative aesthetic medicine |
+| 1 | Title | GenApep — AI-personalised regenerative aesthetic medicine |
 | 2 | Problem | Generalised injectables (HA/botox) aren't personalised; physicians want purpose-built, outcome-driven treatments |
 | 3 | Solution | CodeLife.AI-configured peptide microneedling/IM kits as registered devices |
 | 4 | AI moat & data flywheel | Peptides that outperform generalised products; AI-QA; data → better model |

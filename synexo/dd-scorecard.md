@@ -1,6 +1,6 @@
-# Synapep — Investor DD Scorecard (technical investor lens)
+# GenApep — Investor DD Scorecard (technical investor lens)
 
-> One-page diligence read of the **validation-led** Synapep plan, scored by an investor with a
+> One-page diligence read of the **validation-led** GenApep plan, scored by an investor with a
 > **chemical-engineering** background entering **aesthetic medicine**. RAG = Red / Amber / Green.
 > Illustrative diligence aid, not investment advice. Figures per `financial-model.md` (v0.4).
 

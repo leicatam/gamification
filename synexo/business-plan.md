@@ -1,4 +1,4 @@
-# Synapep — Business Plan (Draft v0.4)
+# GenApep — Business Plan (Draft v0.4)
 
 > Prepared 2026-06-06, grounded in the user's Drive materials (`context-from-drive.md`) and
 > market/regulatory research. Educational/illustrative draft for internal planning; not an offer
@@ -6,7 +6,7 @@
 
 ## 1. Executive summary
 
-**Synapep Labs** is a **physician co-development lab** for regenerative aesthetic medicine. Elite,
+**GenApep Labs** is a **physician co-development lab** for regenerative aesthetic medicine. Elite,
 globally competitive **Korean aesthetic doctors** bring their clinical experience into the lab and
 **co-design purpose-built products** — personalised to the **physician's clinical purpose/case,
 not the individual patient**. Each design is powered by **CodeLife.AI** (a proprietary
@@ -41,7 +41,7 @@ medicine** sitting on a **portfolio of doctor-originated SKUs**.
 
 ## 2. Two co-equal moats
 
-Synapep Labs is defensible on **two fronts at once** — an AI/data moat *and* a physician-network +
+GenApep Labs is defensible on **two fronts at once** — an AI/data moat *and* a physician-network +
 regulatory-process moat. Either alone is copyable; together they compound.
 
 **Moat A — AI engine & data flywheel.** CodeLife.AI designs personalised peptides engineered to
@@ -64,10 +64,10 @@ because it is a *relationship and process* asset, not just a formulation.
 botox — which remain ~$5–6.5B and still growing. See `model-clarification.md` for how the model
 maps to the exosome / synthetic-biotech aesthetics landscape and its regulatory reality.
 
-## 2b. The Synapep Labs model — three engines
+## 2b. The GenApep Labs model — three engines
 
 **Engine 1 — KOL co-development lab (doctor-personalised, not patient-personalised).** Korea's
-aesthetic physicians are world-class and intensely competitive on quality and service. Synapep
+aesthetic physicians are world-class and intensely competitive on quality and service. GenApep
 Labs invites them to **co-develop products from the doctor's clinical perspective** — a variant
 tuned to a particular case/purpose a physician repeatedly faces. The asset is the **physician
 network + a structured co-development pipeline**; CodeLife.AI accelerates each design.
@@ -84,7 +84,7 @@ regulatory development.
 
 **Engine 3 — Doctor-driven KOL flywheel, benefit-shared (compliance-first).** Because each SKU is
 built for a specific clinical case, the **requesting physician** is its most credible champion and
-drives adoption among peers — Synapep's lowest-cost, highest-trust go-to-market. The inventing
+drives adoption among peers — GenApep's lowest-cost, highest-trust go-to-market. The inventing
 physician shares in the economics **as an arm's-length royalty for genuine IP co-invention at fair
 market value**, **decoupled from that physician's own usage/volume**, with written
 co-development/IP agreements, documented inventorship, and disclosure. This structure is designed
@@ -140,7 +140,7 @@ injectable** line is a separate **drug/biologic** track and must not gate launch
 
 - **Customers:** aesthetic/derm physicians & clinics — Korea first, then Hong Kong + export.
 - **Engine:** the **requesting physician** co-invents a SKU for a case they repeatedly face, then
-  champions it to peers; Synapep shares economics via an **FMV IP royalty decoupled from that
+  champions it to peers; GenApep shares economics via an **FMV IP royalty decoupled from that
   doctor's usage** (compliance-first; §2b, Risks). This is lower-cost and higher-trust than a cold
   salesforce — peer-to-peer adoption among elite KOLs.
 - **Razor-and-blades:** place/sell the applicator device, then earn recurring kit revenue across a
@@ -193,16 +193,16 @@ lead and a data engineer first (2026); scale annotation and MLOps as clinic data
   products → more clinics → more data. The dataset, not the code, is the durable moat.
 - **Governance:** consent, de-identification, and Korea/HK data-protection compliance; SaMD-aware
   model controls with the physician in the loop.
-- **Investor read:** this is the line item that converts Synapep from a medtech story (Lens A)
+- **Investor read:** this is the line item that converts GenApep from a medtech story (Lens A)
   into an AI/data-company story (Lens B) and justifies institutional-AI capital.
 
 ## 8. Corporate structure & funding
 
 JV — **WBI 70%** (contributes CodeLife.AI / IT-EXO / SynExo IP + R&D) / **Eyesel 30%** (the
-manufacturing entity). Synapep owns/co-owns the platform and controls production. Distributors
+manufacturing entity). GenApep owns/co-owns the platform and controls production. Distributors
 (e.g. NeuNova USA) are separate, non-consolidated, arm's-length customers.
 
-**Use of $1.0M kickoff:** $500K Synapep Lab/registration + $600K running capital through launch.
+**Use of $1.0M kickoff:** $500K GenApep Lab/registration + $600K running capital through launch.
 Likely **Series A in 2028** to fund multi-market registration, clinical salesforce, and the
 AI/data team. See `valuation.md` (two lenses; $5–7M pre, $6M midpoint).
 
@@ -259,13 +259,13 @@ A chemical-engineer investor entering aesthetics will press these. Pre-empting t
 | **COGS needs a bottom-up BOM.** COGS is top-down (20%×EXW + $4.50). | Publish a **bottom-up BOM** incl. per-batch QC-release cost; treat early-year margins as lower until scale. |
 | **Personalisation vs "same raw materials" is a contradiction.** Meaningful AI personalisation that changes the active breaks the device fast-path and the batch-economics. | Personalisation lives in a **pre-cleared configuration envelope** (delivery, depth, concentration within range, option menu) — documented and defended as *both* regulatorily clean *and* clinically differentiating. |
 | **Exosomes are a regulatory/characterisation minefield.** Claims are restricted (Korea ad ban; EU human-exosome ban; US FDA warnings). | Lead with **non-human (salmon/synthetic) origin**; provide **COA, particle/potency/purity/stability/batch-repeatability**; market on function, not unsubstantiated medical claims. |
-| **"$25M exposure" is weasel-phrased.** It aggregates affiliated entities and may not be *this* product's demand. | Re-present at **entity/product/channel level** with reorder data in the validation pack; weight it as market signal, not Synapep revenue. |
+| **"$25M exposure" is weasel-phrased.** It aggregates affiliated entities and may not be *this* product's demand. | Re-present at **entity/product/channel level** with reorder data in the validation pack; weight it as market signal, not GenApep revenue. |
 | **"Own large model" overreaches.** A 2→12 FTE team can't build a foundation model; aesthetic outcomes are noisy. | Reframe as a **structured, consented outcomes dataset + decision-support analytics**; the moat is the data + **clinic data-rights clauses**, not a "large model." |
 | **Clinic ramp is aggressive.** 0→150 clinics in year one; the plan itself calls 150 "upside." | Rebuild the base case off **anchor-clinic actuals** (real kits/clinic/month + reorder cohorts) before scaling capital. |
 
 ## 13. International expansion (KFDA as an export springboard)
 
-Synapep is **not a Korea-only play**: a Korean MFDS registration anchors a **reliance-led export**
+GenApep is **not a Korea-only play**: a Korean MFDS registration anchors a **reliance-led export**
 strategy. Full detail in `export-strategy.md`. Two-speed thesis — the **applicator device** travels
 widely on the Korean technical file; the **peptide/exosome kit** is wrapped **per market** (cosmetic
 vs device vs drug), leaning on **salmon/synthetic origin** and strict claim discipline.

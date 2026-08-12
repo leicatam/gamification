@@ -12,7 +12,7 @@ Three scenarios via a single switch:
   - Upside       : faster ramp, higher price/utilisation
 
 Importable: SCENARIOS, ORDER, YEARS, BASE_CLINICS, RESULTS, kit_gm(), k(), fmt().
-Run as a script to (re)generate multimarket-model.csv/.md and Synapep_MultiMarket_Model.docx.
+Run as a script to (re)generate multimarket-model.csv/.md and GenApep_MultiMarket_Model.docx.
 """
 from docx import Document
 from docx.shared import Pt, RGBColor, Inches
@@ -136,7 +136,7 @@ def _table(doc, headers, rows, widths=None):
 # ------------------------------------------------------------------ outputs
 def write_csv():
     with open(DIR + "multimarket-model.csv", "w") as f:
-        f.write("Synapep Multi-Market Model — SAME Korean-developed product across all markets (USD)\n")
+        f.write("GenApep Multi-Market Model — SAME Korean-developed product across all markets (USD)\n")
         f.write("Three scenarios. Distributors arm's-length / non-consolidated; revenue at ex-factory.\n\n")
         for scn in ORDER:
             s = SCENARIOS[scn]; res = RESULTS[scn][0]; gmk = RESULTS[scn][2]
@@ -161,7 +161,7 @@ def _row(label, vals):
 
 def write_md():
     with open(DIR + "multimarket-model.md", "w") as f:
-        f.write("# Synapep — Multi-Market Revenue Model (3 scenarios)\n\n")
+        f.write("# GenApep — Multi-Market Revenue Model (3 scenarios)\n\n")
         f.write("> **Same product, more markets.** One product family — the applicator **device** + "
                 "**CodeLife-configured peptide/exosome kit** developed for **Korean physicians** — is "
                 "exported **as-is**. Personalisation is by *physician purpose within the same approved "
@@ -215,7 +215,7 @@ def write_md():
 
 def write_docx():
     doc = _new_doc()
-    _para(doc, "SYNAPEP", size=26, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
+    _para(doc, "GENAPEP", size=26, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
     _para(doc, "Multi-Market Revenue Model — Conservative / Base / Upside", size=14, color=GREY,
           align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
     _para(doc, "Same Korean-developed personalised product family, exported across markets. Illustrative.",
@@ -264,7 +264,7 @@ def write_docx():
                "product, so the swing is distribution reach, not R&D. Per-market ramps are assumptions "
                "pending anchor-clinic evidence; kit regulatory class varies by market; distribution is "
                "cold-chain-free (ambient/2–8 °C stabilised format).", italic=True, size=9, color=GREY)
-    doc.save(DIR + "Synapep_MultiMarket_Model.docx")
+    doc.save(DIR + "GenApep_MultiMarket_Model.docx")
 
 
 def main():
@@ -273,7 +273,7 @@ def main():
         r = RESULTS[scn][0][2030]
         print("%-12s 2030: clinics %d, rev $%.1fM, GP $%.1fM, EBITDA $%.1fM, GM %.1f%%"
               % (scn, r["cum"], r["tot_rev"] / 1e6, r["tot_gp"] / 1e6, r["ebitda"] / 1e6, r["gm"] * 100))
-    print("Saved multimarket-model.csv/.md, Synapep_MultiMarket_Model.docx")
+    print("Saved multimarket-model.csv/.md, GenApep_MultiMarket_Model.docx")
 
 
 if __name__ == "__main__":

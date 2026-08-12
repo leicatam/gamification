@@ -1,4 +1,4 @@
-# Synapep — Indicative Term Sheet (Milestone-Gated SAFE)
+# GenApep — Indicative Term Sheet (Milestone-Gated SAFE)
 
 > **NON-BINDING** summary of proposed terms for discussion only. Not an offer of securities and
 > not legal, tax, or investment advice. Except for *No-Shop* and *Confidentiality* (binding when
@@ -9,7 +9,7 @@
 
 | Term | Proposed |
 |------|----------|
-| **Company** | Synapep (JV — WBI 70% / Eyesel 30%; IP-owning entity) |
+| **Company** | GenApep (JV — WBI 70% / Eyesel 30%; IP-owning entity) |
 | **Investor** | [Lead investor / SPV] |
 | **Instrument** | **Post-money SAFE** (Y Combinator post-money form, modified for milestone tranches) |
 | **Total amount** | **US$1,000,000**, funded in **two tranches** |
@@ -34,13 +34,13 @@
 ## 3. Conditions precedent (before Tranche 1)
 
 1. **IP into the JV** — executed assignment or **exclusive license** of WBI IP (CodeLife.AI,
-   IT-EXO®, SynExo, formulation know-how, relevant patents/trademarks) into Synapep, with a
+   IT-EXO®, SynExo, formulation know-how, relevant patents/trademarks) into GenApep, with a
    contribution schedule.
 2. **Commercial verification** — independent verification of a representative **sample of the
    "US$25M+" sales** at entity/product/channel level (invoices, distributor statements or
    management accounts).
 3. **Data rights** — a **clinic-contract template** embedding consent, de-identification and
-   Synapep data-ownership/usage rights (the basis of the AI moat).
+   GenApep data-ownership/usage rights (the basis of the AI moat).
 4. **Corporate** — clean cap table, JV agreement, good standing, and customary reps & warranties.
 5. **Physician co-development & compliance** — a written **physician co-development / IP-royalty
    framework** structured as **FMV royalty for genuine IP co-invention, decoupled from the
@@ -53,7 +53,7 @@
    **plus a bottom-up COGS bill of materials** with per-batch QC-release costs.
 2. **Anchor clinics** — **5–10 anchor clinics live** with documented **kits/clinic/month and
    reorder** evidence.
-3. **Clinical readout** — one **prospective Synapep protocol** readout on the chosen beachhead
+3. **Clinical readout** — one **prospective GenApep protocol** readout on the chosen beachhead
    indication (e.g., hair/scalp or post-procedure recovery).
 4. **Regulatory** — a **classification + modification-engine memo** (Korea + first export market)
    confirming the device path and the **functional-cosmetic/quasi-drug** route for the kits,

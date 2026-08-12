@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the comprehensive investor report -> Synapep_Comprehensive_Report.docx.
+"""Build the comprehensive investor report -> GenApep_Comprehensive_Report.docx.
 
 Single-sources all financials from build_multimarket_model (RESULTS) so the report, the model
 doc and the deck never drift.
@@ -69,7 +69,7 @@ def usd_m(scn, year, key): return "$%.1fM" % (R[scn][0][year][key] / 1e6)
 d = doc_init()
 
 # ---------------- Cover
-P(d, "SYNAPEP", size=30, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
+P(d, "GENAPEP", size=30, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
 P(d, "Comprehensive Investor Report", size=17, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
 P(d, "AI-Personalised Aesthetic Medical Devices — Korea-anchored, export-led",
   size=12, italic=True, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=20)
@@ -81,7 +81,7 @@ d.add_page_break()
 
 # ---------------- 1 Executive summary
 H1(d, "1. Executive summary")
-P(d, "Synapep Labs is a physician co-development lab for regenerative aesthetic medicine. Elite "
+P(d, "GenApep Labs is a physician co-development lab for regenerative aesthetic medicine. Elite "
      "Korean aesthetic doctors co-design purpose-built products (personalised to the physician's "
      "clinical case, not the patient): an applicator device plus recurring CodeLife-configured "
      "peptide/exosome kits. Each doctor request becomes a registered SKU via a fast/cheap regulatory "
@@ -113,7 +113,7 @@ B(d, " produce the validation pack plus the stability dossier + COGS BOM; stand 
 H1(d, "2. Company & market opportunity")
 B(d, " medical aesthetics ≈ $17–18.5B (2024), ~10–13% CAGR, → ~$56B by 2033; injectables >40% of "
      "revenue. Korea is a global aesthetics hub; Hong Kong a gateway.", "Market —")
-B(d, " commodity injectables (HA, botox) are not displaced (~$5–6.5B, still growing). Synapep is a "
+B(d, " commodity injectables (HA, botox) are not displaced (~$5–6.5B, still growing). GenApep is a "
      "new adjacent regenerative category, AI-personalised by physician purpose.", "Positioning —")
 B(d, " JV — WBI 70% (IP: CodeLife.AI, IT-EXO®/SynExo, R&D) / Eyesel 30% (manufacturing); valued "
      "standalone at ex-factory; distributors arm's-length / non-consolidated.", "Structure —")
@@ -140,7 +140,7 @@ NB(d, "'$25M exposure': re-present at entity/product/channel level; treat as mar
 
 # ---------------- 4 Business model
 H1(d, "4. Business model — two co-equal moats")
-P(d, "Synapep Labs is a physician co-development lab, defensible on two fronts at once. Either "
+P(d, "GenApep Labs is a physician co-development lab, defensible on two fronts at once. Either "
      "moat alone is copyable; together they compound. Devices/kits are the revenue wedge and the "
      "data-capture layer.")
 B(d, " CodeLife.AI designs personalised peptides engineered to outperform generalised products; "
@@ -287,5 +287,5 @@ for t in ["Verify the $25M at entity/product/channel level (validation pack).",
           "Round strategy: lean $1M seed (Lens A) vs a larger institutional-AI round (Lens B)."]:
     B(d, " " + t)
 
-d.save(DIR + "Synapep_Comprehensive_Report.docx")
-print("Saved Synapep_Comprehensive_Report.docx")
+d.save(DIR + "GenApep_Comprehensive_Report.docx")
+print("Saved GenApep_Comprehensive_Report.docx")
