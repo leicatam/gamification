@@ -516,6 +516,7 @@ function newSession(){
     skierLane:0, vx:0, obstacles:[], coinsArr:[], flakes:[], scenery:[], spray:[],
     onTrailT:0, offTrailT:0, avoided:0, spawned:0,
     lastHitT:0, comboMax:1, dodges:0, coinScore:0, coinsMissed:0, coinsSpawned:0,
+    _inpReset:(INP.keys=INP.touch=INP.tilt=INP.pad=0),
     obFactor:1.0, flashUntil:0, gameOver:false, endReason:'', goalReached:false,
     lastEval:0, evalWindow:{hits:0, avoided:0, spawned:0, coins:0},
     stateChanges:[], balSamples:[]
@@ -542,6 +543,11 @@ function curBalance(){
 
 /* ============ INPUT ============ */
 let padIndex=null, keyDir=0, touchDir=0, tiltDir=0, tiltOn=false;
+const INP={keys:0,touch:0,tilt:0,pad:0};
+function inpMode(){ const e=Object.entries(INP).filter(x=>x[1]>0);
+  if(!e.length) return 'none';
+  e.sort((a,b)=>b[1]-a[1]);
+  return e[0][0]+(e.length>1?'+':''); }
 window.addEventListener('gamepadconnected', e=>{ padIndex=e.gamepad.index; padUI(true, e.gamepad.id); });
 window.addEventListener('gamepaddisconnected', ()=>{ padIndex=null; padUI(false); });
 function padUI(on, id){
@@ -556,6 +562,7 @@ function pollInput(){
     const gp=navigator.getGamepads()[padIndex];
     if(gp){
       let ax=gp.axes[0]||0;
+      if(Math.abs(ax)>0.3 && running) INP.pad++;
       if(Math.abs(ax)<DEADZONE) ax=0;
       if(gp.buttons[14]&&gp.buttons[14].pressed) ax=-1;
       if(gp.buttons[15]&&gp.buttons[15].pressed) ax=1;
@@ -572,20 +579,20 @@ document.getElementById('pid').addEventListener('change',()=>{
   const last=+localStorage.getItem('alpine_last_sess_'+pid)||0;
   if(last>0) document.getElementById('sessno').value=String(Math.min(7,last+1));
 });
-document.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft')keyDir=-1; if(e.key==='ArrowRight')keyDir=1; });
+document.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'){keyDir=-1;INP.keys++;} if(e.key==='ArrowRight'){keyDir=1;INP.keys++;} });
 document.addEventListener('keyup',e=>{ if(e.key==='ArrowLeft'&&keyDir<0)keyDir=0; if(e.key==='ArrowRight'&&keyDir>0)keyDir=0; });
 function canvasSide(ev){
   const r=cv.getBoundingClientRect();
   const x=(ev.touches&&ev.touches.length?ev.touches[0].clientX:ev.clientX)-r.left;
   return x < r.width/2 ? -1 : 1;
 }
-['touchstart','touchmove'].forEach(t=>cv.addEventListener(t,e=>{ e.preventDefault(); audioInit(); touchDir=canvasSide(e); },{passive:false}));
+['touchstart','touchmove'].forEach(t=>cv.addEventListener(t,e=>{ e.preventDefault(); audioInit(); touchDir=canvasSide(e); INP.touch++; },{passive:false}));
 ['touchend','touchcancel'].forEach(t=>cv.addEventListener(t,e=>{ e.preventDefault(); if(!e.touches||e.touches.length===0) touchDir=0; },{passive:false}));
 cv.addEventListener('mousedown',e=>{ touchDir=canvasSide(e); });
 window.addEventListener('mouseup',()=>{ touchDir=0; });
 function bindSteer(id,dir){
   const b=document.getElementById(id);
-  const on=e=>{ e.preventDefault(); audioInit(); touchDir=dir; };
+  const on=e=>{ e.preventDefault(); audioInit(); touchDir=dir,INP.touch++; };
   const off=e=>{ e.preventDefault(); if(touchDir===dir) touchDir=0; };
   b.addEventListener('touchstart',on,{passive:false}); b.addEventListener('touchend',off,{passive:false});
   b.addEventListener('touchcancel',off,{passive:false});
@@ -603,7 +610,7 @@ document.getElementById('tiltBtn').onclick=async()=>{
     document.getElementById('tiltBtn').textContent = tiltOn? '📱 Tilt ON':'📱 Enable tilt';
     if(tiltOn && !window._tiltBound){
       window._tiltBound=true;
-      window.addEventListener('deviceorientation',e=>{
+      window.addEventListener('deviceorientation',e=>{ if(tiltOn&&running)INP.tilt++;
         if(!tiltOn){ tiltDir=0; return; }
         let g=e.gamma;
         if(typeof g!=='number') return;
@@ -1061,7 +1068,7 @@ function endRun(early){
     AI_DiffMult:+S.diff.toFixed(2),
     Reached_GameOver: S.gameOver? 'TRUE':'FALSE',
     Score:S.score, Combo_Max:S.comboMax, Dodges:S.dodges,
-    Coins_Missed:S.coinsMissed,
+    Coins_Missed:S.coinsMissed, Input_Mode:inpMode(),
     Post_FRA_Index:'', Notes:(S.zeroFail?'zero-failure':'classic')+'; cap='+S.cap+'s; end: '+(S.endReason||'unknown')+'; state changes='+S.stateChanges.length
   };
   const dl=document.getElementById('sumList'); dl.innerHTML='';
