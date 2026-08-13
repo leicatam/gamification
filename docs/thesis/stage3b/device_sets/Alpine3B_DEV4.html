@@ -342,6 +342,7 @@ const I18N={
   endHint:'Press "Play again" whenever you are ready.',
   endCoachOver:(m,c)=>`Three bumps ended this run at ${m} m — that happens to everyone! Every run teaches you the slope. Have another go!`,
   gOver:['Good try!','So close!','Nearly there!','Nice effort!'],
+  endProg:(lv,xp,c,t,dg)=>`⭐ Skier Level ${lv} · ${xp} XP · coins ${c}/${t} · ${dg} skill dodges`,
   endStatOver:(m,c)=>`${m} m skied · ${c} coins ×10 · three bumps ended the run`,
   fNext:"🔄 Next player on this device"
  },
@@ -396,6 +397,7 @@ const I18N={
   endHint:'準備好就按「再玩一局」。',
   endCoachOver:(m,c)=>`碰了三下,這一局在 ${m} 米結束——人人都會遇到!每一局都讓你更熟悉雪道。再來一局吧!`,
   gOver:['好嘗試!','就差一點!','幾乎成功!','不錯的努力!'],
+  endProg:(lv,xp,c,t,dg)=>`⭐ 滑雪等級 ${lv} · 累積 ${xp} XP · 金幣 ${c}/${t} · 靈巧閃避 ${dg}`,
   endStatOver:(m,c)=>`${m} 米 · ${c} 金幣 ×10 · 碰了三下結束`,
   fNext:"🔄 此裝置下一位玩家"
  },
@@ -450,6 +452,7 @@ const I18N={
   endHint:'准备好就按「再玩一局」。',
   endCoachOver:(m,c)=>`碰了三下,这一局在 ${m} 米结束——人人都会遇到!每一局都让你更熟悉雪道。再来一局吧!`,
   gOver:['好尝试!','就差一点!','几乎成功!','不错的努力!'],
+  endProg:(lv,xp,c,t,dg)=>`⭐ 滑雪等级 ${lv} · 累计 ${xp} XP · 金币 ${c}/${t} · 灵巧闪避 ${dg}`,
   endStatOver:(m,c)=>`${m} 米 · ${c} 金币 ×10 · 碰了三下结束`,
   fNext:"🔄 此设备下一位玩家"
  }
@@ -512,6 +515,7 @@ function newSession(){
     maxSpeed:0, diff: ((P3B&&P3B.arm)==='B') ? 0.85 : 0.60,
     skierLane:0, vx:0, obstacles:[], coinsArr:[], flakes:[], scenery:[], spray:[],
     onTrailT:0, offTrailT:0, avoided:0, spawned:0,
+    lastHitT:0, comboMax:1, dodges:0, coinScore:0, coinsMissed:0, coinsSpawned:0,
     obFactor:1.0, flashUntil:0, gameOver:false, endReason:'', goalReached:false,
     lastEval:0, evalWindow:{hits:0, avoided:0, spawned:0, coins:0},
     stateChanges:[], balSamples:[]
@@ -721,7 +725,7 @@ function spawn(dt){
       S.spawned++; S.evalWindow.spawned++;
     }
   }
-  if(Math.random()<0.9*dt){ S.coinsArr.push({lane:-0.8+1.6*Math.random(), z:VIEW_M, checked:false, ph:Math.random()*7}); }
+  if(Math.random()<0.9*dt){ S.coinsArr.push({lane:-0.8+1.6*Math.random(), z:VIEW_M, checked:false, ph:Math.random()*7}); S.coinsSpawned++; }
   if(Math.random()<8*dt){ S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02}); }
   if(Math.random()<2.2*dt){ S.scenery.push({side:Math.random()<0.5?-1:1, off:0.12+0.55*Math.random(), z:VIEW_M, kind:Math.random()<0.8?'tree':'rock', big:0.8+0.6*Math.random()}); }
 }
@@ -769,18 +773,22 @@ function step(dt){
       o.checked=true;
       if(Math.abs(o.lane-S.skierLane) < (o.type==='rock'?0.24:0.17)){
         S.hits++; S.evalWindow.hits++;
+        S.lastHitT=S.playT;              /* combo resets - nothing banked is lost */
         SND.bump(); S.flashUntil=S.playT+0.6;
         if(S.zeroFail){ easeAfterBump(); }
         else { S.livesLost++; if(S.livesLost>=3){ S.gameOver=true; S.endReason='three bumps'; } }
         return false;
-      } else { S.avoided++; S.evalWindow.avoided++; }
+      } else { S.avoided++; S.evalWindow.avoided++;
+        if(Math.abs(o.lane-S.skierLane)<0.45){ S.dodges++; } }
     }
     return o.z>-4;
   });
   S.coinsArr=S.coinsArr.filter(c=>{
     if(!c.checked && c.z<=skierZ+1.5){
       c.checked=true;
-      if(Math.abs(c.lane-S.skierLane)<0.20){ S.coins++; S.evalWindow.coins++; SND.coin(); return false; }
+      if(Math.abs(c.lane-S.skierLane)<0.20){ S.coins++; S.evalWindow.coins++;
+        S.coinScore+=10*curCombo(); SND.coin(); return false; }
+      else { S.coinsMissed++; }
     }
     return c.z>-4;
   });
@@ -790,6 +798,7 @@ function step(dt){
 
   if(S.arm!=='B' && S.playT - S.lastEval >= EVAL_INTERVAL_S){ S.lastEval=S.playT; agentEvaluate(); }
   if(S.balSamples.length < Math.floor(S.playT)){ S.balSamples.push(curBalance()); }
+  if(curCombo()>S.comboMax) S.comboMax=curCombo();
 
   // END CONDITION (v3.0): every run lasts the full time cap; the distance
   // goal is a mid-run bonus, not an early end
@@ -1001,7 +1010,7 @@ function draw(){
   document.getElementById('hudM').textContent='⏱ '+Math.max(0,(S.cap-S.playT)).toFixed(0)+' s   ×'+S.diff.toFixed(2);
   document.getElementById('hudR').textContent=
     (S.zeroFail?'':'💚'.repeat(Math.max(0,3-S.livesLost))+'  ')+
-    '🪙 '+S.coins+'   '+(S.coins*10+Math.round(S.dist))+' pts';
+    '🪙 '+S.coins+(curCombo()>1?' ×'+curCombo():'')+'   '+curScore()+' pts';
 }
 function loop(ts){
   if(!running) return;
@@ -1039,7 +1048,7 @@ function endRun(early){
   document.getElementById('endBtn').style.display='none';
   const avgBal = S.balSamples.length? S.balSamples.reduce((a,b)=>a+b,0)/S.balSamples.length : curBalance();
   const goalHit = !!S.goalReached;
-  S.score = S.coins*10 + Math.round(S.dist) + (goalHit?50:0);
+  S.score = curScore() + (goalHit?50:0);
   try{ if(S.pid && S.pid!=='UNSET') localStorage.setItem('alpine_last_sess_'+S.pid, String(S.sessNo)); }catch(e){}
   S.result={
     Participant_ID:S.pid, Session_No:S.sessNo,
@@ -1051,13 +1060,17 @@ function endRun(early){
     Max_Speed:+S.maxSpeed.toFixed(1),
     AI_DiffMult:+S.diff.toFixed(2),
     Reached_GameOver: S.gameOver? 'TRUE':'FALSE',
-    Score:S.score,
+    Score:S.score, Combo_Max:S.comboMax, Dodges:S.dodges,
+    Coins_Missed:S.coinsMissed,
     Post_FRA_Index:'', Notes:(S.zeroFail?'zero-failure':'classic')+'; cap='+S.cap+'s; end: '+(S.endReason||'unknown')+'; state changes='+S.stateChanges.length
   };
   const dl=document.getElementById('sumList'); dl.innerHTML='';
   for(const[k,v] of Object.entries(S.result)){ dl.insertAdjacentHTML('beforeend',`<dt>${k}</dt><dd>${v===''?'—':v}</dd>`); }
   /* --- Stage 3B: record the run and update participant-facing summary --- */
   S.result.Arm=S.arm; S.result.Lang=LANG;
+  P3B.xp=(P3B.xp||0)+S.score;
+  S.result.XP_Total=P3B.xp;
+  S.result.Skier_Level=skierLevel(P3B.xp);
   P3B.runs.push(S.result);
   P3B.states[String(S.sessNo)]=S.stateChanges;
   saveP3B();
@@ -1097,6 +1110,9 @@ function drawEndOverlay(goalHit){
   ctx.font='20px Verdana'; ctx.fillStyle='#22302B';
   ctx.fillText(S.gameOver? T('endStatOver')(Math.round(S.dist),S.coins)
     : T('endStat')(Math.round(S.dist),S.coins,goalHit), W/2, cy+180);
+  ctx.font='bold 19px Verdana'; ctx.fillStyle='#1F4A38';
+  ctx.fillText(T('endProg')(skierLevel(P3B.xp||0), (P3B.xp||0),
+    S.coins, S.coins+S.coinsMissed, S.dodges), W/2, cy+214);
   ctx.font='16px Verdana'; ctx.fillStyle='#6E6A5E';
   ctx.fillText(T('endHint'), W/2, cy+chh-26);
   // celebratory snow burst
@@ -1104,6 +1120,12 @@ function drawEndOverlay(goalHit){
   for(let i=0;i<26;i++){ const a=Math.random()*6.28, r=40+Math.random()*90;
     ctx.beginPath(); ctx.arc(W/2+Math.cos(a)*r*2, cy+70+Math.sin(a)*r*0.6, 2.5+Math.random()*2.5,0,7); ctx.fill(); }
 }
+
+/* ============ RPG-STYLE SCORING (v3.1): gains only, never deductions ============ */
+function curCombo(){ const c=S.playT-S.lastHitT; return c>=12?3:c>=6?2:1; }
+function curScore(){ return Math.round(S.dist)+S.coinScore+S.dodges*5; }
+function skierLevel(xp){ const th=[0,300,700,1200,1800,2600,3500,4600,6000,8000];
+  let l=1; for(let i=0;i<th.length;i++) if(xp>=th[i]) l=i+1; return l; }
 
 /* ============ EXPORT ============ */
 async function dlFile(name, text){
