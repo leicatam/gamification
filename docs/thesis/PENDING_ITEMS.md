@@ -307,6 +307,20 @@ STILL GATED before submission: Benny go-ahead; SS-293 camera-ready
 consent-statement check; exact HSEARS approval date (replaces
 "August 2026"); JMIR full consistency sweep.
 
+## A7. POINT-OF-DEPARTURE STORY (13 Aug 2026) — two citations awaited
+§1.1 now carries the full departure narrative as firm content:
+installation ~12 years pre-research [AUTHOR: exact year], decade of
+low utilisation vs InBody's Korean home-market experience [AUTHOR:
+citation], late-2023 evaluation start, supervisor's gamification
+inspiration, game development, and the manufacturer's own gamified-FRA
+early-dropout experience [AUTHOR: citation]. A0-COMPLIANT SPLIT: the
+FIAS turn stays OUT of Ch1 (it is the Stage-2 discovery); the
+author's aphorism ("the threat lives in the artefact... the
+abandonment is its observable shadow") is placed at the end of §9.3
+where FIAS talk is legitimate. AWAITING: (1) exact installation year;
+(2) Korean utilisation comparison citation; (3) InBody gamified-FRA
+experience citation — all three yellow-flagged in §1.1.
+
 ## A6. STAGE-2 INTERVIEW RECORDS — AWAITING AUTHOR (13 Aug 2026)
 The verdict-fear stance paraphrase ("game is fun... but I do not want
 it telling me where my health problems are") is STAGE-2 interview
