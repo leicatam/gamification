@@ -307,6 +307,27 @@ STILL GATED before submission: Benny go-ahead; SS-293 camera-ready
 consent-statement check; exact HSEARS approval date (replaces
 "August 2026"); JMIR full consistency sweep.
 
+## A6. STAGE-2 INTERVIEW RECORDS — AWAITING AUTHOR (13 Aug 2026)
+The verdict-fear stance paraphrase ("game is fun... but I do not want
+it telling me where my health problems are") is STAGE-2 interview
+content per the author - NOT Stage 1 (corrected in §9.3A; the stance
+mentions the game, so it could only postdate the gamified build).
+AUTHOR TO SUPPLY: the Stage-2 interview/field records for evidence/.
+⚠ RECONCILIATION REQUIRED on arrival: the thesis of record states the
+F4 interview protocol was DESIGNED, NOT ADMINISTERED (Appendix C
+title; Paper 2 Section X; JMIR equivalent), and describes the Stage-2
+qualitative record as after-game paper questionnaires plus field
+observation. If the supplied records are interviews, the
+designed-not-administered statements must be revisited with full
+provenance (who, when, consent basis); if they are questionnaire
+free-text/field notes, the §9.3A wording stays as-is and the records
+simply anchor the paraphrase. Do NOT amend the
+designed-not-administered record until the artifacts are verified.
+Also NEW in V37: §4.1A operating-practice paragraph (therapist-
+supported, demanding protocol, verdict consequences: prescribed
+training + restricted independent walking - author-supplied facility
+practice, pre-research archival context).
+
 ## A3. SCOPING DEFENCE — assessment vs training (decided 12 Aug 2026)
 The InBody FRA is an assess-then-train business model; the study covers
 the assessment gate only. DEFENCE = declare and justify, in the
