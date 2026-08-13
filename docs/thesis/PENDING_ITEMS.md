@@ -318,8 +318,14 @@ FIAS turn stays OUT of Ch1 (it is the Stage-2 discovery); the
 author's aphorism ("the threat lives in the artefact... the
 abandonment is its observable shadow") is placed at the end of §9.3
 where FIAS talk is legitimate. AWAITING: (1) exact installation year;
-(2) Korean utilisation comparison citation; (3) InBody gamified-FRA
-experience citation — all three yellow-flagged in §1.1.
+(2) InBody gamified-FRA experience citation — both yellow-flagged in
+§1.1. RESOLVED 13 Aug 2026 (author decision): NO utilisation
+comparison between Korean and Chinese markets is claimed — the
+published Korean record (Park et al. 2019; Kim et al. 2018) validates
+the instrument but reports no uptake rates. §1.1 now frames the
+contrast as an ASSUMPTION worth examining (silence reflects local
+deployment challenges, not an instrument defect), examined from Ch4
+onward. Web verification archived in commit message b5ea3fa.
 
 ## A6. STAGE-2 INTERVIEW RECORDS — AWAITING AUTHOR (13 Aug 2026)
 The verdict-fear stance paraphrase ("game is fun... but I do not want
