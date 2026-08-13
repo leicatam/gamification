@@ -101,6 +101,12 @@
     bottom:118px; background:rgba(251,247,239,.92); border:1px dashed var(--ok);
     border-radius:10px; padding:8px 12px; font-size:.95rem; pointer-events:none}
   body.playmode #coachFloat:empty{display:none}
+  #gameWrap{position:relative}
+  #runEndOvl{display:none; position:absolute; left:0; right:0; bottom:14%;
+    z-index:60; justify-content:center; align-items:center; gap:14px;
+    flex-wrap:wrap; padding:0 14px}
+  #runEndOvl button{font-size:1.25rem; padding:16px 22px; border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25)}
   #trajBox .bar{height:10px; background:var(--pine); border-radius:5px; margin:3px 0}
   .muted{font-size:.8rem; color:#6E6A5E}
 </style>
@@ -166,6 +172,7 @@
   <p data-i18n="fP1" id="fP1"></p>
   <p id="wxHint" style="display:none; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-weight:600"></p>
   <button class="btn-go big" id="shareBtn" data-i18n="fShare"></button>
+  <button class="btn-go big" id="emailBtn" data-i18n="fEmail" style="margin-top:10px"></button>
   <div class="optRow">
     <button class="optBtn" id="copyBtn" data-i18n="fCopy"></button>
     <button class="optBtn" id="dlBtn" data-i18n="fDownload"></button>
@@ -230,6 +237,10 @@
       <div id="touchRow">
         <button class="steerBtn" id="leftBtn" aria-label="Steer left">◀</button>
         <button class="steerBtn" id="rightBtn" aria-label="Steer right">▶</button>
+      </div>
+      <div id="runEndOvl">
+        <button class="btn-go" id="againOvl" data-i18n="again"></button>
+        <button class="btn-coral" id="finishOvl" data-i18n="finish"></button>
       </div>
     </div>
 
@@ -300,8 +311,9 @@ const I18N={
   q4:"Seeing my progress made me want to continue.",
   lik1:"strongly disagree", lik5:"strongly agree",
   fTitle:"Thank you for playing!",
-  fP1:"Tap Share and choose WhatsApp or Mail — your results go as a normal message. Nothing to save, nothing to attach.",
-  fShare:"📤 Share my results",
+  fP1:"Tap Share to send your results as a CSV file (WhatsApp, WeChat, Mail or Save to Files) — or tap E-mail to send them straight to the researcher.",
+  fShare:"📤 Share my results (CSV file)",
+  fEmail:"✉️ E-mail my results to the researcher",
   fCopy:"📋 Copy results",
   fCopied:"Copied! Now paste into WhatsApp or e-mail",
   fDownload:"💾 Save as file",
@@ -353,8 +365,9 @@ const I18N={
   q4:"看到自己的進步令我更想繼續玩。",
   lik1:"非常不同意", lik5:"非常同意",
   fTitle:"多謝你的參與!",
-  fP1:"按「分享」再選 WhatsApp 或郵件——你的結果會以普通訊息傳送,毋須儲存檔案、毋須附件。",
-  fShare:"📤 分享我的結果",
+  fP1:"按「分享」以 CSV 檔案傳送結果(WhatsApp、微信、郵件或儲存到檔案)——或按「電郵」直接傳送給研究員。",
+  fShare:"📤 分享我的結果(CSV 檔案)",
+  fEmail:"✉️ 電郵我的結果給研究員",
   fCopy:"📋 複製結果",
   fCopied:"已複製!請貼上到 WhatsApp 或電郵",
   fDownload:"💾 儲存為檔案",
@@ -406,8 +419,9 @@ const I18N={
   q4:"看到自己的进步令我更想继续玩。",
   lik1:"非常不同意", lik5:"非常同意",
   fTitle:"多谢你的参与!",
-  fP1:"按「分享」再选 WhatsApp 或邮件——你的结果会以普通消息发送,毋须保存文件、毋须附件。",
-  fShare:"📤 分享我的结果",
+  fP1:"按「分享」以 CSV 文件发送结果(WhatsApp、微信、邮件或保存到文件)——或按「邮件」直接发送给研究员。",
+  fShare:"📤 分享我的结果(CSV 文件)",
+  fEmail:"✉️ 邮件发送我的结果给研究员",
   fCopy:"📋 复制结果",
   fCopied:"已复制!请粘贴到 WhatsApp 或电邮",
   fDownload:"💾 保存为文件",
@@ -1004,6 +1018,7 @@ document.getElementById('startBtn').onclick=()=>{
   document.getElementById('stateBody').innerHTML='';
   document.getElementById('summary').style.display='none';
   document.getElementById('endBtn').style.display='inline-block';
+  document.getElementById('runEndOvl').style.display='none';
   document.getElementById('coachPanel').style.display = (S.arm==='B')?'none':'block';
   document.getElementById('modePill').textContent='';
   logState(S.diff,S.diff,'run start — arm '+S.arm+(S.arm==='B'?' (static ×0.85)':' (adaptive, gentle floor)'),'init');
@@ -1015,7 +1030,10 @@ document.getElementById('startBtn').onclick=()=>{
 document.getElementById('endBtn').onclick=()=>{ if(running){ S.endReason='ended early by staff'; endRun(true); } };
 function endRun(early){
   running=false;
-  document.body.classList.remove('playmode'); fitCanvas();
+  (function(){ const ov=document.getElementById('runEndOvl'), cv=document.getElementById('cv');
+    ov.style.bottom='auto';
+    ov.style.top=Math.round(cv.offsetTop+cv.clientHeight*0.78)+'px';
+    ov.style.display='flex'; })();
   if(windGain) windGain.gain.value=0;
   SND.finish();
   document.getElementById('endBtn').style.display='none';
@@ -1119,14 +1137,71 @@ function buildExport(){
     exported_ts:new Date().toISOString()
   },null,1);
 }
-function buildExportText(){
-  const hdr = LANG==='zh' ? '【滑雪遊戲研究結果 '+P3B.pid+'——請原封不動傳送給研究員】'
-           : LANG==='zhs' ? '【滑雪游戏研究结果 '+P3B.pid+'——请原封不动发送给研究员】'
-           : '[ALPINE GAME STUDY RESULTS '+P3B.pid+' — please send exactly as it is]';
-  return hdr+'\n'+JSON.stringify(JSON.parse(buildExport()));
+const RESEARCHER_EMAIL='sidney.tam@connect.polyu.hk';
+function csvEsc(v){ v=(v==null?'':String(v)); return /[",\n\r]/.test(v)? '"'+v.replace(/"/g,'""')+'"' : v; }
+function participantCSV(p){
+  const L=[];
+  L.push('[PARTICIPANT]'); L.push('field,value');
+  const meta=[['build','Alpine_Coordination_Game_v3.0_Stage3B'],['device_id',DEVICE_ID||''],
+    ['participant_code',p.pid||''],['arm',p.arm||''],['failure_mode',p.failMode||'ZF'],
+    ['language',p.lang||''],['consent_agreed','yes'],['consent_ts',p.consent_ts||'']];
+  if(p.enrol){ meta.push(['age_band',p.enrol.age_band],['gender',p.enrol.gender],
+    ['education',p.enrol.education],['prior_play',p.enrol.prior_play]); }
+  meta.forEach(m=>L.push(csvEsc(m[0])+','+csvEsc(m[1])));
+  const runs=p.runs||[];
+  if(runs.length){
+    const cols=Object.keys(runs[0]);
+    L.push(''); L.push('[SESSIONS]'); L.push(cols.map(csvEsc).join(','));
+    runs.forEach(r=>L.push(cols.map(c=>csvEsc(r[c])).join(',')));
+  }
+  const states=p.states||{};
+  const sk=Object.keys(states);
+  if(sk.length){
+    L.push(''); L.push('[STATE_CHANGES]');
+    L.push('Session_No,t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src');
+    sk.forEach(sn=>(states[sn]||[]).forEach(e=>L.push(
+      [sn,e.t,e.playMin,e.oldDiff,e.newDiff,e.dist,e.coins,e.hits,e.balance,e.reason,e.src]
+        .map(csvEsc).join(','))));
+  }
+  if(p.quest){
+    L.push(''); L.push('[QUESTIONNAIRE]');
+    L.push('item,response (1 strongly disagree - 5 strongly agree)');
+    Object.keys(p.quest).forEach(k=>L.push(csvEsc(k)+','+csvEsc(p.quest[k])));
+  }
+  return L.join('\r\n');
 }
+function exportHeader(){
+  return LANG==='zh' ? '【滑雪遊戲研究結果 '+P3B.pid+'——請原封不動傳送給研究員】'
+       : LANG==='zhs' ? '【滑雪游戏研究结果 '+P3B.pid+'——请原封不动发送给研究员】'
+       : '[ALPINE GAME STUDY RESULTS '+P3B.pid+' - please send exactly as it is]';
+}
+function buildExportCSV(){
+  return csvEsc(exportHeader())+'\r\nexported_ts,'+new Date().toISOString()
+       +'\r\n'+participantCSV(P3B);
+}
+function csvFileName(){ return 'Alpine3B_'+(DEVICE_ID||'X')+'_'+(P3B.pid||'anon')+'.csv'; }
+function emailExport(){
+  let body=buildExportCSV();
+  if(body.length>28000){
+    body=csvEsc(exportHeader())+'\r\nexported_ts,'+new Date().toISOString()
+      +'\r\n'+participantCSV(Object.assign({},P3B,{states:{}}))
+      +'\r\n\r\n(state logs omitted from this e-mail - please also send the saved CSV file)';
+  }
+  location.href='mailto:'+RESEARCHER_EMAIL
+    +'?subject='+encodeURIComponent('Alpine 3B results '+(DEVICE_ID||'')+' '+(P3B.pid||''))
+    +'&body='+encodeURIComponent(body);
+}
+function buildExportText(){ return buildExportCSV(); }
 async function shareExport(){
-  const text=buildExportText();
+  const text=buildExportCSV(), name=csvFileName();
+  try{
+    const f=new File([text],name,{type:'text/csv'});
+    if(navigator.canShare && navigator.canShare({files:[f]})){
+      await navigator.share({files:[f], title:name,
+        text:'Alpine Coordination Game results 滑雪遊戲研究結果 — '+RESEARCHER_EMAIL});
+      return;
+    }
+  }catch(e){ if(e && e.name==='AbortError') return; }
   if(navigator.share){
     try{ await navigator.share({title:'Alpine 3B '+P3B.pid, text}); return; }
     catch(e){ if(e && e.name==='AbortError') return; }
@@ -1146,14 +1221,7 @@ async function copyExport(){
   if(ok){ b.textContent=T('fCopied'); setTimeout(()=>{ b.textContent=T('fCopy'); },4000); }
   else dlExport();
 }
-function dlExport(){
-  const name=`alpine3B_${P3B.pid}.json`, text=buildExport();
-  const b=new Blob([text],{type:'application/json'});
-  try{ const a=document.createElement('a');
-    a.href=URL.createObjectURL(b); a.download=name; a.click(); URL.revokeObjectURL(a.href);
-  }catch(e){ const w=window.open('about:blank');
-    if(w){ w.document.write('<pre>'+text.replace(/</g,'&lt;')+'</pre>'); w.document.title=name; } }
-}
+function dlExport(){ dlFile(csvFileName(), buildExportCSV()); }
 
 /* fit the canvas to the viewport in play mode, preserving aspect */
 function fitCanvas(){
@@ -1212,6 +1280,15 @@ document.getElementById('enrolGo').onclick=()=>{
   saveP3B(); showOvl(null);
 };
 document.getElementById('againBtn').onclick=()=>{ document.getElementById('startBtn').click(); };
+document.getElementById('againOvl').onclick=()=>{
+  document.getElementById('runEndOvl').style.display='none';
+  document.getElementById('startBtn').click();
+};
+document.getElementById('finishOvl').onclick=()=>{
+  document.getElementById('runEndOvl').style.display='none';
+  document.body.classList.remove('playmode'); fitCanvas();
+  document.getElementById('finishBtn').click();
+};
 const QUEST={};
 function buildQuest(){
   const host=document.getElementById('questBlocks'); host.innerHTML='';
@@ -1242,6 +1319,7 @@ document.getElementById('questGo').onclick=()=>{
   saveP3B(); showOvl('ovlFinal');
 };
 document.getElementById('shareBtn').onclick=()=>{ shareExport(); };
+document.getElementById('emailBtn').onclick=()=>{ emailExport(); };
 document.getElementById('copyBtn').onclick=()=>{ copyExport(); };
 document.getElementById('dlBtn').onclick=()=>{ dlExport(); };
 document.getElementById('tiltBtn').addEventListener('click',()=>{
@@ -1258,6 +1336,7 @@ function applyWxMode(){
   document.getElementById('fP1').style.display='none';
   const share=document.getElementById('shareBtn'), copy=document.getElementById('copyBtn');
   share.style.display='none';
+  document.getElementById('emailBtn').style.display='none';
   copy.className='btn-go big'; copy.style.flex='none'; copy.style.width='100%';
 }
 
@@ -1302,16 +1381,20 @@ function deviceBundle(){
     }
   });
 })();
+function deviceBundleCSV(){
+  let arch=[]; try{ arch=JSON.parse(localStorage.getItem(A3B_ARCH))||[]; }catch(e){}
+  const all=arch.slice();
+  if(P3B && P3B.consent_ts) all.push(Object.assign({}, P3B, {current:true}));
+  const L=[csvEsc('[ALPINE 3B DEVICE BUNDLE '+(DEVICE_ID||'X')+']'),
+    'participant_count,'+all.length, 'exported_ts,'+new Date().toISOString()];
+  all.forEach((p,i)=>{ L.push(''); L.push('===== PARTICIPANT '+(i+1)+' ====='); L.push(participantCSV(p)); });
+  return L.join('\r\n');
+}
 document.getElementById('facExportFile').onclick=()=>{
-  const text=deviceBundle();
-  const b=new Blob([text],{type:'application/json'});
-  try{ const a=document.createElement('a');
-    a.href=URL.createObjectURL(b); a.download='alpine3B_device_'+(DEVICE_ID||'X')+'_bundle.json';
-    a.click(); URL.revokeObjectURL(a.href);
-  }catch(e){}
+  dlFile('Alpine3B_device_'+(DEVICE_ID||'X')+'_bundle.csv', deviceBundleCSV());
 };
 document.getElementById('facExportCopy').onclick=async()=>{
-  const text='[ALPINE 3B DEVICE BUNDLE '+(DEVICE_ID||'X')+']\n'+deviceBundle();
+  const text=deviceBundleCSV();
   try{ await navigator.clipboard.writeText(text); document.getElementById('facExportCopy').textContent='📋 Copied 已複製!'; }
   catch(e){ try{ const ta=document.createElement('textarea'); ta.value=text;
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
