@@ -317,9 +317,15 @@ early-dropout experience [AUTHOR: citation]. A0-COMPLIANT SPLIT: the
 FIAS turn stays OUT of Ch1 (it is the Stage-2 discovery); the
 author's aphorism ("the threat lives in the artefact... the
 abandonment is its observable shadow") is placed at the end of §9.3
-where FIAS talk is legitimate. AWAITING: (1) exact installation year;
-(2) InBody gamified-FRA experience citation — both yellow-flagged in
-§1.1. RESOLVED 13 Aug 2026 (author decision): NO utilisation
+where FIAS talk is legitimate. AWAITING: (1) exact installation year (sole remaining §1.1 flag).
+RESOLVED 13 Aug 2026 (author): InBody's own balance games were
+installed on the facility's FRA in 2022 and the station stayed quiet
+— FIRST-HAND facility observation, no external citation needed; the
+gamified-experience flag is REMOVED. The author developed the skiing
+games in 2023 for Poly Group centres, taking InBody's installed games
+as the starting point — lineage recorded in §1.1 and new §5.3.8
+opening paragraph; game-development period corrected to 2023–2024 in
+Table 3.1A and Table 9.1. RESOLVED 13 Aug 2026 (author decision): NO utilisation
 comparison between Korean and Chinese markets is claimed — the
 published Korean record (Park et al. 2019; Kim et al. 2018) validates
 the instrument but reports no uptake rates. §1.1 now frames the
