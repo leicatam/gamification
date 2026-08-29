@@ -1,0 +1,47 @@
+GenApep Financial Model v0.4 (USD) — AI-personalised aesthetic medical devices: applicator device + recurring personalised kits
+,,,,,
+KIT UNIT ECONOMICS ($/kit),,,,,
+Ex-factory price (EXW),32.50,,,,
+Manufacturing (10% x EXW),3.25,,,,
+Material cost,4.50,,,,
+Second 10% (10% x EXW),3.25,,,,
+COGS,11.00,,,,
+Gross profit per kit,21.50,,,,
+Gross margin,66.2%,,,,
+,,,,,
+DEVICE UNIT ECONOMICS,,,,,
+ASP per clinic,3000,,,,
+Gross margin,40%,,,,
+Gross profit per device,1200,,,,
+,,,,,
+VOLUME BUILD,2026 prep,2027,2028,2029,2030
+Clinics (cumulative),0,150,400,700,1000
+New clinics (devices sold),0,150,250,300,300
+Treatment kits (000s),0,148,600,900,1200
+,,,,,
+P&L ($000s),2026,2027,2028,2029,2030
+Kit revenue,0,4810,19500,29250,39000
+Device revenue,0,450,750,900,900
+Total revenue,0,5260,20250,30150,39900
+Kit gross profit,0,3182,12900,19350,25800
+Device gross profit,0,180,300,360,360
+Total gross profit,0,3362,13200,19710,26160
+Blended gross margin,,63.9%,65.2%,65.4%,65.6%
+OpEx [ASSUMPTION],700,2600,6000,8200,10000
+EBITDA,-700,762,7200,11510,16160
+EBITDA margin,,14.5%,35.6%,38.2%,40.5%
+,,,,,
+SCENARIOS (2029),Clinics,EXW,DeviceGM,Revenue,GrossProfit
+Conservative,500,30,35%,22000,14000
+Base,700,32.50,40%,30150,19710
+Upside,850,35,45%,38000,25000
+,,,,,
+ROUND TERMS (Lens A),Pre-money,Raise,Post-money,Investor %,
+Option A,5000,1000,6000,16.7%
+Option B,6000,1000,7000,14.3%
+Option C,7000,1000,8000,12.5%
+,,,,,
+CAP TABLE (post-raise at 6M pre),Founder %,Post-raise %,,,
+WBI,70.0%,60.0%,,,
+Eyesel,30.0%,25.7%,,,
+Kickoff investor,,14.3%,,,
