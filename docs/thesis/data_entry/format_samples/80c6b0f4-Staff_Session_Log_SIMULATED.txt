@@ -1,0 +1,4 @@
+SIMULATED STAFF SESSION LOG
+Participant 3012: Game Over Session 1, did not return.
+Participant 3044: Game Over Session 2, returned Session 6 after reminder.
+Participant 3078: Completed all 5 sessions.

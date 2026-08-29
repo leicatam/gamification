@@ -1,0 +1,31 @@
+Gender,Age,Before Game,After Game,Fall Risk symptoms,Game Cycle,Symptoms improvement After Game,Satisfaction,Verified,change,sustained,improved,satisfied
+M,63,46.0,45.0,Fatigue,3,Improved,Satisfied,Yes,-1.0,False,True,True
+M,62,47.0,30.0,Unbalance Ear fluid/ Muscle weakness,2,No,No comments,Yes,-17.0,False,False,False
+M,66,74.0,62.0,Fatigue/brain fog,2,Falling risk reduced,Satisfied,Yes,-12.0,False,True,True
+M,65,48.0,59.0,Muscle weakness,5,Improved,Satisfied,Yes,11.0,True,True,True
+M,64,39.0,44.0,fatigue,5,Improved,Satisfied,Yes,5.0,True,True,True
+M,70,39.0,50.0,fatigue,1,Both improved,Very satisfied,Yes,11.0,False,True,True
+M,72,38.0,73.0,Balance problem/lack of focus,1,All improved,No comments,Yes,35.0,False,True,False
+M,76,33.0,39.0,Mobility aids required /Muscle Weakness,2,Improved,Satisfied,Yes,6.0,False,True,True
+M,74,32.0,52.0,Mobility aids required /fatigue/brain fog,3,All improved,Very satisfied,Yes,20.0,False,True,True
+M,69,57.0,51.0,Joint pain /Reduced relaxes,3,Improved,Very satisfied,Yes,-6.0,False,True,True
+M,71,39.0,39.0,Mobility aids required /Balance Issue,1,No,Dissatisfied,Yes,0.0,False,False,False
+M,73,48.0,44.0,Decreased muscle strength,2,No,No comments,Yes,-4.0,False,False,False
+M,79,40.0,41.0,Balance Issue/ use of mobility aids,6,Both improved,Satisfied,Yes,1.0,True,True,True
+F,67,40.0,48.0,Fatigue/brain fog,4,No,Satisfied,Yes,8.0,True,False,True
+F,72,35.0,38.0,Muscle weakness Brain fog,1,No,Dissatisfied,No,3.0,False,False,False
+F,66,35.0,30.0,Mobility aids required / balance problems,3,No,Satisfied,Yes,-5.0,False,False,True
+F,73,60.0,66.0,Brain fog / fatigue,5,Improved,Very satisfied,Yes,6.0,True,True,True
+F,64,59.0,65.0,fatigue,3,Both improved,Satisfied,Yes,6.0,False,True,True
+F,78,39.0,46.0,Balance problem/brain fog,2,Both improved,Satisfied,Yes,7.0,False,True,True
+F,78,28.0,32.0,Mobility aids required / Muscle weakness,3,Balance conditions improved,Very satisfied,Yes,4.0,False,True,True
+F,62,56.0,51.0,Poor Foot care / fatigue,2,No,No comments,Yes,-5.0,False,False,False
+F,66,47.0,52.0,Joint pain/walking problem,2,Both improved,Satisfied,Yes,5.0,False,True,True
+F,68,31.0,37.0,Fatigue/Balance Issue/ joint pain,6,All improved,Satisfied,Yes,6.0,True,True,True
+F,70,45.0,56.0,Joint pain/fatigue,5,Fatigue improved,Very satisfied,Yes,11.0,True,True,True
+F,71,37.0,45.0,Mobility aids required /Balance issues,6,Both improved,Satisfied,Yes,8.0,True,True,True
+F,75,54.0,53.0,Joint pain/fatigue/brain fog,1,No,No comments,Yes,-1.0,False,False,False
+F,77,31.0,44.0,Mobility aids required /joint pain/fatigue,1,No,No comments,Yes,13.0,False,False,False
+F,78,62.0,61.0,fatigue,1,No,No comments,Yes,-1.0,False,False,False
+F,80,39.0,40.0,Joint Pain/Brain Fog,1,No,No comments,Yes,1.0,False,False,False
+F,84,38.0,44.0,Mobility aids required /Poor Foot care /fatigue,5,No,Satisfied,Yes,6.0,True,False,True
