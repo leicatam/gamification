@@ -343,7 +343,35 @@ band = rect(s, 0.7, 5.85, 11.95, 0.85, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 fill_text(band, [("Price test: the draft's percentages imply paying $10–13M for FVH. Would FVH be worth "
                   "that if it were private? Verify before a single share moves.", 14.5, True, NAVY)])
 
-# ============================================================ 12 WBI SHAREHOLDER LENS
+# ============================================================ 12 INTERIM ASSUMPTIONS (EYESEL DATA PENDING)
+s = slide(); header(s, "Fair without Eyesel's numbers — interim assumptions",
+                    "Fairness comes from mechanism, not from guessing the missing data")
+card(s, 0.7, 1.55, 6.3, 4.55, "Four mechanisms — commit now, correct automatically",
+     "1 · PEG + MANDATORY TRUE-UP (Amendment A1, already drafted): sign on a stated basis — "
+     "Eyesel revenue $8.0M, value $15–20M. If verified figures differ >15%, equalisation is "
+     "mandatory; an independent valuer decides if boards cannot. Symmetric — protects Eyesel too.\n"
+     "2 · VERIFIED FINANCIALS = condition precedent to the SHARE EXCHANGE, not to signing — the "
+     "exchange is Q1–Q2 2027 and the PCAOB audit verifies the numbers anyway.\n"
+     "3 · ESCROW HOLDBACK (fallback): 5–8 points of the Eyesel allocation held until verification.\n"
+     "4 · PARITY OF METHOD: the same valuer, method and multiples for both companies — agree the "
+     "method today, the numbers follow from the data.", line=ACCENT, tsz=16, bsz=12.5)
+textbox(s, 7.25, 1.55, 5.4, 0.4, [("Planning numbers meanwhile", 15, True, NAVY)])
+rows = [
+    ["Revenue", "$8.0M", "documented basis (lower figure)"],
+    ["Gross margin", "40%", "mirrors WBI's certified actual"],
+    ["EBITDA", "~12%", "GMP-manufacturer profile"],
+    ["Value band", "$15–20M", "same band as WBI — parity"],
+]
+table(s, ["Item", "Assume", "Why"], rows, 7.25, 2.05, 5.4, [1.35, 1.0, 3.05], fs=11.5, hdr_fs=12)
+card(s, 7.25, 4.35, 5.4, 1.75, "The check for both boards",
+     "Value-proportional, Eyesel needs ≥ ~$18M verified value to hold 51%. At $8M revenue that "
+     "means documenting GMP-facility / licence asset value — or equalisation applies. At ~$15M "
+     "revenue, 51:49 is comfortable.", line=GOLD, tsz=14.5, bsz=12.5)
+band = rect(s, 0.7, 6.3, 11.95, 0.75, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+fill_text(band, [("The FVH ratio never waits on Eyesel's data — only the internal split does, and it "
+                  "self-corrects inside the block.", 15, True, NAVY)])
+
+# ============================================================ 13 WBI SHAREHOLDER LENS
 s = slide(); header(s, "What this means for WBI shareholders", "Your 49% of GenApep, traced through both routes")
 steps = [("Today", "49%", "of GenApep · ≈ $17.2M at $35M mid", ACCENT),
          ("After pool (7.5%)", "45.3%", "≈ $15.9M — before technology credit", TEAL),

@@ -64,7 +64,31 @@ A commercial licensing framework with DPW (an entity under the listed Richards G
 - **What the draft IPO MOU would have done** — It allocated 40% of FVH to one individual and 35% to another, with nothing to the wider WBI and Eyesel shareholder bodies at that step, and produced ~53:47 — reversing the agreed 51:49. Amendment A2 and Addendum clauses B4/B5 exist precisely to prevent this: every shareholder rides through pro rata or the transaction does not proceed.
 - **Technology upside accrues to the JV** — AI.pep and the DPW licence sit inside GenApep, so WBI shareholders participate through their block stake; the sweat pool (Keith · Sidney · Charles + team) is the incentive mechanism and survives any change of vehicle (Clause 7.8).
 
-## 6. What must be resolved before definitive documents
+## 6. Fair without Eyesel's numbers — interim assumptions
+
+Eyesel's updated financial data is not yet available, and the 51:49 split rests on it. That does not block signing: fairness comes from mechanism, not from guessing the missing numbers. The four devices below let the parties commit now and correct automatically when the data arrives — the first is already drafted into Amendment No. 1.
+
+### The four mechanisms
+- **1. Peg + mandatory true-up (Amendment A1 — already drafted)** — Sign on a stated basis recorded on the face of the document (Eyesel revenue US$8.0M, value US$15–20M). If verified figures differ by >15%, equalisation is MANDATORY — cash or share adjustment — with an independent valuer deciding if boards cannot agree in 30 days. Symmetric: it also protects Eyesel if its real numbers are higher.
+- **2. Verified financials as a condition precedent to the share exchange** — Not to signing. The exchange is Q1–Q2 2027 and the PCAOB audit produces verified numbers on the critical path anyway — nothing is lost by signing the MOU and Amendment now.
+- **3. Escrow holdback (fallback)** — If the 30-day report deadline slips: hold back 5–8 points of the Eyesel allocation in escrow, released or reallocated on verification.
+- **4. Parity of method, not of number** — The same independent valuer applies the same valuation method and multiples to both companies (both are manufacturing-economics businesses). The parties agree the METHOD today; the numbers follow from the data.
+
+### Planning numbers until the data arrives
+
+| Item | Assumption | Rationale |
+|---|---|---|
+| Eyesel revenue | US$8.0M | The documented management-memo basis — the LOWER of the two circulating figures; conservative, and the true-up protects Eyesel if ~US$15M proves right |
+| Gross margin | 40% | Mirrors WBI's NTS-certified FY2025 actual — same manufacturing economics |
+| EBITDA margin | ~12% | Typical GMP-manufacturer profile; placeholder |
+| Growth | ~10%/yr | JV plan placeholder |
+| Value band | US$15–20M | Same band as WBI — symmetric valuation-parity; prejudices neither side |
+
+The check to show both boards: on a pure value-proportional basis Eyesel needs a verified value of ≥ ~US$18M (against WBI's US$17.5M mid) to arithmetically support 51%. At US$8.0M revenue that likely requires counting the GMP facility, licences and quality systems as asset value — a legitimate argument, but one that must be documented, or equalisation applies. At ~US$15M revenue, 51:49 is comfortable.
+
+Structurally, the First Vital discussion never waits on Eyesel's data: under block entry the FVH ratio is GenApep-block vs FVH-verified-value, and the internal 51:49 trues up inside the block without touching the listed-company cap table. Only the internal split is gated — and it self-corrects.
+
+## 7. What must be resolved before definitive documents
 1. Eyesel revenue: US$8.0M (JV plan placeholder, basis of the 51% stake) vs ~US$15M (draft IPO MOU). Mandatory equalisation applies beyond 15% variance — this figure moves the split.
 2. Eyesel principal: Mr. Park (12-Aug MOU) vs Mr. Kim (draft IPO MOU). Written confirmation needed.
 3. Technology chain of title for AI.pep, CodeLife.AI, IT-EXO, SynExo — condition precedent (Clause 5.7); also DPW's first diligence gap.
@@ -72,7 +96,7 @@ A commercial licensing framework with DPW (an entity under the listed Richards G
 5. FVH verification: CIK + full EDGAR index; shell status; July–August GLP-1 actuals.
 6. The draft IPO MOU itself: not signable as drafted (individual allocations, FVH Korea vehicle, no sweat pool). To be revised to the block-entry structure above.
 
-## 7. The financial picture (JV plan, planning basis)
+## 8. The financial picture (JV plan, planning basis)
 
 | US$M | FY2025A | 2026P | 2027P | 2028P | 2029P | 2030P |
 |---|---|---|---|---|---|---|
@@ -81,7 +105,7 @@ A commercial licensing framework with DPW (an entity under the listed Richards G
 
 Combined pre-JV valuation planning range US$30–40M (before AI.pep/DPW credit); illustrative IPO US$80M pre-money + US$20M raise. First Vital adds the GLP-1 line (US$2.2M → US$16.7M proforma) under Route B.
 
-## 8. Decisions requested
+## 9. Decisions requested
 1. Sign Amendment No. 1 and start Stage 1 now (both boards).
 2. Treat Addendum A as the gate for any First Vital discussion; sign it when ready to consider Route B.
 3. Instruct the FA to obtain FVH's CIK and complete EDGAR index, and July–August GLP-1 actuals — this week.
@@ -90,7 +114,7 @@ Combined pre-JV valuation planning range US$30–40M (before AI.pep/DPW credit);
 6. Do not sign the draft IPO MOU in its current form; instruct revision to the value-based block-entry structure.
 7. Progress the DPW framework to asset-level term sheets only after chain-of-title is documented.
 
-## 9. Document map
+## 10. Document map
 
 | Document | Read it for |
 |---|---|

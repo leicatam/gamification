@@ -172,6 +172,51 @@ WBI_LENS = [
      "mechanism and survives any change of vehicle (Clause 7.8)."),
 ]
 
+INTERIM_INTRO = (
+    "Eyesel's updated financial data is not yet available, and the 51:49 split rests on it. That "
+    "does not block signing: fairness comes from mechanism, not from guessing the missing numbers. "
+    "The four devices below let the parties commit now and correct automatically when the data "
+    "arrives — the first is already drafted into Amendment No. 1.")
+
+INTERIM_MECH = [
+    ["1. Peg + mandatory true-up (Amendment A1 — already drafted)",
+     "Sign on a stated basis recorded on the face of the document (Eyesel revenue US$8.0M, value "
+     "US$15–20M). If verified figures differ by >15%, equalisation is MANDATORY — cash or share "
+     "adjustment — with an independent valuer deciding if boards cannot agree in 30 days. "
+     "Symmetric: it also protects Eyesel if its real numbers are higher."],
+    ["2. Verified financials as a condition precedent to the share exchange",
+     "Not to signing. The exchange is Q1–Q2 2027 and the PCAOB audit produces verified numbers on "
+     "the critical path anyway — nothing is lost by signing the MOU and Amendment now."],
+    ["3. Escrow holdback (fallback)",
+     "If the 30-day report deadline slips: hold back 5–8 points of the Eyesel allocation in "
+     "escrow, released or reallocated on verification."],
+    ["4. Parity of method, not of number",
+     "The same independent valuer applies the same valuation method and multiples to both "
+     "companies (both are manufacturing-economics businesses). The parties agree the METHOD "
+     "today; the numbers follow from the data."],
+]
+
+INTERIM_NUMS = [
+    ["Eyesel revenue", "US$8.0M", "The documented management-memo basis — the LOWER of the two circulating figures; conservative, and the true-up protects Eyesel if ~US$15M proves right"],
+    ["Gross margin", "40%", "Mirrors WBI's NTS-certified FY2025 actual — same manufacturing economics"],
+    ["EBITDA margin", "~12%", "Typical GMP-manufacturer profile; placeholder"],
+    ["Growth", "~10%/yr", "JV plan placeholder"],
+    ["Value band", "US$15–20M", "Same band as WBI — symmetric valuation-parity; prejudices neither side"],
+]
+
+INTERIM_CHECK = (
+    "The check to show both boards: on a pure value-proportional basis Eyesel needs a verified "
+    "value of ≥ ~US$18M (against WBI's US$17.5M mid) to arithmetically support 51%. At US$8.0M "
+    "revenue that likely requires counting the GMP facility, licences and quality systems as "
+    "asset value — a legitimate argument, but one that must be documented, or equalisation "
+    "applies. At ~US$15M revenue, 51:49 is comfortable.")
+
+INTERIM_FVH = (
+    "Structurally, the First Vital discussion never waits on Eyesel's data: under block entry the "
+    "FVH ratio is GenApep-block vs FVH-verified-value, and the internal 51:49 trues up inside the "
+    "block without touching the listed-company cap table. Only the internal split is gated — and "
+    "it self-corrects.")
+
 RESOLVE = [
     "Eyesel revenue: US$8.0M (JV plan placeholder, basis of the 51% stake) vs ~US$15M (draft IPO MOU). Mandatory equalisation applies beyond 15% variance — this figure moves the split.",
     "Eyesel principal: Mr. Park (12-Aug MOU) vs Mr. Kim (draft IPO MOU). Written confirmation needed.",
@@ -231,20 +276,28 @@ def wmd():
     a("\n## 5. What this means for WBI shareholders\n")
     for t, d in WBI_LENS:
         a("- **%s** — %s\n" % (t, d))
-    a("\n## 6. What must be resolved before definitive documents\n")
+    a("\n## 6. Fair without Eyesel's numbers — interim assumptions\n\n%s\n" % INTERIM_INTRO)
+    a("\n### The four mechanisms\n")
+    for t, d in INTERIM_MECH:
+        a("- **%s** — %s\n" % (t, d))
+    a("\n### Planning numbers until the data arrives\n\n| Item | Assumption | Rationale |\n|---|---|---|\n")
+    for r in INTERIM_NUMS:
+        a("| " + " | ".join(r) + " |\n")
+    a("\n%s\n\n%s\n" % (INTERIM_CHECK, INTERIM_FVH))
+    a("\n## 7. What must be resolved before definitive documents\n")
     for i, r in enumerate(RESOLVE, 1):
         a("%d. %s\n" % (i, r))
-    a("\n## 7. The financial picture (JV plan, planning basis)\n\n")
+    a("\n## 8. The financial picture (JV plan, planning basis)\n\n")
     a("| US$M | " + " | ".join(YEARS) + " |\n|---|" + "---|" * 6 + "\n")
     a("| Revenue | " + " | ".join("%.1f" % v for v in REV) + " |\n")
     a("| Operating profit | " + " | ".join("%.1f" % v for v in EBIT) + " |\n")
     a("\nCombined pre-JV valuation planning range US$30–40M (before AI.pep/DPW credit); illustrative "
       "IPO US$80M pre-money + US$20M raise. First Vital adds the GLP-1 line (US$2.2M → US$16.7M "
       "proforma) under Route B.\n")
-    a("\n## 8. Decisions requested\n")
+    a("\n## 9. Decisions requested\n")
     for i, d in enumerate(DECISIONS, 1):
         a("%d. %s\n" % (i, d))
-    a("\n## 9. Document map\n\n| Document | Read it for |\n|---|---|\n")
+    a("\n## 10. Document map\n\n| Document | Read it for |\n|---|---|\n")
     for t, d in DOCMAP:
         a("| %s | %s |\n" % (t, d))
     open(DIR + "director-briefing.md", "w").write("".join(L))
@@ -330,11 +383,21 @@ doc.add_heading("5. What this means for WBI shareholders", level=2)
 for t, d in WBI_LENS:
     bullet(doc, d, t + " — ")
 
-doc.add_heading("6. What must be resolved before definitive documents", level=2)
+doc.add_heading("6. Fair without Eyesel's numbers — interim assumptions", level=2)
+para(doc, INTERIM_INTRO)
+doc.add_heading("The four mechanisms", level=3)
+for t, d in INTERIM_MECH:
+    bullet(doc, d, t + " — ")
+doc.add_heading("Planning numbers until the data arrives", level=3)
+tbl(doc, ["Item", "Assumption", "Rationale"], INTERIM_NUMS, widths=[1.4, 1.1, 4.0])
+para(doc, INTERIM_CHECK)
+para(doc, INTERIM_FVH, bold=True)
+
+doc.add_heading("7. What must be resolved before definitive documents", level=2)
 for r in RESOLVE:
     numbered(doc, r)
 
-doc.add_heading("7. The financial picture (JV plan, planning basis)", level=2)
+doc.add_heading("8. The financial picture (JV plan, planning basis)", level=2)
 tbl(doc, ["US$M"] + YEARS,
     [["Revenue"] + ["%.1f" % v for v in REV],
      ["Operating profit"] + ["%.1f" % v for v in EBIT]],
@@ -343,11 +406,11 @@ para(doc, "Combined pre-JV valuation planning range US$30–40M (before AI.pep/D
           "illustrative IPO US$80M pre-money + US$20M primary raise. First Vital adds the GLP-1 "
           "line (US$2.2M → US$16.7M proforma) under Route B.", size=9, italic=True, color=GREY)
 
-doc.add_heading("8. Decisions requested", level=2)
+doc.add_heading("9. Decisions requested", level=2)
 for d_ in DECISIONS:
     numbered(doc, d_)
 
-doc.add_heading("9. Document map", level=2)
+doc.add_heading("10. Document map", level=2)
 tbl(doc, ["Document", "Read it for"], [[t, d] for t, d in DOCMAP], widths=[2.6, 3.9])
 para(doc, "Prepared to open discussion at the WBI and Eyesel boards. All terms subject to "
           "diligence, valuations and definitive agreements.",
