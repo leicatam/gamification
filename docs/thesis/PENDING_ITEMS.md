@@ -333,6 +333,48 @@ contrast as an ASSUMPTION worth examining (silence reflects local
 deployment challenges, not an instrument defect), examined from Ch4
 onward. Web verification archived in commit message b5ea3fa.
 
+## A8. EXAMINER-STYLE REVIEW OF V37 → V38 (5 Sep 2026)
+Review archived: evidence/Examiner_style_Review_of_V37_received_
+2026-09-05.pdf. Verdict: major revision; "increase precision, not
+rhetorical force". V38 created from V37 with ALL text-level items
+DONE: stage-role vocabulary purged (attribution experiment/positive
+control → decoupling comparison, 8 sites incl. abstract);
+scope-law → candidate boundary condition; §8.1/9.7 "theory fails" →
+"demonstrations did not transfer"; "only design element" softened; H0
+reframed as theory-informed design expectation (falsification note,
+§2.3.5) and checklist-eliminates-quality claim replaced with §8.5.7
+pointer; "That is exactly what the data show" removed (also A0);
+"faster dropout" → cycle-clustering with no-time-claim note (§8.3);
+Table 9.3 "Eliminated" statuses recalibrated + §9.3A vocabulary;
+framework "jointly exhaustive" softened (§7.5A area); QFD relabelled
+"Qualitative requirements mapping (QFD-style)" + status note; NEW
+§8.5.10 Rational Consequence-Avoidance rival (from §4.1A
+consequences; unmeasured; confirmatory instrumentation named); NEW
+§2.7 continuance-theory comparison + Bhattacherjee (2001) reference;
+§5.3.9 CHRONOLOGY NOTE (Claude Code public Feb 2025 vs 2023 dev
+start) with author flag; Appendix G stubs G.0 source-to-result
+manifest + G.0A build-lineage matrix; title page June→October 2026;
+front banner updated to V38 with item (16).
+RECORD-DEPENDENT (author: "ready in next two weeks"): ethics
+documentary set (approval memo, authorised scope, documented basis
+for analysing all 30 Stage-2 participants incl. non-consenting
+dropouts); source-to-result manifest rows; build-lineage matrix rows
+(+ G.7 endpoint record, G.8 reference repair, G.4 photo
+descriptions); participant-journey reconstruction (Stage-2 failure
+definition + Stage-3 dropout/return windows + N=120 denominator
+question, invitation/return/missing-file accounting); FRA index
+measurement provenance (timing, vendor score spec, post-values for
+single-session exits); instrument reproduction (Appendix A exact
+items + item-3 conditional counts; Appendix C administered form;
+D scale 5-vs-7); member checks completion; consultation chronology
+labels. STATUS UPDATES from author (5 Sep): ethics approved + number
+received ✓ (memo still to file); Benny report PENDING; Gary 2nd
+interview next Monday; all outstanding records within two weeks.
+NOT YET DONE (needs records or larger restructure): abstract full
+rewrite to matched strength (do after records); "answer each RQ
+once" consolidation; G.8 reference repair; evidence cut-off
+declaration; Stage-2 basis-for-analysis statement.
+
 ## A6. STAGE-2 INTERVIEW RECORDS — AWAITING AUTHOR (13 Aug 2026)
 The verdict-fear stance paraphrase ("game is fun... but I do not want
 it telling me where my health problems are") is STAGE-2 interview
