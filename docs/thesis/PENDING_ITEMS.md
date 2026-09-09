@@ -333,6 +333,32 @@ contrast as an ASSUMPTION worth examining (silence reflects local
 deployment challenges, not an instrument defect), examined from Ch4
 onward. Web verification archived in commit message b5ea3fa.
 
+## A9. V39 EXAMINATION → V40 (9 Sep 2026)
+V39 (author's AI-assisted revision) examined by 38-agent panel: 130
+findings (29 high, all confirmed by adversarial verification); report
+in V39_Examination_Report_2026-09-09.docx; full register in evidence/.
+Clean bill: all 7 new references real+accurate; zero fact drift;
+consent gates mostly intact. V40 CREATED = V39 + mandatory block:
+(B1) second Lau/Tse consultation re-merged (s3.2, s6.12 heading/intro/
+paragraph, timeline tables, ToC line -> March-September 2026);
+(B2) Mirror mechanism leak DELETED from placeholder; (B3) FIAS removed
+from Ch1-2 (4 sites, pointers corrected to Ch4), Stage results
+de-forwarded from s2.6.4 + s3.2, FIDS naming restored in s1.5;
+(D1) s1.10 staff-scripts/F4 sentence rewritten to record; (Q1) NEW
+measurement-provenance paragraph in s5.5 from author's account (after
+= final play; every player generated an index; physicians interpreted
+per InBody guidelines; varying post-time stated) + s5.9 aligned
+[YELLOW: confirm 'before' value source]; Tsai title restored
+('warming'); V39-inherited XML schema defects repaired (1 pPr, 18
+tcPr, 3 shd).
+STILL OPEN from the examination: title decision with Benny (grammar
+'a', subtitle recommendation, operational definitions in s1.11);
+Q2 dropout-satisfaction consent basis (AWAITING AUTHOR); D2/D3
+denominators + unreported items; D5 s5.3 Claude-Code sentence (align
+with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
+decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
+contribution strength; 52 medium + 49 low findings in the register.
+
 ## A8. EXAMINER-STYLE REVIEW OF V37 → V38 (5 Sep 2026)
 Review archived: evidence/Examiner_style_Review_of_V37_received_
 2026-09-05.pdf. Verdict: major revision; "increase precision, not
