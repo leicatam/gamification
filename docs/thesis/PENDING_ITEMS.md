@@ -530,6 +530,15 @@ echo; P030 contradiction retained); Paper 2 Section X paragraph +
 two qualitative-table rows (JIKM + IJKM; JMIR paragraph only - it
 has no qualitative table pending its re-alignment pass).
 Publication copies re-frozen.
+JMIR RE-ALIGNMENT COMPLETED + PACKAGE ASSEMBLED (10 Sep): the
+withheld ten-point amendments adapted to JMIR's named-section
+structure - chronology block, data dictionary (Table 2), qualitative
+findings table (Table 10), headings fixed, NASSS converted to
+numbered citation [47] with reference entry; tables positionally
+renumbered 1-10; JMIR now at parity with JIKM. Package in
+publication/jmir_submission_package/ (manuscript, cover letter,
+Multimedia Appendix 1, figures zip, checklist, bundle). FALLBACK
+RULE restated: never under review at both journals simultaneously.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
