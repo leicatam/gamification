@@ -482,8 +482,28 @@ calendar dates still to be documented. Two Control workbook rows
 Sensitivity analysis (excluding the single unverified record, F/72)
 independently REPRODUCED from the archive: n=29 +4.07 CI 0.38-7.76
 p=.032, Fisher p=.027 (vs all-30 +4.03, 0.47-7.60, p=.028, p=.013).
-PAPER-2 TEN-POINT AMENDMENT ROUND (author's improvement list,
-10 Sep) IN PROGRESS via drafting workflow - chronology/ethics
+PAPER-2 TEN-POINT AMENDMENT ROUND COMPLETED (10 Sep): 68 workflow
+amendments (10 drafters + 10 adversarial verifiers) + 40 orchestrator
+fixes applied. JIKM fully amended: chronology (deployment June-Aug
+2025 vs data-processing period; contemporaneous therapist-observation
+provenance; ethics bracketed pending memo), 32-record sample
+explanation (staff test plays), NEW Table 2 data dictionary + Table 3
+sensitivity analysis (verified numbers) + Table 10 qualitative
+findings (tables positionally renumbered 1-10 with all refs), row-19
+transparency, observed-use vs inferred-abandonment terminology
+document-wide (text + table cells + Figure 5 flow graphic
+REGENERATED with run-based labels), outcomes section renamed
+'Recorded Balance-Index Changes' + causal limits, NASSS comparison +
+Greenhalgh 2017 reference + knowledge-flow unresolved questions,
+mechanisms demoted to proposed + entropy cut to label-only,
+Declarations section (funding/COI bracketed, data availability, AI
+use, overlap), 8 figures EMBEDDED at captions. IJKM propagated (50+
+amendments; declarations withheld for anonymity; absent passages
+skipped). JMIR partially propagated (38+; section-numbered cross-ref
+amendments withheld - JMIR needs a re-alignment pass before any JMIR
+submission; heading + abstract + terminology + flow figure updated).
+Publication copies re-frozen; 56 open items compiled in
+publication/Paper2_TenPoint_Open_Items_2026-09-10.txt - chronology/ethics
 provisional note, sample explanation, data dictionary, unverified-
 record transparency + sensitivity, observed-use vs inferred-
 abandonment terminology, outcomes-section rename + interpretation
