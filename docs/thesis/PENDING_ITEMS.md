@@ -433,6 +433,30 @@ still not sociometric data); s6.9-area confound list (dispersed
 Stage-3 play also removed dropout visibility - package component);
 Paper 2 x3 (pattern-features sequence + limitations anchor);
 Paper 3 (collective-narrative concession updated, cites [2]).
+V40 CLOSED 10 Sep 2026 (author's instruction: close everything except
+the questionnaire instruments and Stage-2 game telemetry). Closure
+actions: NEW Figure 2.1 five-part literature-to-design synthesis
+(author's framework figure, re-rendered at 3040px from the supplied
+design; asset figures/fig_2_1_literature_synthesis.png) embedded at
+the end of s2.8 with linking paragraph + caption - needs the LoF
+field refresh. Flags closed: Figure 1.1 graphic VERIFIED title-aligned
+and construct-free (LoF flag removed); installation year stands on
+'roughly twelve years'; approval date stands on 'August 2026' (memo
+still tracked here); s5.3.9 build-tooling flag converted to a
+disclosed G.0A sentence; stray highlight cleared (s9.2-area); Stage-2
+timeline cells filled 'Second half of 2025 (eight weeks)' (author,
+10 Sep); Stage-3B window cells stand as 'August-October 2026 (planned
+window)'. Checklist page rewritten as the V40 CLOSED note listing the
+five remaining in-document mark groups: (a) questionnaires (s3.4
+Appendix-C reconciliation; Appendix D scale/wording), (b) Stage-2
+telemetry/AI logs (G.2/G.7), (c) consent-gated panel items (s6.12,
+H.6, H.7), (d) Stage-3B cells (s8.8, Table 9.1), (e) G.0/G.0A stubs.
+PUBLICATION VERSIONS FROZEN: docs/papers/publication/
+Paper2_JIKM_Publication_2026-09-10.docx and
+Paper2_JMIR_SeriousGames_Publication_2026-09-10.docx (+ README with
+gates); JMIR submission guide DO-NOT-SUBMIT note replaced with
+SUBMISSION UNBLOCKED + approved-ethics form guidance (gates: Benny
+go-ahead, SS-293 check, Benny ORCID for JMIR form).
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3

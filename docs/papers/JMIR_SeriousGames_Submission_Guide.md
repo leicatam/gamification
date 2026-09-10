@@ -36,11 +36,15 @@ content identical to the verified R2 statistics, restructured to JMIR).
    in the text; JMIR may additionally ask for original high-resolution
    figure files during production — they are ready in
    `figures_submission/` (PNG + TIFF).
-4. Ethics: state that the study was conducted under the ethics policy of
-   The Hong Kong Polytechnic University with informed consent (matches
-   the Ethical Considerations section). If the submission form asks for
-   an approval number, use the HSESC reference once obtained — the same
-   blocking item as the thesis.
+4. Ethics: the study was APPROVED by the PolyU Human Subjects Ethics
+   Sub-Committee — application reference HSEARS20260805008 (PI: Prof.
+   C. F. Cheung; approved August 2026). Enter that reference in the
+   form. Consent: do NOT state blanket "informed consent" — the form
+   answer must match the manuscript's Ethical Considerations section
+   (Stage-2 as conducted: incomplete disclosure with a scientific
+   rationale, gatekeeper consent, written consent obtained
+   retrospectively from sustained participants; approved in these
+   terms).
 5. **APC**: JMIR Serious Games charges an Article Processing Fee on
    acceptance (check the current fee on the journal's site — typically
    in the US$2,000–3,000 range). Confirm whether PolyU or the
@@ -80,11 +84,12 @@ select the article category at submission. Figures: upload from
 statement if a cover letter is requested (swap journal name; JIKM scope
 is broader — information processing, KM, AI applications).
 
-DO NOT SUBMIT until the HSESC approval reference exists: the ethics
-paragraph currently states the characterisation is "being completed" —
-editors and the EM form will ask for the reference number, and an
-in-progress answer risks an administrative reject. The paragraph is
-written so that inserting the reference is a one-sentence change.
+SUBMISSION UNBLOCKED (10 Sep 2026): the HSEARS approval reference
+(HSEARS20260805008, approved August 2026) is in the manuscript and can
+be entered in the EM form. Remaining gates before pressing submit:
+(1) Prof. Cheung's go-ahead; (2) the SS-293 camera-ready
+consent-statement check (verify the published text against the
+corrected Stage-1/Stage-2 record).
 
 Strategy note: JMIR Serious Games build remains ready as the fallback
 venue. Never under review at both simultaneously.
