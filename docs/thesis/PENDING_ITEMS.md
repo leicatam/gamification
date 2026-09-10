@@ -379,6 +379,22 @@ added to re-send list; measurement-provenance marked resolved in the
 checklist; Appendix D five-point wording softened to
 awaiting-confirmation (checklist item 7). Figure 8.1 number kept per
 record - regularise at the checklist-15 field refresh.
+CONSISTENCY PASS (10 Sep, loop) - register items 29/42/45/57/61/65
+closed: retention construct unified as END-OF-WINDOW RETENTION
+(returned dropouts counted as retained) - definition stated once in
+s6.4, term applied in s6.5/s6.8/s9 text, Figure 6.3 caption, Tables
+6.x/9.x and the abstract (the 'in-session' mislabel removed; 85.4% =
+35/41 in the 65-80 band); s6.8 sentence added scoping the 29.3pp
+contrast; Table 3.1 H0-age status cell de-numbered to a s6.5 pointer
+(A0); s3.2 rival-readings design logic reinstated calibrated
+(dispositional vs frame-sensitive, opposite directional expectations,
+not decisively separable between-cohort); RQ1/RQ4 sharpened per
+register wording; s1.2 retitled 'The Empty Station as a
+Service-Design Problem' (+industrial-puzzle line; ToC refresh queued);
+contribution registers harmonised (Table 8.0 'Scientific'->'Empirical
+and theoretical'; s9.7 'innovation contribution'->'industrial
+contribution - the innovation-enhancement element of the title' +
+methodological pointer to s8.2).
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
