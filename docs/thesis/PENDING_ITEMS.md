@@ -351,9 +351,19 @@ per InBody guidelines; varying post-time stated) + s5.9 aligned
 [YELLOW: confirm 'before' value source]; Tsai title restored
 ('warming'); V39-inherited XML schema defects repaired (1 pPr, 18
 tcPr, 3 shd).
-RESOLVED (10 Sep, loop): the s2.3.3 'one-group pre/post' description of An, Cheung & Willoughby (2024) is CONFIRMED - the 5 Sep examiner review's own targeted source check [5] states the article's abstract reports a one-group pre/post design with knowledge and adoption-intention gains. Low-tier sweep applied (16 fixes): reference issue numbers, s1.7 conditional, Ch3 FIAS pointer, H.3 rename residual, s7.9 heading/preposition, verbs calibrated (s6.5, s9.4, satisfaction association), Phase->Stage vocabulary, glossary cross-listing, diary chronology + ethics cells, obstacle-density wording, 43 km/h. STILL OPEN from the examination: title decision with Benny (grammar
+RESOLVED (10 Sep, loop): the s2.3.3 'one-group pre/post' description of An, Cheung & Willoughby (2024) is CONFIRMED - the 5 Sep examiner review's own targeted source check [5] states the article's abstract reports a one-group pre/post design with knowledge and adoption-intention gains. Low-tier sweep applied (16 fixes): reference issue numbers, s1.7 conditional, Ch3 FIAS pointer, H.3 rename residual, s7.9 heading/preposition, verbs calibrated (s6.5, s9.4, satisfaction association), Phase->Stage vocabulary, glossary cross-listing, diary chronology + ethics cells, obstacle-density wording, 43 km/h. RESOLVED (10 Sep, author): the 'before' index value is the FIRST
+PLAY's index (not an enrolment assessment) - no game-independent
+baseline exists; s5.5 provenance rewritten (first-exposure-to-last,
+familiarisation consequence stated), s5.5 results + Figure 5.4
+caption reworded first play/final play, yellow flag removed.
+RECRUITMENT FLOW RESOLVED (same message): the facility invited the
+200 Stage-1 screening respondents; 30 joined, 170 declined - written
+into s3.4 (conduct fact), s5.4 (flow + anticipatory-avoidance
+context, read as context not evidence) and s5.9 (self-selection
+boundary). Abstract duplicated-word typo fixed.
+STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
-Q2 dropout-satisfaction consent basis (AWAITING AUTHOR); D2/D3
+Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
 denominators + unreported items; D5 s5.3 Claude-Code sentence (align
 with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
