@@ -417,6 +417,22 @@ prose column list matched to the four table columns (coin-reward loop
 stated as row evidence, not a column); row-6 evidence cell de-forwarded
 (0/21 stated; Stage-3 contrast now a Chapter-6 pointer, so the caption's
 Stage-1/Stage-2 scope is true).
+FIAS GENESIS SEQUENCE RECORDED (10 Sep, author's archive retrieval,
+clarified by two follow-ups): the field notes record, in order -
+benefit acknowledgment + positive index gains -> recurring IN-GAME
+failures across cycles 2-3 -> gave up despite gains -> remaining
+players SAW the accumulated dropouts and that visible thinning
+contributed to further abandonment (social cascade). Written into
+s5.6 (new opening paragraph with provenance: field-note record
+retrieved Sept 2026, qualitative sequence, no per-participant
+counts; three readings - loss-aversion signature, verdict-carrying
+failure under coupling, social channel); s8.5.9 (discriminates
+against boredom/relevance attrition); s8.6B (one strand of the
+group-narrative account now anchored as a recorded observation -
+still not sociometric data); s6.9-area confound list (dispersed
+Stage-3 play also removed dropout visibility - package component);
+Paper 2 x3 (pattern-features sequence + limitations anchor);
+Paper 3 (collective-narrative concession updated, cites [2]).
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
