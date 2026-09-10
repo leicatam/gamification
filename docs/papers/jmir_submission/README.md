@@ -1,3 +1,15 @@
+# SUPERSEDED 10 Sep 2026 — use ../publication/figures_JMIR/
+
+The figure files below no longer match the manuscript: the manuscript's
+embedded figures were updated after this package was built (4 of 6
+hashes differ), and the mechanism figure was regenerated on 10 Sep 2026.
+The current package — re-extracted pixel-for-pixel from the frozen
+publication manuscript — is docs/papers/publication/figures_JMIR/
+(figure1-6.png + Paper2_JMIR_Figures.zip). The tables file
+Paper2_JMIR_Tables_1-7.docx here remains valid.
+
+---
+
 # JMIR Serious Games — Upload Package for Paper 2
 
 Companion to `../Paper2_JMIR_SeriousGames_Manuscript.docx` and

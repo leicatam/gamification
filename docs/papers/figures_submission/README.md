@@ -1,4 +1,9 @@
-# Paper 2 — figure files for IJKM submission
+# Paper 2 — figure files for JIKM / IJKM submission
+
+VERIFIED 10 Sep 2026 against the frozen publication manuscripts
+(docs/papers/publication/): 8 callouts / 8 captions in both the JIKM
+(named) and IJKM (anonymous) variants; no figure carries withdrawn
+statistics or superseded wording.
 
 Upload Figures 1-8 as the separate figure files; the anonymized
 manuscript now contains a matching callout and caption for each
@@ -13,7 +18,7 @@ manuscript now contains a matching callout and caption for each
 | Figure4_FiveLayer_Architecture.png | §VI.C | Regenerated to match the text's Layer 1-5 numbering |
 | Figure5_Participant_Flow.png | §VIII.C | Clean version (the old flow diagram with HR/d values baked in is NOT used) |
 | Figure6_FIAS_Composite_Distribution.png | §IX | Clean regenerated version (no threshold-gap annotation) |
-| Figure7_FIDS_FIAS_Mechanism.png | §XI.C | Reused from the original submission (clean) |
+| Figure7_FIDS_FIAS_Mechanism.png | §XI.C | REGENERATED 10 Sep 2026 (2960x3560): coaching label corrected to 'confirmatory study' (was 'Phase 2'), terminal box calibrated to '0/21 re-engagement within the study window', overlapping edge labels fixed; same conceptual content, matches both captions |
 | Figure8_ThreeArm_Study_Design.png | §XV.B | Reused from the original submission (clean) |
 
 Extras (not called out in the manuscript — do NOT upload unless a

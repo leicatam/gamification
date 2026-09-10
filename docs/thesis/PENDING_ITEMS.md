@@ -457,6 +457,22 @@ Paper2_JMIR_SeriousGames_Publication_2026-09-10.docx (+ README with
 gates); JMIR submission guide DO-NOT-SUBMIT note replaced with
 SUBMISSION UNBLOCKED + approved-ethics form guidance (gates: Benny
 go-ahead, SS-293 check, Benny ORCID for JMIR form).
+PAPER-2 GRAPHICS/TABLES SUBMISSION PACKAGE VERIFIED (10 Sep, on
+author's request): JIKM/IJKM separate-file set (Figure1-8 PNG+TIFF,
+figures_submission/) verified 8 callouts/8 captions, no withdrawn
+stats; JMIR embedded set re-extracted pixel-for-pixel into
+publication/figures_JMIR/ (old jmir_submission package was STALE - 4
+of 6 hashes mismatched the manuscript; README marked superseded).
+FIDS-FIAS mechanism figure REGENERATED (2960x3560): 'Phase 2'
+coaching label -> 'confirmatory study'; terminal box calibrated to
+'0/21 re-engagement within the study window'; overlapping edge labels
+fixed; new image embedded in BOTH JMIR files + JIKM set + TIFF, zips
+rebuilt. Flow/interface/integration/architecture/distribution figures
+inspected clean. Table 'baseline' rows verified CORRECT under the
+final provenance (before = standard-mode FRA assessment); Table 1
+'competency baseline' is the obstacle threshold, unrelated. Tables
+remain embedded per both journals' models; spares in
+tables_submission/ and jmir_submission/Paper2_JMIR_Tables_1-7.docx.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
