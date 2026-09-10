@@ -351,7 +351,7 @@ per InBody guidelines; varying post-time stated) + s5.9 aligned
 [YELLOW: confirm 'before' value source]; Tsai title restored
 ('warming'); V39-inherited XML schema defects repaired (1 pPr, 18
 tcPr, 3 shd).
-STILL OPEN from the examination: title decision with Benny (grammar
+RESOLVED (10 Sep, loop): the s2.3.3 'one-group pre/post' description of An, Cheung & Willoughby (2024) is CONFIRMED - the 5 Sep examiner review's own targeted source check [5] states the article's abstract reports a one-group pre/post design with knowledge and adoption-intention gains. Low-tier sweep applied (16 fixes): reference issue numbers, s1.7 conditional, Ch3 FIAS pointer, H.3 rename residual, s7.9 heading/preposition, verbs calibrated (s6.5, s9.4, satisfaction association), Phase->Stage vocabulary, glossary cross-listing, diary chronology + ethics cells, obstacle-density wording, 43 km/h. STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 dropout-satisfaction consent basis (AWAITING AUTHOR); D2/D3
 denominators + unreported items; D5 s5.3 Claude-Code sentence (align
