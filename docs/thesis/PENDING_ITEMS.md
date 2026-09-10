@@ -511,6 +511,25 @@ limits, NASSS comparison (Greenhalgh 2017), mechanisms demoted to
 proposed + entropy shortened, qualitative findings table,
 declarations + figure embedding. The 10-Sep frozen publication copies
 will be re-frozen after this round.
+NINE-INTERVIEW RECORD RECEIVED (10 Sep, author): the Stage-2
+sustained-participant interview entry-and-results sheet is archived
+as-received (data_entry/incoming/stage2/ + full README with
+transcription, working translations and reconciliation). 9 records =
+the 9 sustained workbook participants; 9/9 play-again + FRA-willing
+coheres with 9/9 satisfaction; instrument structure now documented
+(9 items: free-text x2; enjoyment/usefulness/discouragement 1-5;
+steering/recovery confidence 0-10; play-again/FRA-again). The
+sheet's own status marks FORM WORDING NOT CHECKED - exact
+administered wording still awaits the paper-form scans (A6/1c item
+STANDS); S2-Pxxx player-ID-to-workbook-row key NOT yet supplied
+(open). Integrated: thesis Appendix C (instrument documented,
+provenance + summary) + s5.6 persistence-side paragraph (confidence
+ratings exist only for the nine; two-of-nine puzzlement at
+non-participants; four-of-nine visuals criticism/infantilisation
+echo; P030 contradiction retained); Paper 2 Section X paragraph +
+two qualitative-table rows (JIKM + IJKM; JMIR paragraph only - it
+has no qualitative table pending its re-alignment pass).
+Publication copies re-frozen.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
