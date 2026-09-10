@@ -539,6 +539,14 @@ renumbered 1-10; JMIR now at parity with JIKM. Package in
 publication/jmir_submission_package/ (manuscript, cover letter,
 Multimedia Appendix 1, figures zip, checklist, bundle). FALLBACK
 RULE restated: never under review at both journals simultaneously.
+SUBMISSION FINALISATION (10 Sep, author's elections): funding =
+'no external funding'; COI = standard wording (provider partnership,
+no role) - both written into all JIKM copies (+ JMIR funding line);
+ETHICS ELECTION: author chose to WAIT FOR THE APPROVAL MEMO before
+submitting - the s IV-B working-draft bracket STAYS until the memo
+verifies date/scope. THE MEMO IS NOW THE LAST BLOCKING ITEM for the
+JIKM submission (plus Cheung ORCID for the EM form + his go-ahead +
+SS-293 check). Both bundles rebuilt with finalised declarations.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
