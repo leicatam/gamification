@@ -361,6 +361,24 @@ RECRUITMENT FLOW RESOLVED (same message): the facility invited the
 into s3.4 (conduct fact), s5.4 (flow + anticipatory-avoidance
 context, read as context not evidence) and s5.9 (self-selection
 boundary). Abstract duplicated-word typo fixed.
+REINSTATEMENT PASS (10 Sep, loop) - register items 30/67/68/69/86/87/88
+closed: the calibrated V38 content V39 deleted is restored into V40 -
+s7.4 three-principle chain rationale (why exactly three, link-by-link,
+coverage-not-exhaustiveness claim); s7.9 identity paragraph (adaptive
+learning = continuous improvement at the individual-user level; the
+three-level loop user/researcher/artefact; industrial-control ethics
+constraints); s7.9 GrandPad commercial comparator (three paragraphs +
+Figure 8.1 graphic copied from V38, caption bound to image) with three
+calibration touches ('this thesis shows'->'record indicates',
+leverage 'may lie', 'working demonstration'->working case + open
+question); s9.1 aims rewritten concrete-first (V38 substance, H0 in
+the calibrated register). This re-anchors all 7 orphaned references
+(GrandPad, Perissinotto, Tha, Gadbois, Park, Czaja, Baltes) plus An
+2024/2025. Checklist banner V39->V40; Yuan consent-transmittal e-mail
+added to re-send list; measurement-provenance marked resolved in the
+checklist; Appendix D five-point wording softened to
+awaiting-confirmation (checklist item 7). Figure 8.1 number kept per
+record - regularise at the checklist-15 field refresh.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
