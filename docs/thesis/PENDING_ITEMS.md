@@ -473,6 +473,24 @@ final provenance (before = standard-mode FRA assessment); Table 1
 'competency baseline' is the obstacle threshold, unrelated. Tables
 remain embedded per both journals' models; spares in
 tables_submission/ and jmir_submission/Paper2_JMIR_Tables_1-7.docx.
+STAGE-2 DATES REFINED (10 Sep, author, second correction): the
+deployment ran JUNE-AUGUST 2025 (supersedes the same-day 'second half
+of 2025' answer); Table 3.1A + Table 9.1 cells updated; exact
+calendar dates still to be documented. Two Control workbook rows
+(M/36, F/53) CONFIRMED as facility staff/therapist test plays
+(reference plays, not participants, no designed comparison).
+Sensitivity analysis (excluding the single unverified record, F/72)
+independently REPRODUCED from the archive: n=29 +4.07 CI 0.38-7.76
+p=.032, Fisher p=.027 (vs all-30 +4.03, 0.47-7.60, p=.028, p=.013).
+PAPER-2 TEN-POINT AMENDMENT ROUND (author's improvement list,
+10 Sep) IN PROGRESS via drafting workflow - chronology/ethics
+provisional note, sample explanation, data dictionary, unverified-
+record transparency + sensitivity, observed-use vs inferred-
+abandonment terminology, outcomes-section rename + interpretation
+limits, NASSS comparison (Greenhalgh 2017), mechanisms demoted to
+proposed + entropy shortened, qualitative findings table,
+declarations + figure embedding. The 10-Sep frozen publication copies
+will be re-frozen after this round.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
