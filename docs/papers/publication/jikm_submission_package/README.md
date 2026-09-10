@@ -2,7 +2,8 @@
 
 | File | Purpose |
 |---|---|
-| Paper2_JIKM_Publication_2026-09-10.docx | The manuscript (10 tables and 8 figures embedded at their callouts; Declarations included) |
+| Paper2_JIKM_Publication_2026-09-10.docx | The manuscript WITH figures embedded at their callouts (use if JIKM wants a self-contained review document) |
+| Paper2_JIKM_Publication_TextOnly_2026-09-10.docx | The same manuscript WITHOUT embedded figure graphics (captions retained; use if JIKM builds the review PDF from separately uploaded figure files). Tables remain embedded in both - they are editable manuscript text |
 | Paper2_JIKM_Figures.zip | Figures 1-8 as separate files, PNG + 300-dpi LZW TIFF (incl. the regenerated Figure 5 flow and Figure 7 mechanism) |
 | Paper2_JIKM_Tables_1-10.zip | Tables 1-10 as individual editable .docx files with captions (spares for production; the manuscript remains the submission of record) |
 | Paper2_JIKM_Supplementary_Appendix.docx | Supplementary Appendix: S1 interview instrument + entered ratings (N=9); S2 free-text responses with working translations; S3 sensitivity-analysis computation note |
