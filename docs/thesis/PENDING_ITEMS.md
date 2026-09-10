@@ -395,6 +395,21 @@ contribution registers harmonised (Table 8.0 'Scientific'->'Empirical
 and theoretical'; s9.7 'innovation contribution'->'industrial
 contribution - the innovation-enhancement element of the title' +
 methodological pointer to s8.2).
+G.8 COLLISION RESOLVED (10 Sep, loop) - register high findings 20/27
+(V37 point 3, G.8 reference repair): G.8 stays exclusively the
+synthetic pipeline-test workbook; evidentiary artefacts renumbered -
+G.9 = HUR vendor brochure (s4.1A), G.10 = the two 27-Aug-2024
+demonstration videos + Figure 5.1A frame + control consent (pending,
+checklist item 9), G.11 = expert interview guide (H.5). All five
+body/checklist cross-references updated. NOTE: item 9b below and the
+s4.1A/s5.3.9/G.8 citations elsewhere in this tracker now map to
+G.9/G.10 - the appendix list is authoritative.
+Table 5.3 REPAIRED (register item 58): headers de-cross-wired to
+section pointers (s5.3.5 / s5.3.10 / s5.3.10 / s7.5, no layer tags);
+prose column list matched to the four table columns (coin-reward loop
+stated as row evidence, not a column); row-6 evidence cell de-forwarded
+(0/21 stated; Stage-3 contrast now a Chapter-6 pointer, so the caption's
+Stage-1/Stage-2 scope is true).
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
