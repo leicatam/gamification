@@ -583,6 +583,20 @@ one submission must be withdrawn immediately (both journals prohibit
 simultaneous review). JMIR ACTION REQUIRED per confirmation e-mail:
 complete metadata + MANDATORY ORCIDs FOR ALL AUTHORS (Cheung ORCID
 needed) at games.jmir.org before acceptance locks metadata.
+!! DUAL-SUBMISSION STATE ACTIVE (11 Sep, author's decision): the
+author confirmed JIKM (JIKMS2602466) was ALSO completed and elected
+to KEEP BOTH submissions active 'at the moment'. RISK STATED TO THE
+AUTHOR in full: simultaneous submission violates both journals'
+policies from the moment both are pending; both cover letters
+declare 'not under consideration elsewhere' (now inaccurate at one
+venue); COPE treats this as misconduct; discovery risks rejection at
+both + institutional notification; co-author Prof. Cheung is exposed
+on both; the recorded Benny-go-ahead gate status at submission is
+unconfirmed. Pre-review withdrawal is clean NOW and stops being
+clean once reviewers are invited. TWO READY-TO-SEND WITHDRAWAL
+DRAFTS prepared in docs/papers/publication/ (JMIR ms111728 / JIKM
+JIKMS2602466). Assistant will not advance both review tracks in
+parallel. AWAITING the author's withdrawal decision.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
