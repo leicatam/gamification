@@ -583,6 +583,15 @@ one submission must be withdrawn immediately (both journals prohibit
 simultaneous review). JMIR ACTION REQUIRED per confirmation e-mail:
 complete metadata + MANDATORY ORCIDs FOR ALL AUTHORS (Cheung ORCID
 needed) at games.jmir.org before acceptance locks metadata.
+FULL SWAP ELECTED (11 Sep, author): Paper 2 stays at JIKM only -
+the JMIR ms#111728 WITHDRAWAL is to be sent (ready draft delivered);
+Paper 3 goes to JMIR Serious Games instead. Paper-3 JMIR package
+built (paper3_submission/jmir_variant/): named sections, structured
+abstract, figures resized within 1200x1200, cover letter declaring
+the companion under review elsewhere, checklist ordering the Paper-2
+withdrawal FIRST. IEEE Access package becomes the Paper-3
+alternative (one venue at a time). Once the ms#111728 withdrawal is
+confirmed sent, the dual-submission flag below is RESOLVED.
 !! DUAL-SUBMISSION STATE ACTIVE (11 Sep, author's decision): the
 author confirmed JIKM (JIKMS2602466) was ALSO completed and elected
 to KEEP BOTH submissions active 'at the moment'. RISK STATED TO THE
