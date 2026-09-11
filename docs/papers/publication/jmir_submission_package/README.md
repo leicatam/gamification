@@ -9,7 +9,7 @@ this package only if the JIKM route is declined or abandoned.
 | Paper2_JMIR_Manuscript_2026-09-10.docx | The manuscript, fully re-aligned 10 Sep (10 tables + 6 figures embedded; JMIR named sections; numbered references incl. NASSS [47]) |
 | Cover_Letter_JMIR.docx | Cover letter with originality, overlap, ethics-as-conducted, AI-use and appendix declarations |
 | Multimedia_Appendix_1.docx | Interview instrument + entered ratings (N=9); free-text responses with translations; sensitivity-analysis note |
-| Paper2_JMIR_Figures.zip | figure1-6.png, pixel-identical to the embedded figures (JMIR requests separate files at/after acceptance for production) |
+| Paper2_JMIR_Figures.zip | figure1-6.png, resized 11 Sep 2026 to JMIR's 1200x1200-pixel maximum (LANCZOS downscale from the high-resolution masters), pixel-identical to the embedded figures |
 
 ## Submission checklist (JMIR Serious Games, ojs submission system)
 
