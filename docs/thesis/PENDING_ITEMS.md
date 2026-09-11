@@ -559,6 +559,30 @@ zips rebuilt; IEEE Access cover letter + checklist + frozen manuscript
 reformatting required; MANDATORY APC (~US$1,995, verify); compilation-
 continues wording re-confirmed accurate 11 Sep. Gates: Benny go-ahead
 + ORCID.
+ETHICS APPROVAL MEMO RECEIVED AND ARCHIVED (11 Sep, author) -
+ethics/HSEARS20260805008_Approval_Memo_as_received_2026-09-11.pdf:
+approved 6 AUGUST 2026, approval period 16-JUN-2024 to 30-OCT-2026,
+PI Cheung Chi Fai, Non-Clinical, issued by Chung Sai Ho, Chair,
+Departmental Research Committee (ISE) on behalf of the PolyU
+Institutional Review Board. Item A(a) CLOSED. Exact date + period +
+authority propagated: thesis s3.4, Tables 3.1A + 9.1, closure note;
+all Paper-2 copies (working-draft brackets REMOVED - JIKM x4, JMIR
+x3); Paper 3 x2. STAGE-3B ETHICS-SCOPE GATE (A2 gate 1) CLOSED: the
+approval period runs to 30-Oct-2026, covering the Stage-3B window,
+and the memo carries no completion/no-new-collection statements.
+TITLE NOTE: the memo's official project title reads 'Gamification as
+a Proactive Approach for...' - the official record documents the
+article 'a' (title decision with Benny still open, now with this
+evidence). SUBMISSION STATUS RECORDED: JMIR Serious Games ms#111728
+SUBMISSION CONFIRMED 11 Sep 2026 18:19 (confirmation archived in
+jmir_submission_package/); JIKM Editorial Manager DRAFT BUILD
+JIKMS2602466 archived (manuscript number blank = pre-approval draft
+PDF; whether the JIKM submission was completed is UNCONFIRMED).
+DUAL-SUBMISSION FLAG RAISED WITH AUTHOR: if JIKM was also completed,
+one submission must be withdrawn immediately (both journals prohibit
+simultaneous review). JMIR ACTION REQUIRED per confirmation e-mail:
+complete metadata + MANDATORY ORCIDs FOR ALL AUTHORS (Cheung ORCID
+needed) at games.jmir.org before acceptance locks metadata.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
