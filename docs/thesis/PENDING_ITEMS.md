@@ -583,6 +583,21 @@ one submission must be withdrawn immediately (both journals prohibit
 simultaneous review). JMIR ACTION REQUIRED per confirmation e-mail:
 complete metadata + MANDATORY ORCIDs FOR ALL AUTHORS (Cheung ORCID
 needed) at games.jmir.org before acceptance locks metadata.
+STAGE-2 ID REGISTER + ENTRY WORKBOOK RECEIVED (11 Sep): archived
+as-is. RESOLVED: (1) player-ID linkage closed - the nine interviewees
+= the nine sustained participants by ID; unverified record = S2-P015
+(FRA row 19, F/72) exactly as the author stated; controls = S2-C001/
+C002 staff test plays; (2) APPENDIX-C RECONCILIATION CLOSED by the
+logbook's own column provenance: satisfaction = after-game
+participant questionnaire; symptoms/improvement = therapist
+observation - thesis s3.4 flag REMOVED, s3.4/s5.5 provenance split
+applied, Paper-2 qualitative-table cell updated (x3), copies
+re-frozen, bundles rebuilt; (3) interview-instrument bilingual
+wording DOCUMENTED from the entry workbook's Question Guide (scale
+anchors; staff-support assumption on Q5/Q6; Q7/Q8 option sets) -
+Appendix C updated; residual: as-administered-form confirmation +
+paper scans; (4) G.2 entry now records the stable pseudonymous IDs.
+V40's in-document mark group (a) narrowed accordingly.
 FULL SWAP ELECTED (11 Sep, author): Paper 2 stays at JIKM only -
 the JMIR ms#111728 WITHDRAWAL is to be sent (ready draft delivered);
 Paper 3 goes to JMIR Serious Games instead. Paper-3 JMIR package

@@ -96,3 +96,34 @@ All 9 records marked Valid on every item status.
 4. One internal contradiction retained (P030).
 5. Scale-direction check: high enjoyment/usefulness with low
    discouragement is internally coherent.
+
+## LINKAGE CLOSED (11 Sep 2026)
+
+Two further records received and archived as-is:
+`Stage2_FRA_Logbook_with_Player_IDs_as_received_2026-09-11.pdf` (the
+Stage-2 ID register: S2-P001..P030 + S2-C001/C002 mapped to original
+FRA rows) and
+`Stage2_Questionnaire_Entry_Workbook_as_received_2026-09-11.xlsx`
+(the entry workbook behind the earlier PDF export, five sheets incl.
+the Question Guide and the ID key).
+
+Verified:
+1. The nine interviewees (P004, P005, P013, P014, P017, P023, P024,
+   P025, P030) are EXACTLY the nine sustained (>=4 runs) workbook
+   participants, by ID and by gender/age. Linkage closed.
+2. The unverified record is S2-P015 (original FRA row 19, F/72) -
+   matching the author's earlier "worksheet row 19" statement.
+3. The two Control rows carry IDs S2-C001 (M/36) / S2-C002 (F/53),
+   confirming their register status as staff test plays.
+4. PROVENANCE ON THE LOGBOOK'S OWN HEADERS: symptoms "reported by
+   the Therapists"; improvement "observation by Therapists";
+   satisfaction "by questionnaires" - resolving the Appendix-C
+   reconciliation (satisfaction = participant questionnaire;
+   symptom variables = therapist observation).
+5. The Question Guide documents the FULL BILINGUAL WORDING of the
+   nine interview items with scale anchors (1-5 agreement; 0-10
+   confidence assuming the same staff support; Q7/Q8 option sets),
+   sourced from the researcher's revised-draft pack
+   (Stage2_Interview_and_Survey_Pack Ch.docx). The guide's own
+   caveat stands: confirm the as-administered original form used
+   the same wording; paper-form scans remain open.
