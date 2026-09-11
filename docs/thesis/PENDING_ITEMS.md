@@ -547,6 +547,18 @@ submitting - the s IV-B working-draft bracket STAYS until the memo
 verifies date/scope. THE MEMO IS NOW THE LAST BLOCKING ITEM for the
 JIKM submission (plus Cheung ORCID for the EM form + his go-ahead +
 SS-293 check). Both bundles rebuilt with finalised declarations.
+PAPER-3 SUBMISSION PREPARED (11 Sep, venue elected: IEEE ACCESS):
+terminology parity fixes applied (abstract/intro Paper-2 summary
+recalibrated to run-based/documented-non-return wording; end-of-window
+retention label); Declarations section added (funding, COI, data
+availability with compilation-continues caveat, AI use, related
+publications); Figures 2-3 were STALE in paper3_submission/ and
+re-extracted pixel-identical from the manuscript, TIFFs regenerated,
+zips rebuilt; IEEE Access cover letter + checklist + frozen manuscript
++ bundle in paper3_submission/. Checklist flags: IEEE Access template
+reformatting required; MANDATORY APC (~US$1,995, verify); compilation-
+continues wording re-confirmed accurate 11 Sep. Gates: Benny go-ahead
++ ORCID.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
