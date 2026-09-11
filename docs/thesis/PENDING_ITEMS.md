@@ -605,22 +605,23 @@ built (paper3_submission/jmir_variant/): named sections, structured
 abstract, figures resized within 1200x1200, cover letter declaring
 the companion under review elsewhere, checklist ordering the Paper-2
 withdrawal FIRST. IEEE Access package becomes the Paper-3
-alternative (one venue at a time). Once the ms#111728 withdrawal is
-confirmed sent, the dual-submission flag below is RESOLVED.
-!! DUAL-SUBMISSION STATE ACTIVE (11 Sep, author's decision): the
-author confirmed JIKM (JIKMS2602466) was ALSO completed and elected
-to KEEP BOTH submissions active 'at the moment'. RISK STATED TO THE
-AUTHOR in full: simultaneous submission violates both journals'
-policies from the moment both are pending; both cover letters
-declare 'not under consideration elsewhere' (now inaccurate at one
-venue); COPE treats this as misconduct; discovery risks rejection at
-both + institutional notification; co-author Prof. Cheung is exposed
-on both; the recorded Benny-go-ahead gate status at submission is
-unconfirmed. Pre-review withdrawal is clean NOW and stops being
-clean once reviewers are invited. TWO READY-TO-SEND WITHDRAWAL
-DRAFTS prepared in docs/papers/publication/ (JMIR ms111728 / JIKM
-JIKMS2602466). Assistant will not advance both review tracks in
-parallel. AWAITING the author's withdrawal decision.
+alternative (one venue at a time).
+DUAL-SUBMISSION FLAG RESOLVED (11 Sep 2026): the author POSTED the
+ms#111728 withdrawal request via the JMIR Communication Log
+(Editor/Author Correspondence, 2026-09-11 06:44 AM, subject 'JSG ms
+#111728 - withdrawal request', pre-review, wording per the prepared
+draft). Transcription archived at jmir_submission_package/
+JMIR_ms111728_Withdrawal_Sent_2026-09-11.md. Prior state for the
+record: author had confirmed JIKM (JIKMS2602466) was also completed
+and initially elected to keep both active; the full risk statement
+was given (policy violation, inaccurate 'not under consideration
+elsewhere' declarations, COPE misconduct, exposure of Prof. Cheung);
+the full-swap election then resolved intent and the withdrawal is
+now SENT. REMAINING ON THIS THREAD: (a) editorial acknowledgment
+that #111728 is marked withdrawn - archive when received; (b) AFTER
+acknowledgment, submit Paper 3 to JMIR Serious Games from
+paper3_submission/jmir_variant/; (c) Paper 2 continues at JIKM
+(JIKMS2602466) as its single venue.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
