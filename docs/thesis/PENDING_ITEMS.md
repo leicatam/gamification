@@ -656,6 +656,46 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
+## A9. UPDATE-8 DECK REVIEW + rev. B (12 Sep 2026)
+A reviewer critique of the Update-8 deck (relayed by the author)
+found several statements claiming more certainty/completion than
+the evidence supports. rev. B built (docs/presentations/
+EngD_Update_8_Final_Review_September2026_revB.pptx) addressing all
+points: PERMANENT WITHDRAWAL label removed (new simplified deck
+mechanism figure, deck_mechanism_simplified.png; social spread
+marked hypothesis); 0/21 CI tile REPLACED by qualitative
+'no documented return' (basis: therapist observation; LOGBOOK
+VERIFIED 12 Sep: aggregate cycle counts only, NO date columns - so
+run-level chronology claims are unsupported); measurement-provenance
+line added (+4.03 defined: InBody composite, n=30 pairs, baseline
+standard-mode first attendance, after = final attended episode);
+paradox sentence replaced with 'positive feedback and recorded
+gains coexisted with limited recorded use'; ethics card gives the
+honest chronology (approval 6 Aug 2026 POST-DATES Stage-1/2
+fieldwork, obtained with conducted procedures disclosed; period
+covers Stage-3B prospectively); Stage 3B re-labelled 'prepared,
+pending protocol sign-off', exploratory randomised evaluation of
+the COMBINED intervention (no component isolation, no framing
+isolation), early-exit capture named as protocol item;
+'closed/none blocks another/every dependency in hand' claims
+removed; publication labels matched to dated records (Paper 2
+'submitted 9 Sep, editorial assessment'; Paper 3 'prepared, venue
+with supervisor'); contributions slide carries per-card evidential
+status (proposed/candidate/under evaluation/completed);
+interview-provenance corrections carried in. AUTHOR ELECTION:
+'permanent' dropped; author's reading (players unlikely to use FRA
+again) kept as interpretation in speaker notes only.
+!! RECORD-LEVEL FOLLOW-THROUGH (queued): (a) NON-RETURN
+EVIDENTIAL-BASIS SWEEP of thesis + papers - phrases implying
+run-level chronology ('no later recorded run', 0/21 with CI
+0.0-15.5%) must be restated on the true basis (aggregate counts +
+contemporaneous therapist observation) or removed; fold into the
+JIKM first revision alongside the interview-provenance correction;
+(b) ethics-wording sweep: replace any 'covers all conducted
+stages' phrasing with the disclosed-as-conducted chronology.
+NOTE: the 'v2' file the author uploaded 12 Sep was byte-identical
+(same MD5) to the original deck - not a revision.
+
 ## A8. EXAMINER-STYLE REVIEW OF V37 → V38 (5 Sep 2026)
 Review archived: evidence/Examiner_style_Review_of_V37_received_
 2026-09-05.pdf. Verdict: major revision; "increase precision, not
