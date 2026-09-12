@@ -656,7 +656,32 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
-## A10a. CORRECTION: THE AUGUST COLLECTION USED THE OLD 3A BUILD
+## A10b. VERIFICATION-FIRST REFRAME (12 Sep 2026, after reviewer
+challenge). RETRACTED: the 'by mistake' attribution in the deck
+speaker notes was the assistant's inference, not the author's
+statement - removed. STANDARD SET: the August collection's stage
+label follows WHAT PARTICIPANTS EXPERIENCED (intervention
+features, measurement display, allocation procedure, outcomes
+collected), verified against the DEPLOYED FILE and RETURNED
+RECORDS - a version label alone does not settle it. Deck reworked
+to 'Stage 3B: status under verification' with a decision tree
+covering both outcomes. REPOSITORY-DATED EVIDENCE recorded for the
+challenged claims: protocol draft committed 8 Aug 2026 12:54
+(473046c, includes Option B); v3.0 build with consent/arms/
+questionnaire/export committed 9 Aug 2026 06:09 (6ef4f3f);
+inferential hierarchy pre-specification committed 9 Aug 2026 07:20
+(13a6e91); 2x2 failure-mode factor 9 Aug 07:09 (59b7881); v3.1
+gains-only scoring 13 Aug (923a25e). NOT YET ESTABLISHED: whether
+specification preceded recruitment - requires the August
+deployment's start date; the deck states the claim as
+'repository-dated 8-9 Aug; relationship to recruitment start
+pending'. VERIFICATION ITEMS FOR THE AUTHOR: (1) the exact file/
+link distributed in August (forward the distribution e-mail or
+file); (2) one returned record as-received (its shape shows which
+build produced it); (3) deployment start date; (4) who
+distributed, to whom, consent basis communicated.
+
+## A10a. CORRECTION: THE AUGUST COLLECTION USED THE OLD 3A BUILD [reframed by A10b]
 (author-confirmed 12 Sep 2026, superseding A10 below). The v3.0
 Stage-3B build has NOT been fielded. The collection running since
 August 2026 used the OLD Stage-3A build (no arms, no trajectory
