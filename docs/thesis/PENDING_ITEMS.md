@@ -698,6 +698,36 @@ rewrite to matched strength (do after records); "answer each RQ
 once" consolidation; G.8 reference repair; evidence cut-off
 declaration; Stage-2 basis-for-analysis statement.
 
+## A6a. NINE-INTERVIEW PROVENANCE — NEW AUTHOR ACCOUNT (12 Sep 2026)
+!! RECONCILIATION OPEN. The author, when asked for scans of the nine
+interview sheets, stated: the paper forms WERE NOT IN HIS HANDS - he
+received the THERAPISTS' SUMMARY, and 'they filled them in the
+logbook'; it was 'a month interview' (interviews spread over ~a
+month, consistent with the P024 exemplar dated 25 Aug 2025); each
+paper may be difficult to organise, but he will try to collect them.
+This SUPERSEDES/COMPLICATES the 1-Aug-2026 account currently written
+into the record ('paper interview questionnaire... author's notes
+primary record... 1-2 days after the eight-week cycle'). It also
+EXPLAINS the free-text transcription drift found on the P024
+exemplar (workbook entry is a paraphrase, not verbatim) - the entry
+workbook appears to derive from therapist summaries, not from the
+sheets directly. AFFECTED PASSAGES (do NOT amend until the author
+answers): thesis Appendix C interview description + s5.6/s3.4
+provenance sentences; Paper 2 Section X nine-interview paragraph and
+JMIR equivalent; scratch FACTS file qualitative section.
+FOUR QUESTIONS PUT TO THE AUTHOR: (1) who sat with each participant
+and marked the sheet - therapist/staff, the participant, or the
+researcher? (2) over what period did the nine interviews run
+(exemplar 25 Aug 2025; were some in September 2025)? (3) what is
+'the logbook' here - the archived FRA logbook, or a separate
+interview log - and who entered the workbook rows, from what source?
+(4) where are the paper sheets physically kept now (chain of
+custody for any scans)?
+FALLBACK RECORDED: if some sheets cannot be retrieved, the record
+is re-described honestly as therapist-administered/-mediated with
+researcher compilation from summaries - the disclosure fix matters
+more than the scans.
+
 ## A6. STAGE-2 INTERVIEW RECORDS — AWAITING AUTHOR (13 Aug 2026)
 The verdict-fear stance paraphrase ("game is fun... but I do not want
 it telling me where my health problems are") is STAGE-2 interview
