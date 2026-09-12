@@ -656,7 +656,29 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
-## A10. STAGE 3B IS IN THE FIELD (author, 12 Sep 2026)
+## A10a. CORRECTION: THE AUGUST COLLECTION USED THE OLD 3A BUILD
+(author-confirmed 12 Sep 2026, superseding A10 below). The v3.0
+Stage-3B build has NOT been fielded. The collection running since
+August 2026 used the OLD Stage-3A build (no arms, no trajectory
+display, no coaching, no in-build consent, no end-screen
+questionnaire, no one-file export). CONSEQUENCES: (1) that
+collection CANNOT test H-3B; it is to be reported as a SEPARATELY
+LABELLED 3A EXTENSION and NEVER merged into the reported 3A record
+(Paper 3's 38/41/41 register stays untouched); (2) deck corrected
+a third time (slide 7: 'build ready - fielding decision pending');
+(3) DECISION WITH SUPERVISOR: field v3.0 in a compressed ~3-4-week
+window - still inside the ethics period IF recruitment opens by
+late September (protocol Option B single-arm variant available for
+limited recruitment) - OR report the framework as designed and
+pre-specified (9 Aug 2026) but not field-tested; §8.8 then stays a
+specified, unexecuted protocol, which the thesis can carry.
+AUTHOR TO SUPPLY on the August 3A-build collection: (a) who
+distributed it, to whom, through which channels; (b) consent basis
+communicated (the 3A implied-consent e-mail model?); (c) what
+returns exist so far and where; (d) start date. Archive returns
+as-received when supplied.
+
+## A10. STAGE 3B IS IN THE FIELD (author, 12 Sep 2026) [SUPERSEDED by A10a]
 !! STATUS SUPERSEDED: the author reports Stage 3B STARTED IN AUGUST
 2026 and is ALMOST DONE - the 'awaiting protocol sign-off before
 recruitment' status recorded in A2 is out of date. Deck rev. B
