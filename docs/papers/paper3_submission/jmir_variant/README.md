@@ -11,9 +11,20 @@ draft); Paper 3 -> JMIR Serious Games. One paper per venue.
 | figure1-3.png + Paper3_JMIR_Figures.zip | Pixel-identical to the embeds, for production requests |
 
 ## Checklist (games.jmir.org)
-1. SEND THE PAPER-2 WITHDRAWAL for ms#111728 FIRST (ready draft in
-   ../../publication/), so the Paper-2 declaration and this paper's
-   cover letter are both clean at submission time.
+0. !! GATE (12 Sep 2026): Prof. Cheung's EXPLICIT venue approval is
+   required before this package is submitted (he had recommended a
+   different publisher; every future submission step is now
+   supervisor-approved per the apology-letter commitment). The IEEE
+   Access package (../) is the ready alternative if he prefers it.
+1. Paper-2 withdrawal for ms#111728: SENT 11 Sep 2026 via the
+   Communication Log (record in ../../publication/
+   jmir_submission_package/). Await/attach the acknowledgment.
+   An apology/full-account letter to the JMIR editors is drafted at
+   ../../publication/Apology_Letter_JMIR_ms111728_2026-09-12.docx
+   (send only after Prof. Cheung approves the text). The cover
+   letter now discloses the ms#111728 withdrawal itself.
+1b. Set the cover-letter date on the day of actual submission
+   (placeholder currently in the letter).
 2. Submit as Original Paper; paste the structured abstract; keywords
    from the manuscript; ORCIDs mandatory for all authors (Cheung
    ORCID still needed).

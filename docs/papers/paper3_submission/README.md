@@ -92,3 +92,10 @@ IEEE style.
 GATES before pressing submit: Prof. Cheung's go-ahead + ORCID; the
 same programme-level holds as Paper 2 (R3 is the only submittable
 version - R1/R2 must never be submitted).
+
+## STATUS (12 Sep 2026)
+This package is the READY ALTERNATIVE venue for Paper 3. The venue
+decision now rests with Prof. Cheung (supervisor approval required
+for every submission step). Submit EITHER this package OR the JMIR
+variant (jmir_variant/) - never both, and never while the other is
+under review.
