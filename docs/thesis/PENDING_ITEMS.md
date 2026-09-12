@@ -633,6 +633,15 @@ supervisor unaware, fault author's alone; withdrawal pre-checks;
 supervisor now approves all future submission steps; transparent
 notice that a companion manuscript may later be submitted).
 ADVICE GIVEN: show Prof. Cheung the letter BEFORE sending.
+SUPERVISOR DECISION (12 Sep 2026): Prof. Cheung directed that the
+apology letter NOT be sent for now - wait until the JMIR editor
+replies to the withdrawal first. Letter stays drafted and ON HOLD;
+trigger = the editor's reply (then re-confirm text with Prof.
+Cheung before sending). Consequence applied: the Paper-3 JMIR cover
+letter's disclosure no longer presupposes a sent apology (rewritten
+to 'withdrawal made on our own initiative'; restore the
+full-account clause only if/after the apology letter is actually
+sent); bundle rebuilt.
 !! PAPER-3 VENUE PLAN NOW GATED ON SUPERVISOR: Prof. Cheung had
 recommended a different publisher; the full-swap plan (Paper 3 to
 JMIR Serious Games) must NOT proceed without his explicit venue
