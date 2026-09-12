@@ -656,6 +656,30 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
+## A10c. REVIEWER ROUND 2 APPLIED (12 Sep 2026). The attribution
+'the author reports the August deployment used the earlier 3A
+build' REMOVED from the deck - the author's two statements
+conflicted ('Stage 3B started in August' vs 'Old 3A built not
+3B'); the deck now carries only the reviewer's interim wording:
+'Data collection commenced in August 2026. The deployed procedures
+and returned records are being checked against the Stage-3B
+protocol before final classification and analysis.' DEFAULT plan
+of record = complete and analyse the August deployment as Stage 3B
+under the pre-specified hierarchy; compressed re-deployment and
+framework-as-specified are CONTINGENCIES only (slides 8/9
+realigned). Additional fixes: mechanism-figure intervention arrows
+retargeted (coaching -> self-efficacy; reframing -> identity
+threat); run-split rationale reduced to 'retrospectively defined,
+descriptive' (three-to-five-play anchor removed from the deck);
+same-index/same-scale note added to the +4.03 provenance line;
+'avoidance, not a solution' replaced with neutral wording; slide-10
+labels aligned ('evaluation in progress', 'assembly continuing');
+'the thesis stands without 3B' assurance removed from notes
+(needs supervisor confirmation); ethics/interview cards marked as
+memo-archived/record-sourced. STILL REQUIRED to settle
+classification: distributed file/link, one as-received return,
+deployment start date, distributor/consent basis.
+
 ## A10b. VERIFICATION-FIRST REFRAME (12 Sep 2026, after reviewer
 challenge). RETRACTED: the 'by mistake' attribution in the deck
 speaker notes was the assistant's inference, not the author's
