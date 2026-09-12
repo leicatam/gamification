@@ -656,6 +656,27 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
+## A10. STAGE 3B IS IN THE FIELD (author, 12 Sep 2026)
+!! STATUS SUPERSEDED: the author reports Stage 3B STARTED IN AUGUST
+2026 and is ALMOST DONE - the 'awaiting protocol sign-off before
+recruitment' status recorded in A2 is out of date. Deck rev. B
+updated (slide 7: 'in the field, nearing completion'; slides 8/9
+timelines rebuilt around window close -> analysis-plan-first ->
+analysis). Window falls inside the approved ethics period (to
+30 Oct 2026).
+AUTHOR TO CONFIRM (needed before the Stage-3B write-up): (1) exact
+start date and expected/actual end date of the window; (2) was the
+protocol signed by Prof. Cheung before the start - if not, record
+what was agreed and when (governance note; ethics coverage itself
+is fine); (3) who is running the deployment and through which
+channel(s); (4) participants so far vs the N>=40 target; (5) both
+arms functioning as designed (silent A/B)?; (6) are the one-file
+JSON exports being returned and archived - where; (7) any protocol
+deviations. STANDING SAFEGUARD: fix the ANALYSIS PLAN with the
+supervisor (primary outcome, missing-data and early-exit handling)
+BEFORE analysing the collected data - especially important given
+the deployment preceded the sign-off record.
+
 ## A9. UPDATE-8 DECK REVIEW + rev. B (12 Sep 2026)
 A reviewer critique of the Update-8 deck (relayed by the author)
 found several statements claiming more certainty/completion than
