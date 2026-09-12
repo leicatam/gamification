@@ -656,6 +656,22 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
+## A11. WITHDRAWAL LETTER FINALISED (12 Sep 2026). JMIR's formal
+process requires a letter SIGNED BY ALL AUTHORS; withdrawal is not
+effective until JMIR confirms receipt. Final letter at
+docs/papers/publication/
+Withdrawal_Letter_AllAuthors_JMIR_ms111728_2026-09-12.docx:
+formal request + honest chronology (JIKM submitted 9 Sep 2026 -
+DATE AUTHOR-CONFIRMED; JMIR 11 Sep; declaration inaccurate at
+signing, rule not yet understood; supervisor unaware until after;
+all future submissions supervisor-approved), signature blocks for
+both authors. Form reason selected: 'Authors want to try a
+different journal from another publisher' (consistent). SEQUENCE:
+Benny approves + both sign -> upload signed PDF with the form
+(tick 'letter ready') or e-mail support@jmir.org -> archive signed
+PDF as-received -> AWAIT JMIR CONFIRMATION (Paper-3 JMIR
+submission blocked until it arrives AND Benny approves the venue).
+
 ## A10c. REVIEWER ROUND 2 APPLIED (12 Sep 2026). The attribution
 'the author reports the August deployment used the earlier 3A
 build' REMOVED from the deck - the author's two statements
