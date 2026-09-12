@@ -622,6 +622,23 @@ that #111728 is marked withdrawn - archive when received; (b) AFTER
 acknowledgment, submit Paper 3 to JMIR Serious Games from
 paper3_submission/jmir_variant/; (c) Paper 2 continues at JIKM
 (JIKMS2602466) as its single venue.
+SUPERVISOR ESCALATION (12 Sep 2026): Prof. Cheung learned of the
+dual submission and was very angry (author's report - 'submission
+malpractice'). Author elected to send the JMIR editors an open,
+honest apology/full-account letter; drafted at
+docs/papers/publication/Apology_Letter_JMIR_ms111728_2026-09-12.docx
+(first-journal-submission inexperience; differing venue
+recommendations; false not-under-consideration declaration owned;
+supervisor unaware, fault author's alone; withdrawal pre-checks;
+supervisor now approves all future submission steps; transparent
+notice that a companion manuscript may later be submitted).
+ADVICE GIVEN: show Prof. Cheung the letter BEFORE sending.
+!! PAPER-3 VENUE PLAN NOW GATED ON SUPERVISOR: Prof. Cheung had
+recommended a different publisher; the full-swap plan (Paper 3 to
+JMIR Serious Games) must NOT proceed without his explicit venue
+approval. The letter itself commits to supervisor approval of every
+future submission step. IEEE Access package remains the ready
+alternative if he prefers it.
 STILL OPEN from the examination: title decision with Benny (grammar
 'a', subtitle recommendation, operational definitions in s1.11);
 Q2 Appendix-C paper-questionnaire reconciliation (AWAITING AUTHOR); D2/D3
