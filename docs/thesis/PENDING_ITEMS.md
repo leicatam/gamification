@@ -715,18 +715,35 @@ sheets directly. AFFECTED PASSAGES (do NOT amend until the author
 answers): thesis Appendix C interview description + s5.6/s3.4
 provenance sentences; Paper 2 Section X nine-interview paragraph and
 JMIR equivalent; scratch FACTS file qualitative section.
-FOUR QUESTIONS PUT TO THE AUTHOR: (1) who sat with each participant
-and marked the sheet - therapist/staff, the participant, or the
-researcher? (2) over what period did the nine interviews run
-(exemplar 25 Aug 2025; were some in September 2025)? (3) what is
-'the logbook' here - the archived FRA logbook, or a separate
-interview log - and who entered the workbook rows, from what source?
-(4) where are the paper sheets physically kept now (chain of
-custody for any scans)?
-FALLBACK RECORDED: if some sheets cannot be retrieved, the record
-is re-described honestly as therapist-administered/-mediated with
-researcher compilation from summaries - the disclosure fix matters
-more than the scans.
+ANSWERS RECEIVED + CORRECTIONS APPLIED (12 Sep 2026). Author's
+account: interviews ran AUGUST-SEPTEMBER 2025; the therapists
+'randomly found' the players during the period - all 30 sought,
+'actually 29' reached - and invited each; ONLY NINE ACCEPTED (the
+nine acceptors = the nine sustained participants per the ID-register
+linkage); some interviews were by telephone; therapists helped fill
+the questionnaire forms and the logbook, in some cases NOT directly
+at the interview; the researcher received therapist summaries and
+collected the logbook. EDITS APPLIED in one pass: thesis Appendix C
+interview paragraph rewritten (invitation/acceptance account,
+Aug-Sep 2025, therapist-assisted incl. telephone, therapist-completed
+record as primary, free text = therapists' rendering not verbatim,
+self-selection sentence added: 20 reachable players declined -
+interviews speak to persistence only); exemplar sentence updated
+(P024 photo sighted, matches entry record; archival copies still to
+file); JIKM + IJKM-anon + JMIR working manuscripts corrected at the
+chronology and qualitative-record paragraphs. Frozen as-submitted
+JIKM publication copy NOT touched - !! THE PROVENANCE CORRECTION
+MUST GO INTO THE FIRST JIKM REVISION (the submitted PDF says
+'one to two days after' / 'researcher's notes primary').
+REMAINING CONFIRMATIONS (small): (a) 'recorded by phone' read as
+'conducted by telephone' - confirm; (b) is the one unreachable
+player (30 minus 29) the unverified record S2-P015 (F/72, whose
+later identification/location failed)? If yes, one sentence can
+link the two facts; do not link without confirmation; (c) which
+logbook holds the interview content - the archived FRA logbook or a
+separate interview logbook (if separate, SEND IT - it is the
+primary record); (d) the nine therapist-completed forms - collect
+what can be found (P024 exemplar to be re-sent as a file).
 
 ## A6. STAGE-2 INTERVIEW RECORDS — AWAITING AUTHOR (13 Aug 2026)
 The verdict-fear stance paraphrase ("game is fun... but I do not want
