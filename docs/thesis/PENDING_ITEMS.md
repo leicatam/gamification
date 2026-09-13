@@ -684,6 +684,30 @@ Benny approves + both sign -> upload signed PDF with the form
 PDF as-received -> AWAIT JMIR CONFIRMATION (Paper-3 JMIR
 submission blocked until it arrives AND Benny approves the venue).
 
+## A10e. FIRST REAL 3B RETURN + QUARANTINED CSVs (13 Sep 2026).
+(1) GENUINE STAGE-3B RETURN RECEIVED: from_Huang.pdf (iOS Mail
+print-to-PDF created 15 Aug 2026 12:26 UTC) containing a complete
+text-message return: participant B9V8YA, arm B (static x0.85),
+failure_mode ZF, consent 2026-08-15T08:00:55Z, enrolment 45-64/F,
+one 30s session 15 Aug, state_logs, questionnaire D1=2/D2=1/F1=2/
+F2=2, Simplified Chinese, device DEV2. Archived in
+data_entry/incoming/stage3b_returns/. BUILD FINGERPRINT: the
+'failure_mode' field means the deployed build is AT/AFTER commit
+59b7881 (9 Aug 07:09, the 2x2 build) - one commit LATER than the
+file the author uploaded 13 Sep (abf1603, 06:58, no failure_mode).
+Pre-Amendment-A scoring confirmed (579 = 7*10+459+50). CHRONOLOGY:
+this participant's consent (15 Aug) POST-DATES the pre-specified
+hierarchy commit (9 Aug 07:20) - first documented instance of
+specification preceding participation. Distribution message still
+needed for the start date and the exact distributed artifact.
+(2) FOUR TELEMETRY CSVs QUARANTINED (UNVERIFIED_telemetry_claims/
+with README_VERIFICATION_FINDINGS.md): March-2026-dated 'Stage-3A'
+telemetry carrying August-2026 build vocabulary, eight IDs with
+contradictory duplicate histories across files, uniform zero-failure
+outcomes, stage-mismatched schema. NOT evidence; author provenance
+requested. If treated as genuine they would contradict the V24
+thesis-of-record correction (no 3A session logs retained).
+
 ## A10d. BUILD IDENTIFIED (13 Sep 2026). The author uploaded 'the
 3B game' file. SHA-256 comparison against every repository version:
 BYTE-IDENTICAL to commit abf1603 (9 Aug 2026 06:58) - a genuine
