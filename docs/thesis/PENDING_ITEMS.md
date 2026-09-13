@@ -684,6 +684,32 @@ Benny approves + both sign -> upload signed PDF with the form
 PDF as-received -> AWAIT JMIR CONFIRMATION (Paper-3 JMIR
 submission blocked until it arrives AND Benny approves the venue).
 
+## A10d. BUILD IDENTIFIED (13 Sep 2026). The author uploaded 'the
+3B game' file. SHA-256 comparison against every repository version:
+BYTE-IDENTICAL to commit abf1603 (9 Aug 2026 06:58) - a genuine
+Stage-3B v3.0 build: in-build consent, enrolment, SILENT TWO-ARM
+assignment (adaptive vs static), end-screen questionnaire,
+text-message results return, WeChat mode, shared-device support.
+It PRE-DATES: the 2x2 failure-mode factor (59b7881, 07:09 same
+morning), CSV export (b8028e5), Amendment A gains-only scoring
+(923a25e, 13 Aug), Amendment B input-modality logging (a1afc42).
+IF the author confirms this exact file was what the ~20
+distributors sent (CONFIRMATION PENDING), then: (1) the August
+deployment classifies as STAGE 3B (not a 3A extension) - simple
+two-arm, pre-Amendment-A scoring; (2) Amendments A/B must be
+recorded as NOT DEPLOYED (the protocol's 'finalised before any
+study participant plays' premise for Amendment A fails and must be
+corrected); (3) the pre-specified hierarchy commit (13a6e91,
+9 Aug 07:20) post-dates the build snapshot (06:58) but the
+distribution START DATE is still needed to establish
+specification-vs-recruitment order. Distribution model
+(author-reported): ~20 distributor agents forwarding to their
+networks, ~100 recipients estimated; returns count not yet
+reported. SYNTHETIC-DATA BOUNDARY RESTATED for the Saturday
+review: a hard-labelled synthetic demonstration dataset is being
+produced for pipeline demonstration ONLY - G.8 rule, never as
+evidence, every artifact watermarked SYNTHETIC.
+
 ## A10c. REVIEWER ROUND 2 APPLIED (12 Sep 2026). The attribution
 'the author reports the August deployment used the earlier 3A
 build' REMOVED from the deck - the author's two statements
