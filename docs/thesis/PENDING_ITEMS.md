@@ -684,6 +684,43 @@ Benny approves + both sign -> upload signed PDF with the form
 PDF as-received -> AWAIT JMIR CONFIRMATION (Paper-3 JMIR
 submission blocked until it arrives AND Benny approves the venue).
 
+## A10f. DISTRIBUTION RECORD ESTABLISHED (13 Sep 2026). Five WeChat
+screenshots archived (stage3b/distribution_records/). ESTABLISHED:
+(1) DEPLOYED ARTIFACT = the Alpine3B_DEVn.html device set of the
+59b7881 GENERATION (9 Aug 07:09, the 2x2 build): Huang's return
+carries top-level failure_mode:"ZF", produced by the export line
+failure_mode:P3B.failMode||'ZF' which exists ONLY from 59b7881
+(verified against both DEV generations); file sizes shown in
+WeChat (69KB) consistent (71,544 bytes, floor-KB). The base file
+the author uploaded 13 Sep (abf1603) is one commit earlier than
+the distributed device set - supersedes A10d's candidate.
+CONSEQUENCE: the 2x2 randomisation (adaptive/static x
+zero-fail/fail-possible) WAS deployed; Amendments A/B (13 Aug)
+were NOT (sends pre-date them) - unchanged.
+(2) CHRONOLOGY: recruitment pitch to distributor Huang (WeChat,
+9 Aug 15:42 local) POST-DATES the pre-specified hierarchy commit
+(13a6e91, 9 Aug 07:20 repo clock; = 15:20 HKT if repo clock is
+UTC, as cloud commits are) - under that timezone reading,
+SPECIFICATION PRECEDED ALL RECRUITMENT, with file sends later
+still: DEV2 to Huang 10 Aug 23:35, DEV1 to A-Tang by 12 Aug
+morning; first return 15 Aug (B9V8YA, device DEV2 - consistent
+with Huang holding DEV2). Timezone assumption to be noted once in
+the write-up; the ordering holds under any plausible reading.
+(3) PROCEDURE AS COMMUNICATED (Huang pitch, verbatim source):
+academic research framing, ~10 helpers each arranging 5-10
+participants, 30s x 5 runs, facilitator watches, game auto-records,
+results downloaded to USB - matches the protocol's shared-device
+path and gives the denominator structure (10 x 5-10 = 50-100).
+(4) RETURN-PATH FRICTION DOCUMENTED: A-Tang chat shows participants
+sending SCORE PHOTOS, believing results reach the researcher
+automatically. RESCUE PATH: the deployed build keeps a PER-DEVICE
+multi-participant archive with a facilitator harvest panel -
+distributors can retroactively export ALL participants from each
+device used (same device/browser) and send one file per device.
+This is the collection instruction to broadcast now.
+OPEN: returns count; harvest exports from each distributor;
+per-distributor participant counts; window-close date.
+
 ## A10e. FIRST REAL 3B RETURN + QUARANTINED CSVs (13 Sep 2026).
 (1) GENUINE STAGE-3B RETURN RECEIVED: from_Huang.pdf (iOS Mail
 print-to-PDF created 15 Aug 2026 12:26 UTC) containing a complete
