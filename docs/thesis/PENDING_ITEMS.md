@@ -684,6 +684,19 @@ Benny approves + both sign -> upload signed PDF with the form
 PDF as-received -> AWAIT JMIR CONFIRMATION (Paper-3 JMIR
 submission blocked until it arrives AND Benny approves the venue).
 
+## A10g. RETURN B9V8YA CHAIN OF CUSTODY COMPLETE (13 Sep 2026).
+The original e-mail behind from_Huang.pdf archived as screenshot:
+From 'Renee' to sidney.tam@connect.polyu.hk, 15 Aug 2026 17:06
+(local), subject 'from Huang', body = the verbatim B9V8YA return
+text with its transmission header line. Chain: DEV2 sent to Huang
+via WeChat 10 Aug 23:35 -> participant consent/play 15 Aug 08:00
+UTC (16:00 HKT) -> e-mailed to the researcher 17:06 HKT same day
+-> WeChat follow-up 16 Aug ('did you receive the e-mail') ->
+acknowledged. ONE CLARIFICATION NEEDED: who 'Renee' is relative to
+distributor Huang (her own e-mail display name, or a third person
+who transcribed/forwarded) - affects nothing about authenticity,
+but the custody note should name the sender correctly.
+
 ## A10f. DISTRIBUTION RECORD ESTABLISHED (13 Sep 2026). Five WeChat
 screenshots archived (stage3b/distribution_records/). ESTABLISHED:
 (1) DEPLOYED ARTIFACT = the Alpine3B_DEVn.html device set of the
