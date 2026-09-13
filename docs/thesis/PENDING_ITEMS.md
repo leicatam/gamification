@@ -656,6 +656,18 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
+## A11a. SIGNED WITHDRAWAL LETTER UPLOADED (13 Sep 2026). The
+letter, signed by BOTH authors (final wording lightly refined at
+signature: 'submission error', 'without my co-author's prior
+consent', 'my co-author instructed me to request its immediate
+withdrawal', 'I take sole responsibility', request for WRITTEN
+confirmation), was uploaded through JMIR's withdrawal form.
+Archived as-received: jmir_submission_package/
+Withdrawal_Letter_SIGNED_as_uploaded_2026-09-13.pdf.
+NOW AWAITING: JMIR's written confirmation that the withdrawal is
+completed -> archive it; then the ms#111728 file is CLOSED and the
+Paper-3 venue decision (supervisor) can proceed.
+
 ## A11. WITHDRAWAL LETTER FINALISED (12 Sep 2026). JMIR's formal
 process requires a letter SIGNED BY ALL AUTHORS; withdrawal is not
 effective until JMIR confirms receipt. Final letter at
