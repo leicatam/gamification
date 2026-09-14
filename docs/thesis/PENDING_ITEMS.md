@@ -663,6 +663,51 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
+## A12. UPDATED EXAMINATION REPORT (14 Sep 2026) ACTIONED -> V42.
+The examiner's updated report on V40 (archived: docs/thesis/exam/
+EngD_V40_Updated_Examination_Report_as_received_2026-09-14.docx;
+recommendation: substantial revision + documentary verification;
+NOTE: the examiner reviewed the author's stale 14-Sep upload, so the
+satisfaction/symptom reconciliation, interview provenance and exact
+ethics dates he flags as contradictions were already fixed in V41)
+was triaged point-by-point (67 points): 10 already resolved in V41,
+45 verified text corrections APPLIED in V42 (each adversarially
+checked against the record before application; see the V42 closure
+note for the list), 2 external actions, and the AUTHOR RECORDS below.
+Oral-exam crib for the report's ten questions:
+docs/thesis/exam/Oral_Exam_Crib_Q1-Q10_2026-09-14.md.
+
+AUTHOR RECORDS still needed (examiner-driven, ordered by dependency):
+(a) Stage-1 cleaned survey response file (CSV) -> Appendix G item G.1
+    [unlocks: integer counts behind 39%/74%/82%, removal of tildes in
+    Table 4.1, and the definitive Stage-1 age range - the 65-88 range
+    is WITHDRAWN in V42 as a reporting error (five Stage-2
+    participants aged 62-64 came from the interviewed 200)];
+(b) Stage-2 session telemetry + AI-call logs: archive against
+    G.2/G.7 OR one disclosed not-retained sentence (marker now in
+    §8.9);
+(c) G.0A earlier-build rows (2024 demo, Stage-2 build, Stage-3 HTML
+    port, v2.x) - the v3.x Stage-3B row is FILLED in V42 from the
+    repository record;
+(d) Appendix D as-administered response format + exact bilingual
+    wording; invitation-denominator accounting to compile the G.5
+    de-identified distribution/return e-mail index;
+(e) scans of completed Stage-2 interview forms + after-game
+    questionnaire sheets (Appendix C); G.10 video consent;
+(f) debriefing statement: were discontinued Stage-2 participants
+    ever told play was research, and what closing communication the
+    sustained nine received beyond the signing event;
+(g) statement whether individual FRA results were ever relayed to
+    Stage-2 participants (therapist record/ID register) -> one
+    sentence in §3.4 or §5.2A;
+(h) examiner-access deposit: the Appendix G items physically
+    deposited (bound annex or governed repository) with the next
+    submission.
+EXTERNAL: itemised institutional determination via the PI covering
+the conducted field activities and thesis use of unconsented
+participants' records (the two-part application structure already
+frames the request); supervisor's report.
+
 ## A11b. **WITHDRAWAL CONFIRMED BY JMIR — ms#111728 CLOSED
 (14 Sep 2026).** Editorial decision e-mail received: "Decision E:
 Withdrawn by Author" — "We confirm receipt of your request to
