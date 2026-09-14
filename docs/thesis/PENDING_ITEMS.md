@@ -39,9 +39,16 @@ submitted to IEEE Xplore (Ei Compendex/Scopus). TITLE CORRECTION
 APPLIED 7 Aug: all four citing documents (thesis Ch4 attribution,
 JIKM ref, JMIR [46], Paper 3 [1]) had cited it as "A study of
 utilisation..." — corrected to the accepted title with full venue.
-Consent-statement check still open: obtain the FINAL submitted/
-published SS-293 text and verify its Stage-1/Stage-2 consent wording
-against the corrected record;
+Consent-statement check: AUTHOR-REPORTED DONE 14 Sep 2026 (with the
+JMIR-confirmation batch). The SS-293 REVIEW FORM is now archived
+(docs/papers/paper1_icmss/Review_Form_SS-293_as_received_2026-09-14.pdf
++ SS-293_Record.md): "Publish in minor, required changes" — three
+formatting-level changes (abstract 100-150 words; template;
+references in numeric order), none concerning consent or ethics.
+STILL WANTED for evidence/: the camera-ready/published SS-293 PDF
+itself (acceptance letter shown again 14 Sep, still as in-chat
+image), so the consent wording is on file rather than only
+author-reported;
 (d) update the JMIR guide's DO-NOT-SUBMIT note. Note: the approval
 e-mail screenshot shows the submitted type as Non-Clinical Acad.
 (the 18-May draft record had said Clinical/Expedited).
@@ -656,17 +663,27 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
-## A11a. SIGNED WITHDRAWAL LETTER UPLOADED (13 Sep 2026). The
-letter, signed by BOTH authors (final wording lightly refined at
-signature: 'submission error', 'without my co-author's prior
-consent', 'my co-author instructed me to request its immediate
+## A11b. **WITHDRAWAL CONFIRMED BY JMIR — ms#111728 CLOSED
+(14 Sep 2026).** Editorial decision e-mail received: "Decision E:
+Withdrawn by Author" — "We confirm receipt of your request to
+withdraw your manuscript ... and have removed it from the submission
+queue." Signed Dola Majekodunmi, Managing Editor, JMIR Publications;
+Cc'd to the co-author. Transcribed into
+jmir_submission_package/JMIR_ms111728_Withdrawal_Sent_2026-09-11.md;
+author to save the e-mail itself (PDF/EML) into that folder when
+convenient. CONSEQUENCE: the JMIR Serious Games venue option for
+Paper 3 is unblocked on the journal side; Paper-3 submission still
+awaits the supervisor's venue decision (JMIR variant and IEEE Access
+package both ready). The A11/A11a items below are CLOSED.
+
+## A11a. SIGNED WITHDRAWAL LETTER UPLOADED (13 Sep 2026) — CLOSED
+by A11b. The letter, signed by BOTH authors (final wording lightly
+refined at signature: 'submission error', 'without my co-author's
+prior consent', 'my co-author instructed me to request its immediate
 withdrawal', 'I take sole responsibility', request for WRITTEN
 confirmation), was uploaded through JMIR's withdrawal form.
 Archived as-received: jmir_submission_package/
 Withdrawal_Letter_SIGNED_as_uploaded_2026-09-13.pdf.
-NOW AWAITING: JMIR's written confirmation that the withdrawal is
-completed -> archive it; then the ms#111728 file is CLOSED and the
-Paper-3 venue decision (supervisor) can proceed.
 
 ## A11. WITHDRAWAL LETTER FINALISED (12 Sep 2026). JMIR's formal
 process requires a letter SIGNED BY ALL AUTHORS; withdrawal is not
