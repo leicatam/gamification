@@ -31,28 +31,37 @@ B9V8YA (Huang, 15 Aug): participant played on her own device and sent
 from her own e-mail, with her own address, timestamp and message. That
 independent sender is what makes the return verifiable. Aim for this.
 
-## Two acceptable collection modes
+## The independent link is the DISTRIBUTOR, not the participant
 
-### Mode 1 — PREFERRED: participant's own device + own e-mail
-Snowball distribution (forward the frozen file). The participant plays
-on their own phone/computer and presses "Send results" from their own
-e-mail. Independent sender = built-in provenance. Most returns should
-be this. No researcher device involved.
+Many elderly participants have no e-mail. That is expected and fine.
+The independent link does not have to be the participant — it has to
+be someone who is NOT the researcher. In this programme that someone
+is the distributor: the ~20 independent people who recruit and help.
+The participant needs no e-mail, no account, and no device of their
+own.
 
-### Mode 2 — dispatched or shared device (only if a participant has no device)
-Do NOT rely on the researcher's mail account. Instead:
-- An INDEPENDENT facilitator (a distributor — not the researcher) runs
-  the session and keeps a short contemporaneous log: date, which device
-  copy (DEV1-5), and the anonymous participant code shown by the game
-  for each play (no names). The game's per-device archive / harvest
-  panel stores each play on the device for the facilitator to collect.
-- The facilitator forwards the results (from the facilitator's own
-  e-mail) or hands over the saved files together with the log.
-- The facilitator's dated log is the independent link that replaces the
-  participant's own e-mail.
-If no independent facilitator is available, do not dispatch a
-researcher-owned, researcher-e-mail device for counted data — use
-Mode 1.
+### Mode A — PRIMARY for this population: distributor-mediated
+- A distributor (an independent person, not the researcher) sits with
+  the participant and helps them play the frozen file — on the
+  participant's device if they have one, or on the DISTRIBUTOR's own
+  device (a shared device is fine; each new player is a fresh
+  enrolment, so codes differ).
+- At the end, the result is sent to the distributor by WeChat message,
+  saved file, or e-mail (the game offers all three). The distributor
+  forwards it to the researcher FROM THE DISTRIBUTOR'S OWN account, and
+  records one line in the distributor log (date, device copy, the
+  anonymous participant code the game shows, age band — NO names).
+- The distributor's own account + dated log is the independent link.
+
+### Mode B — where a participant does have e-mail
+The participant plays on their own device and sends from their own
+e-mail (as B9V8YA did). Use it when available; do not require it.
+
+### NOT acceptable
+The researcher's own device logged into the researcher's own e-mail as
+the sole source, with no independent distributor forwarding or logging.
+That is the one configuration to avoid — it puts no independent person
+in the chain.
 
 ## What makes a clean-run return verifiable
 
