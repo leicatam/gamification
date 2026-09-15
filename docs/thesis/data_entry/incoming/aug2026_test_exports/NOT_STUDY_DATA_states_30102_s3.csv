@@ -1,0 +1,5 @@
+t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src
+"0","0","0.6","0.6","0","0","0","100","run start — gentle floor (winnable first run)","init"
+"6.2","0.1","0.6","0.6","67","0","0","50","avoid rate 100% in band → hold","fallback"
+"12.3","0.2","0.6","0.7","133","1","0","100","avoid rate 100% > 80% → step up","fallback"
+"18.2","0.3","0.7","0.7","198","5","2","88.9","avoid rate 60% in band → hold","fallback"
