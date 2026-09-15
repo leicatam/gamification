@@ -663,6 +663,40 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
+## A13. PAPER 3 RE-SCOPE + VENUE RESET; PAPER-2 PROOF AUDIT (15 Sep 2026).
+Author's direction: Paper 3 should carry the ADAPTIVE-LEARNING
+FRAMEWORK supported by Stage 3A AND 3B, at a JMIR-Serious-Games-level
+venue EXCLUDING that journal (post-withdrawal preference).
+Updated note for the supervisor:
+paper3_submission/Paper3_Venue_and_Scope_Note_for_Supervisor_v2_2026-09-15.docx
+(Option A recommended: broaden to framework paper, submit after the
+3B window closes; venue shortlist Games for Health Journal /
+JMIR Aging / IEEE Access-ready).
+PAPER-3 PRE-SUBMISSION FIXES (apply before ANY submission):
+(a) "a first pre-registered element ... has been launched" ->
+    "pre-specified (repository-dated 8-9 Aug 2026)" (3B is NOT
+    registry-registered - same correction the thesis took at V42);
+(b) ethics terminology -> memo's own wording (DRC on behalf of PolyU
+    IRB), matching V42 §3.4;
+(c) import the V42 §6.4 initial-dropout timing-rule qualification
+    into Methods/Limitations;
+(d) 71.7%/63.3% depend on the Appendix-D as-administered instrument
+    confirmation (A12 item d) - resolve before submission;
+(e) if Option A: add framework section (from thesis §7.4/§7.5.2) +
+    Stage-3B results section after window close and classification.
+PAPER-2 (JIKM) SUBMITTED-PROOF AUDIT - proof archived:
+jikm_submission_package/JIKM-S-26-02466_as_submitted_2026-09-09.pdf.
+FIRST-REVISION LIST (send NOTHING until JIKM requests revision):
+(1) CRITICAL: a leftover bracketed "[Working-draft note: the exact
+    approval date and the scope wording ... are pending verification
+    ...]" went out in §IV-B Ethics - remove and state the memo facts
+    (approved 6 Aug 2026, DRC on behalf of PolyU IRB, period
+    16 Jun 2024 - 30 Oct 2026);
+(2) interview provenance/timing correction (already prepared);
+(3) ethics-terminology alignment as above;
+(4) consider aligning "preregistered three-arm study" phrasing to
+    "pre-specified (to be preregistered before data collection)".
+
 ## A12. UPDATED EXAMINATION REPORT (14 Sep 2026) ACTIONED -> V42.
 The examiner's updated report on V40 (archived: docs/thesis/exam/
 EngD_V40_Updated_Examination_Report_as_received_2026-09-14.docx;
