@@ -60,11 +60,54 @@ b. If any are genuine participants: who played, on whose device, and
 c. Where did the two personal names come from, and may we strip them?
 d. Is rupee_lops_9o@icloud.com you, or a distributor forwarding?
 
-## Disposition
+## Provenance RESOLVED by author 15 Sep 2026 — and it disqualifies pooling
 
-Quarantined. If (a) = author test plays: move to the demo/test area,
-label SYNTHETIC/TEST, exclude from the dataset — same boundary as the
-G.8 synthetic set. If genuine participants: strip names, record chain
-of custody per B9V8YA, then and only then enter with the arm/failure
-labels the exports carry. Until the author answers, these are neither
-evidence nor demonstration of field uptake.
+Author's account: NOT his own test plays. Two sources (Jang, Choy —
+distributor labels on two of the files, NOT player identities); the
+players are anonymous friends of those two sources. Jang and Choy had
+"received an older version"; the author asked for the software to be
+re-sent (the 15 Sep resend of device_sets/Alpine3B_DEV1.html), passed
+the new file on, and "asked their friends to play right after" — the
+friends played TODAY, 15 Sep, and e-mailed the results back. The
+common sender rupee_lops_9o@icloud.com is an Apple Hide-My-Email relay
+(one hidden sender forwarded them), not five separate senders.
+
+BUILD CHECK (decisive): the resent file device_sets/Alpine3B_DEV1.html
+carries Input_Mode + XP_Total + Skier_Level logging; git shows its
+latest commit is a1afc42 (13 Aug, input-modality), on top of 923a25e
+(13 Aug, gains-only scoring) — i.e. the v3.1 / 13-Aug generation. All
+five returns log Input_Mode ("keys"), XP_Total and Skier_Level, so
+they were produced by that 13-Aug build. The FIELD cohort deployed
+10-12 Aug played the 9-Aug build 59b7881 (2x2, WITHOUT the gains-only
+scoring or input-mode changes). These five therefore ran a DIFFERENT
+software version from the field cohort — a version confound. The
+gains-only scoring change is not innocuous: it alters the
+trajectory-feedback experience the adaptive arm is partly about.
+
+## Disposition — EXCLUDE from the confirmatory dataset
+
+These five are real plays by real people, but they cannot join the
+Stage-3B confirmatory analysis, for three independent reasons, any one
+sufficient:
+1. Wrong build — 13-Aug generation, not the deployed 9-Aug build;
+   "classification follows what participants experienced," and they
+   experienced different software.
+2. Wrong time / solicited — played 15 Sep, immediately on request
+   after a re-send, not as field uptake during the window; single
+   narrow channel; all DEV1; all arm A in one ~20-min burst.
+3. Uninformative for the primary contrast anyway — all five are arm A,
+   so they contain no adaptive-vs-static comparison.
+
+Permitted use, clearly labelled only: build-functionality
+verification of the 13-Aug generation (shows both failure modes export
+cleanly with fresh users). NEVER pooled with the field 2x2, never on
+Saturday as field uptake. Retain here as a documented excluded batch.
+
+## Process note (for the author, going forward)
+
+The 15 Sep resend was flagged at the time: do not redistribute the
+newer build to participants — it creates a version confound. Any
+further field returns must run the DEPLOYED 9-Aug build only. If more
+participants are still to be recruited within the window, distribute
+the 9-Aug device copies (recoverable from git at commit 59b7881),
+not the 13-Aug file.
