@@ -135,6 +135,34 @@ for fvh_v in FVH_SCEN:
                      "%.1f%%" % (POOL * b * 100),
                      "%.0f%%" % ((1 - b) * 100)])
 
+KR_TAX_INTRO = (
+    "The idea of issuing shares to two principals first, with internal allocation later, has a "
+    "legitimate driver: Korea tightly regulates residents' cross-border share swaps. Each Korean "
+    "shareholder must make foreign-exchange filings for foreign securities, and a share-for-share "
+    "exchange is generally a TAXABLE DISPOSAL for Korean holders — tax is due in cash while the "
+    "consideration arrives as shares, with no rollover relief for an exchange into a foreign "
+    "parent. Dozens of individual filings and dry tax charges could stall the transaction. The "
+    "question is therefore not whether to manage this, but which of the compliant paths to use.")
+
+KR_TAX_PATHS = [
+    ["A. Direct swap by every Korean shareholder",
+     "Each holder files and is taxed individually at the exchange.",
+     "Heaviest friction — the problem the parties are rightly trying to avoid."],
+    ["B. Holdco block entry (recommended)",
+     "Korean shareholders exchange ONCE into GenApep Holdings at the low pre-listing value, with "
+     "one collective FX filing handled by the FA; the later swap with the platform happens at "
+     "holdco level — no second Korean-level tax/FX event.",
+     "Achieves the tax/FX objective AND automatic pro-rata fairness; this is what the Cayman "
+     "structure exists for."],
+    ["C. Individuals hold first — documented",
+     "Written nominee/escrow declaration with the pro-rata allocation schedule annexed; transfer "
+     "into the holdco by a fixed deadline AT THE SAME VALUATION (no gain, no gift); written "
+     "Korean tax opinion on deemed-gift (myeongui-sintak) exposure; SEC beneficial-ownership "
+     "disclosure from day one.",
+     "Workable as a bridge, but undocumented it creates deemed-gift tax, a larger second-step "
+     "tax at post-listing values, disclosure defects, and personal risk for the two principals."],
+]
+
 DPW = (
     "A commercial licensing framework with DPW (an entity under the listed Richards Group) was "
     "circulated on 28 August 2026. It is a non-binding modular structure — a Master Technology "
@@ -161,11 +189,14 @@ WBI_LENS = [
      "At FVH verified US$10M, WBI shareholders ≈ 35.3% of the listed company — ≈ US$15.9M at the "
      "US$45M combined value, and ≈ US$28–35M if the market values the group at US$80–100M. The "
      "GLP-1 channel adds a US revenue engine the JV does not otherwise have."),
-    ("What the draft IPO MOU would have done",
+    ("The draft IPO MOU's individual allocation — motive and fix",
      "It allocated 40% of FVH to one individual and 35% to another, with nothing to the wider "
-     "WBI and Eyesel shareholder bodies at that step, and produced ~53:47 — reversing the agreed "
-     "51:49. Amendment A2 and Addendum clauses B4/B5 exist precisely to prevent this: every "
-     "shareholder rides through pro rata or the transaction does not proceed."),
+     "shareholder bodies at that step, and produced ~53:47 against the agreed 51:49. The stated "
+     "driver — avoiding Korean FX filings and dry tax charges on a direct swap — is legitimate "
+     "(see the Korean tax paths in Section 4), but the arrangement must be documented and must "
+     "land pro rata: Amendment A2 and Addendum B4/B5 require every shareholder to ride through "
+     "pro rata — via the holdco block, or via a documented nominee bridge — protecting the wider "
+     "holders and the two principals alike."),
     ("Technology upside accrues to the JV",
      "AI.pep and the DPW licence sit inside GenApep, so WBI shareholders participate through "
      "their block stake; the sweat pool (Keith · Sidney · Charles + team) is the incentive "
@@ -273,6 +304,12 @@ def wmd():
         a("| " + " | ".join(r) + " |\n")
     a("\n*The block percentage is set by the valuations; the internal split never needs renegotiating.*\n")
     a("\n### The DPW licence — technology credit to the valuation\n\n%s\n" % DPW)
+    a("\n### Korean FX/tax rationale — choosing the compliant path\n\n%s\n\n" % KR_TAX_INTRO)
+    a("| Path | Mechanics | Assessment |\n|---|---|---|\n")
+    for r in KR_TAX_PATHS:
+        a("| " + " | ".join(r) + " |\n")
+    a("\n*All Korean tax and FX statements require written confirmation by Korean counsel before "
+      "any structure is selected.*\n")
     a("\n## 5. What this means for WBI shareholders\n")
     for t, d in WBI_LENS:
         a("- **%s** — %s\n" % (t, d))
@@ -378,6 +415,11 @@ para(doc, "The block percentage is set by the valuations; the internal 51:49-les
           "needs renegotiating.", size=9, italic=True, color=GREY)
 doc.add_heading("The DPW licence — technology credit to the valuation", level=3)
 para(doc, DPW)
+doc.add_heading("Korean FX/tax rationale — choosing the compliant path", level=3)
+para(doc, KR_TAX_INTRO)
+tbl(doc, ["Path", "Mechanics", "Assessment"], KR_TAX_PATHS, widths=[1.7, 2.7, 2.1])
+para(doc, "All Korean tax and FX statements require written confirmation by Korean counsel "
+          "before any structure is selected.", size=9, italic=True, color=GREY)
 
 doc.add_heading("5. What this means for WBI shareholders", level=2)
 for t, d in WBI_LENS:
