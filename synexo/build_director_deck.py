@@ -312,10 +312,34 @@ rows = [
 table(s, ["", "JV MOU + Amendment (agreed)", "Draft IPO MOU (as written)"], rows,
       0.7, 1.6, 11.95, [2.6, 4.7, 4.65], fs=12.5, hdr_fs=13)
 band = rect(s, 0.7, 4.95, 11.95, 1.7, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-fill_text(band, [("The fix is sequencing, not abandonment.", 18, True, NAVY),
-                 ("Form the Joint Venture first, then approach First Vital as one block with one agreed "
-                  "internal split. Same commercial outcome, none of the governance defects — and zero "
-                  "calendar cost, because the audit runs on the critical path either way.", 14.5, False, GREY)])
+fill_text(band, [("The fix is documentation and sequencing — not abandonment.", 18, True, NAVY),
+                 ("The individual-first idea has a legitimate driver — Korean FX filings and dry tax "
+                  "charges on a direct swap (next slide). It must simply land pro rata: through the "
+                  "holdco block, or a documented nominee bridge. Same commercial outcome, none of the "
+                  "defects — and zero calendar cost, because the audit is the critical path either way.",
+                  14.5, False, GREY)])
+
+# ============================================================ 11 KOREAN FX/TAX PATHS
+s = slide(); header(s, "Korean FX/tax — choosing the compliant path",
+                    "Why “individuals first” was proposed, and how to keep its benefit safely")
+card(s, 0.7, 1.55, 11.95, 1.35, "The burden being avoided is real",
+     "Every Korean shareholder must make foreign-exchange filings for foreign securities, and a "
+     "share-for-share exchange is generally a TAXABLE DISPOSAL — tax due in cash while the "
+     "consideration arrives as shares, with no rollover into a foreign parent. Dozens of "
+     "individual filings and dry tax charges could stall the transaction.", line=ACCENT, tsz=16, bsz=13.5)
+rows = [
+    ["A · Direct swap by all holders", "Each Korean shareholder files and is taxed individually at the exchange",
+     "Heaviest friction — the problem rightly being avoided"],
+    ["B · Holdco block entry (recommended)", "One exchange into the Cayman holdco at the LOW pre-listing value; one collective FX filing via the FA; the later platform swap happens at holdco level — no second Korean event",
+     "Tax/FX objective achieved AND automatic pro-rata fairness — what the Cayman structure exists for"],
+    ["C · Individuals first — documented", "Written nominee/escrow declaration + annexed pro-rata schedule + deadline transfer into the holdco at the SAME valuation + Korean tax opinion (deemed-gift exposure) + SEC beneficial-ownership disclosure",
+     "Workable as a bridge; undocumented it creates deemed-gift tax, a larger second-step tax at listed prices, and personal risk for the two principals"],
+]
+table(s, ["Path", "Mechanics", "Assessment"], rows, 0.7, 3.1, 11.95, [2.45, 5.35, 4.15],
+      fs=11.5, hdr_fs=12.5, hl_rows=(1,))
+band = rect(s, 0.7, 6.35, 11.95, 0.8, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+fill_text(band, [("All Korean tax and FX statements to be confirmed in writing by Korean counsel "
+                  "before any structure is selected.", 14.5, True, NAVY)])
 
 # ============================================================ 11 RECOMMENDED STRUCTURE
 s = slide(); header(s, "Recommended shareholding structure", "FVH's structure is undetermined — set it by value, enter as one block")
