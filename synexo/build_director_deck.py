@@ -169,8 +169,8 @@ textbox(s, 1.4, 6.35, 11.5, 0.7, [("PRIVATE & CONFIDENTIAL — for the directors
 s = slide(); header(s, "September 2026 update — verified facts", "Read first: this supersedes the FirstVitals content on later slides")
 rows = [
     ["“SEC filer / listed vehicle / reporting status”", "CONTRADICTED", "Reg A+ Form 1-A crowdfunding only — not a reporting company; no S-1"],
-    ["“Operating GLP-1 programme” ($2.2M→$16.7M)", "CONTRADICTED", "RPM services abandoned in the 2024 pivot; pre-revenue; proforma = unvalidated plan"],
-    ["“$75M valuation cap” / $5–13M scenarios", "UNSUPPORTABLE", "Lifetime capital $500K (one note); 94.63% one holder; supportable value ~$0–2M"],
+    ["“Operating GLP-1 programme” ($2.2M→$16.7M)", "CONTRADICTED", "RPM services abandoned in the 2024 pivot; pre-revenue per DD (1-K pending); proforma = unvalidated plan"],
+    ["“$75M valuation cap” / $5–13M scenarios", "UNSUPPORTABLE", "$75M = Reg A+ Tier 2 regulatory max (offering target $20.74M); capital $500K; 94.63% one holder; assessed value ~$0–2M"],
     ["“List in the US by mid-2027”", "CONTRADICTED", "Rule 3-05: 12–18 months of PCAOB US-GAAP audits on any S-1 — no time saving"],
     ["Hidden dilution", "NEW FINDING", "7.5M-share unissued option pool = 54.18% fully diluted; a negotiated 75% falls to ~57.9%"],
     ["Eyesel financial data", "VERIFIED ✓", "FY2025 revenue ₩10.46B (~$7.47M @1,400) — inside the 15% band; NI ₩2.05B; RE ₩10.36B; 51:49 holds"],
@@ -180,13 +180,13 @@ table(s, ["Prior claim / item", "Verdict", "Verified evidence (DD 03-Sep; cap ta
 band = rect(s, 0.7, 6.05, 11.95, 1.05, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 fill_text(band, [("Consequence: Route B is NOT viable as pitched; Route A stays default (and is the fastest US path); "
                   "a Korea listing is promoted to a formal parallel track.", 15.5, True, NAVY),
-                 ("Governing document: GenApep IPO Plan v2. FirstVitals content on later slides is retained for record.", 12.5, False, GREY)])
+                 ("Governing document: GenApep IPO Plan v2. Evidence is in the name ProteusDx/FirstVitals — identity with “First Vital” to be confirmed at gate zero. Later as-pitched slides retained for record.", 12, False, GREY)])
 
 # ============================================================ 2 WHY WE'RE HERE
 s = slide(); header(s, "Why we are here", "Thirty minutes before you read eight documents")
 bullets(s, [
     "WBI and Eyesel signed an MOU on 12 August 2026 to combine into one group — GenApep — and take it to a US public market.",
-    "Two new elements have arrived since: First Vital (a US company with a stated SEC filing record and a GLP-1 care programme) proposes to be the listing vehicle, and DPW (under the listed Richards Group) is reviewing a licence to GenApep's technology.",
+    "Two new elements have arrived since: First Vital (a US company with a stated SEC filing record and a CLAIMED GLP-1 care programme — both examined on the next slide) proposes to be the listing vehicle, and DPW (under the listed Richards Group) is reviewing a licence to GenApep's technology.",
     "The document pack runs to eight instruments and two workbooks. This presentation gives you the structure, the numbers, the pros and cons, and the decisions — so the pack confirms rather than surprises.",
     ("The ask today: agree the implementation order, note the risks, and approve the next actions on the final slide.", 0),
 ])
@@ -200,8 +200,8 @@ card(s, 0.7, 1.7, 5.9, 2.5, "STAGE 1 — form the Joint Venture (now)",
      "Governed by the 12-Aug MOU + Amendment No. 1.", line=ACCENT, tsz=18, bsz=14)
 card(s, 6.85, 1.7, 5.8, 2.5, "STAGE 2 — choose the route to market (later, gated)",
      "Route A (default): GenApep's own US offering — SEC confidential draft by end-2027, listing 2028.\n"
-     "Route B (option): combine with First Vital, a company with an existing SEC record — only "
-     "through the machinery in Addendum A.", line=GOLD, tsz=18, bsz=14)
+     "Route B (option): combine with First Vital — claimed SEC record now verified as Reg A+ 1-A "
+     "only (see slide 2); any step only through Addendum A machinery.", line=GOLD, tsz=18, bsz=14)
 a = rect(s, 6.35, 2.75, 0.5, 0.45, TEAL, shape=MSO_SHAPE.RIGHT_ARROW)
 band = rect(s, 0.7, 4.5, 11.95, 1.0, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 fill_text(band, [("The PCAOB audit of both companies is the critical path under EVERY route — "
@@ -248,8 +248,8 @@ chart_fonts(ch, 13)
 stat(s, 8.6, 1.6, 4.05, 1.25, "$58.9M", "2030 plan revenue (base case)", fill=ACCENT, bigsz=30)
 stat(s, 8.6, 3.0, 4.05, 1.25, "$30–40M", "combined pre-JV valuation range", fill=NAVY, bigsz=30)
 card(s, 8.6, 4.4, 4.05, 2.2, "What drives it",
-     "MM Studio ramp $2.9M → $36.3M is the swing factor (WBI-side). Eyesel base $8.0M placeholder "
-     "+10%/yr — updated financials due within 30 days and the 51:49 rests on them.", line=GOLD, bsz=13)
+     "MM Studio ramp $2.9M → $36.3M is the swing factor (WBI-side). Eyesel base VERIFIED Sep-2026: "
+     "statutory FY2025 ₩10.46B (~$7.47M @1,400), inside the 15% band — 51:49 holds.", line=GOLD, bsz=13)
 
 # ============================================================ 6 TWO ROUTES
 s = slide(); header(s, "Stage 2 — two routes to being public", "Route A is the default; Route B is an option with gates")
@@ -309,7 +309,7 @@ for i, (t, d, col) in enumerate(items):
 # ============================================================ 9 ROUTE B CONS
 s = slide(); header(s, "Route B — the risks", "Each has a gate in Addendum A / the diligence programme")
 rows = [
-    ["Filing status unverified", "No identifiable EDGAR record surfaced by name search; a Reg-A filing would not make FVH a reporting company", "Gate zero: CIK + full EDGAR index, counsel confirmation"],
+    ["Filing status — now confirmed Reg A+", "Form 1-A confirmed by the Sep-2026 DD: not a reporting company", "Gate zero remains: CIK/EDGAR index to resolve the FirstVital(s)/ProteusDx entity chain"],
     ["Two months of history", "GLP-1 enrolment began 1 Jul 2026; the 10,000-patient ramp is a plan", "Jul–Aug actual enrolments, claims, denials — this week"],
     ["Revenue-only proforma", "No cost build; 20% margin is an assumption; reimbursement ≠ cash", "Cost build + collection-rate before any valuation"],
     ["Issuer & accounting", "US parent likely = domestic issuer: US GAAP, 10-K/10-Q, proxy rules", "Written classification opinion before route selection"],
@@ -361,7 +361,7 @@ fill_text(band, [("All Korean tax and FX statements to be confirmed in writing b
                   "before any structure is selected.", 14.5, True, NAVY)])
 
 # ============================================================ 11 RECOMMENDED STRUCTURE
-s = slide(); header(s, "Recommended shareholding structure", "FVH's structure is undetermined — set it by value, enter as one block")
+s = slide(); header(s, "Recommended shareholding structure", "SEP-2026: structure now known (cap table 02-Sep); method stands, applied to verified ~$0–2M value")
 card(s, 0.7, 1.55, 5.9, 2.05, "The principle",
      "One value-based exchange ratio: independent valuations of GenApep ($30–40M planning range) "
      "and of a VERIFIED First Vital + a written fairness opinion. FVH issues shares to GenApep "
@@ -375,7 +375,7 @@ rows = [
     ["FVH verified $10M", "78%", "36.7%", "35.3%", "5.8%", "22%"],
     ["FVH verified $13M", "73%", "34.4%", "33.0%", "5.5%", "27%"],
 ]
-textbox(s, 6.85, 1.55, 5.8, 0.4, [("Illustrative cap table (GenApep $35M mid · 7.5% pool)", 15, True, NAVY)])
+textbox(s, 6.85, 1.55, 5.8, 0.4, [("Cap table scenarios — SUPERSEDED, for record (see slide 2): verified FVH ~$0–2M ⇒ FVH ≈5%", 13, True, RED)])
 table(s, ["Scenario", "GA block", "Eyesel", "WBI", "Pool", "FVH"], rows,
       6.85, 2.05, 5.8, [1.75, 0.95, 0.85, 0.8, 0.7, 0.75], fs=12, hdr_fs=12, hl_rows=(1,))
 card(s, 6.85, 4.1, 5.8, 1.5, "Why this beats 40/35/25",
@@ -387,8 +387,8 @@ fill_text(band, [("Price test: the draft's percentages imply paying $10–13M fo
                   "that if it were private? Verify before a single share moves.", 14.5, True, NAVY)])
 
 # ============================================================ 12 INTERIM ASSUMPTIONS (EYESEL DATA PENDING)
-s = slide(); header(s, "Fair without Eyesel's numbers — interim assumptions",
-                    "Fairness comes from mechanism, not from guessing the missing data")
+s = slide(); header(s, "Eyesel data machinery — RESOLVED Sep-2026",
+                    "Statutory FY2025 received: $7.47M @₩1,400 — inside the 15% band; the mechanisms below worked as designed")
 card(s, 0.7, 1.55, 6.3, 4.55, "Four mechanisms — commit now, correct automatically",
      "1 · PEG + MANDATORY TRUE-UP (Amendment A1, already drafted): sign on a stated basis — "
      "Eyesel revenue $8.0M, value $15–20M. If verified figures differ >15%, equalisation is "
@@ -401,7 +401,7 @@ card(s, 0.7, 1.55, 6.3, 4.55, "Four mechanisms — commit now, correct automatic
 textbox(s, 7.25, 1.55, 5.4, 0.4, [("Planning numbers meanwhile", 15, True, NAVY)])
 rows = [
     ["Revenue", "$8.0M", "documented basis (lower figure)"],
-    ["Gross margin", "40%", "mirrors WBI's certified actual"],
+    ["Gross margin", "40%", "planning assumption (WBI margins unverified)"],
     ["EBITDA", "~12%", "GMP-manufacturer profile"],
     ["Value band", "$15–20M", "same band as WBI — parity"],
 ]
@@ -418,7 +418,7 @@ fill_text(band, [("The FVH ratio never waits on Eyesel's data — only the inter
 s = slide(); header(s, "What this means for WBI shareholders", "Your 49% of GenApep, traced through both routes")
 steps = [("Today", "49%", "of GenApep · ≈ $17.2M at $35M mid", ACCENT),
          ("After pool (7.5%)", "45.3%", "≈ $15.9M — before technology credit", TEAL),
-         ("Route B (FVH $10M)", "35.3%", "of the LISTED company · $28–35M if market values group at $80–100M", GOLD),
+         ("Route B as pitched — SUPERSEDED", "35.3%", "at the unsupportable FVH-$10M scenario; combined co is NOT listed (Reg A+ only) — see slide 2", GOLD),
          ("Route A post-IPO", "36.3%", "≈ $36.3M at $80M pre + $20M raise (workbook)", NAVY)]
 for i, (t, big, d, col) in enumerate(steps):
     x = 0.7 + i * 3.08
@@ -428,7 +428,7 @@ for i, (t, big, d, col) in enumerate(steps):
         rect(s, x + 2.87, 2.55, 0.2, 0.45, GREY, shape=MSO_SHAPE.RIGHT_ARROW)
 card(s, 0.7, 4.15, 5.9, 2.55, "Where WBI's value comes from",
      "• MM Studio — WBI's growth engine: $2.9M → $36.3M by 2030, the plan's biggest swing factor.\n"
-     "• WBI core exports: $4.69M in 2026, +20%/yr, NTS-certified FY2025 base.\n"
+     "• WBI core exports PLAN: $4.69M in 2026 (+37% vs NTS-certified FY2025 actual ~$3.4M), +20%/yr after.\n"
      "• Technology upside (AI.pep, DPW licence) accrues inside GenApep — you participate via the block.",
      line=ACCENT, bsz=13.5)
 card(s, 6.85, 4.15, 5.8, 2.55, "The protections that matter to you",
@@ -448,8 +448,9 @@ rows = [
 ]
 table(s, ["Step", "Value", "Basis"], rows, 0.7, 1.6, 11.95, [4.6, 1.9, 5.45], fs=13, hdr_fs=13, hl_rows=(3,))
 card(s, 0.7, 3.85, 11.95, 1.45, "The question to answer before any share moves",
-     "ANSWERED (Sep-2026): No. Verified record — pre-revenue, $500K lifetime capital, no reporting "
-     "status, contingent exposures — supports ~$0–2M, possibly less after the senior $500K note. "
+     "ANSWERED (Sep-2026): No. The record — pre-revenue per DD (Form 1-K confirmation pending), "
+     "$500K lifetime capital, no reporting status — supports an assessed ~$0–2M, possibly less "
+     "after the $500K convertible note (terms unverified). "
      "Every dollar conceded above verified value is a transfer from GenApep shareholders; a clean "
      "new US topco costs under $100K.", line=RED, tsz=16, bsz=14.5)
 stat(s, 0.7, 5.5, 3.85, 1.2, "Gate 0", "CIK + full EDGAR index, in writing", fill=RED, bigsz=26)
@@ -482,7 +483,7 @@ card(s, 6.85, 1.6, 5.8, 5.1, "Addendum A (Route-B machinery)",
 s = slide(); header(s, "Timeline & critical path", "The audit is the clock; everything else runs in parallel")
 rows = [
     ["Now", "Sign Amendment No. 1 · request FVH EDGAR index + GLP-1 actuals", "Boards / FA"],
-    ["≤ 30 days", "Eyesel updated financial report + principal confirmation", "Eyesel"],
+    ["≤ 30 days", "Eyesel FY2025 statutory accounts RECEIVED/verified; principal confirmation (Park vs Kim) in writing", "Eyesel"],
     ["Q3–Q4 2026", "Incorporate GenApep Holdings (Cayman) + GenApep Korea", "FA / counsel"],
     ["Q4 2026", "Appoint PCAOB auditor — CRITICAL PATH · definitive SHA + pool KPIs", "Joint / FA"],
     ["Q1–Q2 2027", "Share exchange: GenApep Korea acquires WBI + Eyesel", "All parties"],
@@ -501,7 +502,7 @@ items = [
     ("1", "Sign Amendment No. 1 and start Stage 1 — both boards.", ACCENT),
     ("2", "Treat Addendum A as the gate for all First Vital discussion.", TEAL),
     ("3", "Instruct the FA to obtain FVH's CIK / EDGAR index and Jul–Aug GLP-1 actuals — this week.", GOLD),
-    ("4", "Eyesel: updated financials + principal confirmation within 30 days.", DARK2),
+    ("4", "Eyesel: financials DELIVERED & verified; principal confirmation (Park vs Kim) within 30 days.", DARK2),
     ("5", "Appoint the PCAOB auditor in Q4-2026, scoped for either route.", NAVY),
     ("6", "Do not sign the draft IPO MOU as written — revise to value-based block entry.", RED),
     ("7", "Progress the DPW licence to asset-level term sheets after chain-of-title is documented.", TEAL),

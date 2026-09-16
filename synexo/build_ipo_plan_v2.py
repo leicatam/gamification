@@ -41,7 +41,7 @@ FVH_CLAIMS = [
     ["“Medicare network contracts” / “GLP-1 technology”", "UNVERIFIED / CONTRADICTED", "History was Hawaii MEDICAID, and those services were abandoned; no GLP-1 content in the internal papers. Posture: demand the contracts be produced."],
     ["“$75M valuation cap”", "UNSUPPORTABLE", "Lifetime capital raised = one $500K convertible note; pre-revenue; no priced round or institutional investor. ($75M is the Reg A+ Tier 2 REGULATORY ceiling per 12 months — the likely source of the number; the current offering targets $20.74M.)"],
     ["“List in the US by mid-2027”", "CONTRADICTED", "SEC Rule 3-05: acquiring WBI+Eyesel (combined FY2025A ~$10.9M revenue) into a pre-revenue registrant is significant at the maximum tier → up to 2 years PCAOB-audited US GAAP financials of the Korean companies in any S-1 (or Form 1-A Part F/S) → 12–18 months minimum. Even the Reg A+→Form 8-A direct-listing path fails exchange initial-listing standards and Nasdaq’s 2-year operating-history rule for Reg A issuers [counsel to confirm]."],
-    ["Implied FVH value $10–13M (draft MOU) / $5–10–13M scenarios (briefing)", "OVERSTATED ≥ 5×", "Supportable planning value on the verified record: ~$0–2M, possibly negative after the senior $500K note and contingent exposures (retail-offering compliance, FDA/telehealth marketing gap). Benchmark: a clean new US topco costs well under $100K."],
+    ["Implied FVH value $10–13M (draft MOU) / $5–10–13M scenarios (briefing)", "OVERSTATED ≥ 5×", "Assessed supportable planning value: ~$0–2M, possibly negative after the $500K convertible note (terms unverified) and contingent exposures (retail-offering compliance, FDA/telehealth marketing gap). Basis: pre-revenue per the DD report and the counterparty's own cap table — pending Form 1-K/1-SA confirmation (gate-zero). Benchmark: a clean new US topco costs well under $100K."],
 ]
 
 FVH_STRUCTURE_TRAPS = [
@@ -71,7 +71,7 @@ WBI_FIGURES = [
     ["WBI FY2025 actual (NTS-certified)", "₩4,802.7M ≈ $3.43M @1,400", "The only verified WBI revenue figure"],
     ["WBI-side 2026 plan", "$7.59M (core $4.69M + MM Studio $2.90M)", "Requires ~2.2× in-year growth — evidence pack needed"],
     ["Combined WBI+Eyesel FY2025A", "₩15,262.9M ≈ $10.90M @1,400 / $10.18M @1,500", "The correct Rule 3-05 numerator"],
-    ["“$11.7M 2026 WBI exosome revenue” (DD report)", "DOES NOT RECONCILE — correct at source", "3.4× the FY2025 actual; closest real figure is combined FY2025A ~$10.9–11.4M. Do not circulate the DD until fixed."],
+    ["“$11.7M 2026 WBI exosome revenue” (DD report)", "DOES NOT RECONCILE — correct at source", "3.4× the FY2025 actual; candidate sources of the error: combined FY2025A $10.2–10.9M (@₩1,500/₩1,400) or the JV plan's 2025 combined PLANNING figure $11.43M. Do not circulate the DD until fixed."],
 ]
 
 ROUTES = [
@@ -79,7 +79,7 @@ ROUTES = [
      "Foreign private issuer: IFRS-as-issued, confidential DRS, EGC 2-year financials. Audits Q4-2026→late-2027; DRS end-2027/early-2028; pricing H2-2028 with the ~$20M primary raise at pricing.",
      "DEFAULT — and now also the FASTEST US path. Conditional on: sponsor pre-money for the $2M bridge demonstrably above ~$25–35M (at ~$18M pre, WBI holders are underwater vs their $89.75 basis), US opex discipline, US CEO identified."],
     ["B — Combine with FirstVitals",
-     "Not a reporting company; combination confers no listing status and raises no capital; Rule 3-05 audit wall applies identically; US GAAP (not IFRS); reverse-merger seasoning on any exchange application; 54.18%-FD unissued pool; zero operational synergy (DD: “financial splicing”).",
+     "Not a reporting company; combination confers no listing status and raises no capital; pre-revenue per DD/cap table (1-K/1-SA confirmation pending); Rule 3-05 audit wall applies identically; US GAAP (not IFRS); reverse-merger seasoning on any exchange application; 54.18%-FD unissued pool; zero operational synergy (DD: “financial splicing”).",
      "REJECT AS PITCHED. Keep alive only as (i) an optional cheap-shell purchase at verified value (~$0–2M) with the pool cancelled and gate-zero verification passed, executed through Addendum A block entry; or (ii) an arm’s-length US commercial-channel discussion (their clinics as a customer), no equity."],
     ["C — Korea listing (KOSDAQ)",
      "Eyesel’s verified profitability (₩1.84B OP, ₩10.36B retained earnings, dividend history) fits KOSDAQ profit tracks on trailing numbers; K-IFRS conversion instead of US GAAP; no $300–500K/yr US opex, no US CEO problem; eliminates the Korean cross-border swap-tax/FX problem for BOTH shareholder bodies.",
@@ -106,7 +106,7 @@ WBI_PS = [
     ["Route A @ $100M post ($80M pre + $20M raise)", "$264–285", "45.3% × 65–70% retained after bridge+IPO dilution"],
     ["Route A @ $40–50M post (sponsor-conservative)", "$106–142", "Sponsor validation of the valuation is the load-bearing condition"],
     ["Route A @ ~$18M pre (forced bridge)", "~$73", "UNDERWATER vs basis — the walk-away scenario"],
-    ["Route C (KOSDAQ) @ 15–25× combined NI", "~$100–167", "₩2,291M combined FY2025A NI; no US opex/GAAP drag"],
+    ["Route C (KOSDAQ) @ 15–25× combined NI", "$98–167", "₩2,291M combined FY2025A NI; no US opex/GAAP drag"],
     ["Route B @ honest FVH ~$1M, pool cancelled", "~$316*", "*Not dilution-comparable: assumes the same $80M cap with NO financing dilution and FVH contingencies at zero — read as an upper bound only"],
     ["Route B @ FVH $10M / @ claimed $75M cap", "$253 / $103", "Every dollar conceded to FVH above verified value is a direct transfer from GenApep shareholders"],
 ]
@@ -122,7 +122,7 @@ WBI_VIEW = [
 
 EYESEL_VIEW = [
     ["Ranked: 1st reject the FVH equity combination; 2nd proceed with Stage 1 only with the protection package; keep the BATNA visible",
-     "Eyesel does not need this deal to survive — profitable, cash-generative, ₩10.36B retained earnings, and a strong BATNA as GenApep’s contract manufacturer (the $4/vial bottoming fee) capturing margin with none of the merger costs. What Eyesel lacks is growth and a story (FY2025 OP -31%): WBI’s MM Studio ramp, the AI-peptide/DPW technology and a listing are the honest rationale. The FVH combination asks Eyesel’s profits to fund a pre-revenue crowdfunding shell — US opex alone equals 23–38% of Eyesel’s FY2025 operating profit."],
+     "Eyesel does not need this deal to survive — profitable, cash-generative, ₩10.36B retained earnings, and a strong BATNA as GenApep’s contract manufacturer (the $4/vial bottoming fee) capturing margin with none of the merger costs. What Eyesel lacks is growth and a story (FY2025 OP -31%): WBI’s MM Studio ramp, the AI-peptide/DPW technology and a listing are the honest rationale. The FVH combination asks Eyesel’s profits to fund a crowdfunding-stage company that is pre-revenue per the DD (1-K confirmation pending) — US opex alone equals 23–38% of Eyesel’s FY2025 operating profit."],
     ["The Eyesel protection package (conditions to Stage 1)",
      "Board majority matching 51% + reserved matters (route decision, any pool/option grant, related-party deals, US spend cap); dividend continuity (~₩300M/yr historic level) until listing proceeds; Eyesel cash ring-fenced — no upstream loans/guarantees; US costs funded exclusively from the external $2M raise; PCAOB audit fee capped and board-approved; chain-of-title CP satisfied before WBI technology value is credited; written Korean tax/FX opinion (one collective holdco filing, no dry tax for Eyesel’s shareholders) before any exchange."],
     ["Walk-away conditions",
@@ -130,7 +130,7 @@ EYESEL_VIEW = [
 ]
 
 GOVERNANCE = [
-    "Sidney Tam’s conflict must be squarely governed: he organized the meeting recommending FirstVitals, is the sole source of every now-contradicted FVH claim ($75M cap, GLP-1 technology, Medicare contracts), holds the FA mandate, is a named sweat-pool beneficiary and the designated Third Director. Route-B advocacy and FVH verification must move to independent advisers; his recusal (Clause 3.6/3.8 machinery) applies to the route decision.",
+    "Sidney Tam’s conflict must be squarely governed: he organized the meeting recommending FirstVitals, is the sole source of every now-contradicted FVH claim ($75M cap, GLP-1 technology, Medicare contracts), is a named sweat-pool beneficiary and is understood to hold the FA mandate and the Third-Director designation [confirm against the signed JV instruments]. Route-B advocacy and FVH verification must move to independent advisers; his recusal (Clause 3.6/3.8 machinery) applies to the route decision.",
     "Theresa Jang’s dual role: CEO-designate and, under the superseded draft MOU, personal recipient of 40% of FVH — the largest beneficiary of Route B as drafted — while acting as information conduit to the Eyesel principal. The block-entry rule (no individual allocations) and full disclosure resolve this; record it.",
     "“Brian” participates throughout the meeting record but appears on no attendee list, cap table or MOU — identify his role and mandate before board documents rely on his positions.",
     "DD provenance and good faith: the DD report is addressed to WBI only (author Hayley Zen — confirm mandate). Correct the $11.7M figure, then share the corrected report and the cap-table findings with the Eyesel board; a JV partner sitting on contradicting diligence is itself a good-faith problem.",
@@ -143,7 +143,7 @@ VERDICT = [
     ["Route A (own F-1)", "VIABLE — conditional",
      "The default and fastest US path. Load-bearing conditions: sponsor pre-money > ~$25–35M, the $2M end-2026 bridge, US CEO and opex discipline. Test at the sponsor conversations; if the sponsor holds ~$18M, Route A destroys WBI value and Route C takes over."],
     ["Route B (FirstVitals)", "NOT VIABLE AS PITCHED",
-     "Fails on verified facts: no reporting status, no revenue, no capital, no synergy, no time saving, a 54.18%-FD pool overhang, and an asking anchor ≥37× supportable value. Optional at ~$0–2M with the pool cancelled — or as a commercial channel only."],
+     "Fails on the verified record: no reporting status (EDGAR-supported); pre-revenue with ~$500K lifetime capital per DD and the counterparty's own cap table (1-K/1-SA confirmation pending); no capital raised by a combination; no synergy; no time saving; a 54.18%-FD pool overhang; an asking anchor ≥37× the assessed supportable value. Optional at ~$0–2M with the pool cancelled — or as a commercial channel only."],
     ["Route C (KOSDAQ)", "VIABLE — develop now",
      "Meets profit tracks on Eyesel’s trailing actuals; solves the Korean tax/FX problem for both shareholder bodies; the fallback that protects the group’s negotiating position everywhere else."],
 ]
