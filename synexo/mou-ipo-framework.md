@@ -1,4 +1,6 @@
 # GenApep — Memorandum of Understanding: IPO Framework (Draft)
+> **SUPERSEDED (16 SEP 2026) — retained for record only. Due diligence on FirstVitals (DD report 2026-09-03; counterparty cap table 2026-09-02) contradicted this draft's FirstVitals premises: no SEC reporting status (Reg A+ Form 1-A only), no operating GLP-1 program (RPM services abandoned in the 2024 pivot; the proforma is an unvalidated plan), and no supportable basis for the implied $10-13M value. Do not sign, extend or rely on this document. The governing document is GenApep IPO Plan v2.**
+
 > DRAFT — NON-BINDING. This memorandum outlines a proposed framework to kick-start discussion among the parties and to brief IPO sponsors, potential investors and the current shareholders of WBI. It is not an offer or solicitation of securities, creates no legal obligation except as expressly stated, and all figures are illustrative and subject to due diligence, audit and definitive agreements.
 
 ## 1. Parties

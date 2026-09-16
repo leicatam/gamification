@@ -20,7 +20,8 @@ delivered as registered medical devices, powered by **CodeLife.AI** (proprietary
 | [`dd-scorecard.md`](./dd-scorecard.md) | Independent technical-investor RAG diligence scorecard |
 | [`term-sheet.md`](./term-sheet.md) | Indicative milestone-gated SAFE term sheet |
 | [`pitch-outline.md`](./pitch-outline.md) | One-page teaser + deck outline |
-| [`mou-ipo-framework.md`](./mou-ipo-framework.md) | **Draft IPO-framework MOU** — FVH (US SEC filer) → FVH Korea → WBI + Eyesel; share issuance (Theresa 40% / Kim 35%, indicative), Jan-2027 restructure, FVH GLP-1 Bridge program (CPT care pathway, $2.2M→$16.7M proforma), consolidated forecast ($17M→$75M), valuation management, hair-loss synergy |
+| [`ipo-plan-v2.md`](./ipo-plan-v2.md) | **IPO Plan v2 (GOVERNING, Sep-2026)** — full revision on verified evidence: FirstVitals claimed-vs-verified (Reg A+ only, pre-revenue, 94.6% one holder, 54%-FD pool), Eyesel statutory FY2024/25 (₩10.46B rev, inside the 15% band), route verdicts (A default & fastest; B not viable as pitched; KOSDAQ promoted), WBI & Eyesel viability with per-share table, governance/conflicts, action list |
+| [`mou-ipo-framework.md`](./mou-ipo-framework.md) | **[SUPERSEDED by Plan v2]** Draft IPO-framework MOU — FVH (US SEC filer) → FVH Korea → WBI + Eyesel; share issuance (Theresa 40% / Kim 35%, indicative), Jan-2027 restructure, FVH GLP-1 Bridge program (CPT care pathway, $2.2M→$16.7M proforma), consolidated forecast ($17M→$75M), valuation management, hair-loss synergy |
 | `fvh-glp1-proforma.xlsx` | FVH GLP-1 Bridge proforma (source workbook, Jul-2026→Dec-2027): monthly enrollment/MRR model, CPT rates, assumptions |
 | [`director-briefing.md`](./director-briefing.md) | **Director heads-up** (WBI & Eyesel boards, confidential): two-stage structure, implementation steps, Route A vs B pros/cons, recommended value-based shareholding structure, DPW licence credit, WBI-shareholder lens, interim Eyesel assumptions, decisions |
 | `GenApep_Executive_Presentation.pptx` | **30-min executive deck** (18 slides) for the boards — pre-read before the document pack; same content as the briefing in presentation form |
@@ -63,6 +64,7 @@ python3 synexo/build_mou_docx.py        # -> mou-ipo-framework.md, GenApep_IPO_M
 python3 synexo/build_director_briefing.py # -> director-briefing.md, GenApep_Director_Briefing.docx (board heads-up)
 python3 synexo/build_director_deck.py   # -> GenApep_Executive_Presentation.pptx (30-min board deck)
 python3 synexo/build_wbi_onepager.py    # -> WBI_Shareholder_OnePager_CN.png/.pptx (中文一页纸, code-named)
+python3 synexo/build_ipo_plan_v2.py     # -> ipo-plan-v2.md, GenApep_IPO_Plan_v2.docx (governing plan, Sep-2026)
 ```
 
 Generated investor outputs: `GenApep_Comprehensive_Report.docx` (full report) and

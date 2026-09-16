@@ -58,6 +58,12 @@ M = lambda v: "%.1f" % v
 # ---------------- shared content ----------------
 TITLE = "GENAPEP"
 SUBTITLE = "Memorandum of Understanding — IPO Framework (Draft for Discussion)"
+SUPERSEDED = ("SUPERSEDED (16 SEP 2026) — retained for record only. Due diligence on FirstVitals "
+              "(DD report 2026-09-03; counterparty cap table 2026-09-02) contradicted this draft's "
+              "FirstVitals premises: no SEC reporting status (Reg A+ Form 1-A only), no operating "
+              "GLP-1 program (RPM services abandoned in the 2024 pivot; the proforma is an "
+              "unvalidated plan), and no supportable basis for the implied $10-13M value. Do not "
+              "sign, extend or rely on this document. The governing document is GenApep IPO Plan v2.")
 DISCLAIMER = ("DRAFT — NON-BINDING. This memorandum outlines a proposed framework to kick-start "
               "discussion among the parties and to brief IPO sponsors, potential investors and the "
               "current shareholders of WBI. It is not an offer or solicitation of securities, creates "
@@ -183,6 +189,7 @@ def wmd():
     L = []
     a = L.append
     a("# GenApep — Memorandum of Understanding: IPO Framework (Draft)\n")
+    a("> **%s**\n\n" % SUPERSEDED)
     a("> %s\n" % DISCLAIMER)
     a("\n## 1. Parties\n")
     for n, d in PARTIES:
@@ -299,6 +306,8 @@ def tbl(doc, headers, rows, widths=None, fs=9.5, hl_rows=()):
 doc = nd()
 para(doc, TITLE, size=26, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
 para(doc, SUBTITLE, size=14, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
+para(doc, SUPERSEDED, size=9.5, bold=True, color=RGBColor(0xC0, 0x39, 0x2B),
+     align=WD_ALIGN_PARAGRAPH.CENTER, after=4)
 para(doc, DISCLAIMER, size=8.5, italic=True, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=12)
 
 doc.add_heading("1. Parties", level=2)

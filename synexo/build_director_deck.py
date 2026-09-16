@@ -165,6 +165,23 @@ textbox(s, 1.4, 6.35, 11.5, 0.7, [("PRIVATE & CONFIDENTIAL — for the directors
                                    "Not for release to First Vital. Illustrative planning figures; not advice.",
                                    13, True, GOLD)])
 
+# ============================================================ 1b SEP-2026 VERIFIED FACTS
+s = slide(); header(s, "September 2026 update — verified facts", "Read first: this supersedes the FirstVitals content on later slides")
+rows = [
+    ["“SEC filer / listed vehicle / reporting status”", "CONTRADICTED", "Reg A+ Form 1-A crowdfunding only — not a reporting company; no S-1"],
+    ["“Operating GLP-1 programme” ($2.2M→$16.7M)", "CONTRADICTED", "RPM services abandoned in the 2024 pivot; pre-revenue; proforma = unvalidated plan"],
+    ["“$75M valuation cap” / $5–13M scenarios", "UNSUPPORTABLE", "Lifetime capital $500K (one note); 94.63% one holder; supportable value ~$0–2M"],
+    ["“List in the US by mid-2027”", "CONTRADICTED", "Rule 3-05: 12–18 months of PCAOB US-GAAP audits on any S-1 — no time saving"],
+    ["Hidden dilution", "NEW FINDING", "7.5M-share unissued option pool = 54.18% fully diluted; a negotiated 75% falls to ~57.9%"],
+    ["Eyesel financial data", "VERIFIED ✓", "FY2025 revenue ₩10.46B (~$7.47M @1,400) — inside the 15% band; NI ₩2.05B; RE ₩10.36B; 51:49 holds"],
+]
+table(s, ["Prior claim / item", "Verdict", "Verified evidence (DD 03-Sep; cap table 02-Sep; statutory accounts)"], rows,
+      0.7, 1.6, 11.95, [3.3, 1.55, 7.1], fs=11.5, hdr_fs=12.5, hl_rows=(5,))
+band = rect(s, 0.7, 6.05, 11.95, 1.05, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+fill_text(band, [("Consequence: Route B is NOT viable as pitched; Route A stays default (and is the fastest US path); "
+                  "a Korea listing is promoted to a formal parallel track.", 15.5, True, NAVY),
+                 ("Governing document: GenApep IPO Plan v2. FirstVitals content on later slides is retained for record.", 12.5, False, GREY)])
+
 # ============================================================ 2 WHY WE'RE HERE
 s = slide(); header(s, "Why we are here", "Thirty minutes before you read eight documents")
 bullets(s, [
@@ -242,8 +259,8 @@ card(s, 0.7, 1.65, 5.9, 3.5, "ROUTE A — our own offering (default)",
      "• Raises primary capital (illustrative $20M at $80M pre-money).\n"
      "• Foreign private issuer: F-1, IFRS, 20-F — as budgeted.\n"
      "• Fully in our control; no counterparty risk.", line=ACCENT, tsz=18, bsz=14.5)
-card(s, 6.85, 1.65, 5.8, 3.5, "ROUTE B — combine with First Vital (option)",
-     "GenApep enters a company that already reports to the SEC.\n"
+card(s, 6.85, 1.65, 5.8, 3.5, "ROUTE B — combine with First Vital (SUPERSEDED — see update slide)",
+     "PREMISE FAILED: First Vital does NOT report to the SEC (Reg A+ 1-A only).\n"
      "• Potentially faster to reporting status — but that is NOT an exchange listing.\n"
      "• Raises no money by itself; financing must be planned separately.\n"
      "• Likely domestic issuer: US GAAP, 10-K/10-Q — unbudgeted cost.\n"
@@ -254,26 +271,28 @@ fill_text(band, [("Addendum A keeps BOTH routes open until the boards choose —
                  ("No step may foreclose either route without Board approval.", 13, False, GREY)])
 
 # ============================================================ 7 FIRST VITAL
-s = slide(); header(s, "First Vital — what it brings", "Stated SEC record + an operating GLP-1 programme (proforma basis)")
+s = slide(); header(s, "First Vital — claimed vs verified", "Sep-2026 DD: pre-revenue Reg A+ issuer; GLP-1 figures are an unvalidated plan")
 card(s, 0.7, 1.6, 5.9, 2.5, "The GLP-1 Bridge programme",
      "CPT-reimbursed care: assessment → care plan → monthly remote monitoring at $168.92/patient/"
      "month. Targeting 2,500 patients by Dec-2026, 10,000 by Dec-2027.", line=TEAL, bsz=14)
-stat(s, 0.7, 4.3, 2.85, 1.3, "$2.2M", "proforma revenue H2-2026", fill=TEAL, bigsz=28)
-stat(s, 3.75, 4.3, 2.85, 1.3, "$16.7M", "proforma revenue 2027", fill=ACCENT, bigsz=28)
-stat(s, 0.7, 5.75, 2.85, 1.3, "$1.59M/mo", "recurring MRR exiting 2027", fill=NAVY, bigsz=24)
-stat(s, 3.75, 5.75, 2.85, 1.3, "~$3,788", "revenue per enrolled patient", fill=DARK2, bigsz=26)
+stat(s, 0.7, 4.3, 2.85, 1.3, "$2.2M", "PLAN H2-2026 — unverified", fill=GREY, bigsz=28)
+stat(s, 3.75, 4.3, 2.85, 1.3, "$16.7M", "PLAN 2027 — unverified", fill=GREY, bigsz=28)
+stat(s, 0.7, 5.75, 2.85, 1.3, "$0", "verified revenue today (pre-revenue)", fill=RED, bigsz=28)
+stat(s, 3.75, 5.75, 2.85, 1.3, "$500K", "lifetime capital raised (one note)", fill=NAVY, bigsz=26)
 card(s, 6.85, 1.6, 5.8, 2.5, "Why it fits GenApep",
      "A GLP-1 patient base is a natural US channel for peptide products: GI & metabolic support, "
      "muscle preservation, GLP-1-associated hair loss — designed by the AI platform, made by "
      "Eyesel under GMP.", line=GOLD, bsz=14)
-card(s, 6.85, 4.3, 5.8, 2.75, "Read the numbers with care",
-     "• Proforma is GROSS REIMBURSEMENT only — no clinician, billing or collection costs.\n"
-     "• Programme began enrolling 1 July 2026 — two months of history.\n"
-     "• SEC filing record is stated, not yet verified on EDGAR.\n"
-     "• July–August actuals are the cheapest, most informative diligence available.", line=RED, bsz=13.5)
+card(s, 6.85, 4.3, 5.8, 2.75, "Sep-2026 verification result",
+     "• DD report: RPM/CCM services ABANDONED in the 2024 pivot to ProteusDx (GI capsule AI) — "
+     "the GLP-1 numbers left are a plan, not operations.\n"
+     "• EDGAR: Reg A+ Form 1-A crowdfunding, not an S-1; not a reporting company.\n"
+     "• Cap table: 94.63% one holder; $500K lifetime capital; 7.5M-share pool unissued (54.18% FD).\n"
+     "• Internal papers admit Phase-1 pilot while public sites market operational products — a "
+     "compliance gap to reconcile under NDA.", line=RED, bsz=12.5)
 
 # ============================================================ 8 ROUTE B PROS
-s = slide(); header(s, "Route B — the case for", "What a verified First Vital adds")
+s = slide(); header(s, "Route B — the case for (as pitched)", "Sep-2026 update: most of these claimed benefits failed verification — see update slide")
 items = [
     ("Time", "An existing, current filing record cuts the time and execution risk of becoming a reporting company.", ACCENT),
     ("Channel", "10,000 targeted GLP-1 patients = a US clinical route to market GenApep cannot quickly build alone.", TEAL),
@@ -429,9 +448,10 @@ rows = [
 ]
 table(s, ["Step", "Value", "Basis"], rows, 0.7, 1.6, 11.95, [4.6, 1.9, 5.45], fs=13, hdr_fs=13, hl_rows=(3,))
 card(s, 0.7, 3.85, 11.95, 1.45, "The question to answer before any share moves",
-     "Would First Vital be worth $10–13M if it were NOT public? If yes — on the GLP-1 business alone "
-     "— the terms are fair and the listing status comes free. If not, most of the price pays for a "
-     "filing record that has not yet been verified.", line=GOLD, tsz=16, bsz=14.5)
+     "ANSWERED (Sep-2026): No. Verified record — pre-revenue, $500K lifetime capital, no reporting "
+     "status, contingent exposures — supports ~$0–2M, possibly less after the senior $500K note. "
+     "Every dollar conceded above verified value is a transfer from GenApep shareholders; a clean "
+     "new US topco costs under $100K.", line=RED, tsz=16, bsz=14.5)
 stat(s, 0.7, 5.5, 3.85, 1.2, "Gate 0", "CIK + full EDGAR index, in writing", fill=RED, bigsz=26)
 stat(s, 4.75, 5.5, 3.85, 1.2, "This week", "request Jul–Aug GLP-1 actuals", fill=ACCENT, bigsz=24)
 stat(s, 8.8, 5.5, 3.85, 1.2, "Then", "independent valuations + fairness opinion", fill=NAVY, bigsz=26)

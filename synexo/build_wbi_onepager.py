@@ -110,7 +110,7 @@ chip(M + 872, by + 18, M + 1150, by + 2 * bh + 8, "韩国子公司", 32, DARK2,
 # step2: merge with P
 arrow_r(M + 1160, midy + 4, 40, col=GOLD)
 chip(M + 1262, by + 18, W - M, by + 2 * bh + 8, "P公司", 34, GOLD,
-     sub="美国SEC申报平台 · 换股合并", subsz=21)
+     sub="美国合并对象·按核实价值(备选)", subsz=20)
 # footnote row
 yf = by + 2 * bh + 44
 text(M, yf, "换股合并（第二步）：合资公司股东按持股比例、以整体进入 P公司；P公司现有股东预计保留约 20–25%（以独立估值+公平性意见厘定）。",
@@ -145,14 +145,14 @@ for i, (yy, v) in enumerate(zip(years, vals)):
     dr.rectangle([x0, y0, x0 + bw, ch_y + ch_h - 40], fill=ACCENT if i < 4 else NAVY)
     text(x0 + bw // 2, y0 - 30, "%.1f" % v, 24, NAVY, bold=True, anchor="ma")
     text(x0 + bw // 2, ch_y + ch_h - 30, yy, 24, GREY, anchor="ma")
-text(ch_x, ch_y + ch_h + 8, "集团收入规划（合并前口径，百万美元）；P公司 GLP-1 业务另计：2026 $2.2M → 2027 $16.7M（备考）",
+text(ch_x, ch_y + ch_h + 8, "集团收入规划（合并前口径，百万美元）；P公司 GLP-1 数字为其计划值、未经核实，不计入本集团规划",
      22, GREY, maxw=760)
 # right: stat chips
 sx = M + 820; sw = W - M - sx
 chip(sx, cy + 10, W - M, cy + 112, "$30–40M", 42, NAVY, sub="合资公司合并估值区间（技术授权价值另有 $5–10M 情景）", subsz=21, subcol=SKY)
-chip(sx, cy + 132, sx + (sw - 20) // 2, cy + 234, "~$10M", 40, TEAL, sub="P公司核实价值情景", subsz=21)
+chip(sx, cy + 132, sx + (sw - 20) // 2, cy + 234, "≈$0–2M", 40, TEAL, sub="P公司尽调后核实价值区间", subsz=20)
 chip(sx + (sw - 20) // 2 + 20, cy + 132, W - M, cy + 234, "2028", 40, GOLD, sub="目标上市年份", subsz=21)
-chip(sx, cy + 254, W - M, cy + 356, "$16.7M", 40, ACCENT, sub="P公司GLP-1业务2027预测收入（月度经常性模型）", subsz=21, subcol=SKY)
+chip(sx, cy + 254, W - M, cy + 356, "₩104.6亿", 40, ACCENT, sub="M公司FY2025法定营收（已核实·净利₩20.5亿）", subsz=20, subcol=SKY)
 
 # ================= S3 WBI 每股价值路径 =================
 y3 = cy + 430
@@ -191,13 +191,13 @@ rrect(M + colw + 40, ly, W - M, ly + 500, outline=RED, w=3)
 text(M + 24, ly + 16, "优势", 30, ACCENT, bold=True)
 text(M + colw + 64, ly + 16, "风险 → 管理措施", 30, RED, bold=True)
 pros = [
-    "借助 P公司 现有SEC申报记录，缩短成为美国申报公司的时间与执行风险",
+    "自主赴美上市（默认路径）与韩国上市（备选）双轨并行；集团有经核实的盈利基础（M公司FY2025净利₩20.5亿）",
     "P公司 GLP-1 患者渠道 × 本集团肽/外泌体产品：GI代谢支持、脱发管理等协同品类",
     "M公司 GMP 产能与现有收入并表，集团2030规划收入 $58.9M",
     "对 D公司（某上市集团附属）的技术授权佐证 AI 肽平台价值，并新增特许权收入",
 ]
 risks = [
-    "P公司申报状态未核实 → 先取得CIK及EDGAR全记录、律师书面确认，再谈任何条款",
+    "P公司尽调结果：仅为Reg A+众筹备案、暂无营收 → 只按独立核实价值、并取消其期权池后才考虑合并；否则不采用",
     "个人先持的过渡安排 → 书面代持声明、限期同价转入控股公司、韩国税务书面意见；最终全体股东按比例整体进入",
     "M公司财务数据未交付 → 按既定基准签署；偏差>15% 强制调整，独立估值师终裁",
     "合并本身不募集资金 → 另行制定融资方案；上市后再行增发补充资本",
