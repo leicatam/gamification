@@ -43,7 +43,11 @@ UPDATE_SEP26 = ("SEPTEMBER 2026 UPDATE — READ FIRST. New evidence (Eyesel stat
     "value is ~$0-2M, not $5-13M. Eyesel FY2025 revenue is verified at \u20a910.46B (~$7.47M @\u20a91,400) "
     "— inside the 15% equalisation band, closing the open item; the '~$15M Eyesel revenue' figure "
     "is contradicted. Route B is not viable as pitched; Route A remains default and a Korea listing "
-    "is promoted to a parallel track. The governing document is now GenApep IPO Plan v2 "
+    "is promoted to a parallel track. SEP-17 ADDITION: the Ernie/FirstVitals relationship is "
+    "reconstructed as a MANAGEMENT PARTNERSHIP (Plan v2 §5b) — Ernie as US CEO/President with "
+    "KPI-gated 3–7% group equity, the entity at verified value — recognising that his US "
+    "healthcare-operations and SEC-process experience is the real asset and cures the US-management "
+    "gap under either route. The governing document is GenApep IPO Plan v2 "
     "(GenApep_IPO_Plan_v2.docx); passages below contradicted by it are retained for record only.")
 DISCLAIMER = ("Heads-up briefing prepared to open board discussion. Non-binding; not legal, tax, "
               "accounting, securities, healthcare-regulatory or clinical advice. Figures are "
@@ -175,6 +179,14 @@ KR_TAX_PATHS = [
      "tax at post-listing values, disclosure defects, and personal risk for the two principals."],
 ]
 
+MGMT_PARTNER = [
+    ["The gap", "A US listing needs a credible local CEO/President, finance/IR capability and post-listing management. The meeting record itself: struggling 2023–24 Korean issuers, $300–500K/yr US opex, and family members as the only internal CEO candidates. Without this capability, Route A's conditions are hard to meet."],
+    ["The asset", "Ernie Lee — ~12 years operating a US healthcare-services company (Hawaii RPM/CCM 2010–2022, Medicaid billing/compliance), first-hand SEC (Reg A+) process experience, US infrastructure, claimed investor network (to verify). The operator is substantial even though the entity is thin."],
+    ["The structure", "US CEO/President + board seat; KPI-gated 3–7% GROUP equity (vesting on reporting, listing, capital raised, US revenue), replacing the FVH 7.5M pool; the FVH entity at independently verified value (~$0–2M) via block entry or kept as the US operating subsidiary."],
+    ["Why it is clean", "Disclosed management compensation with KPIs — not acquisition consideration to individuals; SEC-disclosure friendly; every shareholder rides pro rata; works under Route A or B."],
+    ["Cost", "5% grant ≈ 2–3 points of pro-rata dilution (WBI shareholders 45.3% → ~43.1%; ~$13–14/share at the $100M Route-A scenario) — modest against the execution risk removed."],
+]
+
 DPW = (
     "A commercial licensing framework with DPW (an entity under the listed Richards Group) was "
     "circulated on 28 August 2026. It is a non-binding modular structure — a Master Technology "
@@ -277,7 +289,8 @@ RESOLVE = [
 DECISIONS = [
     "Sign Amendment No. 1 and start Stage 1 now (both boards).",
     "Treat Addendum A as the gate for any First Vital discussion; sign it when ready to consider Route B.",
-    "Complete the remaining FirstVitals gate-zero items this week: 1-A qualification & amounts actually sold, 1-K/1-SA runway, the $500K note's holder/terms, entity-name chain to the 1-A filer (Reg A+ status itself now confirmed).",
+    "Complete the remaining FirstVitals gate-zero items this week: 1-A qualification & amounts actually sold, 1-K/1-SA runway, the $500K note's holder/terms, entity-name chain, PLUS management references/background for Ernie Lee (incl. the 2024 shareholder dispute).",
+    "Table the Management-Partnership term sheet at the Ernie Lee meetings: US CEO/President role, KPI schedule, 3–7% group-equity band, entity at verified value, 7.5M-pool cancellation (Plan v2 §5b).",
     "Eyesel: financial report DELIVERED (statutory FY2025, verified Sep-2026); confirm the principal (Park vs Kim) in writing — within 30 days.",
     "Appoint the PCAOB-registered auditor in Q4-2026 (critical path), scoped for either route.",
     "Do not sign the draft IPO MOU in its current form; instruct revision to the value-based block-entry structure.",
@@ -329,6 +342,9 @@ def wmd():
         a("| " + " | ".join(r) + " |\n")
     a("\n*All Korean tax and FX statements require written confirmation by Korean counsel before "
       "any structure is selected.*\n")
+    a("\n### What Ernie brings beyond the entity — and how to pay for it (SEP-17)\n\n| Element | Substance |\n|---|---|\n")
+    for r in MGMT_PARTNER:
+        a("| **%s** | %s |\n" % (r[0], r[1]))
     a("\n## 5. What this means for WBI shareholders\n")
     for t, d in WBI_LENS:
         a("- **%s** — %s\n" % (t, d))
@@ -442,6 +458,8 @@ para(doc, KR_TAX_INTRO)
 tbl(doc, ["Path", "Mechanics", "Assessment"], KR_TAX_PATHS, widths=[1.7, 2.7, 2.1])
 para(doc, "All Korean tax and FX statements require written confirmation by Korean counsel "
           "before any structure is selected.", size=9, italic=True, color=GREY)
+doc.add_heading("What Ernie brings beyond the entity — and how to pay for it (SEP-17)", level=3)
+tbl(doc, ["Element", "Substance"], MGMT_PARTNER, widths=[1.2, 5.3])
 
 doc.add_heading("5. What this means for WBI shareholders", level=2)
 for t, d in WBI_LENS:

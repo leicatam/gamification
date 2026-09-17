@@ -80,11 +80,56 @@ ROUTES = [
      "DEFAULT — and now also the FASTEST US path. Conditional on: sponsor pre-money for the $2M bridge demonstrably above ~$25–35M (at ~$18M pre, WBI holders are underwater vs their $89.75 basis), US opex discipline, US CEO identified."],
     ["B — Combine with FirstVitals",
      "Not a reporting company; combination confers no listing status and raises no capital; pre-revenue per DD/cap table (1-K/1-SA confirmation pending); Rule 3-05 audit wall applies identically; US GAAP (not IFRS); reverse-merger seasoning on any exchange application; 54.18%-FD unissued pool; zero operational synergy (DD: “financial splicing”).",
-     "REJECT AS PITCHED. Keep alive only as (i) an optional cheap-shell purchase at verified value (~$0–2M) with the pool cancelled and gate-zero verification passed, executed through Addendum A block entry; or (ii) an arm’s-length US commercial-channel discussion (their clinics as a customer), no equity."],
+     "REJECT AS PITCHED — RECONSTRUCT AS A MANAGEMENT PARTNERSHIP (§5b). The entity's verified value stands (~$0–2M), but the real asset is the operator: Ernie Lee as US CEO/President + board seat with KPI-gated 3–7% group equity replacing the 7.5M pool; the entity at verified value through Addendum A block entry — under either route."],
     ["C — Korea listing (KOSDAQ)",
      "Eyesel’s verified profitability (₩1.84B OP, ₩10.36B retained earnings, dividend history) fits KOSDAQ profit tracks on trailing numbers; K-IFRS conversion instead of US GAAP; no $300–500K/yr US opex, no US CEO problem; eliminates the Korean cross-border swap-tax/FX problem for BOTH shareholder bodies.",
      "PROMOTE to a formally developed parallel track. Cash timing comparable to Route A (H2-2028/2029); the credible fallback that disciplines every US-sponsor valuation conversation."],
 ]
+
+MGMT_GAP = [
+    ["The problem is real and documented",
+     "Running a US-listed company needs a credible local CEO/President, finance/IR capability and "
+     "post-listing support. The strategy meeting's own record: Korean issuers listed in 2023–24 "
+     "are struggling; “IPO preparation is a new beginning rather than an end goal”; US operations "
+     "cost $300–500K/yr; and the only internal US-CEO candidates discussed were family members of "
+     "the principals — a governance gap, not a bench. A purely financial reading of Route B missed "
+     "this dimension."],
+    ["What Ernie Lee verifiably brings — beyond the entity",
+     "~12 years operating an actual US healthcare-services company (Hawaii RPM/CCM, 2010–2022) "
+     "with Medicaid billing/compliance experience; first-hand SEC process experience (took the "
+     "company through a Reg A+ offering); standing US corporate/regulatory infrastructure; and a "
+     "claimed US investor/sponsor network. This is precisely the capability set Route A lacks — "
+     "the entity is thin, but the operator is not."],
+    ["What still needs verification",
+     "Management references and background; the 2024 “dispute between previous shareholders” that "
+     "preceded the pivot; the investor-network claims; and the internal-papers-vs-public-website "
+     "narrative gap — a management-integrity question that must be answered before he fronts a "
+     "listed group. Gate-zero is EXTENDED to cover these; it does not disappear."],
+]
+
+MGMT_STRUCTURE = [
+    ["Role", "Ernie Lee as US CEO/President of the group's US operations plus a board seat on the "
+             "listed company — accountable for listing execution and post-listing management."],
+    ["Incentive", "KPI-gated equity of the GROUP: 3–7% (negotiation band), vesting on objective "
+                  "milestones — reporting compliance achieved, exchange listing completed, capital "
+                  "actually raised, US revenue milestones. Replaces the FVH-side 7.5M-share pool "
+                  "entirely."],
+    ["Entity", "The FVH entity enters at independently verified value (~$0–2M, fairness opinion) "
+               "through block entry — or is retained as the group's US operating subsidiary. "
+               "People priced as management; the entity priced as an entity."],
+    ["Governance", "The equity is DISCLOSED management compensation with KPIs — defensible in SEC "
+                   "filings and to both shareholder bodies — rather than acquisition consideration "
+                   "routed to individuals. Every GenApep shareholder still rides through pro rata."],
+    ["Route-independence", "The partnership attaches to EITHER route: under Route A, Ernie leads US "
+                           "operations for GenApep's own F-1 — curing Route A's biggest weakness; "
+                           "under Route B, it converts a shell purchase into a governed partnership."],
+]
+
+MGMT_DILUTION = (
+    "Cost of the partnership, quantified: a 5% KPI grant dilutes every holder pro rata — WBI "
+    "shareholders 45.3% → ~43.1% of the group (44.0% at 3%, 42.2% at 7%). At the Route-A $100M "
+    "post scenario that is ~$13–14 per WBI share — a modest price for removing the execution "
+    "risk that otherwise conditions the whole US plan.")
 
 PLAN_STEPS = [
     ["1. Sign Amendment No. 1 — with two locks", "Now",
@@ -109,11 +154,12 @@ WBI_PS = [
     ["Route C (KOSDAQ) @ 15–25× combined NI", "$98–167", "₩2,291M combined FY2025A NI; no US opex/GAAP drag"],
     ["Route B @ honest FVH ~$1M, pool cancelled", "~$316*", "*Not dilution-comparable: assumes the same $80M cap with NO financing dilution and FVH contingencies at zero — read as an upper bound only"],
     ["Route B @ FVH $10M / @ claimed $75M cap", "$253 / $103", "Every dollar conceded to FVH above verified value is a direct transfer from GenApep shareholders"],
+    ["Management-partnership cost (5% KPI grant)", "≈ -$13–14", "Pro-rata dilution at the $100M Route-A scenario — the price of closing the US-management gap (§5b)"],
 ]
 
 WBI_VIEW = [
-    ["Ranked: 1st Route A (conditional), 2nd Route C, 3rd Route B (reject as pitched)",
-     "Route A is the only route where WBI’s 45.3% compounds into ~30% of a listed company on the JV’s own story. Its viability hinges on two facts to force into the open now: a sponsor term sheet above ~$25–35M pre-money, and the funding bridge across mid-2028. Route C is the disciplined fallback with $98–167/share and far lower cost. Route B as pitched (at $75M-cap framing) takes WBI holders to ~14% and ~$103/share — a value transfer to a 94.63% single holder."],
+    ["Ranked: 1st Route A + Management Partnership, 2nd Route C, 3rd Route B as pitched (reject; reconstruct per §5b)",
+     "Route A is the only route where WBI’s 45.3% compounds into ~30% of a listed company on the JV’s own story. Its viability hinges on two facts to force into the open now: a sponsor term sheet above ~$25–35M pre-money, and the funding bridge across mid-2028. Route C is the disciplined fallback with $98–167/share and far lower cost. Route B as pitched (at $75M-cap framing) takes WBI holders to ~14% and ~$103/share — a value transfer to a 94.63% single holder. THE MANAGEMENT DIMENSION CHANGES THE CALCULUS: Route A's biggest condition is not money but the absence of a US management team — the Management Partnership (§5b) closes that gap for ~2–3 points of pro-rata dilution at the 5% midpoint (~$13–14/share at the $100M scenario), materially raising Route A's probability of success."],
     ["Symmetric verification duty",
      "Eyesel now holds statutory verification; WBI’s 49% rests on an implied OP figure, a 2026 plan needing ~2.2× in-year growth, and an MM Studio ramp with no cited contract evidence. Produce WBI’s evidence pack (NTS filing, H1-2026 actuals, MM Studio contracts/pipeline) before Eyesel demands it."],
     ["Shareholder-correction duty",
@@ -122,7 +168,7 @@ WBI_VIEW = [
 
 EYESEL_VIEW = [
     ["Ranked: 1st reject the FVH equity combination; 2nd proceed with Stage 1 only with the protection package; keep the BATNA visible",
-     "Eyesel does not need this deal to survive — profitable, cash-generative, ₩10.36B retained earnings, and a strong BATNA as GenApep’s contract manufacturer (the $4/vial bottoming fee) capturing margin with none of the merger costs. What Eyesel lacks is growth and a story (FY2025 OP -31%): WBI’s MM Studio ramp, the AI-peptide/DPW technology and a listing are the honest rationale. The FVH combination asks Eyesel’s profits to fund a crowdfunding-stage company that is pre-revenue per the DD (1-K confirmation pending) — US opex alone equals 23–38% of Eyesel’s FY2025 operating profit."],
+     "Eyesel does not need this deal to survive — profitable, cash-generative, ₩10.36B retained earnings, and a strong BATNA as GenApep’s contract manufacturer (the $4/vial bottoming fee) capturing margin with none of the merger costs. What Eyesel lacks is growth and a story (FY2025 OP -31%): WBI’s MM Studio ramp, the AI-peptide/DPW technology and a listing are the honest rationale. The FVH combination asks Eyesel’s profits to fund a crowdfunding-stage company that is pre-revenue per the DD (1-K confirmation pending) — US opex alone equals 23–38% of Eyesel’s FY2025 operating profit. The Management Partnership (§5b) answers Eyesel's sharpest objection from the other side: if the group DOES go to the US, a verified, KPI-accountable US operator is what prevents that opex from being burned by an inexperienced team — Eyesel's protections (reserved matters, spend cap, external funding of US costs) apply to him as to anyone."],
     ["The Eyesel protection package (conditions to Stage 1)",
      "Board majority matching 51% + reserved matters (route decision, any pool/option grant, related-party deals, US spend cap); dividend continuity (~₩300M/yr historic level) until listing proceeds; Eyesel cash ring-fenced — no upstream loans/guarantees; US costs funded exclusively from the external $2M raise; PCAOB audit fee capped and board-approved; chain-of-title CP satisfied before WBI technology value is credited; written Korean tax/FX opinion (one collective holdco filing, no dry tax for Eyesel’s shareholders) before any exchange."],
     ["Walk-away conditions",
@@ -131,7 +177,7 @@ EYESEL_VIEW = [
 
 GOVERNANCE = [
     "Sidney Tam’s conflict must be squarely governed: he organized the meeting recommending FirstVitals, is the sole source of every now-contradicted FVH claim ($75M cap, GLP-1 technology, Medicare contracts), is a named sweat-pool beneficiary and is understood to hold the FA mandate and the Third-Director designation [confirm against the signed JV instruments]. Route-B advocacy and FVH verification must move to independent advisers; his recusal (Clause 3.6/3.8 machinery) applies to the route decision.",
-    "Theresa Jang’s dual role: CEO-designate and, under the superseded draft MOU, personal recipient of 40% of FVH — the largest beneficiary of Route B as drafted — while acting as information conduit to the Eyesel principal. The block-entry rule (no individual allocations) and full disclosure resolve this; record it.",
+    "Theresa Jang’s dual role: CEO-designate and, under the superseded draft MOU, personal recipient of 40% of FVH — the largest beneficiary of Route B as drafted — while acting as information conduit to the Eyesel principal. The block-entry rule (no individual allocations as ACQUISITION CONSIDERATION) and full disclosure resolve this; record it. Principle now adopted: individual equity is legitimate when it is disclosed, KPI-gated MANAGEMENT COMPENSATION (as in the §5b partnership) — never as undisclosed deal consideration.",
     "“Brian” participates throughout the meeting record but appears on no attendee list, cap table or MOU — identify his role and mandate before board documents rely on his positions.",
     "DD provenance and good faith: the DD report is addressed to WBI only (author Hayley Zen — confirm mandate). Correct the $11.7M figure, then share the corrected report and the cap-table findings with the Eyesel board; a JV partner sitting on contradicting diligence is itself a good-faith problem.",
     "Do not sign, extend or reference the draft IPO-framework MOU: its Step-1 condition precedent can never be satisfied as written (no reporting status to “maintain”), its §5 GLP-1 “operating program” belongs to an abandoned service line, and its consolidated forecast carries $2.2M→$34M of unvalidated FVH revenue. It is formally superseded by this Plan v2.",
@@ -142,8 +188,8 @@ VERDICT = [
      "Eyesel’s verified financials close the data gap inside the equalisation band; 51:49 is defensible on evidence from both seats; proceed with the two drafting locks and the Eyesel protection package."],
     ["Route A (own F-1)", "VIABLE — conditional",
      "The default and fastest US path. Load-bearing conditions: sponsor pre-money > ~$25–35M, the $2M end-2026 bridge, US CEO and opex discipline. Test at the sponsor conversations; if the sponsor holds ~$18M, Route A destroys WBI value and Route C takes over."],
-    ["Route B (FirstVitals)", "NOT VIABLE AS PITCHED",
-     "Fails on the verified record: no reporting status (EDGAR-supported); pre-revenue with ~$500K lifetime capital per DD and the counterparty's own cap table (1-K/1-SA confirmation pending); no capital raised by a combination; no synergy; no time saving; a 54.18%-FD pool overhang; an asking anchor ≥37× the assessed supportable value. Optional at ~$0–2M with the pool cancelled — or as a commercial channel only."],
+    ["Route B (FirstVitals)", "NOT VIABLE AS PITCHED — VIABLE AS RECONSTRUCTED",
+     "As pitched ($75M framing, individual allocations, pool overhang) it fails on the verified record: no reporting status, pre-revenue per DD (1-K pending), no capital, no synergy, no time saving. Reconstructed as a Management Partnership (§5b) — Ernie as US CEO with 3–7% KPI equity, entity at ~$0–2M verified value — it becomes a live option that also strengthens Route A."],
     ["Route C (KOSDAQ)", "VIABLE — develop now",
      "Meets profit tracks on Eyesel’s trailing actuals; solves the Korean tax/FX problem for both shareholder bodies; the fallback that protects the group’s negotiating position everywhere else."],
 ]
@@ -151,7 +197,7 @@ VERDICT = [
 ACTIONS = [
     ["Now", "Sign Amendment No. 1 with the FX/reference-period locks + no-leakage covenant + principal confirmation; board minute superseding the draft IPO MOU; issue the one-pager corrective supplement."],
     ["This week", "FirstVitals gate-zero document requests (EDGAR index, 1-A status & amounts sold, 1-K/1-SA, note terms, entity chain); correct the DD report’s $11.7M; share corrected DD with the Eyesel board."],
-    ["Before the Ernie Lee meetings", "Written US securities-counsel memo (reporting status, shell/Rule 144(i), seasoning); agree internally that no terms are discussed until gate-zero reports."],
+    ["Before/at the Ernie Lee meetings", "Written US securities-counsel memo (reporting status, shell/Rule 144(i), seasoning); no valuation terms until gate-zero reports — but DO table the Management-Partnership term sheet: role, KPI schedule, 3–7% band, entity at verified value, 7.5M-pool cancellation (§5b)."],
     ["By Q4 2026", "Auditor appointed (IFRS primary, costed US GAAP option, capped fee); WBI evidence pack (NTS filing, H1-2026 actuals, MM Studio contracts); Eyesel balance sheet + commission-counterparty DD."],
     ["By end-2026", "$2M bridge closed into the holdco; KOSDAQ readiness memo (Route C) delivered to both boards."],
     ["Q1–Q2 2027", "Share exchange through the holdco block; route decision when sponsor + gate-zero + KOSDAQ memos are all on the table."],
@@ -182,6 +228,13 @@ def wmd():
     for r in WBI_FIGURES: a("| %s | %s | %s |\n" % tuple(r))
     a("\n## 5. The three routes — revised comparison\n\n| Route | Reality on the new evidence | Position |\n|---|---|---|\n")
     for r in ROUTES: a("| **%s** | %s | %s |\n" % tuple(r))
+    a("\n## 5b. Management, talent & governance — the dimension beyond finance\n")
+    for t, d in MGMT_GAP:
+        a("- **%s** — %s\n" % (t, d))
+    a("\n### The Management Partnership structure (adopted)\n\n| Element | Terms |\n|---|---|\n")
+    for r in MGMT_STRUCTURE:
+        a("| **%s** | %s |\n" % (r[0], r[1]))
+    a("\n%s\n" % MGMT_DILUTION)
     a("\n## 6. The revised plan (route-independent core + gated decision)\n\n| Step | When | Content |\n|---|---|---|\n")
     for r in PLAN_STEPS: a("| **%s** | %s | %s |\n" % tuple(r))
     a("\n## 7. Viability from the WBI seat\n\n### Per-share outcomes (basis $89.75; 111,448 shares)\n\n| Scenario | $/share | Note |\n|---|---|---|\n")
@@ -277,6 +330,13 @@ tbl(doc, ["Figure", "Value", "Note"], WBI_FIGURES, widths=[2.2, 2.0, 2.3])
 
 doc.add_heading("5. The three routes — revised comparison", level=2)
 tbl(doc, ["Route", "Reality on the new evidence", "Position"], ROUTES, widths=[1.5, 2.6, 2.4])
+
+doc.add_heading("5b. Management, talent & governance — the dimension beyond finance", level=2)
+for t, d in MGMT_GAP:
+    bullet(doc, d, t + " — ")
+doc.add_heading("The Management Partnership structure (adopted)", level=3)
+tbl(doc, ["Element", "Terms"], MGMT_STRUCTURE, widths=[1.3, 5.2])
+para(doc, MGMT_DILUTION, size=9.5, italic=True, color=GREY)
 
 doc.add_heading("6. The revised plan", level=2)
 tbl(doc, ["Step", "When", "Content"], PLAN_STEPS, widths=[1.7, 1.0, 3.8])

@@ -178,8 +178,9 @@ rows = [
 table(s, ["Prior claim / item", "Verdict", "Verified evidence (DD 03-Sep; cap table 02-Sep; statutory accounts)"], rows,
       0.7, 1.6, 11.95, [3.3, 1.55, 7.1], fs=11.5, hdr_fs=12.5, hl_rows=(5,))
 band = rect(s, 0.7, 6.05, 11.95, 1.05, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-fill_text(band, [("Consequence: Route B is NOT viable as pitched; Route A stays default (and is the fastest US path); "
-                  "a Korea listing is promoted to a formal parallel track.", 15.5, True, NAVY),
+fill_text(band, [("Consequence: Route B fails AS PITCHED — but is reconstructed as a MANAGEMENT PARTNERSHIP "
+                  "(Ernie = US CEO + KPI equity; entity at verified value) that strengthens either route. "
+                  "Route A stays default; Korea listing promoted to a parallel track.", 14.5, True, NAVY),
                  ("Governing document: GenApep IPO Plan v2. Evidence is in the name ProteusDx/FirstVitals — identity with “First Vital” to be confirmed at gate zero. Later as-pitched slides retained for record.", 12, False, GREY)])
 
 # ============================================================ 2 WHY WE'RE HERE
@@ -360,6 +361,31 @@ band = rect(s, 0.7, 6.35, 11.95, 0.8, LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 fill_text(band, [("All Korean tax and FX statements to be confirmed in writing by Korean counsel "
                   "before any structure is selected.", 14.5, True, NAVY)])
 
+# ============================================================ 12b MANAGEMENT DIMENSION
+s = slide(); header(s, "The management dimension — what Ernie brings",
+                    "Beyond finance: a US listing needs operators, and GenApep does not yet have them")
+card(s, 0.7, 1.55, 5.9, 2.5, "The gap (the meeting's own words)",
+     "A listed US company needs a credible local CEO/President, finance/IR staff and post-listing "
+     "support. Korean issuers listed 2023–24 are struggling; “IPO preparation is a new beginning, "
+     "not an end”; US opex $300–500K/yr; the only internal CEO candidates discussed were family "
+     "members.", line=RED, tsz=16, bsz=13)
+card(s, 6.85, 1.55, 5.8, 2.5, "The asset (verifiable, unlike the entity)",
+     "Ernie Lee: ~12 years operating a real US healthcare-services company (Hawaii RPM/CCM "
+     "2010–2022, Medicaid billing/compliance); first-hand SEC (Reg A+) process experience; US "
+     "corporate infrastructure; claimed investor network (verify at gate zero, incl. the 2024 "
+     "shareholder dispute).", line=ACCENT, tsz=16, bsz=13)
+card(s, 0.7, 4.2, 7.6, 2.5, "The Management Partnership (adopted)",
+     "• Role: US CEO/President + board seat — accountable for listing execution and "
+     "post-listing management.\n"
+     "• Incentive: KPI-gated 3–7% GROUP equity (reporting, listing, capital raised, US "
+     "revenue) — replaces the FVH 7.5M pool.\n"
+     "• Entity: folded in at independently verified value (~$0–2M) or kept as the US "
+     "operating subsidiary.\n"
+     "• Clean: disclosed management compensation with KPIs — never acquisition "
+     "consideration to individuals; works under Route A or B.", line=TEAL, tsz=16, bsz=12.5)
+stat(s, 8.5, 4.2, 4.15, 1.2, "3–7%", "KPI-gated group equity band", fill=TEAL, bigsz=30)
+stat(s, 8.5, 5.5, 4.15, 1.2, "~$13–14/sh", "cost to WBI holders at 5% grant ($100M scenario)", fill=NAVY, bigsz=24)
+
 # ============================================================ 11 RECOMMENDED STRUCTURE
 s = slide(); header(s, "Recommended shareholding structure", "SEP-2026: structure now known (cap table 02-Sep); method stands, applied to verified ~$0–2M value")
 card(s, 0.7, 1.55, 5.9, 2.05, "The principle",
@@ -501,7 +527,7 @@ s = slide(); header(s, "Decisions requested today", "Approve these seven actions
 items = [
     ("1", "Sign Amendment No. 1 and start Stage 1 — both boards.", ACCENT),
     ("2", "Treat Addendum A as the gate for all First Vital discussion.", TEAL),
-    ("3", "Instruct the FA to obtain FVH's CIK / EDGAR index and Jul–Aug GLP-1 actuals — this week.", GOLD),
+    ("3", "Gate-zero this week (1-A sales, 1-K/1-SA, note terms, entity chain, Ernie references) + table the Management-Partnership term sheet.", GOLD),
     ("4", "Eyesel: financials DELIVERED & verified; principal confirmation (Park vs Kim) within 30 days.", DARK2),
     ("5", "Appoint the PCAOB auditor in Q4-2026, scoped for either route.", NAVY),
     ("6", "Do not sign the draft IPO MOU as written — revise to value-based block entry.", RED),

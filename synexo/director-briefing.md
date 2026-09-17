@@ -3,7 +3,7 @@
 >
 > Heads-up briefing prepared to open board discussion. Non-binding; not legal, tax, accounting, securities, healthcare-regulatory or clinical advice. Figures are planning figures from the parties' own workbooks and are illustrative.
 
-> **SEPTEMBER 2026 UPDATE — READ FIRST. New evidence (Eyesel statutory FY2024/FY2025 financials; the FirstVitals DD report of 2026-09-03; the FirstVitals cap table of 2026-09-02) superseded parts of this briefing. Verified: FirstVitals is NOT an SEC reporting company (Reg A+ Form 1-A crowdfunding only), is pre-revenue per the DD report (Form 1-K confirmation pending) after abandoning its RPM services in the 2024 pivot (the GLP-1 proforma is an unvalidated plan), is 94.63% owned by one holder with $500K lifetime capital and a 7.5M-share unissued option pool (54.18% fully diluted); its supportable value is ~$0-2M, not $5-13M. Eyesel FY2025 revenue is verified at ₩10.46B (~$7.47M @₩1,400) — inside the 15% equalisation band, closing the open item; the '~$15M Eyesel revenue' figure is contradicted. Route B is not viable as pitched; Route A remains default and a Korea listing is promoted to a parallel track. The governing document is now GenApep IPO Plan v2 (GenApep_IPO_Plan_v2.docx); passages below contradicted by it are retained for record only.**
+> **SEPTEMBER 2026 UPDATE — READ FIRST. New evidence (Eyesel statutory FY2024/FY2025 financials; the FirstVitals DD report of 2026-09-03; the FirstVitals cap table of 2026-09-02) superseded parts of this briefing. Verified: FirstVitals is NOT an SEC reporting company (Reg A+ Form 1-A crowdfunding only), is pre-revenue per the DD report (Form 1-K confirmation pending) after abandoning its RPM services in the 2024 pivot (the GLP-1 proforma is an unvalidated plan), is 94.63% owned by one holder with $500K lifetime capital and a 7.5M-share unissued option pool (54.18% fully diluted); its supportable value is ~$0-2M, not $5-13M. Eyesel FY2025 revenue is verified at ₩10.46B (~$7.47M @₩1,400) — inside the 15% equalisation band, closing the open item; the '~$15M Eyesel revenue' figure is contradicted. Route B is not viable as pitched; Route A remains default and a Korea listing is promoted to a parallel track. SEP-17 ADDITION: the Ernie/FirstVitals relationship is reconstructed as a MANAGEMENT PARTNERSHIP (Plan v2 §5b) — Ernie as US CEO/President with KPI-gated 3–7% group equity, the entity at verified value — recognising that his US healthcare-operations and SEC-process experience is the real asset and cures the US-management gap under either route. The governing document is GenApep IPO Plan v2 (GenApep_IPO_Plan_v2.docx); passages below contradicted by it are retained for record only.**
 
 ## 1. The project in brief
 
@@ -71,6 +71,16 @@ The idea of issuing shares to two principals first, with internal allocation lat
 
 *All Korean tax and FX statements require written confirmation by Korean counsel before any structure is selected.*
 
+### What Ernie brings beyond the entity — and how to pay for it (SEP-17)
+
+| Element | Substance |
+|---|---|
+| **The gap** | A US listing needs a credible local CEO/President, finance/IR capability and post-listing management. The meeting record itself: struggling 2023–24 Korean issuers, $300–500K/yr US opex, and family members as the only internal CEO candidates. Without this capability, Route A's conditions are hard to meet. |
+| **The asset** | Ernie Lee — ~12 years operating a US healthcare-services company (Hawaii RPM/CCM 2010–2022, Medicaid billing/compliance), first-hand SEC (Reg A+) process experience, US infrastructure, claimed investor network (to verify). The operator is substantial even though the entity is thin. |
+| **The structure** | US CEO/President + board seat; KPI-gated 3–7% GROUP equity (vesting on reporting, listing, capital raised, US revenue), replacing the FVH 7.5M pool; the FVH entity at independently verified value (~$0–2M) via block entry or kept as the US operating subsidiary. |
+| **Why it is clean** | Disclosed management compensation with KPIs — not acquisition consideration to individuals; SEC-disclosure friendly; every shareholder rides pro rata; works under Route A or B. |
+| **Cost** | 5% grant ≈ 2–3 points of pro-rata dilution (WBI shareholders 45.3% → ~43.1%; ~$13–14/share at the $100M Route-A scenario) — modest against the execution risk removed. |
+
 ## 5. What this means for WBI shareholders
 - **Your starting position** — WBI shareholders hold 49% of GenApep, diluting to ~45.3% at the 7.5% pool midpoint — worth ≈ US$15.9M at the US$35M combined planning mid, before any AI.pep/DPW technology credit.
 - **Route A outcome (workbook illustration)** — At an US$80M pre-money IPO with a US$20M raise, WBI shareholders ≈ US$36.3M post-IPO (JV plan, 7.5% pool). MM Studio — WBI's own growth engine (US$2.9M → US$36.3M by 2030) — is the single biggest swing factor in that valuation.
@@ -122,11 +132,12 @@ Combined pre-JV valuation planning range US$30–40M (before AI.pep/DPW credit);
 ## 9. Decisions requested
 1. Sign Amendment No. 1 and start Stage 1 now (both boards).
 2. Treat Addendum A as the gate for any First Vital discussion; sign it when ready to consider Route B.
-3. Complete the remaining FirstVitals gate-zero items this week: 1-A qualification & amounts actually sold, 1-K/1-SA runway, the $500K note's holder/terms, entity-name chain to the 1-A filer (Reg A+ status itself now confirmed).
-4. Eyesel: financial report DELIVERED (statutory FY2025, verified Sep-2026); confirm the principal (Park vs Kim) in writing — within 30 days.
-5. Appoint the PCAOB-registered auditor in Q4-2026 (critical path), scoped for either route.
-6. Do not sign the draft IPO MOU in its current form; instruct revision to the value-based block-entry structure.
-7. Progress the DPW framework to asset-level term sheets only after chain-of-title is documented.
+3. Complete the remaining FirstVitals gate-zero items this week: 1-A qualification & amounts actually sold, 1-K/1-SA runway, the $500K note's holder/terms, entity-name chain, PLUS management references/background for Ernie Lee (incl. the 2024 shareholder dispute).
+4. Table the Management-Partnership term sheet at the Ernie Lee meetings: US CEO/President role, KPI schedule, 3–7% group-equity band, entity at verified value, 7.5M-pool cancellation (Plan v2 §5b).
+5. Eyesel: financial report DELIVERED (statutory FY2025, verified Sep-2026); confirm the principal (Park vs Kim) in writing — within 30 days.
+6. Appoint the PCAOB-registered auditor in Q4-2026 (critical path), scoped for either route.
+7. Do not sign the draft IPO MOU in its current form; instruct revision to the value-based block-entry structure.
+8. Progress the DPW framework to asset-level term sheets only after chain-of-title is documented.
 
 ## 10. Document map
 
