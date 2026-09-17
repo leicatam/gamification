@@ -47,3 +47,19 @@ the 4 questions and tap their spoken answers; tap "Share my results"
 -> WeChat -> send to the researcher; then tap "Reset for next player".
 
 The elder never touches the menus. No names. Same game file throughout.
+
+═══════════════════════════════
+【网页版(推荐)· 点链接即开】/ Hosted link route (preferred)
+═══════════════════════════════
+如果你收到的是链接而不是文件:直接在微信/WhatsApp 里点链接,游戏会自动打开,
+不需要「用浏览器打开」这一步。其余步骤(我同意 → 长者玩 → 读 4 条问题 →
+分享到微信 → 下一位玩家)完全一样。
+每位帮助者有自己的链接(D01…D20),请只用发给你的那一个。
+若链接打不开(内地网络偶尔会拦截 github.io),就改用文件版,按上面的步骤打开。
+
+If you were sent a LINK instead of a file: tap it inside WeChat/WhatsApp
+and the game opens directly — no "open in browser" step. Everything
+else (I agree -> elder plays -> read the 4 questions -> share to WeChat
+-> reset for next player) is identical. Use only the link you were
+given (D01..D20). If the link will not load (mainland networks
+sometimes block github.io), fall back to the file route above.
