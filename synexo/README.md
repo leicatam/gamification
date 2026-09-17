@@ -23,6 +23,7 @@ delivered as registered medical devices, powered by **CodeLife.AI** (proprietary
 | [`ipo-plan-v2.md`](./ipo-plan-v2.md) | **IPO Plan v2 (GOVERNING, Sep-2026)** — full revision on verified evidence: FirstVitals claimed-vs-verified (Reg A+ only, pre-revenue, 94.6% one holder, 54%-FD pool), Eyesel statutory FY2024/25 (₩10.46B rev, inside the 15% band), route verdicts (A default & fastest; B reconstructed as a Management Partnership — Ernie as US CEO with 3–7% KPI equity, entity at verified value; KOSDAQ promoted), WBI & Eyesel viability with per-share table, governance/conflicts, action list |
 | [`mou-ipo-framework.md`](./mou-ipo-framework.md) | **[SUPERSEDED by Plan v2]** Draft IPO-framework MOU — FVH (US SEC filer) → FVH Korea → WBI + Eyesel; share issuance (Theresa 40% / Kim 35%, indicative), Jan-2027 restructure, FVH GLP-1 Bridge program (CPT care pathway, $2.2M→$16.7M proforma), consolidated forecast ($17M→$75M), valuation management, hair-loss synergy |
 | `fvh-glp1-proforma.xlsx` | FVH GLP-1 Bridge proforma (source workbook, Jul-2026→Dec-2027): monthly enrollment/MRR model, CPT rates, assumptions |
+| [`dd-comments.md`](./dd-comments.md) | **Comments memo for Theresa & Brian Kim** on the FirstVitals Part-1 DD questionnaires: response position (answer without accepting the roll-up frame; NDA-first; reciprocity), six drafting rules, per-company A–H readiness tables, instruction traps, Part-2 preparation, sequence |
 | [`director-briefing.md`](./director-briefing.md) | **Director heads-up** (WBI & Eyesel boards, confidential): two-stage structure, implementation steps, Route A vs B pros/cons, recommended value-based shareholding structure, DPW licence credit, WBI-shareholder lens, interim Eyesel assumptions, decisions |
 | `GenApep_Executive_Presentation.pptx` | **30-min executive deck** (20 slides) for the boards — pre-read before the document pack; same content as the briefing in presentation form |
 | `WBI_Shareholder_OnePager_CN.png` / `.pptx` | **WBI 股东一页纸**（简体中文·代号版）：两步交易结构图、关键数字、每股价值路径（$89.75 → $135–179 → $253–326，说明性）、优势与风险管理 — 平台/制造方仅以 P公司/M公司 代号出现 |
@@ -65,6 +66,7 @@ python3 synexo/build_director_briefing.py # -> director-briefing.md, GenApep_Dir
 python3 synexo/build_director_deck.py   # -> GenApep_Executive_Presentation.pptx (30-min board deck)
 python3 synexo/build_wbi_onepager.py    # -> WBI_Shareholder_OnePager_CN.png/.pptx (中文一页纸, code-named)
 python3 synexo/build_ipo_plan_v2.py     # -> ipo-plan-v2.md, GenApep_IPO_Plan_v2.docx (governing plan, Sep-2026)
+python3 synexo/build_dd_comments.py     # -> dd-comments.md, GenApep_DD_Questionnaire_Comments.docx
 ```
 
 Generated investor outputs: `GenApep_Comprehensive_Report.docx` (full report) and
