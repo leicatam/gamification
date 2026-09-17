@@ -1,0 +1,506 @@
+#!/usr/bin/env python3
+"""Director heads-up briefing -> director-briefing.md + GenApep_Director_Briefing.docx.
+
+Heads-up for the directors of WBI and Eyesel on the GenApep IPO project:
+structure, implementation path, pros and cons, recommended shareholding
+structure, and what it means for WBI shareholders.
+
+Sources (figures cited from): GenApep_JV_Financial_Plan.xlsx (rev 29 Aug 2026),
+GLP-1 proforma (fvh-glp1-proforma.xlsx), WBI x Eyesel MOU 12 Aug 2026 +
+Amendment No. 1 + Addendum A, GenApep x First Vital Stage 2 Integration
+Framework (29 Aug 2026), GenApep-DPW Licensing Framework (28 Aug 2026).
+"""
+from docx import Document
+from docx.shared import Pt, RGBColor, Inches
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.table import WD_TABLE_ALIGNMENT
+
+DIR = "/home/user/gamification/synexo/"
+NAVY = RGBColor(0x1B, 0x33, 0x55); GREY = RGBColor(0x55, 0x55, 0x55); RED = RGBColor(0xC0, 0x39, 0x2B)
+
+# ---------------- figures (JV Financial Plan, rev 29 Aug 2026) ----------------
+YEARS = ["FY2025A", "2026P", "2027P", "2028P", "2029P", "2030P"]
+REV = [11.43, 16.39, 25.31, 31.70, 43.82, 58.91]
+EBIT = [0.76, 2.40, 4.54, 5.95, 8.86, 12.51]
+POOL = 0.075                       # deadlock-fallback midpoint (Amendment No.1, A4)
+EY_IN, WBI_IN = 0.51, 0.49         # internal JV split
+EY_POST = EY_IN * (1 - POOL)       # 47.2%
+WBI_POST = WBI_IN * (1 - POOL)     # 45.3%
+GA_MID = 35.0                      # combined GenApep value, mid of $30-40M planning range
+FVH_SCEN = [5.0, 10.0, 13.0]       # FVH verified-value scenarios ($M)
+
+def block(fvh_v, ga_v=GA_MID):
+    return ga_v / (ga_v + fvh_v)
+
+CONF = ("PRIVATE & CONFIDENTIAL — for the directors of WBI and Eyesel only. "
+        "Not for release to First Vital or any third party.")
+UPDATE_SEP26 = ("SEPTEMBER 2026 UPDATE — READ FIRST. New evidence (Eyesel statutory FY2024/FY2025 "
+    "financials; the FirstVitals DD report of 2026-09-03; the FirstVitals cap table of 2026-09-02) "
+    "superseded parts of this briefing. Verified: FirstVitals is NOT an SEC reporting company (Reg "
+    "A+ Form 1-A crowdfunding only), is pre-revenue per the DD report (Form 1-K confirmation pending) after abandoning its RPM services in the 2024 "
+    "pivot (the GLP-1 proforma is an unvalidated plan), is 94.63% owned by one holder with $500K "
+    "lifetime capital and a 7.5M-share unissued option pool (54.18% fully diluted); its supportable "
+    "value is ~$0-2M, not $5-13M. Eyesel FY2025 revenue is verified at \u20a910.46B (~$7.47M @\u20a91,400) "
+    "— inside the 15% equalisation band, closing the open item; the '~$15M Eyesel revenue' figure "
+    "is contradicted. Route B is not viable as pitched; Route A remains default and a Korea listing "
+    "is promoted to a parallel track. SEP-17 ADDITION: the Ernie/FirstVitals relationship is "
+    "reconstructed as a MANAGEMENT PARTNERSHIP (Plan v2 §5b) — Ernie as US CEO/President with "
+    "KPI-gated 3–7% group equity, the entity at verified value — recognising that his US "
+    "healthcare-operations and SEC-process experience is the real asset and cures the US-management "
+    "gap under either route. The governing document is GenApep IPO Plan v2 "
+    "(GenApep_IPO_Plan_v2.docx); passages below contradicted by it are retained for record only.")
+DISCLAIMER = ("Heads-up briefing prepared to open board discussion. Non-binding; not legal, tax, "
+              "accounting, securities, healthcare-regulatory or clinical advice. Figures are "
+              "planning figures from the parties' own workbooks and are illustrative.")
+
+PROJECT_BRIEF = (
+    "The project takes WBI and Eyesel to a US public market in two stages. Stage 1 forms the "
+    "Joint Venture: GenApep Holdings (Cayman) owns GenApep Korea, which acquires 100% of WBI and "
+    "100% of Eyesel; Eyesel shareholders hold 51%, WBI shareholders 49%, both diluted pro rata by "
+    "a 5–10% technology sweat pool. Stage 2 is the listing route, decided later and separately: "
+    "Route A (default) — GenApep's own US offering, confidential SEC draft by end-2027, listing "
+    "2028; or Route B — combination with First Vital Health and Wellness Inc (FVH), a US company "
+    "whose claimed SEC record and GLP-1 programme FAILED September-2026 verification (see the "
+    "update box above). "
+    "Signing Amendment No. 1 starts Stage 1 now; Addendum A creates the machinery to consider "
+    "Route B without committing to it. The PCAOB audit of both companies is the critical path "
+    "under every route, so forming the JV first costs no calendar time.")
+
+STEPS = [
+    ("1. Sign Amendment No. 1", "Immediate",
+     "Fixes nine defects in the 12-Aug MOU that matter under every scenario: mandatory 51:49 "
+     "equalisation once a >15% variance is shown, consideration to shareholder bodies pro rata "
+     "(never to individuals), Third-Director disclosure and deadlock fallback, technology "
+     "chain-of-title as a condition precedent."),
+    ("2. Execute Stage 1", "Q3-2026 → Q2-2027",
+     "Incorporate GenApep Holdings (Cayman) and GenApep Korea; deliver Eyesel's updated financial "
+     "report (30 days); appoint the PCAOB-registered auditor in Q4-2026 — the critical path; "
+     "definitive SHA + sweat-pool KPI schedule; share exchange Q1–Q2 2027."),
+    ("3. Sign Addendum A when ready to consider Route B", "When FVH discussion is live",
+     "Makes the route a Reserved Matter decision: Route A remains the default; GenApep Korea is "
+     "the only permitted acquisition vehicle; any Stage 2 transaction distributes consideration "
+     "strictly pro rata through the block."),
+    ("4. Verify First Vital before any terms", "This week onward",
+     "Remaining gate-zero (Sep-2026 DD done): 1-A qualification status and amounts ACTUALLY sold; "
+     "Form 1-K/1-SA cash-runway review; the $500K note's holder and terms; the entity-name chain (First Vital / FirstVitals / ProteusDx) to the 1-A filer. No terms before these report."),
+    ("5. If Route B is chosen: one block, one ratio", "After gates pass",
+     "Independent valuations of both sides + a written fairness opinion; FVH issues shares to "
+     "GenApep Holdings' shareholders pro rata for 100% of GenApep Holdings, simultaneously at "
+     "closing; the sweat pool carries through on equivalent terms; then reporting obligations and, "
+     "separately, an exchange-listing application when the group qualifies."),
+]
+
+ROUTE_AB = [
+    ("Speed to being public",
+     "Own registration: confidential draft end-2027, listing 2028; market-dependent.",
+     "SUPERSEDED: verified as NOT faster. FirstVitals has no reporting status to confer (Reg A+ "
+     "1-A only), and Rule 3-05 puts 12-18 months of PCAOB audits on any S-1 regardless."),
+    ("Capital raised",
+     "Primary raise at the offering (illustrative US$20M at US$80M pre-money).",
+     "A combination raises no money. A financing plan must be built separately."),
+    ("Issuer profile",
+     "Foreign private issuer assumed: Form F-1, IFRS, 20-F/6-K reporting.",
+     "US parent likely means domestic issuer: S-1/S-4, US GAAP, 10-K/10-Q/8-K and full proxy "
+     "rules — more cost and time than currently budgeted. Written counsel opinion required."),
+    ("What we get besides listing",
+     "Nothing external — the group's own story only.",
+     "SUPERSEDED (Sep-2026): the GLP-1 proforma is an unvalidated plan of a DD-verified "
+     "pre-revenue company (1-K confirmation pending); no operating channel verified."),
+    ("Counterparty risk",
+     "None — no external counterparty.",
+     "SEC status VERIFIED NEGATIVE (Reg A+ 1-A only, not a reporting company); the GLP-1 programme has NO trading history — pre-revenue per DD (1-K pending); "
+     "possible shell restrictions; inherited liabilities; related-party optics."),
+    ("Control of the process",
+     "Fully in the JV's hands.",
+     "Shared with FVH's board and existing holders; exclusivity and governance must be negotiated."),
+]
+
+FVH_PROS = [
+    ("Existing SEC filing record", "NOW VERIFIED NEGATIVE: the record is a Reg A+ Form 1-A crowdfunding offering, not reporting-company status — the claimed benefit does not exist."),
+    ("US clinical channel (CLAIMED)", "NOW CONTRADICTED: no operating channel or patient base exists — pre-revenue per DD; at best a future plan needing independent validation."),
+    ("Recurring-revenue programme (CLAIMED)", "NOW CONTRADICTED as operating revenue: FirstVitals abandoned RPM services in its 2024 pivot; the proforma is an unvalidated plan of a pre-revenue company."),
+    ("US infrastructure & shareholder base (CLAIMED)", "NOW CONTRADICTED: the verified cap table shows a 94.63% single holder plus eight small holders — no meaningful float; Reg A+ amounts actually sold unverified."),
+]
+FVH_CONS = [
+    ("Filing status", "RESOLVED (Sep-2026 DD): confirmed Reg A+ Form 1-A crowdfunding only — not a reporting company. Remaining gate-zero: 1-A qualification & amounts sold, 1-K/1-SA runway, entity-name chain."),
+    ("No trading history", "SUPERSEDED: the claimed 1-July-2026 enrolment start was FVH's own narrative; DD verifies pre-revenue (1-K confirmation pending) — there are no programme actuals to request."),
+    ("Proforma is revenue-only", "No clinician cost, billing cost, denials, collections. The 20% EBITDA margin used in the draft IPO MOU is an assumption; a cost build is needed."),
+    ("Issuer/accounting consequences", "US-parent structure likely forfeits foreign-private-issuer status: US GAAP + domestic reporting — unbudgeted cost and time."),
+    ("Shell risk & no capital", "Possible shell-company resale restrictions; a combination raises no money; the group could emerge public but undercapitalised."),
+    ("Related-party exposure", "Principals could sit on both sides; only independent valuations, a fairness opinion and disinterested approval make the transaction defensible."),
+]
+
+REC_STRUCTURE = (
+    "[SEP-2026 UPDATE: the structure is now known — cap table of 2026-09-02: 6,341,625 shares, 94.63% one holder, 7.5M-share unissued pool = 54.18% fully diluted; the value-based method below stands, applied to the verified ~$0-2M value.] First Vital's share structure was undetermined, which is an opportunity: the parties can set "
+    "it rationally rather than inherit it. The recommendation is a single value-based exchange "
+    "ratio: independent valuations of GenApep (planning range US$30–40M before technology "
+    "upside) and of FVH (verified value — to be established in diligence), a written fairness "
+    "opinion on the ratio, and entry as ONE block: FVH issues shares to GenApep Holdings' "
+    "shareholders pro rata. The GenApep block percentage then divides internally at 51:49 less "
+    "the sweat pool, automatically. No shares to individuals; no separate negotiations inside "
+    "the FVH cap table; the draft IPO MOU's 40/35/25 allocation to two individuals is replaced.")
+
+# cap table at mid: GA $35M, FVH verified $10M -> block 77.8%
+CAP_ROWS = []
+for fvh_v in FVH_SCEN:
+    b = block(fvh_v)
+    CAP_ROWS.append(["FVH verified at US$%.0fM" % fvh_v,
+                     "%.0f%%" % (b * 100),
+                     "%.1f%%" % (EY_POST * b * 100),
+                     "%.1f%%" % (WBI_POST * b * 100),
+                     "%.1f%%" % (POOL * b * 100),
+                     "%.0f%%" % ((1 - b) * 100)])
+
+KR_TAX_INTRO = (
+    "The idea of issuing shares to two principals first, with internal allocation later, has a "
+    "legitimate driver: Korea tightly regulates residents' cross-border share swaps. Each Korean "
+    "shareholder must make foreign-exchange filings for foreign securities, and a share-for-share "
+    "exchange is generally a TAXABLE DISPOSAL for Korean holders — tax is due in cash while the "
+    "consideration arrives as shares, with no rollover relief for an exchange into a foreign "
+    "parent. Dozens of individual filings and dry tax charges could stall the transaction. The "
+    "question is therefore not whether to manage this, but which of the compliant paths to use.")
+
+KR_TAX_PATHS = [
+    ["A. Direct swap by every Korean shareholder",
+     "Each holder files and is taxed individually at the exchange.",
+     "Heaviest friction — the problem the parties are rightly trying to avoid."],
+    ["B. Holdco block entry (recommended)",
+     "Korean shareholders exchange ONCE into GenApep Holdings at the low pre-listing value, with "
+     "one collective FX filing handled by the FA; the later swap with the platform happens at "
+     "holdco level — no second Korean-level tax/FX event.",
+     "Achieves the tax/FX objective AND automatic pro-rata fairness; this is what the Cayman "
+     "structure exists for."],
+    ["C. Individuals hold first — documented",
+     "Written nominee/escrow declaration with the pro-rata allocation schedule annexed; transfer "
+     "into the holdco by a fixed deadline AT THE SAME VALUATION (no gain, no gift); written "
+     "Korean tax opinion on deemed-gift (myeongui-sintak) exposure; SEC beneficial-ownership "
+     "disclosure from day one.",
+     "Workable as a bridge, but undocumented it creates deemed-gift tax, a larger second-step "
+     "tax at post-listing values, disclosure defects, and personal risk for the two principals."],
+]
+
+MGMT_PARTNER = [
+    ["The gap", "A US listing needs a credible local CEO/President, finance/IR capability and post-listing management. The meeting record itself: struggling 2023–24 Korean issuers, $300–500K/yr US opex, and family members as the only internal CEO candidates. Without this capability, Route A's conditions are hard to meet."],
+    ["The asset", "Ernie Lee — ~12 years operating a US healthcare-services company (Hawaii RPM/CCM 2010–2022, Medicaid billing/compliance), first-hand SEC (Reg A+) process experience, US infrastructure, claimed investor network (to verify). The operator is substantial even though the entity is thin."],
+    ["The structure", "US CEO/President + board seat; KPI-gated 3–7% GROUP equity (vesting on reporting, listing, capital raised, US revenue), replacing the FVH 7.5M pool; the FVH entity at independently verified value (~$0–2M) via block entry or kept as the US operating subsidiary."],
+    ["Why it is clean", "Disclosed management compensation with KPIs — not acquisition consideration to individuals; SEC-disclosure friendly; every shareholder rides pro rata; works under Route A or B."],
+    ["Cost", "5% grant ≈ 2–3 points of pro-rata dilution (WBI shareholders 45.3% → ~43.1%; ~$13–14/share at the $100M Route-A scenario) — modest against the execution risk removed."],
+]
+
+DPW = (
+    "A commercial licensing framework with DPW (an entity under the listed Richards Group) was "
+    "circulated on 28 August 2026. It is a non-binding modular structure — a Master Technology "
+    "Commercialization Agreement with asset-specific Rights Schedules choosing, per asset, between "
+    "(1) an exclusive field-of-use licence, (2) acquisition of defined AI-peptide patent assets "
+    "with included development work, or (3) non-exclusive access with first-notice rights. "
+    "Economics are architecture only at this stage: access fee + development/regulatory "
+    "milestones + running royalty + annual minimums. Why it matters to valuation: an arm's-length "
+    "licence with a listed group's subsidiary is third-party evidence of the technology's value — "
+    "it supports the AI.pep value scenarios (US$5–10M illustrative) that the JV plan currently "
+    "carries at US$0 — and adds a royalty income line. Two cautions: no grant should be signed "
+    "before the chain-of-title condition (Clause 5.7) is satisfied, and field-of-use exclusivity "
+    "must be drawn narrowly so the platform is not stranded ahead of the IPO story.")
+
+WBI_LENS = [
+    ("Your starting position",
+     "WBI shareholders hold 49% of GenApep, diluting to ~45.3% at the 7.5% pool midpoint — worth "
+     "≈ US$15.9M at the US$35M combined planning mid, before any AI.pep/DPW technology credit."),
+    ("Route A outcome (workbook illustration)",
+     "At an US$80M pre-money IPO with a US$20M raise, WBI shareholders ≈ US$36.3M post-IPO "
+     "(JV plan, 7.5% pool). MM Studio — WBI's own growth engine (US$2.9M → US$36.3M by 2030) — "
+     "is the single biggest swing factor in that valuation."),
+    ("Route B outcome (SUPERSEDED — scenario retained for record)",
+     "The 'FVH verified US$10M' scenario is now unsupportable (assessed supportable value ~$0–2M); "
+     "there is no operating GLP-1 revenue engine (pre-revenue per DD, 1-K pending). At an honest "
+     "~$0–2M value with the pool cancelled, block entry keeps WBI shareholders near ~44% — but Route B is not viable as pitched; see IPO Plan v2."),
+    ("The draft IPO MOU's individual allocation — motive and fix",
+     "It allocated 40% of FVH to one individual and 35% to another, with nothing to the wider "
+     "shareholder bodies at that step, and produced ~53:47 against the agreed 51:49. The stated "
+     "driver — avoiding Korean FX filings and dry tax charges on a direct swap — is legitimate "
+     "(see the Korean tax paths in Section 4), but the arrangement must be documented and must "
+     "land pro rata: Amendment A2 and Addendum B4/B5 require every shareholder to ride through "
+     "pro rata — via the holdco block, or via a documented nominee bridge — protecting the wider "
+     "holders and the two principals alike."),
+    ("Technology upside accrues to the JV",
+     "AI.pep and the DPW licence sit inside GenApep, so WBI shareholders participate through "
+     "their block stake; the sweat pool (Keith · Sidney · Charles + team) is the incentive "
+     "mechanism and survives any change of vehicle (Clause 7.8)."),
+]
+
+INTERIM_INTRO = (
+    "[SEP-2026: Eyesel's statutory data has since ARRIVED (₩10.46B revenue, 47.8% GM, 17.6% OP "
+    "margin) and the mechanisms below operated as designed — the variance sits inside the band. "
+    "Section retained to show the machinery that now closes out.] "
+    "At drafting, Eyesel's updated financial data was not yet available, and the 51:49 split rests on it. That "
+    "does not block signing: fairness comes from mechanism, not from guessing the missing numbers. "
+    "The four devices below let the parties commit now and correct automatically when the data "
+    "arrives — the first is already drafted into Amendment No. 1.")
+
+INTERIM_MECH = [
+    ["1. Peg + mandatory true-up (Amendment A1 — already drafted)",
+     "Sign on a stated basis recorded on the face of the document (Eyesel revenue US$8.0M, value "
+     "US$15–20M). If verified figures differ by >15%, equalisation is MANDATORY — cash or share "
+     "adjustment — with an independent valuer deciding if boards cannot agree in 30 days. "
+     "Symmetric: it also protects Eyesel if its real numbers are higher."],
+    ["2. Verified financials as a condition precedent to the share exchange",
+     "Not to signing. The exchange is Q1–Q2 2027 and the PCAOB audit produces verified numbers on "
+     "the critical path anyway — nothing is lost by signing the MOU and Amendment now."],
+    ["3. Escrow holdback (fallback)",
+     "If the 30-day report deadline slips: hold back 5–8 points of the Eyesel allocation in "
+     "escrow, released or reallocated on verification."],
+    ["4. Parity of method, not of number",
+     "The same independent valuer applies the same valuation method and multiples to both "
+     "companies (both are manufacturing-economics businesses). The parties agree the METHOD "
+     "today; the numbers follow from the data."],
+]
+
+INTERIM_NUMS = [
+    ["Eyesel revenue", "US$8.0M peg — NOW VERIFIED", "Statutory FY2025 = \u20a910.46B (~$7.47M @1,400 / $6.97M @1,500): inside the 15% band at both rates; condition closable. Fix the FX convention (band breaches above ~\u20a91,538/$) and pin FY2025 as the reference period (FY2024 would breach)"],
+    ["Gross margin", "40%", "Mirrors WBI's NTS-certified FY2025 actual — same manufacturing economics"],
+    ["EBITDA margin", "~12%", "Typical GMP-manufacturer profile; placeholder"],
+    ["Growth", "~10%/yr", "JV plan placeholder"],
+    ["Value band", "US$15–20M", "Same band as WBI — symmetric valuation-parity; prejudices neither side"],
+]
+
+INTERIM_CHECK = (
+    "The check to show both boards: on a pure value-proportional basis Eyesel needs a verified "
+    "value of ≥ ~US$18M (against WBI's US$17.5M mid) to arithmetically support 51%. At US$8.0M "
+    "revenue that likely requires counting the GMP facility, licences and quality systems as "
+    "asset value — a legitimate argument, but one that must be documented, or equalisation "
+    "applies. SEP-2026 UPDATE: statutory FY2025 revenue is ~$7.47M — the '~$15M' figure is "
+    "contradicted; the 51% rests on Eyesel's earnings (~8.4x WBI net income) and asset base, "
+    "which the verified accounts support.")
+
+INTERIM_FVH = (
+    "Structurally, the First Vital discussion never waits on Eyesel's data: under block entry the "
+    "FVH ratio is GenApep-block vs FVH-verified-value, and the internal 51:49 trues up inside the "
+    "block without touching the listed-company cap table. Only the internal split is gated — and "
+    "it self-corrects.")
+
+RESOLVE = [
+    "RESOLVED (Sep-2026): Eyesel statutory FY2025 revenue \u20a910.46B (~$7.47M @1,400) — inside the 15% band; the ~US$15M figure is contradicted; record the verified basis in Amendment No. 1 with the FX convention fixed and FY2025 pinned as reference period.",
+    "Eyesel principal: Mr. Park (12-Aug MOU) vs Mr. Kim (draft IPO MOU). Written confirmation needed.",
+    "Technology chain of title for AI.pep, CodeLife.AI, IT-EXO, SynExo — condition precedent (Clause 5.7); also DPW's first diligence gap.",
+    "One operating model: WBI-core/MM-Studio/Eyesel margins (JV plan) vs the vial model at 78.5% GM (draft IPO MOU). One architecture must be chosen before any valuation.",
+    "FVH verification: PARTLY RESOLVED NEGATIVE (Sep-2026 DD): Reg A+ 1-A only, pre-revenue, 94.63% single-holder, $500K lifetime capital, 54.18%-FD unissued pool. Remaining gate-zero items: 1-A qualification & amounts actually sold, 1-K/1-SA runway, the $500K note's holder/terms, entity-name chain to the 1-A filer.",
+    "The draft IPO MOU itself: not signable as drafted (individual allocations, FVH Korea vehicle, no sweat pool). To be revised to the block-entry structure above.",
+]
+
+DECISIONS = [
+    "Sign Amendment No. 1 and start Stage 1 now (both boards).",
+    "Treat Addendum A as the gate for any First Vital discussion; sign it when ready to consider Route B.",
+    "Complete the remaining FirstVitals gate-zero items this week: 1-A qualification & amounts actually sold, 1-K/1-SA runway, the $500K note's holder/terms, entity-name chain, PLUS management references/background for Ernie Lee (incl. the 2024 shareholder dispute).",
+    "Table the Management-Partnership term sheet at the Ernie Lee meetings: US CEO/President role, KPI schedule, 3–7% group-equity band, entity at verified value, 7.5M-pool cancellation (Plan v2 §5b).",
+    "Eyesel: financial report DELIVERED (statutory FY2025, verified Sep-2026); confirm the principal (Park vs Kim) in writing — within 30 days.",
+    "Appoint the PCAOB-registered auditor in Q4-2026 (critical path), scoped for either route.",
+    "Do not sign the draft IPO MOU in its current form; instruct revision to the value-based block-entry structure.",
+    "Progress the DPW framework to asset-level term sheets only after chain-of-title is documented.",
+]
+
+DOCMAP = [
+    ("WBI × Eyesel MOU (12 Aug 2026)", "The Joint Venture itself — structure, 51:49, contributions, governance."),
+    ("Amendment No. 1", "Nine fixes needed under every scenario; read Part 1 table first."),
+    ("Addendum A", "Route A/B machinery and the protections for any external listing counterparty."),
+    ("GenApep JV Financial Plan (xlsx)", "The boards' own numbers: 5-year plan, valuation & dilution, IPO roadmap, sensitivity."),
+    ("Stage 2 Integration Framework", "The full First Vital analysis: sequencing, conflicts register, diligence programme, go/no-go."),
+    ("GLP-1 proforma (xlsx)", "FVH's programme model — revenue-only; note the MRR-sheet labelling issue."),
+    ("GenApep × DPW Licensing Framework", "The technology-licence structure with Richards Group's DPW; scenario menu and diligence gaps."),
+    ("Draft IPO Framework MOU", "The earlier FVH draft — superseded in approach by this briefing; do not sign as-is."),
+]
+
+# ------------------------------------------------------------------ Markdown
+def wmd():
+    L = []; a = L.append
+    a("# GenApep — Director Briefing: the IPO project, First Vital and the road ahead\n")
+    a("> **%s**\n>\n> %s\n" % (CONF, DISCLAIMER))
+    a("\n> **%s**\n" % UPDATE_SEP26)
+    a("\n## 1. The project in brief\n\n%s\n" % PROJECT_BRIEF)
+    a("\n## 2. How we implement\n")
+    for t, w, d in STEPS:
+        a("- **%s** (*%s*) — %s\n" % (t, w, d))
+    a("\n## 3. Route A vs Route B — pros and cons\n\n")
+    a("| Dimension | Route A — own IPO (default) | Route B — combine with First Vital |\n|---|---|---|\n")
+    for dim, ra, rb in ROUTE_AB:
+        a("| %s | %s | %s |\n" % (dim, ra, rb))
+    a("\n### What First Vital specifically brings\n")
+    for t, d in FVH_PROS:
+        a("- **%s** — %s\n" % (t, d))
+    a("\n### And the risks it carries\n")
+    for t, d in FVH_CONS:
+        a("- **%s** — %s\n" % (t, d))
+    a("\n## 4. Recommended shareholding structure (FVH structure is ours to set)\n\n%s\n" % REC_STRUCTURE)
+    a("\n**Illustrative combined cap table** (GenApep at US$%.0fM mid; 7.5%% pool; value-based ratio):\n\n" % GA_MID)
+    a("| Scenario | GenApep block | Eyesel shareholders | WBI shareholders | Tech pool | FVH holders |\n|---|---|---|---|---|---|\n")
+    for r in CAP_ROWS:
+        a("| " + " | ".join(r) + " |\n")
+    a("\n*The block percentage is set by the valuations; the internal split never needs renegotiating. "
+      "SEP-2026: scenarios retained for record — assessed supportable FVH value is ~$0–2M, below every scenario shown.*\n")
+    a("\n### The DPW licence — technology credit to the valuation\n\n%s\n" % DPW)
+    a("\n### Korean FX/tax rationale — choosing the compliant path\n\n%s\n\n" % KR_TAX_INTRO)
+    a("| Path | Mechanics | Assessment |\n|---|---|---|\n")
+    for r in KR_TAX_PATHS:
+        a("| " + " | ".join(r) + " |\n")
+    a("\n*All Korean tax and FX statements require written confirmation by Korean counsel before "
+      "any structure is selected.*\n")
+    a("\n### What Ernie brings beyond the entity — and how to pay for it (SEP-17)\n\n| Element | Substance |\n|---|---|\n")
+    for r in MGMT_PARTNER:
+        a("| **%s** | %s |\n" % (r[0], r[1]))
+    a("\n## 5. What this means for WBI shareholders\n")
+    for t, d in WBI_LENS:
+        a("- **%s** — %s\n" % (t, d))
+    a("\n## 6. Fair without Eyesel's numbers — interim assumptions\n\n%s\n" % INTERIM_INTRO)
+    a("\n### The four mechanisms\n")
+    for t, d in INTERIM_MECH:
+        a("- **%s** — %s\n" % (t, d))
+    a("\n### Planning numbers until the data arrives\n\n| Item | Assumption | Rationale |\n|---|---|---|\n")
+    for r in INTERIM_NUMS:
+        a("| " + " | ".join(r) + " |\n")
+    a("\n%s\n\n%s\n" % (INTERIM_CHECK, INTERIM_FVH))
+    a("\n## 7. What must be resolved before definitive documents\n")
+    for i, r in enumerate(RESOLVE, 1):
+        a("%d. %s\n" % (i, r))
+    a("\n## 8. The financial picture (JV plan, planning basis)\n\n")
+    a("| US$M | " + " | ".join(YEARS) + " |\n|---|" + "---|" * 6 + "\n")
+    a("| Revenue | " + " | ".join("%.1f" % v for v in REV) + " |\n")
+    a("| Operating profit | " + " | ".join("%.1f" % v for v in EBIT) + " |\n")
+    a("\nCombined pre-JV valuation planning range US$30–40M (before AI.pep/DPW credit); illustrative "
+      "IPO US$80M pre-money + US$20M raise. [SEP-2026: the former 'First Vital GLP-1 line' is an "
+      "unvalidated plan of a pre-revenue company and is excluded; FY2025A column is JV-plan basis — verified statutory combined FY2025 ≈ $10.9M revenue @₩1,400.]\n")
+    a("\n## 9. Decisions requested\n")
+    for i, d in enumerate(DECISIONS, 1):
+        a("%d. %s\n" % (i, d))
+    a("\n## 10. Document map\n\n| Document | Read it for |\n|---|---|\n")
+    for t, d in DOCMAP:
+        a("| %s | %s |\n" % (t, d))
+    open(DIR + "director-briefing.md", "w").write("".join(L))
+
+wmd()
+
+# ------------------------------------------------------------------ Word
+def nd():
+    doc = Document()
+    n = doc.styles["Normal"]; n.font.name = "Calibri"; n.font.size = Pt(10.5)
+    for lvl, sz in [("Heading 1", 16), ("Heading 2", 13), ("Heading 3", 11.5)]:
+        st = doc.styles[lvl]; st.font.name = "Calibri"; st.font.size = Pt(sz)
+        st.font.color.rgb = NAVY; st.font.bold = True
+    return doc
+
+def para(doc, t="", size=10.5, bold=False, italic=False, color=None, align=None, after=6):
+    p = doc.add_paragraph()
+    if align: p.alignment = align
+    r = p.add_run(t); r.font.size = Pt(size); r.bold = bold; r.italic = italic
+    if color: r.font.color.rgb = color
+    p.paragraph_format.space_after = Pt(after); return p
+
+def bullet(doc, t, lead=None):
+    p = doc.add_paragraph(style="List Bullet")
+    if lead:
+        r = p.add_run(lead); r.bold = True
+    p.add_run(t); p.paragraph_format.space_after = Pt(3); return p
+
+def numbered(doc, t):
+    p = doc.add_paragraph(style="List Number")
+    p.add_run(t); p.paragraph_format.space_after = Pt(3); return p
+
+def tbl(doc, headers, rows, widths=None, fs=9.5, hl_rows=()):
+    t = doc.add_table(rows=1, cols=len(headers)); t.style = "Light Grid Accent 1"
+    t.alignment = WD_TABLE_ALIGNMENT.CENTER
+    for i, h in enumerate(headers):
+        r = t.rows[0].cells[i].paragraphs[0].add_run(str(h)); r.bold = True; r.font.size = Pt(fs)
+    for ri, row in enumerate(rows):
+        c = t.add_row().cells
+        for i, v in enumerate(row):
+            rr = c[i].paragraphs[0].add_run(str(v)); rr.font.size = Pt(fs)
+            if ri in hl_rows or i == 0: rr.bold = True
+    if widths:
+        for i, w in enumerate(widths):
+            for r in t.rows: r.cells[i].width = Inches(w)
+    doc.add_paragraph().paragraph_format.space_after = Pt(2); return t
+
+doc = nd()
+para(doc, "GENAPEP", size=26, bold=True, color=NAVY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
+para(doc, "Director Briefing — the IPO project, First Vital and the road ahead",
+     size=14, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
+para(doc, CONF, size=9, bold=True, color=RED, align=WD_ALIGN_PARAGRAPH.CENTER, after=2)
+para(doc, DISCLAIMER, size=8.5, italic=True, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=6)
+para(doc, UPDATE_SEP26, size=9.5, bold=True, color=RED, after=12)
+
+doc.add_heading("1. The project in brief", level=2)
+para(doc, PROJECT_BRIEF)
+
+doc.add_heading("2. How we implement", level=2)
+tbl(doc, ["Step", "Window", "What happens"], [[t, w, d] for t, w, d in STEPS], widths=[1.7, 1.2, 3.6])
+
+doc.add_heading("3. Route A vs Route B — pros and cons", level=2)
+tbl(doc, ["Dimension", "Route A — own IPO (default)", "Route B — combine with First Vital"],
+    [[d, a_, b_] for d, a_, b_ in ROUTE_AB], widths=[1.4, 2.5, 2.6])
+doc.add_heading("What First Vital specifically brings", level=3)
+for t, d in FVH_PROS:
+    bullet(doc, d, t + " — ")
+doc.add_heading("And the risks it carries", level=3)
+for t, d in FVH_CONS:
+    bullet(doc, d, t + " — ")
+
+doc.add_heading("4. Recommended shareholding structure", level=2)
+para(doc, REC_STRUCTURE)
+para(doc, "Illustrative combined cap table (GenApep at US$35M mid; 7.5% pool; value-based ratio). "
+          "SEP-2026 UPDATE: FVH's supportable value on the verified record is ~$0-2M — below every "
+          "scenario shown — and any deal must first cancel/cap the 7.5M-share option pool (54.18% "
+          "fully diluted).", bold=True, after=3)
+tbl(doc, ["Scenario", "GenApep block", "Eyesel sh.", "WBI sh.", "Tech pool", "FVH holders"],
+    CAP_ROWS, widths=[1.9, 1.1, 1.0, 1.0, 0.9, 1.0], hl_rows=(1,))
+para(doc, "The block percentage is set by the valuations; the internal 51:49-less-pool split never "
+          "needs renegotiating.", size=9, italic=True, color=GREY)
+doc.add_heading("The DPW licence — technology credit to the valuation", level=3)
+para(doc, DPW)
+doc.add_heading("Korean FX/tax rationale — choosing the compliant path", level=3)
+para(doc, KR_TAX_INTRO)
+tbl(doc, ["Path", "Mechanics", "Assessment"], KR_TAX_PATHS, widths=[1.7, 2.7, 2.1])
+para(doc, "All Korean tax and FX statements require written confirmation by Korean counsel "
+          "before any structure is selected.", size=9, italic=True, color=GREY)
+doc.add_heading("What Ernie brings beyond the entity — and how to pay for it (SEP-17)", level=3)
+tbl(doc, ["Element", "Substance"], MGMT_PARTNER, widths=[1.2, 5.3])
+
+doc.add_heading("5. What this means for WBI shareholders", level=2)
+for t, d in WBI_LENS:
+    bullet(doc, d, t + " — ")
+
+doc.add_heading("6. Fair without Eyesel's numbers — interim assumptions", level=2)
+para(doc, INTERIM_INTRO)
+doc.add_heading("The four mechanisms", level=3)
+for t, d in INTERIM_MECH:
+    bullet(doc, d, t + " — ")
+doc.add_heading("Planning numbers until the data arrives", level=3)
+tbl(doc, ["Item", "Assumption", "Rationale"], INTERIM_NUMS, widths=[1.4, 1.1, 4.0])
+para(doc, INTERIM_CHECK)
+para(doc, INTERIM_FVH, bold=True)
+
+doc.add_heading("7. What must be resolved before definitive documents", level=2)
+for r in RESOLVE:
+    numbered(doc, r)
+
+doc.add_heading("8. The financial picture (JV plan, planning basis)", level=2)
+tbl(doc, ["US$M"] + YEARS,
+    [["Revenue"] + ["%.1f" % v for v in REV],
+     ["Operating profit"] + ["%.1f" % v for v in EBIT]],
+    widths=[1.3] + [0.87] * 6, hl_rows=())
+para(doc, "Combined pre-JV valuation planning range US$30–40M (before AI.pep/DPW credit); "
+          "illustrative IPO US$80M pre-money + US$20M primary raise. The former First Vital GLP-1 "
+          "line is excluded [SEP-2026: unvalidated plan of a pre-revenue company]; FY2025A column "
+          "is JV-plan basis — verified statutory combined FY2025 ≈ $10.9M revenue @₩1,400.",
+     size=9, italic=True, color=GREY)
+
+doc.add_heading("9. Decisions requested", level=2)
+for d_ in DECISIONS:
+    numbered(doc, d_)
+
+doc.add_heading("10. Document map", level=2)
+tbl(doc, ["Document", "Read it for"], [[t, d] for t, d in DOCMAP], widths=[2.6, 3.9])
+para(doc, "Prepared to open discussion at the WBI and Eyesel boards. All terms subject to "
+          "diligence, valuations and definitive agreements.",
+     size=8.5, italic=True, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER)
+
+doc.save(DIR + "GenApep_Director_Briefing.docx")
+print("Saved director-briefing.md, GenApep_Director_Briefing.docx")
+for r in CAP_ROWS:
+    print("  cap:", r)

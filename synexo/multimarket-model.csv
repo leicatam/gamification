@@ -1,0 +1,40 @@
+GenApep Multi-Market Model — SAME Korean-developed product across all markets (USD)
+Three scenarios. Distributors arm's-length / non-consolidated; revenue at ex-factory.
+
+=== Conservative (EXW $30.00, kitGM 65.0%, deviceGM 35%, kits/clinic/yr 1200, China excluded) ===
+Line,2027,2028,2029,2030
+Total clinics,98,318,699,1167
+Kits (000s),59,250,610,1120
+Total revenue ($000s),2058,8148,19449,34992
+Gross profit ($000s),1250,5098,12299,22324
+EBITDA ($000s),-1550,-902,3299,10324
+
+=== Base (EXW $32.50, kitGM 66.2%, deviceGM 40%, kits/clinic/yr 1400, China included) ===
+Line,2027,2028,2029,2030
+Total clinics,160,515,1170,2020
+Kits (000s),112,472,1180,2233
+Total revenue ($000s),4120,16421,40299,75122
+Gross profit ($000s),2600,10585,26145,49030
+EBITDA ($000s),-400,3585,15145,33030
+
+=== Upside (EXW $35.00, kitGM 67.1%, deviceGM 42%, kits/clinic/yr 1500, China included) ===
+Line,2027,2028,2029,2030
+Total clinics,208,671,1521,2626
+Kits (000s),156,659,1644,3110
+Total revenue ($000s),6084,24463,60090,112174
+Gross profit ($000s),3928,16076,39705,74483
+EBITDA ($000s),428,7576,26205,55483
+
+BASE per-market cumulative clinics,2027,2028,2029,2030
+Korea (anchor),120,250,400,550
+Hong Kong,20,60,100,140
+Vietnam,10,50,110,180
+Singapore,10,35,60,85
+Thailand,0,40,120,220
+Malaysia,0,20,70,130
+Indonesia,0,15,70,150
+Philippines,0,10,45,100
+Saudi Arabia (SFDA),0,20,70,140
+UAE (MOHAP),0,15,50,95
+Taiwan,0,0,35,90
+China (Hainan->NMPA),0,0,40,140
