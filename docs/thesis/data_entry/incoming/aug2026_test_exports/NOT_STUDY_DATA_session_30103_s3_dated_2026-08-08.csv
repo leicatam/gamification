@@ -1,0 +1,2 @@
+Participant_ID,Session_No,Session_Date,Duration_Min,Distance_m,Coins,Obstacles_Hit,Lives_Lost,Avg_Balance_pct,Max_Speed,AI_DiffMult,Reached_GameOver,Score,Post_FRA_Index,Notes
+"30102","3","2026-08-08","0.55","400","11","0","0","92.1","16.2","0.9","FALSE","560","","zero-failure; cap=60s; end: distance goal reached; state changes=6"
