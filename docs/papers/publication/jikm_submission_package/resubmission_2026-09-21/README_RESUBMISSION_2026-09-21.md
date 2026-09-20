@@ -16,7 +16,7 @@ descriptive corrections that were already queued for the first revision.
 | Manuscript (blinded, figures + tables embedded) | Paper2_JIKM_Manuscript_BLINDED_2026-09-20.docx |
 | Supplementary Material | Paper2_JIKM_Supplementary_Appendix.docx (now S1-S4; S4 = F4 protocol, ex-Table 9) |
 | Figures (only if EM asks for separate files) | Paper2_JIKM_Figures.zip (unchanged) |
-| Tables (spares only) | Paper2_JIKM_Tables_1-10.zip (unchanged) |
+| Tables (spares, only if EM asks for separate table files) | Paper2_JIKM_Tables_1-9_and_S4.zip (renumbered after the Table 9 move; Table S4 = F4 protocol) |
 
 ## What changed from the 9 Sep submission (and nothing else)
 1. Author line, affiliation and corresponding e-mail removed from the
@@ -44,6 +44,12 @@ descriptive corrections that were already queued for the first revision.
    ("unblinded" description, python-docx author) cleared on every file.
 No result, table value, figure or caption changed (paragraph-level and
 cell-level diff verified by independent check).
+
+## Note on contents lists
+Journal manuscripts carry no table of contents, and the 9 Sep
+submission had none (checked against the EM-built PDF). Tables are
+embedded in the manuscript, which is the submission of record; the
+separate table files are spares.
 
 ## Editorial Manager steps (submit 21 Sep 2026)
 0. TONIGHT: send Prof. Cheung the cover letter + cover page with a
