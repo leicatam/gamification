@@ -14,7 +14,7 @@ descriptive corrections that were already queued for the first revision.
 | Cover Letter | Cover_Letter_JIKM_Resubmission_2026-09-21.docx |
 | Title Page / Cover Page (NOT for reviewers) | Cover_Page_Title_Page_JIKM_2026-09-20.docx |
 | Manuscript (blinded, figures + tables embedded) | Paper2_JIKM_Manuscript_BLINDED_2026-09-20.docx |
-| Supplementary Material | Paper2_JIKM_Supplementary_Appendix.docx (unchanged) |
+| Supplementary Material | Paper2_JIKM_Supplementary_Appendix.docx (now S1-S4; S4 = F4 protocol, ex-Table 9) |
 | Figures (only if EM asks for separate files) | Paper2_JIKM_Figures.zip (unchanged) |
 | Tables (spares only) | Paper2_JIKM_Tables_1-10.zip (unchanged) |
 
@@ -73,13 +73,14 @@ cell-level diff verified by independent check).
 5. Build/approve the PDF: open it and confirm page 1 shows NO author
    names or affiliation and that the cover page is NOT inside the
    reviewer PDF; approve; submit.
-5a. Page limit: the manuscript renders to 31 pages. A search-engine
-   snippet suggests JIKM caps Research Papers at 30 pages, but the
-   guidelines page blocks automated access - open
-   worldscientific.com/page/jikm/submission-guidelines yourself and
-   check. If a 30-page cap is real, the least invasive fix is to move
-   Table 9 (the never-administered F4 protocol) to the Supplementary
-   Appendix; tell me and I will do it before you upload.
+5a. Page limit (author confirmed 30 pages, 21 Sep): Table 9 (the
+   never-administered F4 protocol) moved to the Supplementary Appendix
+   as Table S4; former Table 10 renumbered Table 9; in-text reference
+   now "(Supplementary Table S4)". Presentation-only layout changes
+   to fit the cap: figures capped at 3.2-3.5 in tall (no content
+   change) and paragraph spacing 1.15/10pt -> 1.10/6pt. Renders to
+   28 pages in LibreOffice (text verified identical); confirm <= 30 in
+   the EM-built PDF before approving.
 6. Save the EM confirmation e-mail to this folder as-received.
 
 Reminder: nothing is sent to any journal without Prof. Cheung's

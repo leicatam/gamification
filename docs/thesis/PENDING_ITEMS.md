@@ -682,9 +682,12 @@ Keywords cut 10 -> 6 (knowledge management; gamification; older adults;
 fall risk assessment; technology abandonment; action research).
 BEFORE SUBMITTING (author): (1) Prof. Cheung's one-line confirmation of
 the cover letter (his name is on it) + his ORCID if available;
-(2) check the JIKM guidelines page manually for a 30-page cap (the
-blinded manuscript renders to 32 pages; if capped, move Table 9 to the
-Supplementary Appendix - ask me); (3) in EM use the RESUBMIT action on
+(2) 30-PAGE CAP CONFIRMED by author 21 Sep -> DONE: Table 9 (F4
+protocol) moved to Supplementary Appendix as Table S4, former Table 10
+renumbered Table 9, in-text ref updated; figures capped in height and
+paragraph spacing 1.10/6pt (presentation only, text verified
+identical); renders 28 pages. Prof. Cheung has sent a reminder to
+resubmit (21 Sep) - his awareness of the resubmission is on record; (3) in EM use the RESUBMIT action on
 the returned item, re-paste abstract, replace keywords with the six,
 upload the cover page as 'Title Page' (editor-only) - last time it was
 uploaded as 'Manuscript' and merged into the reviewer PDF.
