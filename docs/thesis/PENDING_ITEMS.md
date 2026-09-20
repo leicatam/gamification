@@ -681,7 +681,9 @@ in Table 10 row 4), all disclosed in the cover letter; no result changed.
 Keywords cut 10 -> 6 (knowledge management; gamification; older adults;
 fall risk assessment; technology abandonment; action research).
 BEFORE SUBMITTING (author): (1) Prof. Cheung's one-line confirmation of
-the cover letter (his name is on it) + his ORCID if available;
+the cover letter (his name is on it); his ORCID is RECORDED in JIKM's
+Editorial Manager (author confirmed 21 Sep) - the long-standing
+'Cheung ORCID needed' gate is CLOSED;
 (2) 30-PAGE CAP CONFIRMED by author 21 Sep -> DONE: Table 9 (F4
 protocol) moved to Supplementary Appendix as Table S4, former Table 10
 renumbered Table 9, in-text ref updated; figures capped in height and

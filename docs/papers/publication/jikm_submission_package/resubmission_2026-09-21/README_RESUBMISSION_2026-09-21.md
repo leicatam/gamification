@@ -47,8 +47,9 @@ cell-level diff verified by independent check).
 
 ## Editorial Manager steps (submit 21 Sep 2026)
 0. TONIGHT: send Prof. Cheung the cover letter + cover page with a
-   one-line request to confirm, and ask for his ORCID iD. File his
-   reply with this package. (The letter carries his name.)
+   one-line request to confirm. File his reply with this package. (The
+   letter carries his name.) His ORCID is already recorded in EM (author
+   confirmed 21 Sep) - nothing to add.
 1. Log in via the link in the editor's e-mail (the EM landing page may
    show a "site under development" banner - use the live login you used
    on 9 Sep). Open the RETURNED submission JIKM-S-26-02466 from the
@@ -57,8 +58,8 @@ cell-level diff verified by independent check).
 2. Metadata MUST be edited, not just files: re-paste the abstract from
    the blinded manuscript (last sentence changed); replace the 10
    keywords with the SIX; confirm corresponding author
-   sidney.tam@connect.polyu.hk; Tam ORCID 0009-0006-0423-4148; add
-   Cheung's ORCID if received.
+   sidney.tam@connect.polyu.hk; Tam ORCID 0009-0006-0423-4148; Cheung
+   ORCID already on the EM author record - just confirm it shows.
 3. Item types matter - last time the title page was uploaded as
    "Manuscript" and was merged into the reviewer PDF. Use:
    Cover Letter -> "Cover Letter"; Cover_Page_Title_Page -> "Title
