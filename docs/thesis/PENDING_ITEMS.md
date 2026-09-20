@@ -663,6 +663,35 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
+## A14. JIKM RETURNED PAPER 2 FOR BLIND-REVIEW FORMAT -> RESUBMISSION PACKAGE READY (20 Sep 2026).
+EiC (Prof. S. Hawamdeh) returned JIKM-S-26-02466: author information
+must not appear on the main manuscript; a cover page with title,
+authors/affiliations and up to 6 keywords is required. Package built
+and verified by three independent adversarial passes (blinding of every
+XML part of every reviewer-facing file; paragraph- and cell-level change
+integrity; cover page/letter facts vs V42 s3.4 and the SS-293 record):
+docs/papers/publication/jikm_submission_package/resubmission_2026-09-21/
+(blinded manuscript, cover page, cover letter dated 21 Sep, appendix,
+tables, figures zip, bundle zip, README with corrected EM steps).
+The resubmission ALSO carries the queued first-revision corrections
+(interview provenance - already in the 12 Sep file; ethics wording to
+memo terminology; 'pre-registered' -> planned/pre-specified, incl. the
+3B 2x2 as pre-specified; Table 10 row 3 provenance; a duplicated clause
+in Table 10 row 4), all disclosed in the cover letter; no result changed.
+Keywords cut 10 -> 6 (knowledge management; gamification; older adults;
+fall risk assessment; technology abandonment; action research).
+BEFORE SUBMITTING (author): (1) Prof. Cheung's one-line confirmation of
+the cover letter (his name is on it) + his ORCID if available;
+(2) check the JIKM guidelines page manually for a 30-page cap (the
+blinded manuscript renders to 32 pages; if capped, move Table 9 to the
+Supplementary Appendix - ask me); (3) in EM use the RESUBMIT action on
+the returned item, re-paste abstract, replace keywords with the six,
+upload the cover page as 'Title Page' (editor-only) - last time it was
+uploaded as 'Manuscript' and merged into the reviewer PDF.
+The first-revision list in A13 is now CLOSED except: item (4) alignment
+of Section X's 'exact administered wording awaits verification' with V42
+Appendix C (left unchanged deliberately - next substantive revision).
+
 ## A13. PAPER 3 RE-SCOPE + VENUE RESET; PAPER-2 PROOF AUDIT (15 Sep 2026).
 Author's direction: Paper 3 should carry the ADAPTIVE-LEARNING
 FRAMEWORK supported by Stage 3A AND 3B, at a JMIR-Serious-Games-level
