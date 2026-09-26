@@ -1,0 +1,2685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Stage 3B PRO v4.1 — Alpine Coordination · Feedback-informed practice</title>
+<style>
+  :root{
+    --snow:#FBF7EF; --ice:#DCE9EE; --pine:#1F4A38; --pine-dk:#123027;
+    --sun:#E8A64B; --coral:#D96A4E; --ink:#22302B; --card:#FFFFFF;
+    --ok:#3E8E5F; --warn:#C25438;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{
+    font-family:"Avenir Next","Trebuchet MS","Segoe UI",Verdana,sans-serif;
+    background:linear-gradient(180deg,#F2E8D8 0%,var(--snow) 40%);
+    color:var(--ink); min-height:100vh; display:flex; flex-direction:column; align-items:center;
+  }
+  header{width:100%; max-width:1180px; padding:18px 20px 6px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  header h1{font-size:1.5rem; letter-spacing:.02em; color:var(--pine-dk); font-weight:700}
+  header .tag{font-size:.78rem; background:var(--pine); color:var(--snow); padding:3px 10px; border-radius:999px; letter-spacing:.06em}
+  main{width:100%; max-width:1180px; padding:10px 20px 30px; display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,1fr); gap:16px}
+  @media (max-width:900px){ main{grid-template-columns:1fr} }
+  .panel{background:var(--card); border:1px solid #E5DECF; border-radius:14px; padding:16px; box-shadow:0 2px 10px rgba(31,74,56,.06)}
+  .panel h2{font-size:.95rem; text-transform:uppercase; letter-spacing:.1em; color:var(--pine); margin-bottom:10px}
+  #gameWrap{position:relative}
+  canvas{display:block; width:100%; border-radius:14px; border:1px solid #E5DECF; background:var(--ice); touch-action:none}
+  .hud{position:absolute; top:12px; left:12px; right:12px; display:flex; justify-content:space-between; pointer-events:none; font-weight:700; color:var(--pine-dk)}
+  .hud .box{background:rgba(251,247,239,.9); border-radius:10px; padding:7px 14px; font-size:1.05rem; border:1px solid #E5DECF}
+  .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:10px}
+  label{font-size:.9rem; font-weight:600}
+  input[type=text], select{padding:9px 11px; border:1px solid #CFC6B4; border-radius:8px; font-size:.95rem; background:#FFFDF8}
+  input[type=text]{width:110px}
+  button{cursor:pointer; border:none; border-radius:10px; padding:11px 20px; font-size:1rem; font-weight:700; letter-spacing:.02em}
+  .btn-go{background:var(--pine); color:var(--snow)}
+  .btn-go:hover{background:var(--pine-dk)}
+  .btn-soft{background:#EFE8D8; color:var(--pine-dk)}
+  .btn-soft:hover{background:#E5DCC7}
+  .btn-coral{background:var(--coral); color:#fff}
+  .toggle{display:flex; align-items:center; gap:8px; font-size:.85rem; font-weight:600}
+  .pill{font-size:.75rem; padding:2px 8px; border-radius:999px; background:var(--ice); color:var(--pine-dk)}
+  details{font-size:.85rem; margin-top:4px}
+  details summary{cursor:pointer; font-weight:700; color:var(--pine); margin-bottom:8px}
+  #coach{min-height:74px; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-size:.95rem; line-height:1.45}
+  #coach b{color:var(--pine)}
+  #stateLog{max-height:300px; overflow-y:auto; font-size:.78rem; border:1px solid #E5DECF; border-radius:10px}
+  #stateLog table{width:100%; border-collapse:collapse}
+  #stateLog th,#stateLog td{padding:5px 7px; border-bottom:1px solid #F0EADB; text-align:left; vertical-align:top}
+  #stateLog th{position:sticky; top:0; background:var(--pine); color:var(--snow); font-weight:600}
+  .up{color:var(--ok); font-weight:700} .down{color:var(--warn); font-weight:700}
+  #padStatus{font-size:.8rem}
+  .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; background:#B9B2A2}
+  .dot.on{background:var(--ok)}
+  footer{font-size:.72rem; color:#6E6A5E; max-width:1180px; padding:0 20px 24px; line-height:1.5}
+  #summary{display:none}
+  #summary dl{display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:.86rem}
+  #summary dt{font-weight:700; color:var(--pine-dk)}
+  #touchRow{display:flex; gap:14px; margin-top:10px; justify-content:center}
+  .steerBtn{flex:1; max-width:260px; font-size:2rem; padding:18px 0; border-radius:16px;
+    background:var(--pine); color:var(--snow); -webkit-user-select:none; user-select:none; touch-action:none}
+  .steerBtn:active{background:var(--pine-dk)}
+  button{touch-action:manipulation}
+  @media (pointer:coarse){
+    button{padding:14px 22px; font-size:1.05rem}
+    input[type=text], select{padding:12px 13px; font-size:1.05rem}
+  }
+  /* ===== v3.0 Stage 3B overlays ===== */
+  .ovl{position:fixed; inset:0; background:linear-gradient(180deg,#F2E8D8 0%,var(--snow) 60%);
+    z-index:50; display:none; overflow-y:auto; padding:26px 18px 40px}
+  .ovl.show{display:block}
+  .ovl .card{max-width:640px; margin:0 auto; background:var(--card); border:1px solid #E5DECF;
+    border-radius:16px; padding:22px 24px; box-shadow:0 4px 18px rgba(31,74,56,.10)}
+  .ovl h2{color:var(--pine-dk); font-size:1.25rem; margin-bottom:12px; text-transform:none; letter-spacing:0}
+  .ovl p{font-size:1rem; line-height:1.55; margin-bottom:10px}
+  .ovl .big{display:block; width:100%; margin:10px 0; padding:16px; font-size:1.15rem; border-radius:12px}
+  .optRow{display:flex; gap:10px; flex-wrap:wrap; margin:6px 0 14px}
+  .optBtn{flex:1; min-width:110px; padding:14px 10px; font-size:1rem; background:#EFE8D8; color:var(--pine-dk);
+    border:2px solid transparent; border-radius:12px}
+  .optBtn.sel{background:var(--pine); color:var(--snow); border-color:var(--pine-dk)}
+  .qBlock{margin-bottom:16px}
+  .qBlock .qt{font-weight:700; margin-bottom:6px}
+  .likert{display:flex; gap:6px}
+  .likert button{flex:1; padding:12px 4px; font-size:.95rem; background:#EFE8D8; color:var(--pine-dk); border-radius:10px}
+  .likert button.sel{background:var(--pine); color:var(--snow)}
+  .likLbl{display:flex; justify-content:space-between; font-size:.72rem; color:#6E6A5E; margin-top:3px}
+  #trajBox{margin-top:12px; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-size:.95rem; display:none}
+  /* full-screen play mode */
+  body.playmode header, body.playmode footer, body.playmode #setup,
+  body.playmode #sidePanels, body.playmode #summary{display:none}
+  body.playmode main{display:block; max-width:none; padding:0}
+  body.playmode #gameWrap{position:fixed; inset:0; z-index:40; margin:0 !important;
+    border-radius:0; border:none; padding:8px; display:flex; flex-direction:column;
+    background:var(--card)}
+  body.playmode canvas{margin:0 auto; border-radius:10px}
+  body.playmode #touchRow{margin-top:8px}
+  body.playmode .steerBtn{max-width:none; font-size:2.4rem; padding:20px 0}
+  #coachFloat{display:none}
+  body.playmode #coachFloat{display:block; position:absolute; left:12px; right:12px;
+    bottom:118px; background:rgba(251,247,239,.92); border:1px dashed var(--ok);
+    border-radius:10px; padding:8px 12px; font-size:.95rem; pointer-events:none}
+  body.playmode #coachFloat:empty{display:none}
+  #gameWrap{position:relative}
+  #runEndOvl{display:none; position:absolute; left:0; right:0; bottom:14%;
+    z-index:60; justify-content:center; align-items:center; gap:14px;
+    flex-wrap:wrap; padding:0 14px}
+  #runEndOvl button{font-size:1.25rem; padding:16px 22px; border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  #trajBox .bar{height:10px; background:var(--pine); border-radius:5px; margin:3px 0}
+  .muted{font-size:.8rem; color:#6E6A5E}
+  /* ===== v3.2 PRO proof-of-concept ===== */
+  #runEndOvl{display:none; position:absolute; top:0; right:0; bottom:0; left:0; z-index:60; justify-content:center; align-items:center; padding:10px}
+  #runEndOvl .rc{background:rgba(251,247,239,.97); border:3px solid var(--sun); border-radius:18px; padding:14px 16px;
+    width:100%; max-width:560px; max-height:94%; overflow-y:auto; -webkit-overflow-scrolling:touch; text-align:center; box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  #rcGreet{font-size:1.45rem; font-weight:800; color:var(--pine)}
+  #rcScore{font-size:2.1rem; font-weight:800; color:#C2483A; line-height:1.15}
+  #rcLine{font-size:1.02rem; font-weight:700; color:var(--pine-dk); margin:4px 0 6px}
+  #rcTraj,#rcTip{text-align:left; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:8px 12px;
+    font-size:.95rem; line-height:1.4; margin-top:8px; display:none}
+  #rcTraj .bar{height:10px; background:var(--pine); border-radius:5px; margin:3px 0}
+  #rcTip b{color:var(--pine)}
+  .rcBtns{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:8px; position:-webkit-sticky; position:sticky; bottom:-14px;
+    background:rgba(251,247,239,.97); padding:10px 0 14px}
+  .rcBtns button{margin:0 4px}
+  .storWarn{display:none; background:#FBEBE7; border:1px solid #C2483A; border-radius:10px; padding:10px 12px; font-weight:700}
+  #endBtnPlay{display:none; position:absolute; top:58px; right:12px; z-index:5; min-width:44px; min-height:44px; padding:8px 12px;
+    font-size:.95rem; opacity:.5; background:#EFE8D8; color:var(--pine-dk); border-radius:12px}
+  #runEndOvl button{font-size:1.12rem; padding:14px 20px; border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,.18)}
+  .ribbon{background:#C2483A; color:#fff; font-weight:800; text-align:center; padding:8px 10px; border-radius:10px;
+    margin-bottom:12px; font-size:.9rem; letter-spacing:.03em}
+  @media (max-width:520px){ .hud{top:8px; left:8px; right:8px; gap:6px} .hud .box{font-size:.84rem; padding:5px 8px; white-space:nowrap} }
+  #rcTraj .lbl{white-space:nowrap; font-size:.9rem}
+  .visitTag{display:inline-block; font-size:.8rem; background:var(--ice); color:var(--pine-dk); padding:2px 10px; border-radius:999px; margin-bottom:8px}
+
+/* v4.1 additions; existing game art and input retained from uploaded v3.2. */
+:root { --pro-blue:#1266a0; }
+body { font-size:17px; }
+button { min-height:46px; }
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:3px solid #1479ca; outline-offset:3px; }
+button:disabled { opacity:.45; cursor:not-allowed; }
+.ovl .card {max-width:760px;}
+.pro-kicker {color:var(--pro-blue);font-size:.83rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;margin-bottom:8px;}
+.pro-banner {background:#e7f1f7;color:#143952;padding:12px 16px;border-radius:12px;margin:12px 0;line-height:1.5;}
+.pro-danger {border:2px solid #b5482d;background:#fff2ed;padding:14px;border-radius:12px;}
+.pro-metrics {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:15px 0;}
+.pro-stat {background:#f1f5f2;border-radius:12px;padding:12px;}
+.pro-stat strong {display:block;font-size:1.65rem;color:var(--pine-dk);}
+.pro-stat span {font-size:.84rem;}
+.pro-label {display:block;font-weight:800;margin:17px 0 8px;}
+.pro-options {display:flex;gap:8px;flex-wrap:wrap;}
+.pro-options button {flex:1;min-width:90px;padding:12px 10px;background:#f0e9db;color:var(--pine-dk);border:2px solid transparent;}
+.pro-options button.sel {background:var(--pine);color:white;border-color:var(--pine-dk);}
+.pro-note {font-size:.86rem!important;color:#54665c;line-height:1.45!important;}
+.pro-textarea {width:100%;min-height:80px;border:1px solid #a4b5ac;border-radius:10px;padding:12px;font:inherit;background:#fffdfa;}
+.pro-actions {display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.pro-actions button {flex:1;min-width:145px;}
+.pro-link {background:transparent;border:1px solid #a5b9ac;color:var(--pine-dk);}
+.pro-plan {border:2px solid #a1c2ae;background:#f4faf6;border-radius:14px;padding:18px;margin:15px 0;}
+.pro-plan h3 {font-size:1.55rem;line-height:1.25;margin:8px 0 14px;color:var(--pine);}
+.pro-tag {display:inline-block;padding:4px 10px;font-size:.8rem;border-radius:20px;background:#e1ebf6;color:#174878;margin:4px 4px 4px 0;}
+.pro-table {width:100%;border-collapse:collapse;font-size:.88rem;}
+.pro-table td,.pro-table th {padding:9px 7px;text-align:left;border-bottom:1px solid #d6e1d9;}
+.pro-scroll {overflow-x:auto;}
+.pro-footer-note {font-size:.82rem;color:#506759;margin:12px 0;}
+#pauseRun {position:absolute;left:12px;top:57px;z-index:6;background:#f7efe0;color:#173c2c;padding:9px 14px;}
+#endBtnPlay {opacity:1;min-width:80px;}
+#cloudOptions {border-top:1px solid #d3ddd6;padding-top:12px;margin-top:15px;}
+#cloudOptions label {display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-weight:400;line-height:1.45;}
+#cloudOptions input {width:20px;height:20px;flex:none;}
+#proSystemInfo {line-height:1.5;}
+#runEndOvl .rc {max-width:620px;}
+body.playmode #coachFloat {bottom:118px;font-size:1rem;}
+@media(max-width:520px){ .ovl{padding:16px 10px 26px}.ovl .card{padding:19px 15px}.pro-metrics{gap:7px}.pro-stat{padding:10px}.pro-stat strong{font-size:1.35rem}.pro-options button{min-width:82px}.pro-actions button{min-width:125px}.pro-plan{padding:14px}.pro-table{font-size:.82rem} }
+
+</style>
+</head>
+<body>
+
+<!-- ===== v3.0 Stage 3B flow overlays ===== -->
+<div class="ovl show" id="ovlLang"><div class="card">
+  <div class="ribbon">SELF-TEST BUILD — not for participants · 自測版——不供參加者使用</div>
+  <h2>Alpine Coordination Game 滑雪協調小遊戲</h2>
+  <p>Please choose your language 請選擇語言</p>
+  <button class="btn-go big" id="langZh">繁體中文</button>
+  <button class="btn-go big" id="langZhs" style="background:#3E6E56">简体中文</button>
+  <button class="btn-soft big" id="langEn">English</button>
+  <button class="btn-soft big" id="retBtn" style="margin-top:22px; font-size:1rem; background:transparent; border:2px solid #CFC6B4">↩ I have played before · 我玩過 · 我玩过</button>
+</div></div>
+
+<div class="ovl" id="ovlConsent"><div class="card">
+  <h2 data-i18n="cTitle"></h2>
+  <p data-i18n="cP1"></p>
+  <p data-i18n="cP2"></p>
+  <p data-i18n="cP3"></p>
+  <p class="muted" data-i18n="cRef"></p>
+  <button class="btn-go big" id="consentYes" data-i18n="cAgree"></button>
+  <button class="btn-soft big" id="consentNo" data-i18n="cDecline"></button>
+  <button class="btn-soft big" id="retBtn2" data-i18n="retAsk" style="margin-top:18px; font-size:1rem; background:transparent; border:2px solid #CFC6B4"></button>
+</div></div>
+
+<div class="ovl" id="ovlEnrol"><div class="card">
+  <h2 data-i18n="eTitle"></h2>
+  <p class="muted" data-i18n="eNote"></p>
+  <div class="qBlock"><div class="qt" data-i18n="eAge"></div>
+    <div class="optRow" id="ageRow">
+      <button class="optBtn" data-v="25-44">25–44</button>
+      <button class="optBtn" data-v="45-64">45–64</button>
+      <button class="optBtn" data-v="65-80">65–80</button>
+    </div></div>
+  <div class="qBlock"><div class="qt" data-i18n="eGender"></div>
+    <div class="optRow" id="genRow">
+      <button class="optBtn" data-v="M" data-i18n="eM"></button>
+      <button class="optBtn" data-v="F" data-i18n="eF"></button>
+    </div></div>
+  <div class="qBlock"><div class="qt" data-i18n="eEdu"></div>
+    <div class="optRow" id="eduRow">
+      <button class="optBtn" data-v="secondary" data-i18n="eEdu1"></button>
+      <button class="optBtn" data-v="post-secondary" data-i18n="eEdu2"></button>
+      <button class="optBtn" data-v="degree+" data-i18n="eEdu3"></button>
+    </div></div>
+  <div class="qBlock"><div class="qt" data-i18n="ePrior"></div>
+    <div class="optRow" id="priRow">
+      <button class="optBtn" data-v="no" data-i18n="eNo"></button>
+      <button class="optBtn" data-v="yes" data-i18n="eYes"></button>
+    </div></div>
+  <button class="btn-go big" id="enrolGo" disabled data-i18n="eGo"></button>
+</div></div>
+
+<div class="ovl" id="ovlQuest"><div class="card">
+  <h2 data-i18n="qTitle"></h2>
+  <p class="muted" data-i18n="qNote"></p>
+  <div id="questBlocks"></div>
+  <button class="btn-go big" id="questGo" disabled data-i18n="qGo"></button><button class="pro-link big" id="questSkip" data-i18n="pQuestSkip"></button>
+</div></div>
+
+<div class="ovl" id="ovlStage"><div class="card">
+  <span class="visitTag" id="stageVisit"></span>
+  <h2 id="stageTitle"></h2>
+  <p id="stageText"></p>
+  <p class="storWarn" data-i18n="storWarn"></p>
+  <button class="btn-go big" id="stageGo" data-i18n="stGo"></button>
+  <button class="btn-coral big" id="stageFinish" data-i18n="finish" style="display:none"></button>
+</div></div>
+
+<div class="ovl" id="ovlDeclined"><div class="card">
+  <h2 id="decT"></h2>
+  <p id="decP"></p>
+  <button class="btn-soft big" id="decBack" data-i18n="decBack"></button>
+</div></div>
+
+<div class="ovl" id="ovlReturn"><div class="card">
+  <h2>Welcome back · 歡迎回來 · 欢迎回来</h2>
+  <p>Type the code you were given last time. It starts with the letter P.<br>請輸入你上次獲得的編號(以 P 字開頭)。<br>请输入你上次获得的编号(以 P 字开头)。</p>
+  <input type="text" id="retCode" maxlength="12" lang="en" inputmode="text" enterkeyhint="done" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false"
+    style="width:100%; font-size:1.5rem; letter-spacing:.18em; text-transform:uppercase; padding:14px; text-align:center">
+  <p id="retMsg" style="display:none; margin-top:8px; font-weight:700; color:#C2483A; font-size:.95rem"></p>
+  <p style="margin-top:14px">Which visit is this? · 這是第幾次到訪? · 这是第几次到访?</p>
+  <div class="optRow" id="retVisitRow">
+    <button class="optBtn" data-v="2" style="min-width:56px">2</button><button class="optBtn" data-v="3" style="min-width:56px">3</button><button class="optBtn" data-v="4" style="min-width:56px">4</button><button class="optBtn" data-v="5" style="min-width:56px">5</button><button class="optBtn" data-v="6" style="min-width:56px">6+</button>
+  </div>
+  <button class="btn-go big" id="retGo" disabled>Continue · 繼續 · 继续</button>
+  <button class="btn-soft big" id="retCancel">↩ Back · 返回</button>
+</div></div>
+
+<div class="ovl" id="ovlWelcome"><div class="card">
+  <h2 data-i18n="wbTitle"></h2>
+  <p id="wbText"></p><label class="pro-label" for="returnReason" data-i18n="pReturnWhy"></label><select id="returnReason"><option value="not_reported" data-i18n="pReturnUnknown"></option><option value="self_initiated" data-i18n="pReturnSelf"></option><option value="prompted" data-i18n="pReturnPrompt"></option></select>
+  <p class="storWarn" data-i18n="storWarn"></p>
+  <button class="btn-go big" id="wbGo"></button>
+  <button class="btn-soft big" id="wbSend" data-i18n="wbSend"></button>
+</div></div>
+
+<div class="ovl" id="ovlFinal"><div class="card">
+  <h2 data-i18n="fTitle"></h2>
+  <p id="fCode" style="font-weight:700; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px"></p>
+  <p class="storWarn" data-i18n="storWarn"></p>
+  <p data-i18n="fP1" id="fP1"></p>
+  <p id="wxHint" style="display:none; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-weight:600"></p>
+  <button class="btn-go big" id="shareBtn" data-i18n="fShare"></button>
+  <button class="btn-go big" id="emailBtn" data-i18n="fEmail" style="margin-top:10px"></button>
+  <p id="mailHint" class="muted" style="display:none; margin-top:6px; font-size:.9rem; font-weight:700; color:var(--pine-dk)"></p>
+  <div class="optRow">
+    <button class="optBtn" id="copyBtn" data-i18n="fCopy"></button>
+    <button class="optBtn" id="dlBtn" data-i18n="fDownload"></button>
+  </div>
+  <p class="muted" data-i18n="fP2"></p>
+  <button class="pro-link big" id="jsonBtn" data-i18n="pJson"></button><button class="pro-link big" id="newVisit" data-i18n="pReturn"></button><details><summary data-i18n="pProgress"></summary><div id="finalHistory" class="pro-scroll"></div></details><button class="btn-soft big" id="fBack" data-i18n="fBack" style="display:none; margin-top:14px"></button>
+  <button class="btn-soft big" id="nextBtn" data-i18n="fNext" style="display:none"></button>
+</div></div>
+
+<div class="ovl" id="ovlFac"><div class="card">
+  <h2>Facilitator / device panel 設備管理</h2>
+  <p id="facInfo"></p><p id="jevResearchStatus" class="pro-note"></p>
+  <button class="pro-link" id="jevReconnect" data-i18n="pReconnect"></button>
+  <details><summary data-i18n="pDiagnostics"></summary><pre id="jevDiagnostics" style="white-space:pre-wrap;overflow-wrap:anywhere;max-height:220px;overflow:auto"></pre></details>
+  <button class="pro-link big" id="facLegacy" data-i18n="pPreviousRecords"></button>
+  <button class="btn-go big" id="facExportFile">💾 Export ALL participants on this device (file)</button>
+  <button class="btn-soft big" id="facExportCopy">📋 Copy ALL participants (paste to send)</button>
+  <button class="btn-soft big" id="facNext">🔄 Reset for next player 下一位玩家</button>
+  <button class="pro-link big" id="facJson">Export full JSON bundle</button><button class="pro-link big" id="facDelete" data-i18n="pDelete"></button><button class="btn-soft big" id="facClose">Close 關閉</button>
+  <p class="muted">Data is never deleted by export or reset; everything stays archived on the
+  device until collected. 匯出或重設都不會刪除資料;所有紀錄保留在此設備直至回收。</p>
+</div></div>
+
+<div class="ovl" id="ovlFeedback"><div class="card">
+ <div class="pro-kicker" data-i18n="pStep4"></div><h2 data-i18n="pFeedback"></h2>
+ <div id="feedbackSummary"></div><p class="pro-note" data-i18n="pFeelNote"></p>
+ <span class="pro-label" data-i18n="pDifficulty"></span><div class="pro-options" id="fbDifficulty"></div>
+ <span class="pro-label" data-i18n="pFeeling"></span><div class="pro-options" id="fbFeeling"></div>
+ <span class="pro-label" data-i18n="pReason"></span><div class="pro-options" id="fbReason"></div>
+ <label class="pro-label" for="fbText" data-i18n="pComment"></label><textarea id="fbText" class="pro-textarea" maxlength="400"></textarea>
+ <p class="pro-note" data-i18n="pNoPersonal"></p><div id="fbSuggestion"></div>
+ <div id="cloudOptions" hidden><label><input type="checkbox" id="cloudOpt"><span data-i18n="pCloudOpt"></span></label>
+ <label><input type="checkbox" id="cloudTextOpt"><span data-i18n="pCloudText"></span></label></div>
+ <p id="fbStatus" class="pro-note" aria-live="polite"></p>
+ <div class="pro-actions"><button class="btn-go" id="fbSubmit" data-i18n="pSeePlan"></button><button class="pro-link" id="fbSkip" data-i18n="pSkip"></button></div>
+ <button class="pro-link big" id="fbFinish" data-i18n="pFinishToday"></button>
+</div></div>
+<div class="ovl" id="ovlPlan"><div class="card">
+ <div class="pro-kicker" data-i18n="pStep5"></div><h2 data-i18n="pNext"></h2><div id="planContent"></div>
+ <div class="pro-actions"><button class="btn-go" id="planAccept" data-i18n="pTryPlan"></button><button class="pro-link" id="planPause" data-i18n="pPause"></button><button class="pro-link" id="planFinish" data-i18n="pFinishToday"></button></div>
+ <details><summary data-i18n="pChooseOther"></summary><div class="pro-options" id="planChoices"></div></details>
+ <p class="pro-note" data-i18n="pVoluntary"></p>
+ <details><summary data-i18n="pProgress"></summary><div id="planHistory" class="pro-scroll"></div></details>
+</div></div>
+<div class="ovl" id="ovlPause"><div class="card"><div class="pro-kicker">STAGE 3B PRO · v4.1</div><h2 data-i18n="pPaused"></h2>
+ <p data-i18n="pPauseText"></p><div class="pro-actions"><button class="btn-go" id="pauseResume" data-i18n="pResume"></button><button class="pro-link" id="pauseFinish" data-i18n="pFinishToday"></button></div>
+ <p class="pro-note storWarn" data-i18n="storWarn"></p></div></div>
+<div class="ovl" id="ovlClosing"><div class="card"><h2 data-i18n="pClosing"></h2><p data-i18n="pClosingText"></p>
+ <button class="btn-go big" id="closingProbe" data-i18n="pClosingProbe"></button><button class="pro-link big" id="closingQuest" data-i18n="pOnlyQuestions"></button><button class="pro-link big" id="closingNow" data-i18n="pSaveFinish"></button></div></div>
+<div class="ovl" id="ovlBlocked"><div class="card"><h2>Participant template — not released</h2>
+ <p>參加者範本——尚未獲准發放。参加者模板——尚未获准发放。</p>
+ <p>This v4.1 template cannot start a participant session until the researcher rebuilds it after confirming supervisor approval, consent wording, the actual ethics scope, and any optional external AI processing.</p>
+ <p>For your own software check, open <strong>Alpine3B_PRO_v4.0_SELFTEST.html</strong>.</p></div></div>
+
+<header>
+  <h1>Alpine Coordination Game <span style="font-size:1rem">滑雪協調小遊戲</span></h1>
+  <span class="tag">v4.1 · PRO · SELF-TEST 自測</span>
+  <span class="pill" id="modePill" data-i18n="pSystem">v4.1 · Feedback-informed practice</span>
+  <button class="btn-soft" id="sndBtn" style="padding:4px 12px;font-size:.85rem">🔊 Sound on</button>
+</header>
+
+<main>
+  <section>
+    <div class="panel" id="setup">
+      <div style="display:none">
+        <input type="text" id="pid" autocomplete="off">
+        <select id="sessno">
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+          <option value="6">6</option><option value="7">7</option>
+        </select>
+        <select id="goal"><option value="200" selected>200 m</option><option value="400">400 m</option></select>
+        <input type="checkbox" id="zeroFail" checked>
+        <input type="checkbox" id="agentic">
+      </div>
+      <div class="row">
+        <button class="btn-go" id="startBtn" data-i18n="startRun">Start run</button>
+        <button class="btn-soft" id="tiltBtn" title="Steer by tilting the device" data-i18n="tiltOff">📱 Enable tilt</button>
+        <button class="btn-soft" id="endBtn" style="display:none" data-i18n="endEarly">End run early</button>
+      </div>
+      <div class="row">
+        <span class="muted" data-i18n="howSteer"></span>
+      </div>
+      <div class="row" style="display:none">
+        <span id="padStatus"><span class="dot" id="padDot"></span>No controller detected.</span>
+      </div>
+    </div>
+
+    <div class="panel" id="gameWrap" style="margin-top:14px">
+      <canvas id="cv" width="840" height="560"></canvas>
+      <div class="hud">
+        <div class="box" id="hudL">0 m</div>
+        <div class="box" id="hudM">⏱ 30 s</div>
+        <div class="box" id="hudR">🪙 0</div>
+      </div>
+      <div id="coachFloat"></div>
+      <div id="touchRow">
+        <button class="steerBtn" id="leftBtn" aria-label="Steer left">◀</button>
+        <button class="steerBtn" id="rightBtn" aria-label="Steer right">▶</button>
+      </div>
+      <button id="pauseRun" hidden>Pause</button><button id="endBtnPlay" aria-label="Stop this run">✕</button>
+      <div id="runEndOvl"><div class="rc">
+        <div id="rcGreet"></div><div id="rcScore"></div><div id="rcLine"></div>
+        <div id="rcTraj"></div><div id="rcTip"></div>
+        <div class="rcBtns">
+          <button class="btn-go" id="againOvl" data-i18n="again"></button>
+          <button class="btn-coral" id="finishOvl" data-i18n="finish"></button>
+          <button class="btn-go" id="contOvl" data-i18n="cont"></button>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="panel" id="summary" style="margin-top:14px">
+      <h2 data-i18n="sumTitle">Run summary</h2>
+      <dl id="sumList" style="display:none"></dl>
+      <div id="runLine" style="font-size:1.05rem;font-weight:700;color:var(--pine-dk)"></div>
+      <div id="trajBox"></div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn-go" id="againBtn" data-i18n="again">Play again</button>
+        <button class="btn-coral" id="finishBtn" data-i18n="finish">Finish &amp; answer questions</button>
+      </div>
+      <div class="row" style="display:none">
+        <button id="expSession"></button>
+        <button id="expStates"></button>
+      </div>
+    </div>
+  </section>
+
+  <aside id="sidePanels">
+    <div class="panel" id="coachPanel">
+      <h2 data-i18n="coachTitle">Coach</h2>
+      <div id="coach"></div><p id="proSystemInfo" class="pro-note"></p>
+    </div>
+    <div class="panel" style="margin-top:14px; display:none">
+      <h2>Difficulty state changes</h2>
+      <div id="stateLog"><table><thead><tr>
+        <th>Play&nbsp;time</th><th>Change</th><th>Reason</th><th>Src</th>
+      </tr></thead><tbody id="stateBody"></tbody></table></div>
+    </div>
+  </aside>
+</main>
+
+<footer>Stage 3B PRO v4.1 · Experimental game-control practice. Separate from the frozen Stage 3B study and the v3.2 pilot.
+Offline rules operate by default; optional external AI requires a configured server and explicit choices.
+Coded data are stored locally, not encrypted. Export and delete controls are provided. Not a clinical test.
+Researcher: Sidney K. T. Tam · Supervisor: Prof. Benny C. F. Cheung · The Hong Kong Polytechnic University.
+參與自願；遊戲表現不等於健康評估。新版本需另行確認研究與倫理範圍。</footer>
+
+<script>
+"use strict";
+const CONFIG={"deviceTag": "PRO-SELF", "selfTest": true, "participantApproved": false, "ethicsReference": "", "failureMode": "GO", "cloudEnabled": false};
+const DEVICE_ID=CONFIG.deviceTag;   /* PRO proof-of-concept copy tag: PRO-SELF = researcher self-test; participant copies P01, P02, ... */
+const BUILD='Alpine_Coordination_Game_v4.1_PRO_jev_r1';
+/* ============ v3.0 STAGE 3B: i18n, flow, arms, persistence ============ */
+const I18N={
+ en:{
+  cTitle:"Taking part — please read",
+  cP1:"This game is part of EngD doctoral research at The Hong Kong Polytechnic University by Sidney K. T. Tam (supervisor: Prof. Benny C. F. Cheung), studying how games can make health technology more engaging. The game was originally designed for a fall-risk assessment platform.",
+  cP2:"If you agree to take part, the game will record your play (distance, coins, steering balance) and your answers to six short questions on each visit. You will be invited to play on three separate days; each visit takes about five minutes. No name or contact details are collected; results are reported only as group statistics. You may stop at any time simply by closing the page.",
+  cP3:"At the end, one tap shares your anonymous results file with the researcher. Taking part is entirely voluntary.",
+  cRef:"Pilot version for the researcher's own testing. Contact: sidney.tam@connect.polyu.hk",
+  cAgree:"I agree — let's play", cDecline:"No thanks",
+  eTitle:"A few quick questions", eNote:"No name needed — this only describes the group of players.",
+  eAge:"Your age group", eGender:"Gender", eM:"Male", eF:"Female",
+  eEdu:"Education", eEdu1:"Secondary", eEdu2:"Post-secondary", eEdu3:"Degree or above",
+  ePrior:"Did you play this skiing game earlier this year?", eNo:"No", eYes:"Yes",
+  eGo:"Continue to the game",
+  qTitle:"Six short questions", qNote:"1 = strongly disagree · 5 = strongly agree",
+  qGo:"Done — one last step",
+  q1:"The game was a good coordination challenge.",
+  q2:"I would be willing to play this game regularly.",
+  q3:"The game matched my ability.",
+  q4:"Seeing my progress made me want to continue.",
+  lik1:"strongly disagree", lik5:"strongly agree",
+  fTitle:"Thank you for playing!",
+  fP1:"Tap Share to send your results as a CSV file (WhatsApp, WeChat, Mail or Save to Files) — or tap E-mail to send the file as an e-mail attachment.",
+  fShare:"📤 Share my results (CSV file)",
+  fEmail:"✉️ E-mail my results file",
+  fCopy:"📋 Copy results",
+  fCopied:"Copied! Now paste into WhatsApp or e-mail",
+  fDownload:"💾 Save as file",
+  fP2:"Send to: sidney.tam@connect.polyu.hk (or WhatsApp the researcher). Please send the text exactly as it is. Thank you!",
+  fWx:"You are in WeChat: tap 'Copy results', then paste into your WeChat chat with the researcher and send. That's all!",
+  startRun:"▶ Start run", tiltOff:"📱 Enable tilt", tiltOn:"📱 Tilt ON", endEarly:"End run early",
+  howSteer:"Steer with the ← → keys, the big buttons, touching the left/right side of the slope, or tilt.",
+  sumTitle:"Run finished", again:"⛷ Play again", finish:"✅ Enough runs — go to the last step",
+  coachTitle:"Coach",
+  coachStart:"Off we go! Lean left and right to carve between the trees. Each run is 30 seconds.",
+  runLineGoal:(m,c)=>`You reached ${m} m and collected ${c} coins!`,
+  runLineTime:(m,c)=>`${m} m and ${c} coins — lovely run!`,
+  trajTitle:"Your level, run by run", trajBest:"best",
+  shareText:"Alpine Coordination Game — my anonymous results file. Please e-mail this file to sidney.tam@connect.polyu.hk",
+  coachGoalCont:"200 m! Keep going — collect more coins!",
+  coachUp:"Nice riding — the slope opens up a little.",
+  coachDown:"The coach eased the slope so you can find your rhythm.",
+  coachHold:"Holding steady — you're in the flow band.",
+  coachBump:"A bump — no slowing down here. The slope just got a little clearer for you.",
+  endCoachGoal:(g,c,b)=>`You made it past ${g} m! ${c} coins, balance ${b}%.`,
+  endCoachTime:(m,cap,c)=>`Time! ${m} m in ${cap} seconds, ${c} coins. Every run is a fresh start.`,
+  gGoal:['Congratulations!','Fantastic run!','You made it!','Bravo!'],
+  gTime:['Well done!','Great effort!','Nice riding!','Lovely run!'],
+  pts:' points',
+  endStat:(m,c,goal)=>`${m} m skied · ${c} coins ×10 · `+(goal?'+50 goal bonus':'time complete'),
+  endHint:'Press "Play again" whenever you are ready.',
+  endCoachOver:(m,c)=>`Three bumps ended this run at ${m} m — that happens to everyone! Every run teaches you the slope. Have another go!`,
+  gOver:['Good try!','So close!','Nearly there!','Nice effort!'],
+  endProg:(lv,xp,c,t,dg)=>`⭐ Skier Level ${lv} · ${xp} XP · coins ${c}/${t} · ${dg} skill dodges`,
+  endStatOver:(m,c)=>`${m} m skied · ${c} coins ×10 · three bumps ended the run`,
+  /* --- v3.2 PRO additions --- */
+  q5:"I felt I was getting better at this game.",
+  q6:"I felt I was being tested or judged while playing.",
+  stProbePreT:"First: a 30-second set course",
+  stProbePreP:"This short run uses a set course that does not change while you ski, so you can follow your own progress from visit to visit. Just ski the way you like. Bumps do not end it.",
+  stWarmT:"Warm-up: 15 seconds",
+  stWarmP:"The coach uses this short warm-up to find the right pace for you. Bumps do not count here.",
+  stPlayT:"Now the real runs",
+  stPlayP:"The slope adapts to you as you ski. Three bumps end a run — then simply go again. Play as many runs as you like, then tap “Enough runs”. One short run and six questions finish the visit.",
+  stProbePostT:"Last one: a 30-second set course",
+  stProbePostP:"The same kind of set course as at the start. Just ski the way you like.",
+  stGo:"▶ Start", cont:"Continue ▶", visitN:(n)=>`Visit ${n}`,
+  wbTitle:"Welcome back!",
+  wbP:(pid,n,l)=>`Your code is ${pid}. This will be visit ${n}. Last time you reached level ${l}.`,
+  wbGo:(n)=>`▶ Start visit ${n}`, wbSend:"📤 Send my earlier results again", fBack:"↩ Back",
+  fCode:(pid,v)=>v>=3?`Your code is ${pid}. Visit ${v} is complete — that was the last one. Thank you very much!`:`Your code is ${pid} — please keep a note or a screenshot of it. Visit ${v} is complete. Please come back in a few days and open the game the same way on the same phone. If it does not say “Welcome back”, tap “I have played before” and type your code.`,
+  coachProbe:"Set course — it does not change while you ski. Enjoy the run.",
+  coachWarm:"Warm-up — I'm finding your pace. Bumps don't count here.",
+  coachPlayStart:(l)=>`Off we go at level ${l}. Three bumps end the run.`,
+  coachHitLeft:(n)=>n>1?`A bump — no harm done. The run ends after ${n} more. Eyes up the slope.`:`A bump — no harm done. One more ends this run. Eyes up the slope.`,
+  coachHitFree:"A bump — no harm done. Keep going.",
+  runLinePlay:(l,m,c)=>`Level ${l} · ${m} m · ${c} coins`,
+  runLineProbe:(a,f)=>`Set course done: you passed ${a} of ${f} obstacles.`,
+  runLineProbeCmp:(a,f,a0,f0)=>a>=a0?`Set course done: ${a} of ${f} passed. On your very first one it was ${a0} of ${f0}.`:`Set course done: you passed ${a} of ${f} obstacles.`,
+  runLineWarm:(l)=>`Warm-up done. Your starting level today: ${l}.`,
+  tipTitle:"Coach's tip",
+  tipClean:"A clean run — the slope gets a little faster next time. Keep looking far ahead.",
+  tipCoins:"A clean run. Next, try picking up the coins that lie close to your line.",
+  tipLookAhead:"Bumps come most easily while going straight. Look further up the slope and begin your turn a little earlier.",
+  tipEarlier:"You were turning the right way — nearly there. Start the turn as soon as you spot the tree and you will glide past.",
+  tipGentle:"Big turns can carry you into the next tree. Try shorter, gentler taps and let the skier glide.",
+  tipCoinTrap:"A coin led you into a bump. When a tree sits right behind a coin, let that coin go.",
+  tipCentre:"There is less room near the edge. After each turn, drift back toward the middle so you have space on both sides.",
+  hudCheck:"Set course", hudWarm:"Warm-up", hudLevel:"Level",
+  storWarn:"This browser cannot save your progress, so the game will not remember you next time. Please send your results before you close this page.",
+  endEarlyQ:"Stop this run now? It will not be counted.",
+  decT:"No problem at all — thank you!", decP:"You can simply close this page.", decBack:"↩ Back",
+  nextQ:(pid)=>`Reset this device for a NEW player? ${pid} will not be able to continue their visits here.`,
+  mailShareText:"Alpine PRO results file. Please send it to: sidney.tam@connect.polyu.hk (put this address in the To: line).",
+  mailAttachBody:(name)=>`Please attach the results file that was saved on this device:\\n\\n    ${name}\\n\\n(It is usually in the Downloads folder.) If you cannot find it, go back to the game, tap “Copy results” and paste here instead. Thank you!`,
+  mailSavedHint:(name)=>`If a file named ${name} was saved, attach it to the e-mail that opens, and send. If no file was saved or no e-mail opens, tap “Copy results” below and paste it into an e-mail to sidney.tam@connect.polyu.hk.`,
+  mailAgain:"No e-mail app in the list? Tap E-mail again.",
+  retAsk:"Played before? Enter my code",
+  fNext:"🔄 Next player on this device"
+ },
+ zh:{
+  cTitle:"參加研究——請先閱讀",
+  cP1:"這個遊戲是香港理工大學工程博士研究生譚國滔(指導老師:張志輝教授)博士研究的一部分,探討遊戲如何令健康科技更具吸引力。此遊戲最初為跌倒風險評估平台而設計。",
+  cP2:"如你同意參加,遊戲會記錄你的遊玩數據(距離、金幣、操控平衡)及每次到訪時六條簡短問題的答案。我們會邀請你在三個不同的日子各玩一次,每次約五分鐘。不會收集姓名或聯絡資料;結果只以整體統計形式發表。你可隨時關閉頁面退出。",
+  cP3:"完成後,只需按一下即可把匿名結果檔案分享給研究員。參與純屬自願。",
+  cRef:"研究員自行測試用的試驗版本。查詢:sidney.tam@connect.polyu.hk",
+  cAgree:"我同意——開始玩", cDecline:"不參加,謝謝",
+  eTitle:"幾條小問題", eNote:"毋須姓名——只用作描述玩家群組。",
+  eAge:"你的年齡組別", eGender:"性別", eM:"男", eF:"女",
+  eEdu:"教育程度", eEdu1:"中學", eEdu2:"專上", eEdu3:"學士或以上",
+  ePrior:"你今年較早前有沒有玩過這個滑雪遊戲?", eNo:"沒有", eYes:"有",
+  eGo:"繼續前往遊戲",
+  qTitle:"六條簡短問題", qNote:"1 = 非常不同意 · 5 = 非常同意",
+  qGo:"完成——最後一步",
+  q1:"這個遊戲是一個很好的協調力挑戰。",
+  q2:"我願意定期玩這個遊戲。",
+  q3:"遊戲的難度適合我的能力。",
+  q4:"看到自己的進步令我更想繼續玩。",
+  lik1:"非常不同意", lik5:"非常同意",
+  fTitle:"多謝你的參與!",
+  fP1:"按「分享」以 CSV 檔案傳送結果(WhatsApp、微信、郵件或儲存到檔案)——或按「電郵」把檔案以電郵附件傳送。",
+  fShare:"📤 分享我的結果(CSV 檔案)",
+  fEmail:"✉️ 以電郵傳送結果檔案",
+  fCopy:"📋 複製結果",
+  fCopied:"已複製!請貼上到 WhatsApp 或電郵",
+  fDownload:"💾 儲存為檔案",
+  fP2:"傳送至:sidney.tam@connect.polyu.hk(或 WhatsApp 給研究員)。請把文字原封不動送出。謝謝!",
+  fWx:"你正在微信中:按「複製結果」,然後貼上到與研究員的微信對話並發送,就完成了!",
+  startRun:"▶ 開始滑雪", tiltOff:"📱 開啟傾側操控", tiltOn:"📱 傾側操控已開", endEarly:"提前結束",
+  howSteer:"操控方法:← → 方向鍵、大按鈕、觸碰雪道左右兩邊,或傾側裝置。",
+  sumTitle:"這一局完成了", again:"⛷ 再玩一局", finish:"✅ 玩夠了——去最後一步",
+  coachTitle:"教練",
+  coachStart:"出發!左右傾就可以在樹林間穿插。每局 30 秒。",
+  runLineGoal:(m,c)=>`你滑到 ${m} 米,收集了 ${c} 個金幣!`,
+  runLineTime:(m,c)=>`${m} 米、${c} 個金幣——滑得真好!`,
+  trajTitle:"你每一局的級別", trajBest:"最佳",
+  shareText:"滑雪協調小遊戲——我的匿名結果檔案。請把此檔案電郵至 sidney.tam@connect.polyu.hk",
+  coachGoalCont:"200米達標!繼續滑,收集更多金幣!",
+  coachUp:"滑得真好——雪道稍為放開了一點。",
+  coachDown:"教練把雪道調得柔和一點,讓你找到節奏。",
+  coachHold:"保持穩定——你正處於最合適的狀態。",
+  coachBump:"碰了一下——完全不用慢下來,前面的雪道反而更清爽了。",
+  endCoachGoal:(g,c,b)=>`你滑過了 ${g} 米!${c} 個金幣,平衡度 ${b}%。`,
+  endCoachTime:(m,cap,c)=>`時間到!${cap} 秒內滑了 ${m} 米、${c} 個金幣。每一局都是新開始。`,
+  gGoal:['恭喜你!','滑得漂亮!','你做到了!','太棒了!'],
+  gTime:['做得好!','很不錯!','滑得真好!','好一局!'],
+  pts:' 分',
+  endStat:(m,c,goal)=>`${m} 米 · ${c} 金幣 ×10 · `+(goal?'+50 達標獎勵':'時間完成'),
+  endHint:'準備好就按「再玩一局」。',
+  endCoachOver:(m,c)=>`碰了三下,這一局在 ${m} 米結束——人人都會遇到!每一局都讓你更熟悉雪道。再來一局吧!`,
+  gOver:['好嘗試!','就差一點!','幾乎成功!','不錯的努力!'],
+  endProg:(lv,xp,c,t,dg)=>`⭐ 滑雪等級 ${lv} · 累積 ${xp} XP · 金幣 ${c}/${t} · 靈巧閃避 ${dg}`,
+  endStatOver:(m,c)=>`${m} 米 · ${c} 金幣 ×10 · 碰了三下結束`,
+  /* --- v3.2 PRO additions --- */
+  q5:"我覺得自己玩得愈來愈好。",
+  q6:"玩的時候,我覺得自己正在被測試或被評價。",
+  stProbePreT:"首先:30 秒固定雪道",
+  stProbePreP:"這一局用的是固定雪道,滑的時候不會調整,方便你看到自己每次到訪的進步。照你喜歡的方式滑就可以,碰撞不會令這一局結束。",
+  stWarmT:"熱身:15 秒",
+  stWarmP:"教練會利用這段短短的熱身,找出最適合你的速度。這裏的碰撞不計算。",
+  stPlayT:"現在正式開始",
+  stPlayP:"雪道會按你的表現自動調整。碰撞三次這一局便結束——再來一局就可以。想玩多少局都可以,玩夠了就按「玩夠了」。之後還有一局短的和六條問題,今次到訪便完成。",
+  stProbePostT:"最後:30 秒固定雪道",
+  stProbePostP:"和開始時同一類型的固定雪道。照你喜歡的方式滑就可以。",
+  stGo:"▶ 開始", cont:"繼續 ▶", visitN:(n)=>`第 ${n} 次到訪`,
+  wbTitle:"歡迎回來!",
+  wbP:(pid,n,l)=>`你的編號是 ${pid}。這是第 ${n} 次到訪。上次你達到第 ${l} 級。`,
+  wbGo:(n)=>`▶ 開始第 ${n} 次到訪`, wbSend:"📤 再次傳送之前的結果", fBack:"↩ 返回",
+  fCode:(pid,v)=>v>=3?`你的編號是 ${pid}。第 ${v} 次到訪已完成——這是最後一次了。非常感謝你!`:`你的編號是 ${pid}——請記下或截圖保存。第 ${v} 次到訪已完成。請過幾天再回來,用同一部手機、同樣的方法打開遊戲。如果遊戲沒有顯示「歡迎回來」,請按「我玩過」並輸入你的編號。`,
+  coachProbe:"固定雪道——滑的時候不會調整。放鬆滑就可以。",
+  coachWarm:"熱身——我正在找出適合你的速度,這裏的碰撞不計算。",
+  coachPlayStart:(l)=>`出發!今次由第 ${l} 級開始。碰撞三次這一局便結束。`,
+  coachHitLeft:(n)=>`碰了一下——沒關係。再碰 ${n} 次這一局便結束。眼睛望遠一點。`,
+  coachHitFree:"碰了一下——沒關係,繼續滑。",
+  runLinePlay:(l,m,c)=>`第 ${l} 級 · ${m} 米 · ${c} 個金幣`,
+  runLineProbe:(a,f)=>`固定雪道完成:${f} 個障礙中你避開了 ${a} 個。`,
+  runLineProbeCmp:(a,f,a0,f0)=>a>=a0?`固定雪道完成:${f} 個中避開了 ${a} 個。你第一次是 ${f0} 個中避開 ${a0} 個。`:`固定雪道完成:${f} 個障礙中你避開了 ${a} 個。`,
+  runLineWarm:(l)=>`熱身完成。你今天的起始級別:第 ${l} 級。`,
+  tipTitle:"教練提示",
+  tipClean:"這一局沒有碰撞——下一局雪道會稍為快一點。繼續望遠一點。",
+  tipCoins:"這一局沒有碰撞。下一步,試試收集靠近你路線的金幣。",
+  tipLookAhead:"直線滑行時最容易碰到障礙。眼睛望遠一點,早一點開始轉彎。",
+  tipEarlier:"你已經轉對了方向——只差一點點。一看見樹就開始轉,便能順利滑過。",
+  tipGentle:"轉得太大,容易滑向另一棵樹。試試按短一點、輕一點,讓滑雪者順勢滑過去。",
+  tipCoinTrap:"有金幣把你引向了障礙。如果金幣後面緊貼着一棵樹,就放棄那個金幣。",
+  tipCentre:"雪道邊緣的空間比較少。每次轉彎後慢慢回到中間,這樣兩邊都有空間。",
+  hudCheck:"固定雪道", hudWarm:"熱身", hudLevel:"級別",
+  storWarn:"這個瀏覽器無法儲存你的進度,下次遊戲不會記得你。請在關閉此頁前先傳送結果。",
+  endEarlyQ:"現在停止這一局嗎?這一局不會計算在內。",
+  decT:"完全沒有問題——多謝你!", decP:"你可以直接關閉此頁面。", decBack:"↩ 返回",
+  nextQ:(pid)=>`要為新玩家重設此裝置嗎?${pid} 之後將無法在這裏繼續到訪。`,
+  mailShareText:"滑雪遊戲概念驗證結果檔案。請傳送至:sidney.tam@connect.polyu.hk(請把這個地址填在「收件人」一欄)。",
+  mailAttachBody:(name)=>`請把儲存在此裝置上的結果檔案加入為附件:\\n\\n    ${name}\\n\\n(通常在「下載」資料夾內。)如果找不到檔案,請回到遊戲按「複製結果」,然後貼在這裏。謝謝!`,
+  mailSavedHint:(name)=>`如果名為 ${name} 的檔案已經儲存,請把它加入到即將開啟的電郵作為附件,然後送出。如果沒有儲存到檔案,或者沒有電郵開啟,請按下面的「複製結果」,再貼到電郵寄給 sidney.tam@connect.polyu.hk。`,
+  mailAgain:"清單中沒有電郵程式?請再按一次「電郵」。",
+  retAsk:"我之前玩過,輸入編號",
+  fNext:"🔄 此裝置下一位玩家"
+ },
+ zhs:{
+  cTitle:"参加研究——请先阅读",
+  cP1:"这个游戏是香港理工大学工程博士研究生谭国滔(指导老师:张志辉教授)博士研究的一部分,探讨游戏如何令健康科技更具吸引力。此游戏最初为跌倒风险评估平台而设计。",
+  cP2:"如你同意参加,游戏会记录你的游玩数据(距离、金币、操控平衡)及每次到访时六条简短问题的答案。我们会邀请你在三个不同的日子各玩一次,每次约五分钟。不会收集姓名或联络资料;结果只以整体统计形式发表。你可随时关闭页面退出。",
+  cP3:"完成后,只需按一下即可把匿名结果文件分享给研究员。参与纯属自愿。",
+  cRef:"研究员自行测试用的试验版本。查询:sidney.tam@connect.polyu.hk",
+  cAgree:"我同意——开始玩", cDecline:"不参加,谢谢",
+  eTitle:"几条小问题", eNote:"毋须姓名——只用作描述玩家群组。",
+  eAge:"你的年龄组别", eGender:"性别", eM:"男", eF:"女",
+  eEdu:"教育程度", eEdu1:"中学", eEdu2:"专上", eEdu3:"学士或以上",
+  ePrior:"你今年较早前有没有玩过这个滑雪游戏?", eNo:"没有", eYes:"有",
+  eGo:"继续前往游戏",
+  qTitle:"六条简短问题", qNote:"1 = 非常不同意 · 5 = 非常同意",
+  qGo:"完成——最后一步",
+  q1:"这个游戏是一个很好的协调力挑战。",
+  q2:"我愿意定期玩这个游戏。",
+  q3:"游戏的难度适合我的能力。",
+  q4:"看到自己的进步令我更想继续玩。",
+  lik1:"非常不同意", lik5:"非常同意",
+  fTitle:"多谢你的参与!",
+  fP1:"按「分享」以 CSV 文件发送结果(WhatsApp、微信、邮件或保存到文件)——或按「邮件」把文件以邮件附件发送。",
+  fShare:"📤 分享我的结果(CSV 文件)",
+  fEmail:"✉️ 用邮件发送结果文件",
+  fCopy:"📋 复制结果",
+  fCopied:"已复制!请粘贴到 WhatsApp 或电邮",
+  fDownload:"💾 保存为文件",
+  fP2:"发送至:sidney.tam@connect.polyu.hk(或 WhatsApp 给研究员)。请把文字原封不动发出。谢谢!",
+  fWx:"你正在微信中:按「复制结果」,然后粘贴到与研究员的微信对话并发送,就完成了!",
+  startRun:"▶ 开始滑雪", tiltOff:"📱 开启倾侧操控", tiltOn:"📱 倾侧操控已开", endEarly:"提前结束",
+  howSteer:"操控方法:← → 方向键、大按钮、触碰雪道左右两边,或倾侧装置。",
+  sumTitle:"这一局完成了", again:"⛷ 再玩一局", finish:"✅ 玩够了——去最后一步",
+  coachTitle:"教练",
+  coachStart:"出发!左右倾就可以在树林间穿插。每局 30 秒。",
+  runLineGoal:(m,c)=>`你滑到 ${m} 米,收集了 ${c} 个金币!`,
+  runLineTime:(m,c)=>`${m} 米、${c} 个金币——滑得真好!`,
+  trajTitle:"你每一局的级别", trajBest:"最佳",
+  shareText:"滑雪协调小游戏——我的匿名结果文件。请把此文件电邮至 sidney.tam@connect.polyu.hk",
+  coachGoalCont:"200米达标!继续滑,收集更多金币!",
+  coachUp:"滑得真好——雪道稍为放开了一点。",
+  coachDown:"教练把雪道调得柔和一点,让你找到节奏。",
+  coachHold:"保持稳定——你正处于最合适的状态。",
+  coachBump:"碰了一下——完全不用慢下来,前面的雪道反而更清爽了。",
+  endCoachGoal:(g,c,b)=>`你滑过了 ${g} 米!${c} 个金币,平衡度 ${b}%。`,
+  endCoachTime:(m,cap,c)=>`时间到!${cap} 秒内滑了 ${m} 米、${c} 个金币。每一局都是新开始。`,
+  gGoal:['恭喜你!','滑得漂亮!','你做到了!','太棒了!'],
+  gTime:['做得好!','很不错!','滑得真好!','好一局!'],
+  pts:' 分',
+  endStat:(m,c,goal)=>`${m} 米 · ${c} 金币 ×10 · `+(goal?'+50 达标奖励':'时间完成'),
+  endHint:'准备好就按「再玩一局」。',
+  endCoachOver:(m,c)=>`碰了三下,这一局在 ${m} 米结束——人人都会遇到!每一局都让你更熟悉雪道。再来一局吧!`,
+  gOver:['好尝试!','就差一点!','几乎成功!','不错的努力!'],
+  endProg:(lv,xp,c,t,dg)=>`⭐ 滑雪等级 ${lv} · 累计 ${xp} XP · 金币 ${c}/${t} · 灵巧闪避 ${dg}`,
+  endStatOver:(m,c)=>`${m} 米 · ${c} 金币 ×10 · 碰了三下结束`,
+  /* --- v3.2 PRO additions --- */
+  q5:"我觉得自己玩得越来越好。",
+  q6:"玩的时候,我觉得自己正在被测试或被评价。",
+  stProbePreT:"首先:30 秒固定雪道",
+  stProbePreP:"这一局用的是固定雪道,滑的时候不会调整,方便你看到自己每次到访的进步。照你喜欢的方式滑就可以,碰撞不会让这一局结束。",
+  stWarmT:"热身:15 秒",
+  stWarmP:"教练会利用这段短短的热身,找出最适合你的速度。这里的碰撞不计算。",
+  stPlayT:"现在正式开始",
+  stPlayP:"雪道会按你的表现自动调整。碰撞三次这一局便结束——再来一局就可以。想玩多少局都可以,玩够了就按「玩够了」。之后还有一局短的和六条问题,这次到访便完成。",
+  stProbePostT:"最后:30 秒固定雪道",
+  stProbePostP:"和开始时同一类型的固定雪道。照你喜欢的方式滑就可以。",
+  stGo:"▶ 开始", cont:"继续 ▶", visitN:(n)=>`第 ${n} 次到访`,
+  wbTitle:"欢迎回来!",
+  wbP:(pid,n,l)=>`你的编号是 ${pid}。这是第 ${n} 次到访。上次你达到第 ${l} 级。`,
+  wbGo:(n)=>`▶ 开始第 ${n} 次到访`, wbSend:"📤 再次发送之前的结果", fBack:"↩ 返回",
+  fCode:(pid,v)=>v>=3?`你的编号是 ${pid}。第 ${v} 次到访已完成——这是最后一次了。非常感谢你!`:`你的编号是 ${pid}——请记下或截图保存。第 ${v} 次到访已完成。请过几天再回来,用同一部手机、同样的方法打开游戏。如果游戏没有显示「欢迎回来」,请按「我玩过」并输入你的编号。`,
+  coachProbe:"固定雪道——滑的时候不会调整。放松滑就可以。",
+  coachWarm:"热身——我正在找出适合你的速度,这里的碰撞不计算。",
+  coachPlayStart:(l)=>`出发!这次由第 ${l} 级开始。碰撞三次这一局便结束。`,
+  coachHitLeft:(n)=>`碰了一下——没关系。再碰 ${n} 次这一局便结束。眼睛看远一点。`,
+  coachHitFree:"碰了一下——没关系,继续滑。",
+  runLinePlay:(l,m,c)=>`第 ${l} 级 · ${m} 米 · ${c} 个金币`,
+  runLineProbe:(a,f)=>`固定雪道完成:${f} 个障碍中你避开了 ${a} 个。`,
+  runLineProbeCmp:(a,f,a0,f0)=>a>=a0?`固定雪道完成:${f} 个中避开了 ${a} 个。你第一次是 ${f0} 个中避开 ${a0} 个。`:`固定雪道完成:${f} 个障碍中你避开了 ${a} 个。`,
+  runLineWarm:(l)=>`热身完成。你今天的起始级别:第 ${l} 级。`,
+  tipTitle:"教练提示",
+  tipClean:"这一局没有碰撞——下一局雪道会稍微快一点。继续往远处看。",
+  tipCoins:"这一局没有碰撞。接下来,试试顺路收集旁边的金币。",
+  tipLookAhead:"直线滑行时最容易碰到障碍。眼睛看远一点,早一点开始转弯。",
+  tipEarlier:"你已经转对了方向——只差一点点。一看见树就开始转,就能顺利滑过。",
+  tipGentle:"转得太大,容易滑向另一棵树。试试按短一点、轻一点,让滑雪者顺势滑过去。",
+  tipCoinTrap:"有金币把你引向了障碍。如果金币后面紧贴着一棵树,就放弃那个金币。",
+  tipCentre:"雪道边缘的空间比较少。每次转弯后慢慢回到中间,这样两边都有空间。",
+  hudCheck:"固定雪道", hudWarm:"热身", hudLevel:"级别",
+  storWarn:"这个浏览器无法保存你的进度,下次游戏不会记得你。请在关闭此页前先发送结果。",
+  endEarlyQ:"现在停止这一局吗?这一局不会计算在内。",
+  decT:"完全没有问题——多谢你!", decP:"你可以直接关闭此页面。", decBack:"↩ 返回",
+  nextQ:(pid)=>`要为新玩家重置此设备吗?${pid} 之后将无法在这里继续到访。`,
+  mailShareText:"滑雪游戏概念验证结果文件。请发送至:sidney.tam@connect.polyu.hk(请把这个地址填在「收件人」一栏)。",
+  mailAttachBody:(name)=>`请把保存在此设备上的结果文件添加为附件:\\n\\n    ${name}\\n\\n(通常在「下载」文件夹内。)如果找不到文件,请回到游戏按「复制结果」,然后粘贴在这里。谢谢!`,
+  mailSavedHint:(name)=>`如果名为 ${name} 的文件已经保存,请把它添加到即将打开的邮件作为附件,然后发送。如果没有保存到文件,或者没有邮件打开,请按下面的「复制结果」,再粘贴到邮件发给 sidney.tam@connect.polyu.hk。`,
+  mailAgain:"列表中没有邮件应用?请再按一次「邮件」。",
+  retAsk:"我之前玩过,输入编号",
+  fNext:"🔄 此设备下一位玩家"
+ }
+};
+/* Participant text for v4.1; original six end-of-visit items remain unchanged. */
+Object.assign(I18N.en,{
+ cTitle:'Stage 3B Pro v4.1 — please read',
+ cP1:'An experimental skiing game for Sidney K. T. Tam’s EngD research at The Hong Kong Polytechnic University (supervisor: Prof. Benny C. F. Cheung). Practise game-control skills; this is not a clinical balance test or a diagnosis.',
+ cP2:'The browser records game events, your optional feedback, the practice proposals, your choices and visit times under a participant code. Optional comments must not include your name, contact details or health information. A visit includes a 15-second warm-up, a 30-second set course, practice runs and an optional closing check and six questions. You may skip questions, pause or finish at any time.',
+ cP3:'Offline rules operate by default. Data remains in this browser until you export or share it. The separate optional AI setting, available only on a configured server, sends a limited performance summary and your selected feedback to the configured AI provider; sending your comment requires an additional choice. Participation and use of external AI are separate choices.',
+ cRef:'Researcher self-test only. No ethics coverage is asserted for this new build. Contact: sidney.tam@connect.polyu.hk',
+ cAgree:'Continue to self-test', eNote:'No name needed. These profile fields describe participants; they do not determine the challenge level.',
+ stWarmT:'1 · Warm up — 15 seconds',stWarmP:'Learn the controls. Hold left or right to steer; collect coins and avoid trees and rocks. This short warm-up estimates a starting pace. You may stop at any time.',
+ stProbePreT:'2 · Test yourself — 30-second set course',stProbePreP:'A fixed course records a comparison point. Its speed does not adapt and there are no guiding overlays. Bumps do not end this course. The result describes this game, not your health.',
+ stPlayT:'3 · Ready to go — targeted practice',stPlayP:'Practise at your current pace. Afterwards, tell us how it felt and review a proposed next activity. You choose whether to try it, change it, pause or finish.',
+ stProbePostT:'Optional closing set course — 30 seconds',stProbePostP:'A fixed course without adaptation or guidance. This is a comparison opportunity, not proof of learning or a medical test. You can skip it.',
+ coachTitle:'Practice guide', coachWarm:'Warm up: steer left and right; observe the controls.',coachProbe:'Fixed set course — no adaptation or guidance.',
+ coachPlayStart:l=>`Practice pace ${l}. Focus on the task; finish whenever you choose.`,
+ coachUp:'Warm-up pace adjusted.',coachHold:'Keep practising the chosen task.',
+ coachGoalCont:'Distance milestone recorded. Continue only for as long as you choose.',
+ coachHitFree:'A bump was recorded. Look towards the clear route.',coachHitLeft:n=>`Bump recorded. This run ends after ${n} more. A new practice option will be offered.`,
+ coachBump:'Bump recorded. Your completed practice remains in the record.',
+ coachDown:'The practice pace was adjusted.',
+ pStep4:'4 · PLAYER FEEDBACK',pFeedback:'Tell us how it felt',pFeelNote:'Your reply describes your experience. It is not a test of your ability. All answers are optional.',
+ pDifficulty:'How was the challenge?',pFeeling:'How did you feel?',pReason:'What most affected this run? (optional)',
+ pComment:'Tell us more, or what you might try next (optional)',pNoPersonal:'Do not include names, contact details or health information. Maximum 400 characters.',
+ pCloudOpt:'Use the configured external AI for this proposal. Send a limited performance summary and my selected feedback, without my code or profile.',
+ pCloudText:'Also send my written comment to the configured external AI. I have checked that it contains no identifying or health information.',
+ pSeePlan:'See my next practice',pSkip:'Skip feedback',pFinishToday:'Finish today',pNext:'Your next practice',pStep5:'5 · YOUR NEXT STEP',
+ pTryPlan:'Try this practice',pPause:'Pause',pChooseOther:'Choose a different practice',pVoluntary:'No automatic replay. You decide whether to continue; finishing does not remove your progress.',
+ pProgress:'View recorded progress',pPaused:'Take a pause',pPauseText:'The activity is paused. You can resume when ready or finish today.',pResume:'Resume',
+ pClosing:'Finish in your own way',pClosingText:'The closing set course and six questions are optional. Skipping them does not delete the gameplay already recorded.',
+ pClosingProbe:'Try the closing set course',pOnlyQuestions:'Questions only',pSaveFinish:'Finish without more tasks',
+ pRoundDone:'Run recorded',pAvoided:'Obstacles cleared',pCoins:'Coins collected',pPace:'Pace setting',pSeconds:'seconds',
+ pNotComparable:'Practice settings may differ. These numbers are not an adjusted learning score.',
+ pGoal:'Practice focus',pSettings:'Proposed settings',pBasis:'Why this proposal?',pSource:'Decision source',
+ pSourceLocal:'Offline rules',pSourceAI:'Configured external AI + bounded rules',pSourcePlayer:'Player choice',
+ pSourceFallback:'Offline fallback — external AI was unavailable or rejected',
+ pFetching:'Preparing the proposal. You may finish without waiting.',
+ pReasonUsed:'Comment suggestion: choose it below only if it matches what you meant.',
+ pKeyword:'This is a keyword suggestion, not AI interpretation.',pSupport:'Route guide',pNoSupport:'No visual guide',
+ pEasier:'A little easier',pSame:'Same pace',pHarder:'A little harder',pMoreSupport:'More support',pRest:'Pause suggested',
+ pPausePlan:'You reported tiredness. A pause is suggested. Resuming is your choice.',pPlanNote:'Only practice changes. Set-course settings stay fixed. These are proposed supports, not validated optimal settings.',
+ pFixedHistory:'Set-course record',pNoChecks:'No completed set course is available yet.',pVisit:'Visit',pCourse:'Course',pClear:'Cleared',pEdge:'Edge time',
+ pHistoryNote:'Forms and their mirrored versions are not yet empirically validated as equivalent. Consider coin collection, edge time and input mode; do not infer clinical improvement.',
+ pQuestSkip:'Skip unanswered questions and finish',pReturn:'Begin another visit',pReturnWhy:'What brought you back? (optional)',pReturnSelf:'My own choice',pReturnPrompt:'A reminder or invitation',pReturnUnknown:'Prefer not to say',
+ pCode:(pid,v)=>`Your code: ${pid} · Visit ${v} ended. Keep this code and save your results before closing. Opening the same file in the same browser may restore your record. A typed code links records but does not restore lost history.`,
+ pWelcome:(pid,n,l)=>`Your code is ${pid}. You can start visit ${n}. Last recorded practice pace: ${l}. A new warm-up will check the starting setting.`,
+ pStorage:'This browser could not save your record. Export now; a code alone cannot restore lost data.',
+ pStorageReset:'The archive could not be saved. Export the record first. Reset was cancelled.',
+ pSystem:'v4.1 · Feedback-informed practice · Offline rules by default',pProbeSkip:'Skip this task and finish',
+ pInterrupt:'A previous run was interrupted. Its partial record was preserved; interruption is not classified as abandonment.',
+ pJson:'Save complete JSON record',pResearch:'Research tools',pSettingsLabel:'Software settings',
+ pCloudReady:'External AI is configured but is used only with the choices on the feedback screen.',pCloudOff:'External AI is not connected. The game and all offline adaptation work without a key.',
+ pDelete:'Delete this device’s v4.1 records',pDeleteConfirm:'Permanently delete this copy’s current and archived v4.1 records from this browser? Export first. Earlier study versions are not changed.',
+ fP1:'Save or share your coded CSV results. JSON includes the complete audit record. No automatic submission takes place.',
+ fP2:'Research contact: sidney.tam@connect.polyu.hk. Sharing is your choice.',qNote:'1 = strongly disagree · 5 = strongly agree. Any item may be skipped.',
+ fShare:'Share CSV results',fCopy:'Copy CSV results',fDownload:'Save CSV results',fEmail:'E-mail results',
+ endEarlyQ:'Finish this run now? The partial record will be kept.',
+ stGo:'Start',cont:'Continue',pContinue:'Continue',pRunPause:'Pause run',pRunFinish:'End run',
+ gTime:['Run recorded'],gGoal:['Run recorded'],gOver:['Run recorded'],
+ pActions:{easy:'Too easy',right:'About right',hard:'Too hard',enjoying:'Enjoying it',okay:'Okay',frustrated:'Frustrated',tired:'Tired',bored:'Bored',speed:'Speed',instructions:'Instructions',visibility:'Seeing objects',coins:'Coin choices',turns:'Steering',more_challenge:'More challenge',other:'Other'},
+ pGoals:{look_ahead:'Look farther up the slope and start your turn earlier.',gentle_turns:'Use shorter taps to make gentler turns.',return_centre:'After a turn, return towards the middle when clear.',safe_coins:'Leave a coin when collecting it would take you into an obstacle.',route_choice:'Focus on the clear route; the visual marker is a practice cue.'},
+ pWhys:{consolidate:'Consolidate the current task; an increase is not assumed necessary.',reported_tired:'You reported tiredness; taking a pause is a valid next step.',reported_clarity:'You reported an instruction or visibility difficulty; add a visual route cue rather than infer low capability.',welcome_challenge:'You described a hard but enjoyable challenge; retain the pace and offer support.',reported_demand:'Your selected feedback indicates that a gentler pace may be useful.',recorded_errors:'The last attempt included several errors; a slightly gentler practice is proposed.',ready_for_challenge:'Recorded obstacle clearance and your feedback support trying a modest increase.',different_goal:'Try a different focus with support, rather than increase the pace automatically.',limited_evidence:'There were too few obstacle events to infer a change; retain the pace.',ai_suggestion:'The configured AI proposed this action. Local bounds and the player’s choice still control the next run.',player_choice:'You chose this practice instead of the original proposal.'}
+});
+Object.assign(I18N.zh,{
+ cTitle:'Stage 3B Pro v4.1——請先閱讀',cP1:'香港理工大學工程博士研究生譚國滔的實驗滑雪遊戲（指導老師：張志輝教授）。練習遊戲操控技能；不是臨床平衡測試或診斷。',
+ cP2:'瀏覽器會以玩家編號記錄遊戲事件、自願提供的回饋、練習建議、你的選擇及到訪時間。請勿在文字中提供姓名、聯絡或健康資料。每次包含15秒熱身、30秒固定雪道及練習；最後的固定雪道和六條問題均可跳過。你可隨時暫停或結束。',
+ cP3:'預設使用離線規則，資料留在此瀏覽器，直至你匯出或分享。只有已設定伺服器的版本才有自選外部AI功能：傳送有限遊戲摘要及選項回饋；傳送文字另需同意。參與遊戲與使用外部AI是兩個獨立選擇。',
+ cRef:'研究員自測版；並不表示新版本已獲倫理核准。查詢：sidney.tam@connect.polyu.hk',cAgree:'繼續自測',
+ eNote:'毋須姓名。這些資料描述玩家群組，不用於决定難度。',
+ stWarmT:'1 · 熱身——15秒',stWarmP:'熟悉操控。按住左或右移動，收集金幣並避開樹和石頭。熱身用於估計起始速度；你可隨時結束。',
+ stProbePreT:'2 · 試試自己——30秒固定雪道',stProbePreP:'固定雪道提供比較紀錄。速度不變，沒有路線提示；碰撞不會提早結束。結果只描述遊戲表現，不是健康判斷。',
+ stPlayT:'3 · 準備出發——針對性練習',stPlayP:'按目前速度練習，然後告訴我們感受並查看下一次練習建議。你可以接受、另選、暫停或結束。',
+ stProbePostT:'自選：最後30秒固定雪道',stProbePostP:'固定雪道不會調節難度或提供路線提示。這只是比較機會，不是學習證明或醫學測試；可以跳過。',
+ coachTitle:'練習提示',coachWarm:'熱身：左右移動，熟悉操控。',coachProbe:'固定雪道：沒有難度調節或路線提示。',coachPlayStart:l=>`練習速度設定 ${l}。專注任務，隨時可以結束。`,
+ coachUp:'已調整熱身速度。',coachHold:'繼續練習所選任務。',coachGoalCont:'已記錄距離里程。是否繼續由你決定。',coachHitFree:'已記錄碰撞，望向空曠路線。',coachHitLeft:n=>`已記錄碰撞，再碰 ${n} 次本局結束，然後可選擇新的練習。`,coachDown:'已調整練習速度。',
+ pStep4:'4 · 玩家回饋',pFeedback:'告訴我們你的感受',pFeelNote:'你的回答描述體驗，不是能力測試；所有問題均可跳過。',pDifficulty:'挑戰程度如何？',pFeeling:'你感覺如何？',pReason:'甚麼最影響這一局？（自選）',pComment:'補充感受或下次想怎樣做（自選）',pNoPersonal:'請勿填寫姓名、聯絡或健康資料；最多400字。',
+ pCloudOpt:'這次建議使用已設定的外部AI。傳送有限表現摘要及所選回饋，不含編號或個人檔案。',pCloudText:'另同意傳送我的文字給已設定的外部AI；我已確認沒有身份或健康資料。',
+ pSeePlan:'查看下次練習',pSkip:'跳過回饋',pFinishToday:'今天結束',pNext:'你的下一次練習',pStep5:'5 · 下一步由你決定',pTryPlan:'試試這個練習',pPause:'暫停',pChooseOther:'選擇另一個練習',pVoluntary:'不會自動重玩；是否繼續由你決定，結束不會刪除進度。',pProgress:'查看表現紀錄',pPaused:'休息一下',pPauseText:'活動已暫停；準備好可繼續，或今天結束。',pResume:'繼續',
+ pClosing:'按你的方式結束',pClosingText:'最後固定雪道和六條問題均可跳過。跳過不會刪除已記錄的遊戲資料。',pClosingProbe:'試試最後固定雪道',pOnlyQuestions:'只回答問題',pSaveFinish:'不再做任務，結束',
+ pRoundDone:'已記錄這一局',pAvoided:'避開障礙',pCoins:'收集金幣',pPace:'速度設定',pSeconds:'秒',pNotComparable:'練習設定可能不同；這些數字不是經調整的學習分數。',pGoal:'練習重點',pSettings:'建議設定',pBasis:'為甚麼有這個建議？',pSource:'建議來源',pSourceLocal:'離線規則',pSourceAI:'已設定外部AI＋限制規則',pSourcePlayer:'玩家選擇',pSourceFallback:'離線備援——外部AI不可用或回應被拒',pFetching:'正在準備建議；你可不等待而直接結束。',
+ pReasonUsed:'文字建議：只有符合你的意思才按下列選項確認。',pKeyword:'這是關鍵字提示，不是AI理解。',pSupport:'路線提示',pNoSupport:'沒有視覺提示',pEasier:'容易一點',pSame:'相同速度',pHarder:'難一點',pMoreSupport:'更多支援',pRest:'建議暫停',pPausePlan:'你表示疲倦，建議休息；是否繼續由你決定。',pPlanNote:'只會調整練習；固定雪道不變。這些是待評估建議，不是已驗證的最佳設定。',
+ pFixedHistory:'固定雪道紀錄',pNoChecks:'暫無完成的固定雪道紀錄。',pVisit:'到訪',pCourse:'雪道',pClear:'避開',pEdge:'邊緣時間',pHistoryNote:'雪道及鏡像版本尚未經實證驗證等同。需結合金幣、邊緣時間及輸入方式解讀；不可推論臨床改善。',
+ pQuestSkip:'跳過未答問題並結束',pReturn:'開始另一次到訪',pReturnWhy:'這次為甚麼回來？（自選）',pReturnSelf:'自行決定',pReturnPrompt:'收到提醒或邀請',pReturnUnknown:'不想回答',
+ pCode:(p,v)=>`你的編號：${p} · 第${v}次到訪已結束。請記下編號並先儲存結果。相同瀏覽器開啟同一檔案可能恢復紀錄；輸入編號只可連結紀錄，不能恢復已遺失資料。`,pWelcome:(p,n,l)=>`你的編號是 ${p}，可以開始第${n}次到訪。上次速度設定 ${l}；新的熱身會再檢查起始設定。`,
+ pStorage:'此瀏覽器無法儲存紀錄。請立即匯出，單靠編號不能還原資料。',pStorageReset:'無法儲存封存紀錄，已取消重設。請先匯出。',pSystem:'v4.1 · 回饋導向練習 · 預設離線規則',pProbeSkip:'跳過此任務並結束',pInterrupt:'上次遊戲中斷，已保留部分紀錄；不會自動視為放棄。',pJson:'儲存完整JSON紀錄',pResearch:'研究工具',pSettingsLabel:'軟體設定',pCloudReady:'已設定外部AI，只有在回饋頁自選同意才會使用。',pCloudOff:'未連接外部AI；遊戲與離線調節毋須金鑰。',pDelete:'刪除此裝置的v4.1紀錄',pDeleteConfirm:'永久刪除此副本在瀏覽器內的目前及封存v4.1紀錄？請先匯出。之前研究版本不變。',
+ fP1:'儲存或分享編碼CSV結果；JSON包含完整紀錄。不會自動傳送。',fP2:'研究聯絡：sidney.tam@connect.polyu.hk。分享由你決定。',qNote:'1＝非常不同意 · 5＝非常同意；每題均可跳過。',fShare:'分享CSV結果',fCopy:'複製CSV結果',fDownload:'儲存CSV結果',fEmail:'電郵結果',endEarlyQ:'現在結束本局？部分紀錄仍會保留。',stGo:'開始',cont:'繼續',pContinue:'繼續',pRunPause:'暫停本局',pRunFinish:'結束本局',gTime:['已記錄這一局'],gGoal:['已記錄這一局'],gOver:['已記錄這一局'],
+ pActions:{easy:'太容易',right:'適中',hard:'太難',enjoying:'享受挑戰',okay:'還可以',frustrated:'感到挫折',tired:'疲倦',bored:'無聊',speed:'速度',instructions:'說明',visibility:'看清物件',coins:'金幣選擇',turns:'操控',more_challenge:'更多挑戰',other:'其他'},
+ pGoals:{look_ahead:'望向較遠的雪道，早一點轉彎。',gentle_turns:'用短一點的按壓，較輕柔地轉彎。',return_centre:'轉彎後在安全情況下回到中間。',safe_coins:'如果金幣會引你碰到障礙，就放棄那個金幣。',route_choice:'專注空曠路線，視覺標記是練習提示。'},
+ pWhys:{consolidate:'鞏固目前技能，不假設必須加難。',reported_tired:'你表示疲倦，休息也是合適的下一步。',reported_clarity:'你指出說明或視覺問題，增加路線提示而非推論能力不足。',welcome_challenge:'你覺得難但享受挑戰，保留速度並增加支援。',reported_demand:'根據所選回饋，較慢的速度可能有幫助。',recorded_errors:'上次有較多錯誤，建議較慢的練習。',ready_for_challenge:'障礙紀錄與回饋支持嘗試小幅增加難度。',different_goal:'改變練習重點並提供支援，不自動加速。',limited_evidence:'障礙事件不足以判斷改變，先保留速度。',ai_suggestion:'已設定AI提出此建議；限制規則及你的選擇決定下一局。',player_choice:'你選擇此練習取代原來建議。'}
+});
+
+/* Simplified Chinese UI text. Final linguistic and instrument review required before recruitment. */
+Object.assign(I18N.zhs,{
+ cTitle:'Stage 3B Pro v4.1——请先阅读',cP1:'香港理工大学工程博士研究生谭国滔的实验滑雪游戏（指导老师：张志辉教授）。练习游戏操控技能；不是临床平衡测试或诊断。',
+ cP2:'浏览器会以玩家编号记录游戏事件、自愿提供的反馈、练习建议、你的选择及到访时间。请勿在文字中提供姓名、联络或健康资料。每次包含15秒热身、30秒固定雪道及练习；最后的固定雪道和六条问题均可跳过。你可随时暂停或结束。',
+ cP3:'预设使用离线规则，资料留在此浏览器，直至你汇出或分享。只有已设定服务器的版本才有自选外部AI功能：传送有限游戏摘要及选项反馈；传送文字另需同意。参与游戏与使用外部AI是两个独立选择。',
+ cRef:'研究员自测版；并不表示新版本已获伦理核准。查询：sidney.tam@connect.polyu.hk',cAgree:'继续自测',
+ eNote:'毋须姓名。这些资料描述玩家群组，不用于决定难度。',
+ stWarmT:'1 · 热身——15秒',stWarmP:'熟悉操控。按住左或右移动，收集金币并避开树和石头。热身用于估计起始速度；你可随时结束。',
+ stProbePreT:'2 · 试试自己——30秒固定雪道',stProbePreP:'固定雪道提供比较纪录。速度不变，没有路线提示；碰撞不会提早结束。结果只描述游戏表现，不是健康判断。',
+ stPlayT:'3 · 准备出发——针对性练习',stPlayP:'按目前速度练习，然后告诉我们感受并查看下一次练习建议。你可以接受、另选、暂停或结束。',
+ stProbePostT:'自选：最后30秒固定雪道',stProbePostP:'固定雪道不会调节难度或提供路线提示。这只是比较机会，不是学习证明或医学测试；可以跳过。',
+ coachTitle:'练习提示',coachWarm:'热身：左右移动，熟悉操控。',coachProbe:'固定雪道：没有难度调节或路线提示。',coachPlayStart:l=>`练习速度设定 ${l}。专注任务，随时可以结束。`,
+ coachUp:'已调整热身速度。',coachHold:'继续练习所选任务。',coachGoalCont:'已记录距离里程。是否继续由你决定。',coachHitFree:'已记录碰撞，望向空旷路线。',coachHitLeft:n=>`已记录碰撞，再碰 ${n} 次本局结束，然后可选择新的练习。`,coachDown:'已调整练习速度。',
+ pStep4:'4 · 玩家反馈',pFeedback:'告诉我们你的感受',pFeelNote:'你的回答描述体验，不是能力测试；所有问题均可跳过。',pDifficulty:'挑战程度如何？',pFeeling:'你感觉如何？',pReason:'什么最影响这一局？（自选）',pComment:'补充感受或下次想怎样做（自选）',pNoPersonal:'请勿填写姓名、联络或健康资料；最多400字。',
+ pCloudOpt:'这次建议使用已设定的外部AI。传送有限表现摘要及所选反馈，不含编号或个人文件。',pCloudText:'另同意传送我的文字给已设定的外部AI；我已确认没有身份或健康资料。',
+ pSeePlan:'查看下次练习',pSkip:'跳过反馈',pFinishToday:'今天结束',pNext:'你的下一次练习',pStep5:'5 · 下一步由你决定',pTryPlan:'试试这个练习',pPause:'暂停',pChooseOther:'选择另一个练习',pVoluntary:'不会自动重玩；是否继续由你决定，结束不会删除进度。',pProgress:'查看表现纪录',pPaused:'休息一下',pPauseText:'活动已暂停；准备好可继续，或今天结束。',pResume:'继续',
+ pClosing:'按你的方式结束',pClosingText:'最后固定雪道和六条问题均可跳过。跳过不会删除已记录的游戏资料。',pClosingProbe:'试试最后固定雪道',pOnlyQuestions:'只回答问题',pSaveFinish:'不再做任务，结束',
+ pRoundDone:'已记录这一局',pAvoided:'避开障碍',pCoins:'收集金币',pPace:'速度设定',pSeconds:'秒',pNotComparable:'练习设定可能不同；这些数字不是经调整的学习分数。',pGoal:'练习重点',pSettings:'建议设定',pBasis:'为什么有这个建议？',pSource:'建议来源',pSourceLocal:'离线规则',pSourceAI:'已设定外部AI＋限制规则',pSourcePlayer:'玩家选择',pSourceFallback:'离线备援——外部AI不可用或回应被拒',pFetching:'正在准备建议；你可不等待而直接结束。',
+ pReasonUsed:'文字建议：只有符合你的意思才按下列选项确认。',pKeyword:'这是关键字提示，不是AI理解。',pSupport:'路线提示',pNoSupport:'没有视觉提示',pEasier:'容易一点',pSame:'相同速度',pHarder:'难一点',pMoreSupport:'更多支援',pRest:'建议暂停',pPausePlan:'你表示疲倦，建议休息；是否继续由你决定。',pPlanNote:'只会调整练习；固定雪道不变。这些是待评估建议，不是已验证的最佳设定。',
+ pFixedHistory:'固定雪道纪录',pNoChecks:'暂无完成的固定雪道纪录。',pVisit:'到访',pCourse:'雪道',pClear:'避开',pEdge:'边缘时间',pHistoryNote:'雪道及镜像版本尚未经实证验证等同。需结合金币、边缘时间及输入方式解读；不可推论临床改善。',
+ pQuestSkip:'跳过未答问题并结束',pReturn:'开始另一次到访',pReturnWhy:'这次为什么回来？（自选）',pReturnSelf:'自行决定',pReturnPrompt:'收到提醒或邀请',pReturnUnknown:'不想回答',
+ pCode:(p,v)=>`你的编号：${p} · 第${v}次到访已结束。请记下编号并先储存结果。相同浏览器开启同一文件可能恢复纪录；输入编号只可连结纪录，不能恢复已遗失资料。`,pWelcome:(p,n,l)=>`你的编号是 ${p}，可以开始第${n}次到访。上次速度设定 ${l}；新的热身会再检查起始设定。`,
+ pStorage:'此浏览器无法储存纪录。请立即汇出，单靠编号不能还原资料。',pStorageReset:'无法储存封存纪录，已取消重设。请先汇出。',pSystem:'v4.1 · 反馈导向练习 · 预设离线规则',pProbeSkip:'跳过此任务并结束',pInterrupt:'上次游戏中断，已保留部分纪录；不会自动视为放弃。',pJson:'储存完整JSON纪录',pResearch:'研究工具',pSettingsLabel:'软件设定',pCloudReady:'已设定外部AI，只有在反馈页自选同意才会使用。',pCloudOff:'未连接外部AI；游戏与离线调节毋须金钥。',pDelete:'删除此装置的v4.1纪录',pDeleteConfirm:'永久删除此副本在浏览器内的目前及封存v4.1纪录？请先汇出。之前研究版本不变。',
+ fP1:'储存或分享编码CSV结果；JSON包含完整纪录。不会自动传送。',fP2:'研究联络：sidney.tam@connect.polyu.hk。分享由你决定。',qNote:'1＝非常不同意 · 5＝非常同意；每题均可跳过。',fShare:'分享CSV结果',fCopy:'复制CSV结果',fDownload:'储存CSV结果',fEmail:'电邮结果',endEarlyQ:'现在结束本局？部分纪录仍会保留。',stGo:'开始',cont:'继续',pContinue:'继续',pRunPause:'暂停本局',pRunFinish:'结束本局',gTime:['已记录这一局'],gGoal:['已记录这一局'],gOver:['已记录这一局'],
+ pActions:{easy:'太容易',right:'适中',hard:'太难',enjoying:'享受挑战',okay:'还可以',frustrated:'感到挫折',tired:'疲倦',bored:'无聊',speed:'速度',instructions:'说明',visibility:'看清物件',coins:'金币选择',turns:'操控',more_challenge:'更多挑战',other:'其他'},
+ pGoals:{look_ahead:'望向较远的雪道，早一点转弯。',gentle_turns:'用短一点的按压，较轻柔地转弯。',return_centre:'转弯后在安全情况下回到中间。',safe_coins:'如果金币会引你碰到障碍，就放弃那个金币。',route_choice:'专注空旷路线，视觉标记是练习提示。'},
+ pWhys:{consolidate:'巩固目前技能，不假设必须加难。',reported_tired:'你表示疲倦，休息也是合适的下一步。',reported_clarity:'你指出说明或视觉问题，增加路线提示而非推论能力不足。',welcome_challenge:'你觉得难但享受挑战，保留速度并增加支援。',reported_demand:'根据所选反馈，较慢的速度可能有帮助。',recorded_errors:'上次有较多错误，建议较慢的练习。',ready_for_challenge:'障碍纪录与反馈支持尝试小幅增加难度。',different_goal:'改变练习重点并提供支援，不自动加速。',limited_evidence:'障碍事件不足以判断改变，先保留速度。',ai_suggestion:'已设定AI提出此建议；限制规则及你的选择决定下一局。',player_choice:'你选择此练习取代原来建议。'}
+});
+
+
+/* Jev integration copy; live provider access is discovered without sending player data. */
+Object.assign(I18N.en,{"pVariety": "Try a different focus", "pSourceAI": "Jev + bounded rules", "pSourceBounded": "Local rule retained after Jev review", "pSourceFallback": "Offline proposal — Jev was unavailable or uncertain", "pCloudReady": "Jev is configured. You can choose whether to request a recommendation after each practice run.", "pCloudOff": "Offline practice is ready. Jev is not connected.", "pCloudOpt": "Ask Jev (TypeSafe) for this proposal. Send this run, a short practice history and selected player feedback, without my code or profile.", "pCloudText": "Also send my written comment to Jev. I have checked that it contains no identifying or health information.", "cP3": "Offline rules operate by default. Optional Jev use sends TypeSafe a limited summary of this run, up to 12 recent practice runs and their selected feedback. Sending the current written comment is a separate choice; earlier comments are not sent. No participant code, profile or contact details are sent automatically. Data remain in this browser until you export or share them.", "pUncertain": "Jev did not provide a clear preference. The offline proposal is shown; you can choose a different practice.", "pPausePlan": "A pause is available. You decide when to resume or finish.", "pSystem": "v4.1 · Player feedback and practice choices", "pReconnect": "Check Jev connection", "pDiagnostics": "Last decision: research details", "pNoDecision": "No next-practice decision has been recorded.", "pPreviousRecords": "Export earlier v4.0 browser records"});
+Object.assign(I18N.en.pWhys,{"mixed_evidence": "You asked for more interest or challenge, while the performance evidence does not yet support faster play. Try a different focus at the same pace, with a practice cue.", "jev_suggestion": "Jev suggested this option from your performance and selected feedback. You can change it, pause or finish."});
+Object.assign(I18N.zh,{"pVariety": "換一個練習重點", "pSourceAI": "Jev＋限制規則", "pSourceBounded": "Jev評估後保留本地規則", "pSourceFallback": "離線建議——Jev未能連接或判斷不明確", "pCloudReady": "已設定Jev。每次練習後，你可以選擇是否請它提出建議。", "pCloudOff": "可開始離線練習。尚未連接Jev。", "pCloudOpt": "這次請Jev（TypeSafe）提出建議。傳送本局、簡短練習紀錄及所選玩家回饋，不含編號或個人資料。", "pCloudText": "另同意傳送我的文字給Jev；我已確認沒有身份或健康資料。", "cP3": "預設使用離線規則。自選Jev會向TypeSafe傳送本局及最多12局近期練習摘要、所選玩家回饋。傳送本次文字須另行選擇；不傳送較早文字。不會自動傳送參加者編號、個人背景或聯絡資料。資料保留在此瀏覽器，直至你選擇匯出或分享。", "pUncertain": "Jev沒有明確偏好，現顯示離線建議；你可以另選練習。", "pPausePlan": "你可以休息，何時繼續或結束由你決定。", "pSystem": "v4.1 · 玩家回饋及練習選擇", "pReconnect": "檢查Jev連接", "pDiagnostics": "上次建議：研究詳情", "pNoDecision": "尚未記錄下次練習建議。", "pPreviousRecords": "匯出先前v4.0瀏覽器紀錄"});
+Object.assign(I18N.zh.pWhys,{"mixed_evidence": "你希望更有趣或更多挑戰，但表現紀錄尚不足以支持加速。以相同速度換一個重點，配合練習提示。", "jev_suggestion": "Jev根據表現及所選回饋提出此選項；你可以更改、暫停或結束。"});
+Object.assign(I18N.zhs,{"pVariety": "换一个练习重点", "pSourceAI": "Jev＋限制规则", "pSourceBounded": "Jev评估后保留本地规则", "pSourceFallback": "离线建议——Jev未能连接或判断不明确", "pCloudReady": "已设定Jev。每次练习后，你可以选择是否请它提出建议。", "pCloudOff": "可开始离线练习。尚未连接Jev。", "pCloudOpt": "这次请Jev（TypeSafe）提出建议。传送本局、简短练习纪录及所选玩家反馈，不含编号或个人资料。", "pCloudText": "另同意传送我的文字给Jev；我已确认没有身份或健康资料。", "cP3": "预设使用离线规则。自选Jev会向TypeSafe传送本局及最多12局近期练习摘要、所选玩家反馈。传送本次文字须另行选择；不传送较早文字。不会自动传送参加者编号、个人背景或联络资料。资料保留在此浏览器，直至你选择汇出或分享。", "pUncertain": "Jev没有明确偏好，现显示离线建议；你可以另选练习。", "pPausePlan": "你可以休息，何时继续或结束由你决定。", "pSystem": "v4.1 · 玩家反馈及练习选择", "pReconnect": "检查Jev连接", "pDiagnostics": "上次建议：研究详情", "pNoDecision": "尚未记录下次练习建议。", "pPreviousRecords": "汇出先前v4.0浏览器纪录"});
+Object.assign(I18N.zhs.pWhys,{"mixed_evidence": "你希望更有趣或更多挑战，但表现纪录尚不足以支持加速。以相同速度换一个重点，配合练习提示。", "jev_suggestion": "Jev根据表现及所选反馈提出此选项；你可以更改、暂停或结束。"});
+let LANG='en';
+function T(k){ const v=I18N[LANG][k]; return v===undefined?k:v; }
+function applyI18n(){
+  document.documentElement.lang=LANG==='zh'?'zh-Hant':LANG==='zhs'?'zh-Hans':'en';
+  setTimeout(()=>{ try{ applyWxMode(); }catch(e){} },0);
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const v=I18N[LANG][el.dataset.i18n];
+    if(typeof v==='string') el.textContent=v;
+  });
+  if(typeof updateJevUI==='function')updateJevUI();
+}
+/* --- persistent study state --- */
+const A3B_KEY='a3pro_state_v41_'+DEVICE_ID;   /* PRO: own storage key — never shares state with Stage 3B builds */
+let STORAGE_OK=true;   /* PRO: a multi-visit design must know when the browser cannot remember the player */
+try{ localStorage.setItem('a3pro_probe','1'); if(localStorage.getItem('a3pro_probe')!=='1') STORAGE_OK=false; localStorage.removeItem('a3pro_probe'); }catch(e){ STORAGE_OK=false; }
+let P3B=null;
+function loadP3B(){ try{ P3B=JSON.parse(localStorage.getItem(A3B_KEY)); }catch(e){ P3B=null; }
+  if(!P3B) P3B={pid:null, arm:null, lang:null, consent_ts:null, enrol:null, runs:[], states:{}, quest:null};
+  /* PRO: visit / stage / calibrated level persist across runs and visits */
+  if(!P3B.visit) P3B.visit=1;
+  if(!P3B.stage) P3B.stage='warmup';        /* probe_pre → warmup → play → probe_post → quest → done */
+  if(!P3B.visits) P3B.visits={};
+  if(!P3B.quests) P3B.quests={};
+  if(typeof P3B.level!=='number') P3B.level=null;
+  if(!P3B.playRunsThisVisit) P3B.playRunsThisVisit=0;
+  if(!P3B.design) P3B.design='single-arm-PoC';
+}
+function saveP3B(){ try{ localStorage.setItem(A3B_KEY, JSON.stringify(P3B)); }catch(e){ STORAGE_OK=false; } }
+const PID_ALPHA='ABCDEFGHJKMNPQRSTUVWXYZ23456789';   /* PRO: fixed length, no look-alike characters (I L O 0 1) */
+function newPid(){ let c='P'; for(let i=0;i<5;i++) c+=PID_ALPHA[Math.floor(Math.random()*PID_ALPHA.length)]; return c; }
+function showOvl(id){ document.querySelectorAll('.ovl').forEach(o=>o.classList.remove('show'));
+  if(id) document.getElementById(id).classList.add('show');
+  document.querySelectorAll('.storWarn').forEach(e=>{ e.style.display=STORAGE_OK?'none':'block'; }); }
+/* ============ CONFIG ============ */
+const TIME_CAPS     = {200:30, 400:60};  // time cap scales with run length
+const EVAL_INTERVAL_S = 6;           // agent evaluates every 6 s (fits inside a 20 s run)
+const DIFF_MIN = 0.30, DIFF_MAX = 1.50;
+const BASE_SPEED = 18;               // m/s at diff 1.0 (200 m reachable inside 20 s)
+const VIEW_M   = 70;                 // metres of slope visible ahead
+const HORIZON  = 0.30;               // horizon line as fraction of canvas height
+const SKIER_D  = 0.86;               // skier depth position (0 = horizon, 1 = bottom)
+const DEADZONE = 0.18;
+
+/* ============ iOS COMPAT ============ */
+if(!CanvasRenderingContext2D.prototype.roundRect){
+  CanvasRenderingContext2D.prototype.roundRect=function(x,y,w,h,r){
+    r=Math.min(r,w/2,h/2);
+    this.moveTo(x+r,y); this.arcTo(x+w,y,x+w,y+h,r); this.arcTo(x+w,y+h,x,y+h,r);
+    this.arcTo(x,y+h,x,y,r); this.arcTo(x,y,x+w,y,r); this.closePath(); return this;
+  };
+}
+
+/* ============ STATE ============ */
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let running=false, tPrev=0;
+let S=null;
+let sceneT=0;                        // global time for idle animation
+
+/* ---- v3.2 PRO: run types, deterministic check-run course, per-obstacle staircase, coach's tip ---- */
+const PROBE_DIFF=0.85, PRO_START=0.85, PRO_FLOOR=0.40;
+const PRO_CEIL=2.20, PRO_SPEED_CAP=1.60;   /* self-test 18 Sep: a skilled player sat on the old 1.50 ceiling at 94-100% cleared. Speed now tops out at x1.60; above that only obstacle density keeps rising. */
+const STAIR={warmup:{up:0.04,down:0.12}, play:{up:0.02,down:0.08}};   /* both converge near 75-80% cleared */
+const WARM_UP_MAX=0.35, WARM_DOWN_MAX=0.45;                          /* one warm-up can move the level only this far */
+function lv(d){ return Math.round(d*100); }
+function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a);
+  t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+const PROBE_NOB=16, PROBE_NCOIN=20;
+/* four fixed edge posts, identical in every course, so hugging an edge is never a free pass on the set course;
+   the mirrored twin flips them with everything else, so twins stay exactly matched */
+const PROBE_POSTS=[[6.5,0.98],[12.5,-0.98],[18.5,0.98],[24.0,-0.98]];
+function buildCourse(seed,cap,diff,mirror){
+  /* Every check run has exactly 16 obstacles (5 rocks, 11 trees) and 20 coins, fixed by the seed and by play
+     time, never by frame rate. All of them reach the skier before the run ends, so every check run is scored
+     out of the same totals. Lanes lean toward the middle of the slope so that standing still is not enough. */
+  const r=mulberry32(seed), ev=[];
+  const travel=(VIEW_M-(VIEW_M*(1-SKIER_D)+1.5))/(BASE_SPEED*diff);   /* seconds from spawn to the skier line */
+  const last=cap-travel-0.8;
+  const types=[]; for(let k=0;k<PROBE_NOB;k++) types.push(k<5?'rock':'tree');
+  for(let k=PROBE_NOB-1;k>0;k--){ const j=Math.floor(r()*(k+1)); const t=types[k]; types[k]=types[j]; types[j]=t; }
+  const gapO=(last-1.0)/(PROBE_NOB-1), gapC=(last-0.6)/(PROBE_NCOIN-1);
+  for(let k=0;k<PROBE_NOB;k++) ev.push({t:1.0+k*gapO+(r()-0.5)*0.5*gapO, kind:'ob', type:types[k], lane:0.85*(r()+r()-1), wob:r()*7});
+  PROBE_POSTS.forEach(([t,lane])=>ev.push({t:t, kind:'ob', type:'tree', lane:lane, wob:r()*7}));
+  for(let k=0;k<PROBE_NCOIN;k++) ev.push({t:Math.max(0.2,0.6+k*gapC+(r()-0.5)*0.5*gapC), kind:'coin', lane:0.8*(r()+r()-1), ph:r()*7});
+  if(mirror) ev.forEach(e=>{ e.lane=-e.lane; });
+  ev.sort((a,b)=>a.t-b.t); return ev;
+}
+/* Set-course schedule (candidate comparison forms; empirical equivalence untested). Two base courses A and B, each with a left-right mirrored twin with deterministic mirrored layouts; empirical equivalence is untested. Visit 1: A then A-mirrored; visit 2: B then B-mirrored; visit 3: A-mirrored then A; visit 4: B-mirrored
+   then B; and so on. So the within-visit comparison and the visit 1 vs visit 3 comparison are each made on twin courses. */
+const PROBE_BASE=[7043,7051];   /* chosen 18 Sep 2026 from 120 candidates: matched on passive hits (6 of 16), obstacles near the line (14), rocks among them (4) and lateral swing (5.62) */
+function probeForm(){ const v=(P3B.visit||1), post=(P3B.stage==='probe_post');
+  return {seed:PROBE_BASE[(v-1)%2], mirror:(post!==(Math.floor((v-1)/2)%2===1))}; }
+function runTypeOf(stage){ return (stage==='probe_pre'||stage==='probe_post')?'probe':(stage==='warmup'?'warmup':'play'); }
+function legacyNewSession(){
+  const nRuns=(P3B&&P3B.runs)?P3B.runs.length:0;
+  const stage=(P3B&&P3B.stage)||'probe_pre', rt=runTypeOf(stage);
+  const cap = rt==='warmup'?15:30;
+  const lvl=(P3B&&typeof P3B.level==='number')?P3B.level:null;
+  const d0 = rt==='probe' ? PROBE_DIFF
+           : rt==='warmup' ? (lvl===null?PRO_START:Math.max(PRO_FLOOR,+(lvl*0.9).toFixed(2)))
+           : (lvl===null?PRO_START:lvl);
+  const form = rt==='probe' ? probeForm() : null, seed = form?form.seed:null;
+  return {
+    pid: (P3B&&P3B.pid)||'UNSET',
+    sessNo: Math.min(999,nRuns+1),
+    arm: 'A',
+    zeroFail: false,
+    agentic: false,
+    runType: rt, stage: stage, visit: (P3B&&P3B.visit)||1,
+    seed: seed, mirror: !!(form&&form.mirror), courseLabel: form?(form.seed+(form.mirror?'m':'')):'',
+    course: form?buildCourse(form.seed,cap,PROBE_DIFF,form.mirror):null, courseIdx:0,
+    startISO: new Date().toISOString(), startDiff: d0, diffT: 0,
+    hitCauses: [], lastCoinT: -9, absLaneT: 0, edgeT: 0,
+    goal: 200,
+    cap: cap,
+    t0: Date.now(), playT:0, dist:0, coins:0, hits:0, livesLost:0,
+    maxSpeed:0, diff: d0,
+    skierLane:0, vx:0,
+    /* warm-up: three trees already on the slope, so placement starts within two seconds */
+    obstacles: rt==='warmup' ? [40,52,64].map(z=>({lane:-0.7+1.4*Math.random(), z:z, type:'tree', checked:false, wob:Math.random()*7})) : [],
+    coinsArr:[], flakes:[], scenery:[], spray:[],
+    onTrailT:0, offTrailT:0, avoided:0, spawned:(rt==='warmup'?3:0),
+    lastHitT:0, comboMax:1, dodges:0, coinScore:0, coinsMissed:0, coinsSpawned:0,
+    _inpReset:(INP.keys=INP.touch=INP.tilt=INP.pad=0),
+    obFactor:1.0, flashUntil:0, gameOver:false, endReason:'', goalReached:false,
+    lastEval:0, evalWindow:{hits:0, avoided:0, spawned:0, coins:0},
+    stateChanges:[], balSamples:[]
+  };
+}
+function stair(cleared){
+  /* Called once per obstacle, after S.avoided / S.hits was updated. Adaptive runs move the level; the set course never
+     does. EVERY outcome is written to the state log with the difficulty it was faced at (self-test 18 Sep: rows were
+     missing whenever the level sat at a limit, and on the set course), so a difficulty-adjusted analysis has all trials. */
+  const st=S.runType==='warmup'?STAIR.warmup:null, old=S.diff, k=S.avoided+S.hits;
+  if(st){
+    const lo=(S.runType==='warmup')?Math.max(PRO_FLOOR,S.startDiff-WARM_DOWN_MAX):PRO_FLOOR;
+    /* a first warm-up may climb +0.35; a return warm-up starts at 90% of the remembered level and may only re-confirm it */
+    const hi=(S.runType==='warmup')?Math.min(PRO_CEIL,(typeof P3B.level==='number')?Math.max(S.startDiff,P3B.level):S.startDiff+WARM_UP_MAX):PRO_CEIL;
+    S.diff=+Math.max(lo,Math.min(hi,S.diff+(cleared?st.up:-st.down))).toFixed(3);
+  }
+  const what=cleared?'cleared':'bump', dlt=+(S.diff-old).toFixed(3);   /* ASCII only, the true change, easy to parse */
+  logState(old,S.diff,'ob '+k+' '+what+' '+(!st?(S.runType==='probe'?'set-course':'practice-fixed-setting'):(dlt===0?'0.00 at-limit':((dlt>0?'+':'')+dlt.toFixed(2)))), st?'stair':S.runType==='probe'?'course':'practice-fixed');
+  if(st && Math.floor(S.diff*10+1e-9)>Math.floor(old*10+1e-9)){ SND.up(); coach(T('coachUp')); }
+}
+function pickTip(){
+  if(S.runType!=='play') return null;
+  if(S.hits===0){ const tot=S.coins+S.coinsMissed; return (tot>0 && S.coins/tot<0.4)?'tipCoins':'tipClean'; }
+  const c={}; S.hitCauses.forEach(x=>{ c[x]=(c[x]||0)+1; });
+  const top=Object.entries(c).sort((a,b)=>b[1]-a[1])[0][0];
+  return {coin:'tipCoinTrap',edge:'tipCentre',straight:'tipLookAhead',into:'tipGentle',late:'tipEarlier'}[top];
+}
+
+function logState(oldD,newD,reason,src){
+  const e={t:+S.playT.toFixed(1), playMin:+(S.playT/60).toFixed(2),
+    oldDiff:+oldD.toFixed(2), newDiff:+newD.toFixed(2),
+    dist:Math.round(S.dist), coins:S.coins, hits:S.hits,
+    balance:+curBalance().toFixed(1), reason, src};
+  S.stateChanges.push(e);
+  const dir = newD>oldD?'up':(newD<oldD?'down':'');
+  const arrow = newD>oldD?'▲':(newD<oldD?'▼':'▬');
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${e.t}s</td><td class="${dir}">${arrow} ${e.oldDiff}→${e.newDiff}</td><td>${reason}</td><td>${src}</td>`;
+  document.getElementById('stateBody').prepend(tr);
+}
+function curBalance(){
+  const tot=S.onTrailT+S.offTrailT;
+  const trail= tot>0 ? 100*S.onTrailT/tot : 100;
+  const avoid= S.spawned>0 ? 100*S.avoided/Math.max(1,(S.avoided+S.hits)) : 100;
+  return 0.5*trail+0.5*avoid;
+}
+
+/* ============ INPUT ============ */
+let padIndex=null, keyDir=0, touchDir=0, tiltDir=0, tiltOn=false;
+const INP={keys:0,touch:0,tilt:0,pad:0};
+function inpMode(){ const e=Object.entries(INP).filter(x=>x[1]>0);
+  if(!e.length) return 'none';
+  e.sort((a,b)=>b[1]-a[1]);
+  return e[0][0]+(e.length>1?'+':''); }
+window.addEventListener('gamepadconnected', e=>{ padIndex=e.gamepad.index; padUI(true, e.gamepad.id); });
+window.addEventListener('gamepaddisconnected', ()=>{ padIndex=null; padUI(false); });
+function padUI(on, id){
+  document.getElementById('padDot').className='dot'+(on?' on':'');
+  document.getElementById('padStatus').lastChild.textContent = on
+    ? ' Controller paired: '+ (id||'').slice(0,40) +' (axis 0 / D-pad → steer)'
+    : ' No controller detected — press a button or move the stick / foot pad to pair. Keyboard ← → also works.';
+}
+function pollInput(){
+  let dir=keyDir;
+  if(padIndex!==null){
+    const gp=navigator.getGamepads()[padIndex];
+    if(gp){
+      let ax=gp.axes[0]||0;
+      if(Math.abs(ax)>0.3 && running) INP.pad++;
+      if(Math.abs(ax)<DEADZONE) ax=0;
+      if(gp.buttons[14]&&gp.buttons[14].pressed) ax=-1;
+      if(gp.buttons[15]&&gp.buttons[15].pressed) ax=1;
+      if(ax!==0) dir=ax;
+    }
+  }
+  if(dir===0 && touchDir!==0) dir=touchDir;
+  if(dir===0 && tiltOn && Math.abs(tiltDir)>0.12) dir=tiltDir;
+  return Math.max(-1,Math.min(1,dir));
+}
+document.getElementById('pid').addEventListener('change',()=>{
+  const pid=document.getElementById('pid').value.trim();
+  if(!pid) return;
+  const last=+localStorage.getItem('a3pro40_last_sess_'+pid)||0;
+  if(last>0) document.getElementById('sessno').value=String(Math.min(7,last+1));
+});
+document.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'){keyDir=-1;INP.keys++;} if(e.key==='ArrowRight'){keyDir=1;INP.keys++;} });
+document.addEventListener('keyup',e=>{ if(e.key==='ArrowLeft'&&keyDir<0)keyDir=0; if(e.key==='ArrowRight'&&keyDir>0)keyDir=0; });
+function canvasSide(ev){
+  const r=cv.getBoundingClientRect();
+  const x=(ev.touches&&ev.touches.length?ev.touches[0].clientX:ev.clientX)-r.left;
+  return x < r.width/2 ? -1 : 1;
+}
+['touchstart','touchmove'].forEach(t=>cv.addEventListener(t,e=>{ e.preventDefault(); audioInit(); touchDir=canvasSide(e); INP.touch++; },{passive:false}));
+['touchend','touchcancel'].forEach(t=>cv.addEventListener(t,e=>{ e.preventDefault(); if(!e.touches||e.touches.length===0) touchDir=0; },{passive:false}));
+cv.addEventListener('mousedown',e=>{ touchDir=canvasSide(e); });
+window.addEventListener('mouseup',()=>{ touchDir=0; });
+function bindSteer(id,dir){
+  const b=document.getElementById(id);
+  const on=e=>{ e.preventDefault(); audioInit(); touchDir=dir,INP.touch++; };
+  const off=e=>{ e.preventDefault(); if(touchDir===dir) touchDir=0; };
+  b.addEventListener('touchstart',on,{passive:false}); b.addEventListener('touchend',off,{passive:false});
+  b.addEventListener('touchcancel',off,{passive:false});
+  b.addEventListener('mousedown',on); b.addEventListener('mouseup',off); b.addEventListener('mouseleave',off);
+}
+bindSteer('leftBtn',-1); bindSteer('rightBtn',1);
+document.getElementById('tiltBtn').onclick=async()=>{
+  audioInit();
+  try{
+    if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){
+      const p=await DeviceOrientationEvent.requestPermission();
+      if(p!=='granted'){ document.getElementById('tiltBtn').textContent='📱 Tilt not allowed'; return; }
+    }
+    tiltOn=!tiltOn;
+    document.getElementById('tiltBtn').textContent = tiltOn? '📱 Tilt ON':'📱 Enable tilt';
+    if(tiltOn && !window._tiltBound){
+      window._tiltBound=true;
+      window.addEventListener('deviceorientation',e=>{ if(tiltOn&&running)INP.tilt++;
+        if(!tiltOn){ tiltDir=0; return; }
+        let g=e.gamma;
+        if(typeof g!=='number') return;
+        if(window.matchMedia('(orientation: landscape)').matches){ g=e.beta; }
+        tiltDir=Math.max(-1,Math.min(1,(g||0)/22));
+      });
+    }
+  }catch(err){ document.getElementById('tiltBtn').textContent='📱 Tilt unavailable'; }
+};
+document.addEventListener('touchstart',()=>audioInit(),{once:true,passive:true});
+setInterval(()=>{ if(padIndex===null){ const gps=navigator.getGamepads?navigator.getGamepads():[];
+  for(const g of gps){ if(g){ padIndex=g.index; padUI(true,g.id); break; } } } },1000);
+
+
+/* ============ SOUND (Web Audio, synthesized — no external files) ============ */
+let AC=null, windGain=null, soundOn=true;
+function audioInit(){
+  if(AC) { if(AC.state==='suspended') AC.resume(); return; }
+  try{
+    AC=new (window.AudioContext||window.webkitAudioContext)();
+    // gentle wind: looped filtered noise, gain follows speed
+    const len=2*AC.sampleRate, buf=AC.createBuffer(1,len,AC.sampleRate), ch=buf.getChannelData(0);
+    for(let i=0;i<len;i++) ch[i]=Math.random()*2-1;
+    const src=AC.createBufferSource(); src.buffer=buf; src.loop=true;
+    const lp=AC.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=420;
+    windGain=AC.createGain(); windGain.gain.value=0;
+    src.connect(lp); lp.connect(windGain); windGain.connect(AC.destination); src.start();
+  }catch(e){ AC=null; }
+}
+function tone(freq,dur,type,vol,when=0,glide=null){
+  if(!AC||!soundOn) return;
+  const t=AC.currentTime+when, o=AC.createOscillator(), g=AC.createGain();
+  o.type=type; o.frequency.setValueAtTime(freq,t);
+  if(glide) o.frequency.exponentialRampToValueAtTime(glide,t+dur);
+  g.gain.setValueAtTime(0.0001,t);
+  g.gain.exponentialRampToValueAtTime(vol,t+0.015);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+  o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+dur+0.05);
+}
+const SND={
+  coin(){ tone(1046,0.09,'sine',0.18); tone(1568,0.14,'sine',0.15,0.07); },
+  bump(){ tone(140,0.22,'triangle',0.22,0,80);                       // soft thud, not a punishment
+          tone(90,0.18,'sine',0.12,0.02); },
+  up(){   tone(660,0.10,'sine',0.12); tone(880,0.14,'sine',0.12,0.09); },
+  down(){ tone(520,0.16,'sine',0.10,0,390); },
+  finish(){ [523,659,784,1046].forEach((f,i)=>tone(f,0.22,'sine',0.16,i*0.13)); }
+};
+document.getElementById('sndBtn').onclick=()=>{
+  soundOn=!soundOn; if(soundOn) audioInit();
+  if(windGain&&!soundOn) windGain.gain.value=0;
+  document.getElementById('sndBtn').textContent = soundOn?'🔊 Sound on':'🔇 Sound off';
+};
+
+/* Legacy unused external-model code removed. v4 uses the optional same-origin server adapter. */
+function coach(msg){
+  if(S && S.arm==='B') return;                       /* static arm: no coaching */
+  document.getElementById('coach').innerHTML='<b>'+T('coachTitle')+':</b> '+msg;
+  document.getElementById('coachFloat').textContent=msg;
+}
+
+/* ============ PERSPECTIVE HELPERS ============ */
+/* depth d: 0 at horizon, 1 at bottom of canvas */
+const easeD = d=>Math.pow(d,1.65);
+function depthY(d,H){ return H*(HORIZON + (1-HORIZON)*easeD(d)); }
+function halfW(d,W){ return W*(0.045 + 0.315*easeD(d)); }     // trail half-width
+function scaleAt(d){ return 0.14 + 0.86*easeD(d); }
+function laneToX(lane,d,W){ return W*0.5 + lane*halfW(d,W); }
+
+/* ============ GAME LOOP ============ */
+function spawn(dt){
+  if(S.course){                                              /* PRO check run: fixed course */
+    while(S.courseIdx<S.course.length && S.course[S.courseIdx].t<=S.playT){
+      const e=S.course[S.courseIdx++];
+      if(e.kind==='ob'){ S.obstacles.push({lane:e.lane, z:VIEW_M, type:e.type, checked:false, wob:e.wob}); S.spawned++; S.evalWindow.spawned++; }
+      else { S.coinsArr.push({lane:e.lane, z:VIEW_M, checked:false, ph:e.ph}); S.coinsSpawned++; }
+    }
+  } else {
+    const rate = (S.runType==='warmup') ? Math.max(1.0,0.75*S.diff) : 0.75*S.diff*S.obFactor;   // obstacles per second (warm-up: at least 1.0 for placement evidence, and it follows the level so a return warm-up is tested at its own density)
+    if(Math.random()<rate*dt){
+      const rockP = Math.min(0.45, 0.30 + 0.17*(S.diff-0.6));         // stones more common as difficulty rises
+      const type = Math.random()<rockP ? 'rock' : 'tree';
+      /* PRO: the whole reachable width is live, and a quarter of obstacles come at wherever the skier is now, so neither
+         standing still in the middle nor hugging an edge can raise the level: only steering can */
+      const lane = (Math.random()<0.25) ? Math.max(-1.05,Math.min(1.05,S.skierLane+(Math.random()-0.5)*0.4)) : -1.05+2.1*Math.random();
+      S.obstacles.push({lane, z:VIEW_M, type, checked:false, wob:Math.random()*7}); S.spawned++; S.evalWindow.spawned++;
+      if(type==='rock' && S.diff>=0.9 && Math.random()<0.35){          // boulder pair at higher difficulty
+        S.obstacles.push({lane:Math.max(-1.05,Math.min(1.05,lane+(Math.random()<0.5?-0.3:0.3))), z:VIEW_M+3, type:'rock', checked:false, wob:Math.random()*7});
+        S.spawned++; S.evalWindow.spawned++;
+      }
+    }
+    if(Math.random()<0.9*dt){ S.coinsArr.push({lane:-0.8+1.6*Math.random(), z:VIEW_M, checked:false, ph:Math.random()*7}); S.coinsSpawned++; }
+  }
+  if(Math.random()<8*dt){ S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02}); }
+  if(Math.random()<2.2*dt){ S.scenery.push({side:Math.random()<0.5?-1:1, off:0.12+0.55*Math.random(), z:VIEW_M, kind:Math.random()<0.8?'tree':'rock', big:0.8+0.6*Math.random()}); }
+}
+
+function easeAfterBump(){
+  // zero-failure response: speed stays exactly the same — only the slope thins out
+  S.obFactor=Math.max(0.40, S.obFactor*0.75);
+  const skierZ=VIEW_M*(1-SKIER_D);
+  let cleared=0;
+  S.obstacles=S.obstacles.filter(o=>{
+    if(o.z>skierZ+4 && o.z<skierZ+32 && Math.random()<0.6){ cleared++; return false; }
+    return true;
+  });
+  logState(S.diff,S.diff,`bump → cleared ${cleared} obstacle(s), density ×${S.obFactor.toFixed(2)} (speed unchanged)`,'bump');
+  coach(T('coachBump'));
+}
+function step(dt){
+  sceneT+=dt;
+  const spd = BASE_SPEED * Math.min(S.diff, PRO_SPEED_CAP);   /* PRO: speed tops out; density carries the higher levels */
+  S.maxSpeed=Math.max(S.maxSpeed,spd);
+  if(windGain&&soundOn) windGain.gain.value=Math.min(0.055, spd/380);
+  S.dist += spd*dt;
+  S.playT += dt;
+  S.diffT += S.diff*dt;                     /* PRO: time-weighted mean difficulty */
+
+  // steering (carve feel: velocity-damped lane movement)
+  const dir=pollInput();
+  S.vx += dir*5.2*dt; S.vx*=Math.pow(0.015,dt);
+  S.skierLane = Math.max(-1.05,Math.min(1.05, S.skierLane + S.vx*dt*2.2));
+  if(Math.abs(S.skierLane)<0.95) S.onTrailT+=dt; else S.offTrailT+=dt;
+  S.absLaneT+=Math.abs(S.skierLane)*dt; if(Math.abs(S.skierLane)>0.7) S.edgeT+=dt;   /* PRO: makes edge-hugging visible in the data */
+  // snow spray when carving
+  if(Math.abs(S.vx)>0.45 && Math.random()<22*dt){
+    S.spray.push({lane:S.skierLane+(Math.random()-0.5)*0.06, d:SKIER_D+0.015, vy:0.10+0.22*Math.random(), vx:(S.vx>0?-1:1)*(0.03+0.10*Math.random()), life:0.5});
+  }
+
+  spawn(dt);
+  for(const o of S.obstacles) o.z-=spd*dt;
+  for(const c of S.coinsArr) c.z-=spd*dt;
+  for(const s of S.scenery) s.z-=spd*dt;
+  for(const f of S.flakes){ f.y+=dt*(0.16+0.1*f.s); f.x+=f.drift*dt*10; }
+  for(const p of S.spray){ p.life-=dt; p.lane+=p.vx*dt; p.d+=p.vy*dt*0.15; }
+
+  // collisions where object depth crosses the skier line
+  const skierZ = VIEW_M*(1-SKIER_D);   // metres ahead corresponding to skier band
+  S.obstacles=S.obstacles.filter(o=>{
+    if(!o.checked && o.z<=skierZ+1.5){
+      o.checked=true;
+      if(Math.abs(o.lane-S.skierLane) < (o.type==='rock'?0.24:0.17)){
+        S.hits++; S.evalWindow.hits++;
+        S.lastHitT=S.playT;              /* combo resets - nothing banked is lost */
+        SND.bump(); S.flashUntil=S.playT+0.6;
+        { /* PRO: classify the bump so the coach can give one specific tip */
+          const rel=o.lane-S.skierLane; let cause;
+          if(S.playT-S.lastCoinT<1.2) cause='coin';
+          else if(Math.abs(S.skierLane)>0.65) cause='edge';
+          else if(Math.abs(dir)<0.1 && Math.abs(S.vx)<0.12) cause='straight';
+          else { const mv=Math.abs(dir)>=0.1?dir:S.vx;
+                 cause=(Math.abs(rel)>0.02 && Math.sign(mv)===Math.sign(rel))?'into':'late'; }
+          S.hitCauses.push(cause); }
+        if(S.runType==='play'&&!S.zeroFail){ S.livesLost++;
+          if(S.livesLost>=3){ S.gameOver=true; S.endReason='three bumps'; }
+          else coach(T('coachHitLeft')(3-S.livesLost)); }
+        else coach(T('coachHitFree'));
+        stair(false);
+        return false;
+      } else { S.avoided++; S.evalWindow.avoided++; stair(true);
+        if(Math.abs(o.lane-S.skierLane)<0.45){ S.dodges++; } }
+    }
+    return o.z>-4;
+  });
+  S.coinsArr=S.coinsArr.filter(c=>{
+    if(!c.checked && c.z<=skierZ+1.5){
+      c.checked=true;
+      if(Math.abs(c.lane-S.skierLane)<0.20){ S.coins++; S.evalWindow.coins++; S.lastCoinT=S.playT;
+        S.coinScore+=10*curCombo(); SND.coin(); return false; }
+      else { S.coinsMissed++; }
+    }
+    return c.z>-4;
+  });
+  S.scenery=S.scenery.filter(s=>s.z>-6);
+  S.flakes=S.flakes.filter(f=>f.y<1.05);
+  S.spray=S.spray.filter(p=>p.life>0);
+
+  /* PRO: the 6-second rule agent is replaced by the per-obstacle staircase (see stair()) */
+  if(S.balSamples.length < Math.floor(S.playT)){ S.balSamples.push(curBalance()); }
+  if(curCombo()>S.comboMax) S.comboMax=curCombo();
+
+  // END CONDITION (v3.0): every run lasts the full time cap; the distance
+  // goal is a mid-run bonus, not an early end
+  if(!S.goalReached && S.dist>=S.goal){
+    S.goalReached=true; SND.up();
+    coach(T('coachGoalCont'));
+  }
+  if(S.playT>=S.cap){ S.endReason=S.cap+' s complete'+(S.goalReached?' (goal reached)':''); endRun(); }
+  else if(S.gameOver){ endRun(); }
+}
+
+/* ============ ART ============ */
+function drawBackdrop(W,H){
+  // sky
+  const g=ctx.createLinearGradient(0,0,0,H*HORIZON+40);
+  g.addColorStop(0,'#BFDCEC'); g.addColorStop(0.7,'#E9F2F0'); g.addColorStop(1,'#F6EFDF');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H*HORIZON+40);
+  // sun
+  ctx.fillStyle='rgba(244,196,110,0.9)';
+  ctx.beginPath(); ctx.arc(W*0.78,H*0.12,26,0,7); ctx.fill();
+  ctx.fillStyle='rgba(244,196,110,0.25)';
+  ctx.beginPath(); ctx.arc(W*0.78,H*0.12,42,0,7); ctx.fill();
+  // far ridge
+  ctx.fillStyle='#C9D8DE';
+  ctx.beginPath(); ctx.moveTo(0,H*HORIZON);
+  ctx.lineTo(W*0.10,H*0.16); ctx.lineTo(W*0.22,H*HORIZON-14);
+  ctx.lineTo(W*0.34,H*0.11); ctx.lineTo(W*0.46,H*HORIZON-8);
+  ctx.lineTo(W*0.60,H*0.15); ctx.lineTo(W*0.74,H*HORIZON-16);
+  ctx.lineTo(W*0.88,H*0.13); ctx.lineTo(W,H*HORIZON);
+  ctx.closePath(); ctx.fill();
+  // snow caps
+  ctx.fillStyle='#FFFFFF';
+  [[0.10,0.16],[0.34,0.11],[0.60,0.15],[0.88,0.13]].forEach(([fx,fy])=>{
+    ctx.beginPath(); ctx.moveTo(W*fx,H*fy);
+    ctx.lineTo(W*fx-16,H*fy+22); ctx.lineTo(W*fx-6,H*fy+18);
+    ctx.lineTo(W*fx,H*fy+26); ctx.lineTo(W*fx+7,H*fy+17);
+    ctx.lineTo(W*fx+16,H*fy+22); ctx.closePath(); ctx.fill();
+  });
+  // near ridge
+  ctx.fillStyle='#DEE9EC';
+  ctx.beginPath(); ctx.moveTo(0,H*HORIZON+2);
+  ctx.lineTo(W*0.16,H*0.20); ctx.lineTo(W*0.30,H*HORIZON);
+  ctx.lineTo(W*0.52,H*0.21); ctx.lineTo(W*0.70,H*HORIZON);
+  ctx.lineTo(W*0.86,H*0.22); ctx.lineTo(W,H*HORIZON+2);
+  ctx.lineTo(W,H*HORIZON+30); ctx.lineTo(0,H*HORIZON+30);
+  ctx.closePath(); ctx.fill();
+}
+function drawPiste(W,H){
+  // snowfield
+  ctx.fillStyle='#EFF3F1'; ctx.fillRect(0,H*HORIZON,W,H*(1-HORIZON));
+  // groomed trail (converging trapezoid)
+  ctx.beginPath();
+  ctx.moveTo(W*0.5-halfW(0,W),depthY(0,H));
+  ctx.lineTo(W*0.5+halfW(0,W),depthY(0,H));
+  ctx.lineTo(W*0.5+halfW(1,W),H);
+  ctx.lineTo(W*0.5-halfW(1,W),H);
+  ctx.closePath();
+  const pg=ctx.createLinearGradient(0,H*HORIZON,0,H);
+  pg.addColorStop(0,'#F3F7F8'); pg.addColorStop(1,'#FFFFFF');
+  ctx.fillStyle=pg; ctx.fill();
+  // groomed corduroy lines
+  ctx.strokeStyle='rgba(190,210,218,0.45)'; ctx.lineWidth=1.5;
+  for(let i=1;i<7;i++){
+    const lane=-1+2*i/7;
+    ctx.beginPath();
+    ctx.moveTo(laneToX(lane,0,W),depthY(0,H));
+    ctx.lineTo(laneToX(lane,1,W),H);
+    ctx.stroke();
+  }
+  // trail edges (safety fencing dashes)
+  ctx.strokeStyle='#B7CCD4'; ctx.lineWidth=3; ctx.setLineDash([12,9]);
+  ctx.beginPath();
+  ctx.moveTo(W*0.5-halfW(0,W),depthY(0,H)); ctx.lineTo(W*0.5-halfW(1,W),H);
+  ctx.moveTo(W*0.5+halfW(0,W),depthY(0,H)); ctx.lineTo(W*0.5+halfW(1,W),H);
+  ctx.stroke(); ctx.setLineDash([]);
+}
+function shadow(x,y,r){
+  ctx.fillStyle='rgba(120,150,165,0.25)';
+  ctx.beginPath(); ctx.ellipse(x,y,r,r*0.32,0,0,7); ctx.fill();
+}
+function drawTree(x,y,s,wob){
+  const sway=Math.sin(sceneT*1.2+wob)*1.5*s;
+  shadow(x+4*s,y+4*s,26*s);
+  ctx.fillStyle='#7A5230'; ctx.fillRect(x-3.5*s,y-4*s,7*s,12*s);       // trunk
+  const tier=(w,h,dy,col)=>{ ctx.fillStyle=col; ctx.beginPath();
+    ctx.moveTo(x+sway*0.4,y-dy-h); ctx.lineTo(x-w+sway*0.2,y-dy); ctx.lineTo(x+w+sway*0.2,y-dy);
+    ctx.closePath(); ctx.fill(); };
+  tier(26*s,30*s,2*s,'#1E4A38');                                       // bottom
+  tier(20*s,26*s,20*s,'#276048');
+  tier(14*s,22*s,36*s,'#2F7355');                                      // top
+  // snow on tiers
+  ctx.fillStyle='rgba(255,255,255,0.85)';
+  [[26,2],[20,20],[14,36]].forEach(([w,dy])=>{
+    ctx.beginPath();
+    ctx.moveTo(x-w*s*0.55+sway*0.2, y-dy*s-6*s);
+    ctx.quadraticCurveTo(x+sway*0.3, y-dy*s-13*s, x+w*s*0.55+sway*0.2, y-dy*s-6*s);
+    ctx.quadraticCurveTo(x+sway*0.3, y-dy*s-3*s, x-w*s*0.55+sway*0.2, y-dy*s-6*s);
+    ctx.fill();
+  });
+}
+function drawRock(x,y,s){
+  shadow(x+3*s,y+5*s,20*s);
+  ctx.fillStyle='#8E98A0';
+  ctx.beginPath();
+  ctx.moveTo(x-18*s,y+6*s); ctx.lineTo(x-12*s,y-9*s); ctx.lineTo(x-2*s,y-14*s);
+  ctx.lineTo(x+10*s,y-10*s); ctx.lineTo(x+17*s,y+1*s); ctx.lineTo(x+13*s,y+7*s);
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle='#A9B2B9';                                             // lit facet
+  ctx.beginPath(); ctx.moveTo(x-12*s,y-9*s); ctx.lineTo(x-2*s,y-14*s);
+  ctx.lineTo(x+2*s,y-2*s); ctx.lineTo(x-8*s,y+1*s); ctx.closePath(); ctx.fill();
+  ctx.fillStyle='#6E7880';                                             // shaded facet
+  ctx.beginPath(); ctx.moveTo(x+10*s,y-10*s); ctx.lineTo(x+17*s,y+1*s);
+  ctx.lineTo(x+13*s,y+7*s); ctx.lineTo(x+2*s,y-2*s); ctx.closePath(); ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,0.9)';                               // snow cap
+  ctx.beginPath();
+  ctx.moveTo(x-12*s,y-9*s); ctx.quadraticCurveTo(x-4*s,y-17*s,x+10*s,y-10*s);
+  ctx.quadraticCurveTo(x+2*s,y-8*s,x-12*s,y-9*s); ctx.fill();
+}
+function drawCoin(x,y,s,ph){
+  const sq=Math.abs(Math.cos(sceneT*2.4+ph));                          // spin: squash x
+  shadow(x,y+11*s,10*s);
+  ctx.save(); ctx.translate(x,y); ctx.scale(Math.max(0.25,sq),1);
+  ctx.fillStyle='#D99A2B'; ctx.beginPath(); ctx.arc(0,0,10*s,0,7); ctx.fill();   // rim
+  ctx.fillStyle='#F2BE4C'; ctx.beginPath(); ctx.arc(0,0,7.6*s,0,7); ctx.fill();  // face
+  ctx.strokeStyle='#B67C18'; ctx.lineWidth=1.6*s;
+  ctx.beginPath(); ctx.arc(0,0,7.6*s,0,7); ctx.stroke();
+  ctx.fillStyle='#B67C18'; ctx.font=`bold ${9*s}px Verdana`;
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('★',0,0.5*s);
+  ctx.restore();
+  // sparkle
+  ctx.fillStyle='rgba(255,255,255,0.9)';
+  ctx.beginPath(); ctx.arc(x-4*s,y-5*s,1.6*s,0,7); ctx.fill();
+}
+function drawSkier(W,H){
+  const d=SKIER_D, x=laneToX(S.skierLane,d,W), y=depthY(d,H);
+  const lean=Math.max(-0.5,Math.min(0.5,S.vx*0.55));
+  const slowed=S.playT<S.flashUntil;
+  // ski tracks trailing to bottom edge
+  ctx.strokeStyle='rgba(160,185,200,0.55)'; ctx.lineWidth=3;
+  [-7,7].forEach(off=>{
+    ctx.beginPath(); ctx.moveTo(x+off,y+18);
+    ctx.quadraticCurveTo(x+off-lean*60, y+70, x+off-lean*140, H+10);
+    ctx.stroke();
+  });
+  shadow(x,y+20,26);
+  ctx.save(); ctx.translate(x,y); ctx.rotate(lean);
+  // skis (bright, with turned-up tips pointing away/up-slope)
+  ctx.strokeStyle='#C2483A'; ctx.lineWidth=5; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(-9,18); ctx.lineTo(-13,-16); ctx.moveTo(9,18); ctx.lineTo(13,-16); ctx.stroke();
+  ctx.fillStyle='#C2483A';
+  ctx.beginPath(); ctx.arc(-13,-16,3,0,7); ctx.fill();
+  ctx.beginPath(); ctx.arc(13,-16,3,0,7); ctx.fill();
+  // legs
+  ctx.strokeStyle='#27435C'; ctx.lineWidth=7;
+  ctx.beginPath(); ctx.moveTo(-6,14); ctx.lineTo(-5,2); ctx.moveTo(6,14); ctx.lineTo(5,2); ctx.stroke();
+  // body (jacket)
+  ctx.fillStyle= slowed? '#D96A4E' : '#2D6A8E';
+  ctx.beginPath();
+  ctx.moveTo(-10,4); ctx.quadraticCurveTo(-12,-16,0,-18);
+  ctx.quadraticCurveTo(12,-16,10,4); ctx.quadraticCurveTo(0,9,-10,4);
+  ctx.fill();
+  ctx.strokeStyle='rgba(255,255,255,0.5)'; ctx.lineWidth=1.5;          // zip line
+  ctx.beginPath(); ctx.moveTo(0,-16); ctx.lineTo(0,5); ctx.stroke();
+  // arms + poles angled back
+  ctx.strokeStyle= slowed? '#B65540' : '#245676'; ctx.lineWidth=5;
+  ctx.beginPath(); ctx.moveTo(-9,-10); ctx.lineTo(-17,-2); ctx.moveTo(9,-10); ctx.lineTo(17,-2); ctx.stroke();
+  ctx.strokeStyle='#7A5230'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.moveTo(-17,-2); ctx.lineTo(-21,16); ctx.moveTo(17,-2); ctx.lineTo(21,16); ctx.stroke();
+  // head: helmet + goggles band
+  ctx.fillStyle='#F1C79B'; ctx.beginPath(); ctx.arc(0,-24,7.5,0,7); ctx.fill();
+  ctx.fillStyle='#EFEFEA'; ctx.beginPath(); ctx.arc(0,-26,7.8,Math.PI,0); ctx.fill();
+  ctx.fillStyle='#22303B'; ctx.fillRect(-7,-27,14,4);
+  ctx.restore();
+}
+function draw(){
+  const W=cv.width,H=cv.height;
+  drawBackdrop(W,H);
+  drawPiste(W,H);
+
+  // depth-sorted world: scenery (off-trail), obstacles, coins
+  const items=[];
+  for(const s of S.scenery){ const d=1-s.z/VIEW_M; if(d>0&&d<1.15) items.push({d,kind:'scene',o:s}); }
+  for(const o of S.obstacles){ const d=1-o.z/VIEW_M; if(d>0&&d<1.15) items.push({d,kind:o.type,o}); }
+  for(const c of S.coinsArr){ const d=1-c.z/VIEW_M; if(d>0&&d<1.15) items.push({d,kind:'coin',o:c}); }
+  items.sort((a,b)=>a.d-b.d);
+  for(const it of items){
+    const d=Math.min(1,it.d), sc=scaleAt(d), y=depthY(d,H);
+    if(it.kind==='scene'){
+      const x= W*0.5 + it.o.side*(halfW(d,W)+ it.o.off*W*0.22*easeD(d)+10);
+      if(it.o.kind==='tree') drawTree(x,y,sc*it.o.big,it.o.z);
+      else drawRock(x,y,sc*it.o.big*0.8);
+    }
+    else if(it.kind==='tree') drawTree(laneToX(it.o.lane,d,W),y,sc,it.o.wob);
+    else if(it.kind==='rock') drawRock(laneToX(it.o.lane,d,W),y,sc*1.35);
+    else drawCoin(laneToX(it.o.lane,d,W),y,sc,it.o.ph);
+  }
+  // snow spray
+  for(const p of S.spray){
+    ctx.fillStyle=`rgba(255,255,255,${Math.max(0,p.life*1.6)})`;
+    ctx.beginPath(); ctx.arc(laneToX(p.lane,p.d,W),depthY(Math.min(1,p.d),H)-6,3.2,0,7); ctx.fill();
+  }
+  drawSkier(W,H);
+  // falling flakes (screen-space, in front)
+  ctx.fillStyle='rgba(255,255,255,.85)';
+  for(const f of S.flakes){ ctx.beginPath(); ctx.arc(f.x*W,f.y*H,2.1*f.s,0,7); ctx.fill(); }
+
+  // HUD
+  document.getElementById('hudL').textContent=Math.round(S.dist)+' m / '+S.goal+' m';
+  document.getElementById('hudM').textContent='⏱ '+Math.max(0,(S.cap-S.playT)).toFixed(0)+' s   '+(S.runType==='probe'?T('hudCheck'):S.runType==='warmup'?T('hudWarm'):T('hudLevel')+' '+lv(S.diff));
+  document.getElementById('hudR').textContent=
+    (S.runType==='play'&&!S.zeroFail?'💚'.repeat(Math.max(0,3-S.livesLost))+'  ':'')+
+    '🪙 '+S.coins+(curCombo()>1?' ×'+curCombo():'')+'   '+curScore()+' pts';
+}
+function loop(ts){
+  if(!running || RUN_PAUSED) return;
+  if(!tPrev) tPrev=ts;
+  const dt=Math.min(0.05,(ts-tPrev)/1000); tPrev=ts;
+  step(dt); if(running){ draw(); drawPracticeGuide(); checkpoint(false); requestAnimationFrame(loop); }
+}
+
+/* ============ RUN CONTROL ============ */
+document.getElementById('startBtn').onclick=()=>{
+  if(!P3B || !P3B.consent_ts || !P3B.enrol) return;   /* flow guard */
+  if(['probe_pre','warmup','play','probe_post'].indexOf(P3B.stage)<0) return;   /* PRO: a run must belong to a visit stage */
+  if(running) return;
+  audioInit();
+  const v=P3B.visit||1;
+  if(!P3B.visits[v]){ P3B.visits[v]={started_ts:new Date().toISOString(),
+      level_start:(typeof P3B.level==='number'?P3B.level:null)}; saveP3B(); }
+  S=newSession(); tPrev=0; running=true;
+  document.getElementById('stateBody').innerHTML='';
+  document.getElementById('summary').style.display='none';
+  document.getElementById('endBtn').style.display='inline-block';
+  document.getElementById('endBtnPlay').style.display='block';
+  document.getElementById('runEndOvl').style.display='none';
+  document.getElementById('coachPanel').style.display='block';
+  document.getElementById('modePill').textContent='';
+  logState(S.diff,S.diff,'run start - PRO '+S.runType+' (visit '+S.visit+', '+S.stage+', start x'+S.diff.toFixed(2)
+    +(S.seed!==null?', course '+S.courseLabel:'')+')','init');
+  document.getElementById('coachFloat').textContent='';
+  document.body.classList.add('playmode'); fitCanvas();
+  coach(S.runType==='probe'?T('coachProbe'):S.runType==='warmup'?T('coachWarm'):T('coachPlayStart')(lv(S.diff)));
+  requestAnimationFrame(loop);
+};
+
+document.getElementById('endBtn').onclick=()=>{ if(running){ S.endReason='ended early by staff'; endRun(true); } };
+function legacyEndRun(early){
+  running=false;
+  if(windGain) windGain.gain.value=0;
+  SND.finish();
+  document.getElementById('endBtn').style.display='none';
+  document.getElementById('endBtnPlay').style.display='none';
+  const avgBal = S.balSamples.length? S.balSamples.reduce((a,b)=>a+b,0)/S.balSamples.length : curBalance();
+  const goalHit = !!S.goalReached;
+  S.score = curScore() + (goalHit?50:0);
+  try{ if(S.pid && S.pid!=='UNSET') localStorage.setItem('a3pro40_last_sess_'+S.pid, String(S.sessNo)); }catch(e){}
+  const faced=S.avoided+S.hits, tipId=early?null:pickTip();
+  const causes={}; S.hitCauses.forEach(c=>{ causes[c]=(causes[c]||0)+1; });
+  S.result={
+    Participant_ID:S.pid, Session_No:S.sessNo,
+    Session_Date:new Date().toISOString().slice(0,10),
+    Duration_Min:+(S.playT/60).toFixed(2),
+    Distance_m:Math.round(S.dist), Coins:S.coins,
+    Obstacles_Hit:S.hits, Lives_Lost:S.livesLost,
+    Avg_Balance_pct:+avgBal.toFixed(1),
+    Max_Speed:+S.maxSpeed.toFixed(1),
+    AI_DiffMult:+S.diff.toFixed(2),
+    Reached_GameOver: S.gameOver? 'TRUE':'FALSE',
+    Score:S.score, Combo_Max:S.comboMax, Dodges:S.dodges,
+    Coins_Missed:S.coinsMissed, Input_Mode:inpMode(),
+    Post_FRA_Index:'', Notes:'pro:'+S.runType+'; cap='+S.cap+'s; end: '+(S.endReason||'unknown')+'; state changes='+S.stateChanges.length+(early?'; ENDED EARLY - not counted':'')
+  };
+  const dl=document.getElementById('sumList'); dl.innerHTML='';
+  for(const[k,v] of Object.entries(S.result)){ dl.insertAdjacentHTML('beforeend',`<dt>${k}</dt><dd>${v===''?'—':v}</dd>`); }
+  S.result.Arm=S.arm; S.result.Lang=LANG;
+  P3B.xp=(P3B.xp||0)+S.score;
+  S.result.XP_Total=P3B.xp;
+  S.result.Skier_Level=skierLevel(P3B.xp);
+  /* --- PRO fields: which visit, what kind of run, when, at what difficulty, how well --- */
+  S.result.Visit_No=S.visit; S.result.Run_Type=S.runType; S.result.Run_Stage=S.stage;
+  S.result.Run_Start_ts=S.startISO;
+  S.result.Start_Diff=+S.startDiff.toFixed(2);
+  S.result.Mean_Diff=+(S.diffT/Math.max(0.001,S.playT)).toFixed(3);
+  S.result.Obstacles_Faced=faced;
+  S.result.Avoid_Rate_pct=faced? +(100*S.avoided/faced).toFixed(1) : '';
+  S.result.Probe_Course=S.courseLabel;
+  S.result.Tip_ID=tipId||'';
+  S.result.Hit_Causes=Object.entries(causes).map(([k,n])=>k+':'+n).join(';');
+  S.result.Mean_AbsLane=+(S.absLaneT/Math.max(0.001,S.playT)).toFixed(3);
+  S.result.Edge_Time_pct=+(100*S.edgeT/Math.max(0.001,S.playT)).toFixed(1);
+  S.result.Counted=early?'FALSE':'TRUE';
+  /* --- PRO: carry the calibrated level forward and advance the visit stage --- */
+  if(!early){
+    if(S.runType==='warmup'||S.runType==='play') P3B.level=S.diff;
+    if(S.stage==='probe_pre') P3B.stage='warmup';
+    else if(S.stage==='warmup') P3B.stage='play';
+    else if(S.stage==='play') P3B.playRunsThisVisit=(P3B.playRunsThisVisit||0)+1;
+    else if(S.stage==='probe_post') P3B.stage='quest';
+  }
+  P3B.runs.push(S.result);
+  P3B.states[String(S.sessNo)]=S.stateChanges;
+  saveP3B();
+
+  /* --- participant-facing end card (visible in full-screen play mode) --- */
+  let line;
+  if(S.runType==='probe'){
+    const first=P3B.runs.find(r=>r.Run_Type==='probe' && r.Counted==='TRUE');
+    line=(first && first.Session_No!==S.sessNo)
+      ? T('runLineProbeCmp')(S.avoided,faced,first.Obstacles_Faced-first.Obstacles_Hit,first.Obstacles_Faced)
+      : T('runLineProbe')(S.avoided,faced);
+  } else if(S.runType==='warmup'){ line=T('runLineWarm')(lv(S.diff)); }
+  else { line=T('runLinePlay')(lv(S.diff),Math.round(S.dist),S.coins); }
+  const greets = S.gameOver? T('gOver') : goalHit? T('gGoal') : T('gTime');
+  document.getElementById('rcGreet').textContent='🎉 '+greets[Math.floor(Math.random()*greets.length)];
+  document.getElementById('rcScore').textContent=S.score+T('pts');
+  document.getElementById('rcLine').textContent=line;
+  document.getElementById('runLine').textContent=line;
+  const plays=P3B.runs.filter(r=>r.Run_Type==='play' && r.Counted==='TRUE');
+  let trajHTML='';
+  if(S.runType==='play' && plays.length){
+    const lvls=plays.map(r=>lv(r.AI_DiffMult)), best=Math.max(...lvls), bestNo=plays[lvls.lastIndexOf(best)].Session_No;
+    trajHTML='<b>'+T('trajTitle')+'</b>'+plays.slice(-5).map((r,i)=>{ const l=lv(r.AI_DiffMult);
+      return `<div style="display:flex;align-items:center;gap:8px"><span style="width:3.4em;font-size:.8rem">V${r.Visit_No}·${r.Session_No}</span>`+
+        `<div class="bar" style="flex:0 0 auto;width:${Math.max(6,45*l/Math.max(1,best))}%"></div>`+
+        `<span class="lbl">${l}${r.Session_No===bestNo?' ⭐ '+T('trajBest'):''}</span></div>`; }).join('');
+  }
+  [['rcTraj',trajHTML],['trajBox',trajHTML]].forEach(([id,h])=>{ const el=document.getElementById(id);
+    el.innerHTML=h; el.style.display=h?'block':'none'; });
+  const tipEl=document.getElementById('rcTip');
+  if(tipId){ tipEl.innerHTML='<b>'+T('tipTitle')+':</b> '+T(tipId); tipEl.style.display='block'; }
+  else { tipEl.innerHTML=''; tipEl.style.display='none'; }
+  const isPlay=(S.runType==='play');
+  document.getElementById('againOvl').style.display=isPlay?'':'none';
+  document.getElementById('finishOvl').style.display=(isPlay && (P3B.playRunsThisVisit||0)>=1)?'':'none';
+  document.getElementById('contOvl').style.display=isPlay?'none':'';
+  document.getElementById('summary').style.display='block';
+  drawEndOverlay(goalHit);
+  document.getElementById('runEndOvl').style.display='flex';
+  coach(!isPlay ? line
+       : S.gameOver? T('endCoachOver')(Math.round(S.dist),S.coins)
+       : goalHit? T('endCoachGoal')(S.goal,S.coins,avgBal.toFixed(0))
+       : T('endCoachTime')(Math.round(S.dist),S.cap,S.coins));
+  document.getElementById('coachFloat').textContent='';   /* the end card carries the message */
+}
+
+function drawEndOverlay(goalHit){
+  const W=cv.width,H=cv.height;
+  draw();                                        // final scene behind the HTML end card
+  ctx.fillStyle='rgba(18,48,39,0.35)'; ctx.fillRect(0,0,W,H);
+}
+
+
+/* ============ RPG-STYLE SCORING (v3.1): gains only, never deductions ============ */
+function curCombo(){ const c=S.playT-S.lastHitT; return c>=12?3:c>=6?2:1; }
+function curScore(){ return Math.round(S.dist)+S.coinScore+S.dodges*5; }
+function skierLevel(xp){ const th=[0,300,700,1200,1800,2600,3500,4600,6000,8000];
+  let l=1; for(let i=0;i<th.length;i++) if(xp>=th[i]) l=i+1; return l; }
+
+/* ============ EXPORT ============ */
+async function dlFile(name, text){
+  const mime=name.endsWith('.json')?'application/json;charset=utf-8':'text/csv;charset=utf-8';
+  const b=new Blob([text],{type:mime});
+  const f=new File([b],name,{type:mime});
+  if(navigator.canShare && navigator.canShare({files:[f]})){
+    try{ await navigator.share({files:[f], title:name,
+      text:'Alpine PRO proof-of-concept — session results. Please e-mail this file back to sidney.tam@connect.polyu.hk'});
+      return; }catch(e){ if(e && e.name==='AbortError') return; }
+  }
+  try{
+    const a=document.createElement('a');
+    const url=URL.createObjectURL(b); a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500);
+  }catch(e){
+    const w=window.open('about:blank');
+    if(w){ w.document.write('<pre>'+text.replace(/</g,'&lt;')+'</pre>'); w.document.title=name; }
+  }
+}
+/* ============ v3.0 STAGE 3B: single-file export ============ */
+function legacyBuildExport(){
+  return JSON.stringify({
+    build:BUILD,
+    device_id:DEVICE_ID||null,
+    participant_code:P3B.pid, arm:P3B.arm, failure_mode:P3B.failMode||'ZF', language:P3B.lang,
+    consent:{agreed:true, timestamp:P3B.consent_ts},
+    enrolment:P3B.enrol,
+    sessions:P3B.runs,
+    state_logs:P3B.states,
+    questionnaire:P3B.quests, visits:P3B.visits, design:P3B.design,
+    current_visit:P3B.visit, current_stage:P3B.stage, current_level:P3B.level,
+    scale:'1 (strongly disagree) - 5 (strongly agree)',
+    exported_ts:new Date().toISOString()
+  },null,1);
+}
+const RESEARCHER_EMAIL='sidney.tam@connect.polyu.hk';
+function legacyCsvEsc(v){ v=(v==null?'':String(v)); return /[",\n\r]/.test(v)? '"'+v.replace(/"/g,'""')+'"' : v; }
+function legacyParticipantCSV(p,opt){
+  const L=[];
+  L.push('[PARTICIPANT]'); L.push('field,value');
+  const visits=p.visits||{}, runs=p.runs||[], quests=p.quests||{};
+  const meta=[['build',BUILD],['device_id',DEVICE_ID||''],
+    ['participant_code',p.pid||''],['design',p.design||'single-arm-PoC'],['arm',p.arm||''],['failure_mode',p.failMode||''],
+    ['language',p.lang||''],['consent_agreed',p.consent_ts?'yes':'no'],['consent_ts',p.consent_ts||''],
+    ['visits_completed',Object.keys(visits).filter(v=>visits[v]&&visits[v].completed_ts).length],
+    ['current_visit',p.visit||1],['current_stage',p.stage||''],
+    ['current_level',(typeof p.level==='number')?Math.round(p.level*100):''],
+    ['storage_ok',STORAGE_OK?'yes':'no'],['identity_source',p.identity||'new'],['typed_code_ts',p.typed_code_ts||'']];
+  if(p.enrol){ meta.push(['age_band',p.enrol.age_band],['gender',p.enrol.gender],
+    ['education',p.enrol.education],['prior_play',p.enrol.prior_play]); }
+  meta.forEach(m=>L.push(csvEsc(m[0])+','+csvEsc(m[1])));
+  const vk=Object.keys(visits).sort((a,b)=>(+a)-(+b));
+  if(vk.length){
+    L.push(''); L.push('[VISITS]');
+    L.push('Visit_No,started_ts,completed_ts,gap_hours_since_prev,level_start,level_end,play_runs,probe_pre_cleared,probe_pre_faced,probe_post_cleared,probe_post_faced');
+    vk.forEach(v=>{ const o=visits[v]||{}, prev=visits[String((+v)-1)];
+      const gap=(prev&&prev.completed_ts&&o.started_ts)? +((new Date(o.started_ts)-new Date(prev.completed_ts))/3600000).toFixed(1) : '';
+      const rv=runs.filter(r=>String(r.Visit_No)===String(v) && r.Counted==='TRUE');
+      const pre=rv.find(r=>r.Run_Stage==='probe_pre'), post=rv.find(r=>r.Run_Stage==='probe_post');
+      const lvl=x=>(typeof x==='number')?Math.round(x*100):'';
+      L.push([v,o.started_ts||'',o.completed_ts||'',gap,lvl(o.level_start),lvl(o.level_end),
+        rv.filter(r=>r.Run_Type==='play').length,
+        pre?pre.Obstacles_Faced-pre.Obstacles_Hit:'',pre?pre.Obstacles_Faced:'',
+        post?post.Obstacles_Faced-post.Obstacles_Hit:'',post?post.Obstacles_Faced:''].map(csvEsc).join(',')); });
+  }
+  if(runs.length){
+    const cols=[...new Set(runs.flatMap(r=>Object.keys(r)))];
+    L.push(''); L.push('[SESSIONS]'); L.push(cols.map(csvEsc).join(','));
+    runs.forEach(r=>L.push(cols.map(c=>csvEsc(r[c])).join(',')));
+  }
+  const qk=Object.keys(quests).sort((a,b)=>(+a)-(+b));
+  if(qk.length){
+    L.push(''); L.push('[QUESTIONNAIRE]');
+    L.push('visit,item,response (1 strongly disagree - 5 strongly agree)');
+    qk.forEach(v=>Object.keys(quests[v]).forEach(k=>L.push([v,k,quests[v][k]].map(csvEsc).join(','))));
+  }
+  /* state log last: if a pasted text is ever cut short, only per-obstacle rows are lost. Text routes (copy / text share)
+     carry the current visit's rows only, so a paste stays small however many visits have been played. */
+  const states=p.states||{};
+  const keep=(opt&&opt.statesVisit)? new Set(runs.filter(r=>String(r.Visit_No)===String(opt.statesVisit)).map(r=>String(r.Session_No))) : null;
+  const sk=Object.keys(states).filter(sn=>!keep||keep.has(String(sn)));
+  if(sk.length){
+    L.push(''); L.push('[STATE_CHANGES]'+(keep?',visit '+opt.statesVisit+' only':''));
+    L.push('Session_No,t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src');
+    sk.forEach(sn=>(states[sn]||[]).forEach(e=>L.push(
+      [sn,e.t,e.playMin,e.oldDiff,e.newDiff,e.dist,e.coins,e.hits,e.balance,e.reason,e.src]
+        .map(csvEsc).join(','))));
+  }
+  L.push(''); L.push('[END],'+(L.length+1));
+  return L.join('\r\n');
+}
+
+function exportHeader(){
+  return LANG==='zh' ? '【滑雪遊戲概念驗證結果 '+P3B.pid+'——請原封不動傳送給研究員】'
+       : LANG==='zhs' ? '【滑雪游戏概念验证结果 '+P3B.pid+'——请原封不动发送给研究员】'
+       : '[ALPINE PRO POC RESULTS '+P3B.pid+' - please send exactly as it is]';
+}
+function buildExportCSV(){
+  return csvEsc(exportHeader())+'\r\nexported_ts,'+new Date().toISOString()
+       +'\r\n'+participantCSV(P3B);
+}
+function csvFileName(){ const d=new Date().toISOString().slice(0,16).replace(/[-:T]/g,'');   /* PRO: unique per visit and per export */
+  return 'Alpine3BPRO_'+(DEVICE_ID||'X')+'_'+(P3B.pid||'anon')+'_v'+(P3B.visit||1)+(P3B.identity==='typed-code'?'t':'')+'_'+d+'.csv'; }
+function mailAttachURL(name){
+  return 'mailto:'+RESEARCHER_EMAIL
+    +'?subject='+encodeURIComponent('Alpine 3B PRO results '+(DEVICE_ID||'')+' '+(P3B.pid||'')+' v'+(P3B.visit||1))
+    +'&body='+encodeURIComponent(T('mailAttachBody')(name));
+}
+let _mailShareAborted=false;
+const SHARE_BUSY=(e)=>e && (e.name==='AbortError'||e.name==='InvalidStateError'||e.name==='NotAllowedError');
+async function emailExport(){
+  const text=buildExportCSV(), name=csvFileName(), hint=document.getElementById('mailHint');
+  try{
+    const f=new File([text],name,{type:'text/csv'});
+    if(!_mailShareAborted && navigator.canShare && navigator.canShare({files:[f]})){
+      await navigator.share({files:[f], title:name, text:T('mailShareText')});
+      return;
+    }
+  }catch(e){
+    if(SHARE_BUSY(e)){   /* the share sheet exists but was closed / busy: never stack a download + mailto on top of it */
+      if(e.name==='AbortError'){ _mailShareAborted=true; if(hint){ hint.textContent=T('mailAgain'); hint.style.display='block'; } }
+      return; }
+  }
+  /* no file sharing here (or the player asked again after closing the share sheet): save the file, then open a short
+     pre-addressed e-mail. Whether the save really happened cannot be known, so the wording is conditional and
+     always names the copy-and-paste way out. */
+  try{
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([text],{type:'text/csv'})); a.download=name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>{ try{ URL.revokeObjectURL(a.href); }catch(e){} },60000);
+  }catch(e){}
+  if(hint){ hint.textContent=T('mailSavedHint')(name); hint.style.display='block'; }
+  setTimeout(()=>{ try{ if(document.visibilityState==='visible') location.href=mailAttachURL(name); }catch(e){} },700);
+}
+
+function buildExportText(){   /* text routes: compact (current visit's per-obstacle rows only) */
+  return csvEsc(exportHeader())+'\r\nexported_ts,'+new Date().toISOString()+'\r\n'+participantCSV(P3B,{statesVisit:P3B.visit||1}); }
+async function shareExport(){
+  const text=buildExportCSV(), name=csvFileName();
+  try{
+    const f=new File([text],name,{type:'text/csv'});
+    if(navigator.canShare && navigator.canShare({files:[f]})){
+      await navigator.share({files:[f], title:name,
+        text:'Alpine PRO proof-of-concept results 滑雪遊戲概念驗證結果 — '+RESEARCHER_EMAIL});
+      return;
+    }
+  }catch(e){ if(SHARE_BUSY(e)) return; }
+  if(navigator.share){
+    try{ await navigator.share({title:'Alpine 3B PRO '+P3B.pid, text:buildExportText()}); return; }
+    catch(e){ if(SHARE_BUSY(e)) return; }
+  }
+  copyExport();   /* no share sheet (desktop): fall back to copy */
+}
+async function copyExport(){
+  const text=buildExportText();
+  let ok=false;
+  try{ await navigator.clipboard.writeText(text); ok=true; }
+  catch(e){
+    try{ const ta=document.createElement('textarea'); ta.value=text;
+      document.body.appendChild(ta); ta.select(); ok=document.execCommand('copy');
+      ta.remove(); }catch(e2){}
+  }
+  const b=document.getElementById('copyBtn');
+  if(ok){ b.textContent=T('fCopied'); setTimeout(()=>{ b.textContent=T('fCopy'); },4000); }
+  else dlExport();
+}
+function dlExport(){ dlFile(csvFileName(), buildExportCSV()); }
+
+/* fit the canvas to the viewport in play mode, preserving aspect */
+function fitCanvas(){
+  if(!document.body.classList.contains('playmode')){
+    cv.style.width=''; cv.style.height=''; return;
+  }
+  const wrap=document.getElementById('gameWrap');
+  const tr=document.getElementById('touchRow');
+  const availW=wrap.clientWidth-16;
+  const availH=wrap.clientHeight - tr.offsetHeight - 30;
+  const ar=cv.width/cv.height;
+  let w=availW, h=w/ar;
+  if(h>availH){ h=availH; w=h*ar; }
+  cv.style.width=Math.max(200,w)+'px'; cv.style.height=Math.max(140,h)+'px';
+}
+window.addEventListener('resize',()=>setTimeout(fitCanvas,60));
+window.addEventListener('orientationchange',()=>setTimeout(fitCanvas,250));
+
+/* ============ v3.0 STAGE 3B: flow wiring ============ */
+loadP3B();
+function pickLang(l){
+  LANG=l; P3B.lang=l; saveP3B(); applyI18n();
+  resumeFlow();
+}
+document.getElementById('langZh').onclick=()=>pickLang('zh');
+document.getElementById('langZhs').onclick=()=>pickLang('zhs');
+document.getElementById('langEn').onclick=()=>pickLang('en');
+document.getElementById('consentYes').onclick=()=>{
+  P3B.consent_ts=new Date().toISOString();
+  if(!P3B.pid) P3B.pid=newPid();
+  P3B.arm='A'; P3B.failMode='GO';              /* PRO: single arm (adaptive), game-over possible for everyone */
+  P3B.design='single-arm-PoC';
+  if(!P3B.identity) P3B.identity='new';
+  saveP3B(); showOvl('ovlEnrol');
+};
+document.getElementById('consentNo').onclick=()=>{
+  document.getElementById('decT').textContent=T('decT');
+  document.getElementById('decP').textContent=T('decP');
+  showOvl('ovlDeclined');
+};
+document.getElementById('decBack').onclick=()=>resumeFlow();
+/* PRO: when the browser did not keep the saved state (forwarded file opened afresh, another phone), the player can
+   continue under the same code by typing it; the warm-up then re-estimates the level. */
+const RET={visit:0};
+const PID_RE=/^P[ABCDEFGHJKMNPQRSTUVWXYZ2-9]{5}$/;   /* codes never contain I, L, O, 0 or 1 */
+function retCheck(){
+  const raw=document.getElementById('retCode').value;
+  const c=raw.normalize('NFKC').toUpperCase().replace(/[^A-Z0-9]/g,'');   /* full-width letters, spaces, punctuation all vanish */
+  const ok=PID_RE.test(c), msg=document.getElementById('retMsg');
+  msg.textContent = (raw.trim() && !ok)
+      ? 'The code is the letter P followed by 5 letters or numbers (never I, L, O, 0 or 1). Please check it. · 編號是 P 加 5 個英文字母或數字(不會有 I、L、O、0、1),請再核對。 · 编号是 P 加 5 个英文字母或数字(不会有 I、L、O、0、1),请再核对。'
+      : (ok && RET.visit<2) ? 'Please choose which visit this is. · 請選擇這是第幾次到訪。 · 请选择这是第几次到访。' : '';
+  msg.style.display=msg.textContent?'block':'none';
+  document.getElementById('retGo').disabled=!(ok && RET.visit>=2);
+  return c;
+}
+function openReturn(){ if(P3B.consent_ts || (P3B.runs&&P3B.runs.length)) return; showOvl('ovlReturn'); }
+document.getElementById('retBtn').onclick=openReturn;
+document.getElementById('retBtn2').onclick=openReturn;
+document.getElementById('retCode').addEventListener('input',retCheck);
+document.getElementById('retVisitRow').addEventListener('click',e=>{
+  const b=e.target.closest('.optBtn'); if(!b) return;
+  document.querySelectorAll('#retVisitRow .optBtn').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel'); RET.visit=+b.dataset.v; retCheck();
+});
+document.getElementById('retGo').onclick=()=>{
+  const c=retCheck(); if(document.getElementById('retGo').disabled) return;
+  P3B.pid=c; P3B.visit=RET.visit; P3B.stage='warmup'; P3B.playRunsThisVisit=0;
+  P3B.identity='typed-code'; P3B.typed_code_ts=new Date().toISOString();
+  /* the "played earlier this year?" screening item would now have a different true answer: do not re-ask it */
+  ENROL.prior_play='n/a-typed-return';
+  document.getElementById('priRow').parentNode.style.display='none';
+  saveP3B(); resumeFlow();
+};
+document.getElementById('retCancel').onclick=()=>resumeFlow();
+const ENROL={};
+[['ageRow','age_band'],['genRow','gender'],['eduRow','education'],['priRow','prior_play']].forEach(([rowId,field])=>{
+  document.getElementById(rowId).addEventListener('click',e=>{
+    const b=e.target.closest('.optBtn'); if(!b) return;
+    document.querySelectorAll('#'+rowId+' .optBtn').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel'); ENROL[field]=b.dataset.v;
+    document.getElementById('enrolGo').disabled =
+      !(ENROL.age_band && ENROL.gender && ENROL.education && ENROL.prior_play);
+  });
+});
+document.getElementById('enrolGo').onclick=()=>{
+  P3B.enrol={age_band:ENROL.age_band, gender:ENROL.gender, education:ENROL.education,
+             prior_play:ENROL.prior_play, recorded_ts:new Date().toISOString()};
+  saveP3B(); resumeFlow();
+};
+document.getElementById('againBtn').onclick=()=>{ document.getElementById('startBtn').click(); };
+document.getElementById('againOvl').onclick=()=>{
+  document.getElementById('runEndOvl').style.display='none';
+  document.getElementById('startBtn').click();
+};
+/* ---- v3.2 PRO: visit flow — check run → warm-up → play runs → check run → six questions ---- */
+function leavePlay(){
+  document.getElementById('runEndOvl').style.display='none';
+  document.body.classList.remove('playmode'); fitCanvas();
+}
+document.getElementById('contOvl').onclick=()=>{ leavePlay(); resumeFlow(); };
+/* staff stop control that is reachable in full-screen play mode (the original sits in a hidden panel) */
+document.getElementById('endBtnPlay').onclick=()=>{
+  if(!running) return;
+  if(confirm(T('endEarlyQ'))){ if(running){ S.endReason='ended early by staff'; endRun(true); } }
+  else { tPrev=0; }
+};
+function legacyFinishVisitPlay(){
+  if(P3B.stage!=='play' || (P3B.playRunsThisVisit||0)<1) return;
+  P3B.stage='probe_post'; saveP3B(); leavePlay(); resumeFlow();
+}
+document.getElementById('finishOvl').onclick=finishVisitPlay;
+document.getElementById('finishBtn').onclick=finishVisitPlay;
+const STAGE_TXT={probe_pre:['stProbePreT','stProbePreP'], warmup:['stWarmT','stWarmP'],
+                 play:['stPlayT','stPlayP'], probe_post:['stProbePostT','stProbePostP']};
+function legacyShowStageIntro(){
+  const k=STAGE_TXT[P3B.stage]; if(!k) return;
+  document.getElementById('stageVisit').textContent=T('visitN')(P3B.visit||1);
+  document.getElementById('stageTitle').textContent=T(k[0]);
+  document.getElementById('stageText').textContent=T(k[1]);
+  /* after a reload in the play stage, a player who already has a counted run may go straight on */
+  document.getElementById('stageFinish').style.display=(P3B.stage==='play' && (P3B.playRunsThisVisit||0)>=1)?'block':'none';
+  showOvl('ovlStage');
+}
+document.getElementById('stageGo').onclick=()=>{ showOvl(null); document.getElementById('startBtn').click(); };
+document.getElementById('stageFinish').onclick=finishVisitPlay;
+function legacyShowWelcome(){
+  const n=(P3B.visit||1)+1;
+  document.getElementById('wbText').textContent=T('wbP')(P3B.pid,n,(typeof P3B.level==='number')?lv(P3B.level):'—');
+  document.getElementById('wbGo').textContent=T('wbGo')(n);
+  showOvl('ovlWelcome');
+}
+document.getElementById('wbGo').onclick=()=>{
+  P3B.visit=(P3B.visit||1)+1; P3B.stage='warmup'; P3B.playRunsThisVisit=0; saveP3B();
+  showStageIntro();
+};
+function legacyShowFinal(withBack){
+  document.getElementById('fCode').textContent=T('fCode')(P3B.pid,P3B.visit||1);
+  document.getElementById('fBack').style.display=withBack?'block':'none';
+  showOvl('ovlFinal');
+}
+document.getElementById('wbSend').onclick=()=>showFinal(true);
+document.getElementById('fBack').onclick=()=>resumeFlow();
+function legacyResumeFlow(){
+  document.getElementById('retBtn2').style.display=(P3B.identity==='typed-code')?'none':'block';
+  if(!P3B.lang) return showOvl('ovlLang');
+  if(!P3B.consent_ts) return showOvl('ovlConsent');
+  if(!P3B.enrol) return showOvl('ovlEnrol');
+  if(P3B.stage==='done') return showWelcome();
+  if(P3B.stage==='quest'){ buildQuest(); return showOvl('ovlQuest'); }
+  if(!STAGE_TXT[P3B.stage]){ P3B.stage='warmup'; saveP3B(); }
+  showStageIntro();
+}
+const QUEST={};
+const QKEYS=['q1','q2','q3','q4','q5','q6'];
+function buildQuest(){
+  QKEYS.forEach(k=>{ delete QUEST[k]; });
+  document.getElementById('questGo').disabled=true;
+  const host=document.getElementById('questBlocks'); host.innerHTML='';
+  QKEYS.forEach(q=>{
+    const div=document.createElement('div'); div.className='qBlock';
+    div.innerHTML='<div class="qt">'+T(q)+'</div><div class="likert" data-q="'+q+'">'+
+      [1,2,3,4,5].map(n=>'<button data-n="'+n+'">'+n+'</button>').join('')+
+      '</div><div class="likLbl"><span>'+T('lik1')+'</span><span>'+T('lik5')+'</span></div>';
+    host.appendChild(div);
+  });
+  host.querySelectorAll('.likert').forEach(lk=>{
+    lk.addEventListener('click',e=>{
+      const b=e.target.closest('button'); if(!b) return;
+      lk.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));
+      b.classList.add('sel'); QUEST[lk.dataset.q]=+b.dataset.n;
+      document.getElementById('questGo').disabled=!QKEYS.every(k=>QUEST[k]);
+    });
+  });
+}
+document.getElementById('questGo').onclick=()=>{
+  if(!QKEYS.every(k=>QUEST[k])) return;
+  const v=P3B.visit||1, now=new Date().toISOString();
+  P3B.quests[v]={D1_coordination_challenge:QUEST.q1, D2_play_regularly:QUEST.q2,
+                 F1_matched_ability:QUEST.q3, F2_progress_motivated:QUEST.q4,
+                 C1_getting_better:QUEST.q5, T1_felt_judged:QUEST.q6, answered_ts:now};
+  P3B.quest=P3B.quests[v];
+  if(!P3B.visits[v]) P3B.visits[v]={started_ts:now, level_start:null};
+  P3B.visits[v].completed_ts=now;
+  P3B.visits[v].level_end=(typeof P3B.level==='number')?P3B.level:null;
+  P3B.stage='done';
+  saveP3B(); showFinal(false);
+};
+
+document.getElementById('shareBtn').onclick=()=>{ shareExport(); };
+document.getElementById('emailBtn').onclick=()=>{ emailExport(); };
+document.getElementById('copyBtn').onclick=()=>{ copyExport(); };
+document.getElementById('dlBtn').onclick=()=>{ dlExport(); };
+document.getElementById('tiltBtn').addEventListener('click',()=>{
+  const b=document.getElementById('tiltBtn');
+  if(b.textContent.includes('ON')||b.textContent.includes('已開')) b.textContent=T('tiltOn');
+});
+
+/* WeChat in-app browser: no share sheet — make Copy the primary path */
+const IS_WECHAT = /MicroMessenger/i.test(navigator.userAgent);
+function applyWxMode(){
+  if(!IS_WECHAT) return;
+  const hint=document.getElementById('wxHint');
+  hint.textContent=T('fWx'); hint.style.display='block';
+  document.getElementById('fP1').style.display='none';
+  const share=document.getElementById('shareBtn'), copy=document.getElementById('copyBtn');
+  share.style.display='none';
+  document.getElementById('emailBtn').style.display='none';
+  copy.className='btn-go big'; copy.style.flex='none'; copy.style.width='100%';
+}
+
+/* ---- shared-device support: archive current participant, reset for next ---- */
+const A3B_ARCH='a3pro_archive_v41_'+DEVICE_ID;
+function legacyArchiveCurrent(){
+  if(!P3B || !P3B.consent_ts) return false;
+  let arch=[]; try{ arch=JSON.parse(localStorage.getItem(A3B_ARCH))||[]; }catch(e){}
+  arch.push(Object.assign({}, P3B, {archived_ts:new Date().toISOString()}));
+  try{ localStorage.setItem(A3B_ARCH, JSON.stringify(arch)); }catch(e){}
+  return true;
+}
+function legacyNextPlayer(){
+  if(P3B && P3B.pid && !confirm(T('nextQ')(P3B.pid))) return;   /* PRO: a reset ends this player's visits on this device */
+  archiveCurrent();
+  try{ localStorage.removeItem(A3B_KEY); }catch(e){}
+  location.reload();
+}
+document.getElementById('nextBtn').onclick=()=>nextPlayer();
+function deviceBundle(){
+  let arch=[]; try{ arch=JSON.parse(localStorage.getItem(A3B_ARCH))||[]; }catch(e){}
+  const all=arch.slice();
+  if(P3B && P3B.consent_ts) all.push(Object.assign({}, P3B, {archived_ts:null, current:true}));
+  return JSON.stringify({build:BUILD,
+    device_id:DEVICE_ID||null, kind:'device_bundle',
+    participant_count:all.length, participants:all,
+    exported_ts:new Date().toISOString()});
+}
+/* facilitator panel: tap any screen title (or the header tag) 5 times within 3 s
+   — document-level delegation so it works on every overlay, including rewritten ones */
+(function(){
+  let taps=[];
+  document.addEventListener('click',(ev)=>{
+    if(!ev.target.closest('h2') && !ev.target.closest('header .tag')) return;
+    const now=Date.now(); taps=taps.filter(t=>now-t<3000); taps.push(now);
+    if(taps.length>=5){ taps=[];
+      let arch=[]; try{ arch=JSON.parse(localStorage.getItem(A3B_ARCH))||[]; }catch(e){}
+      const cur=(P3B&&P3B.consent_ts)?1:0;
+      document.getElementById('facInfo').textContent=
+        'Device 設備: '+(DEVICE_ID||'(link/file copy)')+' · archived participants 已存玩家: '
+        +arch.length+' · current in progress 進行中: '+cur;
+      showOvl('ovlFac');
+    }
+  });
+})();
+function deviceBundleCSV(){
+  let arch=[]; try{ arch=JSON.parse(localStorage.getItem(A3B_ARCH))||[]; }catch(e){}
+  const all=arch.slice();
+  if(P3B && P3B.consent_ts) all.push(Object.assign({}, P3B, {current:true}));
+  const L=[csvEsc('[ALPINE 3B PRO DEVICE BUNDLE '+(DEVICE_ID||'X')+']'),
+    'participant_count,'+all.length, 'exported_ts,'+new Date().toISOString()];
+  all.forEach((p,i)=>{ L.push(''); L.push('===== PARTICIPANT '+(i+1)+' ====='); L.push(participantCSV(p)); });
+  return L.join('\r\n');
+}
+document.getElementById('facExportFile').onclick=()=>{
+  dlFile('Alpine3BPRO_device_'+(DEVICE_ID||'X')+'_bundle.csv', deviceBundleCSV());
+};
+document.getElementById('facExportCopy').onclick=async()=>{
+  const text=deviceBundleCSV();
+  try{ await navigator.clipboard.writeText(text); document.getElementById('facExportCopy').textContent='📋 Copied 已複製!'; }
+  catch(e){ try{ const ta=document.createElement('textarea'); ta.value=text;
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+    document.getElementById('facExportCopy').textContent='📋 Copied 已複製!'; }catch(e2){} }
+};
+document.getElementById('facNext').onclick=()=>nextPlayer();
+document.getElementById('facClose').onclick=()=>{ resumeFlow(); };
+
+/* ALPINE_POLICY_START — shared by the standalone game and the Jev adapter. */
+(function (root, factory) {
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.AlpinePolicy = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+  const VERSION='feedback-policy-4.1.0', CONTRACT='alpine-jev-1';
+  const ACTIONS=['easier','same','harder','support','variety','pause'];
+  const GOALS=['look_ahead','gentle_turns','return_centre','safe_coins','route_choice'];
+  const REASONS=['speed','instructions','visibility','coins','turns','tired','more_challenge','other'];
+  // Engineering defaults for this self-test; these are NOT validated learning thresholds.
+  const GATES={actionConfidence:.55,harderProbability:.80,goalConfidence:.45};
+  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+  const number=(v,f=null)=>typeof v==='number'&&Number.isFinite(v)?v:f;
+  const bounded=(v,a,b,f=null)=>number(v)===null?f:clamp(v,a,b);
+  const round=v=>Math.round(v*1000)/1000;
+  const member=(v,values,f=null)=>values.includes(v)?v:f;
+  const COMPLETIONS=['time_complete','ended_at_bump_limit','partial','interrupted','unknown'];
+  const ENDINGS=['player_stop','player_finished','time','time_cap','gameover','bump_limit','interrupted','unknown'];
+  const INPUTS=['keys','touch','tilt','pad','keys+','touch+','tilt+','pad+','none'];
+
+  function metrics(r) {
+    if(!r)return {faced:0,hits:0,clearRate:null,coinRate:null,coins:0,missed:0,edgePct:null,seconds:0};
+    const faced=Math.floor(bounded(r.Obstacles_Faced,0,10000,0));
+    const hits=Math.floor(bounded(r.Obstacles_Hit,0,faced,0));
+    const coins=Math.floor(bounded(r.Coins,0,10000,0)),missed=Math.floor(bounded(r.Coins_Missed,0,10000,0));
+    return {faced,hits,clearRate:faced?(faced-hits)/faced:null,coinRate:coins+missed?coins/(coins+missed):null,
+      coins,missed,edgePct:bounded(r.Edge_Time_pct,0,100),seconds:bounded(r.Duration_s,0,3600,bounded(r.Duration_Min,0,60,0)*60)};
+  }
+  function cleanReport(f={},allowText=false) {
+    const skipped=f.skipped===true;
+    return {difficulty:skipped?null:member(f.difficulty,['easy','right','hard']),
+      feeling:skipped?null:member(f.feeling,['enjoying','okay','frustrated','tired','bored']),
+      reason:skipped?null:member(f.reason,REASONS),skipped,
+      text:!skipped&&allowText&&typeof f.text==='string'?f.text.slice(0,400):''};
+  }
+  function observation(r={},report={}) {
+    const m=metrics(r),start=bounded(r.Start_Diff,.4,2.2),end=bounded(r.AI_DiffMult,.4,2.2);
+    return {metrics:m,level:bounded(r.Mean_Diff,.4,2.2,end),startLevel:start,endLevel:end,
+      support:member(r.Support,['none','route_guide'],'unknown'),
+      goal:member(r.Practice_Goal,GOALS),input:member(r.Input_Mode,INPUTS,'none'),
+      completion:member(r.Completion_Status,COMPLETIONS,r.Counted==='FALSE'?'partial':'unknown'),
+      endReason:member(r.End_Reason,ENDINGS,'unknown'),report:cleanReport(report)};
+  }
+  function sanitizeObservation(o={}) {
+    const m=o.metrics||{};
+    const result=observation({Obstacles_Faced:m.faced,Obstacles_Hit:m.hits,Coins:m.coins,Coins_Missed:m.missed,
+      Edge_Time_pct:m.edgePct,Duration_s:m.seconds,Mean_Diff:o.level,Start_Diff:o.startLevel,
+      AI_DiffMult:o.endLevel,Support:o.support,Practice_Goal:o.goal,Input_Mode:o.input,
+      Completion_Status:o.completion,End_Reason:o.endReason},o.report||{});
+    // Never accept a client/model-supplied clearance rate: derive it from event counts.
+    return result;
+  }
+  function summarize(observations,reference) {
+    const recent=observations.slice(-12);
+    const stable=o=>o.startLevel!==null&&o.endLevel!==null&&Math.abs(o.startLevel-o.endLevel)<=.01;
+    const comparable=recent.filter(o=>o.metrics.faced>0&&o.level!==null&&reference.level!==null&&
+      Math.abs(o.level-reference.level)<=.01&&o.support!=='unknown'&&o.support===reference.support&&
+      o.input!=='none'&&o.input===reference.input&&stable(o)&&stable(reference));
+    const faced=comparable.reduce((n,o)=>n+o.metrics.faced,0),hits=comparable.reduce((n,o)=>n+o.metrics.hits,0);
+    return {recentRuns:recent.length,comparableRuns:comparable.length,comparableFaced:faced,
+      comparableClearRate:faced?(faced-hits)/faced:null,
+      partialRuns:recent.filter(o=>o.completion==='partial').length,
+      interruptedRuns:recent.filter(o=>o.completion==='interrupted').length,
+      bumpLimitedRuns:recent.filter(o=>o.completion==='ended_at_bump_limit').length,
+      status:'Descriptive observations grouped by matching pace, support and input. Not a validated mastery or difficulty-adjusted learning score.'};
+  }
+  function learnerEstimate(runs,reference,feedbackHistory=[]) {
+    const records=(runs||[]).filter(r=>r.Run_Type==='play').slice(-12);
+    const observations=records.map(r=>observation(r,feedbackHistory.find(f=>f.runId===r.Run_ID)||{}));
+    return {...summarize(observations,observation(reference||records[records.length-1]||{})),observations};
+  }
+  function stateFromGame({last,runs,feedback,level,feedbackHistory=[],language='en'},allowText=false) {
+    const report=cleanReport(feedback||{},allowText);
+    const current=observation(last||{},report);
+    const history=learnerEstimate(runs,last,feedbackHistory).observations;
+    return {schema:CONTRACT,language:member(language,['en','zh','zhs'],'en'),
+      currentLevel:bounded(level,.4,2.2,bounded(last&&last.AI_DiffMult,.4,2.2,.85)),current,history,report};
+  }
+  function sanitizeState(s={},allowText=false) {
+    if(s.schema!==CONTRACT)throw new Error('Unsupported request schema');
+    if(!s.current||!s.current.metrics)throw new Error('Missing current performance');
+    return {schema:CONTRACT,language:member(s.language,['en','zh','zhs'],'en'),
+      currentLevel:bounded(s.currentLevel,.4,2.2,.85),current:sanitizeObservation(s.current),
+      history:(Array.isArray(s.history)?s.history:[]).slice(-12).map(sanitizeObservation),report:cleanReport(s.report||{},allowText)};
+  }
+  function hintFromText(text) {
+    let s=String(text||'').normalize('NFKC').toLowerCase().slice(0,400);
+    s=s.replace(/\b(?:not|never)\s+(?:(?:very|at all)\s+)?(?:tired|hard|difficult|fast|confused)\b/g,' ')
+      .replace(/不(?:太|是很|覺得|觉得)?(?:累|疲倦|難|难|快)/g,' ');
+    const patterns=[['tired',/\btired\b|\bfatigu|\bexhaust|疲|累/],
+      ['instructions',/\bconfus|\binstruction|\bunderstand|不懂|不明|說明|说明/],
+      ['visibility',/\bsee\b|\bsmall\b|\bvisib|看不|太小|顏色|颜色/],
+      ['speed',/\bfast\b|\bquick\b|\bspeed\b|\bslow\b|太快|速度|慢一/],
+      ['coins',/\bcoin|金幣|金币/],['turns',/\bturn|\bsteer|轉|转|操控/],
+      ['more_challenge',/\bbored\b|too easy|more challeng|harder|太容易|無聊|无聊|更難|更难/]];
+    const tags=patterns.filter(([,re])=>re.test(s)).map(([tag])=>tag);
+    return {tags,ambiguous:tags.length!==1,method:'keyword-suggestion-only',requiresConfirmation:true};
+  }
+  function chooseGoal(current,fb,action) {
+    if(fb.reason==='coins')return 'safe_coins';
+    if(fb.reason==='turns')return 'gentle_turns';
+    if(fb.reason==='instructions'||fb.reason==='visibility')return 'route_choice';
+    if(action==='variety')return GOALS[(Math.max(0,GOALS.indexOf(current.goal))+1)%GOALS.length];
+    if(current.metrics.edgePct!==null&&current.metrics.edgePct>=50)return 'return_centre';
+    return current.goal||'look_ahead';
+  }
+  function materialize(action,base,goal,reasonCode,source='local-rules') {
+    base=clamp(number(base,.85),.40,2.20);
+    if(!ACTIONS.includes(action))action='same';
+    if(!GOALS.includes(goal))goal='look_ahead';
+    const level=round(clamp(base+(action==='easier'?-.12:action==='harder'?.10:0),.40,2.20));
+    return {policyVersion:VERSION,action,baseLevel:round(base),level,duration:action==='pause'?20:30,
+      support:['support','variety'].includes(action)?'route_guide':'none',goal,reasonCode,source,
+      maxChange:.15,challengeChanged:Math.abs(level-base)>.0001};
+  }
+  function upwardAllowed(s,summary) {
+    const m=s.current.metrics,f=s.report;
+    return (f.difficulty==='easy'||f.reason==='more_challenge'||f.feeling==='bored')&&
+      f.difficulty!=='hard'&&f.feeling!=='frustrated'&&f.feeling!=='tired'&&
+      !['instructions','visibility','tired'].includes(f.reason)&&m.faced>=6&&m.clearRate>=.80&&
+      m.edgePct!==null&&m.edgePct<50&&
+      (summary.comparableClearRate===null||summary.comparableFaced<12||summary.comparableClearRate>=.75);
+  }
+  function proposeState(s) {
+    const f=s.report,m=s.current.metrics,summary=summarize(s.history,s.current);
+    let action='same',why='consolidate';
+    if(f.feeling==='tired'||f.reason==='tired'){action='pause';why='reported_tired';}
+    else if(f.reason==='instructions'||f.reason==='visibility'){action='support';why='reported_clarity';}
+    else if(f.difficulty==='hard'&&f.feeling==='enjoying'){action='support';why='welcome_challenge';}
+    else if(f.difficulty==='hard'||f.feeling==='frustrated'){action='easier';why='reported_demand';}
+    else if(f.feeling==='bored'||f.reason==='more_challenge'||f.difficulty==='easy'){
+      if(upwardAllowed(s,summary)){action='harder';why='ready_for_challenge';}
+      else{action='variety';why='mixed_evidence';}
+    }else if(f.reason==='speed'){action='easier';why='reported_demand';}
+    else if(m.faced>=3&&m.clearRate<.55){action='easier';why='recorded_errors';}
+    else if(m.faced<3){why='limited_evidence';}
+    const p=materialize(action,s.currentLevel,chooseGoal(s.current,f,action),why);
+    p.evidence={performance:m,learnerEstimate:{...summary,observations:s.history},feedbackUsed:!f.skipped,
+      difficulty:f.difficulty,feeling:f.feeling,reason:f.reason,upwardAllowed:upwardAllowed(s,summary)};
+    return p;
+  }
+  function propose(args){return proposeState(stateFromGame(args));}
+  function validateRemote(candidate,local) {
+    if(!candidate||candidate.provider!=='typesafe'||candidate.contract!==CONTRACT)throw new Error('Unexpected decision provider');
+    if(candidate.status==='uncertain'||candidate.action==='defer')
+      return {...local,source:'local-fallback',remoteOverrideBlocked:'uncertain',jev:candidate.audit||null};
+    if(!ACTIONS.includes(candidate.action)||!GOALS.includes(candidate.goal))throw new Error('Invalid Jev action or focus');
+    if(number(candidate.actionConfidence)===null||candidate.actionConfidence<GATES.actionConfidence||candidate.actionConfidence>1)
+      return {...local,source:'local-fallback',remoteOverrideBlocked:'uncertain',jev:candidate.audit||null};
+    let blocked=null;
+    if(local.action==='pause')blocked='reported_tired';
+    else if(local.reasonCode==='reported_clarity'&&!['support','pause'].includes(candidate.action))blocked='reported_clarity';
+    else if(candidate.action==='harder'&&(!local.evidence.upwardAllowed||number(candidate.actionProbability,0)<GATES.harderProbability))blocked='no_upward_support';
+    if(blocked)return {...local,remoteOverrideBlocked:blocked,jev:candidate.audit||null};
+    const p=materialize(candidate.action,local.baseLevel,candidate.goal,'jev_suggestion','jev');
+    p.evidence=local.evidence;p.jev=candidate.audit||null;
+    return p;
+  }
+  function override(plan,action) {
+    const p=materialize(action,plan.baseLevel,plan.goal,'player_choice','player-choice');
+    if(action==='variety'&&plan.action!=='variety')p.goal=GOALS[(GOALS.indexOf(plan.goal)+1)%GOALS.length];
+    p.evidence=plan.evidence;return p;
+  }
+  return {VERSION,CONTRACT,ACTIONS,GOALS,REASONS,GATES,metrics,observation,learnerEstimate,stateFromGame,
+    sanitizeState,summarize,hintFromText,propose,proposeState,validateRemote,override};
+});
+/* ALPINE_POLICY_END */
+
+
+/* v4.1 orchestration. No source study files are edited; all records have their own namespace. */
+let RUN_PAUSED=false, FB={}, requestSerial=0, lastCheckpoint=0;
+const PRO=AlpinePolicy;
+const JEV={available:false,checked:false,model:null};
+let activeJevRequest=null;
+const $=id=>document.getElementById(id);
+const now=()=>new Date().toISOString();
+const uid=()=>typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,12);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function logEvent(type,detail={}) {
+  if(!P3B.events)P3B.events=[];
+  P3B.events.push({id:uid(),ts:now(),visit:P3B.visit,type,...detail});
+}
+function ensureProState(){
+  P3B.schema='alpine-pro-4.1';P3B.build=BUILD;P3B.deviceTag=DEVICE_ID;
+  P3B.design='feedback-informed-adaptive-practice-PoC';
+  P3B.failMode=CONFIG.failureMode;
+  ['feedback','decisions','events'].forEach(k=>{if(!Array.isArray(P3B[k]))P3B[k]=[];});
+  if(!P3B.identity)P3B.identity='new';
+  P3B.dataKind=CONFIG.selfTest?(P3B.dataKind==='automated-software-test'?'automated-software-test':'researcher-self-test'):'participant-pilot';
+  if(new URLSearchParams(location.search).get('test')==='1'&&CONFIG.selfTest)P3B.dataKind='automated-software-test';
+}
+function proText(k){return T(k);}
+function actionLabel(a){return T(({easier:'pEasier',same:'pSame',harder:'pHarder',support:'pMoreSupport',variety:'pVariety',pause:'pRest'})[a]||'pSame');}
+function goalText(g){return T('pGoals')[g]||T('pGoals').look_ahead;}
+function newSession(){
+  const r=legacyNewSession();
+  const p=r.runType==='play'?(P3B.nextPlan||null):null;
+  const plan=p&&typeof p==='object'?p:null;
+  r.plan=plan?JSON.parse(JSON.stringify(plan)):null;
+  r.runId=uid(); r.pauseCount=0; r.pauseSeconds=0; r.pausedAt=null;
+  r.zeroFail=CONFIG.failureMode==='ZF';
+  if(r.runType==='play'&&plan){r.cap=plan.duration;r.diff=plan.level;r.startDiff=plan.level;}
+  r.support=r.runType==='play'&&plan?plan.support:'none';
+  r.practiceGoal=r.runType==='play'&&plan?plan.goal:'look_ahead';
+  r.planId=plan&&plan.id||'';
+  // Fresh practice uses the warm-up setting, rather than creating a claim of measured ability.
+  return r;
+}
+function resultFromSession(early,reason){
+  const faced=S.avoided+S.hits,causes={};S.hitCauses.forEach(c=>causes[c]=(causes[c]||0)+1);
+  const a=S.balSamples.length?S.balSamples.reduce((x,y)=>x+y,0)/S.balSamples.length:curBalance();
+  return {Participant_ID:S.pid,Run_ID:S.runId,Session_No:S.sessNo,Build:BUILD,
+    Data_Kind:P3B.dataKind,Visit_No:S.visit,Run_Type:S.runType,Run_Stage:S.stage,
+    Run_Start_ts:S.startISO,Run_End_ts:now(),Duration_s:+S.playT.toFixed(3),Duration_Min:+(S.playT/60).toFixed(4),
+    Planned_Duration_s:S.cap,Distance_m:Math.round(S.dist),Coins:S.coins,Coins_Missed:S.coinsMissed,
+    Obstacles_Faced:faced,Obstacles_Hit:S.hits,Avoid_Rate_pct:faced?+(100*S.avoided/faced).toFixed(2):'',
+    Lives_Lost:S.livesLost,Reached_GameOver:S.gameOver?'TRUE':'FALSE',Failure_Mode:CONFIG.failureMode,
+    Score:curScore()+(S.goalReached?50:0),Combo_Max:S.comboMax,Dodges:S.dodges,
+    Game_Composite_pct:+a.toFixed(2),Game_Composite_Note:'inherited on-trail / avoidance composite; NOT clinical balance',
+    Max_Speed:+S.maxSpeed.toFixed(2),Start_Diff:+S.startDiff.toFixed(3),
+    Mean_Diff:+(S.diffT/Math.max(.001,S.playT)).toFixed(3),AI_DiffMult:+S.diff.toFixed(3),
+    Difficulty_Source:S.runType==='probe'?'fixed-course':S.runType==='warmup'?'local-staircase':S.plan&&S.plan.source||'warmup-setting',
+    Probe_Course:S.courseLabel,Tip_ID:S.runType==='play'?pickTip()||'':'',
+    Practice_Goal:S.runType==='play'?S.practiceGoal:'',Support:S.support,Decision_ID:S.planId,
+    Policy_Version:PRO.VERSION,Decision_Provider:S.plan&&S.plan.source||'none',
+    Jev_Model:S.plan&&S.plan.jev&&S.plan.jev.resolvedModel||'',
+    Jev_Action_Confidence:S.plan&&S.plan.jev&&S.plan.jev.action?S.plan.jev.action.confidence:'',
+    Hit_Causes:Object.entries(causes).map(([k,v])=>k+':'+v).join(';'),
+    Mean_AbsLane:+(S.absLaneT/Math.max(.001,S.playT)).toFixed(3),Edge_Time_pct:+(100*S.edgeT/Math.max(.001,S.playT)).toFixed(2),
+    Pause_Count:S.pauseCount||0,Pause_Seconds:+(S.pauseSeconds||0).toFixed(1),
+    Counted:early?'FALSE':'TRUE',Completion_Status:early?'partial':S.gameOver?'ended_at_bump_limit':'time_complete',
+    End_Reason:reason||S.endReason||'unknown',Input_Mode:inpMode(),Lang:LANG,
+    Notes:'Game performance only. New v4.1 protocol; do not pool with earlier study builds.'};
+}
+function checkpoint(force){
+  if(!S||!running||!P3B||!P3B.consent_ts)return;
+  if(!force&&S.playT-lastCheckpoint<1)return;
+  lastCheckpoint=S.playT;
+  P3B.activeRun={snapshot:resultFromSession(true,'checkpoint'),states:S.stateChanges.slice(),saved_ts:now()};saveP3B();
+}
+function recoverInterrupted(){
+  if(!P3B.activeRun)return;
+  const a=P3B.activeRun,r=a.snapshot;
+  if(r&&!P3B.runs.some(x=>x.Run_ID===r.Run_ID)){
+    r.End_Reason='interrupted_before_reload';r.Completion_Status='interrupted';r.Counted='FALSE';
+    r.Run_End_ts=a.saved_ts;r.End_Time_Note='last checkpoint, not a verified cessation timestamp';
+    P3B.runs.push(r);P3B.states[String(r.Session_No)]=a.states||[];
+    logEvent('interruption_recovered',{runId:r.Run_ID,last_checkpoint:a.saved_ts});
+    P3B.stage=r.Run_Type==='play'?'feedback':'closing';
+    P3B.feedbackRunId=r.Run_ID;P3B.interruptionNote=true;
+  }
+  P3B.activeRun=null;saveP3B();
+}
+function endRun(early=false){
+  if(!S||S.result)return;
+  running=false;RUN_PAUSED=false;if(windGain)windGain.gain.value=0;
+  try{SND.finish();}catch(e){}
+  $('pauseRun').hidden=true;$('endBtn').style.display='none';$('endBtnPlay').style.display='none';
+  const r=resultFromSession(!!early);S.result=r;S.score=r.Score;
+  P3B.runs.push(r);P3B.states[String(S.sessNo)]=S.stateChanges.slice();P3B.activeRun=null;
+  if(!early&&(S.runType==='warmup'||S.runType==='play'))P3B.level=S.diff;
+  if(S.runType==='play'){
+    P3B.playRunsThisVisit=(P3B.playRunsThisVisit||0)+1;
+    P3B.feedbackRunId=r.Run_ID;P3B.stage='feedback';
+  }else if(early){P3B.stage='closing';}
+  else if(S.stage==='warmup'){P3B.stage='probe_pre';}
+  else if(S.stage==='probe_pre'){P3B.stage='play';}
+  else if(S.stage==='probe_post'){P3B.stage='quest';}
+  logEvent('run_ended',{runId:r.Run_ID,stage:S.stage,completion:r.Completion_Status});saveP3B();
+  if(S.runType==='play'||early){leavePlay();resumeFlow();return;}
+  $('rcGreet').textContent=T('pRoundDone');$('rcScore').textContent='';
+  $('rcLine').textContent=S.runType==='probe'?`${T('pAvoided')}: ${S.avoided}/${r.Obstacles_Faced} · ${T('pCoins')}: ${S.coins}`:`${T('pPace')}: ${lv(S.diff)}`;
+  $('rcTraj').style.display='none';$('rcTip').style.display='none';$('againOvl').style.display='none';$('finishOvl').style.display='none';$('contOvl').style.display='';
+  $('coachFloat').textContent='';draw();$('runEndOvl').style.display='flex';
+}
+function metricHTML(r){
+  if(!r)return '';
+  return `<div class="pro-metrics"><div class="pro-stat"><strong>${r.Obstacles_Faced-r.Obstacles_Hit}/${r.Obstacles_Faced}</strong><span>${esc(T('pAvoided'))}</span></div><div class="pro-stat"><strong>${r.Coins}</strong><span>${esc(T('pCoins'))}</span></div><div class="pro-stat"><strong>${lv(r.Start_Diff)}</strong><span>${esc(T('pPace'))}</span></div></div><p class="pro-note">${esc(T('pNotComparable'))}</p>`;
+}
+function currentFeedbackRun(){return P3B.runs.find(r=>r.Run_ID===P3B.feedbackRunId)||P3B.runs[P3B.runs.length-1];}
+function options(host,vals,key){
+  $(host).innerHTML='';
+  vals.forEach(v=>{const b=document.createElement('button');b.type='button';b.dataset.value=v;b.textContent=T('pActions')[v];
+    b.setAttribute('aria-pressed',String(FB[key]===v));if(FB[key]===v)b.classList.add('sel');
+    b.onclick=()=>{FB[key]=FB[key]===v?null:v;options(host,vals,key);};$(host).appendChild(b);});
+}
+function showFeedback(){
+  FB={difficulty:null,feeling:null,reason:null,text:'',confirmedTextTag:null};
+  $('feedbackSummary').innerHTML=metricHTML(currentFeedbackRun())+(!STORAGE_OK?`<p class="pro-danger">${esc(T('pStorage'))}</p>`:'');
+  options('fbDifficulty',['easy','right','hard'],'difficulty');
+  options('fbFeeling',['enjoying','okay','frustrated','tired','bored'],'feeling');
+  options('fbReason',PRO.REASONS,'reason');$('fbText').value='';$('fbSuggestion').innerHTML='';$('fbStatus').textContent='';
+  $('fbSubmit').disabled=false;$('fbSkip').disabled=false;
+  $('cloudOptions').hidden=!CONFIG.cloudEnabled;$('cloudOpt').checked=false;$('cloudTextOpt').checked=false;
+  showOvl('ovlFeedback');
+}
+$('fbText').addEventListener('input',()=>{
+  const h=PRO.hintFromText($('fbText').value);$('fbSuggestion').innerHTML='';
+  if(!h.tags.length)return;
+  const note=document.createElement('p');note.className='pro-note';note.textContent=T('pReasonUsed')+' '+T('pKeyword');$('fbSuggestion').appendChild(note);
+  h.tags.forEach(tag=>{const b=document.createElement('button');b.className='pro-link';b.textContent=T('pActions')[tag];
+    b.onclick=()=>{FB.reason=tag;FB.confirmedTextTag=tag;options('fbReason',PRO.REASONS,'reason');$('fbSuggestion').innerHTML='';};$('fbSuggestion').appendChild(b);});
+});
+function storeFeedback(skip,preserveExisting=false){
+  const r=currentFeedbackRun();
+  if(!r)return null;
+  const previous=P3B.feedback.find(f=>f.runId===r.Run_ID);
+  if(previous&&preserveExisting)return previous;
+  const f={id:uid(),runId:r.Run_ID,visit:P3B.visit,ts:now(),language:LANG,
+    difficulty:skip?null:FB.difficulty||null,feeling:skip?null:FB.feeling||null,reason:skip?null:FB.reason||null,
+    text:skip?'':$('fbText').value.slice(0,400),confirmedTextTag:skip?null:FB.confirmedTextTag||null,
+    skipped:!!skip,externalAI:!skip&&CONFIG.cloudEnabled&&$('cloudOpt').checked,
+    externalText:!skip&&CONFIG.cloudEnabled&&$('cloudOpt').checked&&$('cloudTextOpt').checked};
+  if(previous){
+    // A reload requires a fresh explicit Jev choice. Keep the earlier report as an audit revision.
+    const {revisions=[],...prior}=previous;
+    f.id=previous.id;f.revisions=[...revisions,prior];f.revised_ts=now();
+    Object.assign(previous,f);
+  }else P3B.feedback.push(f);
+  logEvent(previous?'feedback_revised':'feedback_recorded',{runId:r.Run_ID,feedbackId:f.id,skipped:f.skipped});saveP3B();return previous||f;
+}
+async function preparePlan(skip=false){
+  const serial=++requestSerial;$('fbSubmit').disabled=true;$('fbSkip').disabled=true;
+  const f=storeFeedback(skip),last=currentFeedbackRun();if(!f)return;
+  const args={last,runs:P3B.runs,feedback:f,level:P3B.level,feedbackHistory:P3B.feedback,language:LANG};
+  const local=PRO.propose(args);
+  let p=local,cloudStatus='not_requested',remote=null,requestState=null;
+  if(f.externalAI){
+    $('fbStatus').textContent=T('pFetching');
+    const ctrl=new AbortController();activeJevRequest=ctrl;
+    const timer=setTimeout(()=>ctrl.abort(),7000);
+    try{
+      requestState=PRO.stateFromGame(args,f.externalText);
+      const response=await fetch('/api/adapt',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({state:requestState,consent:{externalAI:true,externalText:f.externalText}}),signal:ctrl.signal});
+      if(!response.ok){let message='unavailable';try{const e=await response.json();if(typeof e.error==='string'&&/^[a-z_]+$/.test(e.error))message=e.error;}catch{}throw new Error(message);}
+      remote=await response.json();p=PRO.validateRemote(remote,local);
+      cloudStatus=p.remoteOverrideBlocked==='uncertain'?'uncertain_fallback':p.remoteOverrideBlocked?'bounded_override':'accepted';
+    }catch(e){p={...local,source:'local-fallback'};cloudStatus=e.name==='AbortError'?'timeout_or_cancelled':/^[a-z_]+$/.test(e.message)?e.message:'unavailable_or_invalid';}
+    finally{clearTimeout(timer);if(activeJevRequest===ctrl)activeJevRequest=null;}
+  }
+  // A late model reply must not change the session after the player leaves.
+  if(serial!==requestSerial||P3B.stage!=='feedback')return;
+  const d={...p,id:uid(),created_ts:now(),visit:P3B.visit,runId:last.Run_ID,feedbackId:f.id,
+    offlineProposal:local,cloudStatus,remoteResponse:remote,requestState,chosenAction:null,appliedRunId:null};
+  P3B.decisions.push(d);P3B.pendingPlanId=d.id;P3B.stage='plan';
+  logEvent('proposal_shown',{decisionId:d.id,action:d.action,source:d.source});saveP3B();showPlan();updateJevUI();
+}
+function pendingPlan(){return P3B.decisions.find(d=>d.id===P3B.pendingPlanId);}
+function historyHTML(){
+  const rows=P3B.runs.filter(r=>r.Run_Type==='probe'&&r.Counted==='TRUE');
+  if(!rows.length)return `<p>${esc(T('pNoChecks'))}</p>`;
+  return `<h3>${esc(T('pFixedHistory'))}</h3><table class="pro-table"><thead><tr><th>${esc(T('pVisit'))}</th><th>${esc(T('pCourse'))}</th><th>${esc(T('pClear'))}</th><th>${esc(T('pCoins'))}</th><th>${esc(T('pEdge'))}</th></tr></thead><tbody>`+
+    rows.map(r=>`<tr><td>${r.Visit_No} · ${r.Run_Stage==='probe_pre'?'pre':'post'}</td><td>${esc(r.Probe_Course)}</td><td>${r.Obstacles_Faced-r.Obstacles_Hit}/${r.Obstacles_Faced}</td><td>${r.Coins}</td><td>${r.Edge_Time_pct}%</td></tr>`).join('')+
+    `</tbody></table><p class="pro-note">${esc(T('pHistoryNote'))}</p>`;
+}
+function showPlan(){
+  const p=pendingPlan();if(!p){P3B.stage='play';saveP3B();return showStageIntro();}
+  const source=p.source==='jev'?'pSourceAI':p.source==='local-fallback'?'pSourceFallback':p.source==='player-choice'?'pSourcePlayer':p.remoteOverrideBlocked?'pSourceBounded':'pSourceLocal';
+  $('planContent').innerHTML=`<div class="pro-plan"><span class="pro-tag">${esc(T(source))}</span><h3>${esc(actionLabel(p.action))}</h3><p><b>${esc(T('pGoal'))}:</b> ${esc(goalText(p.goal))}</p><p><b>${esc(T('pBasis'))}</b> ${esc(T('pWhys')[p.reasonCode]||T('pWhys').consolidate)}</p><p><b>${esc(T('pSettings'))}:</b> ${lv(p.baseLevel)} → ${lv(p.level)} · ${p.duration} ${esc(T('pSeconds'))} · ${esc(T(p.support==='route_guide'?'pSupport':'pNoSupport'))}</p>${p.action==='pause'?`<p>${esc(T('pPausePlan'))}</p>`:''}</div><p class="pro-note">${esc(T('pPlanNote'))}</p>`;
+  if(p.remoteOverrideBlocked==='uncertain')$('planContent').insertAdjacentHTML('beforeend',`<p class="pro-note">${esc(T('pUncertain'))}</p>`);
+  $('planAccept').textContent=T(p.action==='pause'?'pPause':'pTryPlan');
+  $('planChoices').innerHTML='';
+  ['easier','same','harder','support','variety'].forEach(a=>{const b=document.createElement('button');b.textContent=actionLabel(a);b.dataset.action=a;
+    b.onclick=()=>{const q=PRO.override(p,a);Object.assign(p,q);logEvent('proposal_changed_by_player',{decisionId:p.id,action:a});saveP3B();showPlan();};$('planChoices').appendChild(b);});
+  $('planHistory').innerHTML=historyHTML();showOvl('ovlPlan');
+}
+function acceptPlan(){
+  const p=pendingPlan();if(!p)return;
+  if(p.action==='pause')return pauseAtPlan();
+  p.chosenAction='try';p.chosen_ts=now();P3B.nextPlan=JSON.parse(JSON.stringify(p));
+  P3B.stage='play';logEvent('practice_accepted',{decisionId:p.id});saveP3B();showOvl(null);$('startBtn').click();
+}
+function pauseAtPlan(){
+  const p=pendingPlan();if(p){p.chosenAction='pause';p.chosen_ts=now();}
+  P3B.pauseReturn='plan';P3B.stage='paused';logEvent('pause_chosen',{decisionId:p&&p.id||null});saveP3B();showOvl('ovlPause');
+}
+function pauseRun(reason='player'){
+  if(!running||RUN_PAUSED)return;
+  RUN_PAUSED=true;S.pauseCount++;S.pausedAt=Date.now();keyDir=touchDir=tiltDir=0;if(windGain)windGain.gain.value=0;
+  logEvent('run_paused',{runId:S.runId,reason});checkpoint(true);showOvl('ovlPause');
+}
+function resumePaused(){
+  if(running&&RUN_PAUSED){
+    S.pauseSeconds+=(Date.now()-(S.pausedAt||Date.now()))/1000;S.pausedAt=null;
+    RUN_PAUSED=false;showOvl(null);tPrev=0;logEvent('run_resumed',{runId:S.runId});saveP3B();requestAnimationFrame(loop);return;
+  }
+  const p=pendingPlan();
+  if(p&&p.action==='pause'){Object.assign(p,PRO.override(p,'same'));p.duration=20;logEvent('pause_followed_by_short_practice_proposal',{decisionId:p.id});}
+  P3B.stage='plan';saveP3B();showPlan();
+}
+function requestFinish(){
+  requestSerial++;
+  if(activeJevRequest){activeJevRequest.abort();activeJevRequest=null;}
+  if(running){S.endReason='player_finished';endRun(true);}
+  if(P3B.stage==='feedback')storeFeedback(true,true);
+  const p=pendingPlan();if(p&&!p.appliedRunId){p.chosenAction='finish';p.chosen_ts=now();}
+  P3B.stage='closing';P3B.activeRun=null;logEvent('finish_chosen');saveP3B();leavePlay();showOvl('ovlClosing');
+}
+function completeVisit(skipQuestions=false){
+  requestSerial++;
+  if(activeJevRequest){activeJevRequest.abort();activeJevRequest=null;}
+  const v=P3B.visit,stamp=now();
+  if(!P3B.visits[v])P3B.visits[v]={started_ts:stamp,level_start:null};
+  const qmap={q1:'D1_coordination_challenge',q2:'D2_play_regularly',q3:'F1_matched_ability',q4:'F2_progress_motivated',q5:'C1_getting_better',q6:'T1_felt_judged'};
+  const q={};Object.entries(qmap).forEach(([a,b])=>q[b]=skipQuestions?null:QUEST[a]||null);
+  q.answered_ts=stamp;q.completion=Object.values(qmap).every(k=>q[k]!==null)?'complete':'partial_or_skipped';
+  P3B.quests[v]=q;P3B.quest=q;P3B.visits[v].completed_ts=stamp;P3B.visits[v].level_end=P3B.level;
+  P3B.visits[v].closing_probe_status=P3B.runs.some(r=>r.Visit_No===v&&r.Run_Stage==='probe_post'&&r.Counted==='TRUE')?'completed':'missing_or_partial';
+  P3B.stage='done';P3B.nextPlan=null;P3B.pendingPlanId=null;P3B.activeRun=null;
+  logEvent('visit_ended');saveP3B();leavePlay();showFinal(false);
+}
+function showStageIntro(){
+  const k=STAGE_TXT[P3B.stage];if(!k)return;
+  $('stageVisit').textContent=T('visitN')(P3B.visit);
+  $('stageTitle').textContent=T(k[0]);$('stageText').textContent=T(k[1]);
+  if(P3B.stage==='play'){
+    const goal=P3B.nextPlan?P3B.nextPlan.goal:'look_ahead';
+    $('stageText').textContent+=' '+goalText(goal);
+  }
+  $('stageFinish').style.display='block';$('stageFinish').textContent=T('pProbeSkip');showOvl('ovlStage');
+}
+function showWelcome(){
+  const n=P3B.visit+1;
+  $('wbText').textContent=T('pWelcome')(P3B.pid,n,typeof P3B.level==='number'?lv(P3B.level):'—');
+  $('wbGo').textContent=T('wbGo')(n);showOvl('ovlWelcome');
+}
+function showFinal(withBack){
+  $('fCode').textContent=T('pCode')(P3B.pid,P3B.visit);$('fBack').style.display=withBack?'block':'none';
+  $('finalHistory').innerHTML=historyHTML();$('newVisit').textContent=T('pReturn');showOvl('ovlFinal');
+}
+function beginVisit(){
+  P3B.visit++;P3B.stage='warmup';P3B.playRunsThisVisit=0;P3B.nextPlan=null;P3B.pendingPlanId=null;P3B.activeRun=null;
+  P3B.visits[P3B.visit]={started_ts:now(),level_start:P3B.level,return_reason:$('returnReason').value||'not_reported'};
+  logEvent('visit_started',{return_reason:P3B.visits[P3B.visit].return_reason});saveP3B();showStageIntro();
+}
+function resumeFlow(){
+  if(!CONFIG.selfTest&&!CONFIG.participantApproved)return showOvl('ovlBlocked');
+  if(!P3B.lang)return showOvl('ovlLang');
+  $('retBtn2').style.display=P3B.identity==='typed-code'?'none':'block';
+  if(!P3B.consent_ts)return showOvl('ovlConsent');
+  if(!P3B.enrol)return showOvl('ovlEnrol');
+  if(P3B.stage==='done')return showWelcome();
+  if(P3B.stage==='feedback')return showFeedback();
+  if(P3B.stage==='plan')return showPlan();
+  if(P3B.stage==='paused')return showOvl('ovlPause');
+  if(P3B.stage==='closing')return showOvl('ovlClosing');
+  if(P3B.stage==='quest'){buildQuest();$('questGo').disabled=false;return showOvl('ovlQuest');}
+  if(!STAGE_TXT[P3B.stage]){P3B.stage='warmup';saveP3B();}
+  showStageIntro();
+}
+function finishVisitPlay(){requestFinish();}
+function archiveCurrent(){
+  if(!P3B||!P3B.consent_ts)return true;
+  try{const a=JSON.parse(localStorage.getItem(A3B_ARCH)||'[]');a.push({...P3B,archived_ts:now()});localStorage.setItem(A3B_ARCH,JSON.stringify(a));return true;}
+  catch(e){STORAGE_OK=false;alert(T('pStorageReset'));return false;}
+}
+function nextPlayer(){
+  if(P3B.pid&&!confirm(T('nextQ')(P3B.pid)))return;
+  if(!archiveCurrent())return;
+  try{localStorage.removeItem(A3B_KEY);}catch(e){return;}
+  location.reload();
+}
+function csvEsc(v){
+  const isNum=typeof v==='number';let s=v==null?'':String(v);
+  // Prefix spreadsheet formula introducers for untrusted text; complete original text is in JSON.
+  if(!isNum&&/^[\s]*[=+@-]/.test(s))s="'"+s;
+  return /[",\n\r]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;
+}
+function participantCSV(p,opt){
+  // Retain the uploaded v3.2 sections, then append auditable v4 sections before the end marker.
+  let lines=legacyParticipantCSV(p,opt).split('\r\n');
+  lines=lines.filter(l=>!l.startsWith('[END],'));
+  const add=(name,records)=>{
+    if(!records||!records.length)return;
+    const keys=[...new Set(records.flatMap(r=>Object.keys(r)))];lines.push('',`[${name}]`,keys.map(csvEsc).join(','));
+    records.forEach(r=>lines.push(keys.map(k=>csvEsc(r[k]&&typeof r[k]==='object'?JSON.stringify(r[k]):r[k])).join(',')));
+  };
+  add('VISIT_DETAILS',Object.entries(p.visits||{}).map(([visit,value])=>({visit,...value})));
+  add('PRACTICE_RUN_DETAILS',(p.runs||[]).filter(r=>r.Run_Type==='play'));
+  add('PLAYER_FEEDBACK',p.feedback);add('ADAPTATION_DECISIONS',p.decisions);add('PARTICIPATION_EVENTS',p.events);
+  add('V4_METADATA',[{schema:p.schema,data_kind:p.dataKind,policy:PRO.VERSION,copy_tag:DEVICE_ID,
+    participant_release:CONFIG.participantApproved,ethics_reference:CONFIG.ethicsReference||'not_asserted',
+    cloud_configured:CONFIG.cloudEnabled,jev_model:JEV.model,client_side_storage_encrypted:false,protocol:'warmup-precheck-practice-feedback-plan-optional-postcheck'}]);
+  if(p.activeRun)add('ACTIVE_RUN_SNAPSHOT',[p.activeRun]);
+  const count=lines.join('\r\n').split(/\r\n|\n|\r/).length+1;lines.push('[END],'+count);
+  return lines.join('\r\n');
+}
+function buildExport(){
+  return JSON.stringify({schema:'alpine-pro-4.1',build:BUILD,policy:PRO.VERSION,exported_ts:now(),
+    data_kind:P3B.dataKind,device_id:DEVICE_ID,configuration:{failureMode:CONFIG.failureMode,cloudConfigured:CONFIG.cloudEnabled,
+      participantApproved:CONFIG.participantApproved,ethicsReference:CONFIG.ethicsReference||null,jevModel:JEV.model,
+       decisionContract:PRO.CONTRACT,thresholds:PRO.GATES},
+    participant_state:P3B,measurement_note:'Self-report, practice performance, fixed-course performance and participation are separate measures.'},null,2);
+}
+function drawPracticeGuide(){
+  if(!S||S.runType!=='play'||S.support!=='route_guide'||!running||RUN_PAUSED)return;
+  // Different practice focuses change the visual cue, not assessment settings or scores.
+  const candidates=[-.55,0,.55];let lane=0,best=-Infinity;
+  for(const c of candidates){
+    let score=0;
+    for(const o of S.obstacles){
+      if(o.z<80&&o.z>8)score-=Math.max(0,1-Math.abs(c-o.lane)/.45)*(90-o.z);
+    }
+    if(S.practiceGoal==='gentle_turns')score-=Math.abs(c-S.skierLane)*12;
+    if(S.practiceGoal==='return_centre')score-=Math.abs(c)*12;
+    if(S.practiceGoal==='safe_coins')for(const coin of S.coinsArr){
+      if(coin.z<65&&coin.z>12)score+=Math.max(0,1-Math.abs(c-coin.lane)/.3)*4;
+    }
+    if(S.practiceGoal==='look_ahead')for(const o of S.obstacles){
+      if(o.z>=80&&o.z<110)score-=Math.max(0,1-Math.abs(c-o.lane)/.45)*10;
+    }
+    if(score>best){best=score;lane=c;}
+  }
+  const x=laneToX(lane,.64,cv.width),y=depthY(.64,cv.height);
+  ctx.save();ctx.fillStyle='rgba(39,119,202,.70)';ctx.beginPath();ctx.moveTo(x,y-12);ctx.lineTo(x-15,y+10);ctx.lineTo(x+15,y+10);ctx.closePath();ctx.fill();ctx.restore();
+}
+function updateJevUI(){
+  const info=document.getElementById('proSystemInfo');
+  if(info)info.textContent=T(JEV.available?'pCloudReady':'pCloudOff');
+  const status=document.getElementById('jevResearchStatus');
+  if(status)status.textContent=T(JEV.available?'pCloudReady':'pCloudOff');
+  const options=document.getElementById('cloudOptions');
+  if(options)options.hidden=!JEV.available;
+  const diag=document.getElementById('jevDiagnostics');
+  if(diag&&P3B){const d=(P3B.decisions||[]).at(-1);diag.textContent=d?JSON.stringify({source:d.source,status:d.cloudStatus,guard:d.remoteOverrideBlocked||null,jev:d.jev||null},null,2):T('pNoDecision');}
+}
+async function discoverJev(){
+  JEV.checked=true;JEV.available=false;CONFIG.cloudEnabled=false;
+  if(!['http:','https:'].includes(location.protocol)){updateJevUI();return;}
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),2000);
+  try{
+    const r=await fetch('/api/health',{signal:ctrl.signal,cache:'no-store'});
+    if(r.ok){const h=await r.json();JEV.available=h.contract===PRO.CONTRACT&&h.provider==='typesafe'&&h.configured===true;
+      JEV.model=JEV.available&&typeof h.model==='string'?h.model:null;CONFIG.cloudEnabled=JEV.available;}
+  }catch{}finally{clearTimeout(timer);updateJevUI();}
+}
+function exportEarlierRecords(){
+  let current=null,archive=[];
+  try{current=JSON.parse(localStorage.getItem('a3pro_state_v40_'+DEVICE_ID)||'null');archive=JSON.parse(localStorage.getItem('a3pro_archive_v40_'+DEVICE_ID)||'[]');}catch{}
+  dlFile('Alpine3BPRO_v40_previous_records.json',JSON.stringify({kind:'unchanged-prior-v4.0-browser-records',current,archive},null,2));
+}
+function proInit(){
+  ensureProState();
+  if(CONFIG.participantApproved){
+    const refs={en:'Researcher-entered ethics reference: ',zh:'研究員填寫的倫理參考編號：',zhs:'研究员填写的伦理参考编号：'};
+    ['en','zh','zhs'].forEach(l=>I18N[l].cRef=refs[l]+CONFIG.ethicsReference+' · sidney.tam@connect.polyu.hk');
+    I18N.en.cAgree='I agree — continue';I18N.zh.cAgree='我同意——繼續';I18N.zhs.cAgree='我同意——继续';
+  }
+  const start=$('startBtn').onclick;
+  $('startBtn').onclick=()=>{
+    if((!CONFIG.selfTest&&!CONFIG.participantApproved)||RUN_PAUSED)return;
+    start();if(!running)return;
+    $('pauseRun').hidden=false;$('pauseRun').textContent=T('pRunPause');$('endBtnPlay').textContent=T('pRunFinish');
+    if(S.planId){const d=P3B.decisions.find(d=>d.id===S.planId);if(d){d.appliedRunId=S.runId;d.applied_ts=now();d.actualSettings={level:S.startDiff,duration:S.cap,support:S.support,goal:S.practiceGoal};}}
+    logEvent('run_started',{runId:S.runId,stage:S.stage,decisionId:S.planId});lastCheckpoint=-2;checkpoint(true);
+    if(S.runType==='play')coach(goalText(S.practiceGoal));
+  };
+  const consent=$('consentYes').onclick;
+  $('consentYes').onclick=()=>{if(!CONFIG.selfTest&&!CONFIG.participantApproved)return;consent();ensureProState();logEvent('consent_accepted',{mode:CONFIG.selfTest?'self-test':'participant-pilot'});saveP3B();};
+  $('endBtnPlay').onclick=()=>{if(running){S.endReason='player_stop';endRun(true);}};
+  $('endBtn').onclick=$('endBtnPlay').onclick;
+  $('pauseRun').onclick=()=>pauseRun('player');
+  $('pauseResume').onclick=resumePaused;$('pauseFinish').onclick=requestFinish;
+  $('fbSubmit').onclick=()=>preparePlan(false);$('fbSkip').onclick=()=>preparePlan(true);$('fbFinish').onclick=requestFinish;
+  $('planAccept').onclick=acceptPlan;$('planPause').onclick=pauseAtPlan;$('planFinish').onclick=requestFinish;
+  $('stageFinish').onclick=requestFinish;$('finishOvl').onclick=requestFinish;$('finishBtn').onclick=requestFinish;
+  $('closingProbe').onclick=()=>{P3B.stage='probe_post';saveP3B();showStageIntro();};
+  $('closingQuest').onclick=()=>{P3B.stage='quest';saveP3B();resumeFlow();};
+  $('closingNow').onclick=()=>completeVisit(true);
+  $('questGo').onclick=()=>completeVisit(false);$('questSkip').onclick=()=>completeVisit(false);
+  // All questionnaire items remain optional, including after a radio choice.
+  $('questBlocks').addEventListener('click',()=>{$('questGo').disabled=false;});
+  $('wbGo').onclick=beginVisit;$('newVisit').onclick=()=>{showWelcome();};
+  $('jsonBtn').onclick=()=>dlFile(csvFileName().replace(/\.csv$/,'.json'),buildExport());
+  $('facJson').onclick=()=>dlFile('Alpine3BPRO_v41_'+DEVICE_ID+'_bundle.json',deviceBundle());
+  $('facDelete').onclick=()=>{if(!confirm(T('pDeleteConfirm')))return;try{localStorage.removeItem(A3B_KEY);localStorage.removeItem(A3B_ARCH);}catch(e){return;}location.reload();};
+  $('proSystemInfo').textContent=T(CONFIG.cloudEnabled?'pCloudReady':'pCloudOff');
+  $('cloudOpt').onchange=()=>{if(!$('cloudOpt').checked)$('cloudTextOpt').checked=false;};
+  $('cloudTextOpt').onchange=()=>{if($('cloudTextOpt').checked)$('cloudOpt').checked=true;};
+  window.addEventListener('blur',()=>{keyDir=touchDir=tiltDir=0;});
+  document.addEventListener('keydown',e=>{if(running&&['ArrowLeft','ArrowRight',' '].includes(e.key))e.preventDefault();if(running&&e.code==='Space')pauseRun('keyboard');});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&running)pauseRun('page_hidden');});
+  window.addEventListener('pagehide',()=>{if(running)checkpoint(true);});
+  $('jevReconnect').onclick=discoverJev;$('facLegacy').onclick=exportEarlierRecords;
+  discoverJev();
+  recoverInterrupted();saveP3B();
+}
+proInit();
+
+/* boot: resume where the participant left off (PRO: by visit stage; a completed visit → welcome back) */
+(function boot(){
+  if(P3B.lang){ LANG=P3B.lang; applyI18n(); }
+  resumeFlow();
+})();
+
+/* idle scene so the canvas looks alive before the first run */
+S=newSession();
+(function idle(){ if(!running && !(S&&S.result)){ sceneT+=1/40;
+  if(Math.random()<0.15) S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02});
+  for(const f of S.flakes){ f.y+=0.004+0.002*f.s; }
+  S.flakes=S.flakes.filter(f=>f.y<1.05);
+  draw(); setTimeout(()=>requestAnimationFrame(idle),25); } })();
+</script>
+</body>
+</html>

@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Alpine Coordination Game 滑雪協調小遊戲 — v3.0 Stage 3B Research Build</title>
+<style>
+  :root{
+    --snow:#FBF7EF; --ice:#DCE9EE; --pine:#1F4A38; --pine-dk:#123027;
+    --sun:#E8A64B; --coral:#D96A4E; --ink:#22302B; --card:#FFFFFF;
+    --ok:#3E8E5F; --warn:#C25438;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{
+    font-family:"Avenir Next","Trebuchet MS","Segoe UI",Verdana,sans-serif;
+    background:linear-gradient(180deg,#F2E8D8 0%,var(--snow) 40%);
+    color:var(--ink); min-height:100vh; display:flex; flex-direction:column; align-items:center;
+  }
+  header{width:100%; max-width:1180px; padding:18px 20px 6px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  header h1{font-size:1.5rem; letter-spacing:.02em; color:var(--pine-dk); font-weight:700}
+  header .tag{font-size:.78rem; background:var(--pine); color:var(--snow); padding:3px 10px; border-radius:999px; letter-spacing:.06em}
+  main{width:100%; max-width:1180px; padding:10px 20px 30px; display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,1fr); gap:16px}
+  @media (max-width:900px){ main{grid-template-columns:1fr} }
+  .panel{background:var(--card); border:1px solid #E5DECF; border-radius:14px; padding:16px; box-shadow:0 2px 10px rgba(31,74,56,.06)}
+  .panel h2{font-size:.95rem; text-transform:uppercase; letter-spacing:.1em; color:var(--pine); margin-bottom:10px}
+  #gameWrap{position:relative}
+  canvas{display:block; width:100%; border-radius:14px; border:1px solid #E5DECF; background:var(--ice); touch-action:none}
+  .hud{position:absolute; top:12px; left:12px; right:12px; display:flex; justify-content:space-between; pointer-events:none; font-weight:700; color:var(--pine-dk)}
+  .hud .box{background:rgba(251,247,239,.9); border-radius:10px; padding:7px 14px; font-size:1.05rem; border:1px solid #E5DECF}
+  .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:10px}
+  label{font-size:.9rem; font-weight:600}
+  input[type=text], select{padding:9px 11px; border:1px solid #CFC6B4; border-radius:8px; font-size:.95rem; background:#FFFDF8}
+  input[type=text]{width:110px}
+  button{cursor:pointer; border:none; border-radius:10px; padding:11px 20px; font-size:1rem; font-weight:700; letter-spacing:.02em}
+  .btn-go{background:var(--pine); color:var(--snow)}
+  .btn-go:hover{background:var(--pine-dk)}
+  .btn-soft{background:#EFE8D8; color:var(--pine-dk)}
+  .btn-soft:hover{background:#E5DCC7}
+  .btn-coral{background:var(--coral); color:#fff}
+  .toggle{display:flex; align-items:center; gap:8px; font-size:.85rem; font-weight:600}
+  .pill{font-size:.75rem; padding:2px 8px; border-radius:999px; background:var(--ice); color:var(--pine-dk)}
+  details{font-size:.85rem; margin-top:4px}
+  details summary{cursor:pointer; font-weight:700; color:var(--pine); margin-bottom:8px}
+  #coach{min-height:74px; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-size:.95rem; line-height:1.45}
+  #coach b{color:var(--pine)}
+  #stateLog{max-height:300px; overflow-y:auto; font-size:.78rem; border:1px solid #E5DECF; border-radius:10px}
+  #stateLog table{width:100%; border-collapse:collapse}
+  #stateLog th,#stateLog td{padding:5px 7px; border-bottom:1px solid #F0EADB; text-align:left; vertical-align:top}
+  #stateLog th{position:sticky; top:0; background:var(--pine); color:var(--snow); font-weight:600}
+  .up{color:var(--ok); font-weight:700} .down{color:var(--warn); font-weight:700}
+  #padStatus{font-size:.8rem}
+  .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; background:#B9B2A2}
+  .dot.on{background:var(--ok)}
+  footer{font-size:.72rem; color:#6E6A5E; max-width:1180px; padding:0 20px 24px; line-height:1.5}
+  #summary{display:none}
+  #summary dl{display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:.86rem}
+  #summary dt{font-weight:700; color:var(--pine-dk)}
+  #touchRow{display:flex; gap:14px; margin-top:10px; justify-content:center}
+  .steerBtn{flex:1; max-width:260px; font-size:2rem; padding:18px 0; border-radius:16px;
+    background:var(--pine); color:var(--snow); -webkit-user-select:none; user-select:none; touch-action:none}
+  .steerBtn:active{background:var(--pine-dk)}
+  button{touch-action:manipulation}
+  @media (pointer:coarse){
+    button{padding:14px 22px; font-size:1.05rem}
+    input[type=text], select{padding:12px 13px; font-size:1.05rem}
+  }
+  /* ===== v3.0 Stage 3B overlays ===== */
+  .ovl{position:fixed; inset:0; background:linear-gradient(180deg,#F2E8D8 0%,var(--snow) 60%);
+    z-index:50; display:none; overflow-y:auto; padding:26px 18px 40px}
+  .ovl.show{display:block}
+  .ovl .card{max-width:640px; margin:0 auto; background:var(--card); border:1px solid #E5DECF;
+    border-radius:16px; padding:22px 24px; box-shadow:0 4px 18px rgba(31,74,56,.10)}
+  .ovl h2{color:var(--pine-dk); font-size:1.25rem; margin-bottom:12px; text-transform:none; letter-spacing:0}
+  .ovl p{font-size:1rem; line-height:1.55; margin-bottom:10px}
+  .ovl .big{display:block; width:100%; margin:10px 0; padding:16px; font-size:1.15rem; border-radius:12px}
+  .optRow{display:flex; gap:10px; flex-wrap:wrap; margin:6px 0 14px}
+  .optBtn{flex:1; min-width:110px; padding:14px 10px; font-size:1rem; background:#EFE8D8; color:var(--pine-dk);
+    border:2px solid transparent; border-radius:12px}
+  .optBtn.sel{background:var(--pine); color:var(--snow); border-color:var(--pine-dk)}
+  .qBlock{margin-bottom:16px}
+  .qBlock .qt{font-weight:700; margin-bottom:6px}
+  .likert{display:flex; gap:6px}
+  .likert button{flex:1; padding:12px 4px; font-size:.95rem; background:#EFE8D8; color:var(--pine-dk); border-radius:10px}
+  .likert button.sel{background:var(--pine); color:var(--snow)}
+  .likLbl{display:flex; justify-content:space-between; font-size:.72rem; color:#6E6A5E; margin-top:3px}
+  #trajBox{margin-top:12px; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-size:.95rem; display:none}
+  /* full-screen play mode */
+  body.playmode header, body.playmode footer, body.playmode #setup,
+  body.playmode #sidePanels, body.playmode #summary{display:none}
+  body.playmode main{display:block; max-width:none; padding:0}
+  body.playmode #gameWrap{position:fixed; inset:0; z-index:40; margin:0 !important;
+    border-radius:0; border:none; padding:8px; display:flex; flex-direction:column;
+    background:var(--card)}
+  body.playmode canvas{margin:0 auto; border-radius:10px}
+  body.playmode #touchRow{margin-top:8px}
+  body.playmode .steerBtn{max-width:none; font-size:2.4rem; padding:20px 0}
+  #coachFloat{display:none}
+  body.playmode #coachFloat{display:block; position:absolute; left:12px; right:12px;
+    bottom:118px; background:rgba(251,247,239,.92); border:1px dashed var(--ok);
+    border-radius:10px; padding:8px 12px; font-size:.95rem; pointer-events:none}
+  body.playmode #coachFloat:empty{display:none}
+  #gameWrap{position:relative}
+  #runEndOvl{display:none; position:absolute; left:0; right:0; bottom:14%;
+    z-index:60; justify-content:center; align-items:center; gap:14px;
+    flex-wrap:wrap; padding:0 14px}
+  #runEndOvl button{font-size:1.25rem; padding:16px 22px; border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  #trajBox .bar{height:10px; background:var(--pine); border-radius:5px; margin:3px 0}
+  .muted{font-size:.8rem; color:#6E6A5E}
+</style>
+</head>
+<body>
+
+<!-- ===== v3.0 Stage 3B flow overlays ===== -->
+<div class="ovl show" id="ovlLang"><div class="card">
+  <h2>Alpine Coordination Game 滑雪協調小遊戲</h2>
+  <p>Please choose your language 請選擇語言</p>
+  <button class="btn-go big" id="langZh">繁體中文</button>
+  <button class="btn-go big" id="langZhs" style="background:#3E6E56">简体中文</button>
+  <button class="btn-soft big" id="langEn">English</button>
+</div></div>
+
+<div class="ovl" id="ovlConsent"><div class="card">
+  <h2 data-i18n="cTitle"></h2>
+  <p data-i18n="cP1"></p>
+  <p data-i18n="cP2"></p>
+  <p data-i18n="cP3"></p>
+  <p class="muted" data-i18n="cRef"></p>
+  <button class="btn-go big" id="consentYes" data-i18n="cAgree"></button>
+  <button class="btn-soft big" id="consentNo" data-i18n="cDecline"></button>
+</div></div>
+
+<div class="ovl" id="ovlEnrol"><div class="card">
+  <h2 data-i18n="eTitle"></h2>
+  <p class="muted" data-i18n="eNote"></p>
+  <div class="qBlock"><div class="qt" data-i18n="eAge"></div>
+    <div class="optRow" id="ageRow">
+      <button class="optBtn" data-v="25-44">25–44</button>
+      <button class="optBtn" data-v="45-64">45–64</button>
+      <button class="optBtn" data-v="65-80">65–80</button>
+    </div></div>
+  <div class="qBlock"><div class="qt" data-i18n="eGender"></div>
+    <div class="optRow" id="genRow">
+      <button class="optBtn" data-v="M" data-i18n="eM"></button>
+      <button class="optBtn" data-v="F" data-i18n="eF"></button>
+    </div></div>
+  <div class="qBlock"><div class="qt" data-i18n="eEdu"></div>
+    <div class="optRow" id="eduRow">
+      <button class="optBtn" data-v="secondary" data-i18n="eEdu1"></button>
+      <button class="optBtn" data-v="post-secondary" data-i18n="eEdu2"></button>
+      <button class="optBtn" data-v="degree+" data-i18n="eEdu3"></button>
+    </div></div>
+  <div class="qBlock"><div class="qt" data-i18n="ePrior"></div>
+    <div class="optRow" id="priRow">
+      <button class="optBtn" data-v="no" data-i18n="eNo"></button>
+      <button class="optBtn" data-v="yes" data-i18n="eYes"></button>
+    </div></div>
+  <button class="btn-go big" id="enrolGo" disabled data-i18n="eGo"></button>
+</div></div>
+
+<div class="ovl" id="ovlQuest"><div class="card">
+  <h2 data-i18n="qTitle"></h2>
+  <p class="muted" data-i18n="qNote"></p>
+  <div id="questBlocks"></div>
+  <button class="btn-go big" id="questGo" disabled data-i18n="qGo"></button>
+</div></div>
+
+<div class="ovl" id="ovlFinal"><div class="card">
+  <h2 data-i18n="fTitle"></h2>
+  <p data-i18n="fP1" id="fP1"></p>
+  <p id="wxHint" style="display:none; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-weight:600"></p>
+  <button class="btn-go big" id="shareBtn" data-i18n="fShare"></button>
+  <button class="btn-go big" id="emailBtn" data-i18n="fEmail" style="margin-top:10px"></button>
+  <div class="optRow">
+    <button class="optBtn" id="copyBtn" data-i18n="fCopy"></button>
+    <button class="optBtn" id="dlBtn" data-i18n="fDownload"></button>
+  </div>
+  <p class="muted" data-i18n="fP2"></p>
+  <button class="btn-soft big" id="nextBtn" data-i18n="fNext" style="margin-top:14px"></button>
+</div></div>
+
+<div class="ovl" id="ovlFac"><div class="card">
+  <h2>Facilitator / device panel 設備管理</h2>
+  <p id="facInfo"></p>
+  <button class="btn-go big" id="facExportFile">💾 Export ALL participants on this device (file)</button>
+  <button class="btn-soft big" id="facExportCopy">📋 Copy ALL participants (paste to send)</button>
+  <button class="btn-soft big" id="facNext">🔄 Reset for next player 下一位玩家</button>
+  <button class="btn-soft big" id="facClose">Close 關閉</button>
+  <p class="muted">Data is never deleted by export or reset; everything stays archived on the
+  device until collected. 匯出或重設都不會刪除資料;所有紀錄保留在此設備直至回收。</p>
+</div></div>
+
+<header>
+  <h1>Alpine Coordination Game <span style="font-size:1rem">滑雪協調小遊戲</span></h1>
+  <span class="tag">v3.0 · STAGE 3B RESEARCH BUILD 研究版</span>
+  <span class="pill" id="modePill">Zero-failure mode</span>
+  <button class="btn-soft" id="sndBtn" style="padding:4px 12px;font-size:.85rem">🔊 Sound on</button>
+</header>
+
+<main>
+  <section>
+    <div class="panel" id="setup">
+      <div style="display:none">
+        <input type="text" id="pid" autocomplete="off">
+        <select id="sessno">
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+          <option value="6">6</option><option value="7">7</option>
+        </select>
+        <select id="goal"><option value="200" selected>200 m</option><option value="400">400 m</option></select>
+        <input type="checkbox" id="zeroFail" checked>
+        <input type="checkbox" id="agentic">
+      </div>
+      <div class="row">
+        <button class="btn-go" id="startBtn" data-i18n="startRun">Start run</button>
+        <button class="btn-soft" id="tiltBtn" title="Steer by tilting the device" data-i18n="tiltOff">📱 Enable tilt</button>
+        <button class="btn-soft" id="endBtn" style="display:none" data-i18n="endEarly">End run early</button>
+      </div>
+      <div class="row">
+        <span class="muted" data-i18n="howSteer"></span>
+      </div>
+      <div class="row" style="display:none">
+        <span id="padStatus"><span class="dot" id="padDot"></span>No controller detected.</span>
+      </div>
+    </div>
+
+    <div class="panel" id="gameWrap" style="margin-top:14px">
+      <canvas id="cv" width="840" height="560"></canvas>
+      <div class="hud">
+        <div class="box" id="hudL">0 m</div>
+        <div class="box" id="hudM">⏱ 30 s</div>
+        <div class="box" id="hudR">🪙 0</div>
+      </div>
+      <div id="coachFloat"></div>
+      <div id="touchRow">
+        <button class="steerBtn" id="leftBtn" aria-label="Steer left">◀</button>
+        <button class="steerBtn" id="rightBtn" aria-label="Steer right">▶</button>
+      </div>
+      <div id="runEndOvl">
+        <button class="btn-go" id="againOvl" data-i18n="again"></button>
+        <button class="btn-coral" id="finishOvl" data-i18n="finish"></button>
+      </div>
+    </div>
+
+    <div class="panel" id="summary" style="margin-top:14px">
+      <h2 data-i18n="sumTitle">Run summary</h2>
+      <dl id="sumList" style="display:none"></dl>
+      <div id="runLine" style="font-size:1.05rem;font-weight:700;color:var(--pine-dk)"></div>
+      <div id="trajBox"></div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn-go" id="againBtn" data-i18n="again">Play again</button>
+        <button class="btn-coral" id="finishBtn" data-i18n="finish">Finish &amp; answer questions</button>
+      </div>
+      <div class="row" style="display:none">
+        <button id="expSession"></button>
+        <button id="expStates"></button>
+      </div>
+    </div>
+  </section>
+
+  <aside id="sidePanels">
+    <div class="panel" id="coachPanel">
+      <h2 data-i18n="coachTitle">Coach</h2>
+      <div id="coach"></div>
+    </div>
+    <div class="panel" style="margin-top:14px; display:none">
+      <h2>Difficulty state changes</h2>
+      <div id="stateLog"><table><thead><tr>
+        <th>Play&nbsp;time</th><th>Change</th><th>Reason</th><th>Src</th>
+      </tr></thead><tbody id="stateBody"></tbody></table></div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  Stage 3B research build v3.0 — EngD research of Sidney K. T. Tam, The Hong Kong Polytechnic University
+  (supervisor: Prof. Benny C. F. Cheung); approved by the PolyU Human Subjects Ethics Sub-Committee,
+  application HSEARS20260805008. Participation is voluntary and anonymous; all play data stays in this
+  browser until you tap Share. Difficulty adaptation is a deterministic rule agent running locally;
+  no external service is called and nothing is transmitted during play.
+  理大工程博士研究(譚國滔;指導老師:張志輝教授);已獲理大人類實驗對象操守小組委員會批准
+  (編號 HSEARS20260805008)。參與純屬自願及匿名;所有遊戲數據保存在此瀏覽器內,直至你按「分享」。
+  難度調節由本機規則程式執行,遊戲過程中不會連接外部伺服器或傳送任何資料。
+  Game mechanics unchanged from the v2.2/v2.3 research builds.
+</footer>
+
+<script>
+"use strict";
+const DEVICE_ID="DEV3";   /* set per physical device copy: DEV1..DEV5; empty = link/file distribution */
+/* ============ v3.0 STAGE 3B: i18n, flow, arms, persistence ============ */
+const I18N={
+ en:{
+  cTitle:"Taking part — please read",
+  cP1:"This game is part of EngD doctoral research at The Hong Kong Polytechnic University by Sidney K. T. Tam (supervisor: Prof. Benny C. F. Cheung), studying how games can make health technology more engaging. The game was originally designed for a fall-risk assessment platform.",
+  cP2:"If you agree to take part, the game will record your play (distance, coins, steering balance) and your answers to four short questions. No name or contact details are collected; results are reported only as group statistics. You may stop at any time simply by closing the page.",
+  cP3:"At the end, one tap shares your anonymous results file with the researcher. Taking part is entirely voluntary.",
+  cRef:"Approved by the PolyU Human Subjects Ethics Sub-Committee — application HSEARS20260805008. Contact: sidney.tam@connect.polyu.hk",
+  cAgree:"I agree — let's play", cDecline:"No thanks",
+  eTitle:"Three quick questions", eNote:"No name needed — this only describes the group of players.",
+  eAge:"Your age group", eGender:"Gender", eM:"Male", eF:"Female",
+  eEdu:"Education", eEdu1:"Secondary", eEdu2:"Post-secondary", eEdu3:"Degree or above",
+  ePrior:"Did you play this skiing game earlier this year?", eNo:"No", eYes:"Yes",
+  eGo:"Continue to the game",
+  qTitle:"Four short questions", qNote:"1 = strongly disagree · 5 = strongly agree",
+  qGo:"Done — one last step",
+  q1:"The game was a good coordination challenge.",
+  q2:"I would be willing to play this game regularly.",
+  q3:"The game matched my ability.",
+  q4:"Seeing my progress made me want to continue.",
+  lik1:"strongly disagree", lik5:"strongly agree",
+  fTitle:"Thank you for playing!",
+  fP1:"Tap Share to send your results as a CSV file (WhatsApp, WeChat, Mail or Save to Files) — or tap E-mail to send them straight to the researcher.",
+  fShare:"📤 Share my results (CSV file)",
+  fEmail:"✉️ E-mail my results to the researcher",
+  fCopy:"📋 Copy results",
+  fCopied:"Copied! Now paste into WhatsApp or e-mail",
+  fDownload:"💾 Save as file",
+  fP2:"Send to: sidney.tam@connect.polyu.hk (or WhatsApp the researcher). Please send the text exactly as it is. Thank you!",
+  fWx:"You are in WeChat: tap 'Copy results', then paste into your WeChat chat with the researcher and send. That's all!",
+  startRun:"▶ Start run", tiltOff:"📱 Enable tilt", tiltOn:"📱 Tilt ON", endEarly:"End run early",
+  howSteer:"Steer with the ← → keys, the big buttons, touching the left/right side of the slope, or tilt.",
+  sumTitle:"Run finished", again:"⛷ Play again", finish:"✅ Finish & answer questions",
+  coachTitle:"Coach",
+  coachStart:"Off we go! Lean left and right to carve between the trees. Each run is 30 seconds.",
+  runLineGoal:(m,c)=>`You reached ${m} m and collected ${c} coins!`,
+  runLineTime:(m,c)=>`${m} m and ${c} coins — lovely run!`,
+  trajTitle:"Your runs so far", trajBest:"best",
+  shareText:"Alpine Coordination Game — my anonymous results file. Please e-mail this file to sidney.tam@connect.polyu.hk",
+  coachGoalCont:"200 m! Keep going — collect more coins!",
+  coachUp:"Nice riding — the slope opens up a little.",
+  coachDown:"The coach eased the slope so you can find your rhythm.",
+  coachHold:"Holding steady — you're in the flow band.",
+  coachBump:"A bump — no slowing down here. The slope just got a little clearer for you.",
+  endCoachGoal:(g,c,b)=>`You made it past ${g} m! ${c} coins, balance ${b}%.`,
+  endCoachTime:(m,cap,c)=>`Time! ${m} m in ${cap} seconds, ${c} coins. Every run is a fresh start.`,
+  gGoal:['Congratulations!','Fantastic run!','You made it!','Bravo!'],
+  gTime:['Well done!','Great effort!','Nice riding!','Lovely run!'],
+  pts:' points',
+  endStat:(m,c,goal)=>`${m} m skied · ${c} coins ×10 · `+(goal?'+50 goal bonus':'time complete'),
+  endHint:'Press "Play again" whenever you are ready.',
+  endCoachOver:(m,c)=>`Three bumps ended this run at ${m} m — that happens to everyone! Every run teaches you the slope. Have another go!`,
+  gOver:['Good try!','So close!','Nearly there!','Nice effort!'],
+  endProg:(lv,xp,c,t,dg)=>`⭐ Skier Level ${lv} · ${xp} XP · coins ${c}/${t} · ${dg} skill dodges`,
+  endStatOver:(m,c)=>`${m} m skied · ${c} coins ×10 · three bumps ended the run`,
+  fNext:"🔄 Next player on this device"
+ },
+ zh:{
+  cTitle:"參加研究——請先閱讀",
+  cP1:"這個遊戲是香港理工大學工程博士研究生譚國滔(指導老師:張志輝教授)博士研究的一部分,探討遊戲如何令健康科技更具吸引力。此遊戲最初為跌倒風險評估平台而設計。",
+  cP2:"如你同意參加,遊戲會記錄你的遊玩數據(距離、金幣、操控平衡)及四條簡短問題的答案。不會收集姓名或聯絡資料;結果只以整體統計形式發表。你可隨時關閉頁面退出。",
+  cP3:"完成後,只需按一下即可把匿名結果檔案分享給研究員。參與純屬自願。",
+  cRef:"已獲理大人類實驗對象操守小組委員會批准——申請編號 HSEARS20260805008。查詢:sidney.tam@connect.polyu.hk",
+  cAgree:"我同意——開始玩", cDecline:"不參加,謝謝",
+  eTitle:"三條小問題", eNote:"毋須姓名——只用作描述玩家群組。",
+  eAge:"你的年齡組別", eGender:"性別", eM:"男", eF:"女",
+  eEdu:"教育程度", eEdu1:"中學", eEdu2:"專上", eEdu3:"學士或以上",
+  ePrior:"你今年較早前有沒有玩過這個滑雪遊戲?", eNo:"沒有", eYes:"有",
+  eGo:"繼續前往遊戲",
+  qTitle:"四條簡短問題", qNote:"1 = 非常不同意 · 5 = 非常同意",
+  qGo:"完成——最後一步",
+  q1:"這個遊戲是一個很好的協調力挑戰。",
+  q2:"我願意定期玩這個遊戲。",
+  q3:"遊戲的難度適合我的能力。",
+  q4:"看到自己的進步令我更想繼續玩。",
+  lik1:"非常不同意", lik5:"非常同意",
+  fTitle:"多謝你的參與!",
+  fP1:"按「分享」以 CSV 檔案傳送結果(WhatsApp、微信、郵件或儲存到檔案)——或按「電郵」直接傳送給研究員。",
+  fShare:"📤 分享我的結果(CSV 檔案)",
+  fEmail:"✉️ 電郵我的結果給研究員",
+  fCopy:"📋 複製結果",
+  fCopied:"已複製!請貼上到 WhatsApp 或電郵",
+  fDownload:"💾 儲存為檔案",
+  fP2:"傳送至:sidney.tam@connect.polyu.hk(或 WhatsApp 給研究員)。請把文字原封不動送出。謝謝!",
+  fWx:"你正在微信中:按「複製結果」,然後貼上到與研究員的微信對話並發送,就完成了!",
+  startRun:"▶ 開始滑雪", tiltOff:"📱 開啟傾側操控", tiltOn:"📱 傾側操控已開", endEarly:"提前結束",
+  howSteer:"操控方法:← → 方向鍵、大按鈕、觸碰雪道左右兩邊,或傾側裝置。",
+  sumTitle:"這一局完成了", again:"⛷ 再玩一局", finish:"✅ 完成並回答問題",
+  coachTitle:"教練",
+  coachStart:"出發!左右傾就可以在樹林間穿插。每局 30 秒。",
+  runLineGoal:(m,c)=>`你滑到 ${m} 米,收集了 ${c} 個金幣!`,
+  runLineTime:(m,c)=>`${m} 米、${c} 個金幣——滑得真好!`,
+  trajTitle:"你的每一局", trajBest:"最佳",
+  shareText:"滑雪協調小遊戲——我的匿名結果檔案。請把此檔案電郵至 sidney.tam@connect.polyu.hk",
+  coachGoalCont:"200米達標!繼續滑,收集更多金幣!",
+  coachUp:"滑得真好——雪道稍為放開了一點。",
+  coachDown:"教練把雪道調得柔和一點,讓你找到節奏。",
+  coachHold:"保持穩定——你正處於最合適的狀態。",
+  coachBump:"碰了一下——完全不用慢下來,前面的雪道反而更清爽了。",
+  endCoachGoal:(g,c,b)=>`你滑過了 ${g} 米!${c} 個金幣,平衡度 ${b}%。`,
+  endCoachTime:(m,cap,c)=>`時間到!${cap} 秒內滑了 ${m} 米、${c} 個金幣。每一局都是新開始。`,
+  gGoal:['恭喜你!','滑得漂亮!','你做到了!','太棒了!'],
+  gTime:['做得好!','很不錯!','滑得真好!','好一局!'],
+  pts:' 分',
+  endStat:(m,c,goal)=>`${m} 米 · ${c} 金幣 ×10 · `+(goal?'+50 達標獎勵':'時間完成'),
+  endHint:'準備好就按「再玩一局」。',
+  endCoachOver:(m,c)=>`碰了三下,這一局在 ${m} 米結束——人人都會遇到!每一局都讓你更熟悉雪道。再來一局吧!`,
+  gOver:['好嘗試!','就差一點!','幾乎成功!','不錯的努力!'],
+  endProg:(lv,xp,c,t,dg)=>`⭐ 滑雪等級 ${lv} · 累積 ${xp} XP · 金幣 ${c}/${t} · 靈巧閃避 ${dg}`,
+  endStatOver:(m,c)=>`${m} 米 · ${c} 金幣 ×10 · 碰了三下結束`,
+  fNext:"🔄 此裝置下一位玩家"
+ },
+ zhs:{
+  cTitle:"参加研究——请先阅读",
+  cP1:"这个游戏是香港理工大学工程博士研究生谭国滔(指导老师:张志辉教授)博士研究的一部分,探讨游戏如何令健康科技更具吸引力。此游戏最初为跌倒风险评估平台而设计。",
+  cP2:"如你同意参加,游戏会记录你的游玩数据(距离、金币、操控平衡)及四条简短问题的答案。不会收集姓名或联络资料;结果只以整体统计形式发表。你可随时关闭页面退出。",
+  cP3:"完成后,只需按一下即可把匿名结果文件分享给研究员。参与纯属自愿。",
+  cRef:"已获理大人类实验对象操守小组委员会批准——申请编号 HSEARS20260805008。查询:sidney.tam@connect.polyu.hk",
+  cAgree:"我同意——开始玩", cDecline:"不参加,谢谢",
+  eTitle:"三条小问题", eNote:"毋须姓名——只用作描述玩家群组。",
+  eAge:"你的年龄组别", eGender:"性别", eM:"男", eF:"女",
+  eEdu:"教育程度", eEdu1:"中学", eEdu2:"专上", eEdu3:"学士或以上",
+  ePrior:"你今年较早前有没有玩过这个滑雪游戏?", eNo:"没有", eYes:"有",
+  eGo:"继续前往游戏",
+  qTitle:"四条简短问题", qNote:"1 = 非常不同意 · 5 = 非常同意",
+  qGo:"完成——最后一步",
+  q1:"这个游戏是一个很好的协调力挑战。",
+  q2:"我愿意定期玩这个游戏。",
+  q3:"游戏的难度适合我的能力。",
+  q4:"看到自己的进步令我更想继续玩。",
+  lik1:"非常不同意", lik5:"非常同意",
+  fTitle:"多谢你的参与!",
+  fP1:"按「分享」以 CSV 文件发送结果(WhatsApp、微信、邮件或保存到文件)——或按「邮件」直接发送给研究员。",
+  fShare:"📤 分享我的结果(CSV 文件)",
+  fEmail:"✉️ 邮件发送我的结果给研究员",
+  fCopy:"📋 复制结果",
+  fCopied:"已复制!请粘贴到 WhatsApp 或电邮",
+  fDownload:"💾 保存为文件",
+  fP2:"发送至:sidney.tam@connect.polyu.hk(或 WhatsApp 给研究员)。请把文字原封不动发出。谢谢!",
+  fWx:"你正在微信中:按「复制结果」,然后粘贴到与研究员的微信对话并发送,就完成了!",
+  startRun:"▶ 开始滑雪", tiltOff:"📱 开启倾侧操控", tiltOn:"📱 倾侧操控已开", endEarly:"提前结束",
+  howSteer:"操控方法:← → 方向键、大按钮、触碰雪道左右两边,或倾侧装置。",
+  sumTitle:"这一局完成了", again:"⛷ 再玩一局", finish:"✅ 完成并回答问题",
+  coachTitle:"教练",
+  coachStart:"出发!左右倾就可以在树林间穿插。每局 30 秒。",
+  runLineGoal:(m,c)=>`你滑到 ${m} 米,收集了 ${c} 个金币!`,
+  runLineTime:(m,c)=>`${m} 米、${c} 个金币——滑得真好!`,
+  trajTitle:"你的每一局", trajBest:"最佳",
+  shareText:"滑雪协调小游戏——我的匿名结果文件。请把此文件电邮至 sidney.tam@connect.polyu.hk",
+  coachGoalCont:"200米达标!继续滑,收集更多金币!",
+  coachUp:"滑得真好——雪道稍为放开了一点。",
+  coachDown:"教练把雪道调得柔和一点,让你找到节奏。",
+  coachHold:"保持稳定——你正处于最合适的状态。",
+  coachBump:"碰了一下——完全不用慢下来,前面的雪道反而更清爽了。",
+  endCoachGoal:(g,c,b)=>`你滑过了 ${g} 米!${c} 个金币,平衡度 ${b}%。`,
+  endCoachTime:(m,cap,c)=>`时间到!${cap} 秒内滑了 ${m} 米、${c} 个金币。每一局都是新开始。`,
+  gGoal:['恭喜你!','滑得漂亮!','你做到了!','太棒了!'],
+  gTime:['做得好!','很不错!','滑得真好!','好一局!'],
+  pts:' 分',
+  endStat:(m,c,goal)=>`${m} 米 · ${c} 金币 ×10 · `+(goal?'+50 达标奖励':'时间完成'),
+  endHint:'准备好就按「再玩一局」。',
+  endCoachOver:(m,c)=>`碰了三下,这一局在 ${m} 米结束——人人都会遇到!每一局都让你更熟悉雪道。再来一局吧!`,
+  gOver:['好尝试!','就差一点!','几乎成功!','不错的努力!'],
+  endProg:(lv,xp,c,t,dg)=>`⭐ 滑雪等级 ${lv} · 累计 ${xp} XP · 金币 ${c}/${t} · 灵巧闪避 ${dg}`,
+  endStatOver:(m,c)=>`${m} 米 · ${c} 金币 ×10 · 碰了三下结束`,
+  fNext:"🔄 此设备下一位玩家"
+ }
+};
+let LANG='en';
+function T(k){ const v=I18N[LANG][k]; return v===undefined?k:v; }
+function applyI18n(){
+  setTimeout(()=>{ try{ applyWxMode(); }catch(e){} },0);
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const v=I18N[LANG][el.dataset.i18n];
+    if(typeof v==='string') el.textContent=v;
+  });
+}
+/* --- persistent study state --- */
+const A3B_KEY='a3b_state_v30';
+let P3B=null;
+function loadP3B(){ try{ P3B=JSON.parse(localStorage.getItem(A3B_KEY)); }catch(e){ P3B=null; }
+  if(!P3B) P3B={pid:null, arm:null, lang:null, consent_ts:null, enrol:null, runs:[], states:{}, quest:null};
+}
+function saveP3B(){ try{ localStorage.setItem(A3B_KEY, JSON.stringify(P3B)); }catch(e){} }
+function newPid(){ return 'B'+Math.random().toString(36).slice(2,7).toUpperCase(); }
+function showOvl(id){ document.querySelectorAll('.ovl').forEach(o=>o.classList.remove('show'));
+  if(id) document.getElementById(id).classList.add('show'); }
+/* ============ CONFIG ============ */
+const TIME_CAPS     = {200:30, 400:60};  // time cap scales with run length
+const EVAL_INTERVAL_S = 6;           // agent evaluates every 6 s (fits inside a 20 s run)
+const DIFF_MIN = 0.30, DIFF_MAX = 1.50;
+const BASE_SPEED = 18;               // m/s at diff 1.0 (200 m reachable inside 20 s)
+const VIEW_M   = 70;                 // metres of slope visible ahead
+const HORIZON  = 0.30;               // horizon line as fraction of canvas height
+const SKIER_D  = 0.86;               // skier depth position (0 = horizon, 1 = bottom)
+const DEADZONE = 0.18;
+
+/* ============ iOS COMPAT ============ */
+if(!CanvasRenderingContext2D.prototype.roundRect){
+  CanvasRenderingContext2D.prototype.roundRect=function(x,y,w,h,r){
+    r=Math.min(r,w/2,h/2);
+    this.moveTo(x+r,y); this.arcTo(x+w,y,x+w,y+h,r); this.arcTo(x+w,y+h,x,y+h,r);
+    this.arcTo(x,y+h,x,y,r); this.arcTo(x,y,x+w,y,r); this.closePath(); return this;
+  };
+}
+
+/* ============ STATE ============ */
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let running=false, tPrev=0;
+let S=null;
+let sceneT=0;                        // global time for idle animation
+
+function newSession(){
+  const nRuns=(P3B&&P3B.runs)?P3B.runs.length:0;
+  return {
+    pid: (P3B&&P3B.pid)||'UNSET',
+    sessNo: Math.min(99,nRuns+1),
+    arm: (P3B&&P3B.arm)||'A',
+    zeroFail: (P3B&&P3B.failMode)!=='GO',
+    agentic: false,
+    goal: 200,
+    cap: TIME_CAPS[200] || 30,
+    t0: Date.now(), playT:0, dist:0, coins:0, hits:0, livesLost:0,
+    maxSpeed:0, diff: ((P3B&&P3B.arm)==='B') ? 0.85 : 0.60,
+    skierLane:0, vx:0, obstacles:[], coinsArr:[], flakes:[], scenery:[], spray:[],
+    onTrailT:0, offTrailT:0, avoided:0, spawned:0,
+    lastHitT:0, comboMax:1, dodges:0, coinScore:0, coinsMissed:0, coinsSpawned:0,
+    _inpReset:(INP.keys=INP.touch=INP.tilt=INP.pad=0),
+    obFactor:1.0, flashUntil:0, gameOver:false, endReason:'', goalReached:false,
+    lastEval:0, evalWindow:{hits:0, avoided:0, spawned:0, coins:0},
+    stateChanges:[], balSamples:[]
+  };
+}
+function logState(oldD,newD,reason,src){
+  const e={t:+S.playT.toFixed(1), playMin:+(S.playT/60).toFixed(2),
+    oldDiff:+oldD.toFixed(2), newDiff:+newD.toFixed(2),
+    dist:Math.round(S.dist), coins:S.coins, hits:S.hits,
+    balance:+curBalance().toFixed(1), reason, src};
+  S.stateChanges.push(e);
+  const dir = newD>oldD?'up':(newD<oldD?'down':'');
+  const arrow = newD>oldD?'▲':(newD<oldD?'▼':'▬');
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${e.t}s</td><td class="${dir}">${arrow} ${e.oldDiff}→${e.newDiff}</td><td>${reason}</td><td>${src}</td>`;
+  document.getElementById('stateBody').prepend(tr);
+}
+function curBalance(){
+  const tot=S.onTrailT+S.offTrailT;
+  const trail= tot>0 ? 100*S.onTrailT/tot : 100;
+  const avoid= S.spawned>0 ? 100*S.avoided/Math.max(1,(S.avoided+S.hits)) : 100;
+  return 0.5*trail+0.5*avoid;
+}
+
+/* ============ INPUT ============ */
+let padIndex=null, keyDir=0, touchDir=0, tiltDir=0, tiltOn=false;
+const INP={keys:0,touch:0,tilt:0,pad:0};
+function inpMode(){ const e=Object.entries(INP).filter(x=>x[1]>0);
+  if(!e.length) return 'none';
+  e.sort((a,b)=>b[1]-a[1]);
+  return e[0][0]+(e.length>1?'+':''); }
+window.addEventListener('gamepadconnected', e=>{ padIndex=e.gamepad.index; padUI(true, e.gamepad.id); });
+window.addEventListener('gamepaddisconnected', ()=>{ padIndex=null; padUI(false); });
+function padUI(on, id){
+  document.getElementById('padDot').className='dot'+(on?' on':'');
+  document.getElementById('padStatus').lastChild.textContent = on
+    ? ' Controller paired: '+ (id||'').slice(0,40) +' (axis 0 / D-pad → steer)'
+    : ' No controller detected — press a button or move the stick / foot pad to pair. Keyboard ← → also works.';
+}
+function pollInput(){
+  let dir=keyDir;
+  if(padIndex!==null){
+    const gp=navigator.getGamepads()[padIndex];
+    if(gp){
+      let ax=gp.axes[0]||0;
+      if(Math.abs(ax)>0.3 && running) INP.pad++;
+      if(Math.abs(ax)<DEADZONE) ax=0;
+      if(gp.buttons[14]&&gp.buttons[14].pressed) ax=-1;
+      if(gp.buttons[15]&&gp.buttons[15].pressed) ax=1;
+      if(ax!==0) dir=ax;
+    }
+  }
+  if(dir===0 && touchDir!==0) dir=touchDir;
+  if(dir===0 && tiltOn && Math.abs(tiltDir)>0.12) dir=tiltDir;
+  return Math.max(-1,Math.min(1,dir));
+}
+document.getElementById('pid').addEventListener('change',()=>{
+  const pid=document.getElementById('pid').value.trim();
+  if(!pid) return;
+  const last=+localStorage.getItem('alpine_last_sess_'+pid)||0;
+  if(last>0) document.getElementById('sessno').value=String(Math.min(7,last+1));
+});
+document.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'){keyDir=-1;INP.keys++;} if(e.key==='ArrowRight'){keyDir=1;INP.keys++;} });
+document.addEventListener('keyup',e=>{ if(e.key==='ArrowLeft'&&keyDir<0)keyDir=0; if(e.key==='ArrowRight'&&keyDir>0)keyDir=0; });
+function canvasSide(ev){
+  const r=cv.getBoundingClientRect();
+  const x=(ev.touches&&ev.touches.length?ev.touches[0].clientX:ev.clientX)-r.left;
+  return x < r.width/2 ? -1 : 1;
+}
+['touchstart','touchmove'].forEach(t=>cv.addEventListener(t,e=>{ e.preventDefault(); audioInit(); touchDir=canvasSide(e); INP.touch++; },{passive:false}));
+['touchend','touchcancel'].forEach(t=>cv.addEventListener(t,e=>{ e.preventDefault(); if(!e.touches||e.touches.length===0) touchDir=0; },{passive:false}));
+cv.addEventListener('mousedown',e=>{ touchDir=canvasSide(e); });
+window.addEventListener('mouseup',()=>{ touchDir=0; });
+function bindSteer(id,dir){
+  const b=document.getElementById(id);
+  const on=e=>{ e.preventDefault(); audioInit(); touchDir=dir,INP.touch++; };
+  const off=e=>{ e.preventDefault(); if(touchDir===dir) touchDir=0; };
+  b.addEventListener('touchstart',on,{passive:false}); b.addEventListener('touchend',off,{passive:false});
+  b.addEventListener('touchcancel',off,{passive:false});
+  b.addEventListener('mousedown',on); b.addEventListener('mouseup',off); b.addEventListener('mouseleave',off);
+}
+bindSteer('leftBtn',-1); bindSteer('rightBtn',1);
+document.getElementById('tiltBtn').onclick=async()=>{
+  audioInit();
+  try{
+    if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){
+      const p=await DeviceOrientationEvent.requestPermission();
+      if(p!=='granted'){ document.getElementById('tiltBtn').textContent='📱 Tilt not allowed'; return; }
+    }
+    tiltOn=!tiltOn;
+    document.getElementById('tiltBtn').textContent = tiltOn? '📱 Tilt ON':'📱 Enable tilt';
+    if(tiltOn && !window._tiltBound){
+      window._tiltBound=true;
+      window.addEventListener('deviceorientation',e=>{ if(tiltOn&&running)INP.tilt++;
+        if(!tiltOn){ tiltDir=0; return; }
+        let g=e.gamma;
+        if(typeof g!=='number') return;
+        if(window.matchMedia('(orientation: landscape)').matches){ g=e.beta; }
+        tiltDir=Math.max(-1,Math.min(1,(g||0)/22));
+      });
+    }
+  }catch(err){ document.getElementById('tiltBtn').textContent='📱 Tilt unavailable'; }
+};
+document.addEventListener('touchstart',()=>audioInit(),{once:true,passive:true});
+setInterval(()=>{ if(padIndex===null){ const gps=navigator.getGamepads?navigator.getGamepads():[];
+  for(const g of gps){ if(g){ padIndex=g.index; padUI(true,g.id); break; } } } },1000);
+
+
+/* ============ SOUND (Web Audio, synthesized — no external files) ============ */
+let AC=null, windGain=null, soundOn=true;
+function audioInit(){
+  if(AC) { if(AC.state==='suspended') AC.resume(); return; }
+  try{
+    AC=new (window.AudioContext||window.webkitAudioContext)();
+    // gentle wind: looped filtered noise, gain follows speed
+    const len=2*AC.sampleRate, buf=AC.createBuffer(1,len,AC.sampleRate), ch=buf.getChannelData(0);
+    for(let i=0;i<len;i++) ch[i]=Math.random()*2-1;
+    const src=AC.createBufferSource(); src.buffer=buf; src.loop=true;
+    const lp=AC.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=420;
+    windGain=AC.createGain(); windGain.gain.value=0;
+    src.connect(lp); lp.connect(windGain); windGain.connect(AC.destination); src.start();
+  }catch(e){ AC=null; }
+}
+function tone(freq,dur,type,vol,when=0,glide=null){
+  if(!AC||!soundOn) return;
+  const t=AC.currentTime+when, o=AC.createOscillator(), g=AC.createGain();
+  o.type=type; o.frequency.setValueAtTime(freq,t);
+  if(glide) o.frequency.exponentialRampToValueAtTime(glide,t+dur);
+  g.gain.setValueAtTime(0.0001,t);
+  g.gain.exponentialRampToValueAtTime(vol,t+0.015);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+  o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+dur+0.05);
+}
+const SND={
+  coin(){ tone(1046,0.09,'sine',0.18); tone(1568,0.14,'sine',0.15,0.07); },
+  bump(){ tone(140,0.22,'triangle',0.22,0,80);                       // soft thud, not a punishment
+          tone(90,0.18,'sine',0.12,0.02); },
+  up(){   tone(660,0.10,'sine',0.12); tone(880,0.14,'sine',0.12,0.09); },
+  down(){ tone(520,0.16,'sine',0.10,0,390); },
+  finish(){ [523,659,784,1046].forEach((f,i)=>tone(f,0.22,'sine',0.16,i*0.13)); }
+};
+document.getElementById('sndBtn').onclick=()=>{
+  soundOn=!soundOn; if(soundOn) audioInit();
+  if(windGain&&!soundOn) windGain.gain.value=0;
+  document.getElementById('sndBtn').textContent = soundOn?'🔊 Sound on':'🔇 Sound off';
+};
+
+/* ============ AGENT ============ */
+const RULES = (w, diff)=>{
+  const faced = w.hits + w.avoided;
+  const avoidRate = faced>0 ? w.avoided/faced : 1;
+  if(avoidRate>0.8 && faced>=2) return {d:Math.min(DIFF_MAX,diff+0.10), r:`avoid rate ${(100*avoidRate)|0}% > 80% → step up`};
+  if(avoidRate<0.4 && faced>=2) return {d:Math.max(DIFF_MIN,diff-0.15), r:`avoid rate ${(100*avoidRate)|0}% < 40% → ease off`};
+  return {d:diff, r:`avoid rate ${(100*avoidRate)|0}% in band → hold`};
+};
+async function agentEvaluate(){
+  const w=S.evalWindow, oldD=S.diff;
+  const payload={window_s:EVAL_INTERVAL_S, obstacles_hit:w.hits, obstacles_avoided:w.avoided,
+    coins:w.coins, distance_m:Math.round(S.dist), balance_pct:+curBalance().toFixed(1),
+    current_difficulty:+S.diff.toFixed(2), zero_failure_mode:S.zeroFail,
+    time_left_s:+(S.cap-S.playT).toFixed(1)};
+  let applied=null, src='rules';
+  if(S.agentic){
+    try{
+      const ctrl=new AbortController(); const to=setTimeout(()=>ctrl.abort(),3000);
+      const res=await fetch("https://api.anthropic.com/v1/messages",{
+        method:"POST", headers:{"Content-Type":"application/json"}, signal:ctrl.signal,
+        body:JSON.stringify({model:"claude-sonnet-4-6", max_tokens:1000, messages:[{role:"user",
+          content:`You are the adaptive-difficulty agent for a short-run research skiing game (30–60 second runs) played by adults aged 25-80. Zero-failure design: keep the player in flow; never let them fail repeatedly. Given this performance window, reply with ONLY a JSON object, no markdown fences: {"difficulty_multiplier": number between 0.30 and 1.50, "reason": short string <=60 chars}. Current data: ${JSON.stringify(payload)}. Adjust gently (max ±0.15 per step). If they hit obstacles, ease off; if they avoided nearly all, step up slightly; otherwise hold.`}]})
+      });
+      clearTimeout(to);
+      const data=await res.json();
+      const txt=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').replace(/```json|```/g,'').trim();
+      const j=JSON.parse(txt);
+      let d=+j.difficulty_multiplier;
+      if(!isFinite(d)) throw new Error('bad value');
+      d=Math.max(DIFF_MIN,Math.min(DIFF_MAX, Math.max(oldD-0.15,Math.min(oldD+0.15,d))));
+      applied={d, r:(j.reason||'agent decision').slice(0,60)}; src='Claude';
+    }catch(err){ applied=null; }
+  }
+  if(!applied){ applied=RULES(w,oldD); src = S.agentic?'fallback':'rules'; }
+  S.diff=applied.d;
+  if(S.diff>oldD) SND.up(); else if(S.diff<oldD) SND.down();
+  logState(oldD,S.diff,applied.r,src);
+  coach(applied.d>oldD?T('coachUp'):applied.d<oldD?T('coachDown'):T('coachHold'));
+  if(S.evalWindow.hits===0 && S.obFactor<1) S.obFactor=Math.min(1, S.obFactor+0.15);
+  S.evalWindow={hits:0,avoided:0,spawned:0,coins:0};
+}
+function coach(msg){
+  if(S && S.arm==='B') return;                       /* static arm: no coaching */
+  document.getElementById('coach').innerHTML='<b>'+T('coachTitle')+':</b> '+msg;
+  document.getElementById('coachFloat').textContent=msg;
+}
+
+/* ============ PERSPECTIVE HELPERS ============ */
+/* depth d: 0 at horizon, 1 at bottom of canvas */
+const easeD = d=>Math.pow(d,1.65);
+function depthY(d,H){ return H*(HORIZON + (1-HORIZON)*easeD(d)); }
+function halfW(d,W){ return W*(0.045 + 0.315*easeD(d)); }     // trail half-width
+function scaleAt(d){ return 0.14 + 0.86*easeD(d); }
+function laneToX(lane,d,W){ return W*0.5 + lane*halfW(d,W); }
+
+/* ============ GAME LOOP ============ */
+function spawn(dt){
+  const rate = 0.75*S.diff*S.obFactor;                        // obstacles per second (bumps thin this)
+  if(Math.random()<rate*dt){
+    const rockP = Math.min(0.45, 0.30 + 0.17*(S.diff-0.6));         // stones more common as difficulty rises
+    const type = Math.random()<rockP ? 'rock' : 'tree';
+    const lane = -0.85+1.7*Math.random();
+    S.obstacles.push({lane, z:VIEW_M, type, checked:false, wob:Math.random()*7}); S.spawned++; S.evalWindow.spawned++;
+    if(type==='rock' && S.diff>=0.9 && Math.random()<0.35){          // boulder pair at higher difficulty
+      S.obstacles.push({lane:Math.max(-0.9,Math.min(0.9,lane+(Math.random()<0.5?-0.3:0.3))), z:VIEW_M+3, type:'rock', checked:false, wob:Math.random()*7});
+      S.spawned++; S.evalWindow.spawned++;
+    }
+  }
+  if(Math.random()<0.9*dt){ S.coinsArr.push({lane:-0.8+1.6*Math.random(), z:VIEW_M, checked:false, ph:Math.random()*7}); S.coinsSpawned++; }
+  if(Math.random()<8*dt){ S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02}); }
+  if(Math.random()<2.2*dt){ S.scenery.push({side:Math.random()<0.5?-1:1, off:0.12+0.55*Math.random(), z:VIEW_M, kind:Math.random()<0.8?'tree':'rock', big:0.8+0.6*Math.random()}); }
+}
+function easeAfterBump(){
+  // zero-failure response: speed stays exactly the same — only the slope thins out
+  S.obFactor=Math.max(0.40, S.obFactor*0.75);
+  const skierZ=VIEW_M*(1-SKIER_D);
+  let cleared=0;
+  S.obstacles=S.obstacles.filter(o=>{
+    if(o.z>skierZ+4 && o.z<skierZ+32 && Math.random()<0.6){ cleared++; return false; }
+    return true;
+  });
+  logState(S.diff,S.diff,`bump → cleared ${cleared} obstacle(s), density ×${S.obFactor.toFixed(2)} (speed unchanged)`,'bump');
+  coach(T('coachBump'));
+}
+function step(dt){
+  sceneT+=dt;
+  const spd = BASE_SPEED * S.diff;
+  S.maxSpeed=Math.max(S.maxSpeed,spd);
+  if(windGain&&soundOn) windGain.gain.value=Math.min(0.055, spd/380);
+  S.dist += spd*dt;
+  S.playT += dt;
+
+  // steering (carve feel: velocity-damped lane movement)
+  const dir=pollInput();
+  S.vx += dir*5.2*dt; S.vx*=Math.pow(0.015,dt);
+  S.skierLane = Math.max(-1.05,Math.min(1.05, S.skierLane + S.vx*dt*2.2));
+  if(Math.abs(S.skierLane)<0.95) S.onTrailT+=dt; else S.offTrailT+=dt;
+  // snow spray when carving
+  if(Math.abs(S.vx)>0.45 && Math.random()<22*dt){
+    S.spray.push({lane:S.skierLane+(Math.random()-0.5)*0.06, d:SKIER_D+0.015, vy:0.10+0.22*Math.random(), vx:(S.vx>0?-1:1)*(0.03+0.10*Math.random()), life:0.5});
+  }
+
+  spawn(dt);
+  for(const o of S.obstacles) o.z-=spd*dt;
+  for(const c of S.coinsArr) c.z-=spd*dt;
+  for(const s of S.scenery) s.z-=spd*dt;
+  for(const f of S.flakes){ f.y+=dt*(0.16+0.1*f.s); f.x+=f.drift*dt*10; }
+  for(const p of S.spray){ p.life-=dt; p.lane+=p.vx*dt; p.d+=p.vy*dt*0.15; }
+
+  // collisions where object depth crosses the skier line
+  const skierZ = VIEW_M*(1-SKIER_D);   // metres ahead corresponding to skier band
+  S.obstacles=S.obstacles.filter(o=>{
+    if(!o.checked && o.z<=skierZ+1.5){
+      o.checked=true;
+      if(Math.abs(o.lane-S.skierLane) < (o.type==='rock'?0.24:0.17)){
+        S.hits++; S.evalWindow.hits++;
+        S.lastHitT=S.playT;              /* combo resets - nothing banked is lost */
+        SND.bump(); S.flashUntil=S.playT+0.6;
+        if(S.zeroFail){ easeAfterBump(); }
+        else { S.livesLost++; if(S.livesLost>=3){ S.gameOver=true; S.endReason='three bumps'; } }
+        return false;
+      } else { S.avoided++; S.evalWindow.avoided++;
+        if(Math.abs(o.lane-S.skierLane)<0.45){ S.dodges++; } }
+    }
+    return o.z>-4;
+  });
+  S.coinsArr=S.coinsArr.filter(c=>{
+    if(!c.checked && c.z<=skierZ+1.5){
+      c.checked=true;
+      if(Math.abs(c.lane-S.skierLane)<0.20){ S.coins++; S.evalWindow.coins++;
+        S.coinScore+=10*curCombo(); SND.coin(); return false; }
+      else { S.coinsMissed++; }
+    }
+    return c.z>-4;
+  });
+  S.scenery=S.scenery.filter(s=>s.z>-6);
+  S.flakes=S.flakes.filter(f=>f.y<1.05);
+  S.spray=S.spray.filter(p=>p.life>0);
+
+  if(S.arm!=='B' && S.playT - S.lastEval >= EVAL_INTERVAL_S){ S.lastEval=S.playT; agentEvaluate(); }
+  if(S.balSamples.length < Math.floor(S.playT)){ S.balSamples.push(curBalance()); }
+  if(curCombo()>S.comboMax) S.comboMax=curCombo();
+
+  // END CONDITION (v3.0): every run lasts the full time cap; the distance
+  // goal is a mid-run bonus, not an early end
+  if(!S.goalReached && S.dist>=S.goal){
+    S.goalReached=true; SND.up();
+    coach(T('coachGoalCont'));
+  }
+  if(S.playT>=S.cap){ S.endReason=S.cap+' s complete'+(S.goalReached?' (goal reached)':''); endRun(); }
+  else if(S.gameOver){ endRun(); }
+}
+
+/* ============ ART ============ */
+function drawBackdrop(W,H){
+  // sky
+  const g=ctx.createLinearGradient(0,0,0,H*HORIZON+40);
+  g.addColorStop(0,'#BFDCEC'); g.addColorStop(0.7,'#E9F2F0'); g.addColorStop(1,'#F6EFDF');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H*HORIZON+40);
+  // sun
+  ctx.fillStyle='rgba(244,196,110,0.9)';
+  ctx.beginPath(); ctx.arc(W*0.78,H*0.12,26,0,7); ctx.fill();
+  ctx.fillStyle='rgba(244,196,110,0.25)';
+  ctx.beginPath(); ctx.arc(W*0.78,H*0.12,42,0,7); ctx.fill();
+  // far ridge
+  ctx.fillStyle='#C9D8DE';
+  ctx.beginPath(); ctx.moveTo(0,H*HORIZON);
+  ctx.lineTo(W*0.10,H*0.16); ctx.lineTo(W*0.22,H*HORIZON-14);
+  ctx.lineTo(W*0.34,H*0.11); ctx.lineTo(W*0.46,H*HORIZON-8);
+  ctx.lineTo(W*0.60,H*0.15); ctx.lineTo(W*0.74,H*HORIZON-16);
+  ctx.lineTo(W*0.88,H*0.13); ctx.lineTo(W,H*HORIZON);
+  ctx.closePath(); ctx.fill();
+  // snow caps
+  ctx.fillStyle='#FFFFFF';
+  [[0.10,0.16],[0.34,0.11],[0.60,0.15],[0.88,0.13]].forEach(([fx,fy])=>{
+    ctx.beginPath(); ctx.moveTo(W*fx,H*fy);
+    ctx.lineTo(W*fx-16,H*fy+22); ctx.lineTo(W*fx-6,H*fy+18);
+    ctx.lineTo(W*fx,H*fy+26); ctx.lineTo(W*fx+7,H*fy+17);
+    ctx.lineTo(W*fx+16,H*fy+22); ctx.closePath(); ctx.fill();
+  });
+  // near ridge
+  ctx.fillStyle='#DEE9EC';
+  ctx.beginPath(); ctx.moveTo(0,H*HORIZON+2);
+  ctx.lineTo(W*0.16,H*0.20); ctx.lineTo(W*0.30,H*HORIZON);
+  ctx.lineTo(W*0.52,H*0.21); ctx.lineTo(W*0.70,H*HORIZON);
+  ctx.lineTo(W*0.86,H*0.22); ctx.lineTo(W,H*HORIZON+2);
+  ctx.lineTo(W,H*HORIZON+30); ctx.lineTo(0,H*HORIZON+30);
+  ctx.closePath(); ctx.fill();
+}
+function drawPiste(W,H){
+  // snowfield
+  ctx.fillStyle='#EFF3F1'; ctx.fillRect(0,H*HORIZON,W,H*(1-HORIZON));
+  // groomed trail (converging trapezoid)
+  ctx.beginPath();
+  ctx.moveTo(W*0.5-halfW(0,W),depthY(0,H));
+  ctx.lineTo(W*0.5+halfW(0,W),depthY(0,H));
+  ctx.lineTo(W*0.5+halfW(1,W),H);
+  ctx.lineTo(W*0.5-halfW(1,W),H);
+  ctx.closePath();
+  const pg=ctx.createLinearGradient(0,H*HORIZON,0,H);
+  pg.addColorStop(0,'#F3F7F8'); pg.addColorStop(1,'#FFFFFF');
+  ctx.fillStyle=pg; ctx.fill();
+  // groomed corduroy lines
+  ctx.strokeStyle='rgba(190,210,218,0.45)'; ctx.lineWidth=1.5;
+  for(let i=1;i<7;i++){
+    const lane=-1+2*i/7;
+    ctx.beginPath();
+    ctx.moveTo(laneToX(lane,0,W),depthY(0,H));
+    ctx.lineTo(laneToX(lane,1,W),H);
+    ctx.stroke();
+  }
+  // trail edges (safety fencing dashes)
+  ctx.strokeStyle='#B7CCD4'; ctx.lineWidth=3; ctx.setLineDash([12,9]);
+  ctx.beginPath();
+  ctx.moveTo(W*0.5-halfW(0,W),depthY(0,H)); ctx.lineTo(W*0.5-halfW(1,W),H);
+  ctx.moveTo(W*0.5+halfW(0,W),depthY(0,H)); ctx.lineTo(W*0.5+halfW(1,W),H);
+  ctx.stroke(); ctx.setLineDash([]);
+}
+function shadow(x,y,r){
+  ctx.fillStyle='rgba(120,150,165,0.25)';
+  ctx.beginPath(); ctx.ellipse(x,y,r,r*0.32,0,0,7); ctx.fill();
+}
+function drawTree(x,y,s,wob){
+  const sway=Math.sin(sceneT*1.2+wob)*1.5*s;
+  shadow(x+4*s,y+4*s,26*s);
+  ctx.fillStyle='#7A5230'; ctx.fillRect(x-3.5*s,y-4*s,7*s,12*s);       // trunk
+  const tier=(w,h,dy,col)=>{ ctx.fillStyle=col; ctx.beginPath();
+    ctx.moveTo(x+sway*0.4,y-dy-h); ctx.lineTo(x-w+sway*0.2,y-dy); ctx.lineTo(x+w+sway*0.2,y-dy);
+    ctx.closePath(); ctx.fill(); };
+  tier(26*s,30*s,2*s,'#1E4A38');                                       // bottom
+  tier(20*s,26*s,20*s,'#276048');
+  tier(14*s,22*s,36*s,'#2F7355');                                      // top
+  // snow on tiers
+  ctx.fillStyle='rgba(255,255,255,0.85)';
+  [[26,2],[20,20],[14,36]].forEach(([w,dy])=>{
+    ctx.beginPath();
+    ctx.moveTo(x-w*s*0.55+sway*0.2, y-dy*s-6*s);
+    ctx.quadraticCurveTo(x+sway*0.3, y-dy*s-13*s, x+w*s*0.55+sway*0.2, y-dy*s-6*s);
+    ctx.quadraticCurveTo(x+sway*0.3, y-dy*s-3*s, x-w*s*0.55+sway*0.2, y-dy*s-6*s);
+    ctx.fill();
+  });
+}
+function drawRock(x,y,s){
+  shadow(x+3*s,y+5*s,20*s);
+  ctx.fillStyle='#8E98A0';
+  ctx.beginPath();
+  ctx.moveTo(x-18*s,y+6*s); ctx.lineTo(x-12*s,y-9*s); ctx.lineTo(x-2*s,y-14*s);
+  ctx.lineTo(x+10*s,y-10*s); ctx.lineTo(x+17*s,y+1*s); ctx.lineTo(x+13*s,y+7*s);
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle='#A9B2B9';                                             // lit facet
+  ctx.beginPath(); ctx.moveTo(x-12*s,y-9*s); ctx.lineTo(x-2*s,y-14*s);
+  ctx.lineTo(x+2*s,y-2*s); ctx.lineTo(x-8*s,y+1*s); ctx.closePath(); ctx.fill();
+  ctx.fillStyle='#6E7880';                                             // shaded facet
+  ctx.beginPath(); ctx.moveTo(x+10*s,y-10*s); ctx.lineTo(x+17*s,y+1*s);
+  ctx.lineTo(x+13*s,y+7*s); ctx.lineTo(x+2*s,y-2*s); ctx.closePath(); ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,0.9)';                               // snow cap
+  ctx.beginPath();
+  ctx.moveTo(x-12*s,y-9*s); ctx.quadraticCurveTo(x-4*s,y-17*s,x+10*s,y-10*s);
+  ctx.quadraticCurveTo(x+2*s,y-8*s,x-12*s,y-9*s); ctx.fill();
+}
+function drawCoin(x,y,s,ph){
+  const sq=Math.abs(Math.cos(sceneT*2.4+ph));                          // spin: squash x
+  shadow(x,y+11*s,10*s);
+  ctx.save(); ctx.translate(x,y); ctx.scale(Math.max(0.25,sq),1);
+  ctx.fillStyle='#D99A2B'; ctx.beginPath(); ctx.arc(0,0,10*s,0,7); ctx.fill();   // rim
+  ctx.fillStyle='#F2BE4C'; ctx.beginPath(); ctx.arc(0,0,7.6*s,0,7); ctx.fill();  // face
+  ctx.strokeStyle='#B67C18'; ctx.lineWidth=1.6*s;
+  ctx.beginPath(); ctx.arc(0,0,7.6*s,0,7); ctx.stroke();
+  ctx.fillStyle='#B67C18'; ctx.font=`bold ${9*s}px Verdana`;
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('★',0,0.5*s);
+  ctx.restore();
+  // sparkle
+  ctx.fillStyle='rgba(255,255,255,0.9)';
+  ctx.beginPath(); ctx.arc(x-4*s,y-5*s,1.6*s,0,7); ctx.fill();
+}
+function drawSkier(W,H){
+  const d=SKIER_D, x=laneToX(S.skierLane,d,W), y=depthY(d,H);
+  const lean=Math.max(-0.5,Math.min(0.5,S.vx*0.55));
+  const slowed=S.playT<S.flashUntil;
+  // ski tracks trailing to bottom edge
+  ctx.strokeStyle='rgba(160,185,200,0.55)'; ctx.lineWidth=3;
+  [-7,7].forEach(off=>{
+    ctx.beginPath(); ctx.moveTo(x+off,y+18);
+    ctx.quadraticCurveTo(x+off-lean*60, y+70, x+off-lean*140, H+10);
+    ctx.stroke();
+  });
+  shadow(x,y+20,26);
+  ctx.save(); ctx.translate(x,y); ctx.rotate(lean);
+  // skis (bright, with turned-up tips pointing away/up-slope)
+  ctx.strokeStyle='#C2483A'; ctx.lineWidth=5; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(-9,18); ctx.lineTo(-13,-16); ctx.moveTo(9,18); ctx.lineTo(13,-16); ctx.stroke();
+  ctx.fillStyle='#C2483A';
+  ctx.beginPath(); ctx.arc(-13,-16,3,0,7); ctx.fill();
+  ctx.beginPath(); ctx.arc(13,-16,3,0,7); ctx.fill();
+  // legs
+  ctx.strokeStyle='#27435C'; ctx.lineWidth=7;
+  ctx.beginPath(); ctx.moveTo(-6,14); ctx.lineTo(-5,2); ctx.moveTo(6,14); ctx.lineTo(5,2); ctx.stroke();
+  // body (jacket)
+  ctx.fillStyle= slowed? '#D96A4E' : '#2D6A8E';
+  ctx.beginPath();
+  ctx.moveTo(-10,4); ctx.quadraticCurveTo(-12,-16,0,-18);
+  ctx.quadraticCurveTo(12,-16,10,4); ctx.quadraticCurveTo(0,9,-10,4);
+  ctx.fill();
+  ctx.strokeStyle='rgba(255,255,255,0.5)'; ctx.lineWidth=1.5;          // zip line
+  ctx.beginPath(); ctx.moveTo(0,-16); ctx.lineTo(0,5); ctx.stroke();
+  // arms + poles angled back
+  ctx.strokeStyle= slowed? '#B65540' : '#245676'; ctx.lineWidth=5;
+  ctx.beginPath(); ctx.moveTo(-9,-10); ctx.lineTo(-17,-2); ctx.moveTo(9,-10); ctx.lineTo(17,-2); ctx.stroke();
+  ctx.strokeStyle='#7A5230'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.moveTo(-17,-2); ctx.lineTo(-21,16); ctx.moveTo(17,-2); ctx.lineTo(21,16); ctx.stroke();
+  // head: helmet + goggles band
+  ctx.fillStyle='#F1C79B'; ctx.beginPath(); ctx.arc(0,-24,7.5,0,7); ctx.fill();
+  ctx.fillStyle='#EFEFEA'; ctx.beginPath(); ctx.arc(0,-26,7.8,Math.PI,0); ctx.fill();
+  ctx.fillStyle='#22303B'; ctx.fillRect(-7,-27,14,4);
+  ctx.restore();
+}
+function draw(){
+  const W=cv.width,H=cv.height;
+  drawBackdrop(W,H);
+  drawPiste(W,H);
+
+  // depth-sorted world: scenery (off-trail), obstacles, coins
+  const items=[];
+  for(const s of S.scenery){ const d=1-s.z/VIEW_M; if(d>0&&d<1.15) items.push({d,kind:'scene',o:s}); }
+  for(const o of S.obstacles){ const d=1-o.z/VIEW_M; if(d>0&&d<1.15) items.push({d,kind:o.type,o}); }
+  for(const c of S.coinsArr){ const d=1-c.z/VIEW_M; if(d>0&&d<1.15) items.push({d,kind:'coin',o:c}); }
+  items.sort((a,b)=>a.d-b.d);
+  for(const it of items){
+    const d=Math.min(1,it.d), sc=scaleAt(d), y=depthY(d,H);
+    if(it.kind==='scene'){
+      const x= W*0.5 + it.o.side*(halfW(d,W)+ it.o.off*W*0.22*easeD(d)+10);
+      if(it.o.kind==='tree') drawTree(x,y,sc*it.o.big,it.o.z);
+      else drawRock(x,y,sc*it.o.big*0.8);
+    }
+    else if(it.kind==='tree') drawTree(laneToX(it.o.lane,d,W),y,sc,it.o.wob);
+    else if(it.kind==='rock') drawRock(laneToX(it.o.lane,d,W),y,sc*1.35);
+    else drawCoin(laneToX(it.o.lane,d,W),y,sc,it.o.ph);
+  }
+  // snow spray
+  for(const p of S.spray){
+    ctx.fillStyle=`rgba(255,255,255,${Math.max(0,p.life*1.6)})`;
+    ctx.beginPath(); ctx.arc(laneToX(p.lane,p.d,W),depthY(Math.min(1,p.d),H)-6,3.2,0,7); ctx.fill();
+  }
+  drawSkier(W,H);
+  // falling flakes (screen-space, in front)
+  ctx.fillStyle='rgba(255,255,255,.85)';
+  for(const f of S.flakes){ ctx.beginPath(); ctx.arc(f.x*W,f.y*H,2.1*f.s,0,7); ctx.fill(); }
+
+  // HUD
+  document.getElementById('hudL').textContent=Math.round(S.dist)+' m / '+S.goal+' m';
+  document.getElementById('hudM').textContent='⏱ '+Math.max(0,(S.cap-S.playT)).toFixed(0)+' s   ×'+S.diff.toFixed(2);
+  document.getElementById('hudR').textContent=
+    (S.zeroFail?'':'💚'.repeat(Math.max(0,3-S.livesLost))+'  ')+
+    '🪙 '+S.coins+(curCombo()>1?' ×'+curCombo():'')+'   '+curScore()+' pts';
+}
+function loop(ts){
+  if(!running) return;
+  if(!tPrev) tPrev=ts;
+  const dt=Math.min(0.05,(ts-tPrev)/1000); tPrev=ts;
+  step(dt); if(running){ draw(); requestAnimationFrame(loop); }
+}
+
+/* ============ RUN CONTROL ============ */
+document.getElementById('startBtn').onclick=()=>{
+  if(!P3B || !P3B.consent_ts || !P3B.enrol) return;   /* flow guard */
+  audioInit();
+  S=newSession(); tPrev=0; running=true;
+  document.getElementById('stateBody').innerHTML='';
+  document.getElementById('summary').style.display='none';
+  document.getElementById('endBtn').style.display='inline-block';
+  document.getElementById('runEndOvl').style.display='none';
+  document.getElementById('coachPanel').style.display = (S.arm==='B')?'none':'block';
+  document.getElementById('modePill').textContent='';
+  logState(S.diff,S.diff,'run start — arm '+S.arm+(S.arm==='B'?' (static ×0.85)':' (adaptive, gentle floor)'),'init');
+  document.getElementById('coachFloat').textContent='';
+  document.body.classList.add('playmode'); fitCanvas();
+  coach(T('coachStart'));
+  requestAnimationFrame(loop);
+};
+document.getElementById('endBtn').onclick=()=>{ if(running){ S.endReason='ended early by staff'; endRun(true); } };
+function endRun(early){
+  running=false;
+  (function(){ const ov=document.getElementById('runEndOvl'), cv=document.getElementById('cv');
+    ov.style.bottom='auto';
+    ov.style.top=Math.round(cv.offsetTop+cv.clientHeight*0.78)+'px';
+    ov.style.display='flex'; })();
+  if(windGain) windGain.gain.value=0;
+  SND.finish();
+  document.getElementById('endBtn').style.display='none';
+  const avgBal = S.balSamples.length? S.balSamples.reduce((a,b)=>a+b,0)/S.balSamples.length : curBalance();
+  const goalHit = !!S.goalReached;
+  S.score = curScore() + (goalHit?50:0);
+  try{ if(S.pid && S.pid!=='UNSET') localStorage.setItem('alpine_last_sess_'+S.pid, String(S.sessNo)); }catch(e){}
+  S.result={
+    Participant_ID:S.pid, Session_No:S.sessNo,
+    Session_Date:new Date().toISOString().slice(0,10),
+    Duration_Min:+(S.playT/60).toFixed(2),
+    Distance_m:Math.round(S.dist), Coins:S.coins,
+    Obstacles_Hit:S.hits, Lives_Lost:S.livesLost,
+    Avg_Balance_pct:+avgBal.toFixed(1),
+    Max_Speed:+S.maxSpeed.toFixed(1),
+    AI_DiffMult:+S.diff.toFixed(2),
+    Reached_GameOver: S.gameOver? 'TRUE':'FALSE',
+    Score:S.score, Combo_Max:S.comboMax, Dodges:S.dodges,
+    Coins_Missed:S.coinsMissed, Input_Mode:inpMode(),
+    Post_FRA_Index:'', Notes:(S.zeroFail?'zero-failure':'classic')+'; cap='+S.cap+'s; end: '+(S.endReason||'unknown')+'; state changes='+S.stateChanges.length
+  };
+  const dl=document.getElementById('sumList'); dl.innerHTML='';
+  for(const[k,v] of Object.entries(S.result)){ dl.insertAdjacentHTML('beforeend',`<dt>${k}</dt><dd>${v===''?'—':v}</dd>`); }
+  /* --- Stage 3B: record the run and update participant-facing summary --- */
+  S.result.Arm=S.arm; S.result.Lang=LANG;
+  P3B.xp=(P3B.xp||0)+S.score;
+  S.result.XP_Total=P3B.xp;
+  S.result.Skier_Level=skierLevel(P3B.xp);
+  P3B.runs.push(S.result);
+  P3B.states[String(S.sessNo)]=S.stateChanges;
+  saveP3B();
+  document.getElementById('runLine').textContent =
+    (goalHit? T('runLineGoal') : T('runLineTime'))(Math.round(S.dist), S.coins);
+  const tb=document.getElementById('trajBox');
+  if(S.arm==='A'){
+    const scores=P3B.runs.map(r=>r.Score||0), best=Math.max(...scores);
+    tb.style.display='block';
+    tb.innerHTML='<b>'+T('trajTitle')+'</b>'+scores.map((sc,i)=>
+      `<div style="display:flex;align-items:center;gap:8px"><span style="width:2.2em">${i+1}.</span>`+
+      `<div class="bar" style="width:${Math.max(6,68*sc/Math.max(1,best))}%"></div>`+
+      `<span>${sc}${sc===best?' ⭐ '+T('trajBest'):''}</span></div>`).join('');
+  } else { tb.style.display='none'; }
+  document.getElementById('summary').style.display='block';
+  drawEndOverlay(goalHit);
+  coach(S.gameOver? T('endCoachOver')(Math.round(S.dist),S.coins)
+       : goalHit? T('endCoachGoal')(S.goal,S.coins,avgBal.toFixed(0))
+       : T('endCoachTime')(Math.round(S.dist),S.cap,S.coins));
+}
+
+function drawEndOverlay(goalHit){
+  const W=cv.width,H=cv.height;
+  draw();                                        // final scene behind the card
+  ctx.fillStyle='rgba(18,48,39,0.35)'; ctx.fillRect(0,0,W,H);
+  const cw=W*0.62, chh=H*0.52, cx=(W-cw)/2, cy=(H-chh)/2;
+  ctx.fillStyle='rgba(251,247,239,0.97)';
+  ctx.beginPath(); ctx.roundRect(cx,cy,cw,chh,22); ctx.fill();
+  ctx.strokeStyle='#E8A64B'; ctx.lineWidth=4; ctx.stroke();
+  const greets = S.gameOver? T('gOver') : goalHit? T('gGoal') : T('gTime');
+  const g = greets[Math.floor(Math.random()*greets.length)];
+  ctx.textAlign='center'; ctx.fillStyle='#1F4A38';
+  ctx.font='bold 44px "Trebuchet MS",Verdana';
+  ctx.fillText('🎉 '+g, W/2, cy+64);
+  ctx.font='bold 64px "Trebuchet MS",Verdana'; ctx.fillStyle='#C2483A';
+  ctx.fillText(S.score+T('pts'), W/2, cy+140);
+  ctx.font='20px Verdana'; ctx.fillStyle='#22302B';
+  ctx.fillText(S.gameOver? T('endStatOver')(Math.round(S.dist),S.coins)
+    : T('endStat')(Math.round(S.dist),S.coins,goalHit), W/2, cy+180);
+  ctx.font='bold 19px Verdana'; ctx.fillStyle='#1F4A38';
+  ctx.fillText(T('endProg')(skierLevel(P3B.xp||0), (P3B.xp||0),
+    S.coins, S.coins+S.coinsMissed, S.dodges), W/2, cy+214);
+  ctx.font='16px Verdana'; ctx.fillStyle='#6E6A5E';
+  ctx.fillText(T('endHint'), W/2, cy+chh-26);
+  // celebratory snow burst
+  ctx.fillStyle='#E8A64B';
+  for(let i=0;i<26;i++){ const a=Math.random()*6.28, r=40+Math.random()*90;
+    ctx.beginPath(); ctx.arc(W/2+Math.cos(a)*r*2, cy+70+Math.sin(a)*r*0.6, 2.5+Math.random()*2.5,0,7); ctx.fill(); }
+}
+
+/* ============ RPG-STYLE SCORING (v3.1): gains only, never deductions ============ */
+function curCombo(){ const c=S.playT-S.lastHitT; return c>=12?3:c>=6?2:1; }
+function curScore(){ return Math.round(S.dist)+S.coinScore+S.dodges*5; }
+function skierLevel(xp){ const th=[0,300,700,1200,1800,2600,3500,4600,6000,8000];
+  let l=1; for(let i=0;i<th.length;i++) if(xp>=th[i]) l=i+1; return l; }
+
+/* ============ EXPORT ============ */
+async function dlFile(name, text){
+  const b=new Blob([text],{type:'text/csv'});
+  const f=new File([b],name,{type:'text/csv'});
+  if(navigator.canShare && navigator.canShare({files:[f]})){
+    try{ await navigator.share({files:[f], title:name,
+      text:'Alpine Coordination Game — session results. Please e-mail this file back to sidney.tam@connect.polyu.hk'});
+      return; }catch(e){ if(e && e.name==='AbortError') return; }
+  }
+  try{
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(b); a.download=name; a.click(); URL.revokeObjectURL(a.href);
+  }catch(e){
+    const w=window.open('about:blank');
+    if(w){ w.document.write('<pre>'+text.replace(/</g,'&lt;')+'</pre>'); w.document.title=name; }
+  }
+}
+/* ============ v3.0 STAGE 3B: single-file export ============ */
+function buildExport(){
+  return JSON.stringify({
+    build:'Alpine_Coordination_Game_v3.0_Stage3B',
+    device_id:DEVICE_ID||null,
+    participant_code:P3B.pid, arm:P3B.arm, failure_mode:P3B.failMode||'ZF', language:P3B.lang,
+    consent:{agreed:true, timestamp:P3B.consent_ts},
+    enrolment:P3B.enrol,
+    sessions:P3B.runs,
+    state_logs:P3B.states,
+    questionnaire:P3B.quest,
+    scale:'1 (strongly disagree) - 5 (strongly agree)',
+    exported_ts:new Date().toISOString()
+  },null,1);
+}
+const RESEARCHER_EMAIL='sidney.tam@connect.polyu.hk';
+function csvEsc(v){ v=(v==null?'':String(v)); return /[",\n\r]/.test(v)? '"'+v.replace(/"/g,'""')+'"' : v; }
+function participantCSV(p){
+  const L=[];
+  L.push('[PARTICIPANT]'); L.push('field,value');
+  const meta=[['build','Alpine_Coordination_Game_v3.0_Stage3B'],['device_id',DEVICE_ID||''],
+    ['participant_code',p.pid||''],['arm',p.arm||''],['failure_mode',p.failMode||'ZF'],
+    ['language',p.lang||''],['consent_agreed','yes'],['consent_ts',p.consent_ts||'']];
+  if(p.enrol){ meta.push(['age_band',p.enrol.age_band],['gender',p.enrol.gender],
+    ['education',p.enrol.education],['prior_play',p.enrol.prior_play]); }
+  meta.forEach(m=>L.push(csvEsc(m[0])+','+csvEsc(m[1])));
+  const runs=p.runs||[];
+  if(runs.length){
+    const cols=Object.keys(runs[0]);
+    L.push(''); L.push('[SESSIONS]'); L.push(cols.map(csvEsc).join(','));
+    runs.forEach(r=>L.push(cols.map(c=>csvEsc(r[c])).join(',')));
+  }
+  const states=p.states||{};
+  const sk=Object.keys(states);
+  if(sk.length){
+    L.push(''); L.push('[STATE_CHANGES]');
+    L.push('Session_No,t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src');
+    sk.forEach(sn=>(states[sn]||[]).forEach(e=>L.push(
+      [sn,e.t,e.playMin,e.oldDiff,e.newDiff,e.dist,e.coins,e.hits,e.balance,e.reason,e.src]
+        .map(csvEsc).join(','))));
+  }
+  if(p.quest){
+    L.push(''); L.push('[QUESTIONNAIRE]');
+    L.push('item,response (1 strongly disagree - 5 strongly agree)');
+    Object.keys(p.quest).forEach(k=>L.push(csvEsc(k)+','+csvEsc(p.quest[k])));
+  }
+  return L.join('\r\n');
+}
+function exportHeader(){
+  return LANG==='zh' ? '【滑雪遊戲研究結果 '+P3B.pid+'——請原封不動傳送給研究員】'
+       : LANG==='zhs' ? '【滑雪游戏研究结果 '+P3B.pid+'——请原封不动发送给研究员】'
+       : '[ALPINE GAME STUDY RESULTS '+P3B.pid+' - please send exactly as it is]';
+}
+function buildExportCSV(){
+  return csvEsc(exportHeader())+'\r\nexported_ts,'+new Date().toISOString()
+       +'\r\n'+participantCSV(P3B);
+}
+function csvFileName(){ return 'Alpine3B_'+(DEVICE_ID||'X')+'_'+(P3B.pid||'anon')+'.csv'; }
+function emailExport(){
+  let body=buildExportCSV();
+  if(body.length>28000){
+    body=csvEsc(exportHeader())+'\r\nexported_ts,'+new Date().toISOString()
+      +'\r\n'+participantCSV(Object.assign({},P3B,{states:{}}))
+      +'\r\n\r\n(state logs omitted from this e-mail - please also send the saved CSV file)';
+  }
+  location.href='mailto:'+RESEARCHER_EMAIL
+    +'?subject='+encodeURIComponent('Alpine 3B results '+(DEVICE_ID||'')+' '+(P3B.pid||''))
+    +'&body='+encodeURIComponent(body);
+}
+function buildExportText(){ return buildExportCSV(); }
+async function shareExport(){
+  const text=buildExportCSV(), name=csvFileName();
+  try{
+    const f=new File([text],name,{type:'text/csv'});
+    if(navigator.canShare && navigator.canShare({files:[f]})){
+      await navigator.share({files:[f], title:name,
+        text:'Alpine Coordination Game results 滑雪遊戲研究結果 — '+RESEARCHER_EMAIL});
+      return;
+    }
+  }catch(e){ if(e && e.name==='AbortError') return; }
+  if(navigator.share){
+    try{ await navigator.share({title:'Alpine 3B '+P3B.pid, text}); return; }
+    catch(e){ if(e && e.name==='AbortError') return; }
+  }
+  copyExport();   /* no share sheet (desktop): fall back to copy */
+}
+async function copyExport(){
+  const text=buildExportText();
+  let ok=false;
+  try{ await navigator.clipboard.writeText(text); ok=true; }
+  catch(e){
+    try{ const ta=document.createElement('textarea'); ta.value=text;
+      document.body.appendChild(ta); ta.select(); ok=document.execCommand('copy');
+      ta.remove(); }catch(e2){}
+  }
+  const b=document.getElementById('copyBtn');
+  if(ok){ b.textContent=T('fCopied'); setTimeout(()=>{ b.textContent=T('fCopy'); },4000); }
+  else dlExport();
+}
+function dlExport(){ dlFile(csvFileName(), buildExportCSV()); }
+
+/* fit the canvas to the viewport in play mode, preserving aspect */
+function fitCanvas(){
+  if(!document.body.classList.contains('playmode')){
+    cv.style.width=''; cv.style.height=''; return;
+  }
+  const wrap=document.getElementById('gameWrap');
+  const tr=document.getElementById('touchRow');
+  const availW=wrap.clientWidth-16;
+  const availH=wrap.clientHeight - tr.offsetHeight - 30;
+  const ar=cv.width/cv.height;
+  let w=availW, h=w/ar;
+  if(h>availH){ h=availH; w=h*ar; }
+  cv.style.width=Math.max(200,w)+'px'; cv.style.height=Math.max(140,h)+'px';
+}
+window.addEventListener('resize',()=>setTimeout(fitCanvas,60));
+window.addEventListener('orientationchange',()=>setTimeout(fitCanvas,250));
+
+/* ============ v3.0 STAGE 3B: flow wiring ============ */
+loadP3B();
+function pickLang(l){
+  LANG=l; P3B.lang=l; saveP3B(); applyI18n();
+  showOvl(P3B.consent_ts ? (P3B.enrol? null : 'ovlEnrol') : 'ovlConsent');
+}
+document.getElementById('langZh').onclick=()=>pickLang('zh');
+document.getElementById('langZhs').onclick=()=>pickLang('zhs');
+document.getElementById('langEn').onclick=()=>pickLang('en');
+document.getElementById('consentYes').onclick=()=>{
+  P3B.consent_ts=new Date().toISOString();
+  if(!P3B.pid) P3B.pid=newPid();
+  if(!P3B.arm) P3B.arm=Math.random()<0.5?'A':'B';
+  if(!P3B.failMode) P3B.failMode=Math.random()<0.5?'ZF':'GO';
+  saveP3B(); showOvl('ovlEnrol');
+};
+document.getElementById('consentNo').onclick=()=>{
+  const c=document.querySelector('#ovlFinal .card');
+  const dec = LANG==='zh' ? ['完全沒有問題——多謝你!','你可以直接關閉此頁面。']
+           : LANG==='zhs' ? ['完全没有问题——多谢你!','你可以直接关闭此页面。']
+           : ['No problem at all — thank you!','You can simply close this page.'];
+  c.innerHTML='<h2>'+dec[0]+'</h2><p>'+dec[1]+'</p>';
+  showOvl('ovlFinal');
+};
+const ENROL={};
+[['ageRow','age_band'],['genRow','gender'],['eduRow','education'],['priRow','prior_play']].forEach(([rowId,field])=>{
+  document.getElementById(rowId).addEventListener('click',e=>{
+    const b=e.target.closest('.optBtn'); if(!b) return;
+    document.querySelectorAll('#'+rowId+' .optBtn').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel'); ENROL[field]=b.dataset.v;
+    document.getElementById('enrolGo').disabled =
+      !(ENROL.age_band && ENROL.gender && ENROL.education && ENROL.prior_play);
+  });
+});
+document.getElementById('enrolGo').onclick=()=>{
+  P3B.enrol={age_band:ENROL.age_band, gender:ENROL.gender, education:ENROL.education,
+             prior_play:ENROL.prior_play, recorded_ts:new Date().toISOString()};
+  saveP3B(); showOvl(null);
+};
+document.getElementById('againBtn').onclick=()=>{ document.getElementById('startBtn').click(); };
+document.getElementById('againOvl').onclick=()=>{
+  document.getElementById('runEndOvl').style.display='none';
+  document.getElementById('startBtn').click();
+};
+document.getElementById('finishOvl').onclick=()=>{
+  document.getElementById('runEndOvl').style.display='none';
+  document.body.classList.remove('playmode'); fitCanvas();
+  document.getElementById('finishBtn').click();
+};
+const QUEST={};
+function buildQuest(){
+  const host=document.getElementById('questBlocks'); host.innerHTML='';
+  ['q1','q2','q3','q4'].forEach(q=>{
+    const div=document.createElement('div'); div.className='qBlock';
+    div.innerHTML='<div class="qt">'+T(q)+'</div><div class="likert" data-q="'+q+'">'+
+      [1,2,3,4,5].map(n=>'<button data-n="'+n+'">'+n+'</button>').join('')+
+      '</div><div class="likLbl"><span>'+T('lik1')+'</span><span>'+T('lik5')+'</span></div>';
+    host.appendChild(div);
+  });
+  host.querySelectorAll('.likert').forEach(lk=>{
+    lk.addEventListener('click',e=>{
+      const b=e.target.closest('button'); if(!b) return;
+      lk.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));
+      b.classList.add('sel'); QUEST[lk.dataset.q]=+b.dataset.n;
+      document.getElementById('questGo').disabled=!(QUEST.q1&&QUEST.q2&&QUEST.q3&&QUEST.q4);
+    });
+  });
+}
+document.getElementById('finishBtn').onclick=()=>{
+  if(P3B.runs.length===0) return;
+  buildQuest(); showOvl('ovlQuest');
+};
+document.getElementById('questGo').onclick=()=>{
+  P3B.quest={D1_coordination_challenge:QUEST.q1, D2_play_regularly:QUEST.q2,
+             F1_matched_ability:QUEST.q3, F2_progress_motivated:QUEST.q4,
+             answered_ts:new Date().toISOString()};
+  saveP3B(); showOvl('ovlFinal');
+};
+document.getElementById('shareBtn').onclick=()=>{ shareExport(); };
+document.getElementById('emailBtn').onclick=()=>{ emailExport(); };
+document.getElementById('copyBtn').onclick=()=>{ copyExport(); };
+document.getElementById('dlBtn').onclick=()=>{ dlExport(); };
+document.getElementById('tiltBtn').addEventListener('click',()=>{
+  const b=document.getElementById('tiltBtn');
+  if(b.textContent.includes('ON')||b.textContent.includes('已開')) b.textContent=T('tiltOn');
+});
+
+/* WeChat in-app browser: no share sheet — make Copy the primary path */
+const IS_WECHAT = /MicroMessenger/i.test(navigator.userAgent);
+function applyWxMode(){
+  if(!IS_WECHAT) return;
+  const hint=document.getElementById('wxHint');
+  hint.textContent=T('fWx'); hint.style.display='block';
+  document.getElementById('fP1').style.display='none';
+  const share=document.getElementById('shareBtn'), copy=document.getElementById('copyBtn');
+  share.style.display='none';
+  document.getElementById('emailBtn').style.display='none';
+  copy.className='btn-go big'; copy.style.flex='none'; copy.style.width='100%';
+}
+
+/* ---- shared-device support: archive current participant, reset for next ---- */
+const A3B_ARCH='a3b_archive_v30';
+function archiveCurrent(){
+  if(!P3B || !P3B.consent_ts) return false;
+  let arch=[]; try{ arch=JSON.parse(localStorage.getItem(A3B_ARCH))||[]; }catch(e){}
+  arch.push(Object.assign({}, P3B, {archived_ts:new Date().toISOString()}));
+  try{ localStorage.setItem(A3B_ARCH, JSON.stringify(arch)); }catch(e){}
+  return true;
+}
+function nextPlayer(){
+  archiveCurrent();
+  try{ localStorage.removeItem(A3B_KEY); }catch(e){}
+  location.reload();
+}
+document.getElementById('nextBtn').onclick=()=>nextPlayer();
+function deviceBundle(){
+  let arch=[]; try{ arch=JSON.parse(localStorage.getItem(A3B_ARCH))||[]; }catch(e){}
+  const all=arch.slice();
+  if(P3B && P3B.consent_ts) all.push(Object.assign({}, P3B, {archived_ts:null, current:true}));
+  return JSON.stringify({build:'Alpine_Coordination_Game_v3.0_Stage3B',
+    device_id:DEVICE_ID||null, kind:'device_bundle',
+    participant_count:all.length, participants:all,
+    exported_ts:new Date().toISOString()});
+}
+/* facilitator panel: tap any screen title (or the header tag) 5 times within 3 s
+   — document-level delegation so it works on every overlay, including rewritten ones */
+(function(){
+  let taps=[];
+  document.addEventListener('click',(ev)=>{
+    if(!ev.target.closest('h2') && !ev.target.closest('header .tag')) return;
+    const now=Date.now(); taps=taps.filter(t=>now-t<3000); taps.push(now);
+    if(taps.length>=5){ taps=[];
+      let arch=[]; try{ arch=JSON.parse(localStorage.getItem(A3B_ARCH))||[]; }catch(e){}
+      const cur=(P3B&&P3B.consent_ts)?1:0;
+      document.getElementById('facInfo').textContent=
+        'Device 設備: '+(DEVICE_ID||'(link/file copy)')+' · archived participants 已存玩家: '
+        +arch.length+' · current in progress 進行中: '+cur;
+      showOvl('ovlFac');
+    }
+  });
+})();
+function deviceBundleCSV(){
+  let arch=[]; try{ arch=JSON.parse(localStorage.getItem(A3B_ARCH))||[]; }catch(e){}
+  const all=arch.slice();
+  if(P3B && P3B.consent_ts) all.push(Object.assign({}, P3B, {current:true}));
+  const L=[csvEsc('[ALPINE 3B DEVICE BUNDLE '+(DEVICE_ID||'X')+']'),
+    'participant_count,'+all.length, 'exported_ts,'+new Date().toISOString()];
+  all.forEach((p,i)=>{ L.push(''); L.push('===== PARTICIPANT '+(i+1)+' ====='); L.push(participantCSV(p)); });
+  return L.join('\r\n');
+}
+document.getElementById('facExportFile').onclick=()=>{
+  dlFile('Alpine3B_device_'+(DEVICE_ID||'X')+'_bundle.csv', deviceBundleCSV());
+};
+document.getElementById('facExportCopy').onclick=async()=>{
+  const text=deviceBundleCSV();
+  try{ await navigator.clipboard.writeText(text); document.getElementById('facExportCopy').textContent='📋 Copied 已複製!'; }
+  catch(e){ try{ const ta=document.createElement('textarea'); ta.value=text;
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+    document.getElementById('facExportCopy').textContent='📋 Copied 已複製!'; }catch(e2){} }
+};
+document.getElementById('facNext').onclick=()=>nextPlayer();
+document.getElementById('facClose').onclick=()=>{
+  if(P3B.quest) showOvl('ovlFinal');
+  else if(P3B.consent_ts && P3B.enrol) showOvl(null);
+  else if(P3B.consent_ts) showOvl('ovlEnrol');
+  else if(P3B.lang) showOvl('ovlConsent');
+  else showOvl('ovlLang');
+};
+
+/* boot: resume where the participant left off */
+(function boot(){
+  if(P3B.lang){ LANG=P3B.lang; applyI18n(); }
+  if(P3B.quest) showOvl('ovlFinal');
+  else if(P3B.consent_ts && P3B.enrol) showOvl(null);
+  else if(P3B.consent_ts) { if(P3B.lang){ applyI18n(); showOvl('ovlEnrol'); } }
+  else if(P3B.lang) showOvl('ovlConsent');
+  else showOvl('ovlLang');
+})();
+
+/* idle scene so the canvas looks alive before the first run */
+S=newSession();
+(function idle(){ if(!running && !(S&&S.result)){ sceneT+=1/40;
+  if(Math.random()<0.15) S.flakes.push({x:Math.random(), y:-0.02, s:0.4+Math.random(), drift:(Math.random()-0.5)*0.02});
+  for(const f of S.flakes){ f.y+=0.004+0.002*f.s; }
+  S.flakes=S.flakes.filter(f=>f.y<1.05);
+  draw(); setTimeout(()=>requestAnimationFrame(idle),25); } })();
+</script>
+</body>
+</html>
