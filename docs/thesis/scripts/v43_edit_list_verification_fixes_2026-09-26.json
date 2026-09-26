@@ -1,0 +1,513 @@
+[
+ {
+  "locator": "P522",
+  "quote": "Together, the COP-derived game telemetry, the silent FRA pipeline, and the three questionnaires provide the three-ledger view (behavioural, clinical, self-reported) on which the Stage-2 analysis in §5.5–§5.7 is built.",
+  "replacement": "Together, the COP-derived game telemetry, the silent FRA pipeline, the after-game questionnaire and the sustained-participant interviews provide the three-ledger view (behavioural, clinical, self-reported) on which the Stage-2 analysis in §5.5–§5.7 is built.",
+  "action": "reframe",
+  "src": "V3"
+ },
+ {
+  "locator": "P539",
+  "quote": "its operational status in the deployed Stage-2 build is recorded in item G.0A (§5.3.5)",
+  "replacement": "its operational status in the deployed Stage-2 build is to be recorded in the build-lineage matrix (Appendix G, item G.0A; §5.3.5), and no operational claim is made for it until that row is entered",
+  "action": "reframe",
+  "src": "V4"
+ },
+ {
+  "locator": "P450",
+  "quote": "covering the procedures as conducted and described in this section",
+  "replacement": "covering the Stage 1–3 procedures as conducted and described in this section; whether it also covers the Stage-3B collection is the open item stated above",
+  "action": "reframe",
+  "src": "V5"
+ },
+ {
+  "locator": "P580",
+  "quote": "five recorded a positive index change yet only two reported any improvement and none returned",
+  "replacement": "five recorded a positive index change yet only two were reported by therapists as showing any improvement and none returned",
+  "action": "reframe",
+  "src": "V6"
+ },
+ {
+  "locator": "P580",
+  "quote": "These margins do not identify how many participants simultaneously recorded a score increase and reported no symptom improvement.",
+  "replacement": "These margins do not identify how many participants simultaneously recorded a score increase and were reported as showing no symptom improvement.",
+  "action": "reframe",
+  "src": "V7"
+ },
+ {
+  "locator": "T12R3",
+  "quote": "Recorded index and self-report diverge (5/8 single-session positive change, 2/8 felt improvement)",
+  "replacement": "Recorded index and therapist-reported symptom change diverge (5/8 single-session positive change, 2/8 therapist-reported improvement)",
+  "action": "reframe",
+  "src": "V8"
+ },
+ {
+  "locator": "P710",
+  "quote": "A fixed-course check of this kind was carried in the Stage-3B Pro v4.1 build and exercised only in a researcher self-test (§8.8); that record documents the mechanism and establishes nothing about durable learning.",
+  "replacement": "A fixed-course check intended as such a reference task was carried in the Stage-3B Pro v4.1 build and exercised only in a researcher self-test, near ceiling and on course forms whose equivalence was not established (§8.8; Appendix I.6); that record documents the mechanism and establishes nothing about durable learning.",
+  "action": "reframe",
+  "src": "V9"
+ },
+ {
+  "locator": "P788",
+  "quote": "The retrieved observation sequence of §5.6 adds a further discriminating point:",
+  "replacement": "The retrieved observation sequence of §5.6 adds a further observation, though not a discriminating one:",
+  "action": "reframe",
+  "src": "V10"
+ },
+ {
+  "locator": "P837",
+  "quote": "five researcher-solicited returns excluded under the protocol",
+  "replacement": "five researcher-solicited returns excluded on verification",
+  "action": "reframe",
+  "src": "V11"
+ },
+ {
+  "locator": "T24R1",
+  "quote": "five researcher-solicited returns of 15 September 2026 excluded under the protocol",
+  "replacement": "five researcher-solicited returns of 15 September 2026 excluded on verification",
+  "action": "reframe",
+  "src": "V12"
+ },
+ {
+  "locator": "T29R8",
+  "quote": "V42 Appendix G.0A [P1050], from code inspection",
+  "replacement": "Appendix G, item G.0A; code inspection of the frozen DEV1 file (L214, L511, L681–L700)",
+  "action": "reframe",
+  "src": "V13"
+ },
+ {
+  "locator": "T29R16",
+  "quote": "V42 §3.4 [P446]; PENDING_ITEMS.md",
+  "replacement": "§3.4; PENDING_ITEMS.md",
+  "action": "reframe",
+  "src": "V14"
+ },
+ {
+  "locator": "P1111",
+  "quote": "and both recommend retaining the batch \"as a separate Pro development appendix or progress-review item\".",
+  "replacement": "the Research Review recommends retaining the batch \"as a separate Pro development appendix or progress-review item\" and the addendum \"as a separate development addendum\".",
+  "action": "reframe",
+  "src": "V15"
+ },
+ {
+  "locator": "T28R4",
+  "quote": "None on record at 26 Sep 2026 (window open to 15 Oct 2026; see I.1)",
+  "replacement": "None on record at 26 Sep 2026 (freeze-record clean-run window 15 Sep–15 Oct 2026, stated at the cut-off and not extended; see I.1)",
+  "action": "reframe",
+  "src": "V16"
+ },
+ {
+  "locator": "P597",
+  "quote": "the rule that maps the thirteen items onto that range is not reproduced in this thesis: Appendix B states the scheme's structure only and defers the item-level codebook, weights and thresholds (§5.6, §8.8).",
+  "replacement": "the rule that maps the thirteen items onto that range is an outstanding author record at the 26 September 2026 cut-off and is not reproduced in this thesis: Appendix B states the scheme's structure only and defers the item-level codebook, weights and thresholds (§8.8).",
+  "action": "reframe",
+  "src": "V17"
+ },
+ {
+  "locator": "P18",
+  "quote": "adaptive against static difficulty, crossed with zero-failure against game-over failure modes",
+  "replacement": "adaptive support (difficulty adjustment with coaching) against static presentation, crossed with zero-failure against game-over failure modes",
+  "action": "reframe",
+  "src": "V21"
+ },
+ {
+  "locator": "P442",
+  "quote": "The thesis concludes on the findings of Stages 1–3;",
+  "replacement": "The thesis concludes on the findings of Stages 1–3A;",
+  "action": "reframe",
+  "src": "V22"
+ },
+ {
+  "locator": "T5R8",
+  "quote": "Stage 3B — pre-specified (repository-dated) 2x2 component study",
+  "replacement": "Stage 3B — pre-specified (repository-dated) 2×2 component study",
+  "action": "reframe",
+  "src": "V23"
+ },
+ {
+  "locator": "T5R8",
+  "quote": "August–September 2026 (builds 9 and 13 August, distributed from 10 August; frozen study edition 15 September",
+  "replacement": "August–September 2026 (9-August build distributed 10–12 August; 13-August revision not distributed to the August cohort, a copy re-sent 15 September; frozen study edition 15 September",
+  "action": "reframe",
+  "src": "V24"
+ },
+ {
+  "locator": "P330",
+  "quote": "The Stage-3B component study and the Pro v4.1 self-test batch are documented as a descriptive record",
+  "replacement": "The Stage-3B component study and the researcher self-test batch of its later Pro v4.1 build are documented as a descriptive record",
+  "action": "reframe",
+  "src": "V25"
+ },
+ {
+  "locator": "P358",
+  "quote": "it is recorded as a question for future controlled study (§8.8).",
+  "replacement": "it is recorded as a question for future controlled study (§6.8A; §8.8).",
+  "action": "reframe",
+  "src": "V26"
+ },
+ {
+  "locator": "P544",
+  "quote": "is recorded per build generation in the build-lineage matrix (Appendix G, item G.0A), together with the G.7 endpoint record; where a function's operational status is not documented there, no operational claim is made for it.",
+  "replacement": "is recorded per build generation in the build-lineage matrix (Appendix G, item G.0A) as it is completed, together with the G.7 endpoint record; where a function's operational status is not yet documented there, no operational claim is made for it.",
+  "action": "reframe",
+  "src": "V27"
+ },
+ {
+  "locator": "P557",
+  "quote": "Per-generation development dates and tooling are recorded in the build-lineage matrix (Appendix G, item G.0A); where a generation's tooling is not documented there, no tooling claim is made for it.",
+  "replacement": "Per-generation development dates and tooling are recorded in the build-lineage matrix (Appendix G, item G.0A) as it is completed; where a generation's tooling is not yet documented there, no tooling claim is made for it.",
+  "action": "reframe",
+  "src": "V28"
+ },
+ {
+  "locator": "P537",
+  "quote": "coins reward forward play. Screenshots captured from the programme's archived game build — the successor build in the same design lineage as the Stage-2 deployment.",
+  "replacement": "coins reward forward play.",
+  "action": "reframe",
+  "src": "V29"
+ },
+ {
+  "locator": "P92",
+  "quote": "3.6 An Instrumentation Roadmap for the Adaptive-Learning Claim",
+  "replacement": "3.6 An Instrumentation Roadmap for the Adaptive-Learning Proposition",
+  "action": "reframe",
+  "src": "V30"
+ },
+ {
+  "locator": "P220",
+  "quote": "E.1 · Layers L0–L4 (Stage-2 Operational)",
+  "replacement": "E.1 · Layers L0–L4 (Stage-2 architecture as specified; operational status per build in item G.0A)",
+  "action": "reframe",
+  "src": "V31"
+ },
+ {
+  "locator": "P243",
+  "quote": "Figure 6.2. Observed return after initial dropout by age band in Stage 3, including 62.5% in the 65–80 band",
+  "replacement": "Figure 6.2. Return after initial dropout by age band in Stage 3, including 62.5% in the 65–80 band",
+  "action": "reframe",
+  "src": "V32"
+ },
+ {
+  "locator": "P569",
+  "quote": "which specified a zero-failure (non-terminal) failure mode as one of its two crossed factors",
+  "replacement": "which crossed a zero-failure (non-terminal) failure mode against game-over as one of its two factors",
+  "action": "reframe",
+  "src": "V33"
+ },
+ {
+  "locator": "P580",
+  "quote": "were recorded by therapists as showing symptom improvement after the deployment",
+  "replacement": "were reported by therapists as showing symptom improvement after the deployment",
+  "action": "reframe",
+  "src": "V35"
+ },
+ {
+  "locator": "P608",
+  "quote": "FES-I was not available as a baseline covariate and is specified for the baseline battery of the proposed confirmatory study (§8.8)",
+  "replacement": "FES-I was not available as a baseline covariate and is specified as a baseline covariate in the proposed quantitative comparison (§6.10, Table 6.4)",
+  "action": "reframe",
+  "src": "V36"
+ },
+ {
+  "locator": "P595",
+  "quote": "And the visible-dropout effect is a within-deployment social channel",
+  "replacement": "And the visible-dropout observation is a within-deployment social channel",
+  "action": "reframe",
+  "src": "V37"
+ },
+ {
+  "locator": "P595",
+  "quote": "and as dropouts accumulated, remaining players saw that many of their peers had stopped attending; the field notes record further abandonment following that visible thinning of the group, an observed co-occurrence that the researcher interpreted at the time as contributory.",
+  "replacement": "and as dropouts accumulated, remaining players saw that many of their peers had stopped attending, with further abandonment following that visible thinning of the group — an observed co-occurrence that the researcher interpreted at the time as contributory.",
+  "action": "reframe",
+  "src": "V38"
+ },
+ {
+  "locator": "P593",
+  "quote": "every cell of Table 5.3 remains a prospective question rather than a tested relationship",
+  "replacement": "every designed relationship in Table 5.3 remains a prospective question rather than a tested relationship",
+  "action": "reframe",
+  "src": "V39"
+ },
+ {
+  "locator": "P710",
+  "quote": "Their reliability, tolerability and sensitivity must be established for the intended population before firm conclusions are drawn.",
+  "replacement": "The reliability, tolerability and sensitivity of such reference checks must be established for the intended population before firm conclusions are drawn.",
+  "action": "reframe",
+  "src": "V40"
+ },
+ {
+  "locator": "P719",
+  "quote": "The Stage-3B record (§8.8) is the programme's first evaluation record of this kind; it is descriptive and supplies no such evidence.",
+  "replacement": "The Stage-3B record (§8.8) is the programme's first fielded step towards such a record; it is descriptive at its cut-off and supplies no such evidence.",
+  "action": "reframe",
+  "src": "V41"
+ },
+ {
+  "locator": "P696",
+  "quote": "More than three could be added;",
+  "replacement": "More than three could be adopted;",
+  "action": "reframe",
+  "src": "V42"
+ },
+ {
+  "locator": "P751",
+  "quote": "remain untested — the Stage-3B component study is on record as a descriptive account at its stated cut-off and is not used as their test (§8.8), and any such deployment",
+  "replacement": "remain untested — the Stage-3B component study is on record as a descriptive account at its stated cut-off and is not used as their test (§8.8) — and any such deployment",
+  "action": "reframe",
+  "src": "V43"
+ },
+ {
+  "locator": "P815",
+  "quote": "the outcomes on record are a willingness item (D2) and, in the separate Pro v4.1 self-test, immediate fixed-course clearance near ceiling on non-equivalent course forms",
+  "replacement": "the outcomes on record are a willingness item (D2) with sessions played as a co-primary outcome and, in the separate Pro v4.1 self-test, immediate fixed-course clearance near ceiling on non-equivalent course forms",
+  "action": "reframe",
+  "src": "V44"
+ },
+ {
+  "locator": "P816",
+  "quote": "the richer economy implemented in the 13 August 2026 revision (Appendix I) includes",
+  "replacement": "the richer economy implemented in the 13 August 2026 scoring revision (commit 923a25e; Appendix I) includes",
+  "action": "reframe",
+  "src": "V45"
+ },
+ {
+  "locator": "P817",
+  "quote": "five within-visit fixed-course checks near ceiling on non-equivalent course forms",
+  "replacement": "five paired opening–closing fixed-course checks within visits (across four codes), near ceiling on non-equivalent course forms",
+  "action": "reframe",
+  "src": "V46"
+ },
+ {
+  "locator": "P890",
+  "quote": "The Stage 3B component study fielded adaptive-versus-static difficulty and zero-failure-versus-game-over presentation",
+  "replacement": "The Stage 3B component study fielded adaptive support (difficulty adjustment with coaching) versus static presentation and zero-failure versus game-over presentation",
+  "action": "reframe",
+  "src": "V47"
+ },
+ {
+  "locator": "T24R1",
+  "quote": "Stage 3B pre-specified (repository-dated) 2x2 component study, reported as a descriptive record",
+  "replacement": "Stage 3B pre-specified (repository-dated) 2×2 component study, reported as a descriptive record",
+  "action": "reframe",
+  "src": "V48"
+ },
+ {
+  "locator": "P1074",
+  "quote": "The ten raw exports, the derived workbooks and the extraction scripts named in the reports had not been deposited at the cut-off (§8.9).",
+  "replacement": "The ten raw exports, the derived workbooks and the extraction scripts named in the reports had not been deposited at the cut-off (Appendix I.7).",
+  "action": "reframe",
+  "src": "V49"
+ },
+ {
+  "locator": "P1073",
+  "quote": "No result table in this thesis draws on these files.",
+  "replacement": "No result table outside Appendix I draws on these files; the Appendix I tables reproduce them as descriptive record only.",
+  "action": "reframe",
+  "src": "V50"
+ },
+ {
+  "locator": "P1059",
+  "quote": "Stage-3B artifacts (items G.12–G.13; Appendix I) enter the manifest as descriptive-record rows: they feed no result table in this thesis.]",
+  "replacement": "Stage-3B artifacts (items G.12–G.13; Appendix I) enter the manifest as descriptive-record rows: they feed no result table outside Appendix I, whose tables are descriptive record only.]",
+  "action": "reframe",
+  "src": "V51"
+ },
+ {
+  "locator": "P892",
+  "quote": "with a learning measure articulated to the adaptive-learning construct rather than immediate task performance, equivalent course forms, and difficulty adjustment separated from coaching",
+  "replacement": "with a learning measure articulated to the adaptive-learning construct (rather than immediate task performance), equivalent course forms, and difficulty adjustment separated from coaching",
+  "action": "reframe",
+  "src": "V52"
+ },
+ {
+  "locator": "P1131",
+  "quote": "matching nominal settings is \"an engineering grouping, not proof that the randomly generated courses are psychometrically equivalent\", so a within-visit change",
+  "replacement": "matching nominal settings is, in the words of the Pro v4.1 package README, \"an engineering grouping, not proof that the randomly generated courses are psychometrically equivalent\", so a within-visit change",
+  "action": "reframe",
+  "src": "V53"
+ },
+ {
+  "locator": "P1131",
+  "quote": "(mirrored and base forms of seeds 7043 and 7051)",
+  "replacement": "(mirrored and base forms of course identifiers 7043 and 7051)",
+  "action": "reframe",
+  "src": "V54"
+ },
+ {
+  "locator": "P1131",
+  "quote": "For these reasons the Stage 3B learning measurement was not articulated to the adaptive-learning construct",
+  "replacement": "For these reasons (Table I.12) the Stage 3B learning measurement was not articulated to the adaptive-learning construct",
+  "action": "reframe",
+  "src": "V55"
+ },
+ {
+  "locator": "P1116",
+  "quote": "The Research Review states that these records must not be treated as completed adaptive-learning sequences.",
+  "replacement": "The Research Review states that the five visits without a practice run must not be treated as completed adaptive-learning sequences.",
+  "action": "reframe",
+  "src": "V56"
+ },
+ {
+  "locator": "P1103",
+  "quote": "the last commit to either returns folder is dated 15 September 2026",
+  "replacement": "the most recent commit to either returns folder is dated 15 September 2026 (pending-verification folder; the verified-return folder's last commit is 13 September 2026)",
+  "action": "reframe",
+  "src": "V57"
+ },
+ {
+  "locator": "P1103",
+  "quote": "Two of the five files arrived named with personal names, contrary to the anonymous protocol; the names are to be stripped and are not reproduced here.",
+  "replacement": "Two of the five files arrived named with personal names (resolved in the verification record as distributor labels, not player identities), contrary to the anonymous protocol; the names are to be stripped and are not reproduced here.",
+  "action": "reframe",
+  "src": "V58"
+ },
+ {
+  "locator": "P1103",
+  "quote": "At the cut-off the returns record comprises one verified participant return, five returns received on 15 September 2026 and excluded, and no clean-run return.",
+  "replacement": "At the cut-off the returns record comprises one verified participant return, five returns received on 15 September 2026 and excluded, and no clean-run return (Table I.4).",
+  "action": "reframe",
+  "src": "V59"
+ },
+ {
+  "locator": "P1103",
+  "quote": "the ethics-scope gate was later closed on the approval memo, while the supervisor's protocol sign-off is not recorded as closed (I.7)",
+  "replacement": "the ethics-scope gate was later closed in the working record on the approval memo, although the scope question itself remains an open item of the ethics record (§3.4; I.7), and the supervisor's protocol sign-off is not recorded as closed (I.7)",
+  "action": "reframe",
+  "src": "V60"
+ },
+ {
+  "locator": "T30R14",
+  "quote": "Researcher self-test only; hosted offline at gh-pages /selftest/ per RECORD",
+  "replacement": "Researcher self-test only; offline build hosted at gh-pages /selftest/ per RECORD",
+  "action": "reframe",
+  "src": "V61"
+ },
+ {
+  "locator": "T30R8",
+  "quote": "Evidence verification plan; distribution record (five screenshots); situation evaluation; original return e-mail archived",
+  "replacement": "Evidence verification plan; distribution record (five screenshots); situation evaluation; first return re-archived as received; original return e-mail archived",
+  "action": "reframe",
+  "src": "V62"
+ },
+ {
+  "locator": "P1089",
+  "quote": "Three bodies of record are compiled here:",
+  "replacement": "Three bodies of record are compiled here (Table I.1):",
+  "action": "reframe",
+  "src": "V63"
+ },
+ {
+  "locator": "P1097",
+  "quote": "Three software editions bear on the record.",
+  "replacement": "Three software editions bear on the record (Table I.3; Figure I.1).",
+  "action": "reframe",
+  "src": "V64"
+ },
+ {
+  "locator": "P1108",
+  "quote": "Batch 01 comprises ten exports made on 19–20 September 2026 (seven JSON files for two codes; three CSV files for three codes).",
+  "replacement": "Batch 01 comprises ten exports made on 19–20 September 2026 (seven JSON files for two codes; three CSV files for three codes; Tables I.5–I.7).",
+  "action": "reframe",
+  "src": "V65"
+ },
+ {
+  "locator": "P1108",
+  "quote": "applied-settings checks (Table I.8)",
+  "replacement": "applied-settings checks (Table I.8; Figure I.2)",
+  "action": "reframe",
+  "src": "V66"
+ },
+ {
+  "locator": "P1109",
+  "quote": "Five opening–closing fixed-course pairs exist across four codes (Table I.9)",
+  "replacement": "Five opening–closing fixed-course pairs exist across four codes (Table I.9; Figure I.3)",
+  "action": "reframe",
+  "src": "V67"
+ },
+ {
+  "locator": "P1107",
+  "quote": "edge time under 50% and no conflicting tiredness or clarity report.",
+  "replacement": "edge time under 50% and no conflicting tiredness, clarity or demand report.",
+  "action": "reframe",
+  "src": "V68"
+ },
+ {
+  "locator": "T29R6",
+  "quote": "per-evaluation change clamped to ±0.15",
+  "replacement": "model-path value clamped to ±0.15 per evaluation (L696)",
+  "action": "reframe",
+  "src": "V69"
+ },
+ {
+  "locator": "P1136",
+  "quote": "Two of the five excluded returns arrived with personal names in their file names, contrary to the anonymous protocol; the names are not reproduced in the thesis and are to be stripped from the archive copies.",
+  "replacement": "Two of the five excluded returns arrived with personal names in their file names (resolved in the verification record as distributor labels, not player identities), contrary to the anonymous protocol; the names are not reproduced in the thesis and are to be stripped from the archive copies.",
+  "action": "reframe",
+  "src": "V70"
+ },
+ {
+  "locator": "P363",
+  "quote": "The initial expectation was therefore not realised in this deployment.",
+  "replacement": "Chapter 5 records that the initial expectation was not realised in this deployment.",
+  "action": "reframe",
+  "src": "V71"
+ },
+ {
+  "locator": "P573",
+  "quote": "A completed game cycle denotes one attended play session at the station under the five-attempt rule (§5.2A)",
+  "replacement": "A completed game cycle denotes one attended play session at the station under the five-attempt rule (§5.3.2)",
+  "action": "reframe",
+  "src": "V72"
+ },
+ {
+  "locator": "P1087",
+  "quote": "I.1 · Status and scope",
+  "replacement": "I.1 · Status and Scope",
+  "action": "reframe",
+  "src": "V73"
+ },
+ {
+  "locator": "P1092",
+  "quote": "I.2 · Design as pre-specified (repository-dated 8–9 August 2026)",
+  "replacement": "I.2 · Design as Pre-specified (Repository-dated 8–9 August 2026)",
+  "action": "reframe",
+  "src": "V74"
+ },
+ {
+  "locator": "P1096",
+  "quote": "I.3 · Build and distribution lineage",
+  "replacement": "I.3 · Build and Distribution Lineage",
+  "action": "reframe",
+  "src": "V75"
+ },
+ {
+  "locator": "P1102",
+  "quote": "I.4 · Returns on record",
+  "replacement": "I.4 · Returns on Record",
+  "action": "reframe",
+  "src": "V76"
+ },
+ {
+  "locator": "P1106",
+  "quote": "I.5 · Stage-3B Pro v4.1 researcher self-test, Batch 01 (19–20 September 2026)",
+  "replacement": "I.5 · Stage-3B Pro v4.1 Researcher Self-Test, Batch 01 (19–20 September 2026)",
+  "action": "reframe",
+  "src": "V77"
+ },
+ {
+  "locator": "P1130",
+  "quote": "I.6 · Why the learning measurement was not articulated to adaptive learning, and what a later study needs",
+  "replacement": "I.6 · Why the Learning Measurement Was Not Articulated to Adaptive Learning, and What a Later Study Needs",
+  "action": "reframe",
+  "src": "V78"
+ },
+ {
+  "locator": "P1135",
+  "quote": "I.7 · Ethics, scope and outstanding author records",
+  "replacement": "I.7 · Ethics, Scope and Outstanding Author Records",
+  "action": "reframe",
+  "src": "V79"
+ }
+]

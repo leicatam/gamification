@@ -1,0 +1,1010 @@
+[
+ {
+  "locator": "P18",
+  "quote": "Sustained individual improvement, the effectiveness of the complete framework and clinically acceptable reattachment of assessment remain subjects for prospective evaluation.",
+  "replacement": "Sustained individual improvement, the effectiveness of the complete framework and clinically acceptable reattachment of assessment remain subjects for prospective evaluation. A pre-specified (repository-dated) Stage-3B component study — adaptive against static difficulty, crossed with zero-failure against game-over failure modes — was built and distributed during the programme; its design, builds and returns on record at the 26 September 2026 cut-off are documented descriptively in Appendix I and are not used to test the adaptive-learning proposition, which is carried forward as discussion and future study.",
+  "action": "reframe",
+  "src": "C00.0"
+ },
+ {
+  "locator": "P225",
+  "quote": "Appendix H · Expert Consultation Record",
+  "replacement": "Appendix I · Stage-3B Component Study: Record at the 26 September 2026 Cut-off",
+  "action": "add_after",
+  "src": "C00.1"
+ },
+ {
+  "locator": "P253",
+  "quote": "evidence activities",
+  "replacement": "programme activities",
+  "action": "reframe",
+  "src": "C00.2"
+ },
+ {
+  "locator": "P308",
+  "quote": "The empirical programme motivates this design response but does not yet demonstrate that the complete adaptive-learning framework can close any gap between what participants endorse and what they sustain; that question is examined from Chapter 6 onward. Its incremental effectiveness is a subject for the next controlled cycle.",
+  "replacement": "The empirical programme motivates this design response but does not demonstrate that the complete adaptive-learning framework can close any gap between what participants endorse and what they sustain; that question is taken up as a design and future-study question from Chapter 6 onward. Its incremental effectiveness is a subject for future controlled study.",
+  "action": "reframe",
+  "src": "C01.0"
+ },
+ {
+  "locator": "P330",
+  "quote": "Chapter 8 evaluates the contribution alongside rival explanations and limitations.",
+  "replacement": "Chapter 8 evaluates the contribution alongside rival explanations and limitations, and records the Stage-3B component study as an achieved, descriptive record at the 26 September 2026 cut-off (§8.8), with its design parameters, builds and returns on record compiled in Appendix I.",
+  "action": "reframe",
+  "src": "C01.1"
+ },
+ {
+  "locator": "P312",
+  "quote": "Whatever pattern Stage 3 produced would be read against both candidate explanations",
+  "replacement": "A subsequent component study, designated Stage 3B, was specified after the Stage-3 result (the decoupled study is designated Stage 3A in programme documents; §6.1) and is reported as a descriptive record at a stated cut-off of 26 September 2026 (§8.8; Appendix I). Its learning measurement was not articulated to the adaptive-learning construct, so the study is not used as a test of the adaptive-learning claim; the empirical arc closes on the Stage 1–3A evidence, and adaptive learning is carried forward as a design direction for future study.",
+  "action": "add_after",
+  "src": "C01.2"
+ },
+ {
+  "locator": "P328",
+  "quote": "Direct comparison of design levers and controlled evaluation of the complete adaptive-learning framework lie beyond this thesis's scope and are specified as future confirmatory work.",
+  "replacement": "Direct comparison of design levers and controlled evaluation of the complete adaptive-learning framework lie beyond this thesis's scope and are specified as future confirmatory work. The Stage-3B component study and the Pro v4.1 self-test batch are documented as a descriptive record at the 26 September 2026 cut-off (§8.8; Appendix I); no confirmatory analysis is reported from them, and no claim about adaptive learning, durable learning or reduced abandonment rests on them.",
+  "action": "reframe",
+  "src": "C01.3"
+ },
+ {
+  "locator": "P293",
+  "quote": "This thesis investigates how adaptive interaction design can reduce disengagement while preserving clinical validity.",
+  "replacement": "This thesis examines that disengagement and proposes adaptive interaction design as a candidate means of reducing it while preserving clinical validity; that proposal is specified for future study rather than tested here.",
+  "action": "reframe",
+  "src": "C01.4"
+ },
+ {
+  "locator": "P312",
+  "quote": "proposed as the driver that can make returning worthwhile and eventually carry the clinical purpose back into the experience.",
+  "replacement": "proposed as a candidate driver that could make returning worthwhile and eventually carry the clinical purpose back into the experience.",
+  "action": "reframe",
+  "src": "C01.5"
+ },
+ {
+  "locator": "P356",
+  "quote": "it is registered as a question for the confirmatory study (§8.8).",
+  "replacement": "it is recorded as a question for future controlled study (§8.8).",
+  "action": "reframe",
+  "src": "C02.0"
+ },
+ {
+  "locator": "T1R5",
+  "quote": "Non-terminal feedback adds benefit beyond decoupling or ordinary coaching; prospective component test (§8.8)",
+  "replacement": "Non-terminal feedback adds benefit beyond decoupling or ordinary coaching; specified as a factor of the Stage-3B component design and recorded descriptively, without confirmatory analysis (§8.8); the test remains prospective",
+  "action": "reframe",
+  "src": "C02.1"
+ },
+ {
+  "locator": "P402",
+  "quote": "Chapter 7 incorporates non-terminal feedback into the proposed framework, and §8.8 outlines its prospective evaluation.",
+  "replacement": "Chapter 7 incorporates non-terminal feedback into the proposed framework. The Stage-3B component study, in which failure mode was one design factor, is recorded descriptively in §8.8 at a stated cut-off, with the reasons it is not used as a test of the framework; a controlled evaluation of non-terminal feedback remains future work.",
+  "action": "reframe",
+  "src": "C02.2"
+ },
+ {
+  "locator": "T2R5",
+  "quote": "prospective test (§8.8)",
+  "replacement": "Stage-3B component-study record and future-study specification (§8.8)",
+  "action": "reframe",
+  "src": "C02.3"
+ },
+ {
+  "locator": "T3R4",
+  "quote": "Adaptive-learning framework and prospective test (Chapter 7; §8.8)",
+  "replacement": "Adaptive-learning framework and Stage-3B component-study record (Chapter 7; §8.8)",
+  "action": "reframe",
+  "src": "C02.4"
+ },
+ {
+  "locator": "T3R4",
+  "quote": "Proposed framework, comparable reference checks and prospective evaluation protocol",
+  "replacement": "Proposed framework, comparable reference checks and a future-study specification; the Stage-3B component study is recorded descriptively at a stated cut-off, without confirmatory analysis",
+  "action": "reframe",
+  "src": "C02.5"
+ },
+ {
+  "locator": "P396",
+  "quote": "",
+  "replacement": "The same requirement is the reason the Stage-3B component study is reported descriptively rather than as a test of adaptive learning (§8.8): its learning measure was immediate task performance under changing conditions, which the framework itself distinguishes from a comparable check of durable capability.",
+  "action": "add_after",
+  "src": "C02.6"
+ },
+ {
+  "locator": "P421",
+  "quote": "Continuous improvement is demonstrated at the level of problem understanding and iterative design development",
+  "replacement": "Continuous improvement is documented at the level of problem understanding and iterative design development",
+  "action": "reframe",
+  "src": "C02.7"
+ },
+ {
+  "locator": "P437",
+  "quote": "Stage 3 was a between-cycle, between-cohort quasi-experimental field study with 120 adults aged 25-80",
+  "replacement": "Stage 3 (designated Stage 3A in programme documents, to distinguish it from the later Stage-3B component study; §6.1, §8.8) was a between-cycle, between-cohort quasi-experimental field study with 120 adults aged 25-80",
+  "action": "reframe",
+  "src": "C03.1"
+ },
+ {
+  "locator": "P438",
+  "quote": "It contributes practice-based perspectives and rival explanations, but is neither independent replication of the participant findings nor evidence for the hypothesis tests.",
+  "replacement": "A component study designated Stage 3B was specified after the Stage-3 results were in hand and is documented in this thesis as an achieved record rather than as evidence. It was pre-specified (repository-dated 8–9 August 2026) as a silent 2×2 design crossing adaptive against static difficulty with zero-failure against game-over failure modes, with assignment by random draw at first enrolment and one confirmatory contrast (adaptive versus static on questionnaire item D2, willingness to play regularly, top-two-box, pooled across failure modes). Builds were distributed from 10 August 2026 and a frozen study edition was issued on 15 September 2026. At the thesis cut-off of 26 September 2026 the record holds one verified return (15 August 2026), five returns received on 15 September 2026 that were excluded as researcher-solicited plays on the 13-August build, no returns from the frozen edition, and a researcher self-test batch of the Pro v4.1 build (19–20 September 2026). After the initial round, the learning measurement was found not to be articulated to the adaptive-learning construct: immediate task performance on a ceiling-limited, non-equivalent course form is not durable learning, and the adaptive arm is a support package (difficulty adjustment with coaching) rather than difficulty adjustment alone. Stage 3B is therefore no longer used to determine whether an adaptive-learning process occurs in the AI-enabled zero-failure mechanism; no confirmatory analysis is reported. The thesis concludes on the findings of Stages 1–3; the Stage-3B design parameters, builds and returns on record are compiled in §8.8 and Appendix I, and adaptive learning is carried as a design direction for future study (Chapter 7, §8.8).",
+  "action": "add_after",
+  "src": "C03.2"
+ },
+ {
+  "locator": "T4R4",
+  "quote": "Complete framework not yet evaluated; specified components reserved for prospective testing",
+  "replacement": "Not tested in this thesis. A component study (Stage 3B) was pre-specified (repository-dated) to examine its adaptation and failure-presentation components; its achieved record is documented at the 26 September 2026 cut-off (§8.8) and is not used as a test of the proposition, because the learning measurement was not articulated to the adaptive-learning construct",
+  "action": "reframe",
+  "src": "C03.3"
+ },
+ {
+  "locator": "T5R8",
+  "quote": "Stage 3B — pre-specified 2x2 field experiment (ongoing; results not part of the thesis evidence)",
+  "replacement": "Stage 3B — pre-specified (repository-dated) 2x2 component study; documented as an achieved record at the 26 September 2026 cut-off; no results form part of the thesis evidence and the study is not used as the adaptive-learning test",
+  "action": "reframe",
+  "src": "C03.6"
+ },
+ {
+  "locator": "T5R8",
+  "quote": "August–October 2026 (window open; collection commenced August 2026)",
+  "replacement": "August–September 2026 (builds 9 and 13 August, distributed from 10 August; frozen study edition 15 September; record stated at the thesis cut-off of 26 September 2026)",
+  "action": "reframe",
+  "src": "C03.7"
+ },
+ {
+  "locator": "T5R8",
+  "quote": "§8.8",
+  "replacement": "§8.8; Appendix I",
+  "action": "reframe",
+  "src": "C03.8"
+ },
+ {
+  "locator": "P444",
+  "quote": "with the chapter that reports each. The research programme closes in October 2026.",
+  "replacement": "with the chapter that reports each; the Stage-3B row is stated at the thesis cut-off of 26 September 2026. The research programme closes in October 2026.",
+  "action": "reframe",
+  "src": "C03.9"
+ },
+ {
+  "locator": "P449",
+  "quote": "with a de-identified index forming Appendix G, item G.5.",
+  "replacement": "Consent in the Stage-3B component study was recorded in-build: the protocol specifies a consent screen stating the research purpose, voluntariness, anonymity and data use and requiring an explicit tap or click before play, with the consent event written into each participant's export; the returns on record, and their admission or exclusion, are documented at the 26 September 2026 cut-off in §8.8.",
+  "action": "add_after",
+  "src": "C03.11"
+ },
+ {
+  "locator": "P452",
+  "quote": "confidence intervals and a pre-specified next study rather than on claiming that theoretical convergence substitutes for causal control",
+  "replacement": "confidence intervals and an explicitly specified next study (§8.8) rather than on claiming that theoretical convergence substitutes for causal control",
+  "action": "reframe",
+  "src": "C03.12"
+ },
+ {
+  "locator": "P453",
+  "quote": "whose comparative effectiveness and mechanisms require the prospective evaluation specified in §8.8.",
+  "replacement": "whose comparative effectiveness and mechanisms require the prospective evaluation proposed in §8.8; the Stage-3B component study recorded there is not used as that evaluation.",
+  "action": "reframe",
+  "src": "C03.13"
+ },
+ {
+  "locator": "P454",
+  "quote": "The component study in §8.8 can test its specified adaptation and feedback components, while the complete framework and the causal framing account require their own evaluations.",
+  "replacement": "The Stage-3B component study documented in §8.8 was pre-specified (repository-dated) to examine its adaptation and failure-presentation components; after the initial round its learning measurement was found not to be articulated to the adaptive-learning construct, and it is no longer used to determine that proposition — its achieved record is reported descriptively at the 26 September 2026 cut-off. The complete framework and the causal framing account require their own evaluations.",
+  "action": "reframe",
+  "src": "C03.14"
+ },
+ {
+  "locator": "P454",
+  "quote": "No hypothesis in the completed Stages 1–3 was publicly preregistered; the distinction between the original expectations and their later formalisation therefore remains explicit.",
+  "replacement": "No hypothesis in the completed Stages 1–3 was publicly preregistered, and the Stage-3B component study is described as pre-specified by repository-dated records, not as preregistered (§8.8); the distinction between the original expectations and their later formalisation therefore remains explicit.",
+  "action": "reframe",
+  "src": "C03.15"
+ },
+ {
+  "locator": "P455",
+  "quote": "3.6 An Instrumentation Roadmap for the Adaptive-Learning Claim",
+  "replacement": "3.6 An Instrumentation Roadmap for the Adaptive-Learning Proposition",
+  "action": "reframe",
+  "src": "C03.16"
+ },
+ {
+  "locator": "P456",
+  "quote": "This section converts the programme's discovery into a confirmable claim.",
+  "replacement": "This section converts the programme's adaptive-learning proposition into a confirmable claim for future study.",
+  "action": "reframe",
+  "src": "C03.17"
+ },
+ {
+  "locator": "P456",
+  "quote": "they do not measure the proposed mechanism or test the complete adaptive-learning framework.",
+  "replacement": "they do not measure the proposed mechanism or test the complete adaptive-learning framework, and the Stage-3B component study (§8.8) is not used as that test because its learning measurement was not articulated to the construct.",
+  "action": "reframe",
+  "src": "C03.18"
+ },
+ {
+  "locator": "P568",
+  "quote": "not a pre-registered endpoint",
+  "replacement": "not a prospectively specified endpoint",
+  "action": "reframe",
+  "src": "C04.0"
+ },
+ {
+  "locator": "P564",
+  "quote": "Stage 2 used the original game-state structure, and Stage 3 did not test a controlled state-repertoire comparison.",
+  "replacement": "Stage 2 used the original game-state structure, Stage 3 did not test a controlled state-repertoire comparison, and the Stage-3B component study — which specified a zero-failure (non-terminal) failure mode as one of its two crossed factors — is reported only as an achieved, descriptive record at its 26 September 2026 cut-off (Appendix I), with no clean-run returns on record and no confirmatory analysis.",
+  "action": "reframe",
+  "src": "C04.1"
+ },
+ {
+  "locator": "P587",
+  "quote": "Each relationship should therefore become a prospective question about feasibility, user experience and outcomes, with the limitations in §5.9 and §8.6 bounding the present claims.",
+  "replacement": "A note on what became of this mapping closes the section. The Stage-3B component study specified after Stage 3A crossed an adaptive-support arm (rule-agent difficulty adjustment with coaching enabled) against a static arm (fixed pace, coaching suppressed), and a zero-failure failure mode against a game-over mode. Its record at the 26 September 2026 cut-off — builds, returns and the reasons the study is no longer used as a test of the adaptive-learning proposal — is compiled in Appendix I; it contains one verified pre-freeze return and no clean-run returns, so no confirmatory analysis is reported and every cell of Table 5.3 remains a prospective question rather than a tested relationship.",
+  "action": "add_after",
+  "src": "C04.2"
+ },
+ {
+  "locator": "P539",
+  "quote": "Future deployment should justify the thresholds against task demands and safety limits and examine their effects on performance, burden and return.",
+  "replacement": "Future deployment should justify the thresholds against task demands and safety limits and examine their effects on performance, burden and return. The Stage-3B component-study builds carried the same 80%/40% thresholds in a local rule agent for their adaptive arm (Appendix I); at the 26 September 2026 cut-off that record contains no clean-run returns, so the thresholds' effects on performance, burden and return remain unexamined.",
+  "action": "reframe",
+  "src": "C04.3"
+ },
+ {
+  "locator": "P594",
+  "quote": "is specified as a deliverable of the confirmatory study (§8.8); pending it,",
+  "replacement": "is specified as a deliverable of the proposed confirmatory study (§8.8); pending it,",
+  "action": "reframe",
+  "src": "C04.5"
+ },
+ {
+  "locator": "P594",
+  "quote": "the protocol is retained for the confirmatory programme (§8.8)",
+  "replacement": "the protocol is retained for the proposed confirmatory programme (§8.8)",
+  "action": "reframe",
+  "src": "C04.6"
+ },
+ {
+  "locator": "P602",
+  "quote": "FES-I was not available as a baseline covariate and joins the baseline battery in the confirmatory study",
+  "replacement": "FES-I was not available as a baseline covariate and is specified for the baseline battery of the proposed confirmatory study (§8.8)",
+  "action": "reframe",
+  "src": "C04.7"
+ },
+ {
+  "locator": "P562",
+  "quote": "The architecture was not evaluated in the Stage-2 or Stage-3 empirical comparisons.",
+  "replacement": "The architecture was not evaluated in the Stage-2 or Stage-3 empirical comparisons, and the Stage-3B component record (Appendix I) contains no evaluation of it.",
+  "action": "reframe",
+  "src": "C04.8"
+ },
+ {
+  "locator": "P516",
+  "quote": "the Chapter 7 adaptive-learning prescription motivate",
+  "replacement": "the Chapter 7 adaptive-learning proposal motivate",
+  "action": "reframe",
+  "src": "C04.9"
+ },
+ {
+  "locator": "T9R7",
+  "quote": "Adaptive layer (L2) that protects the flow band for FRA-aligned cohorts.",
+  "replacement": "Adaptive layer (L2) intended to hold challenge within the controller thresholds for FRA-aligned cohorts; flow was not measured.",
+  "action": "reframe",
+  "src": "C04.10"
+ },
+ {
+  "locator": "P539",
+  "quote": "is recorded per build generation in the build-lineage matrix (Appendix G, item G.0A) as it is completed, together with the G.7 endpoint record; where a function's operational status is not yet documented there, no operational claim is made for it.",
+  "replacement": "is recorded per build generation in the build-lineage matrix (Appendix G, item G.0A), together with the G.7 endpoint record; where a function's operational status is not documented there, no operational claim is made for it.",
+  "action": "reframe",
+  "src": "C04.11"
+ },
+ {
+  "locator": "P552",
+  "quote": "are recorded in the build-lineage matrix (Appendix G, item G.0A) as it is completed; where a generation's tooling is not yet documented there, no tooling claim is made for it.",
+  "replacement": "are recorded in the build-lineage matrix (Appendix G, item G.0A); where a generation's tooling is not documented there, no tooling claim is made for it.",
+  "action": "reframe",
+  "src": "C04.12"
+ },
+ {
+  "locator": "P607",
+  "quote": "the component experiment specified after it is Stage 3B (§8.8). This chapter reports the Stage-3A study.",
+  "replacement": "the component experiment specified after it is Stage 3B, whose design parameters, builds and achieved record at the 26 September 2026 cut-off are documented in §8.8 and Appendix I. Stage-3B returns form no part of the evidence on which this thesis concludes, and the adaptive-learning proposition that study was built to examine is treated as a discussion and future-study direction (§6.8, §8.8). This chapter reports the Stage-3A study.",
+  "action": "reframe",
+  "src": "C05.0"
+ },
+ {
+  "locator": "P646",
+  "quote": "a distinction the §8.8 study can operationalise",
+  "replacement": "a distinction a future within-cohort study could operationalise (§8.8)",
+  "action": "reframe",
+  "src": "C05.1"
+ },
+ {
+  "locator": "P640",
+  "quote": "and compare adaptive learning with other plausible design responses.",
+  "replacement": "The Stage-3B component study specified after Stage 3A did not supply such an evaluation: its learning measurement was not articulated to the adaptive-learning construct, and its achieved record at the 26 September 2026 cut-off is documented in §8.8 without any adaptive-learning result.",
+  "action": "add_after",
+  "src": "C05.2"
+ },
+ {
+  "locator": "P637",
+  "quote": "Until that study is completed, the thesis's calibrated claim is",
+  "replacement": "Until such a study is conducted, the thesis's calibrated claim is",
+  "action": "reframe",
+  "src": "C05.3"
+ },
+ {
+  "locator": "P734",
+  "quote": "so the thesis practises at every level the principle it proposes for its users",
+  "replacement": "so the thesis practises at the researcher and artefact levels the principle it proposes, but has not yet evaluated, at the level of its users",
+  "action": "reframe",
+  "src": "C06.1"
+ },
+ {
+  "locator": "P691",
+  "quote": "It should be evaluated as a package and by component in a preregistered, within-cohort trial with common follow-up, process measures and implementation-fidelity checks.",
+  "replacement": "It should be evaluated as a package and by component in a publicly preregistered, within-cohort trial with common follow-up, process measures and implementation-fidelity checks. The Stage-3B component study (§8.8) was pre-specified (repository-dated 8–9 August 2026) and fielded as a first step in that direction; at the 26 September 2026 cut-off it is reported as a descriptive record and is not used as a test of the framework, because the learning measurement carried in its build was not articulated to the adaptive-learning construct: immediate task performance under assistance is not durable learning.",
+  "action": "reframe",
+  "src": "C06.2"
+ },
+ {
+  "locator": "P744",
+  "quote": "the framework's mechanism-level claims remain untested (§8.8)",
+  "replacement": "the framework's mechanism-level claims remain untested — the Stage-3B component study is on record as a descriptive account at its stated cut-off and is not used as their test (§8.8)",
+  "action": "reframe",
+  "src": "C06.3"
+ },
+ {
+  "locator": "P747",
+  "quote": "and their combined evaluation is pending (Chapters 5–7, §8.6, §8.8)",
+  "replacement": "and their combined evaluation remains future work (Chapters 5–7, §8.6, §8.8)",
+  "action": "reframe",
+  "src": "C06.4"
+ },
+ {
+  "locator": "P739",
+  "quote": "It is not evidence that a clinically attached adaptive service has already achieved sustained improvement.",
+  "replacement": "It is not evidence that a clinically attached adaptive service has already achieved sustained improvement. The Stage-3B component study extends the same chain (§8.8): on review of its first round, the learning measurement carried in the build was not articulated to the adaptive-learning construct, so the study is retained as a descriptive record at its cut-off and the adaptive-learning question is carried forward as a specified future study rather than reported as a result.",
+  "action": "reframe",
+  "src": "C06.5"
+ },
+ {
+  "locator": "T18R3",
+  "quote": "Partial difficulty adaptation in Stage 2; complete principle untested",
+  "replacement": "Partial difficulty adaptation in Stage 2; Stage-3B adaptive arm fielded as a support package (difficulty plus coaching) and reported descriptively (§8.8); complete principle untested",
+  "action": "reframe",
+  "src": "C06.6"
+ },
+ {
+  "locator": "P712",
+  "quote": "Neither a plausible explanation nor a functioning controller is sufficient evidence that the intervention prevents abandonment.",
+  "replacement": "Neither a plausible explanation nor a functioning controller is sufficient evidence that the intervention prevents abandonment. The Stage-3B record (§8.8) is the programme's first evaluation record of this kind; it is descriptive and supplies no such evidence.",
+  "action": "reframe",
+  "src": "C06.7"
+ },
+ {
+  "locator": "P703",
+  "quote": "These reference checks would provide a basis for assessing change without continuously moving the measurement conditions.",
+  "replacement": "These reference checks would provide a basis for assessing change without continuously moving the measurement conditions. A fixed-course check of this kind was carried in the Stage-3B Pro v4.1 build and exercised only in a researcher self-test (§8.8); that record documents the mechanism and establishes nothing about durable learning.",
+  "action": "reframe",
+  "src": "C06.8"
+ },
+ {
+  "locator": "P779",
+  "quote": "Stage 3B adds an ongoing touch-input component study (§8.8) to a programme that has used standing whole-body input and remote seated hand input.",
+  "replacement": "Stage 3B adds a touch-input component study — recorded at its 26 September 2026 cut-off in §8.8 and Appendix I, and no longer used as the test of adaptive learning — to a programme that has used standing whole-body input and remote seated hand input.",
+  "action": "reframe",
+  "src": "C07.2"
+ },
+ {
+  "locator": "P785",
+  "quote": "The nested model comparison is prospective rather than completed.",
+  "replacement": "The nested model comparison is prospective rather than completed. The Chapter-7 adaptive-learning framework remains untested in the field: the Stage-3B component study is reported as a descriptive record at its 26 September 2026 cut-off (§8.8; Appendix I) and is not used as a test of adaptive learning, because the learning measurement it carried was not articulated to the adaptive-learning construct — immediate task performance is not durable learning, and the adaptive arm was a support package of difficulty adjustment with coaching rather than difficulty adjustment alone.",
+  "action": "reframe",
+  "src": "C07.3"
+ },
+ {
+  "locator": "P804",
+  "quote": "the cost-effectiveness work of the confirmatory programme will specify minimum staff-training intensity.",
+  "replacement": "the cost-effectiveness work of the proposed confirmatory programme should specify minimum staff-training intensity.",
+  "action": "reframe",
+  "src": "C07.4"
+ },
+ {
+  "locator": "P808",
+  "quote": "Stage 3B is the response to that limitation",
+  "replacement": "Stage 3B was designed as the response to that limitation",
+  "action": "reframe",
+  "src": "C07.6"
+ },
+ {
+  "locator": "P808",
+  "quote": "It is a 2×2 component experiment crossing adaptive against static presentation with zero-failure against failure-possible modes in a new, remotely recruited cohort.",
+  "replacement": "It is a 2×2 component experiment in a new, remotely recruited cohort, crossing adaptive support (rule-agent difficulty adjustment with coaching) against static presentation (fixed pace with coaching suppressed) and zero-failure (ZF) against game-over (GO) failure modes, with assignment drawn at random per participant at first enrolment and persisted in the browser (effectively per browser profile); the adaptive arm is therefore a support package rather than difficulty adjustment alone.",
+  "action": "reframe",
+  "src": "C07.7"
+ },
+ {
+  "locator": "P808",
+  "quote": "Data collection commenced in August 2026; the deployed procedures and returned records are being checked against the Stage-3B protocol before final classification and analysis. Its results are not part of the evidence presented in this thesis.",
+  "replacement": "The achieved record is stated at a cut-off of 26 September 2026 and compiled in Appendix I. The 9 August 2026 build (commit 59b7881) was distributed on 10–12 August through five device-tagged files (DEV1–DEV5); a 13 August revision (a1afc42) added run-level input-mode logging; and a frozen study edition (build stamp Alpine_Coordination_Game_v3.1s_Stage3B_FROZEN20260915; twenty distributor-tagged copies D01–D20, hosted on GitHub Pages) opened a clean-run window on 15 September 2026. Returns on record at the cut-off are one verified return (code B9V8YA, received 15 August 2026 from the participant's own e-mail address); five returns received on 15 September 2026, excluded because they were played on the 13-August edition rather than the deployed build, were researcher-solicited plays made within about twenty minutes on one device copy, and all fell in the adaptive arm; and no clean-run return. After this initial round, the measurement of learning was found not to be articulated to the adaptive-learning construct set out in Chapter 7: the outcomes on record are a willingness item (D2) and, in the separate Pro v4.1 self-test, immediate fixed-course clearance near ceiling on non-equivalent course forms, whereas the framework's claim concerns durable learning that is credible under changing task conditions; the adaptive arm is a support package (difficulty adjustment with coaching) whose components cannot be attributed; assignment persisted per browser profile and the first-exposure build differed between the verified return and the excluded returns; and the record holds no retention or transfer measure. By the author's decision of 26 September 2026 (recorded in the thesis repository), Stage 3B is no longer used to determine whether an adaptive-learning process occurs in the AI-enabled zero-failure game mechanism. Its results form no part of the evidence presented in this thesis; no confirmatory analysis is reported; and no cell is left open for later completion. The thesis concludes on the record of Stages 1–3A, and adaptive learning is carried forward as a design direction for discussion and future study.",
+  "action": "reframe",
+  "src": "C07.8"
+ },
+ {
+  "locator": "P808",
+  "quote": "The design can test the specified component contrasts; any interaction claim requires adequate sample size and precision.",
+  "replacement": "The design as specified could test the component contrasts in a future, adequately powered run; any interaction claim would require adequate sample size and precision.",
+  "action": "reframe",
+  "src": "C07.9"
+ },
+ {
+  "locator": "P810",
+  "quote": "[AUTHOR INPUT NEEDED - Stage 3B results: this passage is completed when the collection window closes; report all pre-specified outcomes regardless of direction.]",
+  "replacement": "A separate Stage-3B Pro v4.1 researcher self-test batch (Batch 01, 19–20 September 2026) is also on record and is reported in Appendix I as a development record, not as evidence. The Pro v4.1 edition adds a feedback-conditioned practice-proposal policy: after each practice run the player may report difficulty, feeling and reason, and local rules combine that report with performance counts to propose the next practice, which the player accepts or overrides. Its optional external-judgment step was not used in Batch 01; the policy does not train any model's weights, so it is neither reinforcement learning from human feedback nor a comparable training method. Batch 01 comprises ten exports from five stored player codes, all labelled researcher self-test with identities unverified; it documents a traceable feedback-to-decision-to-settings mechanism and five within-visit fixed-course checks near ceiling on non-equivalent course forms. The batch's own reports state that it does not establish durable learning, reduced abandonment or the FIAS mechanism, and the descriptive tables and exploratory statistics are confined to Appendix I.",
+  "action": "reframe",
+  "src": "C07.10"
+ },
+ {
+  "locator": "P810",
+  "quote": "[AUTHOR INPUT NEEDED - Stage 3B results: this passage is completed when the collection window closes; report all pre-specified outcomes regardless of direction.]",
+  "replacement": "A future test of adaptive learning in the AI-enabled zero-failure mechanism would need to close the measurement and design gaps that this record exposes. Its learning outcome would be articulated to durable learning rather than immediate task performance: retention or transfer checks on equivalent course forms, taken after a delay and away from ceiling. Difficulty adjustment would be separated from coaching, so that an adaptive arm is not a support package whose components cannot be attributed. Assignment would be randomised per participant on a single frozen study edition, with the first-exposure build version recorded, and every return would carry verified participant provenance. Until such a study is run, the adaptive-learning claim remains a design proposition (Chapter 7).",
+  "action": "add_after",
+  "src": "C07.11"
+ },
+ {
+  "locator": "P818",
+  "quote": "Where an item cannot be shared openly, its entry states the access procedure and restrictions.",
+  "replacement": "The Stage-3B record at its 26 September 2026 cut-off — the protocol and analysis-hierarchy commits of 8–9 August 2026, the frozen study edition of 15 September 2026 with its freeze record and checksums, the as-received returns archive with its verification findings, and the Pro v4.1 self-test Batch 01 reports — is held in the thesis repository (docs/thesis/stage3b and docs/thesis/data_entry/incoming) and summarised in Appendix I; it is a descriptive record and carries no evidential weight in this thesis. Where an item cannot be shared openly, its entry states the access procedure and restrictions.",
+  "action": "reframe",
+  "src": "C07.13"
+ },
+ {
+  "locator": "P823",
+  "quote": "and followed its non-confirmation in the deployed configuration to the programme's discoveries",
+  "replacement": "and followed its non-confirmation in the deployed configuration to the programme's observations and its proposed design response",
+  "action": "reframe",
+  "src": "C08.0"
+ },
+ {
+  "locator": "P828",
+  "quote": "Coordination endorsement is interpreted as a manipulation check, not as a direct measure of latent learning orientation.",
+  "replacement": "Stage 3B, a pre-specified (repository-dated) 2×2 component study crossing adaptive against static difficulty with zero-failure against game-over failure presentation, was built and distributed from August 2026 and frozen as a study edition on 15 September 2026. Its record at the 26 September 2026 cut-off comprises one verified return, five researcher-solicited returns excluded under the protocol, no clean-run returns, and a researcher self-test batch of the Pro v4.1 practice-proposal policy. After the initial round, the learning measurement was found not to be articulated to the adaptive-learning construct: immediate task performance is not durable learning, the clearance measure runs near ceiling, the course forms were not equivalent, and the adaptive arm was a support package of difficulty adjustment and coaching rather than difficulty alone. Stage 3B is therefore reported as a descriptive component-study record (§8.8; Appendix I) and is not used as a test of the adaptive-learning framework; the thesis concludes on the record of Stages 1, 2 and 3A, and adaptive learning is carried forward as discussion and future study.",
+  "action": "add_after",
+  "src": "C08.1"
+ },
+ {
+  "locator": "T24R1",
+  "quote": "August–October 2026 (window open; collection commenced August 2026)",
+  "replacement": "August–September 2026 (stated at the 26 September 2026 cut-off)",
+  "action": "reframe",
+  "src": "C08.2"
+ },
+ {
+  "locator": "T24R1",
+  "quote": "Stage 3B pre-specified 2x2 field experiment",
+  "replacement": "Stage 3B pre-specified (repository-dated) 2x2 component study, reported as a descriptive record",
+  "action": "reframe",
+  "src": "C08.3"
+ },
+ {
+  "locator": "T24R1",
+  "quote": "Protocol and analysis hierarchy repository-dated 8–9 August 2026, before recruitment; remote distribution through personal networks from 10 August; first returned record received 15 August 2026; returns are being checked against the protocol before classification. [Results TO BE REPORTED when the window closes]",
+  "replacement": "Protocol and analysis hierarchy repository-dated 8–9 August 2026, before recruitment; remote distribution through personal networks from 10 August; one verified return received 15 August 2026; frozen study edition 15 September 2026; five researcher-solicited returns of 15 September 2026 excluded under the protocol; no clean-run returns on record at the 26 September 2026 cut-off; a researcher self-test batch of the Pro v4.1 practice-proposal policy (19–20 September 2026) documented separately (§8.8; Appendix I)",
+  "action": "reframe",
+  "src": "C08.4"
+ },
+ {
+  "locator": "T24R1",
+  "quote": "[OPEN — planned tests of adaptive/static and failure-presentation components; clinical framing is not a factor]",
+  "replacement": "After the initial round, the learning measurement was found not to be articulated to the adaptive-learning construct (immediate task performance is not durable learning; clearance near ceiling; non-equivalent course forms; the adaptive arm is a support package of difficulty adjustment and coaching rather than difficulty alone). Stage 3B is therefore recorded as a descriptive component study and is not used to test the framework; adaptive/static and failure-presentation components remain future tests; clinical framing is not a factor",
+  "action": "reframe",
+  "src": "C08.5"
+ },
+ {
+  "locator": "T24R2",
+  "quote": "Planned synthesis of completed observations, candidate explanations and proposed engineering response",
+  "replacement": "Planned synthesis of completed observations (Stages 1, 2 and 3A), candidate explanations and proposed engineering response; adaptive learning carried as discussion and future study",
+  "action": "reframe",
+  "src": "C08.6"
+ },
+ {
+  "locator": "P834",
+  "quote": "Yellow cells await author input or the close of the Stage 3B window.",
+  "replacement": "The Stage 3B row records that study at its 26 September 2026 cut-off (§8.8; Appendix I).",
+  "action": "reframe",
+  "src": "C08.7"
+ },
+ {
+  "locator": "P843",
+  "quote": " [AUTHOR INPUT NEEDED - supply the Stage-2 interview/field records for evidence/, so this stance can be anchored to its documented source and reconciled with the Chapter-5 description of the Stage-2 qualitative record.]",
+  "replacement": "",
+  "action": "delete",
+  "src": "C08.9"
+ },
+ {
+  "locator": "T25R9",
+  "quote": "Stage 3B 2×2 component design (§8.8)",
+  "replacement": "Stage 3B 2×2 component-study record at the 26 September 2026 cut-off (§8.8; Appendix I)",
+  "action": "reframe",
+  "src": "C08.10"
+ },
+ {
+  "locator": "T25R9",
+  "quote": "Proposed; complete framework and progress specification not yet evaluated",
+  "replacement": "Proposed; complete framework and progress specification not yet evaluated; Stage 3B not used as their test because its learning measure was not articulated to the construct",
+  "action": "reframe",
+  "src": "C08.11"
+ },
+ {
+  "locator": "P851",
+  "quote": "The framework and this progress specification remain untested as a complete package; Stage 3 does not establish their effectiveness, and future evaluation should compare them with decoupling alone and with simpler support alternatives.",
+  "replacement": "The framework and this progress specification remain untested as a complete package. Stage 3 does not establish their effectiveness, and the Stage 3B component study is not used as their test: after its initial round, its learning measurement was found not to be articulated to the adaptive-learning construct — immediate task performance is not durable learning — so its record is reported descriptively (§8.8; Appendix I) and adaptive learning is carried forward as discussion and future study. Future evaluation should compare them with decoupling alone and with simpler support alternatives, using a learning measure that goes beyond immediate performance.",
+  "action": "reframe",
+  "src": "C08.12"
+ },
+ {
+  "locator": "P864",
+  "quote": "It was not evaluated in the empirical programme, so it should be presented as a prototype specification and testable extension rather than as an established \"loss-free\" mechanic.",
+  "replacement": "It was not evaluated in the empirical programme (the zero-failure versus game-over factor of the Stage 3B component study had no clean-run returns on record at the 26 September 2026 cut-off; §8.8; Appendix I), so it should be presented as a prototype specification and testable extension rather than as an established \"loss-free\" mechanic.",
+  "action": "reframe",
+  "src": "C08.14"
+ },
+ {
+  "locator": "P881",
+  "quote": "The complete adaptive-learning framework, dynamic-state architecture and person-conditioned AI extension have not been tested.",
+  "replacement": "The complete adaptive-learning framework, dynamic-state architecture and person-conditioned AI extension have not been tested. The Stage 3B component study fielded adaptive-versus-static difficulty and zero-failure-versus-game-over presentation, but its learning measurement was not articulated to the adaptive-learning construct and its returns on record at the 26 September 2026 cut-off do not support a comparison; it is reported as a descriptive record only (§8.8; Appendix I).",
+  "action": "reframe",
+  "src": "C08.17"
+ },
+ {
+  "locator": "P883",
+  "quote": "A distinct component programme should test adaptive calibration and failure presentation against simpler alternatives.",
+  "replacement": "A distinct component programme should test adaptive calibration and failure presentation against simpler alternatives, with a learning measure articulated to the adaptive-learning construct rather than immediate task performance, equivalent course forms, and difficulty adjustment separated from coaching — the gaps that the Stage 3B record documents (§8.8; Appendix I).",
+  "action": "reframe",
+  "src": "C08.18"
+ },
+ {
+  "locator": "P892",
+  "quote": "Stage 3B concerns component testing;",
+  "replacement": "Stage 3B stands as a descriptive component-study record at the 26 September 2026 cut-off rather than a test of the framework;",
+  "action": "reframe",
+  "src": "C08.20"
+ },
+ {
+  "locator": "P1020",
+  "quote": "In the Stage-3 remote deployment the instrument was distributed with the e-mailed game build, and participants returned their responses by e-mail together with the build's logged results file.",
+  "replacement": "In the Stage-3 remote deployment the instrument was distributed with the e-mailed game build, and participants returned their responses by e-mail together with the build's logged results file. The Stage-3B component study used a four-item in-build questionnaire whose D2 item ('I would be willing to play this game regularly.') differs in wording from the Stage-3 D2; its one pre-specified contrast, defined on that item (top-two-box), was not run (Appendix I).",
+  "action": "reframe",
+  "src": "C09.2"
+ },
+ {
+  "locator": "P1030",
+  "quote": "The full adaptive-learning reference stack adds three further layers",
+  "replacement": "The full adaptive-learning reference stack, specified here as a design direction for future study (Chapter 7; §8.8), adds three further layers",
+  "action": "reframe",
+  "src": "C09.3"
+ },
+ {
+  "locator": "P1049",
+  "quote": "Synthetic pipeline-test records remain labelled and wholly separate (G.8).]",
+  "replacement": "Synthetic pipeline-test records remain labelled and wholly separate (G.8). Stage-3B artifacts (items G.12–G.13; Appendix I) enter the manifest as descriptive-record rows: they feed no result table in this thesis.]",
+  "action": "reframe",
+  "src": "C09.6"
+ },
+ {
+  "locator": "P1050",
+  "quote": "so the retained logs are the verified returns, which are under verification (§8.8). The participant-to-device-copy mapping completes from the device-rotation log as return verification closes.",
+  "replacement": "so the retained logs are the returns on record at the 26 September 2026 cut-off: one verified return (15 August 2026), five returns received 15 September 2026 and excluded on verification, and no clean-run return (Appendix I). The participant-to-device-copy mapping is recorded for those returns only; no further mapping is claimed.",
+  "action": "reframe",
+  "src": "C09.7"
+ },
+ {
+  "locator": "P1050",
+  "quote": "committed 13 August 2026. Hardware and input:",
+  "replacement": "committed 13 August 2026; study edition frozen 15 September 2026 (build stamp Alpine_Coordination_Game_v3.1s_Stage3B_FROZEN20260915; twenty distributor-tagged copies D01–D20, hosted on GitHub Pages; clean-run window 15 September–15 October 2026; Appendix I). The Pro v4.1 self-test edition (Batch 01, 19–20 September 2026) is recorded as a separate Pro development entry — researcher self-test only, not the frozen study build (Appendix I.5). Hardware and input:",
+  "action": "reframe",
+  "src": "C09.8"
+ },
+ {
+  "locator": "P1050",
+  "quote": "the adaptive arm runs the build's built-in rule agent (step up above an 80% avoid rate, ease off below 40%);",
+  "replacement": "the adaptive arm runs the build's built-in rule agent (step up above an 80% avoid rate, ease off below 40%) with coaching enabled — an adaptive-support package rather than difficulty adjustment alone;",
+  "action": "reframe",
+  "src": "C09.9"
+ },
+ {
+  "locator": "P1056",
+  "quote": "G.5  The Stage-3 distribution and return e-mail record (de-identified index of dates, channels and returned files).",
+  "replacement": "G.5  The Stage-3 distribution and return e-mail record (de-identified index of dates, channels and returned files). The Stage-3B distribution and return record is held separately with item G.12: device-copy distributions of 10–12 August 2026, the one verified return of 15 August 2026, the five returns of 15 September 2026 excluded on verification, and the frozen study edition's distributor copies (Appendix I).",
+  "action": "reframe",
+  "src": "C09.10"
+ },
+ {
+  "locator": "P1062",
+  "quote": "G.11  Expert interview guide (Expert_Interview_Guide_2026.docx), the semi-structured guide used across the consultation panel; reproduced compactly as Appendix H.5.",
+  "replacement": "G.12  Stage-3B component-study record at the 26 September 2026 cut-off (Appendix I): the mini-protocol and pre-specified analysis hierarchy (repository-dated 8–9 August 2026); the deployed device copies (DEV1–DEV5) and the frozen study edition of 15 September 2026 with its freeze record and checksums; the as-received return archive (one verified return, 15 August 2026); the verification findings for the five excluded returns of 15 September 2026; and the dated decision record of 26 September 2026. No result table in this thesis draws on these files.\nG.13  Stage-3B Pro v4.1 self-test, Batch 01 (19–20 September 2026): the as-received package (policy, adapter, server, validation record and self-test HTML, received 19 September 2026) and the two as-received reports of 20 September 2026 with their checksums, all labelled researcher self-test with participant identities unverified; archived as a Pro development record (Appendix I.5), not as participant data. The ten raw exports, the derived workbooks and the extraction scripts named in the reports had not been deposited at the cut-off (§8.9).",
+  "action": "add_after",
+  "src": "C09.11"
+ },
+ {
+  "locator": "P1074",
+  "quote": "Author completion checklist",
+  "replacement": "V43 - 26 September 2026 (pivot pass; V42 closed 14 September 2026). This pass actions the author's decision of 26 September 2026 to conclude the thesis on the FIAS finding of Stages 1–3A and to treat adaptive learning as a discussion and future-study direction, and it actions the textual items of the updated examination report of 15 September 2026. Stage 3B is reported as a descriptive component-study record at the 26 September 2026 cut-off (new Appendix I with Tables I.1–I.12 and Figures I.1–I.3; Appendix G items G.12–G.13; the G.0A lineage row extended to the frozen study edition of 15 September 2026 and the Pro v4.1 self-test); no confirmatory analysis is reported and no Stage-3B results cell or author-input stub remains in §8.8, Table 3.1A or Table 9.1; passages that promised Stage-3B results or made the adaptive-learning claim depend on them are reframed to the record (§1.8–§1.9, §1.13–§1.14, §2.3.4, §2.6.2C, Tables 2.1–2.3, §3.2, Table 3.1, Table 3.1A, §3.4–§3.6, §5.3.5, §5.3.10, §5.5A, §6.1, §6.8, §7.4, §7.5, §7.9, §8.5.8, §8.6, §8.8–§8.9, §9.1–§9.2, Table 9.1, Table 9.3, §9.5, §9.8A–§9.10, §9.12, Appendices D, E and G); the study is described as pre-specified (repository-dated) throughout and its adaptive arm as a support package. Examiner textual items closed in this pass: §3.4 satisfaction/symptom provenance and Stage-1 consent; §3.4 Stage-3B ethics scope stated as an open item of the record; §5.2A instrument sentence; §5.5–§5.6 terminology and the Appendix B rule statement; §5.6 and §8.6B co-occurrence wording; Table 5.3 coin-loop cell; §2.3.5 sentence repair; §6.4 attempts-versus-sessions unit; abstract and Figures 6.1–6.2 retention qualification; §7.4 taxonomy over-defence; §7.9 adaptive-learning proposition and GrandPad verdict-exposure narrowing (text, Figure 8.1 caption and artwork); §8.5.9 ordinary-attrition wording; Figures 5.1B, 5.2, 5.4 and 5.5 captions with the Figure 5.2 and 5.5 artwork regenerated from the archived counts; Appendix E as-specified labelling; Appendix G status statement; the fused NBS reference split and the Tha et al. entry marked as advance online. The Stage-3B protocol sign-off is no longer a thesis dependency. The remaining marks are confined to items (a), (b), (c) and (e) of the V42 entry below; item (d) is closed. Final production adds Appendix I to the regenerated ToC, List of Figures and List of Tables.",
+  "action": "add_after",
+  "src": "C09.14"
+ },
+ {
+  "locator": "P1075",
+  "quote": "embeds the Stage-3B interim status in §8.8 and Table 9.1 (designed after Stage 3A; prospectively specified 8–9 August 2026; collection commenced August 2026; returns under verification)",
+  "replacement": "embeds the Stage-3B status in §8.8 and Table 9.1 (designed after Stage 3A; pre-specified, repository-dated 8–9 August 2026; collection commenced August 2026; superseded in V43 by the descriptive record at the 26 September 2026 cut-off, Appendix I)",
+  "action": "reframe",
+  "src": "C09.15"
+ },
+ {
+  "locator": "P1075",
+  "quote": "(d) Stage 3B cells that close when the August-October 2026 window ends (s8.8, Table 9.1); and (e)",
+  "replacement": "(d) none for Stage 3B — its cells in §8.8 and Table 9.1 are closed as a descriptive record at the 26 September 2026 cut-off (Appendix I), with no results cell left open; and (e)",
+  "action": "reframe",
+  "src": "C09.16"
+ },
+ {
+  "locator": "P1075",
+  "quote": "the supervisor's report and the Stage-3B protocol sign-off.",
+  "replacement": "the supervisor's report and the Stage-3B protocol sign-off (no longer a thesis dependency: no Stage-3B confirmatory analysis is reported).",
+  "action": "reframe",
+  "src": "C09.17"
+ },
+ {
+  "locator": "P448",
+  "quote": "The satisfaction and symptom variables are accordingly therapist-mediated, researcher-compiled observational data, gathered under the facility's routine care relationship and the gatekeeper arrangement described above - not responses to a self-administered research instrument - and §5.5 carries the corresponding measurement caution.",
+  "replacement": "The symptom variables are accordingly therapist-mediated, researcher-compiled observational data, gathered under the facility's routine care relationship and the gatekeeper arrangement described above - not responses to a self-administered research instrument; the satisfaction variable is a participant-completed paper-questionnaire response whose administered form and anchors await archival confirmation (Appendix C) - and §5.5 carries the corresponding measurement cautions.",
+  "action": "reframe",
+  "src": "E0"
+ },
+ {
+  "locator": "P448",
+  "quote": "The therapists kept no written per-participant records; the individual attribution of satisfaction and symptom entries in the Stage-2 dataset was therefore performed by the researcher when compiling the field notes.",
+  "replacement": "The therapists kept no written per-participant records; the individual attribution of the symptom entries in the Stage-2 dataset was therefore performed by the researcher when compiling the field notes, whereas the satisfaction entries derive from the after-game paper questionnaire completed by players (column provenance of the Stage-2 ID register, below).",
+  "action": "reframe",
+  "src": "E1"
+ },
+ {
+  "locator": "P570",
+  "quote": "so the satisfaction-engagement association reported below (Fisher's exact p = 0.013) is read as an observed association in compiled field data, not as an instrumented self-report result; the confirmatory study replaces this pathway with self-administered instruments at pre-specified times.",
+  "replacement": "so the symptom-improvement comparison reported below is read as an observed association in compiled field data. The satisfaction-engagement association (Fisher's exact p = 0.013) rests on a participant-completed paper questionnaire whose administered form and anchors await archival confirmation (Appendix C), cross-tabulated against observed engagement; it is a descriptive association under an as-yet-unverified instrument, not a result from a verified self-report instrument. A future study would replace both pathways with self-administered instruments at pre-specified times.",
+  "action": "reframe",
+  "src": "E2"
+ },
+ {
+  "locator": "P575",
+  "quote": "Self-reported symptom improvement showed the same direction, with considerable uncertainty (7 of 9 versus 11 of 21; Fisher's exact p = 0.25).",
+  "replacement": "Therapist-reported symptom improvement (therapist-observed, researcher-compiled; §3.4) showed the same direction, with considerable uncertainty (7 of 9 versus 11 of 21; Fisher's exact p = 0.25).",
+  "action": "reframe",
+  "src": "E3"
+ },
+ {
+  "locator": "P517",
+  "quote": "Self-report is captured by Questionnaires 2 and 3 (Appendix B): Q2 is administered immediately after the first gamified-FRA session (N = 30) and follows the Octalysis core-drives ordering across ten items; Q3 is the eight-week follow-up that distinguishes continuing users from those who dropped out and identifies the failure-induced exit pathway directly.",
+  "replacement": "Self-report is captured by the after-game paper questionnaire completed by every participant at the end of play (the source of the satisfaction variable) and by the nine-item post-deployment interview with the sustained participants (Appendix C); symptom entries are therapist observations compiled by the researcher (§3.4).",
+  "action": "reframe",
+  "src": "E4"
+ },
+ {
+  "locator": "P590",
+  "quote": "Four of the nine criticised the game's visuals as weak or childish even while rating the experience highly, an echo of the infantilisation risk raised in the expert consultations; and one record contains an internal contradiction (usefulness disclaimed in one item, endorsed in another), retained as recorded.",
+  "replacement": "Four of the nine criticised the game's visuals as weak or childish even while rating the experience highly - an echo of the infantilisation risk raised in the expert consultations, and a point that strengthens the implementation-quality alternative (§8.5.7), since the persistent participants themselves identified a presentation weakness; and one record contains an internal contradiction (usefulness disclaimed in one item, endorsed in another), retained as recorded: the record does not resolve whether it reflects item ambiguity, inconsistent responding or the therapist's rendering, so the usefulness mean is read with that uncertainty.",
+  "action": "reframe",
+  "src": "E6"
+ },
+ {
+  "locator": "P590",
+  "quote": "Two of the nine spontaneously puzzled over the non-participants ('don't know why others don't try') - the sustained side of the visible-participation channel taken up in §8.6B.",
+  "replacement": "Two of the nine spontaneously puzzled over the non-participants ('don't know why others don't try') - a perception held by persistent players, not evidence of the non-participants' motives, and the sustained side of the visible-participation channel taken up in §8.6B.",
+  "action": "reframe",
+  "src": "E7"
+ },
+ {
+  "locator": "P591",
+  "quote": "the rule that maps the thirteen items onto that range is specified in the codebook in Appendix B.",
+  "replacement": "the rule that maps the thirteen items onto that range is not reproduced in this thesis: Appendix B states the scheme's structure only and defers the item-level codebook, weights and thresholds (§5.6, §8.8).",
+  "action": "reframe",
+  "src": "E12"
+ },
+ {
+  "locator": "P17",
+  "quote": "End-of-window retention was 93.3% overall and 85.4% in the 65-80 band (returned dropouts counted as retained), with 15 of 23 initial dropouts returning voluntarily.",
+  "replacement": "End-of-window retention was 93.3% overall and 85.4% in the 65-80 band among the 120 participants whose returned files were compiled (returned dropouts counted as retained; the invitation denominator is unknown and the timing rule separating a return from an ordinary interval between sessions is not reconstructable from the aggregate record), with 15 of 23 initial dropouts classified as returning.",
+  "action": "reframe",
+  "src": "E14"
+ },
+ {
+  "locator": "P632",
+  "quote": "Figure 6.2. Observed return after initial dropout by age band in Stage 3, including 62.5% in the 65–80 band. The zero-return line refers descriptively to the separate Stage-2 cohort; it is not a repeated-measures baseline or an estimate of the causal benefit of the Stage-3 package.",
+  "replacement": "Figure 6.2. Return after initial dropout by age band in Stage 3, including 62.5% in the 65–80 band. Dropout and return are compiled classifications from the returned files; the inactivity checkpoint that separates a return from an ordinary interval between sessions is not reconstructable from the aggregate record (§6.4). The zero-return line refers descriptively to the separate Stage-2 cohort; it is not a repeated-measures baseline or an estimate of the causal benefit of the Stage-3 package.",
+  "action": "reframe",
+  "src": "E15"
+ },
+ {
+  "locator": "P615",
+  "quote": "Initial dropout denotes a participant whose returned logs show disengagement after the first play contact, before the five-session sequence was completed — an incomplete first session, or no continuation beyond it; the deposited aggregate register labels this outcome 'dropped out before completing 5 attempts'.",
+  "replacement": "Initial dropout denotes a participant whose returned logs show disengagement after the first play contact before five attempts were completed under the game's five-attempt rule (§5.3.2); the aggregate register labels this outcome 'dropped out before completing 5 attempts'. Whether those attempts fell within one sitting or across separate sessions is not recorded in the aggregate register, so the register's own unit (attempts) is used here and 'session' is reserved for a separately dated play occasion where the returned files record one.",
+  "action": "reframe",
+  "src": "E16"
+ },
+ {
+  "locator": "P447",
+  "quote": "Consent in Stage 2 is likewise stated exactly as it operated.",
+  "replacement": "Consent in Stage 1 operated as described in the application: a voluntary, anonymous survey with verbal agreement at face-to-face administration by nursing staff; no written instrument was used and no identifiers were collected. Consent in Stage 2 is likewise stated exactly as it operated.",
+  "action": "reframe",
+  "src": "E22"
+ },
+ {
+  "locator": "P446",
+  "quote": "Each stage was conducted under the ethics policy of The Hong Kong Polytechnic University and in accordance with the Declaration of Helsinki.",
+  "replacement": "Each stage is reported here against the ethics policy of The Hong Kong Polytechnic University and the Declaration of Helsinki; the institutional record that applies to the procedures as conducted is stated below rather than summarised as a compliance claim.",
+  "action": "reframe",
+  "src": "E23"
+ },
+ {
+  "locator": "P446",
+  "quote": "for the approval period 16 June 2024 to 30 October 2026 - a period that covers all of the programme's fieldwork, including the Stage 3B window (August–October 2026; §8.8); the approval memo is archived in the ethics record); the application described the procedures of all three stages",
+  "replacement": "for the approval period 16 June 2024 to 30 October 2026; the approval memo is archived in the ethics record). The approval period spans the dates of the Stage-3B component study conducted from August 2026 and documented at the 26 September 2026 cut-off (§8.8; Appendix I); the application's Part B, however, described the remaining activities as documentary and analytical, with no new experimental deployment, so whether the Stage-3B collection falls within the approved scope or requires an amendment is recorded as an open item of the ethics record (Appendix I.7). The application described the procedures of all three stages",
+  "action": "reframe",
+  "src": "E24"
+ },
+ {
+  "locator": "P1051",
+  "quote": "Appendix G binds the raw data, photographs and supplementary materials listed below. Each item is deposited with the thesis or in a governed repository accessible to examiners; where an item cannot be shared openly, the access procedure and restrictions are stated in its entry.",
+  "replacement": "Appendix G lists the raw data, photographs and supplementary materials below, each with its status at the stated cut-off: bound with the thesis, pending (tracked in items G.0 and G.0A and in §8.9), or not retained. Where a bound item cannot be shared openly, the access procedure and restrictions are stated in its entry; a file name alone does not constitute deposit.",
+  "action": "reframe",
+  "src": "E26"
+ },
+ {
+  "locator": "P1030",
+  "quote": "The Stage-2 deployment ran on a five-layer architecture.",
+  "replacement": "The Stage-2 deployment was built on the five-layer architecture specified here; which functions ran live in the deployed build, which were exercised only against synthetic profiles and which remained specified is recorded per build generation in the build-lineage matrix (Appendix G, item G.0A), and no operational claim is made beyond that record (§5.3.5, §8.9).",
+  "action": "reframe",
+  "src": "E30"
+ },
+ {
+  "locator": "P534",
+  "quote": "Layer 2 (AI Adaptation) is a LangChain runtime calling a large-language-model endpoint that adjusts obstacle density and skier speed at five-minute intervals using a prompt template anchored to the user's recent success rate (raise difficulty above 80%, lower below 40%).",
+  "replacement": "Layer 2 (AI Adaptation) is specified as a LangChain runtime calling a large-language-model endpoint to adjust obstacle density and skier speed at five-minute intervals using a prompt template anchored to the user's recent success rate (raise difficulty above 80%, lower below 40%); its operational status in the deployed Stage-2 build is recorded in item G.0A (§5.3.5).",
+  "action": "reframe",
+  "src": "E31"
+ },
+ {
+  "locator": "P734",
+  "quote": "The adaptive-learning discovery is where the thesis and its topic become the same thing: adaptive learning is continuous improvement operating at the level of the individual user. Each session updates the challenge; each failure is information for the next iteration; the user's capability is the process being improved, with the user's own trajectory as the control chart.",
+  "replacement": "The adaptive-learning proposition is where the thesis and its topic meet: adaptive learning, as proposed here, would be continuous improvement operating at the level of the individual user. In the proposed loop each session would update the challenge and each failure would be information for the next iteration; whether the user's capability is thereby improved is the untested question, and the user's own trajectory, recorded under stated task conditions, is the proposed control chart.",
+  "action": "reframe",
+  "src": "E44"
+ },
+ {
+  "locator": "P689",
+  "quote": "More than three would duplicate a lever rather than add one: the candidate additions the programme examined — zero-failure presentation, social scaffolding, reward scheduling — decompose into presentation-layer or parameter choices within the three links, which is why zero-failure presentation appears above as the element P1 and P3 share rather than as a fourth principle.",
+  "replacement": "More than three could be added; in the decomposition adopted here the candidate additions the programme considered — zero-failure presentation, social scaffolding, reward scheduling — are treated as presentation-layer or parameter choices within the three links, which is why zero-failure presentation appears above as the element P1 and P3 share rather than as a fourth principle. This is a choice of organisation, not a demonstration that a further principle would be redundant: social support, for example, may change opportunity, practical assistance, enjoyment and appraisal at once, and a design that treats it as a fourth lever is compatible with the observations.",
+  "action": "reframe",
+  "src": "E47"
+ },
+ {
+  "locator": "P781",
+  "quote": "That reading is an interpretation of retrospective field notes rather than a measured discrimination: it weighs against these ordinary-attrition explanations without excluding them, and they remain live rivals to be carried as comparators into the future study specified above.",
+  "replacement": "That reading is an interpretation of retrospective field notes rather than a measured discrimination: acknowledging benefit while stopping is also compatible with dissatisfaction, burden or competing priorities, so it does not by itself weigh against these ordinary-attrition explanations, which remain live rivals to be carried as comparators into the future study specified above. Observations that would distinguish the accounts prospectively include measured appraisal at the failure moment, stated reasons for stopping collected from non-returners, and whether return differs when verdict cues are removed while burden, enjoyment and opportunity are held constant.",
+  "action": "reframe",
+  "src": "E48"
+ },
+ {
+  "locator": "T12R5",
+  "quote": "Coin loop sustained play in completers (≥4 cycles: 9/30)",
+  "replacement": "Coin loop present for all players; 9/30 completed ≥4 cycles (co-occurrence, not an attributed effect of coins)",
+  "action": "reframe",
+  "src": "E49"
+ },
+ {
+  "locator": "P589",
+  "quote": "and as dropouts accumulated, remaining players saw that many of their peers had stopped attending, and that visible thinning of the group contributed to further abandonment.",
+  "replacement": "and as dropouts accumulated, remaining players saw that many of their peers had stopped attending; the field notes record further abandonment following that visible thinning of the group, an observed co-occurrence that the researcher interpreted at the time as contributory.",
+  "action": "reframe",
+  "src": "E50"
+ },
+ {
+  "locator": "P743",
+  "quote": "The engagement evidence cited above comes from consumer-style deployments: predominantly homebound populations, leisure and connection functions, a family-and-support supervision scaffold, an explicitly non-assessment frame, and no assessment verdict presented to the user.",
+  "replacement": "The engagement evidence cited above comes from supported telehealth and care deployments — home primary and palliative care and a dementia clinic (Tha et al., 2025) and telemedicine visits (Perissinotto et al., 2019) — among predominantly homebound populations, with leisure and connection functions and a family-and-support scaffold; whether any adverse assessment feedback reached users in those deployments is not reported in the sources, so verdict exposure is recorded here as unknown rather than absent.",
+  "action": "reframe",
+  "src": "E51"
+ },
+ {
+  "locator": "P743",
+  "quote": "sustained engagement is documented where no assessment verdict reaches the user; a technology that delivers its measurement to the user while remaining bearable and returnable-to has no documented exemplar in this comparison",
+  "replacement": "sustained engagement is documented in configurations whose verdict exposure is not reported; none of the cited sources estimates voluntary return after adverse FRA feedback under conditions comparable to this thesis, and a technology that delivers its measurement to the user while remaining bearable and returnable-to has no documented exemplar in this comparison",
+  "action": "reframe",
+  "src": "E52"
+ },
+ {
+  "locator": "P745",
+  "quote": "it carries no account of what an adverse result does to an older user's self-concept, because in the configurations documented the adverse reading is routed to remote caregivers rather than delivered to the user as a verdict (GrandPad, 2020).",
+  "replacement": "it carries no account of what an adverse result does to an older user's self-concept; in the enterprise configuration the vendor material describes out-of-range readings transmitted to remote caregivers (GrandPad, 2020), and whether any reading is also presented to the user is not reported.",
+  "action": "reframe",
+  "src": "E53"
+ },
+ {
+  "locator": "P747",
+  "quote": "Consumer platforms of the GrandPad class document sustained engagement in configurations where no assessment verdict reaches the user;",
+  "replacement": "Consumer platforms of the GrandPad class document sustained engagement in supported telehealth and care configurations; whether an assessment verdict reaches the user is not reported in the cited sources;",
+  "action": "reframe",
+  "src": "E54"
+ },
+ {
+  "locator": "P745",
+  "quote": "Curated ease also caps challenge, and with it the mastery experiences on which learning and flow depend (Csikszentmihalyi, 1990; Vygotsky, 1978).",
+  "replacement": "Curated ease may also cap challenge, and with it the mastery experiences that learning and flow theories associate with development (Csikszentmihalyi, 1990; Vygotsky, 1978); this is an inference from the design, not a documented outcome.",
+  "action": "reframe",
+  "src": "E55"
+ },
+ {
+  "locator": "P578",
+  "quote": "(sustained: 42.0 to 48.9; low engagement: 44.8 to 47.6)",
+  "replacement": "(sustained: 42.0 to 48.9; low engagement: 44.7 to 47.5)",
+  "action": "reframe",
+  "src": "E57"
+ },
+ {
+  "locator": "P532",
+  "quote": "Figure 5.1B. The deployed game artefact across difficulty levels 1–5.",
+  "replacement": "Figure 5.1B. Successor-build illustration of the game artefact across difficulty levels 1–5 (screenshots from the programme's archived successor build in the same design lineage as the Stage-2 deployment, not from the deployed Stage-2 build).",
+  "action": "reframe",
+  "src": "E58"
+ },
+ {
+  "locator": "P536",
+  "quote": "Figure 5.2. Five-layer architecture of the gamified FRA system. The dual-purpose mechanic links Layer 0 (sensor input) and Layer 4 (clinical output) through the gameplay layers without exposing clinical numbers to the user during play.",
+  "replacement": "Figure 5.2. Five-layer architecture of the gamified FRA system as specified. The '80% / 40%' values in the L2 box are the controller's rule thresholds (step up above an 80% success rate, ease off below 40%), not a measured flow state. The solid arrows show the layer stack order only; the dashed line marks the COP-derived data path from L0 to the clinician-side L4 output, and the data movement between layers is described in §5.3.4. The dual-purpose mechanic links Layer 0 (sensor input) and Layer 4 (clinical output) through the gameplay layers without exposing clinical numbers to the user during play.",
+  "action": "reframe",
+  "src": "E59"
+ },
+ {
+  "locator": "P972",
+  "quote": "Tha, S. H., Hough, K., Bui, N., Dulaney, S., & Perissinotto, C. (2025). The use of age-friendly technology in the care of older adults: Two implementation case studies. Journal of Applied Gerontology. https://doi.org/10.1177/07334648251343513",
+  "replacement": "Tha, S. H., Hough, K., Bui, N., Dulaney, S., & Perissinotto, C. (2025). The use of age-friendly technology in the care of older adults: Two implementation case studies. Journal of Applied Gerontology. Advance online publication. https://doi.org/10.1177/07334648251343513",
+  "action": "reframe",
+  "src": "E62"
+ },
+ {
+  "locator": "P361",
+  "quote": "Stage 1 provides retrospective context, while Whether the implemented design realised that expectation is examined prospectively in Chapter 5, including cases with favourable recorded score change.",
+  "replacement": "Stage 1 provides retrospective context; whether the implemented design realised that expectation is examined prospectively in Chapter 5, including cases with favourable recorded score change.",
+  "action": "reframe",
+  "src": "E64"
+ },
+ {
+  "locator": "P1075",
+  "quote": "The examination-driven revision cycle is complete.",
+  "replacement": "The examination-driven revision cycle continues; the items below remain open at the stated cut-off.",
+  "action": "reframe",
+  "src": "E65"
+ },
+ {
+  "locator": "P568",
+  "quote": "self-reported symptom change",
+  "replacement": "therapist-reported symptom change",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P1053",
+  "quote": "self-reported symptom change",
+  "replacement": "therapist-reported symptom change",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "T12R4",
+  "quote": "60.0% self-reported improvement",
+  "replacement": "60.0% therapist-reported improvement",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P575",
+  "quote": "The self-reported and recorded ledgers diverge",
+  "replacement": "The therapist-reported and recorded ledgers diverge",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P575",
+  "quote": "reported symptom improvement after the deployment",
+  "replacement": "were recorded by therapists as showing symptom improvement after the deployment",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P629",
+  "quote": "by age band (N = 120).",
+  "replacement": "by age band (N = 120). Dropout and return are compiled classifications from the returned files; the inactivity checkpoint that separates a return from an ordinary interval between sessions is not reconstructable from the aggregate record (§6.4).",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P1031",
+  "quote": "E.1 · Layers L0–L4 (Stage-2 Operational)",
+  "replacement": "E.1 · Layers L0–L4 (Stage-2 architecture as specified; operational status per build in item G.0A)",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P1034",
+  "quote": "L2 · AI Adaptation: LangChain orchestration",
+  "replacement": "L2 · AI Adaptation (as specified): LangChain orchestration",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P538",
+  "quote": "The automatic difficulty-adjustment system (Layer 2) adjusts the game in real time",
+  "replacement": "The automatic difficulty-adjustment system (Layer 2) is specified to adjust the game in real time",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P793",
+  "quote": "and that visible thinning contributed to further abandonment (§5.6)",
+  "replacement": "and that further abandonment followed that visible thinning — an observed co-occurrence that the researcher interpreted at the time as contributory (§5.6)",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P234",
+  "quote": "Figure 5.1B. The deployed game artefact across difficulty levels 1–5",
+  "replacement": "Figure 5.1B. Successor-build illustration of the game artefact across difficulty levels 1–5",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P580",
+  "quote": "during the eight-week study window.",
+  "replacement": "during the eight-week study window (re-engagement branch drawn from the low-engagement group; F4 cluster membership per §5.6).",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P809",
+  "quote": "the proposed richer economy includes",
+  "replacement": "the richer economy implemented in the 13 August 2026 revision (Appendix I) includes",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P781",
+  "quote": "would not readily predict.",
+  "replacement": "do not obviously predict, although none of them is excluded by it.",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P745",
+  "quote": "Adaptive models make individually calibrated challenge inexpensive to implement at scale",
+  "replacement": "Adaptive models may make individually calibrated challenge easier to implement at scale",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P745",
+  "quote": "while the consumer configurations with documented sustained engagement present no assessment verdict to the user (the GrandPad class as evaluated;",
+  "replacement": "while the consumer configurations with documented sustained engagement do not report whether any assessment verdict reaches the user (the GrandPad class as evaluated;",
+  "action": "reframe",
+  "src": "custom"
+ },
+ {
+  "locator": "P743",
+  "quote": "the games are framed as leisure and connection, never as assessment — a decoupled frame arrived at by commercial instinct;",
+  "replacement": "the games are framed as leisure and connection rather than as assessment;",
+  "action": "reframe",
+  "src": "custom"
+ }
+]

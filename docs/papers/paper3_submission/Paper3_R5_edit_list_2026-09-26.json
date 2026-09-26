@@ -1,0 +1,282 @@
+[
+ {
+  "locator": "P3",
+  "quote": "Earlier work in this programme documented rapid, permanent abandonment of a gamified, AI-assisted Fall Risk Assessment (FRA) by elderly residents after first failure: 70.0% disengaged at or before three game cycles and none returned, even where the recorded balance index had improved.",
+  "replacement": "Earlier work in this programme documented rapid abandonment, with no documented return within the observation window, of a gamified, AI-assisted Fall Risk Assessment (FRA) by elderly residents after early failure: 70.0% had three or fewer recorded completed game runs and none of the 21 low-engagement participants had a later recorded run, even where the recorded balance index had improved.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P3",
+  "quote": "In the preliminary aggregate record, compiled from the results files and questionnaire responses each participant returned by e-mail, retention at the end of the study window was 93.3% overall and 85.4% in the 65-80 band;",
+  "replacement": "In the preliminary aggregate record — compiled from the results files and questionnaire responses of the 120 participants who returned them by e-mail, without per-participant session dates, so that dropout and return are compiled classifications whose timing rule cannot be reconstructed from the aggregates — end-of-window retention was 93.3% overall and 85.4% in the 65-80 band;",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P3",
+  "quote": "A residual 29.3-percentage-point gap between session retention and regular-use intention in the oldest band motivates adaptive learning — trajectory-oriented feedback with calibrated challenge — as the design response, and a pre-specified within-cohort randomised study as the confirmatory test.",
+  "replacement": "A residual 29.3-percentage-point gap between end-of-window retention and regular-use intention in the oldest band motivates adaptive learning — trajectory-oriented feedback with calibrated challenge — as the design response, carried here as a design direction specified for future study rather than as a tested result; the within-cohort randomised study that could carry the causal claim is outlined, not commenced.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P6",
+  "quote": "It did not: 70.0% of participants (95% CI 52.1-83.3%) disengaged at or before three cycles, 26.7% exited after a single session, and none of the 21 disengaged participants re-engaged during the study window (95% CI 0.0-15.5%) [2]. Most strikingly, three of the six participants in the strongest-abandonment cluster recorded a positive change in the balance index during their single session and still did not return.",
+  "replacement": "It did not: 70.0% of participants (95% CI 52.1-83.3%) had three or fewer recorded completed runs, 26.7% had a single completed run, and none of the 21 low-engagement participants had a later recorded run within the study window (95% CI 0.0-15.5%) [2]. Most strikingly, three of the six participants in the strongest-abandonment cluster recorded a positive change in the balance index in their only recorded run and still did not return.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P8",
+  "quote": "The two accounts frame the deployment's pre-stated predictions.",
+  "replacement": "The two accounts frame the deployment's directional expectations.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P8",
+  "quote": "The three-band cohort adds a fourth, formally testable prediction: if the burden the coupling imposes is age-linked, initial dropout will differ by age even under decoupling, and a second null hypothesis, H0-age (no difference between age groups), will fall.",
+  "replacement": "The three-band cohort also permits an exploratory test of a second null hypothesis, H0-age (no difference between age groups under decoupling), examined after the age-stratified data were tabulated: if the burden the coupling imposes is age-linked, initial dropout will differ by age even under decoupling and H0-age will fall.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P18",
+  "quote": "The package comprised recruitment language (a coordination challenge, with no medical or fall-prevention vocabulary);",
+  "replacement": "The package comprised presentation of the activity as a purely-fun coordination game (the invitation disclosed the doctoral research context, including its fall-risk origin, but the game and its instructions carried no medical or fall-prevention vocabulary);",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P18",
+  "quote": "Participant-level clinical balance telemetry was not collected.",
+  "replacement": "In-run difficulty adaptation in the ported build operated through the game's built-in rule agent; no external model calls are possible from a distributed HTML file, so no large-language-model adaptation operated in any Stage-3 session. Participant-level clinical balance telemetry was not collected.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P22",
+  "quote": "networks — work contacts, a charity community network, university support channels and working peers in medical centres:",
+  "replacement": "networks — family and personal contacts, work contacts, a charity community network, university support channels and working peers in medical centres:",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P22",
+  "quote": "Recruitment materials described a coordination challenge and used no medical or fall-prevention vocabulary. Recruiting three age bands builds the comparison group into the study and operationalises the test of H0-age introduced in Section I.",
+  "replacement": "The invitation e-mails disclosed the research context, including the programme's fall-risk origin, while presenting the activity itself as a purely-fun coordination game; the game and its instructions used no medical or fall-prevention vocabulary. Recruiting three age bands builds the comparison group into the study and operationalises the exploratory test of H0-age introduced in Section I.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P22",
+  "quote": "Identities were separated from the analysed records, which retain only a participant code, age band, gender and education; the distribution and return e-mails are retained in the authors' records.",
+  "replacement": "Identities were separated from the analysed records, which retain only a participant code, age band, gender and education; the distribution and return e-mails are retained in the authors' records. The programme's application for human subjects ethics review was approved (reference HSEARS20260805008; Principal Investigator Prof. C. F. Cheung; approved 6 August 2026 by the Departmental Research Committee of the Department of Industrial and Systems Engineering on behalf of the PolyU Institutional Review Board; approval period 16 June 2024 – 30 October 2026); the application, submitted on 6 August 2026 after the field stages had been conducted, described the procedures as conducted, and the approval covers the programme's fieldwork period.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P22",
+  "quote": "Identities were separated from the analysed records, which retain only a participant code, age band, gender and education; the distribution and return e-mails are retained in the authors' records.",
+  "replacement": "Two recruitment decisions were deliberate. The Stage-2 facility of [2] was not re-used: its residents already carried direct experience of the coupled system, and prior exposure would have contaminated a first-contact test of the decoupled frame, so a separate cohort was a design choice rather than only a constraint. Distribution also extended beyond the authors' immediate circle through onward (snowball) forwarding by the receiving organisations and contacts, so that a portion of participants were personally unknown to the authors, reducing the risk that participation reflected personal obligation to the researcher. Onward forwarding also leaves the cohort without a compiled invitation denominator: the 120 participants are those whose returned materials were compiled, not the number of people to whom the build was forwarded, so no response rate can be computed and every proportion reported below is conditional on the observed file-returning sample.",
+  "action": "add_after",
+  "src": "p3"
+ },
+ {
+  "locator": "P24",
+  "quote": "initial dropout (disengagement after the first play contact — an incomplete first session, or no second session within the study window); voluntary return after initial dropout (a subsequently logged completed session); observed non-return at the end of the study window (an initial dropout with no returned session inside the window, retention being its complement over the cohort);",
+  "replacement": "initial dropout (disengagement after the first play contact before the five-attempt protocol was completed — an incomplete first session, or no continuation beyond it; the aggregate register labels this outcome 'dropped out before completing 5 attempts', and whether those five are attempts within one sitting or separate sessions is not resolved by the register); voluntary return after initial dropout (a subsequently logged completed session); observed non-return at the end of the study window (an initial dropout with no returned session inside the window, retention being its complement over the cohort, so that a participant who dropped out and later returned counts as retained). Counting a participant first as an initial dropout and then as returning inside the same window presupposes a disengagement checkpoint earlier than the window's end; the aggregate register preserves neither that checkpoint nor per-participant session dates, so the timing rule behind the dropout and return classifications cannot be reconstructed from the aggregates, and the counts are reported as compiled classifications subject to this definitional limit;",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P26",
+  "quote": "Overall, 23 of 120 participants (19.2%) dropped out after their first play contact; 15 of the 23 (65.2%; 95% CI 44.9-81.2%) returned voluntarily; 8 (6.7%) did not return, giving end-of-window retention of 93.3% (Table 1).",
+  "replacement": "Overall, 23 of 120 participants (19.2%) were classified as initial dropouts ('dropped out before completing 5 attempts'); 15 of the 23 (65.2%; 95% CI 44.9-81.2%) returned voluntarily; 8 (6.7%) did not return, giving end-of-window retention of 93.3% (Table 1) — a proportion of the observed file-returning sample of 120, not of everyone invited or everyone who started.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "T0R1",
+  "quote": "Initial dropout after first play contact",
+  "replacement": "Initial dropout ('dropped out before completing 5 attempts')",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P29",
+  "quote": "Voluntary return after initial dropout is the study's central behavioural outcome; in the coupled Stage-2 deployment the corresponding return count was zero.",
+  "replacement": "Voluntary return after initial dropout is the study's central behavioural outcome; dropout and return are compiled classifications whose timing rule cannot be reconstructed from the aggregate record. In the coupled Stage-2 deployment the corresponding count of later recorded runs was zero.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P35",
+  "quote": "Return after failure is the study's central behavioural outcome.",
+  "replacement": "Return after initial dropout is the study's central behavioural outcome; dropout and return are compiled classifications whose timing rule cannot be reconstructed from the aggregate record.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P36",
+  "quote": "the difference between observed session retention (85.4%) and stated regular-use intention (56.1%; 95% CI 41.0-70.1%) is 29.3 percentage points;",
+  "replacement": "the difference between observed end-of-window retention (85.4%) and stated regular-use intention (56.1%; 95% CI 41.0-70.1%) is 29.3 percentage points;",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "T3R1",
+  "quote": "Early disengagement, ≤ 3 cycles (Stage 2, coupled)",
+  "replacement": "Three or fewer recorded completed runs (Stage 2, coupled)",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "T3R2",
+  "quote": "Re-engagement after dropout (Stage 2, coupled)",
+  "replacement": "Later recorded run among low-engagement participants (Stage 2, coupled)",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P41",
+  "quote": "Observed session retention versus stated regular-use intention by age band:",
+  "replacement": "Observed end-of-window retention versus stated regular-use intention by age band:",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P44",
+  "quote": "85.4% in-session retention in the 65-80 band",
+  "replacement": "85.4% end-of-window retention in the 65-80 band (returned dropouts counted as retained)",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P44",
+  "quote": "All 120 participants, across all three age bands, accepted the decoupled game; the acceptance is general, not an elderly concession.",
+  "replacement": "End-of-window retention was high in all three age bands (100.0%, 95.1% and 85.4%); the pattern is general, not an elderly concession.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P44",
+  "quote": "Stated as a scope condition, the combined evidence of the two deployments reads: gamification theory holds for older adults — until the gamified activity is attached to a purpose-based technology whose purpose, such as health assessment, touches the identity-level value propositions of the user; at that boundary the theory fails, and FIAS names the mechanism of the failure.",
+  "replacement": "Stated as a candidate scope condition, the combined evidence of the two deployments reads: gamification theory holds for older adults — until the gamified activity is attached to a purpose-based technology whose purpose, such as health assessment, touches the identity-level value propositions of the user; at that boundary the failure pattern of [2] appears, and FIAS names that pattern. The boundary remains a hypothesis; a within-cohort randomised comparison is the test that could convert it from candidate to claim.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P44",
+  "quote": "The decisive confirmation is a within-cohort randomised comparison, which is specified as future work.",
+  "replacement": "The decisive test would be a within-cohort randomised comparison, which is outlined as future work in Section VIII and has not been commenced.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P48",
+  "quote": "and its direct measurement is specified for the confirmatory study.",
+  "replacement": "and its direct measurement belongs to the within-cohort study outlined in Section VIII, which has not been commenced.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P50",
+  "quote": "The gap does not identify adaptive learning as its sole remedy; fatigue, access, burden, relevance and enjoyment are plausible contributors, and the confirmatory study pairs behavioural follow-up with measures of each.",
+  "replacement": "The gap does not identify adaptive learning as its sole remedy; fatigue, access, burden, relevance and enjoyment are plausible contributors, and any future study of the direction would need to pair behavioural follow-up with measures of each. A pre-specified (repository-dated) Stage-3B component study of adaptive against static presentation was commenced in a separate cohort; as Section VIII records, it is reported at cut-off as a descriptive record with no confirmatory result, and it is not used here as the test of the adaptive-learning claim.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P54",
+  "quote": "They are stated as design guidance derived from the programme's evidence and theory; their causal confirmation belongs to the study of Section VIII.",
+  "replacement": "They are stated as design guidance derived from the programme's evidence and theory; their causal evaluation would belong to a within-cohort study of the kind outlined in Section VIII, and none of them is confirmed here.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P59",
+  "quote": "A group-deployment variant of the protocol is the practical form of this lever, and the confirmatory study of Section VIII can operationalise the distinction.",
+  "replacement": "A group-deployment variant of the protocol is the practical form of this lever, and a future within-cohort study of the kind outlined in Section VIII could operationalise the distinction.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P61",
+  "quote": "no clinical telemetry was collected, so no claim about clinical outcomes under decoupling is made; the framing item measures frame recognition rather than motivational orientation; the adaptive-learning design direction discussed in Sections V and VI was not yet deployed in this cohort; and the expert consultation of Section V.E is a single interpretive account from an adjacent discipline, not validation.",
+  "replacement": "no clinical telemetry was collected, so no claim about clinical outcomes under decoupling is made; the invitation disclosed the programme's fall-risk research origin, so Stage 3 tests artefact-level decoupling rather than concealment of purpose; the 120 analysed participants are those whose returned materials were compiled, no invitation denominator was compiled, and the aggregate record preserves neither a disengagement checkpoint nor per-participant session dates, so dropout and return are compiled classifications of uncertain timing; the framing item measures frame recognition rather than motivational orientation; the adaptive-learning design direction discussed in Sections V and VI was not deployed in this cohort, and the separately commenced Stage-3B component study (Section VIII) had produced no confirmatory result at the cut-off of this paper; and the expert consultation of Section V.E is a single interpretive account from an adjacent discipline, not validation.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P61",
+  "quote": "and the expert consultation of Section V.E is a single interpretive account from an adjacent discipline, not validation.",
+  "replacement": "Two further rivals are named rather than left implicit. Ordinary attrition is frame-indifferent and therefore does not predict the between-cohort difference in post-failure return, though the package confounds above bound that inference. And because the [2] cohort lived with the station — a common-room setting in which a shared narrative about what the machine signifies can circulate — while the present participants played dispersed and alone, the decoupling package also removed the group narrative environment; a collective-narrative account of non-use is therefore conceded as a plausible component of the between-cohort difference — one strand of which is anchored by a recorded Stage-2 field observation of peers' visible dropout contributing to abandonment [2] — and group-level instrumentation is added to the requirements of any future within-cohort study.",
+  "action": "add_after",
+  "src": "p3"
+ },
+ {
+  "locator": "P62",
+  "quote": "VIII. Future Work: The Within-Cohort Confirmatory Study",
+  "replacement": "VIII. The Stage-3B Component Study at Cut-off, and Future Work",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P63",
+  "quote": "A three-arm randomised within-cohort study is pre-specified to convert the present associations into causal tests: Arm 1, the coupled game (control); Arm 2, the decoupled coordination-challenge framing; Arm 3, the coupled game with a structured coaching layer. The primary endpoint is re-engagement within seven days of first failure.",
+  "replacement": "A. The Stage-3B component study as commenced. After the present results were in hand, a component study (Stage 3B of the programme) was pre-specified — its protocol and analysis hierarchy are repository-dated 8–9 August 2026, before recruitment; it is not registry-registered — and commenced. It is a silent 2×2 design crossing adaptive (A) against static (B) difficulty presentation with zero-failure (ZF) against game-over (GO) failure modes, in a new, remotely recruited cohort: assignment is drawn at random per participant at first enrolment and persisted in the browser's local storage; the adaptive arm's rule agent steps difficulty up above 80% clearance and eases it below 40%, while the static arm runs at a fixed ×0.85 pace with coaching suppressed; consent is recorded in-build before play; and one confirmatory contrast was pre-specified (adaptive versus static on questionnaire item D2, willingness to play regularly, top-two-box, pooled across failure modes), with the failure-mode factor and the interaction exploratory. Builds were distributed 10–12 August 2026 through five device-tagged copies, input-mode logging was added on 13 August, and a frozen study edition (build stamp Alpine_Coordination_Game_v3.1s_Stage3B_FROZEN20260915; twenty distributor-tagged copies hosted on GitHub Pages) opened a clean-run window from 15 September to 15 October 2026. The record at the cut-off of this paper (26 September 2026) is descriptive: one verified return (15 August 2026, on the August build); five returns received on 15 September were excluded as researcher-solicited plays on the pre-freeze 13-August edition, all in one arm; and no clean-run return was on record. No confirmatory analysis is reported, and the paper's claims do not depend on one. The study was designed to examine the adaptive-learning direction of Section V.D, not the coupling claim, because clinical framing is not a factor in it.\n\nB. Why the learning measurement must be re-articulated first. In the course of that study the authors judged that its learning measurement was not articulated to the adaptive-learning construct, and it is no longer used as the test of that construct. The build records immediate task performance (clearance on the course played), which is not durable learning; course forms across sessions were not equated, so performance under changing difficulty or assistance is not comparable across sessions; the adaptive arm bundles difficulty adjustment with coaching, so its contrast estimates an adaptive-support package rather than difficulty adjustment alone; and the unit of randomisation and each participant's first-exposure version require per-participant recording. A test of adaptive learning therefore needs, before any confirmatory contrast: separate reporting of participation, performance and learning; equated reference conditions (the same course form and assistance level at comparable checkpoints); and an unassisted delayed test on an equated form as the learning outcome, with difficulty, assistance and task version recorded for every run.\n\nC. Future work (proposed, not commenced). A three-arm randomised within-cohort study is proposed — it has not been commenced and no protocol for it is repository-dated — to convert the present associations into causal tests: Arm 1, the coupled game (control); Arm 2, the decoupled coordination-challenge framing; Arm 3, the coupled game with a structured coaching layer. Its primary endpoint would be re-engagement within seven days of first failure.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P63",
+  "quote": "The study adds instruments this deployment lacked: baseline FES-I, a validated motivational measure administered before any outcome is observed, WTA/WTP elicitation after the first session, and harmonised session-level logging with timestamps.",
+  "replacement": "Such a study would add instruments this deployment lacked: baseline FES-I [13], a validated motivational measure administered before any outcome is observed, WTA/WTP elicitation after the first session, harmonised session-level logging with timestamps, and a group-level component in response to the collective-narrative rival named in Section VII.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P63",
+  "quote": "A nested-model quantitative comparison is pre-specified alongside it, to test whether prospectively measured FIAS operators add incremental explanatory power beyond demographics and senior-technology-acceptance constructs — with likelihood-ratio, information-criterion, discrimination, calibration and decision-curve analyses, and with any FIAS predictor excluding the elements that define the outcome. Hypotheses and endpoints will be pre-registered before data collection begins.",
+  "replacement": "A nested-model quantitative comparison — specified in the programme as a prospective analysis architecture, with no model yet fitted — could be run alongside it, to test whether prospectively measured FIAS operators add incremental explanatory power beyond demographics and senior-technology-acceptance constructs, with likelihood-ratio, information-criterion, discrimination, calibration and decision-curve analyses, and with any FIAS predictor excluding the elements that define the outcome. Hypotheses and endpoints for these studies should be pre-specified and publicly registered before any data collection; no registration exists at the time of writing, and no commitment to run either study is made here.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P65",
+  "quote": "and the pre-specified within-cohort study as the test that can make the causal claim this design cannot.",
+  "replacement": "and a within-cohort randomised study — outlined in Section VIII, not yet commenced — as the test that could make the causal claim this design cannot. Adaptive learning is carried here as a design direction and a future study, not as a demonstrated result.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P67",
+  "quote": "AI tooling used in the programme's game development is an enabling technology; the contribution of this paper is the behavioural evaluation and the design framework it informs.",
+  "replacement": "Declarations\nFunding. This research received no external funding.\nConflicts of interest. The authors declare no competing financial interests. The Stage-2 study reported in [2] was conducted in partnership with the residential care provider operating that facility; the provider had no role in the present study. Participants in the present study were volunteers recruited through the authors' networks.\nData availability. The preliminary aggregate record underlying this paper is compiled in the Stage-3 data logbook archived with the first author's thesis; participant-level compilation from the returned files continues, as stated in Section III. The Stage-3B design, build and returns record summarised in Section VIII is archived with the same thesis. De-identified records are available from the corresponding author on reasonable request, subject to the ethics constraints governing the programme.\nUse of artificial intelligence. Anthropic's Claude Code was used as an engineering assistant during system development, including the HTML port deployed in this study; the engineering decisions remain the developers' own. AI-assisted drafting and editing tools were used in manuscript preparation under full author review and responsibility.\nRelated publications. A conference paper (Tam & Cheung, ICMSS 2026 [1]) reports the programme's Stage-1 critical review, and a companion manuscript [2] reports the Stage-2 coupled deployment; this paper reports the Stage-3 decoupled deployment. No results are duplicated across the three.",
+  "action": "add_after",
+  "src": "p3"
+ },
+ {
+  "locator": "P69",
+  "quote": "[1] S. K. T. Tam and C. F. Cheung, “A study of utilisation of Fall Risk Assessment among elderly users: A critical review through TAM and Octalysis frameworks with gamification approach,” accepted for publication (SS-293).",
+  "replacement": "[1] S. K. T. Tam and C. F. Cheung, “Investigating low utilisation of fall risk assessment among elderly users: A critical review through TAM and Octalysis frameworks with gamification approach,” paper SS-293, in Proc. 10th Int. Conf. on Management Engineering, Software Engineering and Service Sciences (ICMSS 2026), Wuhan, China, Mar. 2026, Conference Publishing Services (CPS), accepted and presented; IEEE Xplore indexing pending.",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P70",
+  "quote": "[2] S. K. T. Tam and C. F. Cheung, “Gamification as proactive approach: A study of elderly failure-induced abandonment in Fall Risk Assessment,” manuscript under submission (Paper 2 of this programme).",
+  "replacement": "[2] S. K. T. Tam and C. F. Cheung, “Gamification as a proactive approach: A study of elderly failure-induced abandonment in gamified Fall Risk Assessment,” manuscript submitted to J. Inf. Knowl. Manag. (JIKM-S-26-02466), 2026 (Paper 2 of this programme).",
+  "action": "reframe",
+  "src": "p3"
+ },
+ {
+  "locator": "P80",
+  "quote": "[12] A. Bandura, Self-Efficacy: The Exercise of Control. New York: W. H. Freeman, 1997.",
+  "replacement": "[13] L. Yardley, N. Beyer, K. Hauer, G. Kempen, C. Piot-Ziegler, and C. Todd, “Development and initial validation of the Falls Efficacy Scale-International (FES-I),” Age Ageing, vol. 34, no. 6, pp. 614-619, 2005.",
+  "action": "add_after",
+  "src": "p3"
+ }
+]
