@@ -57,3 +57,13 @@ outcomes reported regardless of direction.
 No edits to any frozen copy until 15 October. If a defect forces a
 change, the window restarts on the corrected build and prior returns
 become a pilot — a change is never made silently mid-run.
+
+
+## Addendum — 26 September 2026 (author's decision; see ../DECISION_2026-09-26_Stage3B_not_used_as_adaptive_learning_test.md)
+
+Stage 3B is no longer used as the test of the adaptive-learning proposition; the thesis (V43)
+reports the study as a descriptive record at a stated cut-off of 26 September 2026 (Appendix I).
+This addendum changes nothing above: the frozen edition, its checksums and the clean-run window
+(15 September – 15 October 2026) stand as recorded. Clean-run returns on record at the cut-off:
+none. Any return received after the cut-off is archived as received and may be reported only as a
+dated addendum outside the thesis evidence base.

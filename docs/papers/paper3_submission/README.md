@@ -99,3 +99,18 @@ decision now rests with Prof. Cheung (supervisor approval required
 for every submission step). Submit EITHER this package OR the JMIR
 variant (jmir_variant/) - never both, and never while the other is
 under review.
+
+
+## R5 — pivot pass (26 September 2026)
+
+`Paper3_R5_Pivot_2026-09-26.docx` (+ PDF) is built on the author's `Paper3_R4_Aligned_V26_as_received_2026-09-26.docx`.
+It reinstates the 11-Sep corrections that R4 had lost, adds the examiner's denominator/timing
+qualifications, and rewrites §VIII: (A) the Stage-3B 2×2 component study as commenced, reported
+descriptively at the 26-Sep cut-off; (B) why the learning measurement must be re-articulated before
+any adaptive-learning test; (C) the three-arm within-cohort study as PROPOSED, not commenced.
+Adaptive learning is a design direction and future study throughout; "pre-registered" is not used.
+
+Open before any submission (PENDING_ITEMS A15): supervisor approval and venue; Appendix-D
+instrument confirmation behind 71.7% / 63.3%; production files + README rows for Figures 4–5 and
+Table 4 (new in R4 — not in this package yet); references [5]–[12] are listed but not cited in-text;
+ORCIDs in the submission form.
