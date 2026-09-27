@@ -1,0 +1,374 @@
+[
+ {
+  "op": "replace",
+  "locator": "P0",
+  "text": "Engagement With a Remotely Delivered Coordination Game Across Age Groups: An Exploratory Observational Study",
+  "why": "Item 6 / suggested working title (verbatim); item 12 ('elderly' removed)"
+ },
+ {
+  "op": "replace",
+  "locator": "P3",
+  "text": "Background: A gamified fall risk assessment (FRA) deployed at a clinical station earlier in this programme was abandoned by older residents: 70.0% recorded three or fewer completed runs and none of 21 low-engagement participants recorded a later run. Objective: To describe, in an exploratory observational (formative) study, engagement with the same game ported to a web build, decoupled from the FRA platform and delivered remotely as a coordination game, across three age bands. Methods: The HTML build was distributed by e-mail through the authors' Hong Kong networks with onward forwarding; no invitation denominator exists. Classifications were compiled from the returned results files and two post-game items of 120 adults aged 25-80 (38, 41 and 41 in the 25-44, 45-64 and 65-80 bands). Results: 23 participants were classified as initial dropouts and 15 of these as returning; 112 (93.3%) were classified as retained (85.4% in the 65-80 band). Initial dropout rose with age (0 of 38 versus 16 of 41; Fisher's exact p < 0.0001). Coordination-challenge endorsement was 71.7%; stated regular-use intention was 63.3% (56.1% in the oldest band). Per-participant event dates were not preserved, so the timing of dropout and return is not reconstructable. Conclusions: Most older participants classified as initial dropouts were also classified as returning under the remote, decoupled condition. The contrast with the earlier clinical-station deployment is contextual and does not isolate clinical framing: cohort, setting, input device, supervision and recruitment also differed. A frame-sensitive account (failure-induced abandonment, FIAS) is one candidate interpretation; a within-cohort study is proposed, not commenced.",
+  "why": "Item 6 (structured abstract <= 250 words; no causal rhetoric), item 1 (timing not reconstructable), item 3 (contrast contextual), item 5 (FIAS one candidate); N3"
+ },
+ {
+  "op": "replace",
+  "locator": "P4",
+  "text": "Keywords: gamification, fall risk assessment, older adults, technology abandonment, FIAS, engagement, formative evaluation, remote deployment.",
+  "why": "Item 6 / item 12 (keywords; 'elderly' replaced; 'decoupling', 'endowment effect' dropped as unmeasured constructs)"
+ },
+ {
+  "op": "replace",
+  "locator": "P6",
+  "text": "A survey of 200 residents at a Guangzhou care facility (of a resident population of 280) found that only 39% had ever used an installed fall risk assessment (FRA) system; among users, approximately 74% failed on their first attempt and 82% did not return [1]. A subsequent eight-week action-research deployment with thirty residents examined whether a gamified, AI-assisted FRA — engineered to satisfy the acceptance and gamification design criteria of the technology-acceptance [5], [6] and Octalysis [7] literatures — would sustain engagement. It did not: 70.0% of participants (95% CI 52.1-83.3%) had three or fewer recorded completed runs, 26.7% had a single completed run, and none of the 21 low-engagement participants had a later recorded run within the study window (95% CI 0.0-15.5%) [2]. Three of the six participants in the strongest-abandonment cluster recorded a positive change in the balance index in their only recorded run and still did not return.",
+  "why": "Item 6 (fall-risk origin introduced in background; rhetoric reduced); facts unchanged from [1], [2]"
+ },
+ {
+  "op": "replace",
+  "locator": "P7",
+  "text": "That earlier result admits more than one explanation. One candidate interpretation, developed in [1], [2], is that attaching the gameplay to a clinical verdict on the user's own body changed the meaning of failure, so that the failure-induced abandonment (FIAS) pattern documented there is a property of that attachment. Other explanations are available and are not excluded by the present data: the health and residential status of the Stage-2 cohort, digital familiarity, the input demands of the pressure-panel station, the presence of supervision, the recruitment channel, the structure of observation, ordinary attrition [8] and the novelty of a new activity. This paper reports an exploratory observational (formative) study of a redesigned deployment: the same game ported to a web build, decoupled from the FRA platform and delivered remotely as a coordination game to a separate cohort across three age bands. It does not isolate any single variable, and its claims are calibrated accordingly.",
+  "why": "Item 3 (binary dispositional-versus-framing argument removed; explicit competing explanations); item 5 (FIAS provisional)"
+ },
+ {
+  "op": "replace",
+  "locator": "P8",
+  "text": "The study is descriptive in aim. It records, from the returned files of a self-selected sample, how many participants were classified as initial dropouts, how many of those were classified as returning, and how participants responded to two post-game statements; it also examines, as an exploratory test examined after the age-stratified data were tabulated, whether initial dropout differed by age band (H0-age: no difference between age groups). The fall-risk origin of the game is part of the account: the participant invitation disclosed that the game was originally designed for an FRA balance platform and was offered with that platform decoupled, so the study concerns a redesign package delivered in a new context, not concealment of purpose. Section II states the candidate interpretation and the competing explanations; Section III the method and materials; Section IV the compiled results; Sections V-VII the discussion, design implications and limitations; Section VIII the Stage-3B record and future work.",
+  "why": "Item 3 (removes 'the two accounts make opposite predictions' framing); item 6 (fall-risk origin in background); item 12"
+ },
+ {
+  "op": "replace",
+  "locator": "P9",
+  "text": "II. Candidate Interpretation and Competing Explanations",
+  "why": "Item 5 (reduced theoretical apparatus; II.A and II.B merged into one section)"
+ },
+ {
+  "op": "delete",
+  "locator": "P10",
+  "text": "",
+  "why": "Item 5 (subsection heading removed in merge)"
+ },
+ {
+  "op": "replace",
+  "locator": "P11",
+  "text": "FIAS (failure-induced abandonment syndrome) is a provisional, non-diagnostic behavioural construct proposed in [1]: active, rapid and persistent non-return after an adverse first experience under identity-relevant conditions. The candidate mechanism sketched in [2] draws on the endowment effect [3], [4] and loss aversion [11]: an older participant's belief in their own physical capability is treated as an identity-level asset, a clinically framed failure is read as a devaluation of that asset, and the willingness to accept (WTA) that devaluation is hypothesised to exceed the willingness to pay (WTP) for re-engagement. A related proposition is that the same feedback event can be appraised against a fixed self-concept or against a learning trajectory, and that the deployment frame influences which appraisal is made. None of these quantities — WTA, WTP, identity threat, or the appraisal a participant makes of a failure — was measured in this study, and extending the endowment effect to health self-concept goes beyond the domains in which it has been demonstrated experimentally. The framing account is therefore carried here as one candidate interpretation of the observations, not as a tested mechanism. Two adjacent bodies of work already connect affect, meaning and older-adult game design: the gerontoludic design position [14] and the appraisal-based affective game planning framework [15]; Section V.C positions the candidate interpretation relative to them.",
+  "why": "Item 5 (FIAS provisional and non-diagnostic; WTA/WTP, identity threat, appraisal regimes stated as not measured; [14], [15] cited); item 12"
+ },
+ {
+  "op": "delete",
+  "locator": "P12",
+  "text": "",
+  "why": "Item 5 (appraisal-regimes subsection folded into P11 as an unmeasured proposition)"
+ },
+ {
+  "op": "replace",
+  "locator": "P13",
+  "text": "The competing explanations are stated explicitly because the comparison between the Stage-2 clinical-station deployment [2] and the present remote deployment is between separate cohorts in different contexts. (i) Cohort health and residential status: the Stage-2 participants were residents of a care facility, whereas the present participants were community-dwelling adults spanning ages 25-80. (ii) Digital familiarity: the present cohort self-selected into playing a web game on their own devices. (iii) Input demands: a pressure-panel station and a keyboard or gamepad make different physical demands. (iv) Supervision: Stage 2 was supervised at a station; Stage 3 was described as unsupervised remote play, although some sessions may have been facilitated (Section III.E). (v) Recruitment channel: personal and onward-forwarded networks rather than a facility population. (vi) Observation structure: Stage 2 logged sessions at a station over eight weeks; Stage 3 compiled voluntarily returned files with no invitation denominator and no event dates. (vii) Ordinary attrition [8], which has contextual predictors of its own. (viii) Novelty of a new game and a new device. Any of these could contribute to the between-deployment contrast, and the present design cannot apportion it among them or to clinical framing.",
+  "why": "Item 3 (explicit competing explanations: cohort health/residential status, digital familiarity, input demands, supervision, recruitment, observation structure, attrition, novelty)"
+ },
+ {
+  "op": "replace",
+  "locator": "P14",
+  "text": "III. Method: An Exploratory Observational Study of a Remote Coordination-Game Deployment",
+  "why": "Item 6 / recommended positioning (exploratory observational, formative)"
+ },
+ {
+  "op": "replace",
+  "locator": "P15",
+  "text": "A. Framing and Participant-Facing Materials",
+  "why": "Item 4 (materials described as archived)"
+ },
+ {
+  "op": "replace",
+  "locator": "P16",
+  "text": "The design problem was practical: a pure entertainment framing would not recruit meaningfully, while a health-assessment framing would reproduce the condition under which the Stage-2 abandonment occurred. The activity was therefore presented to participants as a web-based coordination game. The participant invitation on file (a one-page, university-headed invitation headed 'Come and Play the Skiing Game!', giving the period as March to April 2026) opens by stating that falls are a major health concern and that regular balance training is one of the best ways to prevent them; describes the study as exploring how turning a health exercise into an enjoyable game can make health technology more engaging; states that the game was originally designed for a Fall Risk Assessment (FRA) balance platform; and offers a web-based version 'with the FRA platform decoupled' that runs in a browser with no medical device or special equipment. A distributor e-mail that carried the build (the brief to players aged 45 and over) described the final stage as one that 'drops all the clinical context' and presented the game as 'a purely fun coordination game'. The fall-prevention motivation and the FRA origin were thus disclosed to participants, and the coordination-game presentation was the frame given to the activity itself; the framing did not withhold the purpose of the research.",
+  "why": "Item 4 (unsupported 'eyes can spot obstacles' wording replaced by what the invitation on file says); N2"
+ },
+ {
+  "op": "replace",
+  "locator": "P17",
+  "text": "B. The Redesign Package",
+  "why": "Item 3 (neutral naming of the package)"
+ },
+ {
+  "op": "replace",
+  "locator": "P18",
+  "text": "Relative to the Stage-2 deployment [2], the participant-facing clinical apparatus was removed as a package, implemented by re-platforming: the game was ported to a single-file HTML build and distributed by e-mail, so that play occurred away from any clinical station. The package removed the clinical apparatus (the pressure-panel platform) and its setting, the pre-session clinical scan, clinical labels, and participant-facing clinical outputs: the in-game interface carried no clinical labels, scores or risk outputs, and no balance score or risk index was shown at any point. The recruitment materials did not remove medical vocabulary: the invitation named falls, balance training and the FRA origin (Section III.A). What was decoupled was therefore the artefact and its outputs, not the disclosed purpose of the research. The skiing mechanic, the five-attempt protocol and the run structure were retained in the ported build; the pressure-panel apparatus and in-person supervision at a station were not. In-run difficulty adaptation is inferred to have operated through the build's rule agent (Section III.E); participant-level clinical balance telemetry was not collected. Because cohort, setting, platform, input device, supervision and recruitment channel also differed from [2], the study describes engagement under the combined redesigned condition and its context; it does not estimate the effect of any single component. Figure 1 shows the archived build at five staged difficulty levels.",
+  "why": "Item 4 (what the package removed; recruitment materials did not remove medical vocabulary; in-game interface carried no clinical labels/scores/outputs; no-LLM statement moved to III.E with build evidence); item 3"
+ },
+ {
+  "op": "replace",
+  "locator": "P20",
+  "text": "Figure 1. The coordination game (archived HTML build, Stage-3 design lineage) at staged difficulty multipliers x0.40-x1.40; the skier is steered by lateral movement (keyboard arrows, controller or foot pad). Obstacle density and scroll speed scale with the difficulty multiplier; the interface carries no clinical labels, scores or risk outputs.",
+  "why": "Item 4 (Figure 1 legend mismatch: 'lateral weight shift' replaced by the corrected master's wording; the corrected image paper3_fig1_game_hires.png must be embedded at P19 by the orchestrator)"
+ },
+ {
+  "op": "replace",
+  "locator": "P22",
+  "text": "One hundred and twenty community-dwelling adults aged 25-80 were recruited through the authors' Hong Kong-based networks — family and personal contacts, work contacts, a charity community network, university support channels and working peers in medical centres: 38 aged 25-44, 41 aged 45-64 and 41 aged 65-80; 48 men and 72 women; all reported high-school education or above. Distributor briefs targeted players aged 45 and over and players aged 18-45 respectively. Enrolment collected age band, gender and education level only. Recruiting three age bands builds an age comparison into the sample and supports the exploratory test of H0-age introduced in Section I. Each participant returned, by e-mail, the results file exported by the HTML build together with responses to the two post-game items; this paper reports the aggregate record compiled from those returns, and source-linked per-participant compilation from the returned files continues beyond it. Participation was voluntary and unpaid. Consent was informed and implied: the invitation described the study, stated that participation was voluntary and could be withdrawn at any time, that data would be anonymised and reported in aggregate, and that game performance data and questionnaire responses would be collected with the participant's permission; returning the results file and responses constituted consent, and no written consent instrument was administered. Identities were separated from the analysed records, which retain only a participant code, age band, gender and education; the distribution and return e-mails are retained in the authors' records. The ethics position is stated plainly. The programme's human subjects ethics application (reference HSEARS20260805008; Principal Investigator Prof. C. F. Cheung) was submitted on 6 August 2026 and approved the same day by the Departmental Research Committee of the Department of Industrial and Systems Engineering on behalf of the PolyU Institutional Review Board, with an approval period of 16 June 2024 to 30 October 2026. The application characterised Stages 1-3 as already conducted and asked the Committee to review and characterise them; ethics review therefore did not precede the Stage-3 data collection reported here. The one-page approval memo does not itemise consent arrangements, and a decision letter beyond the memo, the approved protocol version and any institutional clarification of the earlier-stage procedures are not on file at the time of writing.",
+  "why": "Item 2 (ethics chronology and consent basis stated plainly per FACTS); item 4 (recruitment facts; unsupported 'no medical vocabulary' claim removed)"
+ },
+ {
+  "op": "replace",
+  "locator": "P23",
+  "text": "Two recruitment decisions were deliberate. The Stage-2 facility of [2] was not re-used: its residents already carried direct experience of the clinically attached system, and prior exposure would have confounded a first-contact observation of the redesigned deployment, so a separate cohort was a design choice rather than only a constraint. Distribution also extended beyond the authors' immediate circle through onward (snowball) forwarding by the receiving organisations and contacts, so that a portion of participants were personally unknown to the authors, reducing the risk that participation reflected personal obligation to the researcher. Onward forwarding also leaves the cohort without a compiled invitation denominator: the 120 participants are those whose returned materials were compiled, not the number of people to whom the build was forwarded, so no response rate can be computed and every proportion reported below is conditional on the observed file-returning sample.",
+  "why": "Item 1 / item 6 (respondent-only denominator retained; 'test of the decoupled frame' wording removed)"
+ },
+ {
+  "op": "replace",
+  "locator": "P25",
+  "text": "Outcomes are behavioural classifications compiled from the returned game logs, and two stated items. The operational definitions adopted in this paper are as follows; only the initial-dropout label is documented in the register itself, and the rule actually applied when the aggregates were compiled is not on record. The record does not define 'attempt' in terms of runs or sessions: the protocol statements on file are the distributor brief's 'suggested study protocol is five sessions' and the invitation's 'each run takes only 20-30 seconds'; initial dropout is the register category 'dropped out before completing 5 attempts'; 'returned' is a later completed session recorded in the participant's returned file; observed non-return is an initial dropout with no such later session; and retention is the complement of non-return over the cohort, so that a participant classified as an initial dropout and then as returning counts as retained. The following are not defined in, or recoverable from, the compiled record: whether the five attempts were runs within one sitting or separate sessions; the dates of first play, of disengagement and of any return; whether reminders or assistance were given; and whether a recorded return was an immediate replay or a later re-engagement. Classifying a participant first as an initial dropout and then as returning presupposes a disengagement checkpoint earlier than the window's end, and the record preserves neither that checkpoint nor per-participant dates. The counts are therefore reported as compiled classifications, not as an observed behavioural sequence, and the retention figure establishes neither five-attempt completion nor active use at the end of the observation window. The two stated outcomes are endorsement of the coordination-challenge description and stated willingness to play regularly; their administered wording is discussed in Section III.E. Proportions carry Wilson score 95% confidence intervals; band contrasts use Fisher's exact and chi-square tests and are exploratory. No time-to-event modelling is used.",
+  "why": "Item 1 (operational definitions used; what is not defined or recoverable; counts as compiled classifications; retention does not establish five-attempt completion or active use); B2"
+ },
+ {
+  "op": "insert_after",
+  "locator": "P25",
+  "style": "Normal",
+  "text": "The distributed build is archived as Alpine_Coordination_Game_Stage3_v2.2.html (a single HTML file of 37,279 bytes, SHA-256 prefix 42bc3df6, byte-identical to the _v2 file). A run ends when the distance goal is reached or at a time cap (30 s for the 200 m course; 60 s for the 400 m course), and the build runs in zero-failure mode, in which a bump never slows the player. Controls are keyboard arrow keys, or a USB joystick or foot pad through the browser Gamepad API; the archived build has no touch controls, so the invitation's reference to touch-screen play is not reconciled with the archived build (a touch-capable build was first created in August 2026). The build includes an 'Agentic AI difficulty' checkbox, checked by default, which attempts a call to a language-model endpoint with aggregate game parameters; the file contains no API credential, and its page text states that if the call fails or times out the built-in rule agent takes over. Runtime logs were not retained, so the statement that no language-model adaptation operated in Stage 3 is an inference from the archived code (no credential; browser cross-origin restriction), not a runtime record. The build exports a CSV whose columns match the Game Telemetry sheet of the Stage-3 data logbook. Every count, table and figure in Section IV is drawn from the Preliminary_Summary sheet of that logbook; the logbook's per-participant sheets carry no populated observed-data cells, and the returned exports themselves are held by the authors and have not yet been compiled into a source-linked participant record. The invitation describes the two post-game items as asking, for example, whether the participant found the game a good coordination challenge and whether they would be willing to play it regularly; the compiled summary labels the same items 'Liked the game as a reflection of eye-leg coordination' and 'Would use for regular health training if accessible', a difference that is itself unreconciled; the administered wording and language, the response scale (five- or seven-point) and the scoring threshold used to produce the endorsement and intention counts (responses of 4 or 5 in the thesis appendix draft) are unconfirmed against the administered form. The participant invitation is archived as the author's account of its content (file created 4 August 2026); the original as sent in March-April 2026 is not on file. The invitation states that 'our research staff will show you how to start', and one distributor subject line refers to a workshop, so whether some sessions were facilitated in person rather than played unsupervised is unresolved.",
+  "why": "Item 4 (reproducibility of intervention and instruments; no-LLM statement substantiated from build, with runtime caveat; touch/keyboard unreconciled; facilitated sessions unresolved); N2; P1/P2"
+ },
+ {
+  "op": "insert_after",
+  "locator": "P25",
+  "style": "Heading 2",
+  "text": "E. Materials and Reproducibility",
+  "why": "Item 4 (new subsection heading; inserted first so it precedes the paragraph inserted next)"
+ },
+ {
+  "op": "replace",
+  "locator": "P26",
+  "text": "IV. Results (Compiled Aggregate Record)",
+  "why": "Item 1 (results reported as compiled classifications)"
+ },
+ {
+  "op": "replace",
+  "locator": "P27",
+  "text": "Overall, 23 of 120 participants (19.2%) were classified as initial dropouts ('dropped out before completing 5 attempts'); 15 of the 23 (65.2%; 95% CI 44.9-81.2%) were classified as returning; 8 (6.7%) were classified as not returning, giving a compiled end-of-window retention of 93.3% (Table 1). These are proportions of the observed file-returning sample of 120, not of everyone invited or everyone who started. Figure 2 traces the flow.",
+  "why": "Item 1 (classification wording; numbers unchanged)"
+ },
+ {
+  "op": "move_table_before",
+  "locator": "P28",
+  "target": "TABLE0",
+  "text": "",
+  "why": "Item 6 (Table 1 caption directly above Table 1; Figure 2 then follows the table)"
+ },
+ {
+  "op": "replace",
+  "locator": "P30",
+  "text": "Figure 2. Participant flow in the compiled aggregate record (N = 120): 23 participants classified as initial dropouts, of whom 15 were classified as returning and 8 as not returning. Dropout and return are compiled classifications whose timing rule cannot be reconstructed from the record.",
+  "why": "Item 6 / N3 ('central behavioural outcome' and zero-count contrast removed; descriptive caption)"
+ },
+ {
+  "op": "replace",
+  "locator": "P31",
+  "text": "Initial dropout differed by age band (Table 2): 0.0% (0 of 38) in the 25-44 band, 17.1% (7 of 41) in the 45-64 band and 39.0% (16 of 41) in the 65-80 band (chi-square across bands p < 0.001; 25-44 versus 65-80, Fisher's exact p < 0.0001), so the exploratory H0-age is rejected for initial dropout. Classified non-return was lower in every band: 0.0%, 4.9% and 14.6% (95% CI 6.9-28.4% in the 65-80 band), because most older participants classified as initial dropouts were classified as returning: 10 of 16 in the 65-80 band (62.5%; 95% CI 38.6-81.5%) and 5 of 7 (71.4%) in the 45-64 band, 15 of 23 (65.2%) overall. Figure 3 shows the two rates by band, and Figure 4 the return classifications behind them. In the Stage-2 deployment [2], 0 of 21 low-engagement participants had a later recorded run (95% CI 0.0-15.5%). The Wilson intervals of the two proportions (62.5%, 95% CI 38.6-81.5%, and 0.0%, 95% CI 0.0-15.5%) do not overlap, but the samples are independent, drawn from different cohorts and contexts, and observed under different structures, so the difference is contextual and is not a test of clinical framing; the older subgroups of the two deployments are not shown to be matched on age or health.",
+  "why": "Item 3 ('age-matched' removed; no separation claim), item 1 (classification wording), N3; numbers unchanged"
+ },
+ {
+  "op": "move_table_before",
+  "locator": "P32",
+  "target": "TABLE1",
+  "text": "",
+  "why": "Item 6 (Table 2 caption directly above Table 2; Figure 3 then follows the table)"
+ },
+ {
+  "op": "replace",
+  "locator": "P34",
+  "text": "Figure 3. Initial dropout by age band (0.0%, 17.1%, 39.0%) and classified non-return at the window end (0.0%, 4.9%, 14.6%) in the compiled aggregate record.",
+  "why": "Item 6 (descriptive caption; causal gloss removed)"
+ },
+ {
+  "op": "replace",
+  "locator": "P36",
+  "text": "Figure 4. Classified return after initial dropout by age band: 5 of 7 (71.4%) in the 45-64 band, 10 of 16 (62.5%) in the 65-80 band and 15 of 23 (65.2%) overall; no participant in the 25-44 band was classified as an initial dropout. Dropout and return are compiled classifications whose timing rule cannot be reconstructed from the record.",
+  "why": "Item 6 / N3 ('central behavioural outcome' and 'against a 0% return count' removed)"
+ },
+ {
+  "op": "replace",
+  "locator": "P37",
+  "text": "Endorsement of the coordination-challenge description was 71.7% (86 of 120; 95% CI 63.0-79.0%); the per-band breakdown was not retained in the compiled summary, and no per-band endorsement claim is made. Stated willingness to play regularly was 63.3% overall (76 of 120) — 65.8%, 68.3% and 56.1% by band (Table 3). In the 65-80 band, compiled retention was 85.4% and stated intention 56.1% (95% CI 41.0-70.1%), a difference of 29.3 percentage points between two marginal proportions of distinct constructs. A paired retention-by-intention table was not compiled, so no statement is made about the intentions of individual completers; the difference is reported as a design diagnostic only (Section V.D). Figure 5 shows the two rates by age band, and Table 4 consolidates the reported quantities of the two deployments with their intervals.",
+  "why": "N3 / review arithmetic note (29.3 pp reported as two marginal proportions; no paired table); item 6 (endorsement not read as manipulation check)"
+ },
+ {
+  "op": "replace",
+  "locator": "P39",
+  "text": "Table 4. Consolidated statistical results for the reported quantities of the Stage-2 and Stage-3 deployments.",
+  "why": "Item 3 ('key contrasts of the coupled and decoupled deployments' neutralised)"
+ },
+ {
+  "op": "replace",
+  "locator": "P40",
+  "text": "*Wilson score intervals computed from the reported counts. The retention-intention difference compares two marginal proportions of distinct constructs; a paired retention-by-intention table was not compiled, so the difference does not describe individual participants.",
+  "why": "N3 (paired table not compiled)"
+ },
+ {
+  "op": "replace",
+  "locator": "P42",
+  "text": "Figure 5. Compiled end-of-window retention and stated regular-use intention by age band. The two are marginal proportions of distinct constructs; the 29.3-percentage-point difference in the 65-80 band is a design diagnostic, not a paired or causal quantity.",
+  "why": "N3 ('commitment gap' removed as a finding about individuals)"
+ },
+ {
+  "op": "replace",
+  "locator": "P44",
+  "text": "A. What the Observations Show, and the Competing Explanations",
+  "why": "Item 3 / item 6 (Discussion A rewritten)"
+ },
+ {
+  "op": "replace",
+  "locator": "P45",
+  "text": "The observations are these. In a self-selected sample of 120 adults who returned their files, 23 were classified as initial dropouts, concentrated in the older bands; 15 of the 23, including 10 of 16 in the 65-80 band, were classified as returning; compiled end-of-window retention was 93.3% overall and 85.4% in the 65-80 band; 71.7% endorsed the coordination-challenge description; and 63.3% stated willingness to play regularly. In the Stage-2 clinical-station deployment [2], no low-engagement participant had a later recorded run. The candidate interpretation developed in this programme is that removing the clinical attachment changed what a failed run meant to the participant, so that an adverse run no longer led to an absorbing non-return state. That interpretation is consistent with the pattern but is not established by it, and the following competing explanations are consistent with the same pattern: (i) the cohorts differed in health and residential status (care-facility residents versus community-dwelling adults); (ii) the present participants self-selected into web-based play and are likely to have differed in digital familiarity; (iii) the input demands of a keyboard or gamepad differ from those of a pressure panel; (iv) Stage-2 play was supervised at a station, whereas Stage-3 play was remote, with some sessions possibly facilitated; (v) recruitment ran through personal and onward-forwarded networks; (vi) the observation structure differed — only participants who returned a file are counted here, and no event dates were preserved; (vii) ordinary attrition [8] operates in both settings and has contextual predictors of its own; and (viii) the novelty of the web build may have supported short-term return. The present design cannot apportion the contrast among these explanations or to clinical framing. Retention was high in all three age bands (100.0%, 95.1% and 85.4%), which is compatible with reports of gamification for older adults [5], [6] but, for the reasons above, does not test them. The within-cohort study that could separate framing from context is proposed in Section VIII and has not been commenced.",
+  "why": "Item 3 (explicit competing explanations; 'one-sided between the two rival readings' and 'residing in the coupling' removed), item 5, item 12"
+ },
+ {
+  "op": "replace",
+  "locator": "P46",
+  "text": "B. The Score-Improvement/Non-Return Observation of the Earlier Deployment",
+  "why": "Item 6 (earlier observation as context only)"
+ },
+ {
+  "op": "replace",
+  "locator": "P47",
+  "text": "The Stage-2 deployment recorded that three of the six participants in its strongest-abandonment cluster showed a positive change in the recorded balance index in their only recorded run and did not return [2]. That observation is context for the present study rather than a comparison point: the present deployment collected no clinical telemetry, so the pattern cannot be examined here, and the present record shows only that 15 of 23 participants classified as initial dropouts were also classified as returning. The two records together are consistent with the proposition that an adverse gameplay event need not become an absorbing non-return state under a non-clinical presentation, and equally consistent with the contextual explanations of Section V.A. They do not show that the same individuals would have behaved differently under the clinical condition.",
+  "why": "Item 6 (context only; causal rhetoric removed)"
+ },
+ {
+  "op": "replace",
+  "locator": "P48",
+  "text": "C. Relation to Gerontoludic and Appraisal-Based Game Design",
+  "why": "Item 5 (WTA/WTP subsection deleted as explanatory account; replaced by comparison with [14], [15])"
+ },
+ {
+  "op": "replace",
+  "locator": "P49",
+  "text": "Two published positions already address the questions raised here. The gerontoludic design position [14] argues that games for older adults should prioritise enjoyment and recognise the diversity of ageing rather than be designed around decline mitigation; the present coordination-game presentation, which withheld clinical scores and risk outputs, is in the spirit of that position, and the age gradient in initial dropout is a reminder that older players are not a uniform group. The affective game planning framework of Khalili-Mahani and De Schutter [15] links appraisal, meaningful play and older-adult health-game design within an appraisal-based model; the candidate interpretation offered here — that a clinically attached failure is appraised differently from the same failure presented as a game — is a special case of the kind of appraisal difference that framework already accommodates, and no novelty over it is claimed. What this programme adds, if the observations are borne out by source-linked compilation, is a field record of engagement with one game under two presentations, which such frameworks could use as a case rather than as a test.",
+  "why": "Item 5 (comparison with gerontoludic design and the appraisal-based framework; no novelty claimed); references [14], [15] cited in-text"
+ },
+ {
+  "op": "replace",
+  "locator": "P50",
+  "text": "D. The Retention-Intention Difference as a Design Diagnostic",
+  "why": "N3 / item 6 ('commitment gap' recast as design diagnostic)"
+ },
+ {
+  "op": "replace",
+  "locator": "P51",
+  "text": "In the 65-80 band, compiled retention (85.4%) exceeded stated willingness to play regularly (56.1%) by 29.3 percentage points. The two are marginal proportions of distinct constructs, and because no paired retention-by-intention table was compiled, nothing is said here about whether the participants who completed the protocol were the ones who declined regular use. The difference is used only as a design diagnostic: at the band level, the proportion classified as retained under a non-clinical presentation was not matched by the proportion stating willingness to play regularly. Removing a reason to leave does not by itself supply a reason to return, and any eventual re-attachment of the FRA's clinical purpose to the experience would need to be designed with that in mind. Adaptive learning — presenting performance as movement on a personal trajectory, with challenge calibrated to evolving capability — is one design response, carried here as a direction for future study; fatigue, access, burden, relevance and enjoyment are equally plausible contributors to the difference, and any study of the direction would need to measure each. A pre-specified (repository-dated) Stage-3B component study of adaptive against static presentation was commenced in a separate cohort; as Section VIII records, it is reported at cut-off as a descriptive record with no confirmatory result and is not used here as a test of the adaptive-learning direction.",
+  "why": "N3 ('half of the completers saw no place for the game' removed; no paired table), item 6"
+ },
+ {
+  "op": "replace",
+  "locator": "P52",
+  "text": "E. The Expert Consultation as One Interpretive Source",
+  "why": "Item 6 (single consultation does not validate the mechanism)"
+ },
+ {
+  "op": "replace",
+  "locator": "P53",
+  "text": "After the deployment, the interpretation was discussed in a single consultation with Dr Sarah C. W. Yuan of the Center on the Family, University of Hawai'i at Mānoa, a medical sociologist and demographer of aging whose practice — group exercise and physical games for balance, with no electronic game and no clinical instrument attached — is distant from this programme's apparatus. Three of her observations bear on this paper. First, in her programmes older adults tend to drop out after a failure unless a physician, assistant or coach helps them past it; failure-linked dropout appears with no clinical attachment at all, and is recoverable through human support. Second, in her experience older adults tend to avoid clinically oriented individual assessment of their current health status because they fear a negative result. Third, she regards gamification as a useful approach to promoting health technology and expects rejection when the activity is linked to clinical results; on that basis she supported the coordination-game presentation and the adaptive-learning direction. These observations are one interpretive source from an adjacent discipline. They generate interpretations — including a social mechanism, that partnering, group play and a leading coach reduce initial dropout, which motivates a group-deployment variant of the protocol — but a single consultation does not validate the proposed mechanism, and its observations concern physical group exercise, so their transfer to electronic games is an expectation rather than a result.",
+  "why": "Item 6 (consultation as one interpretive source; 'independent statement ... of the identity-level avoidance the FIAS account proposes' removed)"
+ },
+ {
+  "op": "replace",
+  "locator": "P55",
+  "text": "The observations suggest five design levers for gamified health technology serving older users. They are design guidance suggested by the programme's observations and by the candidate interpretation, not confirmed effects; their evaluation would belong to a within-cohort study of the kind proposed in Section VIII.",
+  "why": "Item 7 (levers as guidance 'suggested by' the observations)"
+ },
+ {
+  "op": "replace",
+  "locator": "P56",
+  "text": "First, design the attribution pathway deliberately. Whether feedback from a failure flows into the participant's model of the task or into their model of themselves is shaped by the activity's name, the on-screen metrics, staff language and the ambient narrative of the deployment site. If the pathway is not designed, the environment will set it, and in care settings for older adults it may set it toward health deficit. The coordination-game presentation used here is one such pathway; 71.7% of participants endorsed the coordination-challenge description, although the administered wording of that item is unconfirmed and the figure is not read as a manipulation check.",
+  "why": "Item 7 (manipulation-check claim removed; 'endorsed the coordination-challenge description'), item 12"
+ },
+ {
+  "op": "replace",
+  "locator": "P58",
+  "text": "Third, attend to the vulnerable moments. These are the initial framing before the first session, the first failure event, and the between-session reflection in which the participant decides whether to return. Each deserves explicit design attention: a first session that is likely to succeed, immediate mastery-oriented reframing at failure [12], and a return path that requires no renewed self-justification.",
+  "why": "Item 5 ('endowment boundary' not measured; lever restated without the construct)"
+ },
+ {
+  "op": "replace",
+  "locator": "P59",
+  "text": "Fourth, design feedback for its interpretive affordance, not only its information content. A difficulty reduction presented silently, or in clinical terms, can read as 'the system detected my weakness'; the same adjustment presented as 'finding the right speed for your reactions' can read as help. No output shown to the participant should be readable as a health verdict. The retention-intention difference suggests the forward-looking lever: install a visible personal trajectory, so that returning has a positive reason and not merely the absence of a negative one.",
+  "why": "Item 7 / N3 ('commitment-gap finding' recast)"
+ },
+ {
+  "op": "replace",
+  "locator": "P60",
+  "text": "Fifth, design the social context. Where deployment allows, structured group play with a leading coach may protect against failure-linked dropout, whereas unstructured peer comparison may still threaten identity; predictable, shared expectations of results may help. A group-deployment variant of the protocol is the practical form of this lever, and a future within-cohort study of the kind proposed in Section VIII could operationalise the distinction.",
+  "why": "Item 7 (guidance wording; 'appears protective' softened to 'may')"
+ },
+ {
+  "op": "replace",
+  "locator": "P62",
+  "text": "The limitations are listed plainly. The 120 analysed participants are those whose returned materials were compiled (a respondent-only denominator); no invitation denominator was compiled, so no response rate exists and every proportion is conditional on the file-returning sample. Event timing is unverified: the compiled record preserves neither a disengagement checkpoint nor per-participant dates of first play, disengagement or return, so dropout and return are compiled classifications whose timing rule cannot be reconstructed, and the retention figure establishes neither five-attempt completion nor active use at the window end. The administered wording, language, response scale and scoring threshold of the two questionnaire items are unconfirmed against the administered form, so the endorsement item is not treated as a manipulation check. Some sessions may have been facilitated in person ('our research staff will show you how to start'), which is unresolved, so the description of play as unsupervised is provisional. The invitation's touch-screen wording is not reconciled with the archived build, which supports keyboard and gamepad input only, and input device varied by participant and was not centrally standardised. The comparison with [2] is between separate cohorts, contexts and observation structures, without randomisation, and the redesign was a multi-component package (platform, input device, setting, supervision and recruitment channel changed alongside presentation), so no component's effect can be isolated. Ethics review of the programme (approved 6 August 2026) did not precede the Stage-3 data collection; consent was informed but implied rather than written; and the decision letter, approved protocol version and any institutional clarification of the earlier-stage procedures are not on file. The proposed mechanisms — endowment [3], [4], loss aversion [11], identity or stereotype threat [9], [10], WTA/WTP and the appraisal a participant makes of a failure — were not measured. The invitation disclosed the programme's fall-risk origin, so the study concerns artefact-level decoupling rather than concealment of purpose. Regular-use intention is stated, not longitudinal behaviour. Participants were volunteers in Chinese-cultural settings, and generalisation beyond these contexts is untested. No clinical telemetry was collected, so no claim about clinical outcomes is made. The adaptive-learning direction of Sections V and VI was not deployed in this cohort, and the Stage-3B component study (Section VIII) had produced no confirmatory result at the cut-off of this paper. The expert consultation of Section V.E is a single interpretive source, not validation. Runtime logs of the build were not retained, so the absence of language-model adaptation is inferred from the archived code.",
+  "why": "Item 8 (review's limitation list in full: respondent-only denominator; no invitation denominator; unverified event timing; unconfirmed instrument wording/scale; possible facilitated sessions; touch/keyboard reconciliation; between-deployment confounds; ethics chronology; single consultation; Stage 3B no confirmatory result; WTA/WTP not measured)"
+ },
+ {
+  "op": "replace",
+  "locator": "P63",
+  "text": "Two further points are stated rather than left implicit. First, ordinary attrition [8] is not treated here as frame-indifferent by definition: Eysenbach distinguishes nonusage attrition from dropout attrition and discusses contextual predictors, and the present record — a self-selected sample of returned files with no event dates — cannot separate nonusage from loss to follow-up, nor show that attrition in the two deployments responded to different predictors. Attrition of both kinds is therefore retained as a competing explanation for the between-deployment contrast, not excluded by it. Second, the Stage-2 cohort lived with the station in a common-room setting, in which a shared narrative about what the machine signifies could circulate, while the present participants played dispersed; the redesign therefore also removed the group narrative environment. A collective-narrative account of non-use is conceded as a plausible component of the contrast — one strand of which is anchored by a recorded Stage-2 field observation of peers' visible dropout contributing to abandonment [2] — and group-level instrumentation is added to the requirements of any future within-cohort study.",
+  "why": "Item 5 / item 8 (ordinary attrition not frame-indifferent by definition; Eysenbach's nonusage versus dropout attrition and contextual predictors)"
+ },
+ {
+  "op": "replace",
+  "locator": "P64",
+  "text": "VIII. Stage 3B and Future Work",
+  "why": "Item 6 / item 9 (Stage-3B narrative reduced to one short section)"
+ },
+ {
+  "op": "replace",
+  "locator": "P65",
+  "text": "A component study (Stage 3B) was pre-specified — its protocol and analysis hierarchy are repository-dated 8-9 August 2026, before recruitment; it is not registry-registered — and commenced in a new, remotely recruited cohort. It is a 2x2 design crossing adaptive against static difficulty presentation with zero-failure against game-over failure modes, with one pre-specified confirmatory contrast (adaptive versus static on stated willingness to play regularly) and the remaining factors exploratory; clinical framing is not a factor in it. At the cut-off of this paper (26 September 2026) its record is descriptive: one verified return (15 August 2026); five returns received on 15 September 2026 excluded as researcher-solicited plays on a pre-freeze edition; and no clean-run return on record. No confirmatory analysis is reported, the paper's claims do not depend on one, and the study is not used as a test of adaptive learning: its build records immediate task performance rather than durable learning, course forms across sessions were not equated, and the adaptive arm bundles difficulty adjustment with coaching.",
+  "why": "Item 9 (Stage 3B pre-specified, repository-dated; descriptive at cut-off; not an adaptive-learning test; no Pro self-test)"
+ },
+ {
+  "op": "replace",
+  "locator": "P66",
+  "text": "A within-cohort randomised study is proposed; it has not been commenced and no protocol for it is repository-dated. Three arms would compare the clinically attached game, the decoupled coordination-game presentation, and the clinically attached game with a structured coaching layer, with re-engagement within seven days of first failure as the primary endpoint and with equated conditions across arms (the same course form and assistance level at comparable checkpoints). It would add the instruments this deployment lacked: baseline FES-I [13]; a validated motivational measure administered before any outcome is observed; WTA/WTP elicitation after the first session; harmonised session-level logging with timestamps, reminders and assistance recorded; a group-level component in response to the collective-narrative explanation of Section VII; and, for any adaptive-learning contrast, separate reporting of participation, immediate performance and learning, with an unassisted delayed test on an equated form as the learning outcome. Hypotheses and endpoints should be pre-specified and publicly registered before data collection; no registration exists at the time of writing, and no commitment to run the study is made here.",
+  "why": "Item 9 (future within-cohort study proposed, not commenced; measurement requirements: equated conditions, unassisted delayed test, separate reporting of participation/performance/learning); keeps [13] cited"
+ },
+ {
+  "op": "delete",
+  "locator": "P67",
+  "text": "",
+  "why": "Item 9 (Section VIII reduced to two paragraphs; nested-model architecture text removed)"
+ },
+ {
+  "op": "replace",
+  "locator": "P69",
+  "text": "In an exploratory observational study, a web-based coordination game derived from a gamified fall risk assessment and offered with the clinical platform decoupled was played remotely by a self-selected sample of 120 adults aged 25-80, 41 of them aged 65-80. In the compiled record, initial dropout rose with age; most participants classified as initial dropouts — including 10 of 16 in the oldest band — were classified as returning; 71.7% endorsed the coordination-challenge description; and 63.3% stated willingness to play regularly. Per-participant event dates were not preserved, so these are compiled classifications rather than an observed behavioural sequence, and the sample has no invitation denominator. The observations are consistent with a frame-sensitive account of older adults' abandonment of clinically attached technology — FIAS, carried as one provisional candidate interpretation — and equally consistent with differences of cohort, setting, input device, supervision, recruitment and observation structure between this deployment and the earlier clinical-station deployment. The retention-intention difference in the oldest band is offered as a design diagnostic, and a within-cohort randomised study, proposed but not commenced, is the test that could separate presentation from context.",
+  "why": "Item 10 (bounded conclusion; 'consistent with' only; FIAS one candidate); N3; item 12"
+ },
+ {
+  "op": "replace",
+  "locator": "P71",
+  "text": "The authors thank the Hong Kong network partners — work contacts, the charity community network, university supporters and medical-centre colleagues — who distributed the game build, and all participants who returned their game logs and questionnaire responses. Supervision by Prof. Chi Fai Cheung at The Hong Kong Polytechnic University is gratefully acknowledged. AI tooling used in the programme's game development is an enabling technology; the contribution of this paper is the exploratory engagement record and the design guidance it informs.",
+  "why": "Item 6 (contribution described as exploratory record, not 'behavioural evaluation')"
+ },
+ {
+  "op": "replace",
+  "locator": "P75",
+  "text": "Data availability. The compiled aggregate record underlying this paper (the Stage-3 data logbook) and the archived Stage-3 build (Alpine_Coordination_Game_Stage3_v2.2.html, SHA-256 prefix 42bc3df6) are archived with the first author's thesis; the per-participant returned files and questionnaire responses are held by the authors pending source-linked compilation. The Stage-3B design, build and returns record summarised in Section VIII is archived with the first author's thesis. De-identified records are available from the corresponding author on reasonable request, subject to the ethics constraints governing the programme.",
+  "why": "Item 11 (data availability adjusted); N1"
+ },
+ {
+  "op": "replace",
+  "locator": "P77",
+  "text": "Related publications. A conference paper (Tam & Cheung, ICMSS 2026 [1]) reports the programme's Stage-1 critical review, and a companion manuscript [2] reports the Stage-2 clinical-station deployment; this paper reports the Stage-3 remote deployment. Stage-1 and Stage-2 figures are restated here only for comparison, with citation; no result is presented as new in more than one of the three.",
+  "why": "Item 3 (neutral deployment naming)"
+ },
+ {
+  "op": "insert_after",
+  "locator": "P91",
+  "style": "Normal",
+  "text": "[15] N. Khalili-Mahani and B. De Schutter, \"Affective game planning for health applications: Quantitative extension of gerontoludic design based on the appraisal theory of stress and coping,\" JMIR Serious Games, vol. 7, no. 2, e13303, 2019, doi: 10.2196/13303.",
+  "why": "Item 11 / item 5 (references [14], [15] added in IEEE format; REF15.txt not on file, so no subtitle for [15]); both cited in P11 and P49"
+ },
+ {
+  "op": "insert_after",
+  "locator": "P91",
+  "style": "Normal",
+  "text": "[14] B. De Schutter and V. Vanden Abeele, \"Towards a gerontoludic manifesto,\" Anthropol. Aging, vol. 36, no. 2, pp. 112-120, 2015, doi: 10.5195/aa.2015.104.",
+  "why": "ref [14]"
+ }
+]
