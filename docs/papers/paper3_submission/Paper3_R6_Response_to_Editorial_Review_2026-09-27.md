@@ -39,4 +39,4 @@ Manuscript: `Paper3_R6_Exploratory_2026-09-27.docx` (built on R5 of 26 Sep). One
 
 ## Title (author decision, 27 Sep 2026)
 
-The review's working title was replaced, at the author's request, by one that keeps the programme's continuity while retaining the exploratory-observational design label and no causal claim: "Decoupling a Gamified Fall Risk Assessment From Its Clinical Setting: An Exploratory Observational Study of Engagement With the Remotely Delivered Coordination Game Across Age Groups".
+The review's working title was replaced, at the author's request, by one that keeps the programme's continuity while retaining the exploratory-observational design label and no causal claim: "Decoupling a Gamified Fall Risk Assessment From Its Clinical Setting: An Exploratory Observational Study of Engagement" (shortened by the author).
