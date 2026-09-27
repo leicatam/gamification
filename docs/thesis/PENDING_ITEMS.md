@@ -663,6 +663,14 @@ with s5.3.9 note via build matrix); D6/G.8 renumbering; D8 two
 decisions (FIAS codebook in/out; Stage-3B results in/out); D9 restore
 contribution strength; 52 medium + 49 low findings in the register.
 
+## A17. PAPER 3 R7 — JMIR-FORMAT PACKAGE FROM THE AUTHOR'S REVISED DRAFT (27 Sep 2026); THESIS V44 CONSISTENCY PATCH.
+
+The author's own JMIR-style revision (Paper3_R6_Revised_Submission_Draft_2026-09-27.docx, prepared with ChatGPT) was evaluated and corrected into docs/papers/paper3_submission/jmir_R7/ (manuscript, PDF render, STROBE appendix, figure files, README with the change list, pre-submission gates and a draft cover letter). Verified: all counts/CIs/P values; figures 2-5 read correctly against the aggregates; references cited in order; JMIR headings and statements present. Removed: the Stage 3B Pro self-test batch (contrary to the pivot and the editorial review); "field research team"; the unqualified "informed consent was obtained and documented" (now: implied consent, no written instrument). Kept, marked as the authors' statement: the supervisor-confirmation / administrative-delay sentence in Ethical Considerations (no dated record on file — AUTHOR to supply or remove).
+
+**Thesis V44** (docs/thesis/Full_version_V44_EngD_Thesis_Submission_Draft.docx): §3.2, §6.4 and §3.4 corrected so the thesis no longer claims that the instructions carried no medical or fall-prevention language (the invitation on file does), no longer asserts uniformly unsupervised play, and names the invitation as a consent channel with the reconstruction caveat. **OPEN DECISION:** R7 withdraws the retention figure (reports only compiled classifications); the thesis still reports 93.3%/85.4% retention as a compiled classification with caveats. Same counts, different claim level — decide with Prof. Cheung whether the thesis follows R7.
+
+Adaptive learning: nothing further is required for the paper; it appears only as future evaluation (one paragraph) and the LLM difficulty option is reported as an unverified inference. The Pro batch and adaptive-learning discussion stay in the thesis (Chapter 7; Appendix I).
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
