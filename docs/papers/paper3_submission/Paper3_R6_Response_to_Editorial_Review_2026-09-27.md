@@ -36,3 +36,7 @@ Manuscript: `Paper3_R6_Exploratory_2026-09-27.docx` (built on R5 of 26 Sep). One
 - Reference [15] entered with its full subtitle (Crossref-verified); [14] and [15] as separate entries.
 - Table 1 row and Table 4 rows re-labelled (classified return; clinical station).
 - Figure 1 image replaced by the corrected master (legend: keyboard arrows, controller or foot pad).
+
+## Title (author decision, 27 Sep 2026)
+
+The review's working title was replaced, at the author's request, by one that keeps the programme's continuity while retaining the exploratory-observational design label and no causal claim: "Decoupling a Gamified Fall Risk Assessment From Its Clinical Setting: An Exploratory Observational Study of Engagement With the Remotely Delivered Coordination Game Across Age Groups".
