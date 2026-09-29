@@ -17,3 +17,7 @@ Stage-3B study build (separate namespace; game-over mode only; participant relea
 Not yet deposited (Appendix I.7 / PENDING_ITEMS A15): the ten raw exports S01–S10 named in
 the reports, the two derived workbooks, the extraction scripts, the v4.1.1 build file, and a
 dated self-test roster (role per stored code, device, consent basis).
+
+Update 29 September 2026: five raw exports (P8P2Z9 v4, PFWU9V v1, PU5K58 v1–v3) were deposited
+in `../exports_as_received/` with SHA-256; see its README for the reconciliation. PFWU9V is not
+among the five Batch 01 codes; PT8FJC, PEVNZ8 and PZTPCG have no raw export on file.

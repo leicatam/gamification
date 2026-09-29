@@ -45,3 +45,16 @@ Corrections made: (1) title form "…: Exploratory Observational Study"; (2) the
 **NOT verifiable from the repository — must be resolved before submission:** the R8 body reports EIGHT Stage 3B Pro exports (codes P8P2Z9, PFWU9V, PU5K58, PXG3R9; 34 runs; 11 visits; 8 decisions; 3 check pairs; all touch input) and states, on the investigator's confirmation, that the four codes belonged to four distinct volunteers who also invited others. The repository holds only the Batch 01 reports of 20 September (TEN exports; codes P8P2Z9, PT8FJC, PEVNZ8, PZTPCG, PU5K58; 42 runs; 10 decisions; 5 pairs; PZTPCG keyboard), all labelled researcher self-test with identities unverified, and the thesis (V45 Appendix I; §9.12) describes them that way. The eight exports, the two new codes and the volunteer confirmation are not on file. Required: deposit the eight exports (unaltered, with SHA-256), state which of the Batch 01 codes were the researcher's own self-tests, and state the consent and institutional basis under which volunteers used the Pro build (the Pro record says no participant use until the approval is confirmed to cover it). Until then the Pro paragraphs are the author's account, and the thesis Appendix I must not be changed to "volunteers".
 
 Other open points carried from the author's record: participant-level linkage and duplicate check for the 120 records; questionnaire wording/scale/coding; institutional ethics clarification; reference 2 status; STROBE page numbers to refresh after typesetting; supervisor approval of this version (Author Contributions currently says CFC reviewed the preceding version).
+
+### Update 29 September 2026 (09:22 UTC) — five of the eight exports deposited
+
+The author supplied five raw Pro exports (P8P2Z9 v4, PFWU9V v1, PU5K58 v1–v3), now archived
+unchanged with SHA-256 in `docs/thesis/stage3b/pro_v4_selftest/exports_as_received/`. These files
+had not been given to this session before; the eight-export account entered the record through
+the author's revised R7 (06:56 UTC), and the repository held only the Batch 01 PDF reports.
+Reconciliation (see that folder's README): 29 distinct runs, 8 visits, 8 decisions (matches R8),
+8 answered and 5 skipped feedback records, 3 × prior-play "yes", all touch, all stamped
+`researcher-self-test` / `participantApproved = false`. Still missing: three exports including
+PXG3R9 (5 runs, 3 visits, prior-play "no" by subtraction), and the roster that attributes each
+code to a researcher or a volunteer. The R8 Pro paragraphs stand as written; the 34-run, 11-visit
+and 3-pair totals remain unverified until the three files arrive.

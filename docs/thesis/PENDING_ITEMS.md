@@ -678,6 +678,13 @@ The author's own JMIR-style revision (Paper3_R6_Revised_Submission_Draft_2026-09
 
 Adaptive learning: nothing further is required for the paper; it appears only as future evaluation (one paragraph) and the LLM difficulty option is reported as an unverified inference. The Pro batch and adaptive-learning discussion stay in the thesis (Chapter 7; Appendix I).
 
+**29 Sep 2026, 09:22 UTC — partial deposit.** Five raw Pro exports received and archived with SHA-256
+(`docs/thesis/stage3b/pro_v4_selftest/exports_as_received/`): P8P2Z9 v4 (18 runs), PFWU9V v1 (6),
+PU5K58 v1–v3 (5 distinct). All stamped researcher-self-test, participant release false, touch
+input; 8 local-rule decisions, matching R8. Open: three further exports (incl. PXG3R9), a dated
+roster of who held each code and on what consent basis, and the author's decision between the
+Batch 01 set (5 codes, 42 runs) and the R8 set (4 codes, 34 runs) for thesis Appendix I.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
