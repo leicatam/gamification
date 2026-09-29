@@ -102,3 +102,18 @@ Seven-code totals (thesis V47 Appendix I.5; Paper 3 R10): 12 exports, 53 distinc
 (10 warm-ups, 21 practice, 22 checks), 12 decisions (9 local-rule, 3 player overrides), 21 practice-feedback
 records (12 answered, 9 skipped), 6 paired checks across 5 codes. Batch 01 figures come from the reports;
 PFWU9V and PXG3R9 figures come from the raw exports here.
+
+## Update 29 September 2026 (later) — PT8FJC and PZTPCG received
+
+`Alpine3BPRO_PRO-SELF_PT8FJC_v1_202609191040.csv` and `Alpine3BPRO_PRO-SELF_PZTPCG_v1_202609191427.csv` added
+(SHA-256 in the checksum file). Both reproduce the Batch 01 report exactly:
+- PT8FJC: 1 visit, 8 runs (1 W, 1 Pre, 5 P, 1 Post), touch, pair 7043 → 7043m 95% → 100%; 4 decisions whose stored
+  offline proposals (easier 1.20→1.08; same 1.30; harder 1.40→1.50; same 1.50) and final sources (player choice ×3,
+  local rules ×1) match the report's decision audit; 5 feedback records (4 answered, 1 skipped).
+- PZTPCG: 1 visit, 4 runs (W, Pre, P, Post), keyboard input, pair 100% → 100%, no decisions, 1 skipped feedback.
+Raw exports are now on file for six of the seven codes; PEVNZ8 (named in the report as share5214078768679196894.csv)
+is the only one outstanding. All files carry researcher-self-test metadata.
+
+Author's roster note received the same day: "September 22 - 28 date to play. Data collection is different date."
+Not yet reconciled: every export's internal timestamps (consent, run start and end, export) fall on 19–20 September
+2026 UTC. The note does not yet say who played under each code.
