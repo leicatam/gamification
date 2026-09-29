@@ -37,3 +37,38 @@ device copy is replaced. Rules:
 3. The pre-specified confirmatory outcomes (D2 top-two-box;
    sessions played) do not involve the score and are unaffected.
 4. Arm/failure-mode assignment logic is identical across versions.
+
+## Post-cut-off clean-run returns — FROZEN20260915 build (received 29 Sep 2026)
+
+Three CSV exports supplied by the author on 29 September 2026, archived byte-for-byte
+(SHA-256 in `CHECKSUMS_FROZEN_returns_2026-09-29.txt`). All three carry the frozen build string
+`Alpine_Coordination_Game_v3.1s_Stage3B_FROZEN20260915` and distributor tag D01, and were played
+on 29 September 2026, inside the clean-run window (15 Sep – 15 Oct) but AFTER the thesis cut-off of
+26 September. Under the 26 September decision they are archived as received and may be reported
+only as a dated addendum outside the thesis evidence base. They are the first returns on record
+from the frozen build.
+
+| Code | Consent → export (UTC) | Arm | Mode | Age band / sex / education | Prior play | Input | Run | D1 D2 F1 F2 |
+|---|---|---|---|---|---|---|---|---|
+| BVSU69 | 12:51:23 → 12:52:25 | B static ×0.85 | GO | 45-64 / M / degree+ | yes | touch | 30 s, goal reached, 0 hits | 5 5 5 5 |
+| B7GRDA | 14:35:03 → 14:36:25 | B static ×0.85 | GO | 45-64 / M / degree+ | no | touch | 30 s, goal reached, 0 hits | 3 3 3 4 |
+| BZ323A | 14:38:01 → 14:40:24 | A adaptive | GO | 45-64 / F / post-secondary | no | touch | 30 s, goal reached, 1 hit | 4 4 3 4 |
+
+Content checks (can only disqualify; none did):
+- Build string and D01 tag match the frozen distributor copy D01.
+- State logs match the assigned arm: both arm-B files hold 0.85 throughout (init entry only, no
+  hits); BZ323A starts at the arm-A gentle floor 0.60 and steps to 0.80 under the rules, matching
+  AI_DiffMult 0.8.
+- Scores are consistent with the frozen formula (distance + coin score + 5 × dodges + 50 goal
+  bonus): implied coin scores 130, 410 and 20 are within the combo-multiplier bounds for 7, 16 and
+  1 coins.
+- Each is a single coherent sitting of one to two and a half minutes.
+
+Not yet established (provenance is what admits a return):
+- Who transmitted each file, by what channel and on what date; the B7GRDA file arrived under a
+  phone share-sheet name.
+- Who distributed D01 and whether all three played on one device: B7GRDA and BZ323A were consented
+  three minutes apart on the same D01 copy.
+- All three played ONLY one 30-second session and gave no second visit, so the files carry no
+  learning-over-time information. BVSU69 answered prior play "yes".
+- Neither of the two ZF-mode cells has a return, so the 2×2 remains empty in two cells.

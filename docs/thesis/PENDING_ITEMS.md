@@ -685,6 +685,13 @@ input; 8 local-rule decisions, matching R8. Open: three further exports (incl. P
 roster of who held each code and on what consent basis, and the author's decision between the
 Batch 01 set (5 codes, 42 runs) and the R8 set (4 codes, 34 runs) for thesis Appendix I.
 
+**29 Sep 2026 — three frozen-build returns received (not Pro).** BVSU69 (arm B), B7GRDA (arm B),
+BZ323A (arm A); all D01, GO, touch, single 30-s run, played 29 Sep, archived in
+`docs/thesis/data_entry/incoming/stage3b_returns/`. First clean-run returns on record, but after the
+26 Sep thesis cut-off: under the decision artifact they sit outside the thesis evidence base unless
+the author reverses that rule. Open: transmittal channel, D01 distributor, whether one device/helper.
+The three missing Pro exports (incl. PXG3R9) and the Pro roster are still outstanding.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.

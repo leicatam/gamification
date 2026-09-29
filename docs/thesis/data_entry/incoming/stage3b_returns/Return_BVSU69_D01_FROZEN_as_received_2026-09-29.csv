@@ -1,0 +1,32 @@
+【滑雪遊戲研究結果 BVSU69——請原封不動傳送給研究員】
+exported_ts,2026-09-29T12:52:24.993Z
+[PARTICIPANT]
+field,value
+build,Alpine_Coordination_Game_v3.1s_Stage3B_FROZEN20260915
+device_id,D01
+participant_code,BVSU69
+arm,B
+failure_mode,GO
+language,zh
+consent_agreed,yes
+consent_ts,2026-09-29T12:51:23.081Z
+age_band,45-64
+gender,M
+education,degree+
+prior_play,yes
+
+[SESSIONS]
+Participant_ID,Session_No,Session_Date,Duration_Min,Distance_m,Coins,Obstacles_Hit,Lives_Lost,Avg_Balance_pct,Max_Speed,AI_DiffMult,Reached_GameOver,Score,Combo_Max,Dodges,Coins_Missed,Input_Mode,Post_FRA_Index,Notes,Arm,Lang,XP_Total,Skier_Level
+BVSU69,1,2026-09-29,0.5,459,16,0,0,93.3,15.3,0.85,FALSE,939,3,4,11,touch,,classic; cap=30s; end: 30 s complete (goal reached); state changes=1,B,zh,939,3
+
+[STATE_CHANGES]
+Session_No,t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src
+1,0,0,0.85,0.85,0,0,0,100,run start — arm B (static ×0.85),init
+
+[QUESTIONNAIRE]
+item,response (1 strongly disagree - 5 strongly agree)
+D1_coordination_challenge,5
+D2_play_regularly,5
+F1_matched_ability,5
+F2_progress_motivated,5
+answered_ts,2026-09-29T12:52:22.074Z
