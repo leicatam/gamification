@@ -93,3 +93,12 @@ and the choice between this set and the Batch 01 set for thesis Appendix I.
 
 The reported Pro record (thesis Appendix I; Paper 3 R9) is the Batch 01 set: five codes (P8P2Z9, PT8FJC,
 PEVNZ8, PZTPCG, PU5K58), 42 runs. PFWU9V and PXG3R9 are archived here as received but lie outside that set.
+
+## Author's decision, 29 September 2026 (later) — count all seven codes
+
+Superseding the note above: the reported Pro record counts all seven codes. The exports were received by
+different routes and on different dates, and the Batch 01 reports were written before all had arrived.
+Seven-code totals (thesis V47 Appendix I.5; Paper 3 R10): 12 exports, 53 distinct runs, 16 visits
+(10 warm-ups, 21 practice, 22 checks), 12 decisions (9 local-rule, 3 player overrides), 21 practice-feedback
+records (12 answered, 9 skipped), 6 paired checks across 5 codes. Batch 01 figures come from the reports;
+PFWU9V and PXG3R9 figures come from the raw exports here.

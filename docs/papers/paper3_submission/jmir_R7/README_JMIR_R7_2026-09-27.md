@@ -83,3 +83,12 @@ batch review retained by the first author). All figures come from the Batch 01 R
 Still open for the Pro paragraphs: raw exports for PT8FJC, PEVNZ8 and PZTPCG are not in the repository
 (P8P2Z9 and PU5K58 are, and match the review run for run); the investigator's record of who played under
 each code. PFWU9V and PXG3R9 exports are archived but lie outside the reported set.
+
+## R10 (29 September 2026) — Pro record counts all seven codes
+
+Author's decision: count every Pro code, because the exports arrived by different routes and dates and the
+Batch 01 review was written before all had arrived. R10 changes five passages of R9: twelve exports and seven
+codes (ten summarised in the 20 September review, two added from raw files); 53 runs, 16 visits, 21 practice /
+10 warm-ups / 22 checks; five codes touch-only; 12 decisions (9 local-rule, 3 player overrides); 21 feedback
+records (12 answered, 9 skipped); seven of 16 visits without practice and three of nine practice visits without a
+closing check; twelve exports retained. Thesis V47 Appendix I.5 carries the same totals.

@@ -701,6 +701,10 @@ enters the three frozen-build returns. ONE STEP AFTER 15 OCT: add any further re
 the counts in §8.8, Appendix I.4, Table I.1 and Table 9.1. Pro set: author chose Batch 01 (5 codes, 42 runs),
 so Paper 3 is to be brought to the Batch 01 figures; PT8FJC, PEVNZ8 and PZTPCG raw exports are still not on file.
 
+**29 Sep 2026 — Pro record = all seven codes (author).** Thesis V47 and Paper 3 R10 report 12 exports, 7 codes,
+53 runs, 16 visits, 12 decisions, 6 pairs. Batch 01 report figures kept as reported beside the totals. Still open:
+raw exports for PT8FJC, PEVNZ8, PZTPCG; dated roster (role per code, no names needed).
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
