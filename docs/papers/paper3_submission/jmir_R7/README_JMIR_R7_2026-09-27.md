@@ -66,3 +66,20 @@ With PXG3R9 v3 deposited, six distinct raw exports reproduce every R8 Pro count:
 1 no, 3 paired checks, all touch. The "eight exports / 62 appearances" wording is consistent with two
 further cumulative P8P2Z9 exports that add no new runs. Remaining Pro gate: the dated roster supporting
 the "four distinct volunteers" sentence, since every export is stamped researcher-self-test.
+
+## R9 (29 September 2026) — Pro record aligned to Batch 01; Stage 3B cut-off 15 October
+
+Author's decisions of 29 September 2026: (1) the Pro development record is the Batch 01 set — ten
+exports, five codes, 42 runs — as in thesis Appendix I; (2) the Stage 3B cut-off is 15 October 2026.
+`Paper3_R9_JMIR_Manuscript_2026-09-29.docx` (and the copy with author comments) changes seven passages
+of R8: Pro Methods (ten exports, five codes, batch review of 20 Sep; the four-volunteer sentence replaced
+by "recorded separately by the investigator"), Ethics (volunteer use documented separately), Pro Results
+(42 runs, 12 visits, 17/8/17 by stage; input touch, keyboard and one stopped run; 10 decisions = 7
+local-rule + 3 player overrides; 17 feedback records, 10 answered and 7 skipped), Discussion (five of 12
+visits without practice, two of seven practice visits without a closing check; the component phase's three
+frozen-build returns to 29 Sep and the 15 Oct window close), and Data Availability (ten exports and the
+batch review retained by the first author). All figures come from the Batch 01 Research Review as archived.
+
+Still open for the Pro paragraphs: raw exports for PT8FJC, PEVNZ8 and PZTPCG are not in the repository
+(P8P2Z9 and PU5K58 are, and match the review run for run); the investigator's record of who played under
+each code. PFWU9V and PXG3R9 exports are archived but lie outside the reported set.

@@ -88,3 +88,8 @@ would give exactly 62, which suggests that is what they were. They change no cou
 
 Still open: the roster of who held each code (the software labels all four as researcher self-test),
 and the choice between this set and the Batch 01 set for thesis Appendix I.
+
+## Author's decision, 29 September 2026
+
+The reported Pro record (thesis Appendix I; Paper 3 R9) is the Batch 01 set: five codes (P8P2Z9, PT8FJC,
+PEVNZ8, PZTPCG, PU5K58), 42 runs. PFWU9V and PXG3R9 are archived here as received but lie outside that set.
