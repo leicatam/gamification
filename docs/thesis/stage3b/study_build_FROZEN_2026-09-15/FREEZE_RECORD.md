@@ -67,3 +67,9 @@ This addendum changes nothing above: the frozen edition, its checksums and the c
 (15 September – 15 October 2026) stand as recorded. Clean-run returns on record at the cut-off:
 none. Any return received after the cut-off is archived as received and may be reported only as a
 dated addendum outside the thesis evidence base.
+
+## Addendum — 29 September 2026
+
+The author moved the thesis cut-off to 15 October 2026, the close of this clean-run window (see
+the decision note's amendment). The first three clean-run returns (BVSU69, B7GRDA, BZ323A; D01)
+arrived on 29 September 2026. The frozen copies are unchanged and the window is not extended.

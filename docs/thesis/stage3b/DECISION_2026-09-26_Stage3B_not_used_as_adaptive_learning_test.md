@@ -24,3 +24,13 @@
 - Thesis V43 (docs/thesis/Full_version_V43_EngD_Thesis_Submission_Draft.docx): Appendix I; §8.8; Table 3.1A row "Stage 3B"; Table 9.1 row "August–September 2026"; Appendix G items G.12–G.13.
 - Stage-3B record: docs/thesis/stage3b/ (protocol, freeze record, distributor copies, hosted links); docs/thesis/data_entry/incoming/stage3b_returns/ and stage3b_returns_PENDING_VERIFICATION/; docs/thesis/stage3b/pro_v4_selftest/ (Pro v4.1 package and Batch 01 reports).
 - Tracker: docs/thesis/PENDING_ITEMS.md, entry A15.
+
+## Amendment — 29 September 2026 (author's instruction: "Cut off date is 15 October")
+
+The thesis cut-off for the Stage-3B record moves from 26 September 2026 to **15 October 2026**, the
+close of the frozen edition's clean-run window. Point 3 above and the sentence in point 18 that
+placed later returns outside the thesis record are superseded to that extent: returns received by
+15 October 2026 enter Appendix I (Table I.4) as descriptive record. Everything else stands. Stage 3B
+is still not used as the test of adaptive learning, no confirmatory analysis or arm comparison is
+reported, and returns received after 15 October 2026 are archived only. First clean-run returns on
+record: BVSU69, B7GRDA, BZ323A (29 September 2026; D01). Implemented in thesis V46.

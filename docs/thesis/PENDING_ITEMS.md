@@ -696,6 +696,11 @@ The three missing Pro exports (incl. PXG3R9) and the Pro roster are still outsta
 11 visits, 8 decisions, 3 pairs). Remaining: roster for the volunteer attribution; Batch 01 vs R8 set
 for Appendix I.
 
+**29 Sep 2026 — cut-off moved to 15 Oct (author).** Thesis V46 states the Stage-3B record at 15 Oct 2026 and
+enters the three frozen-build returns. ONE STEP AFTER 15 OCT: add any further returns to Table I.4 and update
+the counts in §8.8, Appendix I.4, Table I.1 and Table 9.1. Pro set: author chose Batch 01 (5 codes, 42 runs),
+so Paper 3 is to be brought to the Batch 01 figures; PT8FJC, PEVNZ8 and PZTPCG raw exports are still not on file.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
