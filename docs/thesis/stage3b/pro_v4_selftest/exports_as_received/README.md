@@ -117,3 +117,6 @@ is the only one outstanding. All files carry researcher-self-test metadata.
 Author's roster note received the same day: "September 22 - 28 date to play. Data collection is different date."
 Not yet reconciled: every export's internal timestamps (consent, run start and end, export) fall on 19–20 September
 2026 UTC. The note does not yet say who played under each code.
+
+Resolved 29 September 2026: the author confirms the play dates were 19–20 September 2026, matching the export
+timestamps; the earlier "22–28 September" note was a mix-up. The roster of who played under each code is still open.

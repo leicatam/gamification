@@ -706,8 +706,7 @@ so Paper 3 is to be brought to the Batch 01 figures; PT8FJC, PEVNZ8 and PZTPCG r
 raw exports for PT8FJC, PEVNZ8, PZTPCG; dated roster (role per code, no names needed).
 
 **29 Sep 2026 — PT8FJC, PZTPCG raw exports received (V48).** Both match Batch 01 exactly. Outstanding: PEVNZ8 raw
-export. Roster note says play dates 22–28 Sep, but all export timestamps are 19–20 Sep UTC — to reconcile with author;
-roster still lacks who played each code.
+export. Play dates RESOLVED: author confirms 19–20 Sep (the 22–28 Sep note was a mix-up). Roster still lacks who played each code.
 
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
