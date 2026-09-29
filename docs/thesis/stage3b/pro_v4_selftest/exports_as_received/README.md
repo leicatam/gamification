@@ -59,3 +59,32 @@ R8's set. Which set is the intended Pro development record is the author's call;
 2. The role behind each stored code (researcher / volunteer), the device, and the consent basis,
    as a dated roster; the software records all of them as self-test.
 3. A decision on whether the thesis Appendix I keeps the Batch 01 set or moves to the R8 set.
+
+## Update 29 September 2026 (later) — PXG3R9 received; R8 counts verified
+
+`Alpine3BPRO_PRO-SELF_PXG3R9_v3_202609200352.csv` added (SHA-256 in the checksum file). Build
+v4.1.1 "change_player", exported 2026-09-20 03:52 UTC; age band 65-80, F, post-secondary,
+prior play "no"; 3 visits, 5 runs (1 practice, 1 warm-up, 3 checks), 0 decisions, 1 skipped
+feedback; same self-test metadata as the other files. A second copy of PFWU9V v1 was sent at the
+same time; it is byte-identical to the file already held (SHA-256 22fdcd07…), so it is not stored twice.
+
+All six files together reproduce every R8 count that the raw data can test:
+
+| R8 statement | Six files |
+|---|---|
+| 34 distinct runs | 34 ✓ |
+| 11 software visits | 11 ✓ |
+| 14 practice / 6 warm-ups / 14 checks | 14 / 6 / 14 ✓ |
+| 8 decisions, all local rules | 8 ✓ |
+| 14 feedback: 8 answered, 6 skipped | 8 / 6 ✓ |
+| prior play: 3 yes, 1 no | 3 / 1 ✓ |
+| 3 paired pre/post checks | P8P2Z9 visits 1 and 4, PFWU9V visit 1 ✓ |
+| all touch | all touch ✓ |
+
+Only the file count cannot be confirmed: R8 says eight exports and 62 run appearances; six distinct
+files hold 37. Because exports are cumulative, the two further files would add only repeats of
+runs already counted. Earlier P8P2Z9 exports taken after visit 2 (11 runs) and visit 3 (14 runs)
+would give exactly 62, which suggests that is what they were. They change no count in the paper.
+
+Still open: the roster of who held each code (the software labels all four as researcher self-test),
+and the choice between this set and the Batch 01 set for thesis Appendix I.

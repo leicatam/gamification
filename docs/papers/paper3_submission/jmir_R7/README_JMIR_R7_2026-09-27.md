@@ -58,3 +58,11 @@ Reconciliation (see that folder's README): 29 distinct runs, 8 visits, 8 decisio
 PXG3R9 (5 runs, 3 visits, prior-play "no" by subtraction), and the roster that attributes each
 code to a researcher or a volunteer. The R8 Pro paragraphs stand as written; the 34-run, 11-visit
 and 3-pair totals remain unverified until the three files arrive.
+
+### Update 29 September 2026 (later) — PXG3R9 received; R8 Pro counts verified
+
+With PXG3R9 v3 deposited, six distinct raw exports reproduce every R8 Pro count: 34 runs, 11 visits,
+14/6/14 by stage, 8 local-rule decisions, 8 answered and 6 skipped feedback records, prior play 3 yes /
+1 no, 3 paired checks, all touch. The "eight exports / 62 appearances" wording is consistent with two
+further cumulative P8P2Z9 exports that add no new runs. Remaining Pro gate: the dated roster supporting
+the "four distinct volunteers" sentence, since every export is stamped researcher-self-test.
