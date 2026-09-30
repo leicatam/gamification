@@ -736,6 +736,10 @@ entered. Still awaited: six F4 IDs; Stage-3A session_30xx/31xx CSVs or lower the
 e-mail text) and were not organised. Author asking the research assistant who handled collection and formatting. The logbook
 (July) and distributor batch files (3 Aug; 13 Sep, quarantined) are the only Stage-3A files received; no original session files.
 
+**30 Sep 2026 — F4 IDs.** Author: S2-P011, S2-P026, S2-P028 (ID key: M71, F75, F78; one session each; index 39→39, 54→53, 62→61).
+Thesis §5.6/Fig 5.6/§2.x and Paper 2 (cited in Paper 3 P68) say F4 = six, three with positive index change. Awaiting author:
+three only, or three more? No text changed yet.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
