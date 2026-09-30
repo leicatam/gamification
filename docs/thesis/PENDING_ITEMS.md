@@ -740,6 +740,12 @@ e-mail text) and were not organised. Author asking the research assistant who ha
 Thesis §5.6/Fig 5.6/§2.x and Paper 2 (cited in Paper 3 P68) say F4 = six, three with positive index change. Awaiting author:
 three only, or three more? No text changed yet.
 
+**30 Sep 2026 — !! STAGE-3A BUILD PROVENANCE.** docs/thesis/game/Alpine_Coordination_Game_Stage3_v2.2.html (and the byte-identical _v2)
+were CREATED in this repository on 13 Jul 2026 (ba8f122 "Redesign Stage-3 game", then v2.1, v2.2 same day) — after the Mar–Apr 2026
+study. The distributed Stage-3A game is NOT archived. Paper 3 P26/P89 call v2.2 "the archived Stage 3A build" and draw its features
+(30-s cap, zero-failure, keyboard/Gamepad, no touch) from it; thesis §6.4 (V52) says "the archived build with its zero-failure mode".
+Asked author/RA for the March–April HTML. Do NOT send v2.2 as the Stage-3A game.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
