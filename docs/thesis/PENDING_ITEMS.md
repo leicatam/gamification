@@ -732,6 +732,10 @@ record shows both in the Stage-3 summary (N=120) and no coordination item in the
 (eye-leg coordination as in FRA; perception only) added to Appendix D. BYXXMT (13 Aug, DEV1, v3.0) archived PENDING provenance, not
 entered. Still awaited: six F4 IDs; Stage-3A session_30xx/31xx CSVs or lower the logbook claim; D13 holder/transmittal.
 
+**30 Sep 2026 — Stage-3A returns.** Author: the game record "was not designed properly"; returns came in mixed formats (CSV and
+e-mail text) and were not organised. Author asking the research assistant who handled collection and formatting. The logbook
+(July) and distributor batch files (3 Aug; 13 Sep, quarantined) are the only Stage-3A files received; no original session files.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
