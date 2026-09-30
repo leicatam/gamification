@@ -716,6 +716,14 @@ Still open: per-code player/device note (optional); ethics-scope clarification n
 DRAFT protocol (commit 867104c), not the submitted application; author confirms it was not in the submission. Removed from
 §3.4 and I.7; scope item now rests on the examiner's request. Paper 3 never used it. Drafts labelled in ethics/README_DRAFTS.md.
 
+**30 Sep 2026 — author answers to the submission worksheet.** (1) Stage-3 dropout/return rule: after failure or game over, never played
+again = dropout, played again = returned; "measured before zero-failure implemented" — to clarify against the archived v2.2 build
+(zero-failure mode) and the "5 attempts" label. (2) Questionnaire self-answered right after play when the player chose to stop; item
+count/scale/language/wording still to confirm. (3) 93.3% = 112/120 whole cohort, 85.4% = 35/41 ages 65–80; keep/drop decision open.
+(4) Cite Stage-2 files on record. (5) Therapists' summary photocopies to be collected next week. (6) F4 explained to author.
+(7) Stage-2 play logged by hand at the centre; confirm software logs not kept. (8) Author declines ethics clarification; thesis keeps
+Stage-3B scope as an open item. (9) Awaiting Prof. Cheung. No thesis text changed yet — batch into V52 once (1) and (2) are clarified.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
