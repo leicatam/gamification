@@ -728,6 +728,10 @@ Stage-3B scope as an open item. (9) Awaiting Prof. Cheung. No thesis text change
 (Appendix C correct as is). Six IDs + scoring rule still needed, else withdraw Fig 5.6. Author believes D1 = Stage 2, D2 = Stage 3;
 record shows both in the Stage-3 summary (N=120) and no coordination item in the Stage-2 nine-question form — author re-checking.
 
+**30 Sep 2026 — V53 / R13.** Fifth clean-run return B53Y2F (D13, 16 Sep, B/ZF, two sessions; converted from RTF) entered. D1 purpose
+(eye-leg coordination as in FRA; perception only) added to Appendix D. BYXXMT (13 Aug, DEV1, v3.0) archived PENDING provenance, not
+entered. Still awaited: six F4 IDs; Stage-3A session_30xx/31xx CSVs or lower the logbook claim; D13 holder/transmittal.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.

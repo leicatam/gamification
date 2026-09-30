@@ -6,7 +6,7 @@ fig,ax=plt.subplots(figsize=(7,3.6),dpi=200)
 rows={'Builds':2,'Distribution':1,'Returns':0}
 C={'Builds':'#1f77b4','Distribution':'#2ca02c','Returns':'#d62728'}
 ax.axvspan(D(9,15),D(10,15),ymin=0.02,ymax=0.36,color='#e8eff9',zorder=0)
-ax.text(D(9,16),-0.8,'clean-run window 15 Sep – 15 Oct',ha='left',va='bottom',color='#3a6ea5',fontsize=7)
+ax.text(D(10,14),-0.8,'clean-run window 15 Sep – 15 Oct',ha='right',va='bottom',color='#3a6ea5',fontsize=7)
 for y in rows.values(): ax.axhline(y,color='#cccccc',lw=1,zorder=1)
 ev=[('Builds',D(8,8),'protocol 473046c/846a286',0.22,'center'),('Builds',D(8,9),'2×2 device set 59b7881; hierarchy 13a6e91',-0.2,'center'),
 ('Builds',D(8,13),'v3.1 revisions 923a25e/a1afc42',0.38,'center'),('Builds',D(9,15),'freeze 2f61e62 (FROZEN20260915)',-0.3,'center'),
@@ -15,7 +15,8 @@ ev=[('Builds',D(8,8),'protocol 473046c/846a286',0.22,'center'),('Builds',D(8,9),
 ('Distribution',D(9,15),'D01–D20 copies',0.22,'center'),('Distribution',D(9,17),'hosted links',-0.2,'center'),
 ('Returns',D(8,15),'B9V8YA verified',0.36,'center'),('Returns',D(9,15),'five returns excluded',-0.3,'center'),
 ('Returns',D(9,19),'Pro Batch 01\nself-test',0.2,'right'),('Returns',D(9,26),'26 Sep decision: not the\nadaptive-learning test',0.36,'left'),
-('Returns',D(9,29),'four clean-run\nreturns (D01)',-0.3,'left')]
+('Returns',D(9,29),'four clean-run\nreturns (D01)',-0.3,'left'),
+('Returns',D(9,16),'first clean-run return\n(B53Y2F, D13)',-0.62,'right')]
 for r,d,l,off,ha in ev:
     y=rows[r]; ax.plot(d,y,'o',color=C[r],ms=6,zorder=3)
     ax.plot([d,d],[y,y+off*0.8],color='#999999',lw=0.8,zorder=2)

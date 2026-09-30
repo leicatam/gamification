@@ -83,3 +83,14 @@ F1 3, F2 3). Checks pass: arm-B state log 0.85 throughout; session-3 bumps reduc
 260 within bounds for 9, 18, 11 coins); XP_Total cumulative 794 → 1803 → 2602. First zero-failure and first
 multi-session clean-run return. Re-sent copies of BVSU69, B7GRDA and BZ323A on 30 Sep were byte-identical to the
 files archived on 29 Sep and are not stored twice.
+
+## Fifth clean-run return — B53Y2F (played 16 Sep 2026; received 30 Sep 2026)
+
+`Return_B53Y2F_D13_FROZEN_converted_from_rtf_as_received_2026-09-30.csv` — the file name as sent ends "_from_rtf": the text was
+extracted from a rich-text document, so this is a converted copy, not the original export. Archived as received with SHA-256.
+FROZEN20260915, distributor copy D13, arm B (static ×0.85), zero-failure mode, 45-64 / M / degree+, prior play "no"; consent
+2026-09-16 04:47:13Z; two 30-s touch sessions, both goal reached; questionnaire D1 2, D2 2, F1 3, F2 2. Checks pass: 0.85
+throughout; four session-2 bumps reduce obstacle density with speed unchanged (zero-failure behaviour); scores reconcile
+(implied coin scores 180 and 60 within bounds for 7 and 4 coins); XP_Total 709 → 1288. Earliest clean-run play on record, and
+the first from a copy other than D01. Not on record at the 26 Sep decision because it had not been received.
+Open: who holds D13, how and when the file reached the author, and why it was converted from RTF.

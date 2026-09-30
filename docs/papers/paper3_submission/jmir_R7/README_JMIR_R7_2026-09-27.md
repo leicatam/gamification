@@ -106,3 +106,7 @@ From the investigator's answers: the failure-then-stop classification rule (Meth
 build with a game over, unrecorded per player (Game Build; Discussion); the questionnaire had two items on a five-point scale with
 4–5 coded positive, answered right after play (Methods; Results). The questionnaire as sent is still not linked to the record, and
 the summary's item labels differ from the invitation wording — disclosed, not resolved.
+
+## R13 (30 September 2026)
+
+Discussion: five frozen-edition returns by 30 September 2026 (B53Y2F, played 16 September on copy D13, received 30 September as a converted copy).
