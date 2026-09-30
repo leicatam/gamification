@@ -99,3 +99,10 @@ Four passages of R10 changed: Pro Methods now carry the investigator's account t
 and their families or friends recruited for selected age groups, with each export's in-game consent tap; Ethics reports
 that account separately from the software flags; Discussion gives four frozen-edition returns by 29 September 2026, three
 of them single sessions; Data Availability refers to the investigator's account. All seven Pro raw exports are now archived.
+
+## R12 (30 September 2026)
+
+From the investigator's answers: the failure-then-stop classification rule (Methods); some Stage 3A players received an earlier
+build with a game over, unrecorded per player (Game Build; Discussion); the questionnaire had two items on a five-point scale with
+4–5 coded positive, answered right after play (Methods; Results). The questionnaire as sent is still not linked to the record, and
+the summary's item labels differ from the invitation wording — disclosed, not resolved.
