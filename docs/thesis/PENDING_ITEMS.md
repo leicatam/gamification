@@ -708,6 +708,10 @@ raw exports for PT8FJC, PEVNZ8, PZTPCG; dated roster (role per code, no names ne
 **29 Sep 2026 — PT8FJC, PZTPCG raw exports received (V48).** Both match Batch 01 exactly. Outstanding: PEVNZ8 raw
 export. Play dates RESOLVED: author confirms 19–20 Sep (the 22–28 Sep note was a mix-up). Roster still lacks who played each code.
 
+**30 Sep 2026 — V49 / R11.** All seven Pro raw exports on file (PEVNZ8 received, matches report). Roster account: volunteers
+and their families or friends by age group (no per-code assignment). Fourth clean-run return B59AGN (B/ZF, three sessions).
+Still open: per-code player/device note (optional); ethics-scope clarification now also covers volunteer Pro use; returns to 15 Oct.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.

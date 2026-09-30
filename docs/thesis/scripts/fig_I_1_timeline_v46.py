@@ -15,7 +15,7 @@ ev=[('Builds',D(8,8),'protocol 473046c/846a286',0.22,'center'),('Builds',D(8,9),
 ('Distribution',D(9,15),'D01–D20 copies',0.22,'center'),('Distribution',D(9,17),'hosted links',-0.2,'center'),
 ('Returns',D(8,15),'B9V8YA verified',0.36,'center'),('Returns',D(9,15),'five returns excluded',-0.3,'center'),
 ('Returns',D(9,19),'Pro Batch 01\nself-test',0.2,'right'),('Returns',D(9,26),'26 Sep decision: not the\nadaptive-learning test',0.36,'left'),
-('Returns',D(9,29),'three clean-run\nreturns (D01)',-0.3,'left')]
+('Returns',D(9,29),'four clean-run\nreturns (D01)',-0.3,'left')]
 for r,d,l,off,ha in ev:
     y=rows[r]; ax.plot(d,y,'o',color=C[r],ms=6,zorder=3)
     ax.plot([d,d],[y,y+off*0.8],color='#999999',lw=0.8,zorder=2)

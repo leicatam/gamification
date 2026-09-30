@@ -92,3 +92,10 @@ codes (ten summarised in the 20 September review, two added from raw files); 53 
 10 warm-ups / 22 checks; five codes touch-only; 12 decisions (9 local-rule, 3 player overrides); 21 feedback
 records (12 answered, 9 skipped); seven of 16 visits without practice and three of nine practice visits without a
 closing check; twelve exports retained. Thesis V47 Appendix I.5 carries the same totals.
+
+## R11 (30 September 2026)
+
+Four passages of R10 changed: Pro Methods now carry the investigator's account that the codes were played by volunteers
+and their families or friends recruited for selected age groups, with each export's in-game consent tap; Ethics reports
+that account separately from the software flags; Discussion gives four frozen-edition returns by 29 September 2026, three
+of them single sessions; Data Availability refers to the investigator's account. All seven Pro raw exports are now archived.

@@ -120,3 +120,13 @@ Not yet reconciled: every export's internal timestamps (consent, run start and e
 
 Resolved 29 September 2026: the author confirms the play dates were 19–20 September 2026, matching the export
 timestamps; the earlier "22–28 September" note was a mix-up. The roster of who played under each code is still open.
+
+## Update 30 September 2026 — PEVNZ8 received; roster account
+
+`Alpine3BPRO_PEVNZ8_filenamed_share5214078768679196894_as_received.csv` (the file name the Batch 01 report gives)
+added with SHA-256. It reproduces the report: 3 visits, 7 runs (W/Pre/P/Post; Post only; stopped 1.473-s warm-up with
+input "none" + Post), pair 7043 → 7043m 95% → 90%, no decisions, touch. Raw exports are now on file for all seven codes.
+
+Author's roster account (30 Sep 2026): the codes were played by "volunteer and / or their families or friends with
+selected age groups". No code-level assignment given. Entered in thesis V49 and Paper 3 R11 as the author's account
+beside the software's researcher-self-test label.

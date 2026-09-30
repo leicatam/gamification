@@ -72,3 +72,14 @@ Not yet established (provenance is what admits a return):
 - All three played ONLY one 30-second session and gave no second visit, so the files carry no
   learning-over-time information. BVSU69 answered prior play "yes".
 - Neither of the two ZF-mode cells has a return, so the 2×2 remains empty in two cells.
+
+## Fourth clean-run return — B59AGN (received 30 Sep 2026; played 29 Sep 2026)
+
+`Return_B59AGN_D01_FROZEN_filenamed_xls_as_received_2026-09-30.xls` — a CSV text export saved under an .xls name,
+archived byte-for-byte. FROZEN20260915, D01, arm B (static ×0.85), zero-failure mode, 45-64 / M / degree+, prior play
+"no"; consent 17:34:32Z; three 30-s sessions (touch, keys, keys), all goal reached; questionnaire complete (D1 3, D2 2,
+F1 3, F2 3). Checks pass: arm-B state log 0.85 throughout; session-3 bumps reduce obstacle density with speed unchanged
+(zero-failure behaviour); scores reconcile with distance + coin score + 5 × dodges + 50 (implied coin scores 250, 480,
+260 within bounds for 9, 18, 11 coins); XP_Total cumulative 794 → 1803 → 2602. First zero-failure and first
+multi-session clean-run return. Re-sent copies of BVSU69, B7GRDA and BZ323A on 30 Sep were byte-identical to the
+files archived on 29 Sep and are not stored twice.
