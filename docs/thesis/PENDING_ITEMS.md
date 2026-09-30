@@ -752,6 +752,10 @@ late returns (esp. 65–80) to July 2026; compiled and processed in July. Applie
 version July players received; (2) the quarantined batch CSVs dated March 2026 predate recruitment — further reason to exclude them;
 (3) ethics chronology unchanged (approval 6 Aug 2026 still after all Stage-3 collection).
 
+**30 Sep 2026 — Stage-3A game file name.** Author: initial game should be named "Skiing Game…". No such file in repo, history or
+uploads; only the invitation (4 Aug reconstruction, headed "Come and Play the Skiing Game!", "From March to April 2026") — its
+dates conflict with RA's 3 April start; disclosed in V57/R15. stage3_import.py (author's upload) = July data-entry importer, not the game.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
