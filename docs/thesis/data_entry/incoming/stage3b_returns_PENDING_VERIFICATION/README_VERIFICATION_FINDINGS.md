@@ -111,3 +111,15 @@ further field returns must run the DEPLOYED 9-Aug build only. If more
 participants are still to be recruited within the window, distribute
 the 9-Aug device copies (recoverable from git at commit 59b7881),
 not the 13-Aug file.
+
+## BYXXMT — received 30 September 2026 (PENDING; not in the thesis record)
+
+`Return_BYXXMT_DEV1_as_received_2026-09-30.csv`, archived byte-for-byte. Build string `Alpine_Coordination_Game_v3.0_Stage3B`,
+device copy DEV1, arm A (adaptive), zero-failure mode, Simplified Chinese; 65-80 / M / degree+; prior play "no". Consent
+2026-08-13 08:16:02Z; three 30-s sessions the same day; export 08:37:34Z. Questionnaire D1 4, D2 4, F1 3, F2 3.
+Format: CSV export without Input_Mode, Combo_Max, Dodges or XP columns — an intermediate 13 August generation, before the
+input-mode logging commit (a1afc42, 09:08 UTC that day). Content checks: arm-A state log starts at the 0.60 floor and steps
+under the 80%/40% rules; zero-failure bumps reduce density with speed unchanged. Consistent with the build.
+Not yet established: who played it, who sent it, when and how it reached the author, and why it was not received in August.
+The August deployment distributed the 9 August build (59b7881); a 13 August file on DEV1 therefore needs a provenance
+statement before any use. Until then it is not entered in thesis Appendix I.
