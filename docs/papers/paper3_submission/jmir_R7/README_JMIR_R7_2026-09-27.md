@@ -110,3 +110,7 @@ the summary's item labels differ from the invitation wording — disclosed, not 
 ## R13 (30 September 2026)
 
 Discussion: five frozen-edition returns by 30 September 2026 (B53Y2F, played 16 September on copy D13, received 30 September as a converted copy).
+
+## R14 (30 September 2026)
+
+Stage 3A timeline corrected on the research assistant's account: recruitment from 3 April 2026; most played after the recruitment deadline; late returns, especially from older players, to July 2026, when the summary was compiled (Abstract, Methods, Ethics, Data statement; STROBE item 5 in MultimediaAppendix1_..._R14).

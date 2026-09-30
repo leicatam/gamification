@@ -746,6 +746,12 @@ study. The distributed Stage-3A game is NOT archived. Paper 3 P26/P89 call v2.2 
 (30-s cap, zero-failure, keyboard/Gamepad, no touch) from it; thesis §6.4 (V52) says "the archived build with its zero-failure mode".
 Asked author/RA for the March–April HTML. Do NOT send v2.2 as the Stage-3A game.
 
+**30 Sep 2026 — STAGE-3A TIMELINE (RA account via author).** Recruitment began 3 Apr 2026; most played after the recruitment deadline;
+late returns (esp. 65–80) to July 2026; compiled and processed in July. Applied in V56 / R14 / STROBE R14. Consequences to resolve:
+(1) the July 2026 game redesign (v2 → v2.2, 13 Jul) falls INSIDE the collection period — late players may have played it; ask which
+version July players received; (2) the quarantined batch CSVs dated March 2026 predate recruitment — further reason to exclude them;
+(3) ethics chronology unchanged (approval 6 Aug 2026 still after all Stage-3 collection).
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
