@@ -724,6 +724,10 @@ count/scale/language/wording still to confirm. (3) 93.3% = 112/120 whole cohort,
 (7) Stage-2 play logged by hand at the centre; confirm software logs not kept. (8) Author declines ethics clarification; thesis keeps
 Stage-3B scope as an open item. (9) Awaiting Prof. Cheung. No thesis text changed yet — batch into V52 once (1) and (2) are clarified.
 
+**30 Sep 2026 (later).** F4 CORRECTED by author: F4 players lost interest after the first attempt; interview designed, none given
+(Appendix C correct as is). Six IDs + scoring rule still needed, else withdraw Fig 5.6. Author believes D1 = Stage 2, D2 = Stage 3;
+record shows both in the Stage-3 summary (N=120) and no coordination item in the Stage-2 nine-question form — author re-checking.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
