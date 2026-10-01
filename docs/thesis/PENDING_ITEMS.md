@@ -763,6 +763,11 @@ thesis form" — MPhil/PhD GSB/2B needs >=4 months' notice; confirm with feng.en
 writing. Format: abstract 200–500 words (V58 now 496); cover page with title/name in capitals missing; acknowledgements must declare
 contributions by others (RAs; AI). ToC/LoF/LoT are static text — rebuild from final PDF at production.
 
+**1 Oct 2026 — !! RA "Rudy" files are DERIVED FROM SYNTHETIC DATA.** Stage3_Game_Telemetry_Whole_Coins.xlsx = synthetic sessions with
+dates +35 d, distance ÷10, coins ÷3, IDs 30NNN; stage_3_player_q9_summary.zip = synthetic answers/demographics copied for all 120, "entered
+by Ruby 20–29 Jul" but built on the 30 Sep template wording and zipped 1 Oct. Not evidence; archived as DERIVED_FROM_SYNTHETIC. Advise author:
+apply the Stage-3 fallback wording; ask the RA how the July summary counts (23/15/8; 86/76) were produced and from what.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
