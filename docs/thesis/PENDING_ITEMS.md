@@ -756,6 +756,13 @@ version July players received; (2) the quarantined batch CSVs dated March 2026 p
 uploads; only the invitation (4 Aug reconstruction, headed "Come and Play the Skiing Game!", "From March to April 2026") — its
 dates conflict with RA's 3 April start; disclosed in V57/R15. stage3_import.py (author's upload) = July data-entry importer, not the game.
 
+**1 Oct 2026 — SUBMISSION PLAN.** docs/thesis/submission/Thesis_Submission_Plan_1-15Oct2026.docx (schedule, task cards A1–A4/B1–B9,
+templates T1–T9, PolyU format check) + tracker sheet "4 Schedule 1-15 Oct". NEW GATES from PolyU sources: (G1) EngD "Intention to submit
+thesis form" — MPhil/PhD GSB/2B needs >=4 months' notice; confirm with feng.engd@polyu.edu.hk; (G2) chief-supervisor approval form
+(GSB/18-type) before submission; (G3) similarity report %; (G4) GenAI Honour Declaration — thesis does not yet declare AI use for
+writing. Format: abstract 200–500 words (V58 now 496); cover page with title/name in capitals missing; acknowledgements must declare
+contributions by others (RAs; AI). ToC/LoF/LoT are static text — rebuild from final PDF at production.
+
 ## A16. PAPER 3 EDITORIAL REVIEW (27 Sep 2026) -> R6 (major revision applied; evidence items OPEN).
 
 Review archived: docs/papers/paper3_submission/Paper3_Editorial_Review_and_EngD_Status_as_received_2026-09-27.docx (author-commissioned editorial review of R5; not a journal reviewer). Decision: major revision before submission. **R6 built:** Paper3_R6_Exploratory_2026-09-27.docx (+ render; ops JSON) with the response table Paper3_R6_Response_to_Editorial_Review_2026-09-27.md.
