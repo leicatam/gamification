@@ -118,3 +118,7 @@ Stage 3A timeline corrected on the research assistant's account: recruitment fro
 ## R15 (30 September 2026)
 
 Methods: the invitation reconstruction is headed with a March–April 2026 period, whereas the research assistant reports recruitment from 3 April 2026 — disclosed.
+
+## R16 (1 October 2026)
+
+Future Evaluation: one addition, at the author's suggestion, matching thesis V60 §8.8. Stage 3A builds had no in-game consent step or questionnaire, so returns came in mixed formats; Stage 3B builds recorded consent, asked questions right after play and exported one structured file, which made each return checkable but did not secure returns. A methodological lesson, not a Stage 3B result.
