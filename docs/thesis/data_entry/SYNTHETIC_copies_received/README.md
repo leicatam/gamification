@@ -55,3 +55,9 @@ The author reports that the research assistant entered data "from various source
 - Three INITIAL_STOP events fall at session 5, although the summary defines initial dropout as stopping before completing 5 attempts.
 - No row carries a source reference (record, scan, e-mail or export), so no value can be traced to a primary record.
 Never evidence. Kept only so the file is recognised if it resurfaces.
+- Author's account, 1 Oct 2026: "test" renders the Chinese term for people having played; the research assistant reused the
+  synthetic-derived layout and its description notes; values were transcribed from site records, voice tags and handwritten records.
+  This explains the labels, layout and notes. It does not explain the values: both Stage-3A builds (v1.0 and v2.2) export Distance_m
+  rounded to whole metres (Math.round), duration in minutes (Duration_Min) and Obstacles_Hit, whereas 535 of the 604 rows carry a
+  decimal distance (e.g. 63.2 m), every row has Duration_Sec = 30, and the sheet has an Obstacles_Pass field that neither build records.
+  Status unchanged pending a spot check of named rows against the original records.
