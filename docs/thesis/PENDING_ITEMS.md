@@ -1686,3 +1686,9 @@ the 80 non-interviewed (unavailable); TAM multiple-choice block (never
 existed); Korean 75% figure (vendor catalogue — deleted); Table 5.3
 (withdrawn); FRA index direction (higher = better); Figure 5.4 (replaced by
 participant-level chart); Figure 6.1 (regenerated from Table 6.2).
+
+**1 Oct 2026 — Stage3_04_Delayed_Returns.xlsx = self-labelled generated test inputs ("TEST PARTICIPANTS — T04"; "generated test inputs"),
+same ID scheme and sheet lineage as the derived-from-synthetic file; reproduces every summary target and adds per-band values the summary
+does not hold.** Archived under data_entry/SYNTHETIC_copies_received/ as TEST_INPUTS_NOT_STUDY_DATA_... with README entry. Not evidence; no
+thesis or Paper 3 change. Still needed for Stage 3A: original records (handwritten sheets, returned exports, e-mails) scanned or saved as
+received, with one source reference per row.

@@ -35,3 +35,23 @@ Never evidence. Kept only so the same copy is recognised if it resurfaces.
 - Every row says "Entered by: Ruby" with entry dates 20–29 July 2026, but the column headers include wording from the record template
   created on 30 September 2026 ("Returned (played again after dropping out)"), and the files were zipped on 1 October 2026.
 Never evidence. Kept only so the files are recognised if they resurface.
+
+## Stage3_04_Delayed_Returns.xlsx, received 1 October 2026 — SELF-LABELLED GENERATED TEST INPUTS, NOT STUDY DATA
+
+`TEST_INPUTS_NOT_STUDY_DATA_Stage3_04_Delayed_Returns_as_received_2026-10-01.xlsx`
+(SHA-256 a89ece598f4014a512f41d9c677f74732f5ce5709e194ae4f79c5ce98ce4d4f0; creator "TAM, Sidney [Student]", created 1 Oct 2026 16:31, saved 23:42).
+The author reports that the research assistant entered data "from various sources" into it. The workbook itself says otherwise:
+- Participants sheet title "TEST PARTICIPANTS — T04"; its notes read "A–F are randomized test inputs" and "The participant assignments,
+  gameplay values and dates in this workbook are generated test inputs."
+- Telemetry sheet has the same name ("stage 3 Game Telemetry (2)"), the same columns and the same five-digit IDs 30001–30120 as the
+  derived-from-synthetic file above; 546 of its 604 (player, session) keys also occur there, with regenerated values.
+- Every session lasts exactly 30 s, loses no lives and never reaches a game over; every date is midnight except three RETURN rows stamped
+  exactly at the cut-off cell (31 Aug 2026 23:59:59). No session falls in April although recruitment began 3 April; five sessions fall in
+  August, after the July compilation of the summary.
+- Recomputed from its rows it reproduces every summary target exactly (120; 38/41/41; 72 F / 48 M; dropouts 0/7/16, returns 0/5/10,
+  non-return 0/2/6; 93.3% / 85.4%; agree 86 and 76; intention 25/28/23) and adds per-band values the summary does not hold
+  (sex by band 21/17, 22/19, 29/12; coordination item by band 29/30/27; individual ages 26–80). Matching the targets is how a constructed
+  file looks, not evidence of a source.
+- Three INITIAL_STOP events fall at session 5, although the summary defines initial dropout as stopping before completing 5 attempts.
+- No row carries a source reference (record, scan, e-mail or export), so no value can be traced to a primary record.
+Never evidence. Kept only so the file is recognised if it resurfaces.
