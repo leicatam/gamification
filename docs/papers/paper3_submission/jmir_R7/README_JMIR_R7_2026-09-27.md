@@ -140,3 +140,8 @@ either build before the July 2026 compilation, duration not counted; returns arr
 Author: distributors received both builds and passed them on; which build each player used was not recorded ("most played this archived
 build" withdrawn; archived build created 13 July 2026); the 20 distributors' own records are among the 120 and they were briefed (Abstract,
 Methods participants and game build, Limitations). Matches thesis V65.
+
+## R20 (2 October 2026)
+
+Author: distributors were separate Hong Kong groups without prior knowledge of the gamified FRA (R19 'knew the study purpose' withdrawn);
+earlier-version limitations led to the archived build and main play was postponed to late July 2026 (Game Build). Matches thesis V66.
