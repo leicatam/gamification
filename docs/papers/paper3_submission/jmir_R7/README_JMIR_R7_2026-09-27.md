@@ -122,3 +122,9 @@ Methods: the invitation reconstruction is headed with a March–April 2026 perio
 ## R16 (1 October 2026)
 
 Future Evaluation: one addition, at the author's suggestion, matching thesis V60 §8.8. Stage 3A builds had no in-game consent step or questionnaire, so returns came in mixed formats; Stage 3B builds recorded consent, asked questions right after play and exported one structured file, which made each return checkable but did not secure returns. A methodological lesson, not a Stage 3B result.
+
+## R17 (2 October 2026)
+
+Stage 3A returns not retained (author, 2 Oct 2026): no participant names or emails collected; first-build results and stopping hand-recorded
+by assistants not always beside the player; returns compiled into the July 2026 summary and not kept as separate records. Methods (records),
+Ethics (consent documentation) and Data Availability changed; "returned exports ... retained" and "compilation pending" withdrawn. Matches thesis V62.
