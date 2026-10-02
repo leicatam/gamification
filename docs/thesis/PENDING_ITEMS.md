@@ -1697,3 +1697,9 @@ received, with one source reference per row.
 longer holds the game records, and the build per player is unknown. No thesis/Paper 3 change. OPEN DECISION for the author: 30 Sep
 account (game over possible in an earlier version; dropout = stop after failure or game over) vs 2 Oct account (no game over; all runs
 zero-failure). Affects thesis §6.4 (P621) and Paper 3 Game Build (P26).
+
+**2 Oct 2026 — Stage3_120_Players_Seven_Fields.xlsx = reconstruction without source references (archived as non-evidence).** Its per-band
+values disagree with the Stage3_04 workbook made from the same sources the day before. Author's new statement "mostly version 1" conflicts
+with thesis §6.4 / Paper 3 P26 ("most played the archived build", i.e. v2.2) and with the 30-s cap account (v1.0 has no time cap).
+OPEN: (a) which build most players used; (b) game over (30 Sep vs 2 Oct accounts); (c) whether returned exports / e-mails are in fact
+retained anywhere — thesis and Paper 3 (P33, P89) say they are, but the RA no longer holds game records.

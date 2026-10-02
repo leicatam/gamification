@@ -75,3 +75,18 @@ Never evidence. Kept only so the file is recognised if it resurfaces.
   stays non-evidence. Thesis and Paper 3 continue to report Stage 3A from the aggregate summary only (as in V59–V61 / R16).
   Open: the author's 30 Sep account (dropout = stopping after "failure or game over before zero-failure implemented"; some players had
   the first version) and the 2 Oct account (no game over; all runs zero-failure) conflict; thesis §6.4 and Paper 3 Game Build follow 30 Sep.
+
+## Stage3_120_Players_Seven_Fields.xlsx, received 2 October 2026 — RECONSTRUCTION WITHOUT SOURCE REFERENCES, NOT EVIDENCE
+
+`RECONSTRUCTED_NOT_EVIDENCE_Stage3_120_Players_Seven_Fields_as_received_2026-10-02.xlsx`
+(SHA-256 99c7162dcdb8770f1ca103eb3cf440b9612f8ffa3c60e0e0c43ce0b325c716b0; creator "openpyxl", created and saved 2 Oct 2026 00:53:15 in one
+write; one sheet named "Test data"; 120 rows, IDs 30001–30120, seven fields; no source column).
+Author's account: built by the research assistant from paper records, voice tags, photocopies, handwritten notes and field records;
+mostly game version 1; IDs reassigned for convenience of entry.
+- Reproduces every summary total and band figure (120; 38/41/41; 72/48; 0/7/16 stops, 0/5/10 returns, 0/2/6 non-return; 93.3%/85.4%;
+  86 and 76; 25/28/23).
+- Per-band values the summary does not hold disagree with the Stage3_04 workbook built by the same assistant from the same sources one day
+  earlier: sex by band 22F/16M, 23/18, 27/14 here vs 21/17, 22/19, 29/12 there; coordination item by band 28/26/32 here vs 29/30/27 there.
+  Ignoring IDs, only 90 of 120 player profiles coincide. Two transcriptions of the same records would agree.
+- No row names its source, and the reassigned IDs link to no person or record, so no row can be spot-checked.
+Never evidence. Thesis and Paper 3 continue to report Stage 3A from the July aggregate summary only.
