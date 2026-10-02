@@ -61,3 +61,11 @@ Never evidence. Kept only so the file is recognised if it resurfaces.
   rounded to whole metres (Math.round), duration in minutes (Duration_Min) and Obstacles_Hit, whereas 535 of the 604 rows carry a
   decimal distance (e.g. 63.2 m), every row has Duration_Sec = 30, and the sheet has an Obstacles_Pass field that neither build records.
   Status unchanged pending a spot check of named rows against the original records.
+- Author's further account, 2 Oct 2026: (1) decimal distances were calculated where data were not stored at dropout or non-completion;
+  (2) all Stage-3 runs were zero-failure and ended at a 30-second time cap, with no game over implemented; (3) "Obstacles_Pass" is a
+  translation of the game's obstacle count; (4) the 31 August dates are typing errors for July.
+  Checks: (1) 431 of the 485 rows of the 97 players who never stopped also carry decimal distances; (2) v2.2 ends a run at 200 m or
+  a 30-s cap (fits), v1.0 has no time cap and ends at 400/800/1200 m (does not fit); both builds contain a 3-bump game-over "classic"
+  mode, with zero-failure ticked by default; thesis and Paper 3 currently report the author's earlier account that some players had
+  an earlier version in which a run could end in a game over; (3) in both builds the counter increments on collision (S.hits++), so
+  the game's field counts bumps, not obstacles passed; (4) accepted pending the record; rows for player 30079 on 2–3 Aug also need checking.
