@@ -1,0 +1,52 @@
+SYNTHETIC MANIFEST — SYNTHETIC DEMONSTRATION DATA, generated 2026-09-13 by simulation for pipeline demonstration. NOT study data. NOT evidence.
+Directory: /tmp/claude-0/-home-user-gamification/3d8a50e8-9258-51ce-a7d6-194da50f9a04/scratchpad/s3b/out/synthetic
+Files: 45 + this manifest
+
+FILE                                        BYTES  SHA256
+SYNTHETIC_README.md                          4929  a1eae889a43e1ef7c3743b8452916c576c70cabe2deb817a53e0660c2f1aa9f6
+SYNTHETIC_combined.csv                      10752  b3bcab3608bc7125fcbabeee569f3a01cca9b9e0da15097e8ae0af2191f5b15e
+SYNTHETIC_demo_analysis.md                   4333  1c4e1905612616e22a383ad20fc76a0e05285c3d0ab61d04d79313704167b52c
+SYNTHETIC_generate.py                       22135  ec6231b63f5bd352777d7963eb146537423135180d0df29092b25e8dd8e1f2ab
+SYNTHETIC_return_SYN-P001.txt                3106  e82f2db2f06269084f269590b15f6eb4ffcf42dc994b142835288eb50b854d31
+SYNTHETIC_return_SYN-P002.txt               11803  662311a2614abf5a4a1d648a027b274565d3fe910804772782c9b3f1d72deb74
+SYNTHETIC_return_SYN-P003.txt                6349  45034ac821d134d5abadfa83844806f725e16a5d4c6d28ff69bac1d4096dbb90
+SYNTHETIC_return_SYN-P004.txt                5175  e71f2bae5aa897720160873ef74a8a6e7bbb7b8824642b5c9f1f899d2a437f67
+SYNTHETIC_return_SYN-P005.txt                6127  0468f2a773f89666182d09ae130400f844a3868b673027198afe9553690af9ba
+SYNTHETIC_return_SYN-P006.txt                7234  8bfec2bedcd461d23cc3835862824694c0b51e64d3648f6ccd418ac905d7e278
+SYNTHETIC_return_SYN-P007.txt                4821  8872e5530175e517489ab5c8d89e61d59b874544e21b1fc6a5904d841b78f62d
+SYNTHETIC_return_SYN-P008.txt                1641  8df62b9553798760c44cdf6e11ddf6a3a952262dd609859ef5bf04a83e34defb
+SYNTHETIC_return_SYN-P009.txt                2692  34bf64d90aeecf431b3c940844c59785ed9bd04ae85881f8035dadbbf11c36ac
+SYNTHETIC_return_SYN-P010.txt                6590  5dace933c94804b65600584bca3f2dc22ac6e0d013d4b9d3d659b8695f1c1dd1
+SYNTHETIC_return_SYN-P011.txt                2164  5a4a5280bc024a0d0e4b3810616321d21067b6eef28d3f20f74ad5f7da37da5e
+SYNTHETIC_return_SYN-P012.txt                5751  bb9e01f497fa6cc940cac4396c2fa266767a51b2254e04c80fab4272aa8e0b01
+SYNTHETIC_return_SYN-P013.txt               11188  b8429e0aee230c6b276a2c900c24bf701353c9a7b5daa4406826ac1877297784
+SYNTHETIC_return_SYN-P014.txt                5574  9cbb5024f09c185fd187eb303c4e32cb837221a248dc8a47e84a5f4fd110e67d
+SYNTHETIC_return_SYN-P015.txt                2705  e8d457f361abbd27a197521a7d299741d8bac636dc825684f117d9715e511476
+SYNTHETIC_return_SYN-P016.txt                4996  d94ddcf806bf1441ab8d8e28af1c2f6247cb2134bb0aeaee7510e492dfdd5a4a
+SYNTHETIC_return_SYN-P017.txt                9493  51906266efdae16a1483270afcc67d285fa53e65c365d18e2a5826256031122c
+SYNTHETIC_return_SYN-P018.txt                2515  92a6bc8646041853b2bb3cccbdaf43a67be2dfc4cfe88ec44029b63d19bf0fea
+SYNTHETIC_return_SYN-P019.txt                2685  b42d287dd4c569e111348405d0a11b6153f17401d45bfe62f4d4b2d4a1b58cea
+SYNTHETIC_return_SYN-P020.txt                3276  6ee241df4cbf7afa751a3181d5ba6002804b8bc728fea66f47bcc51872f7a228
+SYNTHETIC_return_SYN-P021.txt                6891  b3bfcde862921b9bc85636972eb63a5452c2b9ced18a6864e290fbb03b164e29
+SYNTHETIC_return_SYN-P022.txt                6478  0d97b7756a4cb3882038b0fcdc118487efea1fb32dc929890cb858dae32b2385
+SYNTHETIC_return_SYN-P023.txt                4956  bccc3ad7434d7f88dfb26a3c4f420429a4e5f4c59de2f704d057868c9cd6155d
+SYNTHETIC_return_SYN-P024.txt                7604  175d437c8494ca8f314cad4459988b28ed0d5eaa254ec76f2248d92c99e393f1
+SYNTHETIC_return_SYN-P025.txt                1960  028b5e8a5a72471960c4c919a9270bd4d6f9f5ecde723cca5e7d32c503bc793c
+SYNTHETIC_return_SYN-P026.txt                7091  23ecf293e792e6644ec8b8abb9c66d27b1ed1c772d793a73dadd12997878fb47
+SYNTHETIC_return_SYN-P027.txt                2716  f399e98c613a23d0bc00d046fd15e56784e2ae6b4316548b8da2f0adc94deae1
+SYNTHETIC_return_SYN-P028.txt                5002  b85c084d33e8d5946780545c79fad5c065f43c971d385991a6ce89f3376e4b84
+SYNTHETIC_return_SYN-P029.txt                5449  40b4b978bac009b51b384dac53e76a506c72d821f5c76263278c9f68794e6a5c
+SYNTHETIC_return_SYN-P030.txt                2177  a3a3161a027173a70d631556e01722ae0a6d1c7f42fb1b0771e8e5bc73a184b4
+SYNTHETIC_return_SYN-P031.txt                2717  cd3765c0e351178b6fbfc2b3ec8ff76fd31b3f1c7eafbe59f2b7bc0a476866fa
+SYNTHETIC_return_SYN-P032.txt                3812  1636c8f3211c78bd0ce73700179bb14c526919b5043881f713313c46d22f6e86
+SYNTHETIC_return_SYN-P033.txt                8192  5361ad0fb3e4d98bdb25cb6dbaa7bc240e0b55182e34ebdeb2ad2c478918b982
+SYNTHETIC_return_SYN-P034.txt                4750  17e73110580560cd22788fa006891f8fe702f7b4d61285e818761b50bf75a98c
+SYNTHETIC_return_SYN-P035.txt                4201  9018fada75153f34a79f1b812e9b932a60338b0ab83f19237c1e598fe1efa5e3
+SYNTHETIC_return_SYN-P036.txt                5294  477c76a62bef9a6b06b804c916310a897ac510834f909d843a7bfc9aad6130e4
+SYNTHETIC_return_SYN-P037.txt                6263  5f77b7c34790a182a74172eaaaf9090f21a9207dcfaccf88f6bb0415a16a794f
+SYNTHETIC_return_SYN-P038.txt                6495  e05893aa6201717dad9f5b10ff0ad56f0e1a11686edd1ac3555676ef5f5d1866
+SYNTHETIC_return_SYN-P039.txt                6133  21271a9ebfc5247e841d09f5dded330747b0c3db80f8e32c78acdfd9b5671819
+SYNTHETIC_return_SYN-P040.txt                2774  ad816b31a94a9b9621bbc980e74ac2f79af0e1806624db1ec0c068c3391c4c19
+SYNTHETIC_verify.py                          4357  feaf3b9468c605fae4e8f3e2775f8238af8a62ac67402ad6925f6acb834055ec
+
+SYNTHETIC_MANIFEST.txt (this file) — checksum excluded by definition

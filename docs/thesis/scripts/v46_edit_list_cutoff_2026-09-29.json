@@ -1,0 +1,429 @@
+[
+ {
+  "locator": "P18",
+  "quote": "returns on record at the 26 September 2026 cut-off are documented",
+  "replacement": "returns received to the close of its clean-run window on 15 October 2026 are documented",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P226",
+  "quote": "Record at the 26 September 2026 Cut-off",
+  "replacement": "Record to the 15 October 2026 Cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1088",
+  "quote": "Record at the 26 September 2026 Cut-off",
+  "replacement": "Record to the 15 October 2026 Cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P314",
+  "quote": "at a stated cut-off of 26 September 2026 (§8.8; Appendix I)",
+  "replacement": "at a stated cut-off of 15 October 2026, the close of its clean-run window (§8.8; Appendix I)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P330",
+  "quote": "at the 26 September 2026 cut-off",
+  "replacement": "to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P332",
+  "quote": "at the 26 September 2026 cut-off",
+  "replacement": "to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P442",
+  "quote": "At the thesis cut-off of 26 September 2026 the record holds one verified return (15 August 2026), five returns received on 15 September 2026 that were excluded as researcher-solicited plays on the 13-August build, no returns from the frozen edition, and a researcher self-test batch",
+  "replacement": "The thesis cut-off is 15 October 2026, the close of the frozen edition's clean-run window. The record holds one verified return (15 August 2026), five returns received on 15 September 2026 that were excluded as researcher-solicited plays on the 13-August build, the clean-run returns from the frozen edition listed in Appendix I (Table I.4), and a researcher self-test batch",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P448",
+  "quote": "stated at the thesis cut-off of 26 September 2026",
+  "replacement": "stated at the thesis cut-off of 15 October 2026",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P450",
+  "quote": "documented at the 26 September 2026 cut-off",
+  "replacement": "documented to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P454",
+  "quote": "documented at the 26 September 2026 cut-off in §8.8",
+  "replacement": "documented to the 15 October 2026 cut-off in §8.8 and Appendix I",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P459",
+  "quote": "reported descriptively at the 26 September 2026 cut-off",
+  "replacement": "reported descriptively to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P544",
+  "quote": "at the 26 September 2026 cut-off that record contains no clean-run returns, so the thresholds' effects",
+  "replacement": "no comparison is computed from the returns in that record and no confirmatory analysis is reported, so the thresholds' effects",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P569",
+  "quote": "at its 26 September 2026 cut-off (Appendix I), with no clean-run returns on record and no confirmatory analysis",
+  "replacement": "to its 15 October 2026 cut-off (Appendix I), with no comparison computed from its returns and no confirmatory analysis",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P593",
+  "quote": "Its record at the 26 September 2026 cut-off",
+  "replacement": "Its record to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P593",
+  "quote": "it contains one verified pre-freeze return and no clean-run returns, so no confirmatory analysis is reported",
+  "replacement": "it contains one verified pre-freeze return and the clean-run returns listed there, from which no comparison is computed, so no confirmatory analysis is reported",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P597",
+  "quote": "an outstanding author record at the 26 September 2026 cut-off and is not reproduced",
+  "replacement": "an outstanding author record and is not reproduced",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P613",
+  "quote": "achieved record at the 26 September 2026 cut-off",
+  "replacement": "record to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P647",
+  "quote": "achieved record at the 26 September 2026 cut-off",
+  "replacement": "record to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P698",
+  "quote": "at the 26 September 2026 cut-off it is reported",
+  "replacement": "to the 15 October 2026 cut-off it is reported",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P786",
+  "quote": "recorded at its 26 September 2026 cut-off",
+  "replacement": "recorded to its 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P792",
+  "quote": "at its 26 September 2026 cut-off",
+  "replacement": "to its 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P815",
+  "quote": "The achieved record is stated at a cut-off of 26 September 2026 and compiled in Appendix I.",
+  "replacement": "The achieved record is stated at a cut-off of 15 October 2026, the close of the clean-run window, and compiled in Appendix I.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P815",
+  "quote": "and all fell in the adaptive arm; and no clean-run return.",
+  "replacement": "and all fell in the adaptive arm; and, from the frozen edition, three clean-run returns received on 29 September 2026 (distributor copy D01; two in the static arm and one in the adaptive arm, all in game-over mode, each a single 30-second session), with any further returns received by 15 October 2026 entered in Appendix I (Table I.4) on the same descriptive terms.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P815",
+  "quote": "Its results form no part of the evidence presented in this thesis; no confirmatory analysis is reported; and no cell is left open for later completion.",
+  "replacement": "Its results form no part of the evidence presented in this thesis, and no confirmatory analysis is reported; by the author's amendment of 29 September 2026 the record is stated at the close of the clean-run window rather than at 26 September 2026.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P826",
+  "quote": "The Stage-3B record at its 26 September 2026 cut-off",
+  "replacement": "The Stage-3B record to its 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P837",
+  "quote": "Its record at the 26 September 2026 cut-off comprises one verified return, five researcher-solicited returns excluded on verification, no clean-run returns, and",
+  "replacement": "Its record to the 15 October 2026 cut-off comprises one verified return, five researcher-solicited returns excluded on verification, the clean-run returns listed in Appendix I, and",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P843",
+  "quote": "at its 26 September 2026 cut-off",
+  "replacement": "to its 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P873",
+  "quote": "(the zero-failure versus game-over factor of the Stage 3B component study had no clean-run returns on record at the 26 September 2026 cut-off; §8.8; Appendix I)",
+  "replacement": "(the Stage 3B component study, whose failure-mode factor crossed zero-failure with game-over, computes no comparison from its returns and reports no confirmatory analysis; §8.8; Appendix I)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P890",
+  "quote": "its returns on record at the 26 September 2026 cut-off do not support a comparison",
+  "replacement": "no comparison is computed from its returns on record to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P903",
+  "quote": "at the 26 September 2026 cut-off",
+  "replacement": "to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1062",
+  "quote": "so the retained logs are the returns on record at the 26 September 2026 cut-off: one verified return (15 August 2026), five returns received 15 September 2026 and excluded on verification, and no clean-run return (Appendix I).",
+  "replacement": "so the retained logs are the returns on record to the 15 October 2026 cut-off: one verified return (15 August 2026), five returns received 15 September 2026 and excluded on verification, and the clean-run returns listed in Appendix I (Table I.4).",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1075",
+  "quote": "record at the 26 September 2026 cut-off",
+  "replacement": "record to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1075",
+  "quote": "the as-received return archive (one verified return, 15 August 2026)",
+  "replacement": "the as-received return archive (one verified return, 15 August 2026; the clean-run returns from 29 September 2026, with SHA-256)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1075",
+  "quote": "and the dated decision record of 26 September 2026.",
+  "replacement": "and the dated decision record of 26 September 2026 with its amendment of 29 September 2026 setting the cut-off at 15 October 2026.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1076",
+  "quote": "had not been deposited at the cut-off (Appendix I.7)",
+  "replacement": "are not yet deposited in full (Appendix I.7)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1090",
+  "quote": "as it stood at a stated cut-off, 26 September 2026.",
+  "replacement": "as it stands at a stated cut-off, 15 October 2026, the close of the frozen edition's clean-run window.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1090",
+  "quote": "took that course.",
+  "replacement": "took that course, and the author's amendment of 29 September 2026 set the cut-off at the close of the clean-run window.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1091",
+  "quote": "the participant returns on record, verified and excluded (I.4)",
+  "replacement": "the participant returns on record, verified, excluded and clean-run (I.4)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1091",
+  "quote": "no arm contrast is computed, and no cell is left open for later completion.",
+  "replacement": "and no arm contrast is computed.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1091",
+  "quote": "The record is stated at the cut-off: the frozen edition's clean-run window (15 September – 15 October 2026) is neither reopened nor extended here, and the thesis makes no provision for returns received after the cut-off; any such return is archived as received and could be reported only as a dated addendum outside the thesis evidence base.",
+  "replacement": "The record is stated at the cut-off of 15 October 2026, which coincides with the close of the frozen edition's clean-run window (15 September – 15 October 2026); the window is not extended, and any return received after it is archived as received and could be reported only as a dated addendum outside the thesis evidence base. The returns listed in this version are those received to 29 September 2026; Table I.4 is completed at the cut-off with any further returns received by 15 October 2026, on the same descriptive terms and without any arm comparison.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1092",
+  "quote": "at the 26 September 2026 cut-off.",
+  "replacement": "to the 15 October 2026 cut-off (returns received to 29 September 2026).",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1100",
+  "quote": "8 August – 26 September 2026",
+  "replacement": "8 August – 29 September 2026",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1103",
+  "quote": "no return stamped FROZEN20260915 is on record at the 26 September cut-off.",
+  "replacement": "the first three returns stamped FROZEN20260915 were received on 29 September 2026; the window and the thesis cut-off close on 15 October 2026.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1105",
+  "quote": "At the cut-off the returns record comprises one verified participant return, five returns received on 15 September 2026 and excluded, and no clean-run return (Table I.4).",
+  "replacement": "To 29 September 2026 the returns record comprises one verified participant return, five returns received on 15 September 2026 and excluded, and three clean-run returns from the frozen edition (Table I.4).",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1105",
+  "quote": "Clean-run returns carrying the FROZEN20260915 stamp: none on record at 26 September 2026 (the returns folder holds only B9V8YA; the most recent commit to either returns folder is dated 15 September 2026 (pending-verification folder; the verified-return folder's last commit is 13 September 2026)).",
+  "replacement": "Clean-run returns carrying the FROZEN20260915 stamp: three, received on 29 September 2026 as CSV exports supplied by the author and archived byte for byte with SHA-256 (codes BVSU69, B7GRDA and BZ323A; all from distributor copy D01, touch input, game-over mode, Chinese interface, age band 45–64). BVSU69 and B7GRDA fell in arm B (static ×0.85) and BZ323A in arm A; each file holds one 30-second session that reached its goal and a complete four-item questionnaire. Content checks pass: each file carries the frozen build stamp and the D01 tag, the state logs match the assigned arm (the static files hold 0.85 throughout; the adaptive file starts at the 0.60 floor and steps to 0.80 under the rules), and the scores reconcile with the frozen scoring formula. The transmittal channel of each file, the D01 distributor, and whether two of the players (consented three minutes apart on the same copy) shared a device or helper are author records not yet on file (I.7); BVSU69 answered the prior-play question yes. As single sessions in two of the four cells, they support no contrast, and their item values are not reported here.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1106",
+  "quote": "on record at 26 September 2026",
+  "replacement": "on record to 29 September 2026, completed at the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1133",
+  "quote": "the one verified field return is a single 30-second run in one cell.",
+  "replacement": "the one verified field return and the three clean-run returns of 29 September 2026 are single 30-second runs.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1138",
+  "quote": "no clarification or amendment is on file at the cut-off.",
+  "replacement": "no clarification or amendment is on file at 29 September 2026.",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1139",
+  "quote": "had not been deposited at the cut-off;",
+  "replacement": "are not yet deposited in full;",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1140",
+  "quote": "Outstanding deposits and author records at the cut-off",
+  "replacement": "Outstanding deposits and author records at 29 September 2026",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "P1140",
+  "quote": "a clean-run log at the cut-off, including a dated statement that no return was received;",
+  "replacement": "a clean-run log at the 15 October 2026 cut-off, stating which distributor copies produced the returns in Table I.4 and how each was transmitted;",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T4R4",
+  "quote": "documented at the 26 September 2026 cut-off (§8.8)",
+  "replacement": "documented to the 15 October 2026 cut-off (§8.8)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T5R8",
+  "quote": "documented as an achieved record at the 26 September 2026 cut-off",
+  "replacement": "documented as an achieved record to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T5R8",
+  "quote": "August–September 2026 (",
+  "replacement": "August–October 2026 (",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T5R8",
+  "quote": "record stated at the thesis cut-off of 26 September 2026)",
+  "replacement": "clean-run window closing at the thesis cut-off of 15 October 2026)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T24R1",
+  "quote": "August–September 2026 (stated at the 26 September 2026 cut-off)",
+  "replacement": "August–October 2026 (stated at the 15 October 2026 cut-off)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T24R1",
+  "quote": "no clean-run returns on record at the 26 September 2026 cut-off;",
+  "replacement": "three clean-run returns from the frozen edition received on 29 September 2026, listed with any later returns to 15 October 2026 in Appendix I;",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T25R9",
+  "quote": "record at the 26 September 2026 cut-off",
+  "replacement": "record to the 15 October 2026 cut-off",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T28R4",
+  "quote": "None on record at 26 Sep 2026 (freeze-record clean-run window 15 Sep–15 Oct 2026, stated at the cut-off and not extended; see I.1)",
+  "replacement": "Three received 29 Sep 2026 (BVSU69, B7GRDA, BZ323A; D01; content checks pass); window 15 Sep–15 Oct 2026 closes at the thesis cut-off; later returns to 15 Oct entered in Table I.4 (I.1, I.4)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T28R4",
+  "quote": "stage3b_returns/ (only B9V8YA); git log",
+  "replacement": "stage3b_returns/ (B9V8YA; three FROZEN returns of 29 Sep with SHA-256); git log",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ },
+ {
+  "locator": "T30R16",
+  "quote": "cut-off; decision note (G.12)",
+  "replacement": "decision note (G.12)",
+  "action": "reframe",
+  "src": "cutoff-15Oct"
+ }
+]

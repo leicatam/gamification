@@ -1,0 +1,55 @@
+【滑雪游戏研究结果 BYXXMT——请原封不动发送给研究员】
+exported_ts,2026-08-13T08:37:34.205Z
+[PARTICIPANT]
+field,value
+build,Alpine_Coordination_Game_v3.0_Stage3B
+device_id,DEV1
+participant_code,BYXXMT
+arm,A
+failure_mode,ZF
+language,zhs
+consent_agreed,yes
+consent_ts,2026-08-13T08:16:02.648Z
+age_band,65-80
+gender,M
+education,degree+
+prior_play,no
+
+[SESSIONS]
+Participant_ID,Session_No,Session_Date,Duration_Min,Distance_m,Coins,Obstacles_Hit,Lives_Lost,Avg_Balance_pct,Max_Speed,AI_DiffMult,Reached_GameOver,Score,Post_FRA_Index,Notes,Arm,Lang
+BYXXMT,1,2026-08-13,0.5,362,14,3,0,89,14.4,0.65,FALSE,552,,zero-failure; cap=30s; end: 30 s complete (goal reached); state changes=8,A,zhs
+BYXXMT,2,2026-08-13,0.5,378,10,2,0,84.8,14.4,0.8,FALSE,528,,zero-failure; cap=30s; end: 30 s complete (goal reached); state changes=7,A,zhs
+BYXXMT,3,2026-08-13,0.5,356,19,2,0,90.3,14.4,0.8,FALSE,596,,zero-failure; cap=30s; end: 30 s complete (goal reached); state changes=7,A,zhs
+
+[STATE_CHANGES]
+Session_No,t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src
+1,0,0,0.6,0.6,0,0,0,100,"run start — arm A (adaptive, gentle floor)",init
+1,6,0.1,0.6,0.6,65,1,0,100,avoid rate 100% in band → hold,rules
+1,12,0.2,0.6,0.7,130,3,0,100,avoid rate 100% > 80% → step up,rules
+1,18,0.3,0.7,0.8,205,6,0,100,avoid rate 100% > 80% → step up,rules
+1,21.8,0.36,0.8,0.8,260,10,1,95.5,"bump → cleared 0 obstacle(s), density ×0.75 (speed unchanged)",bump
+1,23.3,0.39,0.8,0.8,281,11,2,91.7,"bump → cleared 3 obstacle(s), density ×0.56 (speed unchanged)",bump
+1,23.5,0.39,0.8,0.8,284,12,3,88.5,"bump → cleared 0 obstacle(s), density ×0.42 (speed unchanged)",bump
+1,24,0.4,0.8,0.65,292,12,3,88.5,avoid rate 25% < 40% → ease off,rules
+2,0,0,0.6,0.6,0,0,0,100,"run start — arm A (adaptive, gentle floor)",init
+2,6,0.1,0.6,0.6,65,1,0,50,avoid rate 100% in band → hold,rules
+2,12,0.2,0.6,0.7,130,2,0,100,avoid rate 100% > 80% → step up,rules
+2,12.8,0.21,0.7,0.7,140,3,1,87.5,"bump → cleared 0 obstacle(s), density ×0.75 (speed unchanged)",bump
+2,18,0.3,0.7,0.8,206,4,1,91,avoid rate 83% > 80% → step up,rules
+2,18.7,0.31,0.8,0.8,215,4,2,86.7,"bump → cleared 0 obstacle(s), density ×0.56 (speed unchanged)",bump
+2,24,0.4,0.8,0.8,292,6,2,89.7,avoid rate 75% in band → hold,rules
+3,0,0,0.6,0.6,0,0,0,100,"run start — arm A (adaptive, gentle floor)",init
+3,6,0.1,0.6,0.6,65,0,0,50,avoid rate 100% in band → hold,rules
+3,12,0.2,0.6,0.6,130,4,0,100,avoid rate 100% in band → hold,rules
+3,18,0.3,0.6,0.7,195,8,0,100,avoid rate 100% > 80% → step up,rules
+3,24,0.4,0.7,0.8,270,12,0,100,avoid rate 100% > 80% → step up,rules
+3,25.6,0.43,0.8,0.8,293,14,1,95,"bump → cleared 0 obstacle(s), density ×0.75 (speed unchanged)",bump
+3,25.7,0.43,0.8,0.8,294,14,2,90.9,"bump → cleared 1 obstacle(s), density ×0.56 (speed unchanged)",bump
+
+[QUESTIONNAIRE]
+item,response (1 strongly disagree - 5 strongly agree)
+D1_coordination_challenge,4
+D2_play_regularly,4
+F1_matched_ability,3
+F2_progress_motivated,3
+answered_ts,2026-08-13T08:18:31.416Z
