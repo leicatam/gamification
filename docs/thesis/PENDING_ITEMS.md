@@ -1692,3 +1692,8 @@ same ID scheme and sheet lineage as the derived-from-synthetic file; reproduces 
 does not hold.** Archived under data_entry/SYNTHETIC_copies_received/ as TEST_INPUTS_NOT_STUDY_DATA_... with README entry. Not evidence; no
 thesis or Paper 3 change. Still needed for Stage 3A: original records (handwritten sheets, returned exports, e-mails) scanned or saved as
 received, with one source reference per row.
+
+**2 Oct 2026 — Stage3_04 workbook closed as non-evidence:** author confirms distances and obstacles-passed were calculated, the RA no
+longer holds the game records, and the build per player is unknown. No thesis/Paper 3 change. OPEN DECISION for the author: 30 Sep
+account (game over possible in an earlier version; dropout = stop after failure or game over) vs 2 Oct account (no game over; all runs
+zero-failure). Affects thesis §6.4 (P621) and Paper 3 Game Build (P26).

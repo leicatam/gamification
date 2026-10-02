@@ -69,3 +69,9 @@ Never evidence. Kept only so the file is recognised if it resurfaces.
   mode, with zero-failure ticked by default; thesis and Paper 3 currently report the author's earlier account that some players had
   an earlier version in which a run could end in a game over; (3) in both builds the counter increments on collision (S.hits++), so
   the game's field counts bumps, not obstacles passed; (4) accepted pending the record; rows for player 30079 on 2–3 Aug also need checking.
+- Author's account, 2 Oct 2026 (later): distances and obstacles-passed values were calculated, not recorded; the research assistant
+  no longer holds the game records; he cannot tell which build (v1.0 or v2.2) any player used.
+  Conclusion: the telemetry columns are reconstructions, not observations, and cannot be traced to any retained record. The workbook
+  stays non-evidence. Thesis and Paper 3 continue to report Stage 3A from the aggregate summary only (as in V59–V61 / R16).
+  Open: the author's 30 Sep account (dropout = stopping after "failure or game over before zero-failure implemented"; some players had
+  the first version) and the 2 Oct account (no game over; all runs zero-failure) conflict; thesis §6.4 and Paper 3 Game Build follow 30 Sep.
