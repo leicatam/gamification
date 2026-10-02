@@ -1703,3 +1703,9 @@ values disagree with the Stage3_04 workbook made from the same sources the day b
 with thesis §6.4 / Paper 3 P26 ("most played the archived build", i.e. v2.2) and with the 30-s cap account (v1.0 has no time cap).
 OPEN: (a) which build most players used; (b) game over (30 Sep vs 2 Oct accounts); (c) whether returned exports / e-mails are in fact
 retained anywhere — thesis and Paper 3 (P33, P89) say they are, but the RA no longer holds game records.
+
+**2 Oct 2026 — V68 (examiner second pass) and Paper 3 R21.** Stage-3B record closed at 30 Sep 2026 (DECISION_2026-10-02 note, G.12);
+"older adults" throughout the body; Figure 5.6 → Appendix B Figure B.1; publications page added; G.0/G.0A entered as tables; G.14 added;
+Stage-1 provenance, S2-P015 flags, joint count, Stage-2 operational-status wording, apparatus wording, ethics status wording, §8.7
+Stage-2 disclosure, §9.7 EngD standard, lists rebuilt from the PDF, alt text, abbreviations. Tracker: submission/Examiner_Review_V66_Response_Tracker.md.
+Still open: ethics determinations (T10 via Prof. Cheung), member-checks (pseudonymise 9 Oct if none), Appendix C scans, G.10 consent, title.

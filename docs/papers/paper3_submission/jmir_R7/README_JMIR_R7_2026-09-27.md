@@ -145,3 +145,7 @@ Methods participants and game build, Limitations). Matches thesis V65.
 
 Author: distributors were separate Hong Kong groups without prior knowledge of the gamified FRA (R19 'knew the study purpose' withdrawn);
 earlier-version limitations led to the archived build and main play was postponed to late July 2026 (Game Build). Matches thesis V66.
+
+## R21 (2 October 2026)
+
+Discussion: the Stage-3B record reported is closed at 30 September 2026 (author's decision of 2 October 2026), with the clean-run window still running to 15 October 2026. Matches thesis V68.
