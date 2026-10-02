@@ -134,3 +134,9 @@ Ethics (consent documentation) and Data Availability changed; "returned exports 
 Methods (classifications): the author's clarified rules — dropout = stop after a failure (observed by an assistant for older players; otherwise
 inferred from reported results or no further play after the first game, so some dropouts have no recorded failure); return = played again on
 either build before the July 2026 compilation, duration not counted; returns arrived over weeks because export was optional. Matches thesis V63.
+
+## R19 (2 October 2026)
+
+Author: distributors received both builds and passed them on; which build each player used was not recorded ("most played this archived
+build" withdrawn; archived build created 13 July 2026); the 20 distributors' own records are among the 120 and they were briefed (Abstract,
+Methods participants and game build, Limitations). Matches thesis V65.
