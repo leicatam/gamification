@@ -128,3 +128,9 @@ Future Evaluation: one addition, at the author's suggestion, matching thesis V60
 Stage 3A returns not retained (author, 2 Oct 2026): no participant names or emails collected; first-build results and stopping hand-recorded
 by assistants not always beside the player; returns compiled into the July 2026 summary and not kept as separate records. Methods (records),
 Ethics (consent documentation) and Data Availability changed; "returned exports ... retained" and "compilation pending" withdrawn. Matches thesis V62.
+
+## R18 (2 October 2026)
+
+Methods (classifications): the author's clarified rules — dropout = stop after a failure (observed by an assistant for older players; otherwise
+inferred from reported results or no further play after the first game, so some dropouts have no recorded failure); return = played again on
+either build before the July 2026 compilation, duration not counted; returns arrived over weeks because export was optional. Matches thesis V63.
