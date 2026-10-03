@@ -98,3 +98,13 @@ Moved on 3 October 2026 (evening) to `../../evidence/stage2_centre_register/` on
 ## Stage-2 participant record form S2-001 (image received 3 October 2026) — WITHDRAWN BY THE AUTHOR
 
 `WITHDRAWN_BY_AUTHOR_wrong_form_Stage2_record_form_S2-001_as_received_2026-10-03.jpg`. A printed template (form FRA-S2-02, page 1 of 30) filled by hand, signed and dated. The author withdrew it the same evening: "This is the wrong form. The first insert. Made mistakes." Not evidence; kept only so the same image is recognised if it resurfaces.
+
+## Four Stage-2 "participant individual record form" images (received 3 October 2026) — DIGITALLY PRODUCED; NOT EVIDENCE
+
+Files: `NOT_EVIDENCE_digitally_produced_Stage2_record_form_S2-0025_…jpg`, `…S2-0022_…jpg`, `…S2-001_date_edited_…jpg`, and the earlier `WITHDRAWN_BY_AUTHOR_wrong_form_Stage2_record_form_S2-001_…jpg`; analysis image `ANALYSIS_S2-001_two_versions_pixel_difference.png`.
+
+All four are 595 × 841-pixel renders (A4 at 72 dpi), i.e. pages exported from a document, not photographs or scans of paper. The two S2-001 images are identical to the pixel in every handwritten stroke — ID, sex, age, session date, cycles, indices, symptom text, self-report, tick, two-line note, verified tick, signature — and differ only in the date beside the signature (2/8/25 in the version the author withdrew as "the wrong form … the first insert … made mistakes"; 7/8/25 in the version sent afterwards) plus compression noise. A person re-writing a paper form cannot reproduce identical strokes; the date was edited in a digital document. The 'handwriting' is therefore a digital layer (a handwriting typeface or stylus input), consistent with the author's statement about the typed register page ("she typed it in computer and using the handwriting fonts").
+
+Content agrees with the Stage-2 ID register row for row (S2-P001, S2-P022, S2-P025), with added session dates (5 Aug, 11 Jul, 6 Aug 2025), signature dates (7/8/25, 12/7/25, 31/7/25 — the last preceding its session date) and free-text notes that appear in no earlier record.
+
+Status: not evidence of a 2025 record. Never cited. If paper originals exist, photographs of the actual sheets (showing the paper, not an exported page) are the record to deposit; absent them, the thesis's account stands as in V75 (no formal per-participant record kept; item G.16 a later typed transcription).
