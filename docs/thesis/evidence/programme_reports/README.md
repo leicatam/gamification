@@ -1,0 +1,3 @@
+# Programme progress report, April 2024 — as received 3 October 2026
+
+`Gamification_progress_report_2024-04-28_as_received_2026-10-03.docx` (Word; author "TAM, Sidney [Student]", created 28 Apr 2024) and its PDF (created 28 Apr 2024, modified 18 Oct 2024). Title "Leveraging Gamification As A Proactive Approach of Continuous Improvement and Innovation Enhancement": an early programme report on GPT-enabled gamification, with illustrative Python code samples (a skincare-treatment game example), referring to "a previous Fall Risk Assessment (FRA) study". A dated record of the programme's 2024 design direction; it contains no study data and no skiing-game code, and nothing in the thesis rests on it. Listed in the Appendix G.0 manifest for completeness.

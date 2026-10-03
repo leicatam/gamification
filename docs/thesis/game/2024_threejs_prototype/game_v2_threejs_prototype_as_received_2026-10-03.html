@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑雪游戏能力评估与难度调整</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .difficulty-bar {
+            background-color: #ecf0f1;
+            height: 20px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .difficulty-level {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        .easy { background-color: #2ecc71; }
+        .medium { background-color: #f1c40f; }
+        .hard { background-color: #e74c3c; }
+        .reason {
+            background-color: #eef2f7;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        #difficultyAdjustment, #gameContainer {
+            display: none;
+        }
+        #gameContainer {
+            width: 100%;
+            height: 400px;
+            background-color: #87CEEB;
+            position: relative;
+            overflow: hidden;
+        }
+        #player {
+            width: 20px;
+            height: 40px;
+            background-color: #FF0000;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+        }
+        .obstacle {
+            width: 20px;
+            height: 20px;
+            background-color: #008000;
+            position: absolute;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+        canvas {
+            display: block;
+        }
+        #startScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+        #startButton {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        #gameScreen {
+            display: none;
+        }
+        #scoreDisplay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .analysis-container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .analysis-section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .analysis-section h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .performance-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .stat-item {
+            background: #fff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+        }
+
+        .skill-analysis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .skill-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .skill-title {
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+
+        .training-plan {
+            background: #f1f8ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .training-plan h5 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .training-steps {
+            padding-left: 20px;
+        }
+
+        .training-steps li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .performance-level {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .level-expert {
+            background: #27ae60;
+        }
+
+        .level-advanced {
+            background: #3498db;
+        }
+
+        .level-intermediate {
+            background: #f1c40f;
+        }
+
+        .level-beginner {
+            background: #e74c3c;
+        }
+    </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+</head>
+<body>
+    <div class="container" id="assessmentForm">
+        <h1>滑雪游戏能力评估</h1>
+        <form id="userAssessment">
+            <label for="age">年龄：</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">性别：</label>
+            <select id="gender" name="gender" required>
+                <option value="male">男</option>
+                <option value="female">女</option>
+                <option value="other">其他</option>
+            </select>
+
+            <label for="singleLegStand">单腿站立时间（秒）：</label>
+            <input type="number" id="singleLegStand" name="singleLegStand" required>
+
+            <label for="sitToStand">30秒内起立-坐下次数：</label>
+            <input type="number" id="sitToStand" name="sitToStand" required>
+
+            <label for="stepSpeed">步速（米/秒）：</label>
+            <input type="number" id="stepSpeed" name="stepSpeed" step="0.1" required>
+
+            <label for="reactionTime">反应时间（毫秒）：</label>
+            <input type="number" id="reactionTime" name="reactionTime" required>
+
+            <h3>步态稳定性评分（1-10分，10分最稳定）：</h3>
+            <label for="flatGround">平地</label>
+            <input type="number" id="flatGround" name="flatGround" min="1" max="10" required>
+
+            <label for="incline">斜坡：</label>
+            <input type="number" id="incline" name="incline" min="1" max="10" required>
+
+            <label for="grass">草地：</label>
+            <input type="number" id="grass" name="grass" min="1" max="10" required>
+
+            <button type="button" id="submitAssessment">提交评估</button>
+        </form>
+    </div>
+
+    <div class="container" id="difficultyAdjustment">
+        <h1>游戏难度调整结果</h1>
+        <p>根据您的评估结果，我们为您定制了以下游戏难度设置：</p>
+        
+        <h2>整体难度</h2>
+        <div class="difficulty-bar">
+            <div id="overallDifficulty" class="difficulty-level" style="width: 60%;"></div>
+        </div>
+        <p>难度级别：<span id="overallDifficultyText">中等</span></p>
+        
+        <div class="reason" id="overallReason"></div>
+        
+        <h2>具体调整项目</h2>
+        
+        <h3>1. 障碍物数量</h3>
+        <div class="difficulty-bar">
+            <div id="obstacleDifficulty" class="difficulty-level" style="width: 40%;"></div>
+        </div>
+        <p>难度级别：<span id="obstacleDifficultyText">较低</span></p>
+        <div class="reason" id="obstacleReason"></div>
+        
+        <h3>2. 滑雪速度</h3>
+        <div class="difficulty-bar">
+            <div id="speedDifficulty" class="difficulty-level" style="width: 70%;"></div>
+        </div>
+        <p>难度级别：<span id="speedDifficultyText">中高</span></p>
+        <div class="reason" id="speedReason"></div>
+        
+        <h3>3. 平衡挑战</h3>
+        <div class="difficulty-bar">
+            <div id="balanceDifficulty" class="difficulty-level" style="width: 50%;"></div>
+        </div>
+        <p>难度级别：<span id="balanceDifficultyText">中等</span></p>
+        <div class="reason" id="balanceReason"></div>
+        
+        <button onclick="startGame()">开始游戏</button>
+    </div>
+
+    <div id="gameContainer">
+        <div id="player"></div>
+        <div id="score">得分: 0</div>
+    </div>
+    <div id="gameScreen">
+        <div id="scoreDisplay">分数: 0</div>
+    </div>
+    <div class="analysis-area hidden" id="analysisArea">
+        <h2>分析结果</h2>
+        <div class="analysis-section">
+            <h3>游戏表现分析</h3>
+            <p id="gameAnalysis"></p>
+        </div>
+        <div class="analysis-section">
+            <h3>个人信息分析</h3>
+            <p id="personalAnalysis"></p>
+        </div>
+        <div class="analysis-section">
+            <h3>游戏建议</h3>
+            <p id="gameSuggestions"></p>
+        </div>
+        <div class="analysis-section">
+            <h3>康复建议</h3>
+            <p id="rehabSuggestions"></p>
+        </div>
+        <div class="analysis-section">
+            <h3>需要加强的身体部位</h3>
+            <p id="bodyParts"></p>
+        </div>
+        <button class="button" id="restartButton">重新开始</button>
+    </div>
+    <script>
+        // 使用全局变量来存储用户息和游戏设置
+        let globalUserInfo = null;
+        let gameSettings = {
+            obstacleFrequency: 30000,
+            gameSpeed: 2,
+            balanceChallenge: 0.3
+        };
+        let gameLoop;
+        let score = 0;
+        let playerPosition = 50;
+        document.getElementById('analysisArea').style.display = 'none';
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitButton = document.getElementById('submitAssessment');
+            submitButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                globalUserInfo = {
+                    age: document.getElementById('age').value,
+                    gender: document.getElementById('gender').value,
+                    singleLegStand: document.getElementById('singleLegStand').value,
+                    sitToStand: document.getElementById('sitToStand').value,
+                    stepSpeed: document.getElementById('stepSpeed').value,
+                    reactionTime: document.getElementById('reactionTime').value,
+                    stability: {
+                        flatGround: document.getElementById('flatGround').value,
+                        incline: document.getElementById('incline').value,
+                        grass: document.getElementById('grass').value
+                    }
+                };
+                
+                document.getElementById('assessmentForm').style.display = 'none';
+                document.getElementById('difficultyAdjustment').style.display = 'block';
+                
+                adjustDifficulty(globalUserInfo);
+            });
+        });
+
+        function adjustDifficulty(userInfo) {
+            let overallDifficulty = 0;
+            
+            // 障碍物数量难度
+            let obstacleDifficulty = calculateObstacleDifficulty(userInfo);
+            document.getElementById('obstacleDifficulty').style.width = obstacleDifficulty + '%';
+            document.getElementById('obstacleDifficultyText').textContent = getDifficultyText(obstacleDifficulty);
+            document.getElementById('obstacleReason').textContent = getObstacleReason(userInfo);
+            gameSettings.obstacleFrequency = 30000 - obstacleDifficulty * 20; // 根据难度调整障碍物出现频率
+            
+            // 滑雪速度难度
+            let speedDifficulty = calculateSpeedDifficulty(userInfo);
+            document.getElementById('speedDifficulty').style.width = speedDifficulty + '%';
+            document.getElementById('speedDifficultyText').textContent = getDifficultyText(speedDifficulty);
+            document.getElementById('speedReason').textContent = getSpeedReason(userInfo);
+            gameSettings.gameSpeed = 3 + speedDifficulty / 20; // 根据难度调整游戏速度
+            
+            // 平衡挑战难度
+            let balanceDifficulty = calculateBalanceDifficulty(userInfo);
+            document.getElementById('balanceDifficulty').style.width = balanceDifficulty + '%';
+            document.getElementById('balanceDifficultyText').textContent = getDifficultyText(balanceDifficulty);
+            document.getElementById('balanceReason').textContent = getBalanceReason(userInfo);
+            gameSettings.balanceChallenge = balanceDifficulty / 100; // 根据难度调整平衡挑战
+            
+            // 计算整体难度
+            overallDifficulty = (obstacleDifficulty + speedDifficulty + balanceDifficulty) / 3;
+            document.getElementById('overallDifficulty').style.width = overallDifficulty + '%';
+            document.getElementById('overallDifficultyText').textContent = getDifficultyText(overallDifficulty);
+            document.getElementById('overallReason').textContent = getOverallReason(userInfo);
+            
+            setDifficultyColor('overallDifficulty', overallDifficulty);
+            setDifficultyColor('obstacleDifficulty', obstacleDifficulty);
+            setDifficultyColor('speedDifficulty', speedDifficulty);
+            setDifficultyColor('balanceDifficulty', balanceDifficulty);
+        }
+
+        function calculateObstacleDifficulty(userInfo) {
+            let difficulty = 50 - (userInfo.singleLegStand / 2) + (userInfo.sitToStand / 2);
+            return Math.max(0, Math.min(100, difficulty));
+        }
+
+        function calculateSpeedDifficulty(userInfo) {
+            let difficulty = 50 + (userInfo.stepSpeed * 10) - (userInfo.reactionTime / 20);
+            return Math.max(0, Math.min(100, difficulty));
+        }
+
+        function calculateBalanceDifficulty(userInfo) {
+            let avgStability = (parseInt(userInfo.stability.flatGround) + parseInt(userInfo.stability.incline) + parseInt(userInfo.stability.grass)) / 3;
+            let difficulty = 100 - avgStability * 10;
+            return Math.max(0, Math.min(100, difficulty));
+        }
+
+        function getDifficultyText(difficulty) {
+            if (difficulty < 30) return "低";
+            if (difficulty < 70) return "中等";
+            return "高";
+        }
+
+        function setDifficultyColor(elementId, difficulty) {
+            const element = document.getElementById(elementId);
+            if (difficulty < 30) element.className = "difficulty-level easy";
+            else if (difficulty < 70) element.className = "difficulty-level medium";
+            else element.className = "difficulty-level hard";
+        }
+
+        function getObstacleReason(userInfo) {
+            return `根据您的单腿站立时间（${userInfo.singleLegStand}秒）和起立-坐下次数（${userInfo.sitToStand}次），我们调整了障碍物的数量和分布。这将帮助您逐步提高下肢力量和协调能力。`;
+        }
+
+        function getSpeedReason(userInfo) {
+            return `考虑到您的步速（${userInfo.stepSpeed}米/秒）和反应时间（${userInfo.reactionTime}毫秒），我们相应地调整了滑雪速度。这将帮您在安全的同时，步提高反应速度和协调能力。`;
+        }
+
+        function getBalanceReason(userInfo) {
+            return `基于您在不同地形上的步态稳定性表现，我们调整了游戏中的平衡挑战难度。这将帮助您在游戏过程中逐步提高平衡能力。`;
+        }
+
+        function getOverallReason(userInfo) {
+            return `综合考虑您的年龄（${userInfo.age}岁）、性别和各项身体指标，我们为您设置了适中的整体难度。随着您的进步，游戏难度将会逐步提高。`;
+        }
+
+        // 添加游戏数据收对象
+        let gameStats = {
+            startTime: 0,
+            endTime: 0,
+            coinsCollected: 0,
+            obstaclesAvoided: 0,
+            balanceChanges: 0,
+            distanceTraveled: 0,
+            averageSpeed: 0,
+            reactionTimes: [], // 存储反应时间数据
+            movementPatterns: [] // 存储移动模式数据
+        };
+
+        // 修改游戏开始函数
+        function startGame() {
+            document.getElementById('difficultyAdjustment').style.display = 'none';
+            document.getElementById('gameScreen').style.display = 'block';
+            const bodyElement = document.body;
+
+        // 修改 <body> 元素的 margin 和 padding 值
+        bodyElement.style.margin = '0';
+        bodyElement.style.padding = '0';
+            score = 0;
+            updateScore();
+            gameStats.startTime = Date.now();
+            init();
+        }
+
+        function updateGame() {
+            moveObstacles();
+            createObstacle();
+            checkCollision();
+            updateScore();
+        }
+
+        function movePlayer(e) {
+            if (e.key === 'ArrowLeft') {
+                playerPosition = Math.max(0, playerPosition - 5);
+            } else if (e.key === 'ArrowRight') {
+                playerPosition = Math.min(100, playerPosition + 5);
+            }
+            document.getElementById('player').style.left = playerPosition + '%';
+        }
+
+        function createObstacle() {
+            if (Math.random() < 0.02) {
+                const obstacle = document.createElement('div');
+                obstacle.className = 'obstacle';
+                obstacle.style.left = Math.random() * 100 + '%';
+                obstacle.style.top = '-20px';
+                document.getElementById('gameContainer').appendChild(obstacle);
+            }
+        }
+
+        function moveObstacles() {
+            const obstacles = document.getElementsByClassName('obstacle');
+            for (let obstacle of obstacles) {
+                const top = parseInt(obstacle.style.top) || 0;
+                if (top > 400) {
+                    obstacle.remove();
+                } else {
+                    obstacle.style.top = (top + gameSettings.gameSpeed) + 'px';
+                }
+            }
+        }
+
+        function checkCollision() {
+            const player = document.getElementById('player');
+            const obstacles = document.getElementsByClassName('obstacle');
+            const playerRect = player.getBoundingClientRect();
+
+            for (let obstacle of obstacles) {
+                const obstacleRect = obstacle.getBoundingClientRect();
+                if (
+                    playerRect.left < obstacleRect.right &&
+                    playerRect.right > obstacleRect.left &&
+                    playerRect.top < obstacleRect.bottom &&
+                    playerRect.bottom > obstacleRect.top
+                ) {
+                    gameStats.endTime = Date.now();
+                    endGame();
+                    return;
+                }
+            }
+            score++;
+        }
+
+        function updateScore() {
+            // 更新游戏界面上的分数显示
+            const scoreElement = document.getElementById('score');
+            if (scoreElement) {
+                scoreElement.textContent = '得分: ' + score;
+            }
+            
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            if (scoreDisplay) {
+                scoreDisplay.textContent = '分数: ' + score;
+            }
+            
+            // 每次更新分数时也更新游戏统计
+            if (gameStats) {
+                gameStats.totalScore = score;
+            }
+            console.log('分数已更新:', score); // 添加调试日志
+        }
+
+        let scene, camera, renderer;
+        let skier, mixer, clock = new THREE.Clock();
+        let obstacles = [], coins = [];
+        let world, skierBody, groundBody;
+        let movingLeft = false, movingRight = false;
+        let targetRotationY = 0, targetRotationZ = 0;
+
+        // 添加全局变量
+        let skierSize = new THREE.Vector3(); // 用于存储滑雪者尺寸
+
+        function init() {
+            // 创建场景
+            scene = new THREE.Scene();
+
+            // 创建
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 2, 5);
+            camera.lookAt(0, 1, 0);
+
+            // 创建渲染器
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // 预加载资源
+            const textures = preloadAssets();
+            
+            // 创建雪道（只创建一次）
+            const slopeGeometry = new THREE.PlaneGeometry(10, 100);
+            const slopeMaterial = new THREE.MeshStandardMaterial({ 
+                map: textures.snow,
+                normalMap: textures.snowNormal,
+                roughness: 0.8,
+                metalness: 0.1
+            });
+            const slope = new THREE.Mesh(slopeGeometry, slopeMaterial);
+            slope.rotation.x = -Math.PI / 2;
+            slope.position.y = 0;
+            scene.add(slope);
+
+            // 设置环境贴图
+            scene.environment = textures.envMap;
+            scene.background = textures.skybox;
+
+            // 添加光源
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(5, 10, 7.5);
+            directionalLight.castShadow = true;
+            scene.add(directionalLight);
+
+            // 初始化物理世界
+            world = new CANNON.World();
+            world.gravity.set(0, -9.82, 0);
+            world.broadphase = new CANNON.NaiveBroadphase();
+            world.solver.iterations = 10;
+            world.defaultContactMaterial.friction = 0.3;
+
+            // 创建雪道物理体（现在使用全局变量）
+            const groundShape = new CANNON.Plane();
+            groundBody = new CANNON.Body({
+                mass: 0,
+                material: new CANNON.Material({
+                    friction: 0.1,  // 降摩擦力
+                    restitution: 0.0
+                }),
+                type: CANNON.Body.STATIC
+            });
+            groundBody.addShape(groundShape);
+            groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
+            world.addBody(groundBody);
+
+            // 创建加载管理器
+            const loadingManager = new THREE.LoadingManager();
+            loadingManager.onLoad = function() {
+                console.log('所有资源加载完成');
+                startGameLoop();
+            };
+            
+            loadingManager.onProgress = function(url, loaded, total) {
+                console.log(`加载进度: ${(loaded/total*100).toFixed(2)}%`);
+            };
+            
+            loadingManager.onError = function(url) {
+                console.error('加载出错:', url);
+            };
+
+            // 使用相同的加载管理器加载模型
+            const modelLoader = new THREE.GLTFLoader(loadingManager);
+            
+            // 初始化模型存储对象
+            const models = {};
+
+            // 创建加载队列
+            const modelQueue = [
+                {
+                    name: 'skier',
+                    path: 'http://47.106.251.186:8000/skier.glb',
+                    onLoad: (gltf) => {
+                        skier = gltf.scene;
+                        setupSkier(skier);
+                    }
+                },
+                {
+                    name: 'tree',
+                    path: 'http://47.106.251.186:8000/ec5dca2353c4_8201cfc69994__Fallen_pine_tree_c.glb',
+                    onLoad: (gltf) => {
+                        models.tree = gltf.scene;
+                        createObstacles('tree', models.tree);
+                    }
+                },
+                {
+                    name: 'rock',
+                    path: 'http://47.106.251.186:8000/afe6da7894a9_debcdff537dc_Snow_covered_boulde.glb',
+                    onLoad: (gltf) => {
+                        models.rock = gltf.scene;
+                        createObstacles('rock', models.rock);
+                    }
+                }
+            ];
+
+            // 加载所有模型
+            modelQueue.forEach(model => {
+                modelLoader.load(
+                    model.path, 
+                    (gltf) => {
+                        console.log(`成功加载模型: ${model.name}`);
+                        models[model.name] = gltf.scene;
+                        model.onLoad(gltf);
+                    },
+                    (xhr) => {
+                        console.log(`${model.name} ${(xhr.loaded / xhr.total * 100)}% loaded`);
+                    },
+                    (error) => {
+                        console.error(`加载模型 ${model.name} 时发生错误:`, error);
+                    }
+                );
+            });
+
+            // 监听键盘事件
+            window.addEventListener('keydown', onKeyDown);
+            window.addEventListener('keyup', onKeyUp);
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        // 修改 preloadAssets 函数，添加更多游戏所需的纹理
+        function preloadAssets() {
+            const textureLoader = new THREE.TextureLoader(loadingManager);
+            
+            const textures = {
+                // 雪地纹理
+                snow: textureLoader.load('http://47.106.251.186:8000/surface.jpeg', undefined, undefined, (error) => {
+                    console.error('加载雪地纹理失败:', error);
+                }),
+                
+                // 雪地法线贴图
+                snowNormal: textureLoader.load('http://47.106.251.186:8000/snowNormal.jpeg', undefined, undefined, (error) => {
+                    console.error('加载雪地法线贴图失败:', error);
+                }),
+                
+                // 天空盒纹理
+                skybox: textureLoader.load('http://47.106.251.186:8000/sky_box.jpeg', undefined, undefined, (error) => {
+                    console.error('加载天空盒纹理失败:', error);
+                }),
+                
+                // 环境贴图
+                envMap: textureLoader.load('http://47.106.251.186:8000/sky_box.jpeg', undefined, undefined, (error) => {
+                    console.error('加载环境贴图失败:', error);
+                }),
+                
+                // 雪花粒子纹理
+                snowflake: textureLoader.load('http://47.106.251.186:8000/snowflake.png', undefined, undefined, (error) => {
+                    console.error('加载雪花纹理失败:', error);
+                })
+            };
+            
+            // 设置纹理参数
+            Object.values(textures).forEach(texture => {
+                if (texture) {
+                    texture.encoding = THREE.sRGBEncoding;
+                    texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+                    texture.wrapS = THREE.RepeatWrapping;
+                    texture.wrapT = THREE.RepeatWrapping;
+                }
+            });
+            
+            // 特别设置雪地纹理的重复
+            if (textures.snow) {
+                textures.snow.repeat.set(4, 40);
+            }
+            
+            return textures;
+        }
+
+        // 添加游戏循环启动函数
+        function startGameLoop() {
+            console.log('开始游戏循环');
+            createCoins(); // 创建金币
+            animate();
+        }
+
+        // 设置滑雪者模型的函数
+        function setupSkier(skierModel) {
+            if (!groundBody) {
+                console.error('groundBody not initialized');
+                return;
+            }
+
+            skierModel.scale.set(0.3, 0.3, 0.3);
+            const box = new THREE.Box3().setFromObject(skierModel);
+            skierSize.copy(box.getSize(new THREE.Vector3())); 
+            
+            skierModel.position.set(0, skierSize.y / 2-0.1, 0);
+            skierModel.rotation.y = Math.PI;
+            scene.add(skierModel);
+
+            // 修改滑雪者的物理体设置
+            skierBody = new CANNON.Body({
+                mass: 1,
+                material: new CANNON.Material({
+                    friction: 0.1,
+                    restitution: 0.0
+                }),
+                fixedRotation: true,
+                linearDamping: 0.1,
+                type: CANNON.Body.DYNAMIC
+            });
+            skierBody.addShape(new CANNON.Box(new CANNON.Vec3(skierSize.x / 4, skierSize.y / 2-1, skierSize.z / 4)));
+            skierBody.position.copy(skierModel.position);
+            
+            // 移除 LockConstraint，改用距离约束，只限制Y轴和Z轴的移动
+            if (groundBody) {
+                const distanceConstraint = new CANNON.DistanceConstraint(
+                    skierBody, 
+                    groundBody, 
+                    skierSize.y / 2
+                );
+              //  world.addConstraint(distanceConstraint);
+                
+                // 添加一个约束来限制Z轴移动
+                const zAxisConstraint = new CANNON.PointToPointConstraint(
+                    skierBody,
+                    new CANNON.Vec3(0, 0, 0),
+                    groundBody,
+                    new CANNON.Vec3(0, 0, skierBody.position.z)
+                );
+              //  world.addConstraint(zAxisConstraint);
+            }
+            
+            world.addBody(skierBody);
+            mixer = new THREE.AnimationMixer(skierModel);
+        }
+
+        // 修改障碍物创建函数增大障碍物尺寸
+        function createObstacles(type, model) {
+            if (!model) {
+                console.error(`模型 ${type} 未加载`);
+                return;
+            }
+
+            const obstacleCount = 1;
+            for (let i = 0; i < obstacleCount; i++) {
+                try {
+                    const obstacle = model.clone();
+                    
+                    // 增加初始距离，使障碍物出现得更远
+                    obstacle.position.x = Math.random() * 6 - 3;
+                    obstacle.position.z = Math.random() * -100 - 20;
+                    obstacle.position.y = 0;
+                    
+                    // 随机旋转
+                    obstacle.rotation.y = Math.random() * Math.PI * 2;
+                    
+                    // 增大障碍物尺寸
+                    const scale = 0.8 + Math.random() * 0.4; // 显著增大缩放比例
+                    obstacle.scale.set(scale, scale, scale);
+                    
+                    scene.add(obstacle);
+                    obstacles.push(obstacle);
+                    
+                    console.log(`成功创建${type}障碍物`);
+                } catch (error) {
+                    console.error(`创建${type}障碍物失败:`, error);
+                }
+            }
+        }
+
+        // 修改金币创建函数，增大金币寸并改善外观
+        function createCoins() {
+            // 创建更大更精细的金币几何体
+            const coinGeometry = new THREE.CylinderGeometry(0.5, 0.5, 0.1, 32); // 增大尺寸
+            
+            // 使用更好的金属材质
+            const coinMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0xFFD700,
+                metalness: 0.8,
+                roughness: 0.2,
+                emissive: 0xFFA500,
+                emissiveIntensity: 0.5
+            });
+
+            for (let i = 0; i < 10; i++) {
+                const coin = new THREE.Mesh(coinGeometry, coinMaterial);
+                
+                // 随机位置
+                coin.position.x = Math.random() * 8 - 4;
+                coin.position.z = Math.random() * -50 - 5;
+                coin.position.y = 0.5; // 升高位置
+                
+                // 使金币平放
+                coin.rotation.x = Math.PI / 2;
+                
+                // 添加到数组和场景
+                coins.push(coin);
+                scene.add(coin);
+                
+                // 添加更明显的光晕效果
+                const glowMaterial = new THREE.MeshBasicMaterial({
+                    color: 0xFFD700,
+                    transparent: true,
+                    opacity: 0.4,
+                    side: THREE.DoubleSide
+                });
+                const glowGeometry = new THREE.CylinderGeometry(0.7, 0.7, 0.1, 32);
+                const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+                glow.rotation.x = Math.PI / 2;
+                coin.add(glow);
+            }
+        }
+
+        function onKeyDown(event) {
+            switch (event.code) {
+                case 'ArrowLeft':
+                case 'KeyA':
+                    movingLeft = true;
+                    event.preventDefault();
+                    break;
+                case 'ArrowRight':
+                case 'KeyD':
+                    movingRight = true;
+                    event.preventDefault();
+                    break;
+            }
+        }
+
+        function onKeyUp(event) {
+            switch (event.code) {
+                case 'ArrowLeft':
+                case 'KeyA':
+                    movingLeft = false;
+                    event.preventDefault();
+                    break;
+                case 'ArrowRight':
+                case 'KeyD':
+                    movingRight = false;
+                    event.preventDefault();
+                    break;
+            }
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function checkCollisions() {
+            if (!skier) return;
+            
+            const skierBox = new THREE.Box3().setFromObject(skier);
+            skierBox.min.multiplyScalar(0.7);
+            skierBox.max.multiplyScalar(0.7);
+            
+            // 检测障碍物碰撞
+            for (let obstacle of obstacles) {
+                if (obstacle && obstacle.visible) {
+                    const obstacleBox = new THREE.Box3().setFromObject(obstacle);
+                    // 稍微增大碍物碰撞箱
+                    obstacleBox.min.multiplyScalar(0.9);
+                    obstacleBox.max.multiplyScalar(0.9);
+                    
+                    if (skierBox.intersectsBox(obstacleBox)) {
+                        console.log("碰撞到障碍物！");
+                        gameStats.endTime = Date.now();
+                        endGame();
+                        return true;
+                    } else {
+                        // 当成功避开障碍物时增加计数
+                        if (obstacle.position.z > skier.position.z && !obstacle.counted) {
+                            gameStats.obstaclesAvoided++;
+                            obstacle.counted = true;
+                        }
+                    }
+                }
+            }
+            
+            // 检测金币碰撞
+            for (let i = coins.length - 1; i >= 0; i--) {
+                const coin = coins[i];
+                if (coin && coin.visible) {
+                    const coinBox = new THREE.Box3().setFromObject(coin);
+                    // 增大金币碰撞箱使其更容易收集
+                    coinBox.min.multiplyScalar(1.5);
+                    coinBox.max.multiplyScalar(1.5);
+                    
+                    if (skierBox.intersectsBox(coinBox)) {
+                        console.log("收到金币！");
+                        score += 10; // 增加分数
+                        gameStats.coinsCollected++;
+                        scene.remove(coin);
+                        coins.splice(i, 1);
+                        updateScore(); // 立即更新分数显示
+                        
+                        // 添加分数浮动效果（可选）
+                        showScorePopup('+10', coin.position);
+                    }
+                }
+            }
+            
+            return false;
+        }
+
+        function animate() {
+            gameLoop = requestAnimationFrame(animate);
+            
+            const delta = clock.getDelta();
+            
+            // 更新物理世界���增加更新频率
+            if (world) {
+                world.step(1/120);
+            }
+            
+            // 更新动画混合器
+            if (mixer) {
+                mixer.update(delta);
+            }
+            
+            // 更新滑雪者位置和旋转
+            if (skier && skierBody) {
+                updateSkierMovement();
+                skier.position.copy(skierBody.position);
+            }
+            
+            // 更新障碍物和金币
+            updateObstacles();
+            updateCoins();
+            
+            // 检查碰撞
+            checkCollisions();
+            
+            // 渲染场景
+            renderer.render(scene, camera);
+        }
+
+        function endGame() {
+            console.log("游戏结束");
+            
+            // 停止游戏循环
+            if (gameLoop) {
+                cancelAnimationFrame(gameLoop);
+                gameLoop = null;
+            }
+            
+            // 停止物理世界更新
+            if (world) {
+                world.step(0);
+            }
+            
+            // 停止动画混合器
+            if (mixer) {
+                mixer.stopAllAction();
+            }
+            
+            // 记录游戏结束时间（如果还没记录）
+            if (!gameStats.endTime) {
+                gameStats.endTime = Date.now();
+            }
+            
+            // 移除事件监听器
+            window.removeEventListener('keydown', onKeyDown);
+            window.removeEventListener('keyup', onKeyUp);
+            
+            // 显示游戏分析
+            //showGameAnalysis();
+            
+            // 调用 fetchAnalysis 函数以获取分析数据
+            fetchAnalysis();
+            
+            // 清理场景
+            cleanupScene();
+            
+            // 显示重新开始按钮
+            const restartButton = document.getElementById('restartButton');
+            if (restartButton) {
+                restartButton.style.display = 'block';
+                restartButton.onclick = () => {
+                    location.reload();
+                };
+            }
+        }
+        // 在 <style> 部分添加以下样式
+function addStyles() {
+    const styleElement = document.createElement('style');
+    styleElement.textContent = `
+        .analysis-container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .analysis-section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .analysis-section h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .performance-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .stat-item {
+            background: #fff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2980b9;
+        }
+
+        .skill-analysis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .skill-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .skill-title {
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+
+        .training-plan {
+            background: #f1f8ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .training-plan h5 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .training-steps {
+            padding-left: 20px;
+        }
+
+        .training-steps li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .performance-level {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .level-expert {
+            background: #27ae60;
+        }
+
+        .level-advanced {
+            background: #3498db;
+        }
+
+        .level-intermediate {
+            background: #f1c40f;
+        }
+
+        .level-beginner {
+            background: #e74c3c;
+        }
+    `;
+    document.head.appendChild(styleElement);
+}
+
+        async function showGameAnalysis(analysis) {
+            // 添加样式
+            addStyles();
+            
+            // 停止游戏循环
+            cancelAnimationFrame(animate);
+            
+            // 隐藏游戏界面
+            document.getElementById('gameContainer').style.display = 'none';
+            document.getElementById('gameScreen').style.display = 'none';
+            
+            // 显示并更新分析区域
+            const analysisArea = document.getElementById('analysisArea');
+            analysisArea.style.display = 'block';
+            analysisArea.innerHTML = `
+                <div class="analysis-container">
+                    <div class="analysis-section">
+                        <h3>游戏表现分析</h3>
+                        <p>${analysis.performanceAnalysis}</p>
+                    </div>
+                    <div class="analysis-section">
+                        <h3>个人信息分析</h3>
+                        <p>${analysis.personalAnalysis}</p>
+                    </div>
+                    <div class="analysis-section">
+                        <h3>游戏建议</h3>
+                        <p>${analysis.gameSuggestions}</p>
+                    </div>
+                    <div class="analysis-section">
+                        <h3>康复建议</h3>
+                        <p>${analysis.rehabSuggestions}</p>
+                    </div>
+                </div>
+                <button class="button" id="restartButton">重新开始</button>
+            `;
+        }
+
+        // 生成身体部位分析
+        function generateBodyPartsAnalysis(analysis) {
+            const gameTime = (gameStats.endTime - gameStats.startTime) / 1000;
+            const balanceScore = gameStats.balanceChanges / gameTime;
+            const reactionScore = gameStats.coinsCollected / gameTime;
+            
+            let bodyParts = '<ul>';
+            
+            if (balanceScore < 0.5) {
+                bodyParts += `
+                    <li>下肢肌群：建议加强腿部力量训练，提高平衡能力</li>
+                    <li>核心肌群：需要加强核心稳定性训练</li>
+                `;
+            }
+            
+            if (reactionScore < 0.3) {
+                bodyParts += `
+                    <li>上肢协调性：建议进行手眼协调训练</li>
+                    <li>颈部灵活度：需要适当进行颈部活动度训练</li>
+                `;
+            }
+            
+            if (gameStats.obstaclesAvoided < 5) {
+                bodyParts += `
+                    <li>躯干控制能力：建议加强躯干旋转和侧弯训练</li>
+                    <li>髋关节灵活性：需要提高髋关节活动度</li>
+                `;
+            }
+            
+            bodyParts += '</ul>';
+            bodyParts += '<p>建议：每天进行15-20分钟的针对性训练，循序渐进，注意动作质量。</p>';
+            
+            return bodyParts;
+        }
+
+        // 修改游戏性能分析函数
+        function generatePerformanceAnalysis(metrics) {
+            let analysis = '';
+            
+            // 计算各项指标
+            const totalScore = metrics.totalScore || 0;
+            const gameTime = metrics.gameTime || 0;
+            const coinsCollected = metrics.coinsCollected || 0;
+            const obstaclesAvoided = metrics.obstaclesAvoided || 0;
+            const scorePerMinute = gameTime > 0 ? (totalScore / (gameTime / 60)).toFixed(2) : 0;
+            const collectionEfficiency = gameTime > 0 ? (coinsCollected / gameTime * 60).toFixed(2) : 0;
+            
+            // 根据表现生成个性化评价
+            let performanceLevel = '';
+            let suggestions = '';
+            
+            if (scorePerMinute > 200) {
+                performanceLevel = '专业级水平';
+                suggestions = '您展现出了出色的滑雪技巧，建议尝试更具挑战性的难度设置。';
+            } else if (scorePerMinute > 100) {
+                performanceLevel = '进阶水平';
+                suggestions = '您的滑雪技巧相当不错，继续保持，可以尝试提高游戏速度来增加挑战性。';
+            } else if (scorePerMinute > 50) {
+                performanceLevel = '中级水平';
+                suggestions = '您已经掌握了基本的滑雪技巧，建议多加练习转弯和避障技巧。';
+            } else {
+                performanceLevel = '入门水平';
+                suggestions = '这是一个良好的开始，建议先专注于提高基本的平衡控制能力。';
+            }
+
+            // 获取性能等级对应的样式类
+            const getLevelClass = (level) => {
+                switch(level) {
+                    case '专业级水平': return 'level-expert';
+                    case '进阶水平': return 'level-advanced';
+                    case '中级水平': return 'level-intermediate';
+                    default: return 'level-beginner';
+                }
+            };
+
+            analysis = `
+                <div class="analysis-container">
+                    <div class="analysis-section">
+                        <span class="performance-level ${getLevelClass(performanceLevel)}">
+                            ${performanceLevel}
+                        </span>
+                        
+                        <div class="performance-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">游戏时长</div>
+                                <div class="stat-value">${gameTime.toFixed(1)}秒</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">总得分</div>
+                                <div class="stat-value">${totalScore}分</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">每分钟得分</div>
+                                <div class="stat-value">${scorePerMinute}分</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">金币收集效率</div>
+                                <div class="stat-value">${collectionEfficiency}个/分钟</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">避障成功</div>
+                                <div class="stat-value">${obstaclesAvoided}次</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-section">
+                        <h4>技能分析</h4>
+                        <div class="skill-analysis">
+                            <div class="skill-item">
+                                <div class="skill-title">反应速度</div>
+                                <p>${getReactionSpeedAnalysis(metrics)}</p>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-title">平衡控制</div>
+                                <p>${getBalanceControlAnalysis(metrics)}</p>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-title">空间感知</div>
+                                <p>${getSpatialAwarenessAnalysis(metrics)}</p>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-title">决策能力</div>
+                                <p>${getDecisionMakingAnalysis(metrics)}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-section">
+                        <h4>训练建议</h4>
+                        <div class="training-plan">
+                            <h5>个性化建议</h5>
+                            <p>${suggestions}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            return analysis;
+        }
+
+        // 添加具体技能分析函数
+        function getReactionSpeedAnalysis(metrics) {
+            const reactionScore = metrics.averageReactionTime || 500;
+            if (reactionScore < 200) return "优秀 - 反应速度非常快，接近专业运动员水平";
+            if (reactionScore < 300) return "良好 - 反应速度在平均水平之上";
+            if (reactionScore < 400) return "一般 - 反应速度处于正常范围";
+            return "需要提升 - 建议通过专项训练提高反应速度";
+        }
+
+        function getBalanceControlAnalysis(metrics) {
+            const balanceScore = metrics.balanceControl || 0;
+            if (balanceScore > 0.8) return "优秀 - 展现出极佳的平衡控制能力";
+            if (balanceScore > 0.6) return "良好 - 平衡控制能力稳定";
+            if (balanceScore > 0.4) return "一般 - 基本的平衡控制能力已具备";
+            return "需要加强 - 建议进行更多平衡训练";
+        }
+
+        function getSpatialAwarenessAnalysis(metrics) {
+            const avoidanceRate = metrics.obstaclesAvoided / (metrics.gameTime || 1);
+            if (avoidanceRate > 0.5) return "优秀 - 空间感知能力出色";
+            if (avoidanceRate > 0.3) return "良好 - 具备良好的空间判断能力";
+            if (avoidanceRate > 0.1) return "一般 - 空间感知能力有待提高";
+            return "需要提升 - 建议加强空间感知训练";
+        }
+
+        function getDecisionMakingAnalysis(metrics) {
+            const efficiency = metrics.coinsCollected / (metrics.gameTime || 1);
+            if (efficiency > 0.8) return "优秀 - 决策快速准确";
+            if (efficiency > 0.5) return "良好 - 决策能力不错";
+            if (efficiency > 0.3) return "一般 - 基本的决策能力已具备";
+            return "需要提升 - 建议加强快速决策训练";
+        }
+
+        function generateImprovementAreas(metrics, userInfo) {
+            let areas = [];
+            
+            // 基于反应时间的分析
+            if (metrics.averageReactionTime > 500) {
+                areas.push('反应速度：建议通过简单的反应训练游戏来提高反应速度');
+            }
+            
+            // 基于平衡控制的分析
+            if (metrics.balanceControl < 0.5) {
+                areas.push('平衡能力：可以尝试一些基础的平衡训练，如单腿站立练习');
+            }
+            
+            // 基于年龄和性别的个性化建议
+            if (userInfo.age > 50) {
+                areas.push('考虑到年龄因素，建议着重加强下肢力量训练');
+            }
+            
+            // 如果没有发现明显需要改进的地方
+            if (areas.length === 0) {
+                areas.push('您的整体表现很好，建议保持现有的训练强度');
+            }
+            
+            return areas.join('\n');
+        }
+
+        function generateTrainingRecommendations(metrics, userInfo) {
+            let recommendations = [];
+            
+            // 基础训练建议
+            recommendations.push('1. 每天进行15-20分钟的平衡训练');
+            
+            // 根据表现添加具体建议
+            if (metrics.coinsPerMinute < 5) {
+                recommendations.push('2. 增加手眼协调训练，提高准确性');
+            }
+            
+            if (metrics.balanceControl < 0.7) {
+                recommendations.push('3. 加强核心力量训练，提高身体稳定性');
+            }
+            
+            // 根据用户信息个性化建议
+            if (userInfo.singleLegStand < 30) {
+                recommendations.push('4. 每天练习单腿站立，逐步增加时间');
+            }
+            
+            return recommendations.join('\n');
+        }
+
+        // 修改康复建议生成函数
+        function generateRehabilitationAdvice(userInfo) {
+            let advice = [];
+            const age = parseInt(userInfo.age);
+            const singleLegStand = parseFloat(userInfo.singleLegStand);
+            const stepSpeed = parseFloat(userInfo.stepSpeed);
+            
+            // 基于年龄段的个性化建议
+            if (age < 30) {
+                advice.push('年轻人群训练建议：\n' +
+                           '- 可以进行较高强度的平衡训练\n' +
+                           '- 建议每周进行3-4次力量训练\n' +
+                           '- 注意动作标准性和质量');
+            } else if (age < 50) {
+                advice.push('中年人群训练建议：\n' +
+                           '- 循序渐进，避免过度训练\n' +
+                           '- 建议每周进行2-3次中等强度训练\n' +
+                           '- 注意关节保护');
+            } else {
+                advice.push('老年人群训练建议：\n' +
+                           '- 以安全为首要考虑\n' +
+                           '- 建议每天进行15-20分钟轻度训练\n' +
+                           '- 必须在他人陪同下进行');
+            }
+            
+            // 基于具体指标的个性化建议
+            if (singleLegStand < 20) {
+                advice.push('平衡能力提升计划：\n' +
+                           '- 第一阶段（1-2周）：扶墙单腿站立，每次10秒，每天3组\n' +
+                           '- 第二阶段（3-4周）：无扶持单腿站立，每次15秒，每天3组\n' +
+                           '- 第三阶段（5-6周）：闭眼单腿站立，每次10秒，每天2组');
+            }
+            
+            if (stepSpeed < 1.0) {
+                advice.push('步行能力提升计划：\n' +
+                           '- 每天进行3次10分钟定时步行\n' +
+                           '- 逐渐提高步行速度和距离\n' +
+                           '- 可以使用计步器记录进展');
+            }
+            
+            // 添加营养建议
+            advice.push('营养补充建议：\n' +
+                        '- 确保足够的蛋白质摄入，促进肌肉恢复\n' +
+                        '- 补充维生素D和钙质，增强骨骼强度\n' +
+                        '- 保持充足的水分摄入');
+            
+            // 添加注意事项
+            advice.push('安全注意事项：\n' +
+                        '- 运动前必须充分热身\n' +
+                        '- 如果感觉不适立即停止\n' +
+                        '- 定期进行体检和评估');
+            
+            return advice.join('\n\n');
+        }
+
+        // 修改游戏性能分析函数
+        async function analyzeGamePerformance() {
+            const gameTime = (gameStats.endTime - gameStats.startTime) / 1000; // 转换为秒
+            const averageReactionTime = gameStats.reactionTimes.length > 0 ? 
+                gameStats.reactionTimes.reduce((a, b) => a + b, 0) / gameStats.reactionTimes.length : 0;
+            
+            // 确保所有数据都有值
+            const performanceMetrics = {
+                totalScore: score || 0,
+                gameTime: gameTime || 0,
+                coinsCollected: gameStats.coinsCollected || 0,
+                coinsPerMinute: gameTime > 0 ? (gameStats.coinsCollected / gameTime) * 60 : 0,
+                averageReactionTime: averageReactionTime || 0,
+                balanceControl: gameTime > 0 ? gameStats.balanceChanges / gameTime : 0,
+                obstaclesAvoided: gameStats.obstaclesAvoided || 0
+            };
+
+            // 生成分析结果
+            return {
+                performanceAnalysis: generatePerformanceAnalysis(performanceMetrics),
+                improvementAreas: generateImprovementAreas(performanceMetrics, globalUserInfo),
+                trainingRecommendations: generateTrainingRecommendations(performanceMetrics, globalUserInfo),
+                rehabilitationAdvice: generateRehabilitationAdvice(globalUserInfo)
+            };
+        }
+
+        // 添加资源加载管理
+        const loadingManager = new THREE.LoadingManager();
+        loadingManager.onProgress = function(url, loaded, total) {
+            console.log(`Loading: ${(loaded/total*100).toFixed(2)}%`);
+        };
+
+        // 优化模型加载
+        function loadModels() {
+            const models = {};
+            const modelPaths = {
+                tree: 'http://47.106.251.186:8000/ec5dca2353c4_8201cfc69994__Fallen_pine_tree_c.glb',
+                rock: 'http://47.106.251.186:8000/afe6da7894a9_debcdff537dc_Snow_covered_boulde.glb',
+                fallenTree: 'http://47.106.251.186:8000/664a8947c04d_75771f37b274__Low_poly_winter_pi.glb',
+                snowPile: 'http://47.106.251.186:8000/df9c3e6df7ef_ad1a4d6e19d8__Natural_snow_drift.glb'
+            };
+            
+            Object.entries(modelPaths).forEach(([key, path]) => {
+                gltfLoader.load(path, (gltf) => {
+                    models[key] = gltf.scene;
+                    // 优化模型
+                    models[key].traverse(child => {
+                        if(child.isMesh) {
+                            child.castShadow = true;
+                            child.receiveShadow = true;
+                            // 优化几何体
+                            child.geometry.computeBoundingSphere();
+                            child.geometry.computeBoundingBox();
+                        }
+                    });
+                });
+            });
+            
+            return models;
+        }
+
+
+        // 修改滑雪者加载代码，添加滑雪杖
+        function loadSkierWithPoles() {
+            const loader = new THREE.GLTFLoader();
+            
+            // 加载滑雪者模型
+            loader.load('path/to/skier.glb', function(gltf) {
+                skier = gltf.scene;
+                skier.scale.set(0.3, 0.3, 0.3);
+
+                // 创建滑雪杖组
+                const polesGroup = new THREE.Group();
+                
+                // 创建左滑雪杖
+                const leftPole = createSkiPole();
+                leftPole.position.set(-0.3, 0, 0.2); // 对于滑雪者的位置
+                polesGroup.add(leftPole);
+                
+                // 创建右滑雪杖
+                const rightPole = createSkiPole();
+                rightPole.position.set(0.3, 0, 0.2);
+                polesGroup.add(rightPole);
+                
+                // 将滑雪杖组添加到滑雪者模型
+                skier.add(polesGroup);
+                
+                // 设置滑雪者位置和旋转
+                const box = new THREE.Box3().setFromObject(skier);
+                const size = box.getSize(new THREE.Vector3());
+                skier.position.set(0, size.y / 2 - 0.1, 0);
+                skier.rotation.y = Math.PI;
+                
+                scene.add(skier);
+                
+                // 初始化动画
+                mixer = new THREE.AnimationMixer(skier);
+                if (gltf.animations.length > 0) {
+                    const skiingAction = mixer.clipAction(gltf.animations[0]);
+                    skiingAction.play();
+                }
+                
+                // 添加滑雪杖动画
+                addPoleAnimations(polesGroup);
+            });
+        }
+
+        // 创建单个滑雪杖
+        function createSkiPole() {
+            const poleGroup = new THREE.Group();
+            
+            // 创建杖身
+            const shaftGeometry = new THREE.CylinderGeometry(0.02, 0.02, 1.2, 8);
+            const shaftMaterial = new THREE.MeshStandardMaterial({
+                color: 0xC0C0C0,
+                metalness: 0.8,
+                roughness: 0.2
+            });
+            const shaft = new THREE.Mesh(shaftGeometry, shaftMaterial);
+            
+            // 创握把
+            const gripGeometry = new THREE.CylinderGeometry(0.03, 0.02, 0.15, 8);
+            const gripMaterial = new THREE.MeshPhongMaterial({ color: 0x000000 });
+            const grip = new THREE.Mesh(gripGeometry, gripMaterial);
+            grip.position.y = 0.6;
+            
+            // 创建雪圈
+            const basketGeometry = new THREE.TorusGeometry(0.08, 0.01, 8, 16);
+            const basketMaterial = new THREE.MeshPhongMaterial({ color: 0x000000 });
+            const basket = new THREE.Mesh(basketGeometry, basketMaterial);
+            basket.position.y = -0.58;
+            basket.rotation.x = Math.PI / 2;
+            
+            poleGroup.add(shaft);
+            poleGroup.add(grip);
+            poleGroup.add(basket);
+            
+            return poleGroup;
+        }
+
+        // 添加滑雪杖动画
+        function addPoleAnimations(polesGroup) {
+            // 转弯时的滑雪杖动画
+            polesGroup.userData.updatePoles = function(turnDirection, turnAmount) {
+                const maxTiltAngle = Math.PI / 6;
+                const maxLift = 0.2;
+                
+                // 左转
+                if (turnDirection === 'left') {
+                    this.children[0].rotation.z = -turnAmount * maxTiltAngle; // 左杖抬起
+                    this.children[0].position.y = turnAmount * maxLift;
+                    this.children[1].rotation.z = turnAmount * maxTiltAngle / 2; // 右杖轻微倾斜
+                }
+                // 右转
+                else if (turnDirection === 'right') {
+                    this.children[1].rotation.z = turnAmount * maxTiltAngle; // 右杖抬起
+                    this.children[1].position.y = turnAmount * maxLift;
+                    this.children[0].rotation.z = -turnAmount * maxTiltAngle / 2; // 左杖轻微倾斜
+                }
+                // 直行
+                else {
+                    this.children.forEach(pole => {
+                        pole.rotation.z = THREE.MathUtils.lerp(pole.rotation.z, 0, 0.1);
+                        pole.position.y = THREE.MathUtils.lerp(pole.position.y, 0, 0.1);
+                    });
+                }
+            };
+        }
+
+        // 修改滑雪者转向代码
+        function updateSkierMovement() { 
+            if (skier && skierBody) {
+                skier.position.copy(skierBody.position);
+
+                // 处理滑雪者的运动
+                const turnSpeed = 2;
+                const maxTurnAngle = Math.PI / 6;
+                const lerpFactor = 0.1;
+
+                if (movingLeft && skierBody.position.x > -6) {
+                    skierBody.velocity.x = -turnSpeed;
+                    targetRotationY = maxTurnAngle;
+                    targetRotationZ = maxTurnAngle / 2;
+                } else if (movingRight && skierBody.position.x < 6) {
+                    skierBody.velocity.x = turnSpeed;
+                    targetRotationY = -maxTurnAngle;
+                    targetRotationZ = -maxTurnAngle / 2;
+                } else {
+                    skierBody.velocity.x = 0;
+                    targetRotationY = 0;
+                    targetRotationZ = 0;
+                }
+
+                // 使用插值平滑地改变旋转
+                skier.rotation.y = Math.PI + THREE.MathUtils.lerp(skier.rotation.y - Math.PI, targetRotationY, lerpFactor);
+                skier.rotation.z = THREE.MathUtils.lerp(skier.rotation.z, targetRotationZ, lerpFactor);
+
+                // 添加一些倾斜效果
+                const tiltFactor = 0.05;
+                skier.rotation.x = THREE.MathUtils.lerp(skier.rotation.x, -skierBody.velocity.x * tiltFactor, lerpFactor);
+            }
+        }
+
+        // 添加场景清理函数
+        function cleanupScene() {
+            // 移除所有障碍物
+            obstacles.forEach(obstacle => {
+                scene.remove(obstacle);
+            });
+            obstacles = [];
+            
+            // 移除所有金币
+            coins.forEach(coin => {
+                scene.remove(coin);
+            });
+            coins = [];
+            
+            // 移除滑雪者
+            if (skier) {
+                scene.remove(skier);
+                skier = null;
+            }
+            
+            // 清理物理世
+            if (world) {
+                world.bodies.forEach(body => {
+                    world.remove(body);
+                });
+            }
+        }
+
+        // 修改更新障碍物函数，增加重置距离
+        function updateObstacles() {
+            if (!obstacles || obstacles.length === 0) return;
+
+            obstacles.forEach(obstacle => {
+                if (obstacle && obstacle.position) {
+                    // 保持较低的移动速度
+                    obstacle.position.z += gameSettings.gameSpeed * 0.015;
+                    
+                    // 如果障碍物超出视野，重置位置时增加更大间距
+                    if (obstacle.position.z > 5) {
+                        // 增加重置距离，使障碍物出现得更少
+                        obstacle.position.z = Math.random() * -150 - 50;
+                        obstacle.position.x = Math.random() * 6 - 3;
+                        
+                        // 随机决定是否显示障碍物（90%的概率不显示）
+                        if (Math.random() < 0.9) {
+                            obstacle.visible = false;
+                            // 5秒后再次显示
+                            setTimeout(() => {
+                                obstacle.visible = true;
+                            }, 5000);
+                        } else {
+                            obstacle.visible = true;
+                        }
+                    }
+                }
+            });
+        }
+
+        // 添加金币更新函数
+        function updateCoins() {
+            if (!coins || coins.length === 0) return;
+
+            coins.forEach((coin, index) => {
+                if (coin && coin.position) {
+                    // 移动金币
+                    coin.position.z += gameSettings.gameSpeed * 0.015; // 使用与障碍物相同的速度
+                    
+                    // 让金币旋转
+                    coin.rotation.y += 0.01;
+                    
+                    // 如果金币超出视野，重置位置
+                    if (coin.position.z > 5) {
+                        // 如果金币数量少于10个，创建新的金币
+                        if (coins.length < 10) {
+                            coin.position.z = Math.random() * -100 - 20; // 与障碍物使用相似的距离
+                            coin.position.x = Math.random() * 6 - 3;
+                            coin.visible = true;
+                        } else {
+                            // 移除超出视野的金币
+                            scene.remove(coin);
+                            coins.splice(index, 1);
+                        }
+                    }
+                    
+                    // 添加上下浮动动画
+                    coin.position.y = 0.5 + Math.sin(Date.now() * 0.001) * 0.1;
+                }
+            });
+
+            // 如果金币数量太少，添加新的金币
+            if (coins.length < 5) {
+                const coinGeometry = new THREE.CylinderGeometry(0.5, 0.5, 0.1, 32);
+                const coinMaterial = new THREE.MeshStandardMaterial({ 
+                    color: 0xFFD700,
+                    metalness: 0.8,
+                    roughness: 0.2,
+                    emissive: 0xFFA500,
+                    emissiveIntensity: 0.5
+                });
+
+                const coin = new THREE.Mesh(coinGeometry, coinMaterial);
+                
+                // 在远处生成新金币
+                coin.position.x = Math.random() * 6 - 3;
+                coin.position.z = Math.random() * -100 - 20;
+                coin.position.y = 0.5;
+                
+                // 使金币平放
+                coin.rotation.x = Math.PI / 2;
+                
+                // 添加光晕效果
+                const glowMaterial = new THREE.MeshBasicMaterial({
+                    color: 0xFFD700,
+                    transparent: true,
+                    opacity: 0.4,
+                    side: THREE.DoubleSide
+                });
+                const glowGeometry = new THREE.CylinderGeometry(0.7, 0.7, 0.1, 32);
+                const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+                glow.rotation.x = Math.PI / 2;
+                coin.add(glow);
+                
+                // 添加到场景和数组
+                scene.add(coin);
+                coins.push(coin);
+            }
+        }
+
+        // 添加分数浮动效果（可选）
+        function showScorePopup(text, position) {
+            const scoreDiv = document.createElement('div');
+            scoreDiv.style.position = 'absolute';
+            scoreDiv.style.color = '#FFD700';
+            scoreDiv.style.fontSize = '24px';
+            scoreDiv.style.fontWeight = 'bold';
+            scoreDiv.style.pointerEvents = 'none';
+            scoreDiv.textContent = text;
+            
+            // 将3D位置转换为屏幕坐标
+            const vector = position.clone();
+            vector.project(camera);
+            
+            const x = (vector.x * 0.5 + 0.5) * window.innerWidth;
+            const y = (-vector.y * 0.5 + 0.5) * window.innerHeight;
+            
+            scoreDiv.style.left = x + 'px';
+            scoreDiv.style.top = y + 'px';
+            
+            document.body.appendChild(scoreDiv);
+            
+            // 动画效果
+            let opacity = 1;
+            let yOffset = 0;
+            
+            function animate() {
+                opacity -= 0.02;
+                yOffset -= 1;
+                
+                scoreDiv.style.opacity = opacity;
+                scoreDiv.style.transform = `translateY(${yOffset}px)`;
+                
+                if (opacity > 0) {
+                    requestAnimationFrame(animate);
+                } else {
+                    document.body.removeChild(scoreDiv);
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        // 在游戏结束时调用此函数
+        async function fetchAnalysis() {
+            const userInfo = globalUserInfo;
+            const gameData = {
+                totalScore: score,
+                gameTime: (gameStats.endTime - gameStats.startTime) / 1000,
+                coinsCollected: gameStats.coinsCollected,
+                obstaclesAvoided: gameStats.obstaclesAvoided
+            };
+
+            try {
+                const response = await fetch('http://47.106.251.186:5000/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ userInfo, gameData })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                const analysis = JSON.parse(data.analysis); // 解析JSON字符串
+                showGameAnalysis(analysis); // 调用 showGameAnalysis 而不是 displayAnalysis
+            } catch (error) {
+                console.error('Error fetching analysis:', error);
+            }
+        }
+
+        function displayAnalysis(analysis) {
+            const analysisArea = document.getElementById('analysisArea');
+            analysisArea.innerHTML = `
+                <div class="analysis-container">
+                    <div class="analysis-section">
+                        <h3>游戏表现分析</h3>
+                        <p>${analysis.performanceAnalysis}</p>
+                    </div>
+                    <div class="analysis-section">
+                        <h3>个人信息分析</h3>
+                        <p>${analysis.personalAnalysis}</p>
+                    </div>
+                    <div class="analysis-section">
+                        <h3>游戏建议</h3>
+                        <p>${analysis.gameSuggestions}</p>
+                    </div>
+                    <div class="analysis-section">
+                        <h3>康复建议</h3>
+                        <p>${analysis.rehabSuggestions}</p>
+                    </div>
+                </div>
+            `;
+            analysisArea.style.display = 'block';
+        }
+    </script>
+</body>
+</html> 
