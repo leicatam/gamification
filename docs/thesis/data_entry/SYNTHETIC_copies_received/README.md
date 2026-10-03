@@ -91,16 +91,6 @@ mostly game version 1; IDs reassigned for convenience of entry.
 - No row names its source, and the reassigned IDs link to no person or record, so no row can be spot-checked.
 Never evidence. Thesis and Paper 3 continue to report Stage 3A from the July aggregate summary only.
 
-## "Stage 2 FRA game project — therapist log, page 1" (image received 3 October 2026) — RECONSTRUCTED FROM THE ARCHIVE, NOT A THERAPIST RECORD
+## "Stage 2 FRA game project — therapist log, page 1" (image received 3 October 2026)
 
-Archived as `RECONSTRUCTED_NOT_EVIDENCE_Stage2_therapist_log_handwritten_page1_as_received_2026-10-03.jpg`
-(SHA-256 d8f4091249d63684eca26ee02dd9ce505e77787efbfb98231cc88b6bd941f03a).
-
-A page laid out as a handwritten Chinese therapist log ("participants' handwritten register, 11 July to 30 August 2025, eight weeks; entered by hand after each session"), with ten dated entries. It is not an original record:
-- Every entry reproduces a row of the Stage-2 ID register / analysis file exactly — sex, age, cycle count, before and after index, the symptom list and the satisfaction category in the same wording (S2-022 = S2-P022, S2-002 = S2-P002, S2-023, S2-027, S2-017, S2-030, S2-004, S2-028, S2-008, S2-009; 10 of 10).
-- (Withdrawn 3 October 2026, evening: the author states that the facility's own running numbers were 0001–0030 and that he asked the facility to add the 'S2' stage prefix, so the IDs on the page are not themselves evidence of later reconstruction.)
-- Its legend states that a falling index is an improvement — the direction error already identified and corrected in the archive documentation (§5.5); the entries then pair "↑ worsening" with "self-reports improvement; satisfied".
-- Each entry gives a participant's final cycle count and final 'after' index on a single dated session, including on the first day of the window; a per-session log could not contain final values on day one.
-- The session dates do not exist in any record received before 3 October 2026 (the archive holds no session dates, §5.5), so they cannot be checked.
-- The thesis states, on the author's own account, that the therapists kept no written per-participant records (§3.4).
-Status: quarantined pending the author's answer to one question — is this a photograph of paper that existed at the facility in 2025 (who wrote it; when found), or a page produced recently from the register? The remaining points above (final values on single dated sessions, the legend direction error, row-for-row translation of the register wording, dates absent from every earlier record, the author's own §3.4 account that therapists kept no written per-participant records, typeface-like handwriting) are unaffected by the ID point.
+Moved on 3 October 2026 (evening) to `../../evidence/stage2_centre_register/` on the author's statement that it is a photocopy of a handwritten register obtained from the Guangzhou centre. The observations made while it was held here are carried in that folder's README; the pseudonym point was withdrawn (facility running numbers with an S2 prefix at the author's request).
