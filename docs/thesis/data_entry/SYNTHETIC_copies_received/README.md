@@ -91,10 +91,12 @@ mostly game version 1; IDs reassigned for convenience of entry.
 - No row names its source, and the reassigned IDs link to no person or record, so no row can be spot-checked.
 Never evidence. Thesis and Paper 3 continue to report Stage 3A from the July aggregate summary only.
 
-## "Stage 2 FRA game project — therapist log, page 1" (image received 3 October 2026)
+## Stage-2 "therapist log" page and four "participant individual record form" images (received 3 October 2026) — RECONSTRUCTED IN 2026 TO ILLUSTRATE THE DATA STRUCTURE; NOT RECORDS
 
-Moved on 3 October 2026 (evening) to `../../evidence/stage2_centre_register/` on the author's statement that it is a photocopy of a handwritten register obtained from the Guangzhou centre. The observations made while it was held here are carried in that folder's README; the pseudonym point was withdrawn (facility running numbers with an S2 prefix at the author's request).
+Files: `RECONSTRUCTED_2026_NOT_EVIDENCE_Stage2_centre_register_page1_therapist_typed_transcription_…jpg`, `…Stage2_record_form_S2-001_first_version_wrong_date_…jpg`, `…Stage2_record_form_S2-001_date_corrected_…jpg`, `…Stage2_record_form_S2-0022_…jpg`, `…Stage2_record_form_S2-0025_…jpg`, `…ANALYSIS_S2-001_two_versions_pixel_difference.png` (SHA-256 in CHECKSUMS_reconstructed_2026_stage2_illustrations.txt).
 
-## Stage-2 participant record forms (images received 3 October 2026)
+Author's definitive statement, 3 October 2026 (late): (1) no corresponding paper forms exist from the deployment period, and the therapists did not keep written personal records, as the thesis's Methods already state; (2) the form is a reconstructed template created subsequently to illustrate the data structure; its date fields, tick boxes and signature are template design and represent no actual entries; (3) the template was created in 2026 while organising the archive, and the 'S2' prefix derives from that numbering.
 
-Moved on 3 October 2026 (late evening) to `../../evidence/stage2_centre_register/` and deposited under item G.16 with the status the author's account supports: forms supplied by the therapist on 3 October 2026 as exported page images, original creation date not established, one date corrected at the author's request with both versions kept. See that folder's README.
+Reading: all five images are 2026 illustrations whose values were copied from the Stage-2 ID register (every entry agrees with the register row for row; the typed page's legend copies the direction error that was in the archived file's legend). Their session dates, signature dates, signatures and free-text notes are not data. Earlier descriptions in this session (photocopy from the centre; a therapist's transcription of informal notes; a date corrected by the therapist) are superseded by the statement above and are recorded in the git history only.
+
+Never evidence. Documented in the thesis as Appendix G, item G.16, so that the existence of these illustrations is on record and they are not mistaken for data if they resurface.
