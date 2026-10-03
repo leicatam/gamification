@@ -1,4 +1,6 @@
-# Response tracker — Examiner's Review Report and Comment Schedule on V66 (2 October 2026)
+# Response tracker — Examiner's Review Reports on V66 (2 Oct) and V68 (3 Oct 2026)
+
+**Second examination (3 Oct 2026): thesis recorded as ACCEPTABLE IN SUBSTANCE.** Every A/B item of the V66 schedule verified closed in the text. Remaining: three production items (checklist deletion — done in the V69 reading copy; ToC regeneration — done in V69; certificate signature — YOU at submission) and three institutional closures for the convenor (Stage-3B scope determination; itemised consent determination; Chief Supervisor's Stage-3B protocol sign-off — all via T2/T10 through Prof. Cheung). Non-blocking suggestions: deposit the Game_States workbook (G.14) and the Pro derived workbooks/scripts if available; incorporate member-check replies if they arrive.
 
 Updated after V68 (2 October 2026). Status key: **DONE** (version) · **YOU** = needs you · **PROF/PolyU** = needs Prof. Cheung or a PolyU committee · **FINAL** = final-production step on 13 Oct
 
