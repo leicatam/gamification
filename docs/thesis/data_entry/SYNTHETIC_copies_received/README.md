@@ -94,3 +94,7 @@ Never evidence. Thesis and Paper 3 continue to report Stage 3A from the July agg
 ## "Stage 2 FRA game project — therapist log, page 1" (image received 3 October 2026)
 
 Moved on 3 October 2026 (evening) to `../../evidence/stage2_centre_register/` on the author's statement that it is a photocopy of a handwritten register obtained from the Guangzhou centre. The observations made while it was held here are carried in that folder's README; the pseudonym point was withdrawn (facility running numbers with an S2 prefix at the author's request).
+
+## Stage-2 participant record form S2-001 (image received 3 October 2026) — WITHDRAWN BY THE AUTHOR
+
+`WITHDRAWN_BY_AUTHOR_wrong_form_Stage2_record_form_S2-001_as_received_2026-10-03.jpg`. A printed template (form FRA-S2-02, page 1 of 30) filled by hand, signed and dated. The author withdrew it the same evening: "This is the wrong form. The first insert. Made mistakes." Not evidence; kept only so the same image is recognised if it resurfaces.
