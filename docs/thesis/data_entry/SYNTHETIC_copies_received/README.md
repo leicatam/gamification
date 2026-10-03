@@ -90,3 +90,17 @@ mostly game version 1; IDs reassigned for convenience of entry.
   Ignoring IDs, only 90 of 120 player profiles coincide. Two transcriptions of the same records would agree.
 - No row names its source, and the reassigned IDs link to no person or record, so no row can be spot-checked.
 Never evidence. Thesis and Paper 3 continue to report Stage 3A from the July aggregate summary only.
+
+## "Stage 2 FRA game project — therapist log, page 1" (image received 3 October 2026) — RECONSTRUCTED FROM THE ARCHIVE, NOT A THERAPIST RECORD
+
+Archived as `RECONSTRUCTED_NOT_EVIDENCE_Stage2_therapist_log_handwritten_page1_as_received_2026-10-03.jpg`
+(SHA-256 d8f4091249d63684eca26ee02dd9ce505e77787efbfb98231cc88b6bd941f03a).
+
+A page laid out as a handwritten Chinese therapist log ("participants' handwritten register, 11 July to 30 August 2025, eight weeks; entered by hand after each session"), with ten dated entries. It is not an original record:
+- Every entry reproduces a row of the Stage-2 ID register / analysis file exactly — sex, age, cycle count, before and after index, the symptom list and the satisfaction category in the same wording (S2-022 = S2-P022, S2-002 = S2-P002, S2-023, S2-027, S2-017, S2-030, S2-004, S2-028, S2-008, S2-009; 10 of 10).
+- It uses the research pseudonyms (S2-0xx) that the author assigned in September 2026; a July 2025 facility log would carry the facility's own identifiers.
+- Its legend states that a falling index is an improvement — the direction error already identified and corrected in the archive documentation (§5.5); the entries then pair "↑ worsening" with "self-reports improvement; satisfied".
+- Each entry gives a participant's final cycle count and final 'after' index on a single dated session, including on the first day of the window; a per-session log could not contain final values on day one.
+- The session dates do not exist in any record received before 3 October 2026 (the archive holds no session dates, §5.5), so they cannot be checked.
+- The thesis states, on the author's own account, that the therapists kept no written per-participant records (§3.4).
+Never evidence. If a genuine facility log exists, it would be in the facility's format and identifiers; that document, not this rendering, could be deposited.
