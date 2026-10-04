@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Skiing Rehabilitation Training Game</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { overflow: hidden; background: #000; font-family: 'Segoe UI', Arial, sans-serif; }
+        #gameCanvas { display: block; width: 100vw; height: 100vh; }
+
+        /* HUD */
+        #hud {
+            position: fixed; top: 20px; right: 20px;
+            color: #fff; font-size: 16px;
+            background: rgba(0,0,0,0.5); padding: 16px 22px;
+            border-radius: 12px; min-width: 200px;
+            backdrop-filter: blur(8px); z-index: 10;
+        }
+        #hud h3 { font-size: 14px; color: #aaa; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .hud-row { display: flex; justify-content: space-between; margin: 6px 0; }
+        .hud-label { color: #bbb; }
+        .hud-value { font-weight: bold; color: #fff; }
+        #hudLives { color: #e53935; font-size: 18px; letter-spacing: 4px; }
+
+        /* Balance Bar */
+        #balanceContainer {
+            position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+            width: 300px; z-index: 10; text-align: center;
+        }
+        #balanceLabel { color: #fff; font-size: 13px; margin-bottom: 6px; text-shadow: 0 1px 4px rgba(0,0,0,0.8); }
+        #balanceBarOuter {
+            width: 100%; height: 20px; background: rgba(0,0,0,0.5);
+            border-radius: 10px; overflow: hidden; position: relative;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        #balanceBarInner {
+            height: 100%; width: 100%; background: linear-gradient(90deg, #4caf50, #8bc34a);
+            border-radius: 10px; transition: width 0.15s, background 0.3s;
+        }
+        #balancePointer {
+            position: absolute; top: -4px; left: 50%; width: 4px; height: 28px;
+            background: #fff; border-radius: 2px; transform: translateX(-50%);
+            transition: left 0.1s; box-shadow: 0 0 6px rgba(255,255,255,0.5);
+        }
+
+        /* Assessment Screen */
+        #assessmentScreen {
+            position: fixed; inset: 0; background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #01579b 100%);
+            display: flex; align-items: center; justify-content: center; z-index: 100;
+        }
+        .assessment-card {
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;
+            padding: 40px 50px; max-width: 520px; width: 90%; color: #fff; text-align: center;
+        }
+        .assessment-card h1 { font-size: 28px; margin-bottom: 8px; }
+        .assessment-card p { color: #b3e5fc; margin-bottom: 28px; font-size: 15px; }
+        .form-group { margin: 16px 0; text-align: left; }
+        .form-group label { display: block; font-size: 14px; color: #b3e5fc; margin-bottom: 6px; }
+        .form-group select, .form-group input {
+            width: 100%; padding: 10px 14px; border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);
+            color: #fff; font-size: 15px; outline: none;
+        }
+        .form-group select option { background: #1a237e; color: #fff; }
+        #startBtn {
+            margin-top: 28px; padding: 14px 48px; font-size: 18px; font-weight: bold;
+            background: linear-gradient(135deg, #4caf50, #2e7d32); color: #fff;
+            border: none; border-radius: 12px; cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        #startBtn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(76,175,80,0.4); }
+
+        /* Game Over */
+        #gameOverScreen {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+            display: none; align-items: center; justify-content: center; z-index: 100;
+        }
+        .gameover-card {
+            background: rgba(255,255,255,0.08); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15); border-radius: 20px;
+            padding: 40px 50px; max-width: 480px; width: 90%; color: #fff; text-align: center;
+        }
+        .gameover-card h1 { font-size: 32px; margin-bottom: 20px; }
+        .stat-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .stat-label { color: #aaa; }
+        .stat-value { font-weight: bold; }
+        #aiAdvice {
+            margin-top: 20px; padding: 16px; background: rgba(76,175,80,0.15);
+            border-radius: 10px; text-align: left; font-size: 14px; line-height: 1.6;
+            border: 1px solid rgba(76,175,80,0.3);
+        }
+        #aiAdvice h4 { color: #4caf50; margin-bottom: 8px; }
+        #restartBtn {
+            margin-top: 24px; padding: 12px 40px; font-size: 16px; font-weight: bold;
+            background: linear-gradient(135deg, #2196f3, #1565c0); color: #fff;
+            border: none; border-radius: 10px; cursor: pointer;
+        }
+        #restartBtn:hover { transform: scale(1.05); }
+
+        /* Pause overlay */
+        #pauseOverlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            display: none; align-items: center; justify-content: center;
+            z-index: 50; color: #fff; font-size: 36px; font-weight: bold;
+        }
+
+        /* Instructions */
+        #instructions {
+            position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+            color: rgba(255,255,255,0.6); font-size: 13px; z-index: 10;
+            text-align: center; pointer-events: none;
+        }
+
+        /* Trial indicator in HUD */
+        #hudTrial { color: #64b5f6; font-size: 13px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 8px; }
+
+        /* Report Screen */
+        #reportScreen {
+            position: fixed; inset: 0; background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 50%, #0d47a1 100%);
+            display: none; align-items: flex-start; justify-content: center; z-index: 200;
+            overflow-y: auto; padding: 30px 20px;
+        }
+        .report-card {
+            background: rgba(255,255,255,0.06); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12); border-radius: 20px;
+            padding: 36px 44px; max-width: 760px; width: 95%; color: #fff;
+        }
+        .report-card h1 { font-size: 26px; margin-bottom: 6px; text-align: center; }
+        .report-card .report-subtitle { color: #90caf9; text-align: center; font-size: 14px; margin-bottom: 24px; }
+        .report-section { margin: 20px 0; }
+        .report-section h3 { font-size: 16px; color: #64b5f6; margin-bottom: 10px; border-bottom: 1px solid rgba(100,181,246,0.2); padding-bottom: 6px; }
+        .report-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .report-table th { background: rgba(255,255,255,0.08); color: #90caf9; padding: 8px 10px; text-align: center; font-weight: 600; }
+        .report-table td { padding: 7px 10px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .report-table tr:hover td { background: rgba(255,255,255,0.04); }
+        .report-table .best { color: #66bb6a; font-weight: bold; }
+        .report-table .worst { color: #ef5350; }
+        .trend-up { color: #66bb6a; } .trend-down { color: #ef5350; } .trend-flat { color: #ffa726; }
+        .report-summary {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0;
+        }
+        .summary-card {
+            background: rgba(255,255,255,0.06); border-radius: 12px; padding: 14px; text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .summary-card .val { font-size: 22px; font-weight: bold; color: #fff; }
+        .summary-card .lbl { font-size: 12px; color: #90caf9; margin-top: 4px; }
+        .report-advice {
+            background: rgba(76,175,80,0.12); border: 1px solid rgba(76,175,80,0.25);
+            border-radius: 12px; padding: 16px; margin-top: 16px; font-size: 14px; line-height: 1.7;
+        }
+        .report-advice h4 { color: #66bb6a; margin-bottom: 8px; }
+        .report-advice li { margin: 4px 0; }
+        #newSessionBtn, #exportReportBtn {
+            margin-top: 20px; padding: 12px 36px; font-size: 16px; font-weight: bold;
+            border: none; border-radius: 10px; cursor: pointer; margin-right: 12px;
+        }
+        #newSessionBtn { background: linear-gradient(135deg, #4caf50, #2e7d32); color: #fff; }
+        #exportReportBtn { background: linear-gradient(135deg, #2196f3, #1565c0); color: #fff; }
+        #newSessionBtn:hover, #exportReportBtn:hover { transform: scale(1.05); }
+        .report-buttons { text-align: center; margin-top: 24px; }
+    </style>
+</head>
+<body>
+
+<!-- Assessment Screen -->
+<div id="assessmentScreen">
+    <div class="assessment-card">
+        <h1>Skiing Rehabilitation Trainer</h1>
+        <p>Competency assessment for personalized difficulty</p>
+        <div class="form-group">
+            <label>Age Group</label>
+            <select id="ageGroup">
+                <option value="young">18 - 35</option>
+                <option value="middle" selected>36 - 55</option>
+                <option value="senior">56+</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Balance Ability (self-assessed)</label>
+            <select id="balanceAbility">
+                <option value="low">Low - Difficulty with single-leg standing</option>
+                <option value="medium" selected>Medium - Can stand on one leg 10-30s</option>
+                <option value="high">High - Excellent balance and coordination</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Rehabilitation Goal</label>
+            <select id="rehabGoal">
+                <option value="balance">Balance Recovery</option>
+                <option value="coordination">Motor Coordination</option>
+                <option value="strength">Lower Limb Strength</option>
+                <option value="general" selected>General Fitness</option>
+            </select>
+        </div>
+        <button id="startBtn">Start Training</button>
+    </div>
+</div>
+
+<!-- Game Over Screen -->
+<div id="gameOverScreen">
+    <div class="gameover-card">
+        <h1>Training Complete</h1>
+        <div class="stat-row"><span class="stat-label">Score</span><span class="stat-value" id="finalScore">0</span></div>
+        <div class="stat-row"><span class="stat-label">Distance</span><span class="stat-value" id="finalDist">0 m</span></div>
+        <div class="stat-row"><span class="stat-label">Coins Collected</span><span class="stat-value" id="finalCoins">0</span></div>
+        <div class="stat-row"><span class="stat-label">Obstacles Hit</span><span class="stat-value" id="finalHits">0</span></div>
+        <div class="stat-row"><span class="stat-label">Avg Balance</span><span class="stat-value" id="finalBalance">0%</span></div>
+        <div class="stat-row"><span class="stat-label">Max Speed</span><span class="stat-value" id="finalSpeed">0</span></div>
+        <div id="aiAdvice">
+            <h4>AI Training Recommendation</h4>
+            <div id="aiAdviceText"></div>
+        </div>
+        <button id="restartBtn">Train Again</button>
+    </div>
+</div>
+
+<!-- Pause Overlay -->
+<div id="pauseOverlay">PAUSED (Press P to resume)</div>
+
+<!-- HUD -->
+<div id="hud" style="display:none;">
+    <div id="hudTrial">Trial 1 / 5</div>
+    <h3>Training Status</h3>
+    <div class="hud-row"><span class="hud-label">Lives</span><span class="hud-value" id="hudLives">&#10084;&#10084;&#10084;</span></div>
+    <div class="hud-row"><span class="hud-label">Score</span><span class="hud-value" id="hudScore">0</span></div>
+    <div class="hud-row"><span class="hud-label">Speed</span><span class="hud-value" id="hudSpeed">0 km/h</span></div>
+    <div class="hud-row"><span class="hud-label">Distance</span><span class="hud-value" id="hudDist">0 m</span></div>
+    <div class="hud-row"><span class="hud-label">Coins</span><span class="hud-value" id="hudCoins">0</span></div>
+    <div class="hud-row"><span class="hud-label">Difficulty</span><span class="hud-value" id="hudDiff">1</span></div>
+</div>
+
+<!-- Balance Indicator -->
+<div id="balanceContainer" style="display:none;">
+    <div id="balanceLabel">Balance</div>
+    <div id="balanceBarOuter">
+        <div id="balanceBarInner"></div>
+        <div id="balancePointer"></div>
+    </div>
+</div>
+
+<!-- Instructions -->
+<div id="instructions" style="display:none;">Mouse / Gamepad / Arrow Keys to steer &nbsp;|&nbsp; P to pause</div>
+
+<!-- Report Screen (shown after 5 trials) -->
+<div id="reportScreen">
+    <div class="report-card">
+        <h1>Training Session Report</h1>
+        <div class="report-subtitle">5-Trial Rehabilitation Training Summary</div>
+        <div id="reportContent"></div>
+        <div class="report-buttons">
+            <button id="newSessionBtn">New 5-Trial Session</button>
+        </div>
+    </div>
+</div>
+
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+<script>
+// ==================== GAME CONFIGURATION ====================
+const CONFIG = {
+    // Slope
+    slopeWidth: 30,
+    slopeLength: 2000,
+    slopeAngle: 12, // degrees
+
+    // Player
+    playerSize: { w: 0.6, h: 1.8, d: 0.4 },
+    baseMoveSpeed: 8,
+    baseForwardSpeed: 12,
+
+    // Balance
+    balanceDecayRate: 0.02,
+    balanceTurnPenalty: 0.15,
+    balanceCollisionPenalty: 25,
+    balanceRecoveryRate: 0.08,
+
+    // Obstacles
+    baseObstacleDensity: 0.4,    // per meter of slope
+    obstacleSpawnAhead: 120,
+    obstacleDespawnBehind: 30,
+
+    // Coins
+    baseCoinDensity: 0.3,
+    coinValue: 10,
+    coinSpawnAhead: 100,
+
+    // Difficulty
+    difficultyScaleInterval: 200, // meters
+};
+
+// ==================== GAME STATE ====================
+let scene, camera, renderer;
+let playerMesh;
+let clock;
+let gameState = 'assessment'; // assessment | playing | paused | gameover
+let keys = {};
+
+let playerProfile = { ageGroup: 'middle', balanceAbility: 'medium', rehabGoal: 'general' };
+let difficultyMultiplier = 1;
+
+// Input state
+let mouseX = 0;          // -1 (left) to 1 (right), 0 = center
+let mouseActive = false;  // true when mouse has moved during gameplay
+let gamepadIndex = -1;    // connected gamepad index
+
+let score = 0;
+let coins = 0;
+let distance = 0;
+let maxSpeed = 0;
+let balanceValue = 100;   // 0-100
+let balanceLean = 0;      // -1 to 1 (visual pointer)
+let balanceHistory = [];
+let forwardSpeed = CONFIG.baseForwardSpeed;
+
+let lives = 3;
+let hits = 0;
+let hitCooldown = 0;           // seconds remaining before next hit registers
+let speedPenalty = 1;          // multiplier applied after difficulty calc (1 = full speed, 0.7 = 30% slower)
+let obstacleSpacingMult = 1;   // 1 = normal, <1 = fewer obstacles (wider spacing)
+
+let obstacles = [];
+let coinObjects = [];
+let lastObstacleZ = 0;
+let lastCoinZ = 0;
+let terrainChunks = [];
+
+// Trial tracking
+const MAX_TRIALS = 5;
+let trialCount = 0;
+let trialHistory = [];
+
+// ==================== INITIALIZATION ====================
+function init() {
+    // Scene
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x87ceeb);
+    scene.fog = new THREE.Fog(0x87ceeb, 80, 250);
+
+    // Camera
+    camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 500);
+
+    // Renderer
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    document.body.prepend(renderer.domElement);
+
+    // Lights
+    const ambientLight = new THREE.AmbientLight(0x8899bb, 0.6);
+    scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1.0);
+    dirLight.position.set(30, 50, -20);
+    dirLight.castShadow = true;
+    dirLight.shadow.mapSize.set(2048, 2048);
+    dirLight.shadow.camera.near = 1;
+    dirLight.shadow.camera.far = 200;
+    dirLight.shadow.camera.left = -60;
+    dirLight.shadow.camera.right = 60;
+    dirLight.shadow.camera.top = 60;
+    dirLight.shadow.camera.bottom = -60;
+    scene.add(dirLight);
+
+    clock = new THREE.Clock();
+
+    // Create sky
+    createSky();
+
+    // Events
+    window.addEventListener('resize', onResize);
+    window.addEventListener('keydown', e => { keys[e.key.toLowerCase()] = true; });
+    window.addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; });
+
+    // Mouse control: move left/right relative to screen center
+    window.addEventListener('mousemove', e => {
+        if (gameState !== 'playing') return;
+        mouseActive = true;
+        const halfW = window.innerWidth / 2;
+        mouseX = (e.clientX - halfW) / halfW; // -1 to 1
+        mouseX = Math.max(-1, Math.min(1, mouseX));
+    });
+    // Reset mouse when leaving window
+    window.addEventListener('mouseleave', () => { mouseX = 0; });
+
+    // Gamepad support (USB / Bluetooth controllers)
+    window.addEventListener('gamepadconnected', e => {
+        gamepadIndex = e.gamepad.index;
+        console.log('Gamepad connected: ' + e.gamepad.id);
+    });
+    window.addEventListener('gamepaddisconnected', e => {
+        if (e.gamepad.index === gamepadIndex) gamepadIndex = -1;
+        console.log('Gamepad disconnected');
+    });
+
+    // UI events
+    document.getElementById('startBtn').addEventListener('click', startGame);
+    document.getElementById('restartBtn').addEventListener('click', restartGame);
+    document.getElementById('newSessionBtn').addEventListener('click', startNewSession);
+}
+
+function createSky() {
+    // Simple sky dome
+    const skyGeo = new THREE.SphereGeometry(400, 32, 16);
+    const skyMat = new THREE.MeshBasicMaterial({
+        color: 0x87ceeb, side: THREE.BackSide
+    });
+    const sky = new THREE.Mesh(skyGeo, skyMat);
+    scene.add(sky);
+
+    // Sun
+    const sunGeo = new THREE.SphereGeometry(8, 16, 16);
+    const sunMat = new THREE.MeshBasicMaterial({ color: 0xffffcc });
+    const sun = new THREE.Mesh(sunGeo, sunMat);
+    sun.position.set(80, 120, -150);
+    scene.add(sun);
+
+    // Distant mountains
+    for (let i = 0; i < 12; i++) {
+        const h = 30 + Math.random() * 50;
+        const w = 40 + Math.random() * 60;
+        const mtnGeo = new THREE.ConeGeometry(w, h, 5);
+        const shade = 0.7 + Math.random() * 0.3;
+        const mtnMat = new THREE.MeshLambertMaterial({
+            color: new THREE.Color(shade * 0.9, shade * 0.95, shade)
+        });
+        const mtn = new THREE.Mesh(mtnGeo, mtnMat);
+        const angle = (i / 12) * Math.PI * 2;
+        mtn.position.set(Math.cos(angle) * 250, h / 2 - 10, Math.sin(angle) * 250 - 100);
+        scene.add(mtn);
+    }
+}
+
+// ==================== TERRAIN ====================
+function createTerrainChunk(zStart, zEnd) {
+    const length = zEnd - zStart;
+    const geo = new THREE.PlaneGeometry(CONFIG.slopeWidth, length, 30, Math.floor(length / 2));
+
+    // Slight undulations for realism
+    const posAttr = geo.attributes.position;
+    for (let i = 0; i < posAttr.count; i++) {
+        const x = posAttr.getX(i);
+        const y = posAttr.getY(i);
+        const noise = Math.sin(x * 0.3 + y * 0.2) * 0.3 + Math.cos(x * 0.5 - y * 0.15) * 0.2;
+        posAttr.setZ(i, noise);
+    }
+    geo.computeVertexNormals();
+
+    const mat = new THREE.MeshLambertMaterial({ color: 0xf0f5ff });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.rotation.x = -Math.PI / 2;
+    mesh.position.set(0, -0.1, -(zStart + length / 2));
+    mesh.receiveShadow = true;
+    scene.add(mesh);
+
+    // Side snow banks
+    for (let side of [-1, 1]) {
+        const bankGeo = new THREE.BoxGeometry(4, 2, length);
+        const bankMat = new THREE.MeshLambertMaterial({ color: 0xe8eef5 });
+        const bank = new THREE.Mesh(bankGeo, bankMat);
+        bank.position.set(side * (CONFIG.slopeWidth / 2 + 2), 0.5, -(zStart + length / 2));
+        bank.receiveShadow = true;
+        scene.add(bank);
+        terrainChunks.push(bank);
+    }
+
+    terrainChunks.push(mesh);
+    return mesh;
+}
+
+function ensureTerrain(playerZ) {
+    const ahead = playerZ + CONFIG.obstacleSpawnAhead + 50;
+    while (lastObstacleZ < ahead) {
+        const chunkStart = lastObstacleZ;
+        const chunkEnd = chunkStart + 80;
+        createTerrainChunk(chunkStart, chunkEnd);
+        lastObstacleZ = chunkEnd;
+    }
+}
+
+// ==================== PLAYER ====================
+function createPlayer() {
+    const group = new THREE.Group();
+
+    // Body (cylinder + two sphere caps to simulate capsule)
+    const bodyMat = new THREE.MeshLambertMaterial({ color: 0xe53935 });
+    const torsoGeo = new THREE.CylinderGeometry(0.3, 0.3, 0.8, 16);
+    const torso = new THREE.Mesh(torsoGeo, bodyMat);
+    torso.position.y = 0.7;
+    torso.castShadow = true;
+    group.add(torso);
+    const topCap = new THREE.Mesh(new THREE.SphereGeometry(0.3, 16, 8), bodyMat);
+    topCap.position.y = 1.1;
+    group.add(topCap);
+    const botCap = new THREE.Mesh(new THREE.SphereGeometry(0.3, 16, 8), bodyMat);
+    botCap.position.y = 0.3;
+    group.add(botCap);
+
+    // Head
+    const headGeo = new THREE.SphereGeometry(0.22, 16, 16);
+    const headMat = new THREE.MeshLambertMaterial({ color: 0xffccbc });
+    const head = new THREE.Mesh(headGeo, headMat);
+    head.position.y = 1.35;
+    head.castShadow = true;
+    group.add(head);
+
+    // Helmet
+    const helmetGeo = new THREE.SphereGeometry(0.25, 16, 12, 0, Math.PI * 2, 0, Math.PI / 2);
+    const helmetMat = new THREE.MeshLambertMaterial({ color: 0x1565c0 });
+    const helmet = new THREE.Mesh(helmetGeo, helmetMat);
+    helmet.position.y = 1.38;
+    group.add(helmet);
+
+    // Skis
+    for (let side of [-0.2, 0.2]) {
+        const skiGeo = new THREE.BoxGeometry(0.1, 0.04, 1.6);
+        const skiMat = new THREE.MeshLambertMaterial({ color: 0x1565c0 });
+        const ski = new THREE.Mesh(skiGeo, skiMat);
+        ski.position.set(side, 0.02, 0);
+        ski.castShadow = true;
+        group.add(ski);
+    }
+
+    // Poles
+    for (let side of [-0.45, 0.45]) {
+        const poleGeo = new THREE.CylinderGeometry(0.015, 0.015, 1.2, 6);
+        const poleMat = new THREE.MeshLambertMaterial({ color: 0x333333 });
+        const pole = new THREE.Mesh(poleGeo, poleMat);
+        pole.position.set(side, 0.6, -0.1);
+        pole.rotation.x = 0.2;
+        group.add(pole);
+    }
+
+    group.position.set(0, 1, 0);
+    scene.add(group);
+    playerMesh = group;
+}
+
+// ==================== OBSTACLES ====================
+function createTree(x, z) {
+    const group = new THREE.Group();
+
+    // Trunk
+    const trunkGeo = new THREE.CylinderGeometry(0.15, 0.2, 1.5, 8);
+    const trunkMat = new THREE.MeshLambertMaterial({ color: 0x5d4037 });
+    const trunk = new THREE.Mesh(trunkGeo, trunkMat);
+    trunk.position.y = 0.75;
+    trunk.castShadow = true;
+    group.add(trunk);
+
+    // Foliage layers (snow-covered pine)
+    const layers = [
+        { y: 1.5, r: 1.2, h: 1.0 },
+        { y: 2.3, r: 0.9, h: 0.8 },
+        { y: 2.9, r: 0.6, h: 0.7 },
+    ];
+    layers.forEach(l => {
+        const fGeo = new THREE.ConeGeometry(l.r, l.h, 8);
+        const fMat = new THREE.MeshLambertMaterial({ color: 0x2e7d32 });
+        const foliage = new THREE.Mesh(fGeo, fMat);
+        foliage.position.y = l.y;
+        foliage.castShadow = true;
+        group.add(foliage);
+
+        // Snow cap
+        const sGeo = new THREE.ConeGeometry(l.r * 0.95, l.h * 0.3, 8);
+        const sMat = new THREE.MeshLambertMaterial({ color: 0xffffff });
+        const snow = new THREE.Mesh(sGeo, sMat);
+        snow.position.y = l.y + l.h * 0.35;
+        group.add(snow);
+    });
+
+    group.position.set(x, 0, -z);
+    scene.add(group);
+
+    return {
+        mesh: group, x, z,
+        radius: 0.8, // collision radius
+        type: 'tree'
+    };
+}
+
+function createRock(x, z) {
+    const size = 0.5 + Math.random() * 0.8;
+    const geo = new THREE.DodecahedronGeometry(size, 1);
+
+    // Deform vertices for natural look
+    const posAttr = geo.attributes.position;
+    for (let i = 0; i < posAttr.count; i++) {
+        posAttr.setX(i, posAttr.getX(i) * (0.8 + Math.random() * 0.4));
+        posAttr.setY(i, posAttr.getY(i) * (0.6 + Math.random() * 0.3));
+        posAttr.setZ(i, posAttr.getZ(i) * (0.8 + Math.random() * 0.4));
+    }
+    geo.computeVertexNormals();
+
+    const mat = new THREE.MeshLambertMaterial({ color: 0x757575 });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(x, size * 0.4, -z);
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    scene.add(mesh);
+
+    return {
+        mesh, x, z,
+        radius: size * 0.8,
+        type: 'rock'
+    };
+}
+
+function spawnObstacles(fromZ, toZ) {
+    const density = CONFIG.baseObstacleDensity * difficultyMultiplier * obstacleSpacingMult;
+    const count = Math.floor((toZ - fromZ) * density);
+    const halfW = CONFIG.slopeWidth / 2 - 2;
+
+    for (let i = 0; i < count; i++) {
+        const z = fromZ + Math.random() * (toZ - fromZ);
+        const x = (Math.random() - 0.5) * 2 * halfW;
+
+        // Don't place obstacles right in the center start area
+        if (z < 10 && Math.abs(x) < 3) continue;
+
+        if (Math.random() < 0.6) {
+            obstacles.push(createTree(x, z));
+        } else {
+            obstacles.push(createRock(x, z));
+        }
+    }
+}
+
+// ==================== COINS ====================
+function createCoin(x, z) {
+    const geo = new THREE.CylinderGeometry(0.35, 0.35, 0.08, 16);
+    const mat = new THREE.MeshLambertMaterial({ color: 0xffd700, emissive: 0x886600, emissiveIntensity: 0.3 });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(x, 1.0, -z);
+    mesh.rotation.x = Math.PI / 2;
+    mesh.castShadow = true;
+    scene.add(mesh);
+
+    return { mesh, x, z, collected: false, radius: 0.6 };
+}
+
+function spawnCoins(fromZ, toZ) {
+    const density = CONFIG.baseCoinDensity;
+    const count = Math.floor((toZ - fromZ) * density);
+    const halfW = CONFIG.slopeWidth / 2 - 3;
+
+    for (let i = 0; i < count; i++) {
+        const z = fromZ + Math.random() * (toZ - fromZ);
+        const x = (Math.random() - 0.5) * 2 * halfW;
+        coinObjects.push(createCoin(x, z));
+    }
+}
+
+// ==================== DIFFICULTY SYSTEM ====================
+function calcDifficultyFromProfile() {
+    let base = 1.0;
+
+    // Age factor
+    if (playerProfile.ageGroup === 'young') base *= 1.1;
+    else if (playerProfile.ageGroup === 'senior') base *= 0.7;
+
+    // Balance ability factor
+    if (playerProfile.balanceAbility === 'low') base *= 0.6;
+    else if (playerProfile.balanceAbility === 'high') base *= 1.3;
+
+    return base;
+}
+
+function updateDifficulty() {
+    const distanceFactor = 1 + Math.floor(distance / CONFIG.difficultyScaleInterval) * 0.15;
+    const profileFactor = calcDifficultyFromProfile();
+    difficultyMultiplier = profileFactor * distanceFactor;
+
+    // Adjust forward speed based on difficulty, then apply hit penalty
+    forwardSpeed = CONFIG.baseForwardSpeed * (0.8 + difficultyMultiplier * 0.25) * speedPenalty;
+    forwardSpeed = Math.min(forwardSpeed, 30); // cap
+
+    document.getElementById('hudDiff').textContent = Math.min(Math.floor(difficultyMultiplier * 10) / 10, 5).toFixed(1);
+}
+
+// ==================== BALANCE SYSTEM ====================
+function updateBalance(dt, turning, moveX) {
+    // Natural decay - balance slowly decreases over time
+    balanceValue -= CONFIG.balanceDecayRate * dt * 60 * difficultyMultiplier;
+
+    // Turning penalty - sharp movements reduce balance
+    if (turning) {
+        balanceValue -= CONFIG.balanceTurnPenalty * dt * 60;
+        // Update lean direction based on actual movement (works for all input methods)
+        const leanTarget = Math.max(-1, Math.min(1, moveX * 8));
+        balanceLean += (leanTarget - balanceLean) * dt * 6;
+    } else {
+        // Recovery when not turning (smooth movements rewarded)
+        balanceValue += CONFIG.balanceRecoveryRate * dt * 60;
+        // Lean returns to center
+        balanceLean *= (1 - dt * 3);
+    }
+
+    // Speed penalty at high speeds
+    const speedFactor = forwardSpeed / CONFIG.baseForwardSpeed;
+    if (speedFactor > 1.3) {
+        balanceValue -= (speedFactor - 1.3) * dt * 10;
+    }
+
+    balanceValue = Math.max(0, Math.min(100, balanceValue));
+    balanceHistory.push(balanceValue);
+
+    // Update UI
+    const bar = document.getElementById('balanceBarInner');
+    const pointer = document.getElementById('balancePointer');
+    bar.style.width = balanceValue + '%';
+
+    if (balanceValue > 60) bar.style.background = 'linear-gradient(90deg, #4caf50, #8bc34a)';
+    else if (balanceValue > 30) bar.style.background = 'linear-gradient(90deg, #ff9800, #ffc107)';
+    else bar.style.background = 'linear-gradient(90deg, #f44336, #ff5722)';
+
+    pointer.style.left = (50 + balanceLean * 40) + '%';
+
+    // Balance bottoms out at 5% -- does NOT cost lives
+    // Low balance means score penalty and harder control, but only obstacles cost lives
+    if (balanceValue <= 5) {
+        balanceValue = 5; // floor, never fully zero
+        // Score drains while balance is critically low
+        score -= 1;
+        if (score < 0) score = 0;
+    }
+}
+
+// ==================== COLLISION DETECTION ====================
+function checkCollisions() {
+    const px = playerMesh.position.x;
+    const pz = -playerMesh.position.z;
+
+    // Obstacle collisions (3-life system)
+    for (let obs of obstacles) {
+        const dx = px - obs.x;
+        const dz = pz - obs.z;
+        const dist = Math.sqrt(dx * dx + dz * dz);
+
+        if (dist < obs.radius + 0.4 && hitCooldown <= 0) {
+            hits++;
+            lives--;
+            hitCooldown = 1.5; // 1.5s invincibility after hit
+            score -= 5;
+            if (score < 0) score = 0;
+
+            // Push player away
+            const pushDir = dx / dist;
+            playerMesh.position.x += pushDir * 1.5;
+
+            // Flash effect on obstacle
+            obs.mesh.traverse(child => {
+                if (child.isMesh) {
+                    const origColor = child.material.color.clone();
+                    child.material.color.set(0xff0000);
+                    setTimeout(() => child.material.color.copy(origColor), 200);
+                }
+            });
+
+            // Flash player red during invincibility
+            playerMesh.traverse(child => {
+                if (child.isMesh) {
+                    const origColor = child.material.color.clone();
+                    child.material.emissive = new THREE.Color(0xff0000);
+                    child.material.emissiveIntensity = 0.5;
+                    setTimeout(() => {
+                        child.material.emissive = new THREE.Color(0x000000);
+                        child.material.emissiveIntensity = 0;
+                    }, 1500);
+                }
+            });
+
+            // Update lives display
+            document.getElementById('hudLives').innerHTML = '\u2764'.repeat(lives) + '<span style="opacity:0.25">\u2764</span>'.repeat(3 - lives);
+
+            // Apply progressive penalties based on hit count
+            // Also restore balance after hit so player gets a fair chance
+            if (hits === 1) {
+                // 1st hit: permanently reduce speed by 30%
+                speedPenalty = 0.7;
+                balanceValue = Math.max(balanceValue, 60); // restore to at least 60%
+            } else if (hits === 2) {
+                // 2nd hit: widen obstacle spacing
+                obstacleSpacingMult = 0.4;
+                balanceValue = Math.max(balanceValue, 50); // restore to at least 50%
+
+                // Also remove nearby existing obstacles to give immediate wider space
+                const playerZ = -playerMesh.position.z;
+                const clearAhead = 60; // clear 60m ahead
+                obstacles = obstacles.filter(o => {
+                    if (o.z > playerZ && o.z < playerZ + clearAhead) {
+                        // Remove ~60% of obstacles ahead
+                        if (Math.random() < 0.6) {
+                            scene.remove(o.mesh);
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+            }
+
+            // 3rd hit: game over
+            if (lives <= 0) {
+                endGame('No Lives Remaining');
+                return;
+            }
+
+            break;
+        }
+    }
+
+    // Coin collection
+    for (let coin of coinObjects) {
+        if (coin.collected) continue;
+        const dx = px - coin.x;
+        const dz = pz - coin.z;
+        const dist = Math.sqrt(dx * dx + dz * dz);
+
+        if (dist < coin.radius + 0.3) {
+            coin.collected = true;
+            coins++;
+            score += CONFIG.coinValue;
+
+            // Balance bonus for collecting coins
+            balanceValue = Math.min(100, balanceValue + 3);
+
+            // Animate collection
+            const mesh = coin.mesh;
+            const startY = mesh.position.y;
+            const startScale = 1;
+            let t = 0;
+            function animateCoin() {
+                t += 0.05;
+                mesh.position.y = startY + t * 3;
+                mesh.scale.setScalar(startScale * (1 - t));
+                mesh.rotation.y += 0.3;
+                if (t < 1) requestAnimationFrame(animateCoin);
+                else scene.remove(mesh);
+            }
+            animateCoin();
+        }
+    }
+
+    // Boundary collision
+    const halfW = CONFIG.slopeWidth / 2 - 1;
+    if (Math.abs(px) > halfW) {
+        playerMesh.position.x = Math.sign(px) * halfW;
+        balanceValue -= 5;
+    }
+}
+
+// ==================== SPAWNING MANAGER ====================
+let nextObstacleSpawnZ = 0;
+let nextCoinSpawnZ = 0;
+
+function manageSpawning(currentZ) {
+    // Spawn obstacles ahead
+    while (nextObstacleSpawnZ < currentZ + CONFIG.obstacleSpawnAhead) {
+        const from = nextObstacleSpawnZ;
+        const to = from + 40;
+        spawnObstacles(from, to);
+        nextObstacleSpawnZ = to;
+    }
+
+    // Spawn coins ahead
+    while (nextCoinSpawnZ < currentZ + CONFIG.coinSpawnAhead) {
+        const from = nextCoinSpawnZ;
+        const to = from + 30;
+        spawnCoins(from, to);
+        nextCoinSpawnZ = to;
+    }
+
+    // Cleanup behind
+    const behindZ = currentZ - CONFIG.obstacleDespawnBehind;
+    obstacles = obstacles.filter(obs => {
+        if (obs.z < behindZ) {
+            scene.remove(obs.mesh);
+            return false;
+        }
+        return true;
+    });
+
+    coinObjects = coinObjects.filter(coin => {
+        if (coin.z < behindZ) {
+            if (!coin.collected) scene.remove(coin.mesh);
+            return false;
+        }
+        return true;
+    });
+}
+
+// ==================== GAME LIFECYCLE ====================
+function startGame() {
+    // Read assessment
+    playerProfile.ageGroup = document.getElementById('ageGroup').value;
+    playerProfile.balanceAbility = document.getElementById('balanceAbility').value;
+    playerProfile.rehabGoal = document.getElementById('rehabGoal').value;
+
+    // Reset state
+    score = 0; coins = 0; distance = 0; maxSpeed = 0;
+    balanceValue = 100; balanceLean = 0; balanceHistory = [];
+    lives = 3; hits = 0; hitCooldown = 0; speedPenalty = 1; obstacleSpacingMult = 1;
+    obstacles = []; coinObjects = []; terrainChunks = [];
+    nextObstacleSpawnZ = 5;
+    nextCoinSpawnZ = 3;
+    lastObstacleZ = 0;
+
+    difficultyMultiplier = calcDifficultyFromProfile();
+    forwardSpeed = CONFIG.baseForwardSpeed * (0.8 + difficultyMultiplier * 0.25);
+
+    // Clear scene objects (keep lights, sky, etc.)
+    const toRemove = [];
+    scene.traverse(child => {
+        if (child.userData.gameObject) toRemove.push(child);
+    });
+    toRemove.forEach(obj => scene.remove(obj));
+
+    // Create player
+    if (playerMesh) scene.remove(playerMesh);
+    createPlayer();
+
+    // Initial terrain
+    createTerrainChunk(0, 160);
+
+    // Initialize camera behind and above player
+    camera.position.set(0, 7, 10);
+    camera.lookAt(0, 1, -15);
+
+    // Hide/show UI
+    document.getElementById('assessmentScreen').style.display = 'none';
+    document.getElementById('gameOverScreen').style.display = 'none';
+    document.getElementById('hud').style.display = 'block';
+    document.getElementById('balanceContainer').style.display = 'block';
+    document.getElementById('instructions').style.display = 'block';
+
+    // Update trial indicator
+    document.getElementById('hudTrial').textContent = 'Trial ' + (trialCount + 1) + ' / ' + MAX_TRIALS;
+
+    gameState = 'playing';
+    clock.start();
+}
+
+function endGame(reason) {
+    gameState = 'gameover';
+    trialCount++;
+
+    // Compute stats
+    const avgBalance = balanceHistory.length > 0
+        ? Math.round(balanceHistory.reduce((a, b) => a + b, 0) / balanceHistory.length)
+        : 0;
+
+    // Save trial data
+    trialHistory.push({
+        trial: trialCount,
+        score: score,
+        distance: Math.round(distance),
+        coins: coins,
+        hits: hits,
+        avgBalance: avgBalance,
+        maxSpeed: Math.round(maxSpeed),
+        reason: reason,
+        duration: balanceHistory.length > 0 ? Math.round(balanceHistory.length / 60) : 0,
+        profile: { ...playerProfile },
+        difficultyMult: Math.round(difficultyMultiplier * 10) / 10
+    });
+
+    document.getElementById('finalScore').textContent = score;
+    document.getElementById('finalDist').textContent = Math.round(distance) + ' m';
+    document.getElementById('finalCoins').textContent = coins;
+    document.getElementById('finalHits').textContent = hits + ' / 3';
+    document.getElementById('finalBalance').textContent = avgBalance + '%';
+    document.getElementById('finalSpeed').textContent = Math.round(maxSpeed) + ' km/h';
+
+    // Generate AI-style training advice
+    const advice = generateAdvice(avgBalance, distance, coins, reason);
+    document.getElementById('aiAdviceText').textContent = advice;
+
+    // Update restart button text based on trial progress
+    if (trialCount >= MAX_TRIALS) {
+        document.getElementById('restartBtn').textContent = 'View Training Report';
+    } else {
+        document.getElementById('restartBtn').textContent = 'Next Trial (' + (trialCount + 1) + ' / ' + MAX_TRIALS + ')';
+    }
+
+    document.getElementById('gameOverScreen').style.display = 'flex';
+    document.getElementById('hud').style.display = 'none';
+    document.getElementById('balanceContainer').style.display = 'none';
+    document.getElementById('instructions').style.display = 'none';
+}
+
+function restartGame() {
+    // If 5 trials completed, show the report instead of restarting
+    if (trialCount >= MAX_TRIALS) {
+        showTrainingReport();
+        return;
+    }
+
+    rebuildScene();
+    startGame();
+}
+
+function rebuildScene() {
+    // Full reset by rebuilding
+    while (scene.children.length > 0) scene.remove(scene.children[0]);
+    createSky();
+
+    // Re-add lights
+    const ambientLight = new THREE.AmbientLight(0x8899bb, 0.6);
+    scene.add(ambientLight);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1.0);
+    dirLight.position.set(30, 50, -20);
+    dirLight.castShadow = true;
+    dirLight.shadow.mapSize.set(2048, 2048);
+    dirLight.shadow.camera.near = 1;
+    dirLight.shadow.camera.far = 200;
+    dirLight.shadow.camera.left = -60;
+    dirLight.shadow.camera.right = 60;
+    dirLight.shadow.camera.top = 60;
+    dirLight.shadow.camera.bottom = -60;
+    scene.add(dirLight);
+
+    terrainChunks = [];
+    lastObstacleZ = 0;
+}
+
+function startNewSession() {
+    trialCount = 0;
+    trialHistory = [];
+    document.getElementById('reportScreen').style.display = 'none';
+    rebuildScene();
+    startGame();
+}
+
+function generateAdvice(avgBalance, dist, coinCount, reason) {
+    const lines = [];
+
+    if (reason === 'No Lives Remaining') {
+        lines.push('Training ended after 3 obstacle collisions.');
+    } else if (reason === 'Lost Balance') {
+        lines.push('Training ended due to balance loss.');
+    }
+
+    // Obstacle avoidance feedback
+    if (hits === 0) {
+        lines.push('Perfect obstacle avoidance! Excellent spatial awareness and reaction time.');
+    } else if (hits === 1) {
+        lines.push('Only 1 collision - good obstacle avoidance. The speed reduction helped you adapt.');
+    } else if (hits === 2) {
+        lines.push('2 collisions detected. The widened obstacle spacing was activated to assist you. Practice anticipating obstacles earlier.');
+    } else {
+        lines.push('3 collisions occurred. Focus on scanning ahead and planning your path. Start with slower speeds next session.');
+    }
+
+    // Balance feedback
+    if (avgBalance >= 75) {
+        lines.push('Excellent balance control! Your stability is strong. Consider increasing difficulty next session.');
+    } else if (avgBalance >= 50) {
+        lines.push('Good balance performance. Focus on smoother, more gradual turns to improve stability further.');
+    } else if (avgBalance >= 30) {
+        lines.push('Balance needs improvement. Practice slow, controlled weight shifts. Reduce turn frequency.');
+    } else {
+        lines.push('Balance was below target. Recommended: start with static balance exercises (single-leg stands) before next game session.');
+    }
+
+    // Distance feedback
+    if (dist > 500) {
+        lines.push('Great endurance! You maintained control over a long distance.');
+    } else if (dist > 200) {
+        lines.push('Moderate distance achieved. Building stamina gradually is key for rehabilitation.');
+    } else {
+        lines.push('Short session detected. Frequent short sessions can still be beneficial - consistency matters.');
+    }
+
+    // Coin feedback
+    if (coinCount > 20) {
+        lines.push('Strong spatial awareness shown through coin collection. This indicates good motor coordination.');
+    } else if (coinCount > 8) {
+        lines.push('Moderate coin collection. Try focusing on coin paths to train lateral movement control.');
+    }
+
+    // Goal-specific advice
+    if (playerProfile.rehabGoal === 'balance') {
+        lines.push('For balance recovery: practice 3 sessions per week. Gradually reduce steering corrections each session.');
+    } else if (playerProfile.rehabGoal === 'coordination') {
+        lines.push('For coordination: focus on collecting coins in sequences. This trains predictive motor planning.');
+    } else if (playerProfile.rehabGoal === 'strength') {
+        lines.push('For strength building: longer sessions at moderate speed help build lower limb endurance.');
+    }
+
+    return lines.join(' ');
+}
+
+// ==================== TRAINING REPORT ====================
+function showTrainingReport() {
+    document.getElementById('gameOverScreen').style.display = 'none';
+    document.getElementById('hud').style.display = 'none';
+    document.getElementById('balanceContainer').style.display = 'none';
+    document.getElementById('instructions').style.display = 'none';
+
+    const h = trialHistory;
+    const n = h.length;
+
+    // Calculate aggregates
+    const totalScore = h.reduce((s, t) => s + t.score, 0);
+    const totalCoins = h.reduce((s, t) => s + t.coins, 0);
+    const totalDist = h.reduce((s, t) => s + t.distance, 0);
+    const avgScore = Math.round(totalScore / n);
+    const avgDist = Math.round(totalDist / n);
+    const avgBalance = Math.round(h.reduce((s, t) => s + t.avgBalance, 0) / n);
+    const avgHits = (h.reduce((s, t) => s + t.hits, 0) / n).toFixed(1);
+    const bestScore = Math.max(...h.map(t => t.score));
+    const bestDist = Math.max(...h.map(t => t.distance));
+    const bestBalance = Math.max(...h.map(t => t.avgBalance));
+
+    // Trend calculations (compare last 2 vs first 2)
+    function trend(arr) {
+        if (arr.length < 3) return 'flat';
+        const first2 = (arr[0] + arr[1]) / 2;
+        const last2 = (arr[n - 2] + arr[n - 1]) / 2;
+        const pct = ((last2 - first2) / (first2 || 1)) * 100;
+        if (pct > 8) return 'up';
+        if (pct < -8) return 'down';
+        return 'flat';
+    }
+    const scoreTrend = trend(h.map(t => t.score));
+    const distTrend = trend(h.map(t => t.distance));
+    const balanceTrend = trend(h.map(t => t.avgBalance));
+    const hitsTrend = trend(h.map(t => 3 - t.hits));
+
+    function trendIcon(t) {
+        if (t === 'up') return '<span class="trend-up">&#9650; Improving</span>';
+        if (t === 'down') return '<span class="trend-down">&#9660; Declining</span>';
+        return '<span class="trend-flat">&#9654; Stable</span>';
+    }
+
+    const scores = h.map(t => t.score);
+    const bestIdx = scores.indexOf(Math.max(...scores));
+    const worstIdx = scores.indexOf(Math.min(...scores));
+
+    let html = '';
+
+    // Summary cards
+    html += '<div class="report-section"><h3>Session Overview</h3>';
+    html += '<div class="report-summary">';
+    html += '<div class="summary-card"><div class="val">' + totalScore + '</div><div class="lbl">Total Score</div></div>';
+    html += '<div class="summary-card"><div class="val">' + totalDist + ' m</div><div class="lbl">Total Distance</div></div>';
+    html += '<div class="summary-card"><div class="val">' + totalCoins + '</div><div class="lbl">Total Coins</div></div>';
+    html += '<div class="summary-card"><div class="val">' + avgBalance + '%</div><div class="lbl">Avg Balance</div></div>';
+    html += '<div class="summary-card"><div class="val">' + bestScore + '</div><div class="lbl">Best Score</div></div>';
+    html += '</div></div>';
+
+    // Per-trial table
+    html += '<div class="report-section"><h3>Trial-by-Trial Results</h3>';
+    html += '<table class="report-table">';
+    html += '<tr><th>Trial</th><th>Score</th><th>Distance</th><th>Coins</th><th>Hits</th><th>Avg Balance</th><th>Max Speed</th><th>End Reason</th></tr>';
+    for (let i = 0; i < n; i++) {
+        const t = h[i];
+        const rowClass = i === bestIdx ? 'best' : (i === worstIdx ? 'worst' : '');
+        html += '<tr>';
+        html += '<td>' + t.trial + (i === bestIdx ? ' &#9733;' : '') + '</td>';
+        html += '<td class="' + rowClass + '">' + t.score + '</td>';
+        html += '<td>' + t.distance + ' m</td>';
+        html += '<td>' + t.coins + '</td>';
+        html += '<td>' + t.hits + ' / 3</td>';
+        html += '<td>' + t.avgBalance + '%</td>';
+        html += '<td>' + t.maxSpeed + ' km/h</td>';
+        html += '<td>' + (t.reason === 'No Lives Remaining' ? '3 Hits' : t.reason) + '</td>';
+        html += '</tr>';
+    }
+    html += '</table></div>';
+
+    // Trend analysis
+    html += '<div class="report-section"><h3>Performance Trends</h3>';
+    html += '<table class="report-table">';
+    html += '<tr><th>Metric</th><th>Trial 1</th><th>Trial ' + n + '</th><th>Change</th><th>Trend</th></tr>';
+
+    const first = h[0], last = h[n - 1];
+    function changeStr(a, b, suffix) {
+        const diff = b - a;
+        const sign = diff > 0 ? '+' : '';
+        const cls = diff > 0 ? 'trend-up' : (diff < 0 ? 'trend-down' : 'trend-flat');
+        return '<span class="' + cls + '">' + sign + diff + suffix + '</span>';
+    }
+
+    html += '<tr><td>Score</td><td>' + first.score + '</td><td>' + last.score + '</td><td>' + changeStr(first.score, last.score, '') + '</td><td>' + trendIcon(scoreTrend) + '</td></tr>';
+    html += '<tr><td>Distance</td><td>' + first.distance + ' m</td><td>' + last.distance + ' m</td><td>' + changeStr(first.distance, last.distance, ' m') + '</td><td>' + trendIcon(distTrend) + '</td></tr>';
+    html += '<tr><td>Avg Balance</td><td>' + first.avgBalance + '%</td><td>' + last.avgBalance + '%</td><td>' + changeStr(first.avgBalance, last.avgBalance, '%') + '</td><td>' + trendIcon(balanceTrend) + '</td></tr>';
+    html += '<tr><td>Obstacle Avoidance</td><td>' + (3 - first.hits) + ' / 3</td><td>' + (3 - last.hits) + ' / 3</td><td>' + changeStr(3 - first.hits, 3 - last.hits, '') + '</td><td>' + trendIcon(hitsTrend) + '</td></tr>';
+    html += '</table></div>';
+
+    // Consistency analysis
+    const scoreStdDev = Math.round(Math.sqrt(h.reduce((s, t) => s + Math.pow(t.score - avgScore, 2), 0) / n));
+    const balanceStdDev = Math.round(Math.sqrt(h.reduce((s, t) => s + Math.pow(t.avgBalance - avgBalance, 2), 0) / n));
+    const consistencyScore = Math.max(0, 100 - scoreStdDev / (avgScore || 1) * 100);
+
+    html += '<div class="report-section"><h3>Consistency Analysis</h3>';
+    html += '<div class="report-summary">';
+    html += '<div class="summary-card"><div class="val">' + Math.round(consistencyScore) + '%</div><div class="lbl">Score Consistency</div></div>';
+    html += '<div class="summary-card"><div class="val">&plusmn;' + scoreStdDev + '</div><div class="lbl">Score Variation</div></div>';
+    html += '<div class="summary-card"><div class="val">&plusmn;' + balanceStdDev + '%</div><div class="lbl">Balance Variation</div></div>';
+    html += '<div class="summary-card"><div class="val">' + avgHits + '</div><div class="lbl">Avg Hits/Trial</div></div>';
+    html += '</div></div>';
+
+    // AI Recommendations
+    html += '<div class="report-advice"><h4>AI Training Recommendations</h4><ul>';
+
+    if (scoreTrend === 'up' && balanceTrend === 'up') {
+        html += '<li><strong>Excellent progress!</strong> Both score and balance are improving across trials. You are adapting well to the training.</li>';
+    } else if (scoreTrend === 'up') {
+        html += '<li><strong>Good score improvement.</strong> Focus more on maintaining steady balance to complement your increasing score.</li>';
+    } else if (balanceTrend === 'up') {
+        html += '<li><strong>Balance is improving.</strong> Your stability is getting better. Try to also focus on distance and coin collection.</li>';
+    } else if (scoreTrend === 'down') {
+        html += '<li><strong>Scores are declining.</strong> You may be fatiguing. Consider shorter sessions or rest between trials.</li>';
+    } else {
+        html += '<li><strong>Performance is stable.</strong> Try increasing the difficulty settings to continue challenging yourself.</li>';
+    }
+
+    if (avgBalance >= 70) {
+        html += '<li>Your average balance of ' + avgBalance + '% is strong. Consider progressing to a higher difficulty level.</li>';
+    } else if (avgBalance >= 45) {
+        html += '<li>Average balance at ' + avgBalance + '%. Focus on smoother, gradual turns. Avoid rapid directional changes.</li>';
+    } else {
+        html += '<li>Balance averaging ' + avgBalance + '% needs attention. Practice static balance exercises (single-leg stands) between game sessions.</li>';
+    }
+
+    const totalHits = h.reduce((s, t) => s + t.hits, 0);
+    if (totalHits <= 5) {
+        html += '<li>Good obstacle awareness with only ' + totalHits + ' total collisions across 5 trials.</li>';
+    } else if (totalHits <= 10) {
+        html += '<li>' + totalHits + ' total collisions suggest you may be reacting too late. Try scanning further ahead on the slope.</li>';
+    } else {
+        html += '<li>' + totalHits + ' total collisions is high. Start with a lower difficulty and focus on path planning before speed.</li>';
+    }
+
+    if (consistencyScore >= 75) {
+        html += '<li>High consistency (' + Math.round(consistencyScore) + '%) shows reliable motor control. Your performance is predictable and steady.</li>';
+    } else if (consistencyScore >= 50) {
+        html += '<li>Moderate consistency. Some trial-to-trial variation is normal during rehabilitation. Keep practicing for more uniform results.</li>';
+    } else {
+        html += '<li>High variability between trials. This is common early in rehabilitation. Focus on steady, repeatable movements each session.</li>';
+    }
+
+    const goal = h[0].profile.rehabGoal;
+    if (goal === 'balance') {
+        html += '<li><strong>Balance Recovery Goal:</strong> Schedule 3-4 sessions per week. Track your balance trend closely - aim for consistent 70%+ average.</li>';
+    } else if (goal === 'coordination') {
+        html += '<li><strong>Coordination Goal:</strong> Focus on coin collection patterns. Your total of ' + totalCoins + ' coins shows ' + (totalCoins > 50 ? 'good' : 'developing') + ' spatial coordination.</li>';
+    } else if (goal === 'strength') {
+        html += '<li><strong>Strength Goal:</strong> Total distance of ' + totalDist + 'm across trials builds lower limb endurance. Aim to increase distance each session.</li>';
+    } else {
+        html += '<li><strong>General Fitness:</strong> Well-rounded training. Continue with regular sessions to build overall athletic capability.</li>';
+    }
+
+    html += '</ul></div>';
+
+    document.getElementById('reportContent').innerHTML = html;
+    document.getElementById('reportScreen').style.display = 'flex';
+}
+
+// ==================== GAME LOOP ====================
+function gameLoop() {
+    requestAnimationFrame(gameLoop);
+
+    if (gameState !== 'playing') {
+        renderer.render(scene, camera);
+        return;
+    }
+
+    const dt = Math.min(clock.getDelta(), 0.05);
+
+    // Handle pause
+    if (keys['p']) {
+        keys['p'] = false;
+        gameState = 'paused';
+        document.getElementById('pauseOverlay').style.display = 'flex';
+        return;
+    }
+
+    // Player movement -- merge keyboard, mouse, and gamepad inputs
+    let moveX = 0;
+    let turning = false;
+    const moveSpeed = CONFIG.baseMoveSpeed * (1 + difficultyMultiplier * 0.1);
+
+    // 1. Keyboard input
+    if (keys['arrowleft'] || keys['a']) { moveX -= moveSpeed * dt; }
+    if (keys['arrowright'] || keys['d']) { moveX += moveSpeed * dt; }
+
+    // 2. Mouse input (steer by horizontal position relative to center)
+    if (mouseActive) {
+        const deadzone = 0.08;
+        if (Math.abs(mouseX) > deadzone) {
+            moveX += mouseX * moveSpeed * dt;
+        }
+    }
+
+    // 3. Gamepad input (left stick horizontal axis)
+    if (gamepadIndex >= 0) {
+        const gamepads = navigator.getGamepads();
+        const gp = gamepads[gamepadIndex];
+        if (gp) {
+            const axisX = gp.axes[0] || 0; // left stick horizontal
+            const gpDeadzone = 0.15;
+            if (Math.abs(axisX) > gpDeadzone) {
+                moveX += axisX * moveSpeed * dt;
+            }
+            // D-pad support (buttons 14=left, 15=right on standard mapping)
+            if (gp.buttons[14] && gp.buttons[14].pressed) moveX -= moveSpeed * dt;
+            if (gp.buttons[15] && gp.buttons[15].pressed) moveX += moveSpeed * dt;
+        }
+    }
+
+    // Clamp max movement per frame
+    moveX = Math.max(-moveSpeed * dt * 1.5, Math.min(moveSpeed * dt * 1.5, moveX));
+    turning = Math.abs(moveX) > 0.001;
+
+    playerMesh.position.x += moveX;
+    playerMesh.position.z -= forwardSpeed * dt;
+
+    // Tilt player model based on turning
+    const targetTilt = turning ? (moveX > 0 ? -0.15 : 0.15) : 0;
+    playerMesh.rotation.z += (targetTilt - playerMesh.rotation.z) * 0.1;
+
+    // Update distance and score
+    distance += forwardSpeed * dt;
+    score += Math.floor(forwardSpeed * dt * 0.5);
+
+    const currentSpeedKmh = forwardSpeed * 3.6;
+    if (currentSpeedKmh > maxSpeed) maxSpeed = currentSpeedKmh;
+
+    // Update systems
+    updateBalance(dt, turning, moveX);
+    updateDifficulty();
+    if (hitCooldown > 0) hitCooldown -= dt;
+    checkCollisions();
+
+    const currentZ = -playerMesh.position.z;
+    manageSpawning(currentZ);
+    ensureTerrain(currentZ);
+
+    // Rotate coins
+    coinObjects.forEach(c => {
+        if (!c.collected) c.mesh.rotation.z += dt * 3;
+    });
+
+    // Camera follow
+    const camTarget = new THREE.Vector3(
+        playerMesh.position.x * 0.3,
+        playerMesh.position.y + 6,
+        playerMesh.position.z + 10
+    );
+    camera.position.lerp(camTarget, 0.05);
+    camera.lookAt(
+        playerMesh.position.x * 0.5,
+        playerMesh.position.y + 1,
+        playerMesh.position.z - 15
+    );
+
+    // Update directional light to follow player
+    scene.traverse(child => {
+        if (child.isDirectionalLight) {
+            child.position.set(
+                playerMesh.position.x + 30,
+                50,
+                playerMesh.position.z - 20
+            );
+            child.target.position.copy(playerMesh.position);
+            child.target.updateMatrixWorld();
+        }
+    });
+
+    // Update HUD
+    document.getElementById('hudScore').textContent = score;
+    document.getElementById('hudSpeed').textContent = Math.round(currentSpeedKmh) + ' km/h';
+    document.getElementById('hudDist').textContent = Math.round(distance) + ' m';
+    document.getElementById('hudCoins').textContent = coins;
+
+    renderer.render(scene, camera);
+}
+
+// Unpause handler
+window.addEventListener('keydown', e => {
+    if (e.key.toLowerCase() === 'p' && gameState === 'paused') {
+        gameState = 'playing';
+        document.getElementById('pauseOverlay').style.display = 'none';
+        clock.getDelta(); // consume accumulated delta
+    }
+});
+
+function onResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+// ==================== START ====================
+init();
+gameLoop();
+</script>
+</body>
+</html>
