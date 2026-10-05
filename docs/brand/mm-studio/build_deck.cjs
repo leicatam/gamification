@@ -1,4 +1,4 @@
-// MM Studio — UK investor brief v2 generator.
+// MM Studio — UK investor brief v3 generator (v2 plus the Seoul immersion memo of 5 Oct 2026).
 // Run: node build_deck.js [outfile]   (needs pptxgenjs, react, react-dom, react-icons, sharp)
 const path = require("path");
 const fs = require("fs");
@@ -10,7 +10,7 @@ const fa = require("react-icons/fa");
 const SKILL = process.env.PPTX_SKILL_DIR || "/root/.claude/skills/synced/36b83d80-6c88-4b1f-9f14-ce26657dad9e_62282606-1d66-4bbb-8992-2f9c9ff867bd/pptx";
 const { applyTheme } = require(path.join(SKILL, "scripts/apply_theme.js"));
 
-const OUT = process.argv[2] || path.join(__dirname, "MM_Studio_Investor_Brief_EN_v2.pptx");
+const OUT = process.argv[2] || path.join(__dirname, "MM_Studio_Investor_Brief_EN_v3.pptx");
 const ASSETS = path.join(__dirname, "assets");
 const NOTES_V1 = process.env.NOTES_V1 ? JSON.parse(fs.readFileSync(process.env.NOTES_V1, "utf8")) : {};
 
@@ -154,7 +154,7 @@ const light = (title, section) => { const s = pres.addSlide({ masterName: "LIGHT
     txt(s, e[1], x, 5.95, ew, 0.3, { fontSize: 12, color: C.text2 });
   });
   txt(s, "Laboratory (in vitro) data only. Mechanisms and clinical outcomes need separate evidence; product documentation defines intended use.", M, 6.5, CW, 0.3, { fontSize: 12, color: C.text2 });
-  notes(s, "IT-EXO and SynExo as baseline innovations for resilience and regenerative biotech is the owner's wording (item 4). SynExo details (HLA-G, EGF/bFGF cargo, Korean patent 2026, manuscript under review at Biomolecules MDPI) and the in-vitro figures come from WBI_Investor_Deck_2026.pptx slides 6 and 8. These are cell-based results from a submitted manuscript, not clinical results. The WBI deck cites the human-derived exosomes as licensed technology; confirm that IT-EXO is that platform.", 3);
+  notes(s, "IT-EXO and SynExo as baseline innovations for resilience and regenerative biotech is the owner's wording (item 4). SynExo details (HLA-G, EGF/bFGF cargo, Korean patent 2026, manuscript under review at Biomolecules MDPI) and the in-vitro figures come from WBI_Investor_Deck_2026.pptx slides 6 and 8. These are cell-based results from a submitted manuscript, not clinical results. The WBI deck cites the human-derived exosomes as licensed technology; confirm that IT-EXO is that platform. Exosome-based items in any Seoul clinic programme offered through the immersion are clinic protocols, not evidence; this slide's in-vitro caveat applies to them.", 3);
 
   // ===== 5 Unique design =====
   s = light("Why our design is different: 30+ years from supply chain to studio", "Innovation");
@@ -295,7 +295,7 @@ const light = (title, section) => { const s = pres.addSlide({ masterName: "LIGHT
     txt(s, hz[i][2].map((t, k) => ({ text: t, options: { bullet: true, breakLine: k < 2, paraSpaceAfter: 4 } })), x + 0.3, 4.35, sw3 - 0.6, 1.9, { fontSize: 13 });
   }
   txt(s, "WBI plan: 25,000 engaged, consented users across the studio network within two years. Built on explicit consent and UK GDPR; AI supports professionals and does not diagnose.", M, 6.42, CW, 0.5, { fontSize: 12, bold: true });
-  notes(s, "Addresses the missing future-development gap: AI and data from the scanner, services and client experience. 'Today' reflects AI-assisted scanning and follow-up comparison described in the brand materials; 'Next' and 'Later' are proposed development, not shipped features. The client AI app (scan, protocol, homecare compliance, rebooking), the Engage-Capture-Learn-Compound loop, AI peptide design and the 25,000-user target are from WBI_Investor_Deck_2026.pptx slides 6 and 11; the app is described there as funded by WBI's own round, so confirm its timing for MM Studio UK. Skin and scalp images are personal data (possibly special-category); a consent, retention and DPIA plan is needed. Owner to confirm the current scanner hardware and what data it stores.");
+  notes(s, "Addresses the missing future-development gap: AI and data from the scanner, services and client experience. 'Today' reflects AI-assisted scanning and follow-up comparison described in the brand materials; 'Next' and 'Later' are proposed development, not shipped features. The client AI app (scan, protocol, homecare compliance, rebooking), the Engage-Capture-Learn-Compound loop, AI peptide design and the 25,000-user target are from WBI_Investor_Deck_2026.pptx slides 6 and 11; the app is described there as funded by WBI's own round, so confirm its timing for MM Studio UK. Skin and scalp images are personal data (possibly special-category); a consent, retention and DPIA plan is needed. Owner to confirm the current scanner hardware and what data it stores. If the Seoul immersion involves participants' health information, consultation records or images, that is special-category data under UK GDPR (explicit consent, a privacy notice naming the controllers, minimisation, retention limits, a DPIA); transfers to Korea rely on the UK's 2022 adequacy regulations for the Republic of Korea.");
 
   // ===== 10 Business models =====
   pres.addSection({ title: "Commercial" });
@@ -316,15 +316,15 @@ const light = (title, section) => { const s = pres.addSlide({ masterName: "LIGHT
     txt(s, rec[i][1], x + 1.0, 5.4, sw3 - 1.2, 0.35, { fontSize: 14, bold: true });
     txt(s, rec[i][2], x + 1.0, 5.78, sw3 - 1.2, 0.95, { fontSize: 12, color: C.text2 });
   }
-  notes(s, "Per-client spend (about US$3,800: skin programme $1,800, hair/scalp programme $1,200, homecare $800) is a management estimate from WBI_Investor_Deck_2026.pptx slide 9. WBI's 15% supplier capture is WBI revenue, not a return to MM Studio UK unit holders.", 5);
+  notes(s, "Per-client spend (about US$3,800: skin programme $1,800, hair/scalp programme $1,200, homecare $800) is a management estimate from WBI_Investor_Deck_2026.pptx slide 9. WBI's 15% supplier capture is WBI revenue, not a return to MM Studio UK unit holders. The Seoul immersion memo asks WBI for 'diverse and flexible routes' into the ecosystem and a 'lightest and fastest' entry option; the three formats here and the UK unit are the documented routes, and none is ranked by speed or ease.", 5);
 
   // ===== 11 Who does what =====
   s = light("Who does what: Korean R&D, UK operations and investors", "Commercial");
   const who = [
-    [fa.FaFlask, "WBI Korea technical team", ["CEO Theresa Jang", "Product development and formulation", "Manufacturing and supply"]],
-    [fa.FaUniversity, "NeuNova UK team", ["London operations and course planning", "Support for studio partners"]],
-    [fa.FaSpa, "MM Studio service team", ["Client consultation and professional care", "Ongoing service management"]],
-    [fa.FaHandHoldingUsd, "Private investors", ["Programme funding through units", "Agreed MM Studio equity allocation"]],
+    [fa.FaFlask, "WBI Korea technical team", ["CEO Theresa Jang", "Product development, manufacturing and supply", "Seoul immersion: hosting and content (to be confirmed)"]],
+    [fa.FaUniversity, "NeuNova UK team", ["London operations and course planning", "Support for studio partners", "Seoul immersion: programme planning (proposed)"]],
+    [fa.FaSpa, "MM Studio service team", ["Client consultation and professional care", "Ongoing service management", "Seongsu studio walk-through (to be confirmed)"]],
+    [fa.FaHandHoldingUsd, "Private investors", ["Programme funding through units", "Agreed MM Studio equity allocation", "Study visit: Seoul immersion (proposed)"]],
   ];
   const ww = (CW - 3 * 0.25) / 4;
   for (let i = 0; i < 4; i++) {
@@ -332,10 +332,10 @@ const light = (title, section) => { const s = pres.addSlide({ masterName: "LIGHT
     card(s, x, 1.65, ww, 4.2, "Role card " + (i + 1));
     await badge(s, who[i][0], x + 0.3, 1.95, 0.7, who[i][1]);
     txt(s, who[i][1], x + 0.3, 2.9, ww - 0.6, 0.8, { fontSize: 18, bold: true });
-    txt(s, who[i][2].map((t, k) => ({ text: t, options: { bullet: true, breakLine: k < who[i][2].length - 1, paraSpaceAfter: 6 } })), x + 0.3, 3.8, ww - 0.6, 1.9, { fontSize: 14, color: C.text2 });
+    txt(s, who[i][2].map((t, k) => ({ text: t, options: { bullet: true, breakLine: k < who[i][2].length - 1, paraSpaceAfter: 6 } })), x + 0.3, 3.7, ww - 0.6, 2.1, { fontSize: 12.5, color: C.text2 });
   }
   txt(s, "Clear responsibilities let each partner do what it does best, while the client sees one MM Studio.", M, 6.1, CW, 0.5, { fontSize: 15, bold: true });
-  notes(s, "", 2);
+  notes(s, "Seoul immersion roles follow the planning memo received 5 Oct 2026 (author Rocky Chi, addressed to Theresa Jang and Sidney Tam). The memo asks WBI to confirm academy speakers, R&D and manufacturing access, the treatment programme and route options, and asks for a Seongsu walk-through; those bullets are labelled 'to be confirmed'. The memo does not state which entity runs or sells the programme; the planning role sits on the NeuNova card as 'proposed' because NeuNova already carries course planning and the memo's costing sheet names NeuNova as a party. Owner to confirm: who runs and sells the immersion, who contracts with the investor for each unit component, and who attends the trip. Commercial arrangements between the parties are not deck content.", 2);
 
   // ===== 12 Financials =====
   pres.addSection({ title: "Financials" });
@@ -365,11 +365,11 @@ const light = (title, section) => { const s = pres.addSlide({ masterName: "LIGHT
   const fc = (t, al, b) => ({ text: t, options: { fontSize: 14, color: HEX.ink, bold: !!b, valign: "middle", align: al || "left", fill: { color: b ? HEX.cream : HEX.white } } });
   s.addTable([
     [fh("Use of funds per unit"), fh("Amount (GBP)", "right")],
-    [fc("Study visits, training and practical sessions"), fc("£15,000", "right")],
+    [fc("Study visits, training and practical sessions (proposed: the four-day Seoul immersion)"), fc("£15,000", "right")],
     [fc("12-month professional certificate course"), fc("From £25,000", "right")],
     [fc("12-month internship and work programme"), fc("£XXXX", "right")],
     [fc("MM Studio equity allocation", "left", 1), fc("£50,000", "right", 1)],
-  ], { x: M, y: 1.65, w: 7.4, colW: [5.2, 2.2], rowH: 0.62, border: { type: "solid", color: HEX.mist, pt: 0.75 }, objectName: "Use of funds table" });
+  ], { x: M, y: 1.65, w: 7.4, colW: [5.2, 2.2], rowH: [0.62, 0.8, 0.62, 0.62, 0.62], border: { type: "solid", color: HEX.mist, pt: 0.75 }, objectName: "Use of funds table" });
   const fk = [["£XXX", "Per funding unit"], ["N units × £XXX", "Total funding target; unit count to be confirmed"], ["£90,000+", "Indicative minimum, plus internship and work budget"]];
   fk.forEach((k, i) => {
     const y = 1.65 + i * 1.28;
@@ -377,12 +377,43 @@ const light = (title, section) => { const s = pres.addSlide({ masterName: "LIGHT
     txt(s, k[0], M + 7.95, y + 0.12, CW - 8.2, 0.5, { fontSize: 24, bold: true, fontFace: "Cambria" });
     txt(s, k[1], M + 7.95, y + 0.65, CW - 8.2, 0.4, { fontSize: 12, color: C.text2 });
   });
-  txt(s, "£15,000 excludes travel, hotel and transport. MM Studio's 2026 baseline value: £XXXX. Final ownership percentage to be confirmed. The equity budget provisionally assumes an equal cash subscription.", M, 5.2, 7.4, 0.9, { fontSize: 13, color: C.text2 });
+  txt(s, "£15,000 excludes travel, hotel and transport; the Seoul immersion's price and inclusions are being confirmed with WBI. MM Studio's 2026 baseline value: £XXXX. Final ownership percentage to be confirmed. The equity budget provisionally assumes an equal cash subscription.", M, 5.2, 7.4, 0.9, { fontSize: 12, color: C.text2 });
   txt(s, "Certification, internship and work terms, timing, share issuer and shareholder rights require confirmation. No recognised qualification, job, visa, immigration outcome or investment return is guaranteed.", M, 6.1, CW, 0.7, { fontSize: 12, color: C.text2 });
-  notes(s, "", 8);
+  notes(s, "Seoul immersion. The planning memo received 5 Oct 2026 (author Rocky Chi, addressed to Theresa Jang and Sidney Tam; internal source file sources/seoul-immersion-memo.md, not for circulation) describes a four-day Seoul programme. This deck proposes it as the study-visit component of each unit; the memo itself does not mention the UK unit programme, so the link is an owner decision and is labelled 'proposed'. The memo's working price is in USD, on the earlier three-day basis, covers treatments, academy sessions and meals, and asks WBI for a four-day total including hotel nights; the deck's £15,000 is in GBP and excludes travel, hotel and transport. These are different numbers with different inclusions, so no memo figure is shown or converted here. Owner decisions: (1) whether the £15,000 component is the Seoul immersion alone or the immersion plus UK practical sessions; (2) the GBP price and inclusions of the four-day version; (3) who attends (the investor, a nominated trainee, or both) and whether the trip precedes or follows the unit subscription; (4) whether a stand-alone trip fee is credited against a later unit. Day 4 involves business and investment conversations with prospective participants: take advice on UK financial-promotion rules before those sessions. Internal costing detail from the memo is not deck content.", 8);
+
+
+  // ===== 13b Seoul immersion =====
+  pres.addSection({ title: "Programme" });
+  s = light("Four days in Seoul: from the treatment room to the boardroom", "Programme");
+  txt(s, "Proposed as the study-visit component of each funding unit: experience, science, business, opportunity.", M, 1.5, CW, 0.3, { fontSize: 13, color: C.text2 });
+  s.addImage({ data: await crop("seongsu-consultation.jpg", 2.3, 4.13, "north"), x: M, y: 1.95, w: 2.3, h: 4.13, objectName: "Seongsu consultation photo", altText: "Consultation at MM Studio Seongsu, Seoul" });
+  const days = [
+    ["DAYS 1-2", "Experience the treatments", "A personalised treatment programme in Seoul, subject to clinical suitability. Treatments may be substituted within a fixed programme fee (policy proposed)."],
+    ["DAY 3", "Discover the science, understand the business", "Presentations and site visits: the science and products behind the treatments; regenerative aesthetics and biotech; exosomes, peptides and protocols; product development; treatment and homecare economics; consumer insights; scaling a consumer business."],
+    ["DAY 4", "Explore the opportunity", "Presentations, one-to-one conversations and Q&A on routes into the ecosystem: the operating formats and the UK unit programme (options to be confirmed)."],
+  ];
+  const dx = M + 2.5, dwid = 6.2, dh = [1.24, 1.5, 1.24];
+  let dy = 1.95;
+  days.forEach((d, i) => {
+    const y = dy;
+    card(s, dx, y, dwid, dh[i], "Day card " + (i + 1));
+    txt(s, d[0], dx + 0.25, y + 0.12, 2, 0.22, { fontSize: 10.5, bold: true, color: C.accent1, charSpacing: 2 });
+    txt(s, d[1], dx + 0.25, y + 0.34, dwid - 0.5, 0.3, { fontSize: 13.5, bold: true });
+    txt(s, d[2], dx + 0.25, y + 0.68, dwid - 0.5, dh[i] - 0.72, { fontSize: 11, color: C.text2 });
+    dy += dh[i] + 0.075;
+  });
+  const pxx = dx + dwid + 0.25, pw2 = W - M - pxx;
+  s.addShape(pres.ShapeType.roundRect, { x: pxx, y: 1.95, w: pw2, h: 4.13, fill: { color: C.background1 }, line: { color: HEX.mist, width: 1, dashType: "dash" }, rectRadius: 0.08, objectName: "Access panel" });
+  txt(s, "Access being arranged (to be confirmed)", pxx + 0.25, 2.15, pw2 - 0.5, 0.5, { fontSize: 12, bold: true });
+  txt(s, ["R&D and manufacturing facility visit", "Meet the scientists and product team", "Formulation-to-protocol demonstration", "MM Studio Seongsu walk-through", "Academy speakers and their bios"].map((t, k) => ({ text: t, options: { bullet: true, breakLine: k < 4, paraSpaceAfter: 5 } })), pxx + 0.25, 2.7, pw2 - 0.5, 3.1, { fontSize: 11.5, color: C.text2 });
+  s.addShape(pres.ShapeType.roundRect, { x: M, y: 6.16, w: CW, h: 0.42, fill: { color: C.text1 }, line: { color: C.text1, width: 0 }, rectRadius: 0.08, objectName: "Seoul takeaway" });
+  txt(s, "Why it matters: participants see for themselves what this brief describes: the treatments, the science behind them and how a studio operates.", M + 0.35, 6.16, CW - 0.7, 0.42, { fontSize: 11.5, bold: true, color: "FFFFFF", valign: "middle" });
+  txt(s, "Programme in planning: content, site access, price and inclusions to be confirmed with WBI. Proposed as the study-visit component of each unit, not the certificate course; no qualification conferred. Treatments are given in Korea, subject to clinical suitability; no outcome is claimed; exosome evidence is in vitro only.", M, 6.62, CW, 0.36, { fontSize: 9.5, color: C.text2 });
+  notes(s, "Source: planning memo 'Seoul K-Beauty Ecosystem Immersion: From the Treatment Room to the Boardroom', author Rocky Chi, addressed to Theresa Jang and Sidney Tam, received 5 Oct 2026 (internal file sources/seoul-immersion-memo.md, not for circulation). Set out in the memo and shown as such: the programme name and tagline; the four-step narrative (experience the treatments, discover the science, understand the business, explore the opportunity); the four-day structure, extended from three days to weight Days 3 and 4 towards academy and business content; the Day 3 topic list, delivered by presentation and site visits; Day 4 as presentations and one-to-one conversations with business and investment Q&A. The memo's own framing: it is not primarily selling a beauty holiday, a two-day academy, a corporate investment seminar or a package of individual medical treatments, but access to the full journey behind Korean beauty, from personal experience and clinical innovation to business creation and international growth. Requested from WBI on 5 Oct 2026 and not yet answered: everything in the dashed panel, confirmation of the treatment programme and its supporting price list, the substitution policy and matrix, the four-day price and inclusions (hotel nights, meals, transport, dinners), pre- and post-trip extensions, the routes WBI will present on Day 4, WBI highlights, Seoul photography and a CEO welcome note for the brochure. Replace the dashed panel with confirmed wording, or remove it, before external circulation; name speakers and print dates only once confirmed; use 'exclusive' only if WBI confirms the access is not offered to other groups. Presenter guidance: do not name any treatment, product or medicine and do not use outcome words; the clinic sets the programme at consultation, and UK-originated material must not promote prescription-only medicines. Substitution wording proposed in the memo for the booking pack: 'The programme fee remains fixed. Individual treatments may be substituted based on personal preference and clinical suitability, subject to the available treatment programme.' The memo's costing sheet is on a seven-participant, three-day basis and predates the four-day extension; its figures and internal arrangements are not deck content. Photo: MM Studio Seongsu consultation, from WBI's investor deck. The link between the immersion and the £15,000 study-visit component is this deck's proposal, not a statement in the memo; see the Funding programme notes for the owner decisions.");
 
   // ===== 14 Closing =====
-  s = pres.addSlide({ masterName: "DARK", sectionTitle: "Financials" });
+  pres.addSection({ title: "Closing" });
+  s = pres.addSlide({ masterName: "DARK", sectionTitle: "Closing" });
   txt(s, "Why invest, and what happens next", M, 0.6, CW, 0.9, { fontSize: 36, bold: true, color: "FFFFFF", fontFace: "Cambria" });
   const why = [[fa.FaUsers, "A team no rival has", "Named scientists, physicians, entrepreneurs, executives and engineers."], [fa.FaDna, "Defensible innovation", "IT-EXO and a patented SynExo, backed by 30+ years of Korean product design and GMP/ISO manufacturing."], [fa.FaProjectDiagram, "A client ecosystem", "One method and one client record from scan to homecare."], [fa.FaGlobe, "Reach from the UK", "A global training hub and sales network."]];
   const dw = (CW - 3 * 0.25) / 4;
@@ -397,10 +428,10 @@ const light = (title, section) => { const s = pres.addSlide({ masterName: "LIGHT
   txt(s, [
     { text: "Confirm unit price, unit count and 2026 baseline value", options: { bullet: true, breakLine: true, paraSpaceAfter: 4 } },
     { text: "Share leadership profiles and AI and data governance plan", options: { bullet: true, breakLine: true, paraSpaceAfter: 4 } },
-    { text: "Arrange visits to the Seoul and London demonstration studios", options: { bullet: true } },
+    { text: "Arrange visits to the London studio and, once the programme is confirmed, the four-day Seoul immersion", options: { bullet: true } },
   ], M, 5.4, CW, 1.3, { fontSize: 16, color: "FFFFFF" });
   txt(s, "MM Studio  ·  Discussion draft  ·  October 2026", M, 6.95, 8, 0.3, { fontSize: 11, color: C.accent2 });
-  notes(s, "Closing summary of the four owner-supplied differentiators and the open items listed in the key-elements archive.");
+  notes(s, "Closing summary of the four owner-supplied differentiators and the open items listed in the key-elements archive. Seoul immersion dates are not printed until WBI confirms the programme. Open asks to WBI from the planning memo of 5 Oct 2026, kept here so next steps and the memo stay aligned: WBI highlights for the cohort (cross-check against the sourced facts on the Leadership, Innovation, Design, whitespace and UK hub slides); Seoul photography assets and a CEO welcome note for the brochure; academy speakers and bios; R&D and manufacturing access; meeting the scientists and product team; a formulation-to-protocol demonstration; the Seongsu walk-through; confirmation and price list for the treatment programme; the substitution policy and matrix; the four-day price and inclusions; the policy on pre- and post-trip extensions; the route options for joining the ecosystem. The memo's guest-to-guest referral benefit is kept out of the deck pending advice on UK financial-promotion rules, because a referred guest may subscribe for a unit that includes equity. Keep 'golden opportunity', 'fast-growing' and 'franchisee' off slides.");
 
   await pres.writeFile({ fileName: OUT });
   await applyTheme(OUT, THEME);
