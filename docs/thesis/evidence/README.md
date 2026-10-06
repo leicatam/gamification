@@ -140,3 +140,18 @@ Added 11 Aug 2026 (Dr Gary Lau consent — FOURTH AND FINAL panel form):
    under the elderly-housing facility's privacy rules. Figure 5.1A was
    inserted at V22 with a caption stating exactly this. Still to file:
    the control person's written consent (email suffices).
+
+CORRECTION, 6 Oct 2026 — who ticked the Choy identification box.
+`Choy_attribution_WhatsApp_acknowledgement_screenshot_received_2026-10-06.png`:
+WhatsApp exchange supplied by the author on 6 Oct 2026. The author sent
+Dr Choy an image of the consent form with the "I give permission to
+identify me by name…" box ticked and circled (5:51 PM); Dr Choy asked
+"do I need to resend you the correct version or you have done for me?"
+(6:32 PM); the author replied "I did it for you. Just FYI." (6:34 PM);
+Dr Choy replied with a thumbs-up (7:20 PM). The date of the exchange is
+not visible in the screenshot (author to state). This corrects the note
+above: the tick in the completed form's annotation layer was made by
+the RESEARCHER on Dr Choy's behalf, not by Dr Choy on his device; the
+authorisation for named attribution rests on Dr Choy's written assent
+to that completed form (his question and his acknowledgement), which
+the thesis (H.7, V84) now states exactly.
