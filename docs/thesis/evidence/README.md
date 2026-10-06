@@ -155,3 +155,7 @@ the RESEARCHER on Dr Choy's behalf, not by Dr Choy on his device; the
 authorisation for named attribution rests on Dr Choy's written assent
 to that completed form (his question and his acknowledgement), which
 the thesis (H.7, V84) now states exactly.
+Date supplied 6 Oct 2026 (second screenshot, with the chat date stamp
+"Tue, 4 Aug"): the exchange took place on 4 August 2026, 5:51–7:20 PM —
+the same day as the consultation and the signed form.
+`Choy_attribution_WhatsApp_acknowledgement_dated_2026-08-04_screenshot_received_2026-10-06.png`.
