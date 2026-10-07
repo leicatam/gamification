@@ -15,7 +15,10 @@ These files identify Expert P and a third party (the PhD student) and must not b
 
 ## Still not on file (5 October 2026)
 - The member-check replies from Dr Lau and Dr Choy (the messages themselves), which the author reports have been received.
-- Expert P's written endorsement ("Perfect", 5 Aug 2026) as an artifact.
+- ~~Expert P's written endorsement ("Perfect", 5 Aug 2026) as an artifact.~~ Received 7 Oct 2026 (see below).
 - Any reply from Dr Yuan approving her summary (her consent form authorises named attribution; a summary approval is separate).
 - The audio recording of the second Lau consultation (optional; the transcript is on file).
 - Consent or attribution election from the PhD student who contributed to the second Lau consultation; the thesis attributes her remarks to "the expert's doctoral researcher", unnamed.
+
+## Added 7 October 2026 — Expert P's written endorsement (RESTRICTED: shows his name and photograph)
+`ExpertP_endorsement_WhatsApp_2026-08-05_RESTRICTED_received_2026-10-07.png`: WhatsApp exchange dated Wed 5 Aug 2026. The author sent the v2.3 touch build (Alpine_Coordination_Game_v2.3_touch…, 42 KB, 2:50 PM) with an invitation to play it in a browser and comment on its suitability for fall-risk and balance assessment (2:49 PM), then the pseudonymised summary (Expert_Interview_Summary_ExpertP_Physio…, 4 pages, 3:38 PM) with the note that it discloses no personal information; Expert P replied "Perfect" (4:06 PM). This is the artifact behind H.8's statement that his summary was reviewed and endorsed in writing on 5 August 2026 — the panel's first member-checked record — and it confirms the build and date of his follow-up play. The screenshot identifies him and must not be bound or circulated; the thesis cites the endorsement without the name.
