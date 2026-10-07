@@ -159,3 +159,16 @@ Date supplied 6 Oct 2026 (second screenshot, with the chat date stamp
 "Tue, 4 Aug"): the exchange took place on 4 August 2026, 5:51–7:20 PM —
 the same day as the consultation and the signed form.
 `Choy_attribution_WhatsApp_acknowledgement_dated_2026-08-04_screenshot_received_2026-10-06.png`.
+
+Added 7 Oct 2026 — Choy member-check chain (two screenshots,
+`Choy_member_check_WhatsApp_2026-08-04_to_05_part1…png` and `…part2…png`):
+4 Aug 2026 8:15 PM the author sent Expert_Interview_Summary_Choy_DRAFT.docx
+("For your information"); 5 Aug 3:32 PM the author asked for "a short
+note, if you have reviewed the summary, and if any point you disagreed";
+5 Aug 4:29 PM Dr Choy replied, quoting the consent-form photo, "Do I need
+to tick those boxes? I only found the indication of initial."; 4:41 PM the
+author: "I did it for you but I have asked you before. However you can
+change it anytime."; 5:21 PM Dr Choy: 👌👍. Reading: a second written
+assent to the attribution tick (after the one of 4 Aug, 7:20 PM); no
+comment on the summary's content and no disagreement was received, so
+the member-check remains "sent, not returned with comment".
