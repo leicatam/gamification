@@ -30,3 +30,6 @@ The paper's Layer-3 description ("a language-model service … reviews performan
 
 ## Also affected
 `Paper2_IJKM_Anonymous_Manuscript.docx`, `Paper2_IJKM_Title_Page.docx` (abstract) and `Paper2_JMIR_SeriousGames_Manuscript.docx` carry the same wording; whichever file was submitted is the one to correct.
+
+## Addendum, 7 October 2026 — units of the 70.0% figure
+The submitted Paper 2 states "70.0% with three or fewer recorded completed runs" and "one cycle is one completed run". The thesis (V83 onward) records that a run in the deployed Stage-2 game ended at the first obstacle collision and that several runs occurred within one attendance; the archived unit is the completed game cycle, one attended play session under the therapist's three-to-five-play protocol. The 21-of-30 count is unchanged; the unit should read "game cycles (attended sessions)", not "runs". Paper 3 R22 already says so.
