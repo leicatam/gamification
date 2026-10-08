@@ -1,0 +1,212 @@
+【滑雪遊戲概念驗證結果 PXG3R9——請原封不動傳送給研究員】
+exported_ts,2026-09-20T03:52:43.222Z
+[PARTICIPANT]
+field,value
+build,Alpine_Coordination_Game_v4.1.1_PRO_jev_change_player_r1
+device_id,PRO-SELF
+participant_code,PXG3R9
+design,feedback-informed-adaptive-practice-PoC
+arm,A
+failure_mode,GO
+language,zh
+consent_agreed,yes
+consent_ts,2026-09-20T03:47:36.761Z
+visits_completed,3
+current_visit,3
+current_stage,done
+current_level,120
+storage_ok,yes
+identity_source,new
+typed_code_ts,
+age_band,65-80
+gender,F
+education,post-secondary
+prior_play,no
+
+[VISITS]
+Visit_No,started_ts,completed_ts,gap_hours_since_prev,level_start,level_end,play_runs,probe_pre_cleared,probe_pre_faced,probe_post_cleared,probe_post_faced
+1,2026-09-20T03:47:59.172Z,2026-09-20T03:48:54.929Z,,,,0,,,19,20
+2,2026-09-20T03:49:00.241Z,2026-09-20T03:49:43.175Z,0,,,0,,,20,20
+3,2026-09-20T03:49:46.398Z,2026-09-20T03:52:36.641Z,0,,120,1,19,20,,
+
+[SESSIONS]
+Participant_ID,Run_ID,Session_No,Build,Data_Kind,Visit_No,Run_Type,Run_Stage,Run_Start_ts,Run_End_ts,Duration_s,Duration_Min,Planned_Duration_s,Distance_m,Coins,Coins_Missed,Obstacles_Faced,Obstacles_Hit,Avoid_Rate_pct,Lives_Lost,Reached_GameOver,Failure_Mode,Score,Combo_Max,Dodges,Game_Composite_pct,Game_Composite_Note,Max_Speed,Start_Diff,Mean_Diff,AI_DiffMult,Difficulty_Source,Probe_Course,Tip_ID,Practice_Goal,Support,Decision_ID,Policy_Version,Decision_Provider,Jev_Model,Jev_Action_Confidence,Hit_Causes,Mean_AbsLane,Edge_Time_pct,Pause_Count,Pause_Seconds,Counted,Completion_Status,End_Reason,Input_Mode,Lang,Notes
+PXG3R9,e4c7a33b-a595-4f6c-b457-2d295c8f78a6,1,Alpine_Coordination_Game_v4.1.1_PRO_jev_change_player_r1,researcher-self-test,1,probe,probe_post,2026-09-20T03:47:59.174Z,2026-09-20T03:48:29.184Z,30.012,0.5002,30,459,12,8,20,1,95,0,FALSE,GO,804,3,5,92.92,inherited on-trail / avoidance composite; NOT clinical balance,15.3,0.85,0.85,0.85,fixed-course,7043m,,,none,,feedback-policy-4.1.0,none,,,coin:1,0.357,10.65,0,0,TRUE,time_complete,30 s complete (goal reached),touch,zh,Game performance only. New v4.1 protocol; do not pool with earlier study builds.
+PXG3R9,034e4927-1877-4105-bcfa-b182f6535bc2,2,Alpine_Coordination_Game_v4.1.1_PRO_jev_change_player_r1,researcher-self-test,2,probe,probe_post,2026-09-20T03:49:04.002Z,2026-09-20T03:49:34.011Z,30.004,0.5001,30,459,17,3,20,0,100,0,FALSE,GO,989,3,10,93.33,inherited on-trail / avoidance composite; NOT clinical balance,15.3,0.85,0.85,0.85,fixed-course,7051m,,,none,,feedback-policy-4.1.0,none,,,,0.22,1.22,0,0,TRUE,time_complete,30 s complete (goal reached),touch,zh,Game performance only. New v4.1 protocol; do not pool with earlier study builds.
+PXG3R9,db7ad92d-b868-4453-8f34-b3463b0ef423,3,Alpine_Coordination_Game_v4.1.1_PRO_jev_change_player_r1,researcher-self-test,3,warmup,warmup,2026-09-20T03:49:47.456Z,2026-09-20T03:50:02.478Z,15.015,0.2502,15,289,7,2,19,1,94.74,0,FALSE,GO,474,2,9,94.08,inherited on-trail / avoidance composite; NOT clinical balance,21.6,0.85,1.068,1.2,local-staircase,,,,none,,feedback-policy-4.1.0,none,,,coin:1,0.298,3.99,0,0,TRUE,time_complete,15 s complete (goal reached),touch,zh,Game performance only. New v4.1 protocol; do not pool with earlier study builds.
+PXG3R9,c962b4b4-8bd0-4194-878d-c3cf48738ea0,4,Alpine_Coordination_Game_v4.1.1_PRO_jev_change_player_r1,researcher-self-test,3,probe,probe_pre,2026-09-20T03:50:03.951Z,2026-09-20T03:50:33.956Z,30.005,0.5001,30,459,17,3,20,1,95,0,FALSE,GO,879,3,6,90.5,inherited on-trail / avoidance composite; NOT clinical balance,15.3,0.85,0.85,0.85,fixed-course,7043m,,,none,,feedback-policy-4.1.0,none,,,coin:1,0.298,1.33,0,0,TRUE,time_complete,30 s complete (goal reached),touch,zh,Game performance only. New v4.1 protocol; do not pool with earlier study builds.
+PXG3R9,4db79d8b-e613-4211-b12f-f7c3b39cb2e6,5,Alpine_Coordination_Game_v4.1.1_PRO_jev_change_player_r1,researcher-self-test,3,play,play,2026-09-20T03:50:37.812Z,2026-09-20T03:51:07.832Z,30.013,0.5002,30,648,13,10,17,0,100,0,FALSE,GO,1048,3,6,95,inherited on-trail / avoidance composite; NOT clinical balance,21.6,1.2,1.2,1.2,warmup-setting,,tipClean,look_ahead,none,,feedback-policy-4.1.0,none,,,,0.34,6.05,0,0,TRUE,time_complete,30 s complete (goal reached),touch,zh,Game performance only. New v4.1 protocol; do not pool with earlier study builds.
+
+[QUESTIONNAIRE]
+visit,item,response (1 strongly disagree - 5 strongly agree)
+1,D1_coordination_challenge,4
+1,D2_play_regularly,4
+1,F1_matched_ability,5
+1,F2_progress_motivated,4
+1,C1_getting_better,4
+1,T1_felt_judged,2
+1,answered_ts,2026-09-20T03:48:54.929Z
+1,completion,complete
+2,D1_coordination_challenge,4
+2,D2_play_regularly,4
+2,F1_matched_ability,4
+2,F2_progress_motivated,4
+2,C1_getting_better,4
+2,T1_felt_judged,2
+2,answered_ts,2026-09-20T03:49:43.175Z
+2,completion,complete
+3,D1_coordination_challenge,
+3,D2_play_regularly,
+3,F1_matched_ability,
+3,F2_progress_motivated,
+3,C1_getting_better,
+3,T1_felt_judged,
+3,answered_ts,2026-09-20T03:52:36.641Z
+3,completion,partial_or_skipped
+
+[STATE_CHANGES]
+Session_No,t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src
+1,0,0,0.85,0.85,0,0,0,100,"run start - PRO probe (visit 1, probe_post, start x0.85, course 7043m)",init
+1,4.5,0.07,0.85,0.85,69,0,0,100,ob 1 cleared set-course,course
+1,6.5,0.11,0.85,0.85,99,2,0,100,ob 2 cleared set-course,course
+1,8.2,0.14,0.85,0.85,126,3,0,100,ob 3 cleared set-course,course
+1,9.7,0.16,0.85,0.85,148,4,0,100,ob 4 cleared set-course,course
+1,10.3,0.17,0.85,0.85,158,4,0,100,ob 5 cleared set-course,course
+1,11.2,0.19,0.85,0.85,171,5,0,100,ob 6 cleared set-course,course
+1,12.9,0.21,0.85,0.85,197,5,0,100,ob 7 cleared set-course,course
+1,14.4,0.24,0.85,0.85,221,6,0,100,ob 8 cleared set-course,course
+1,16.3,0.27,0.85,0.85,250,7,0,100,ob 9 cleared set-course,course
+1,16.5,0.27,0.85,0.85,252,7,0,100,ob 10 cleared set-course,course
+1,17.9,0.3,0.85,0.85,274,8,0,100,ob 11 cleared set-course,course
+1,19.2,0.32,0.85,0.85,294,9,0,100,ob 12 cleared set-course,course
+1,21.1,0.35,0.85,0.85,323,9,0,100,ob 13 cleared set-course,course
+1,22.3,0.37,0.85,0.85,342,9,0,100,ob 14 cleared set-course,course
+1,23,0.38,0.85,0.85,352,9,0,100,ob 15 cleared set-course,course
+1,24.3,0.4,0.85,0.85,371,10,0,100,ob 16 cleared set-course,course
+1,26.1,0.44,0.85,0.85,400,10,0,99.2,ob 17 cleared set-course,course
+1,27.8,0.46,0.85,0.85,426,11,0,99.2,ob 18 cleared set-course,course
+1,27.8,0.46,0.85,0.85,426,11,1,96.6,ob 19 bump set-course,course
+1,29.6,0.49,0.85,0.85,453,12,1,96.8,ob 20 cleared set-course,course
+2,0,0,0.85,0.85,0,0,0,100,"run start - PRO probe (visit 2, probe_post, start x0.85, course 7051m)",init
+2,5.2,0.09,0.85,0.85,79,1,0,100,ob 1 cleared set-course,course
+2,6.5,0.11,0.85,0.85,99,2,0,100,ob 2 cleared set-course,course
+2,8.3,0.14,0.85,0.85,128,4,0,100,ob 3 cleared set-course,course
+2,9.7,0.16,0.85,0.85,149,5,0,100,ob 4 cleared set-course,course
+2,10.3,0.17,0.85,0.85,158,5,0,100,ob 5 cleared set-course,course
+2,11.7,0.2,0.85,0.85,179,6,0,100,ob 6 cleared set-course,course
+2,13.2,0.22,0.85,0.85,202,7,0,100,ob 7 cleared set-course,course
+2,14.5,0.24,0.85,0.85,222,7,0,100,ob 8 cleared set-course,course
+2,16.3,0.27,0.85,0.85,250,8,0,100,ob 9 cleared set-course,course
+2,16.4,0.27,0.85,0.85,251,8,0,100,ob 10 cleared set-course,course
+2,17.5,0.29,0.85,0.85,268,9,0,100,ob 11 cleared set-course,course
+2,19.2,0.32,0.85,0.85,294,10,0,100,ob 12 cleared set-course,course
+2,20.8,0.35,0.85,0.85,319,11,0,100,ob 13 cleared set-course,course
+2,22.3,0.37,0.85,0.85,342,12,0,100,ob 14 cleared set-course,course
+2,22.9,0.38,0.85,0.85,350,12,0,100,ob 15 cleared set-course,course
+2,24.2,0.4,0.85,0.85,370,13,0,100,ob 16 cleared set-course,course
+2,25.6,0.43,0.85,0.85,392,14,0,100,ob 17 cleared set-course,course
+2,27.8,0.46,0.85,0.85,426,16,0,100,ob 18 cleared set-course,course
+2,27.9,0.47,0.85,0.85,427,16,0,100,ob 19 cleared set-course,course
+2,29.5,0.49,0.85,0.85,451,17,0,100,ob 20 cleared set-course,course
+3,0,0,0.85,0.85,0,0,0,50,"run start - PRO warmup (visit 3, warmup, start x0.85)",init
+3,1.9,0.03,0.85,0.89,29,0,0,100,ob 1 cleared +0.04,stair
+3,2.6,0.04,0.89,0.93,41,0,0,100,ob 2 cleared +0.04,stair
+3,3.3,0.06,0.93,0.97,53,0,0,100,ob 3 cleared +0.04,stair
+3,4.9,0.08,0.97,1.01,81,0,0,100,ob 4 cleared +0.04,stair
+3,5,0.08,1.01,1.05,82,0,0,100,ob 5 cleared +0.04,stair
+3,5.4,0.09,1.05,1.09,89,1,0,100,ob 6 cleared +0.04,stair
+3,5.6,0.09,1.09,1.13,93,1,0,100,ob 7 cleared +0.04,stair
+3,5.9,0.1,1.13,1.01,99,1,1,93.8,ob 8 bump -0.12,stair
+3,6.1,0.1,1.01,1.05,103,1,1,94.4,ob 9 cleared +0.04,stair
+3,7.8,0.13,1.05,1.09,135,1,1,95,ob 10 cleared +0.04,stair
+3,8.5,0.14,1.09,1.13,148,2,1,95.5,ob 11 cleared +0.04,stair
+3,8.9,0.15,1.13,1.17,156,2,1,95.8,ob 12 cleared +0.04,stair
+3,9.5,0.16,1.17,1.2,170,4,1,96.2,ob 13 cleared +0.03,stair
+3,9.6,0.16,1.2,1.2,172,4,1,96.4,ob 14 cleared 0.00 at-limit,stair
+3,9.7,0.16,1.2,1.2,173,4,1,96.7,ob 15 cleared 0.00 at-limit,stair
+3,10.3,0.17,1.2,1.2,186,4,1,96.9,ob 16 cleared 0.00 at-limit,stair
+3,12.6,0.21,1.2,1.2,236,5,1,97.1,ob 17 cleared 0.00 at-limit,stair
+3,13.3,0.22,1.2,1.2,251,5,1,97.2,ob 18 cleared 0.00 at-limit,stair
+3,13.3,0.22,1.2,1.2,252,5,1,97.4,ob 19 cleared 0.00 at-limit,stair
+4,0,0,0.85,0.85,0,0,0,100,"run start - PRO probe (visit 3, probe_pre, start x0.85, course 7043m)",init
+4,4.5,0.07,0.85,0.85,69,0,0,100,ob 1 cleared set-course,course
+4,6.5,0.11,0.85,0.85,99,2,0,100,ob 2 cleared set-course,course
+4,8.2,0.14,0.85,0.85,126,3,0,100,ob 3 cleared set-course,course
+4,9.7,0.16,0.85,0.85,148,4,0,100,ob 4 cleared set-course,course
+4,10.3,0.17,0.85,0.85,158,5,0,100,ob 5 cleared set-course,course
+4,11.2,0.19,0.85,0.85,171,6,1,91.7,ob 6 bump set-course,course
+4,12.9,0.21,0.85,0.85,197,6,1,92.9,ob 7 cleared set-course,course
+4,14.4,0.24,0.85,0.85,221,7,1,93.8,ob 8 cleared set-course,course
+4,16.3,0.27,0.85,0.85,250,8,1,94.4,ob 9 cleared set-course,course
+4,16.5,0.27,0.85,0.85,252,8,1,95,ob 10 cleared set-course,course
+4,17.9,0.3,0.85,0.85,274,9,1,95.5,ob 11 cleared set-course,course
+4,19.2,0.32,0.85,0.85,294,10,1,95.8,ob 12 cleared set-course,course
+4,21.1,0.35,0.85,0.85,323,11,1,96.2,ob 13 cleared set-course,course
+4,22.3,0.37,0.85,0.85,342,12,1,96.4,ob 14 cleared set-course,course
+4,23,0.38,0.85,0.85,352,13,1,96.7,ob 15 cleared set-course,course
+4,24.3,0.4,0.85,0.85,371,14,1,96.9,ob 16 cleared set-course,course
+4,26.1,0.44,0.85,0.85,400,15,1,97.1,ob 17 cleared set-course,course
+4,27.8,0.46,0.85,0.85,426,16,1,97.2,ob 18 cleared set-course,course
+4,27.8,0.46,0.85,0.85,426,16,1,97.4,ob 19 cleared set-course,course
+4,29.6,0.49,0.85,0.85,453,17,1,97.5,ob 20 cleared set-course,course
+5,0,0,1.2,1.2,0,0,0,100,"run start - PRO play (visit 3, play, start x1.20)",init
+5,6.6,0.11,1.2,1.2,142,1,0,100,ob 1 cleared practice-fixed-setting,practice-fixed
+5,8.8,0.15,1.2,1.2,190,3,0,100,ob 2 cleared practice-fixed-setting,practice-fixed
+5,8.9,0.15,1.2,1.2,193,3,0,100,ob 3 cleared practice-fixed-setting,practice-fixed
+5,9,0.15,1.2,1.2,194,3,0,100,ob 4 cleared practice-fixed-setting,practice-fixed
+5,12.6,0.21,1.2,1.2,271,6,0,100,ob 5 cleared practice-fixed-setting,practice-fixed
+5,14.6,0.24,1.2,1.2,315,7,0,100,ob 6 cleared practice-fixed-setting,practice-fixed
+5,17.8,0.3,1.2,1.2,383,8,0,100,ob 7 cleared practice-fixed-setting,practice-fixed
+5,19.8,0.33,1.2,1.2,428,9,0,100,ob 8 cleared practice-fixed-setting,practice-fixed
+5,21.2,0.35,1.2,1.2,458,9,0,100,ob 9 cleared practice-fixed-setting,practice-fixed
+5,21.8,0.36,1.2,1.2,471,9,0,100,ob 10 cleared practice-fixed-setting,practice-fixed
+5,22.4,0.37,1.2,1.2,484,9,0,100,ob 11 cleared practice-fixed-setting,practice-fixed
+5,24.2,0.4,1.2,1.2,522,10,0,100,ob 12 cleared practice-fixed-setting,practice-fixed
+5,27,0.45,1.2,1.2,583,12,0,100,ob 13 cleared practice-fixed-setting,practice-fixed
+5,29.1,0.48,1.2,1.2,628,13,0,100,ob 14 cleared practice-fixed-setting,practice-fixed
+5,29.3,0.49,1.2,1.2,633,13,0,100,ob 15 cleared practice-fixed-setting,practice-fixed
+5,29.4,0.49,1.2,1.2,636,13,0,100,ob 16 cleared practice-fixed-setting,practice-fixed
+5,29.6,0.49,1.2,1.2,640,13,0,100,ob 17 cleared practice-fixed-setting,practice-fixed
+
+
+[VISIT_DETAILS]
+visit,started_ts,level_start,completed_ts,level_end,closing_probe_status,return_reason
+1,2026-09-20T03:47:59.172Z,,2026-09-20T03:48:54.929Z,,completed,
+2,2026-09-20T03:49:00.241Z,,2026-09-20T03:49:43.175Z,,completed,not_reported
+3,2026-09-20T03:49:46.398Z,,2026-09-20T03:52:36.641Z,1.2,missing_or_partial,not_reported
+
+[PRACTICE_RUN_DETAILS]
+Participant_ID,Run_ID,Session_No,Build,Data_Kind,Visit_No,Run_Type,Run_Stage,Run_Start_ts,Run_End_ts,Duration_s,Duration_Min,Planned_Duration_s,Distance_m,Coins,Coins_Missed,Obstacles_Faced,Obstacles_Hit,Avoid_Rate_pct,Lives_Lost,Reached_GameOver,Failure_Mode,Score,Combo_Max,Dodges,Game_Composite_pct,Game_Composite_Note,Max_Speed,Start_Diff,Mean_Diff,AI_DiffMult,Difficulty_Source,Probe_Course,Tip_ID,Practice_Goal,Support,Decision_ID,Policy_Version,Decision_Provider,Jev_Model,Jev_Action_Confidence,Hit_Causes,Mean_AbsLane,Edge_Time_pct,Pause_Count,Pause_Seconds,Counted,Completion_Status,End_Reason,Input_Mode,Lang,Notes
+PXG3R9,4db79d8b-e613-4211-b12f-f7c3b39cb2e6,5,Alpine_Coordination_Game_v4.1.1_PRO_jev_change_player_r1,researcher-self-test,3,play,play,2026-09-20T03:50:37.812Z,2026-09-20T03:51:07.832Z,30.013,0.5002,30,648,13,10,17,0,100,0,FALSE,GO,1048,3,6,95,inherited on-trail / avoidance composite; NOT clinical balance,21.6,1.2,1.2,1.2,warmup-setting,,tipClean,look_ahead,none,,feedback-policy-4.1.0,none,,,,0.34,6.05,0,0,TRUE,time_complete,30 s complete (goal reached),touch,zh,Game performance only. New v4.1 protocol; do not pool with earlier study builds.
+
+[PLAYER_FEEDBACK]
+id,runId,visit,ts,language,difficulty,feeling,reason,text,confirmedTextTag,skipped,externalAI,externalText
+ac96e28c-bba5-478c-aa8e-4c5eafb4ce35,4db79d8b-e613-4211-b12f-f7c3b39cb2e6,3,2026-09-20T03:52:31.136Z,zh,,,,,,true,false,false
+
+[PARTICIPATION_EVENTS]
+id,ts,visit,type,mode,runId,stage,decisionId,completion,return_reason,feedbackId,skipped
+05bfa47d-3f8b-4237-948b-49da4bb8dce7,2026-09-20T03:47:36.762Z,1,consent_accepted,self-test,,,,,,,
+a98828ae-15c8-4247-99b7-58ceaa8b0cbd,2026-09-20T03:47:50.247Z,1,finish_chosen,,,,,,,,
+4d3b2e5a-54d1-4277-a68b-bc84c85bab3b,2026-09-20T03:47:59.181Z,1,run_started,,e4c7a33b-a595-4f6c-b457-2d295c8f78a6,probe_post,,,,,
+9c0451d6-496c-4215-9b5f-006fc7ef4909,2026-09-20T03:48:29.184Z,1,run_ended,,e4c7a33b-a595-4f6c-b457-2d295c8f78a6,probe_post,,time_complete,,,
+e0a4b0ee-9846-4798-a42b-c6b943df6710,2026-09-20T03:48:54.929Z,1,visit_ended,,,,,,,,
+089b4a51-eb7e-4192-b856-3a259509b66e,2026-09-20T03:49:00.241Z,2,visit_started,,,,,,not_reported,,
+7da2db3d-2aba-4b80-8b87-4d3accf37bec,2026-09-20T03:49:01.532Z,2,finish_chosen,,,,,,,,
+9c954669-df30-44b4-aae3-6f9b91276253,2026-09-20T03:49:04.004Z,2,run_started,,034e4927-1877-4105-bcfa-b182f6535bc2,probe_post,,,,,
+4c9c54e2-f907-4887-bbfa-d4ac3c8f169b,2026-09-20T03:49:34.011Z,2,run_ended,,034e4927-1877-4105-bcfa-b182f6535bc2,probe_post,,time_complete,,,
+d98612ed-df68-4d29-907f-c23417711952,2026-09-20T03:49:43.176Z,2,visit_ended,,,,,,,,
+6d83411b-6811-47c5-8a6f-b5934f60bd83,2026-09-20T03:49:46.399Z,3,visit_started,,,,,,not_reported,,
+33e63ccc-6fd7-4c47-acf1-9e6890f48012,2026-09-20T03:49:47.459Z,3,run_started,,db7ad92d-b868-4453-8f34-b3463b0ef423,warmup,,,,,
+c72decc9-21bc-4edc-97fa-b84a27582630,2026-09-20T03:50:02.478Z,3,run_ended,,db7ad92d-b868-4453-8f34-b3463b0ef423,warmup,,time_complete,,,
+ec1aa681-1497-4565-86a3-9b6bc9c39d46,2026-09-20T03:50:03.953Z,3,run_started,,c962b4b4-8bd0-4194-878d-c3cf48738ea0,probe_pre,,,,,
+4a61eac8-b684-49f1-b054-0158c39dbbc7,2026-09-20T03:50:33.957Z,3,run_ended,,c962b4b4-8bd0-4194-878d-c3cf48738ea0,probe_pre,,time_complete,,,
+4c72ba34-0fd7-4a5b-beba-e05bd9b89015,2026-09-20T03:50:37.815Z,3,run_started,,4db79d8b-e613-4211-b12f-f7c3b39cb2e6,play,,,,,
+5889e912-148e-4338-88a5-654007acb554,2026-09-20T03:51:07.832Z,3,run_ended,,4db79d8b-e613-4211-b12f-f7c3b39cb2e6,play,,time_complete,,,
+76435292-800e-410a-9dbc-5b956c92e706,2026-09-20T03:52:31.137Z,3,feedback_recorded,,4db79d8b-e613-4211-b12f-f7c3b39cb2e6,,,,,ac96e28c-bba5-478c-aa8e-4c5eafb4ce35,true
+a9cda08d-053f-4be9-bad9-34c624932b51,2026-09-20T03:52:31.138Z,3,finish_chosen,,,,,,,,
+d2b45364-220b-49cd-8fa5-18d757cf7356,2026-09-20T03:52:36.642Z,3,visit_ended,,,,,,,,
+
+[V4_METADATA]
+schema,data_kind,policy,ui_revision,copy_tag,participant_release,ethics_reference,cloud_configured,jev_model,client_side_storage_encrypted,protocol
+alpine-pro-4.1,researcher-self-test,feedback-policy-4.1.0,change-player-4.1.1,PRO-SELF,false,not_asserted,false,,false,warmup-precheck-practice-feedback-plan-optional-postcheck
+[END],210

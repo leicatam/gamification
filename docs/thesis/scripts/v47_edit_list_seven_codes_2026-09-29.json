@@ -1,0 +1,170 @@
+[
+ {
+  "locator": "P1108",
+  "quote": "Researcher Self-Test, Batch 01 (19–20 September 2026)",
+  "replacement": "Researcher Self-Test: Batch 01 and Two Later-Received Exports (19–20 September 2026)",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1109",
+  "quote": "was not configured and was not used in Batch 01",
+  "replacement": "was not configured and was not used in any recorded session",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1110",
+  "quote": "Batch 01 comprises ten exports made on 19–20 September 2026 (seven JSON files for two codes; three CSV files for three codes; Tables I.5–I.7). Deduplication reduced 81 run appearances to 42 distinct runs across five stored player codes and twelve software-recorded visits.",
+  "replacement": "The Pro record comprises seven stored player codes. Batch 01, summarised in two reports dated 20 September 2026, comprises ten exports made on 19–20 September 2026 (seven JSON files for two codes; three CSV files for three codes). Two further exports from the same two days, for codes PFWU9V (19 September, one visit) and PXG3R9 (20 September, three visits), reached the record on 29 September 2026; the exports were received by different routes and on different dates, they were not available when the reports were written, and they are archived as received with SHA-256. Table I.5 reproduces the reports' Batch 01 figures beside the seven-code totals; Tables I.6–I.10 and Figures I.2–I.3 combine both sources. In Batch 01, deduplication reduced 81 run appearances to 42 distinct runs across five stored player codes and twelve software-recorded visits; with the two later exports the record holds 53 distinct runs across seven codes and sixteen visits.",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1110",
+  "quote": "Ten answered feedback records link to ten applied decisions and ten subsequent runs, and all ten pass",
+  "replacement": "Twelve answered feedback records link to twelve applied decisions and twelve subsequent runs (ten in Batch 01 and two for PFWU9V), and all twelve pass",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1110",
+  "quote": "seven final decisions were local-rule outputs",
+  "replacement": "nine final decisions were local-rule outputs",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1111",
+  "quote": "Five opening–closing fixed-course pairs exist across four codes (Table I.9; Figure I.3): changes of −10, +5, −5, 0 and +10 percentage points.",
+  "replacement": "Six opening–closing fixed-course pairs exist across five codes (Table I.9; Figure I.3): changes of −10, +5, −5, 0 and +10 percentage points in Batch 01, and +10 for PFWU9V.",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1111",
+  "quote": "The six first-visit questionnaire items (Table I.10) show D2 median 4 (range 3–4) and T1 median 3 (range 2–3); F1 was 4 for every code.",
+  "replacement": "The six first-visit questionnaire items across the seven codes (Table I.10) show D2 median 4 (range 3–4) and T1 median 3 (range 2–3); F1 was 4 or 5 for every code. The seven-code medians are exact: the reported Batch 01 medians, ranges and counts, together with the two raw exports, determine them.",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1111",
+  "quote": "neither p = .495 nor p = .750 establishes the presence or absence of learning.",
+  "replacement": "neither p = .495 nor p = .750 establishes the presence or absence of learning. They cover the four Batch 01 codes with a complete pair. With PFWU9V's pair added, the five earliest pairs per code have mean and median change 0.0 pp, and all six visit-pairs have mean +1.7 pp and median +2.5 pp (three up, two down, one tie); no test statistic is recomputed.",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1114",
+  "quote": "(as stated in the Batch 01 Research Review of 20 September 2026).",
+  "replacement": "(as stated in the Batch 01 Research Review of 20 September 2026), with seven-code totals including the two later-received exports (PFWU9V, PXG3R9).",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1116",
+  "quote": "Record-level coverage per stored code (Batch 01).",
+  "replacement": "Record-level coverage per stored code (Batch 01 codes as reported; PFWU9V and PXG3R9 from their raw exports).",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1118",
+  "quote": "must not be treated as completed adaptive-learning sequences.",
+  "replacement": "must not be treated as completed adaptive-learning sequences; with PXG3R9, seven of sixteen visits contain no practice run.",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1120",
+  "quote": "the ten feedback → proposal → applied-settings chains (two stored codes;",
+  "replacement": "the twelve feedback → proposal → applied-settings chains (three stored codes;",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1123",
+  "quote": "(ten chains, two codes, visit 1)",
+  "replacement": "(twelve chains, three codes, visit 1)",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1127",
+  "quote": "Batch 01 (five pairs, four stored codes;",
+  "replacement": "Pro record (six pairs, five stored codes, including PFWU9V received on 29 September 2026;",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1128",
+  "quote": "one record per stored code",
+  "replacement": "one record per stored code, seven codes",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P817",
+  "quote": "Its optional external-judgment step was not used in Batch 01;",
+  "replacement": "Its optional external-judgment step was not used in any recorded session;",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P817",
+  "quote": "Batch 01 comprises ten exports from five stored player codes, all labelled researcher self-test with identities unverified; it documents a traceable feedback-to-decision-to-settings mechanism and five paired opening–closing fixed-course checks within visits (across four codes)",
+  "replacement": "The record comprises seven stored player codes (ten exports from five codes summarised in the Batch 01 reports, and two exports received later), all labelled researcher self-test with identities unverified; it documents a traceable feedback-to-decision-to-settings mechanism and six paired opening–closing fixed-course checks within visits (across five codes)",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1076",
+  "quote": "are not yet deposited in full (Appendix I.7)",
+  "replacement": "are not yet deposited in full (Appendix I.7); the raw exports for P8P2Z9 and PU5K58, and the two later-received exports for PFWU9V and PXG3R9, are archived as received with SHA-256 (29 September 2026)",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "P1140",
+  "quote": "the ten raw Batch 01 exports with their SHA-256 list",
+  "replacement": "the raw Batch 01 exports for PT8FJC, PEVNZ8 and PZTPCG with their SHA-256 list",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "T39R2",
+  "quote": "Opening checks 100%, 95%, 95%, 100%, 80%; mean of selected openings 97.5%",
+  "replacement": "Opening checks 100%, 95%, 95%, 100%, 80%, 80%; mean of the addendum's selected openings 97.5%",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "T39R6",
+  "quote": "Batch 01 exports labelled researcher self-test",
+  "replacement": "Pro exports (seven codes) labelled researcher self-test",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "T28R6",
+  "quote": "Pro v4.1 researcher self-test, Batch 01",
+  "replacement": "Pro v4.1 researcher self-test (Batch 01 and two later exports)",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "T28R6",
+  "quote": "Ten exports, 19–20 Sep 2026; two descriptive reports dated 20 Sep, archived as received 26 Sep; raw exports not yet deposited",
+  "replacement": "Batch 01: ten exports, five codes, reports dated 20 Sep (archived 26 Sep); two further exports (PFWU9V, PXG3R9) received 29 Sep; seven codes, 53 runs; raw exports on file for four codes",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ },
+ {
+  "locator": "T30R14",
+  "quote": "Batch 01: five stored codes, 12 visits, 19–20 Sep",
+  "replacement": "Seven stored codes, 16 visits, 19–20 Sep (Batch 01 reports: five codes, 12 visits)",
+  "action": "reframe",
+  "src": "V47-seven-codes"
+ }
+]

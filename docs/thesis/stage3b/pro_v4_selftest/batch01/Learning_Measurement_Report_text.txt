@@ -1,0 +1,441 @@
+SIDNEY K. T. TAM | EngD research development | Stage 3B Pro - Batch 01
+
+
+
+METHODS AND RESULTS ADDENDUM
+
+
+Learning measurement
+and QFD-linked analysis
+Stage 3B Pro • Initial data batch • Prepared for Sidney K. T. Tam
+Bottom line: a reproducible analysis is possible now. The records show immediate game-task performance and
+an auditable adaptation process, but do not establish durable learning. QFD supports evidence-to-design
+translation; it is not a statistical test of learning.
+
+
+
+1. Purpose and scope
+This addendum applies the methods named in the research development record—Quality Function Deployment
+(QFD), SERVQUAL-inspired experience analysis and Python—to the ten uploaded Batch 01 game exports. The user’s
+term “QDF” is interpreted as QFD because that is the term explicitly recorded in the August 2024 note and the
+thesis. The original documents and game files have not been amended (Tam, 2024; Tam, 2026, Table 5.3).
+
+  Evidence layer          What was computed                         Current finding
+
+  Immediate task          Opening/closing obstacle-clearance        First complete visit per code: 97.5% to 95.0%; mean change -2.5
+  performance             differences                               percentage points.
+
+                                                                    First-visit challenge-fit responses all 4/5; perceived improvement
+  Experience              Original questionnaire distributions
+                                                                    varies from 1/5 to 5/5.
+
+                                                                    Ten recorded decisions match subsequent settings; seven local-
+  Adaptation fidelity     Linked decisions and applied settings
+                                                                    rule decisions and three player overrides.
+
+  QFD design                                                        Qualitative mapping completed; importance weights were not
+                          Evidence-to-requirement mapping
+  synthesis                                                         collected, so no numeric priority ranking is claimed.
+
+
+
+Dataset boundary
+Ten exports contain 81 run appearances but only 42 distinct runs, after matching stored player code and Run_ID.
+They represent five stored codes and 12 software-recorded visits. The files retain a researcher-self-test
+classification; five independent people have not been verified. The older PKY3B7 v4.0 test and all original Stage 1,
+Stage 2 and Stage 3A study records are excluded (sources S01–S10).
+All statistical choices in this addendum are retrospective and exploratory. Numeric tests below are conditional
+calculations, not confirmatory evidence. The analysis does not validate FIAS, clinical balance, eye-leg coordination,
+an AI model or the effectiveness of the complete intervention.
+
+
+
+
+                                                                                               Exploratory analysis • 20 September 2026 | 1
+SIDNEY K. T. TAM | EngD research development | Stage 3B Pro - Batch 01
+
+
+
+
+2. What the existing tools can measure
+The earlier January 2025 review used the heading “QFD Statistical Modeling”. The present analysis preserves QFD’s
+place in the research, but separates its engineering role from hypothesis testing. The V38 methodological note
+already describes Table 5.3 as a qualitative, unweighted requirements map, not an auditable weighted QFD
+deployment.
+
+  Tool / framework         Appropriate role here                                Boundary
+
+                                                                                Designed relationships are analyst judgements, not
+  QFD / House of           Translate interpreted player needs into technical
+                                                                                measured effect sizes or proof that learning
+  Quality                  requirements and verification measures.
+                                                                                occurred.
+
+                                                                                The six custom items are not full SERVQUAL. No
+  SERVQUAL-inspired        Describe the player’s reported experience using
+                                                                                matched expectation ratings exist, so P–E gaps
+  items                    the questions actually administered.
+                                                                                cannot be calculated.
+
+                           Explain why challenge fit, progress, choice and      A design linkage does not create validated TAM or
+  TAM / Octalysis
+                           continued use matter to the design.                  eight-drive scale scores in this batch.
+
+                                                                                Nominal conditions can be compared; alternate-
+  Paired descriptive       Calculate how each code performed on the
+                                                                                course equivalence and true person identity are
+  statistics               opening and closing checks.
+                                                                                unresolved.
+
+                                                                                Conditional illustrations only: small sample,
+                           Show the uncertainty and direction of the
+  Paired t / exact tests                                                        bounded scores, unverified independence and no
+                           available paired differences.
+                                                                                control group.
+
+                           Link a specified skill to observable task evidence   No adequately controlled retention or transfer
+  Learning assessment
+                           and later reassessment.                              measurement is established here.
+
+
+
+QFD is used as a requirements-translation method, following ASQ’s description of connecting customer
+expectations to product characteristics. SERVQUAL concerns service-quality perceptions relative to expectations;
+an experience rating is not itself a skill assessment (ASQ, n.d.; Parasuraman et al., 1988).
+
+Separate the learning constructs
+The candidate target for this game is task-specific steering and route selection, not clinical balance. Immediate
+performance is observable now. Relatively lasting skill development requires a credible retention or transfer
+assessment; temporary support or easier conditions can change performance without establishing that
+development (Soderstrom & Bjork, 2015).
+A defensible assessment starts with a claim about the intended competence, specifies the observations that would
+support it, and designs tasks that can supply those observations. This is the useful connection to embedded game
+assessment, rather than treating any exported score as a learning measure (Shute & Ventura, 2013).
+
+
+
+
+                                                                                             Exploratory analysis • 20 September 2026 | 2
+SIDNEY K. T. TAM | EngD research development | Stage 3B Pro - Batch 01
+
+
+
+
+3. Reconstructed performance comparisons
+The candidate main indicator is obstacle-clearance rate. It is recalculated from counts rather than accepted
+uncritically from a displayed score: clearance (%) = 100 × (obstacles faced − obstacles hit) / obstacles faced. Within-
+visit change is closing clearance minus opening clearance, in percentage points.
+
+  Code / visit                    Opening            Closing              Change          Course forms
+
+  P8P2Z9 / 1                      100%               90%                  -10 pp          7043 → 7043m
+
+  PT8FJC / 1                      95%                100%                 +5 pp           7043 → 7043m
+
+  PEVNZ8 / 1                      95%                90%                  -5 pp           7043 → 7043m
+
+  PZTPCG / 1                      100%               100%                 +0 pp           7043 → 7043m
+
+  P8P2Z9 / 4                      80%                90%                  +10 pp          7051m → 7051
+
+
+Each complete pair has 20 obstacles, a 30-second planned duration, pace ×0.85, no route guide and the same input
+mode within the pair. The first four pairs are from v4.1; the later P8P2Z9 Visit 4 pair is from v4.1.1. Course forms
+differ within each pair. Mirroring and matching nominal settings do not independently establish equal difficulty
+(S03, S08–S10).
+
+Retrospective selection rule
+The main summary uses the earliest complete paired visit for each stored code: P8P2Z9, PT8FJC, PEVNZ8 and
+PZTPCG. This avoids counting P8P2Z9 twice as though it were two people. PU5K58 has no complete
+opening/closing pair and is not assigned a fabricated post-score. Its other records remain in the logbook.
+
+Ceiling and interpretability
+Two of the four selected opening checks are already at 100%, and their mean is 97.5%. The obstacle-clearance task
+has little headroom in these records. One obstacle represents five percentage points. This motivates checking
+measurement sensitivity; it is not a reason to discard high baselines or selectively replace the outcome with a more
+favourable score.
+
+  Supplementary indicator, first pair/code                  Mean change            Interpretation
+
+                                                                                   Not automatically worse: safer coin selection could
+  Coins collected                                           -0.25 coins
+                                                                                   reduce collection.
+
+                                                            -3.21 percentage
+  Time at the edge                                                                 Strategy context, not a validated skill score.
+                                                            points
+
+                                                                                   Supplementary game metric only; explicitly not
+  Inherited game composite                                  -0.90 points
+                                                                                   clinical balance.
+
+
+
+No complete pair exceeds the earlier prototype’s 50% edge-time screening threshold. Reaction time cannot be
+reconstructed as a valid latency measure from these summary fields; elapsed obstacle-event time is not the same
+as stimulus-to-response latency.
+
+
+
+
+                                                                                               Exploratory analysis • 20 September 2026 | 3
+SIDNEY K. T. TAM | EngD research development | Stage 3B Pro - Batch 01
+
+
+
+
+4. Statistics, uncertainty and sensitivity
+The following confidence interval and p-values assume independent comparable code-level pairs and the
+relevant sampling/distributional conditions. Those assumptions are not verified. These calculations must not
+be presented as a completed population-level learning trial.
+
+
+
+  Statistic: first complete pair per code                                      Result
+
+  Number of codes with a complete pair                                         4
+
+  Opening mean → closing mean                                                  97.50% → 95.00%
+
+  Mean change; median change                                                   -2.50 pp; -2.50 pp
+
+  SD of paired differences                                                     6.45 pp
+
+  Conditional 95% t confidence interval                                        -12.77 to +7.77 pp
+
+  Paired t test                                                                t(3) = -0.775; two-sided p = .495
+
+  Paired standardised change, dz                                               -0.387
+
+                                                                               1 improvement, 2 declines, 1 tie; p =
+  Exact sign test
+                                                                               1.000
+
+  Exact Wilcoxon signed-rank calculation                                       W = 1.5; two-sided p = .750
+
+
+For differences d, the paired statistic is mean(d) / [SD(d)/√n]. The interval is mean(d) ± t(.975, n−1) × SD(d)/√n; dz =
+mean(d)/SD(d). These calculations follow the paired-observation approach (NIST/SEMATECH, n.d.).
+The Wilcoxon calculation omits the zero difference, assigns midranks to tied absolute differences and enumerates
+all eight sign allocations for the three non-zero differences. It is independently checked against SciPy’s exhaustive
+permutation implementation. An automatic normal approximation is not used. The signed-rank interpretation
+additionally assumes a symmetric difference distribution; the sign test discards magnitudes (SciPy contributors,
+n.d.).
+
+Repeated-visit sensitivity
+Across all five observed visit-pairs, the mean change is 0.0 pp, with two improvements, two declines and one tie.
+This is descriptive, because one code supplies two pairs. An alternative that averages changes within each code
+before averaging across codes also yields 0.0 pp: the four code means are 0, +5, −5 and 0 pp. That answers a
+different question from first-visit change; it is not a reason to select whichever result is preferable.
+
+What these results do not mean
+There is no consistent positive performance signal in this batch. Neither p = .495 nor p = .750 establishes the
+absence of learning, equivalence, or ineffectiveness. The interval is wide and the measurement has a ceiling.
+Conversely, fitting a more elaborate model cannot supply missing identity, comparable tasks or a causal contrast.
+No multivariable regression, mediation, random forest or structural-equation model is fitted.
+
+
+
+
+                                                                                   Exploratory analysis • 20 September 2026 | 4
+SIDNEY K. T. TAM | EngD research development | Stage 3B Pro - Batch 01
+
+
+
+
+5. Player experience and adaptation
+The original six questionnaire items are analysed separately, using the first recorded visit per code to avoid giving
+frequent visitors extra weight. Missing responses remain missing. The table preserves ordinal medians and ranges;
+the workbook also contains complete frequency counts.
+
+  Item                                                               Answered / missing   Median           Range
+
+  D1 Coordination challenge                                          5/0                  4                3–5
+
+  D2 Willingness to play regularly                                   5/0                  4                3–4
+
+  F1 Game matched ability                                            5/0                  4                4–4
+
+  F2 Progress motivated continuation                                 5/0                  3                3–5
+
+  C1 Felt getting better                                             4/1                  4                1–5
+
+  T1 Felt tested or judged                                           5/0                  3                2–3
+
+
+P8P2Z9 and PEVNZ8 both selected C1 = 4 at Visit 1, while their clearance changes were −10 and −5 pp respectively.
+This is a within-record contrast between perceived improvement and the selected performance measure, not
+evidence that the players’ reports are wrong. F1 is constant at 4 across all five first responses, so its correlation
+with performance is undefined.
+C1 is not a validated self-efficacy score. T1 is also not a positive-outcome item: higher values represent more
+perceived judgement. The six items span different constructs, so no unvalidated total score, Cronbach-alpha claim
+or synthetic “learning percentage” is produced. No full SERVQUAL expectation–perception gap is estimable.
+
+Process fidelity, not an effectiveness estimate
+All ten archived decision chains match their next-run settings, but they occur within only two stored codes. Seven
+final decisions are local-rule outputs and three are player overrides. No cloud configuration or live external model
+request is recorded, and the free-text comments are empty. Therefore this batch does not test Jev language
+reasoning. The observed 10/10 agreement is retained as a software-process count, not analysed as ten
+independent participants (S03, S10).
+
+Completeness and participation
+Seven of the twelve visits contain practice. Five of those seven include both checks; two do not. Five visits have no
+practice. Two sequential visits in one code begin only about 9.5 and 3.4 seconds after the preceding visit ended.
+Software visit counts therefore do not define durable voluntary return. A later-day code record is present, but a
+planned retention test without preceding re-warmup and with a verified comparison task is not established.
+
+
+
+
+                                                                                          Exploratory analysis • 20 September 2026 | 5
+SIDNEY K. T. TAM | EngD research development | Stage 3B Pro - Batch 01
+
+
+
+
+6. QFD: from evidence to requirements
+The completed QFD-style matrix is in the workbook. Its rows distinguish player reports from analyst-inferred
+usability and measurement requirements. Strong or moderate links are proposed design judgements, not empirical
+correlation coefficients. This follows the qualitative status already stated in V38 rather than inventing customer-
+importance weights retrospectively.
+
+  Requirement                     Evidence                                           Proposed engineering response
+
+                                  First-visit F1 ratings all 4; hard/easy feedback   Separate directional speed feedback; assess fit
+  Appropriate challenge
+                                  varies during practice.                            without equating ease with learning.
+
+                                  C1 varies 1–5; fixed-course changes are            Keep performance, perceived improvement and
+  Credible personal progress
+                                  mixed.                                             durable learning visibly distinct.
+
+                                  Ten linked decisions; no free-text                 Log the actual advice, relevant next action and
+  Understandable support
+                                  interpretation tested.                             later unassisted performance.
+
+                                  Five visits contain no practice; two practice      Clarify optional steps and finishing routes; do not
+  Simple visit navigation
+                                  visits lack closing checks.                        force continued play.
+
+                                                                                     Confirm consistent code use and returning-player
+  Separate player records         Five codes, but human identities unverified.
+                                                                                     history before inference.
+
+                                  D2 median 4; T1 median 3; short return             Keep choice, pause and finish; distinguish
+  Voluntary continuation
+                                  gaps.                                              immediate replay from later return.
+
+  Interpretable learning          Nominally comparable checks; form                  Evaluate course forms and a delayed comparison
+  assessment                      equivalence unresolved.                            in a separate later protocol.
+
+
+
+Why no numerical QFD ranking is reported
+A weighted QFD score could be defined as P(j) = Σ w(i) × r(i,j), where w is a documented importance weight and r is
+a justified design relationship. Neither quantity is an observed learning effect. No elicited importance weights were
+found in these exports. The optional QFD_Template sheet therefore keeps weights and numeric relationships blank
+and returns PENDING until all required inputs and provenance are supplied.
+The template offers conventional 0/1/3/9 relationship coding only as a documented future design exercise; it does
+not convert the qualitative matrix into an empirical finding. Satisfaction scores, missing expectations and missing
+importance weights are not interchangeable. A target of 5 on a rating scale has not been substituted for an
+unmeasured expectation.
+The contribution available now is organisational/design learning: evidence exposes where the intended process
+needs revision. That can be documented without claiming that the player acquired new knowledge or that the
+system trained a model.
+
+
+
+
+                                                                                                 Exploratory analysis • 20 September 2026 | 6
+SIDNEY K. T. TAM | EngD research development | Stage 3B Pro - Batch 01
+
+
+
+
+7. Research-review wording and next use
+Suggested results paragraph
+“A retrospective exploratory analysis of the initial Stage 3B Pro exports identified five complete opening–
+closing game-performance pairs across four stored player codes. Using the earliest complete pair per code,
+mean obstacle clearance changed from 97.5% to 95.0% (mean difference −2.5 percentage points). Conditional
+paired calculations gave a 95% interval of −12.77 to +7.77 points, t(3) = −0.775, p = .495; exact signed-rank and
+sign-test calculations were also inconclusive. Because participant identity, independent sampling and course
+equivalence were not established, these statistics are not treated as confirmatory evidence. QFD-style
+mapping translated the mixed performance, experience and process findings into candidate engineering
+requirements. No durable learning, clinical improvement or live Jev effectiveness is claimed.”
+
+
+
+What is useful before thesis closure
+Retain this as a separate development addendum, not as a replacement for the original thesis’s Stage 1 survey or
+the frozen Stage 3B study. Complete the source-to-person clarification and preserve which records are self-tests.
+Do not pool these phone-game metrics with Stage-2 clinical FRA indices or recreate missing earlier measures.
+For the present review, show the paired table, the uncertainty, the perception–performance distinction and the
+QFD mapping. Do not report the exploratory p-values without their assumptions. This analysis does not require
+reopening the thesis scope or starting a new Pro participant trial.
+
+A later learning evaluation
+A later, separately approved design could define one target skill, fix or empirically equate the assessment
+conditions, establish a baseline before practice and examine an unassisted delayed test. Delayed performance
+should be assessed before a new warmup when the aim is retention, or any re-warmup exposure must be explicitly
+part of the estimand. Transfer requires an appropriately different task. The interval, task, primary outcome and
+meaningful-change criterion should be specified before collecting the next batch.
+Repeated-measures modelling becomes a candidate only with sufficient verified people and repeated comparable
+tasks. A model could relate obstacle-level success to practice exposure, challenge and support with within-person
+dependence represented. It would still estimate an association unless a suitable comparison design identifies the
+adaptation effect. No such model is fitted to this batch.
+
+Reproducibility and checks
+The companion workbook contains 12 sheets. The package retains the ten original exports, canonical tables,
+independent Python re-extraction and results.json. Verification confirms source checksums, 81-to-42 run
+deduplication, source-count clearance rates, matching canonical Run_ID sets, two implementations of the paired t
+calculation, and exhaustive signed-rank enumeration against SciPy. These are internal verification checks, not
+verification of the individuals who played.
+Analysis environment: Python 3.13.5; NumPy 2.3.5; SciPy 1.17.0. No network or model call is made by the analysis
+script.
+
+
+
+
+                                                                                Exploratory analysis • 20 September 2026 | 7
+SIDNEY K. T. TAM | EngD research development | Stage 3B Pro - Batch 01
+
+
+
+
+References and source records
+[R1] Tam, S. K. T. (2024). my research update aug 2024 [research development note].
+[R2] Tam, S. K. T. (2026). Full version V38 EngD thesis submission draft, Table 5.3 / Section 5.5A.
+[R3] American Society for Quality. (n.d.). What is Quality Function Deployment (QFD)?
+[R4] Parasuraman, A., Zeithaml, V. A., & Berry, L. L. (1988). SERVQUAL: A multiple-item scale for measuring consumer perceptions of
+service quality. Journal of Retailing, 64(1), 12-40.
+[R5] NIST/SEMATECH. (n.d.). e-Handbook of Statistical Methods, Section 7.3.1.1, Analysis of paired observations.
+[R6] SciPy contributors. (n.d.). scipy.stats.ttest_rel; binomtest; wilcoxon [software documentation].
+[R7] Soderstrom, N. C., & Bjork, R. A. (2015). Learning versus performance: An integrative review. Perspectives on Psychological
+Science, 10(2), 176-199. DOI: 10.1177/1745691615569000.
+[R8] Shute, V. J., & Ventura, M. (2013). Stealth assessment: Measuring and supporting learning in video games. MIT Press.
+
+Online methodological sources were checked on 20 September 2026. URLs and analytical roles are supplied in the
+workbook Sources sheet. R1–R2 are historical research documents, not evidence of current intervention
+effectiveness.
+
+Batch 01 empirical source files
+S01 Alpine3BPRO_PRO-SELF_PU5K58_v2_202609191732.json
+S02 Alpine3BPRO_PRO-SELF_PU5K58_v1_202609191608.json
+S03 Alpine3BPRO_PRO-SELF_P8P2Z9_v4_202609200321.json
+S04 Alpine3BPRO_PRO-SELF_P8P2Z9_v2_202609191523 2.json
+S05 Alpine3BPRO_PRO-SELF_P8P2Z9_v3_202609191604.json
+S06 Alpine3BPRO_PRO-SELF_PU5K58_v3_202609191735.json
+S07 Alpine3BPRO_PRO-SELF_P8P2Z9_v2_202609191523.json
+S08 share5214078768679196894.csv
+S09 Alpine3BPRO_PRO-SELF_PZTPCG_v1_202609191427.csv
+S10 Alpine3BPRO_PRO-SELF_PT8FJC_v1_202609191040.csv
+Source IDs follow the preceding Batch 01 logbook. Duplicate/cumulative exports were retained for provenance, not
+added as independent observations. All ten unchanged raw files and SHA-256 checksums are in the package. The
+earlier logbook was used as the reconciliation reference; all run counts and paired measures were independently
+re-extracted here.
+
+
+
+
+                                                                                                Exploratory analysis • 20 September 2026 | 8
+

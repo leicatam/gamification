@@ -1,0 +1,404 @@
+SIDNEY K. T. TAM | EngD research development record
+
+
+STAGE 3B PRO
+
+
+Initial data logbook and research review
+Batch 01 • Gameplay recorded 19–20 September 2026 (UTC)
+Prepared from seven JSON exports and three multi-section CSV exports. This is the first Pro data batch, not the original
+Stage 1 survey of the thesis. [S01–S10]
+
+Executive finding
+The batch supports a functioning, traceable feedback-informed practice mechanism. It does not yet establish durable
+learning, live Jev reasoning, reduced abandonment or a validated FIAS mechanism.
+
+  Unit                            Deduplicated result           Interpretation
+
+  Stored player codes             5                             Not yet five verified independent people
+
+  Software-recorded visits        12                            Seven contain practice; five contain no practice
+
+  Distinct run records            42                            8 warmups + 17 practice runs + 17 fixed-course checks
+
+  Practice-feedback records       17                            10 answered; 7 explicitly skipped
+
+  Applied decisions               10                            7 final local-rule decisions; 3 player overrides
+
+  Opening–closing check pairs     5 visits / 4 codes            2 increases; 2 decreases; 1 unchanged
+
+  Active gameplay                 18.38 minutes                 Logged activity, not total visit elapsed time
+
+
+The central implementation result is stronger than a record of recommendations alone: for all ten decisions, the feedback
+record, preceding performance, player choice and next-run settings form a consistent logged sequence. Pace, duration,
+support and practice goal agree with the applied settings. These are internal record checks, not an independent
+observation of the player or proof of educational benefit. [S03, S10; Decision_Audit]
+All supplied exports identify the data as researcher-self-test, with participant release/approval fields false or not asserted.
+All indicate no configured cloud model; the ten decision cloud statuses are not_requested. The number of actual
+individuals, their identities across shared-device visits and the applicable consent/approval basis are not established by
+these files. These metadata do not determine the institution’s actual approval status. [S01–S10]
+
+Recommended position in the review
+Present this batch as a preliminary engineering and usability evaluation of the Pro prototype. Its immediate value is the
+auditable performance–feedback–action record and the identification of measurement and navigation gaps. Keep it
+separate from the original Stage 3B cohort and from the thesis evidence supporting the provisional FIAS account.
+
+
+
+
+                                                                                        Stage 3B Pro | Batch 01 | 20 September 2026 • 1
+SIDNEY K. T. TAM | EngD research development record
+
+
+
+1. Source control and analytical method
+The analysis preserves all ten original files and records their SHA-256 checksums. Seven JSON files contain cumulative
+histories for two codes; three CSV files provide histories for three other codes. The CSV filenames alone do not identify all
+covered visits: share5214078768679196894.csv contains three visits for PEVNZ8. [S01–S10]
+
+  Source control step                  Result
+
+                                       81 entries across exports reduce to 42 distinct code–Run_ID records; 39 repeated appearances
+  Primary run appearances
+                                       excluded from counts.
+
+  Repeated participant-state           S04 and S07 have identical participant_state contents but different export timestamps; neither
+  snapshot                             is a new visit.
+
+  Overlapping-record consistency       No substantive field conflicts found among overlapping keyed records.
+
+  CSV redundancy and                   All 7 repeated practice-detail rows match their session rows. All three CSV end-marker line
+  completeness                         counts reconcile.
+
+                                       Each canonical record retains its source IDs, selected JSON pointer or CSV line, and occurrence
+  Source-linked extraction
+                                       count.
+
+                                       Runs: code + Run_ID; visits and questionnaires: code + visit; events/feedback/decisions: code +
+  Deduplication keys
+                                       object ID; telemetry: code + Run_ID + within-run row index.
+
+
+For repeated keys, the latest exported snapshot is selected after comparing all available versions. No record from the
+earlier PKY3B7 self-test, the original Stage 1 survey, Stage 2 or Stage 3A is added. Blank and skipped values remain missing.
+A stopped warmup with no encountered obstacle is retained, with its clearance rate left undefined. [S08; Run_Log,
+Deduplication]
+
+Record-level coverage
+
+  Code                       Visits             Runs          Practice              Pairs              Decisions
+
+  P8P2Z9                     4                  18            9                     2                  6
+
+  PT8FJC                     1                  8             5                     1                  4
+
+  PEVNZ8                     3                  7             1                     1                  0
+
+  PZTPCG                     1                  4             1                     1                  0
+
+  PU5K58                     3                  5             1                     0                  0
+
+
+The logs contain 38 runs stamped v4.1 and four runs stamped v4.1.1; the latter are P8P2Z9 visit 4. Three codes have touch
+input only, PZTPCG records keyboard input, and PEVNZ8 includes touch plus one stopped run with input recorded as none.
+PRO-SELF is a shared build/device tag, not a unique hardware identifier. [S03, S06, S08–S10]
+
+Analysis boundaries
+The summary is descriptive. Repeated runs are not independent participants; visits are not assumed to be separate
+appointments. No missing baseline, failure cause, return motive or participant statement is reconstructed. No p-values,
+population retention estimates or causal effects are calculated. The Research_Logbook is explicitly dated retrospective
+extraction, not a fabricated contemporaneous field diary.
+
+
+
+
+                                                                                            Stage 3B Pro | Batch 01 | 20 September 2026 • 2
+SIDNEY K. T. TAM | EngD research development record
+
+
+
+2. Visit-by-visit research logbook
+Each row below is a machine-recorded visit. The full workbook adds UTC timestamps, active and elapsed duration, source
+references, questionnaire records and a separate analyst-interpretation column. W = warmup; Pre/Post = opening/closing
+check; P = practice. [S03, S06, S08–S10]
+
+                              Start UTC
+  Code                Visit                           Recorded route               Gap from prior end    Measurement status
+                              MM-DD HH:MM
+
+  P8P2Z9              1       09-19 07:25             W 1 / Pre 1 / P 7 / Post 1   First recorded        Paired checks
+
+  PT8FJC              1       09-19 10:33             W 1 / Pre 1 / P 5 / Post 1   First recorded        Paired checks
+
+  PEVNZ8              1       09-19 14:12             W 1 / Pre 1 / P 1 / Post 1   First recorded        Paired checks
+
+  PEVNZ8              2       09-19 14:15             W 0 / Pre 0 / P 0 / Post 1   9.48 s                No practice
+
+  PEVNZ8              3       09-19 14:16             W 1 / Pre 0 / P 0 / Post 1   3.39 s                No practice
+
+  PZTPCG              1       09-19 14:20             W 1 / Pre 1 / P 1 / Post 1   First recorded        Paired checks
+
+  P8P2Z9              2       09-19 15:21             W 0 / Pre 0 / P 0 / Post 1   468.9 min             No practice
+
+  P8P2Z9              3       09-19 16:02             W 1 / Pre 1 / P 1 / Post 0   40.2 min              No closing check
+
+  PU5K58              1       09-19 16:07             W 0 / Pre 0 / P 0 / Post 1   First recorded        No practice
+
+  PU5K58              2       09-19 17:31             W 0 / Pre 0 / P 0 / Post 1   83.1 min              No practice
+
+  PU5K58              3       09-19 17:33             W 1 / Pre 1 / P 1 / Post 0   75.11 s               No closing check
+
+  P8P2Z9              4       09-20 03:18             W 1 / Pre 1 / P 1 / Post 1   674.1 min             Paired checks
+
+
+
+What the routes reveal
+Five of twelve visits contain no practice run. Four consist only of a closing-labelled check: P8P2Z9 visit 2, PU5K58 visits 1–2
+and PEVNZ8 visit 2. PEVNZ8 visit 3 contains a 1.473-second warmup stopped before any obstacle, followed by a closing
+check. These records must not be treated as five completed adaptive-learning sequences. The files do not establish why
+those routes occurred. [S03, S06, S08]
+Two of the seven visits containing practice lack a closing check: P8P2Z9 visit 3 and PU5K58 visit 3. Therefore, 5/7 practice-
+containing visits, or 5/12 software visits overall, have an opening–closing comparison. This is measurement availability, not
+adherence or effectiveness. [S03, S06]
+Recorded gaps vary from 3.392 seconds to 11 hours 14 minutes 7.749 seconds. PEVNZ8’s two restarts occur after 9.484
+and 3.392 seconds; these are not evidence of separate-day retention. Four restart records say self_initiated and three say
+not_reported; this describes the recorded response, not independently verified absence of prompting. [S03, S06, S08]
+
+Stopping is not automatically abandonment
+Fifteen of seventeen practice runs reached their planned time limit; two P8P2Z9 runs ended at the three-bump limit. Both
+were followed by another practice run in the same visit. Twelve visit-ended events are present. Neither a game-over event,
+a skipped questionnaire nor a completed visit establishes later abandonment or FIAS. No prospective non-return
+observation window is supplied. [S03, S06, S08–S10]
+
+
+
+
+                                                                                      Stage 3B Pro | Batch 01 | 20 September 2026 • 3
+SIDNEY K. T. TAM | EngD research development record
+
+
+
+3. Feedback-informed adaptation: what operated
+Ten answered practice-feedback records are linked to ten decisions and ten subsequent practice runs. All ten pass the ID-
+linkage, performance-input, chronology and actual-settings checks. All originate in two stored codes. No free-text response
+is present, and no external model request is recorded. [S03, S10; Decision_Audit]
+
+  Code / transition          Recorded feedback                 Original offline proposal            Final applied result
+
+  P8P2Z9 3 → 4               Hard; frustrated; speed           Easier: 1.20 → 1.08                  1.08; look ahead
+
+  P8P2Z9 4 → 5               Right; okay; visibility           Same pace + route guide              1.08; route guide
+
+  P8P2Z9 5 → 6               Right; okay; turns                Same: 1.08                           1.08; gentle turns
+
+  P8P2Z9 6 → 7               Easy; okay; turns                 Harder: 1.08 → 1.18                  1.18; gentle turns
+
+  P8P2Z9 7 → 8               Right; okay; visibility           Same pace + route guide              1.18; route guide
+
+  P8P2Z9 8 → 9               Hard; okay; turns                 Easier: 1.18 → 1.06                  1.06; gentle turns
+
+  PT8FJC 3 → 4               Right; okay; speed                Easier: 1.20 → 1.08                  Player override: 1.30
+
+  PT8FJC 4 → 5               Right; enjoying; coins            Same: 1.30                           Player override: 1.40
+
+  PT8FJC 5 → 6               Right; enjoying; more challenge   Harder: 1.40 → 1.50                  1.50; safe coins
+
+  PT8FJC 6 → 7               Right; enjoying; coins            Same: 1.50                           Player override: 1.60
+
+
+
+Transition numbers are exported Session_No values, which include warmups and probes. “Right” abbreviates the stored code right; it is
+not an independent judgement of optimal challenge. Pace values are multipliers. [S03, S10]
+
+Case interpretation
+P8P2Z9’s first practice ended after 6.773 seconds with three hits in four obstacles. The next run was accepted at a lower
+pace and lasted 29.093 seconds, also ending at the bump limit. A subsequent visibility response was followed by a route-
+guided run at the same pace, with no hits in 35 obstacles. This is a useful within-record adaptation sequence; changes in
+exposure, support and repeated practice prevent attribution of the better immediate performance to one cause. [S03]
+PT8FJC’s progression from 1.20 to 1.60 should not be described as four AI-selected increases. Three were explicit player
+overrides and one retained a local-rule increase. In the first transition, the neutral reason speed co-occurred with right and
+okay, yet generated an easier offline proposal. This supports reviewing the directional meaning of the feedback options.
+[S10]
+Not every pace change uses post-game feedback: warmup calibration determines initial practice settings. P8P2Z9 visit 4
+begins practice at 0.74 without a decision ID. The logbook therefore separates warmup-setting, local-rules and player-
+choice rather than treating every adjustment as Jev reasoning. [S03]
+
+
+
+
+                                                                                           Stage 3B Pro | Batch 01 | 20 September 2026 • 4
+SIDNEY K. T. TAM | EngD research development record
+
+
+
+4. Performance change and reported experience
+Paired fixed-course checks
+
+  Code / visit                 Course forms            Clearance pre → post          Change           Coins pre → post
+
+  P8P2Z9 / 1                   7043 → 7043m            100% → 90%                    -10 pp           15 → 14
+
+  PT8FJC / 1                   7043 → 7043m            95% → 100%                    +5 pp            15 → 15
+
+  PEVNZ8 / 1                   7043 → 7043m            95% → 90%                     -5 pp            12 → 11
+
+  PZTPCG / 1                   7043 → 7043m            100% → 100%                   +0 pp            14 → 15
+
+  P8P2Z9 / 4                   7051m → 7051            80% → 90%                     +10 pp           17 → 14
+
+
+All five pairs use a pace of 0.85, 20 obstacles per probe and a planned duration of 30 seconds, with the same input mode
+within each pair. However, the course identifiers differ between opening and closing forms. The exports do not
+independently establish equivalence of difficulty. Two changes are positive, two negative and one zero; their descriptive
+median is zero percentage points. Two pairs belong to P8P2Z9, so the five pairs are not five independent people. [S03, S08–
+S10]
+P8P2Z9 recorded 100% → 90% in visit 1 despite seven practice runs, and 80% → 90% in visit 4. It would be selective to cite
+only the second increase. The batch contains no controlled comparison, defined retention test or transfer assessment, and
+cannot establish durable learning or clinical balance improvement. The exported game-composite note explicitly excludes a
+clinical interpretation. [S03]
+
+First-visit questionnaire: one record per code
+
+  Item descriptor                                        Answered n        Median [range]                Responses 4–5
+
+  D1: coordination challenge                             5                 4 [3–5]                       4/5
+
+  D2: regular-use intention                              5                 4 [3–4]                       3/5
+
+  F1: matched ability                                    5                 4 [4–4]                       5/5
+
+  F2: progress motivated                                 5                 3 [3–5]                       2/5
+
+  C1: getting better                                     4                 4 [1–5]                       3/4
+
+  T1: felt judged                                        5                 3 [2–3]                       0/5
+
+
+The CSV headers identify a five-point response scale from strongly disagree to strongly agree. All first-visit F1 entries equal
+4, whereas F2 endorsement is less consistent. PZTPCG records perfect clearance on both probes but C1 = 1: successful task
+performance and perceived improvement are different observations. PU5K58’s first C1 response is missing. [S02, S03, S08–
+S10]
+Across all visits, there are ten complete questionnaire vectors, one with a single missing item, and one with all six items
+missing. P8P2Z9 repeats the same six-item vector at all four visits; the export alone cannot establish fresh reselection
+versus retained interface values. Repeated-visit responses are retained but not pooled as independent participant answers.
+[S03, S06]
+
+
+
+
+                                                                                     Stage 3B Pro | Batch 01 | 20 September 2026 • 5
+SIDNEY K. T. TAM | EngD research development record
+
+
+
+5. Research readiness and immediate priorities
+  Priority                  Finding to address                                  Required handling
+
+                                                                                Confirm code-to-person mapping, who played each
+                            Five codes; all records carry self-test metadata;
+  Before participant                                                            visit, recruitment, consent and scope in a separate
+                            human identity and approved scope not
+  claims                                                                        governed record. Do not infer five older-adult
+                            verified.
+                                                                                participants.
+
+                                                                               Use timestamps and routes, distinguish immediate
+                            Five visits contain no practice; some restarts are
+  Before return claims                                                         replay from later visits, and record whether returns
+                            seconds apart.
+                                                                               were prompted.
+
+                                                                                Keep performance descriptive. Retain per-run version
+                            Only five paired visits; mixed changes;
+  Before learning claims                                                        and independent measurement plans. Do not label an
+                            mirror/base courses; build change in P8P2Z9.
+                                                                                easier score as skill gain.
+
+                                                                                Report offline performance-plus-structured-feedback
+  Before AI claims          Cloud off; no model response; empty free text.      adaptation with player choice, not live Jev or LLM
+                                                                                effectiveness.
+
+                            Seven of 17 practice-feedback records skipped;      Investigate burden and navigation without treating
+  Interface refinement
+                            two practice visits lack closing checks.            optional skipping as misconduct or forcing participation.
+
+                                                                                Retain hashes and deduplication keys. Use 1.2/1.6
+                            Cumulative and repeated exports can inflate
+  Record preservation                                                           multipliers from run/detail fields, not legacy 120/160
+                            counts; CSV legacy level scale differs.
+                                                                                summary values.
+
+
+
+Suggested wording for your academic review
+“The initial Stage 3B Pro export batch comprised ten files representing five stored player codes and twelve software-
+recorded visits. Deduplication identified 42 distinct runs, including 17 practice runs. Ten answered feedback records were
+linked to ten applied next-run decisions, comprising seven final local-rule decisions and three player overrides. Five within-
+visit fixed-course comparisons showed mixed changes: two improvements, two declines and one unchanged result. The
+dataset supports the operation of an auditable feedback-informed practice mechanism and identifies important navigation
+and measurement gaps. As the exports are labelled researcher self-test, contain no live Jev inference and do not establish
+independent participant identities or a longitudinal follow-up design, no claim of durable learning, reduced abandonment
+or FIAS validation is made.” [S01–S10; derived logbook]
+
+Relationship to the thesis
+Retain this batch as a separate Pro development appendix or progress-review item. It does not replace the original Stage
+3B dataset, strengthen an earlier causal FIAS claim automatically, or require reopening the thesis with a new efficacy trial.
+A useful engineering contribution here is the traceability from measured actions and reported experience to chosen
+settings, together with the explicit limits discovered through use.
+No game code, thesis draft, manuscript or existing review deck was modified in preparing this logbook. The Confirmations sheet is
+intentionally incomplete where the exports cannot supply the answer.
+
+
+
+
+                                                                                             Stage 3B Pro | Batch 01 | 20 September 2026 • 6
+SIDNEY K. T. TAM | EngD research development record
+
+
+
+6. Source references and audit record
+Primary references below are the user-supplied exports, not published studies. This review is grounded in those records;
+no external literature or earlier test data have been substituted for missing observations. Exact checksums, file sizes,
+selected pointers and all original bytes are retained in the accompanying package.
+[S01] Alpine3BPRO_PRO-SELF_PU5K58_v2_202609191732.json
+JSON export; code PU5K58; exported 2026-09-19T17:32:56.769Z. Covers 2 run appearances and 2 recorded visit(s) in that snapshot.
+[S02] Alpine3BPRO_PRO-SELF_PU5K58_v1_202609191608.json
+JSON export; code PU5K58; exported 2026-09-19T16:08:47.444Z. Covers 1 run appearances and 1 recorded visit(s) in that snapshot.
+[S03] Alpine3BPRO_PRO-SELF_P8P2Z9_v4_202609200321.json
+JSON export; code P8P2Z9; exported 2026-09-20T03:21:42.593Z. Covers 18 run appearances and 4 recorded visit(s) in that snapshot.
+[S04] Alpine3BPRO_PRO-SELF_P8P2Z9_v2_202609191523 2.json
+JSON export; code P8P2Z9; exported 2026-09-19T15:23:53.195Z. Covers 11 run appearances and 2 recorded visit(s) in that snapshot.
+[S05] Alpine3BPRO_PRO-SELF_P8P2Z9_v3_202609191604.json
+JSON export; code P8P2Z9; exported 2026-09-19T16:04:49.705Z. Covers 14 run appearances and 3 recorded visit(s) in that snapshot.
+[S06] Alpine3BPRO_PRO-SELF_PU5K58_v3_202609191735.json
+JSON export; code PU5K58; exported 2026-09-19T17:35:57.692Z. Covers 5 run appearances and 3 recorded visit(s) in that snapshot.
+[S07] Alpine3BPRO_PRO-SELF_P8P2Z9_v2_202609191523.json
+JSON export; code P8P2Z9; exported 2026-09-19T15:23:23.243Z. Covers 11 run appearances and 2 recorded visit(s) in that snapshot.
+[S08] share5214078768679196894.csv
+CSV export; code PEVNZ8; exported 2026-09-19T14:17:10.436Z. Covers 7 run appearances and 3 recorded visit(s) in that snapshot.
+[S09] Alpine3BPRO_PRO-SELF_PZTPCG_v1_202609191427.csv
+CSV export; code PZTPCG; exported 2026-09-19T14:27:24.198Z. Covers 4 run appearances and 1 recorded visit(s) in that snapshot.
+[S10] Alpine3BPRO_PRO-SELF_PT8FJC_v1_202609191040.csv
+CSV export; code PT8FJC; exported 2026-09-19T10:40:54.278Z. Covers 8 run appearances and 1 recorded visit(s) in that snapshot.
+
+Derived materials
+Stage3B_Pro_Batch01_Logbook.xlsx: twenty sheets covering the dashboard, source register, codes, visits, runs, feedback,
+decisions, probe pairs, questionnaires, first-visit summaries, events, telemetry, mechanical checks, data quality,
+deduplication, record provenance, retrospective research logbook, confirmations and dictionary.
+analysis/compile_logbook.py: reproducible standard-library extraction, deduplication, linkage checks and CSV generation.
+analysis/compiled.json: the complete derived analytical dataset. data/: canonical tables and audit outputs. sources/: the
+ten unaltered input files.
+Mechanical verification: all 42 runs have one matching start and end event; all 932 encountered obstacles and 51 hits
+reconcile to the per-obstacle telemetry; all 41 non-zero-denominator clearance rates reconcile within displayed rounding.
+The single zero-obstacle run is not evaluable for clearance. All ten decision chains pass the specified linkage, input,
+chronological and settings checks. These are source-consistency tests, not independent verification of participant
+behaviour.
+Prepared 20 September 2026. A later signed correction or confirmed participant mapping should be appended as a dated amendment;
+the source exports and original self-test labels should remain preserved.
+
+
+
+
+                                                                                        Stage 3B Pro | Batch 01 | 20 September 2026 • 7
+

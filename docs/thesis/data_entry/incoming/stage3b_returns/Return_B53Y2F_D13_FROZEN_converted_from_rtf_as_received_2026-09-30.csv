@@ -1,0 +1,38 @@
+【滑雪遊戲研究結果 B53Y2F——請原封不動傳送給研究員】
+exported_ts,2026-09-16T04:49:51.043Z
+[PARTICIPANT]
+field,value
+build,Alpine_Coordination_Game_v3.1s_Stage3B_FROZEN20260915
+device_id,D13
+participant_code,B53Y2F
+arm,B
+failure_mode,ZF
+language,zh
+consent_agreed,yes
+consent_ts,2026-09-16T04:47:13.418Z
+age_band,45-64
+gender,M
+education,degree+
+prior_play,no
+
+[SESSIONS]
+Participant_ID,Session_No,Session_Date,Duration_Min,Distance_m,Coins,Obstacles_Hit,Lives_Lost,Avg_Balance_pct,Max_Speed,AI_DiffMult,Reached_GameOver,Score,Combo_Max,Dodges,Coins_Missed,Input_Mode,Post_FRA_Index,Notes,Arm,Lang,XP_Total,Skier_Level
+B53Y2F,1,2026-09-16,0.5,459,7,0,0,79.7,15.3,0.85,FALSE,709,3,4,22,touch,,zero-failure; cap=30s; end: 30 s complete (goal reached); state changes=1,B,zh,709,3
+B53Y2F,2,2026-09-16,0.5,459,4,4,0,83.6,15.3,0.85,FALSE,579,2,2,18,touch,,zero-failure; cap=30s; end: 30 s complete (goal reached); state changes=5,B,zh,1288,4
+
+[STATE_CHANGES]
+Session_No,t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src
+1,0,0,0.85,0.85,0,0,0,100,run start — arm B (static ×0.85),init
+2,0,0,0.85,0.85,0,0,0,100,run start — arm B (static ×0.85),init
+2,9.6,0.16,0.85,0.85,147,0,1,90,"bump → cleared 0 obstacle(s), density ×0.75 (speed unchanged)",bump
+2,10.5,0.17,0.85,0.85,160,0,2,83.3,"bump → cleared 0 obstacle(s), density ×0.56 (speed unchanged)",bump
+2,18.8,0.31,0.85,0.85,288,0,3,86.4,"bump → cleared 1 obstacle(s), density ×0.42 (speed unchanged)",bump
+2,20.5,0.34,0.85,0.85,314,0,4,84.6,"bump → cleared 0 obstacle(s), density ×0.40 (speed unchanged)",bump
+
+[QUESTIONNAIRE]
+item,response (1 strongly disagree - 5 strongly agree)
+D1_coordination_challenge,2
+D2_play_regularly,2
+F1_matched_ability,3
+F2_progress_motivated,2
+answered_ts,2026-09-16T04:49:24.512Z

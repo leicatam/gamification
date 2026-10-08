@@ -1,0 +1,36 @@
+【滑雪遊戲研究結果 BZ323A——請原封不動傳送給研究員】
+exported_ts,2026-09-29T14:40:23.885Z
+[PARTICIPANT]
+field,value
+build,Alpine_Coordination_Game_v3.1s_Stage3B_FROZEN20260915
+device_id,D01
+participant_code,BZ323A
+arm,A
+failure_mode,GO
+language,zh
+consent_agreed,yes
+consent_ts,2026-09-29T14:38:01.361Z
+age_band,45-64
+gender,F
+education,post-secondary
+prior_play,no
+
+[SESSIONS]
+Participant_ID,Session_No,Session_Date,Duration_Min,Distance_m,Coins,Obstacles_Hit,Lives_Lost,Avg_Balance_pct,Max_Speed,AI_DiffMult,Reached_GameOver,Score,Combo_Max,Dodges,Coins_Missed,Input_Mode,Post_FRA_Index,Notes,Arm,Lang,XP_Total,Skier_Level
+BZ323A,1,2026-09-29,0.5,356,7,1,1,85.9,14.4,0.8,FALSE,556,3,4,13,touch,,classic; cap=30s; end: 30 s complete (goal reached); state changes=5,A,zh,556,2
+
+[STATE_CHANGES]
+Session_No,t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src
+1,0,0,0.6,0.6,0,0,0,100,"run start — arm A (adaptive, gentle floor)",init
+1,6,0.1,0.6,0.6,65,0,0,100,avoid rate 100% in band → hold,rules
+1,12,0.2,0.6,0.6,130,0,1,83.3,avoid rate 50% in band → hold,rules
+1,18,0.3,0.6,0.7,195,2,1,90,avoid rate 100% > 80% → step up,rules
+1,24,0.4,0.7,0.8,270,6,1,95,avoid rate 100% > 80% → step up,rules
+
+[QUESTIONNAIRE]
+item,response (1 strongly disagree - 5 strongly agree)
+D1_coordination_challenge,4
+D2_play_regularly,4
+F1_matched_ability,3
+F2_progress_motivated,4
+answered_ts,2026-09-29T14:40:21.807Z

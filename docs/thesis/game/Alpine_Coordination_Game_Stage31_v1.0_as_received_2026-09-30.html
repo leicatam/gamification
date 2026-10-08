@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpine Coordination Game — Stage 3 Research Build</title>
+<style>
+  :root{
+    --snow:#FBF7EF; --ice:#DCE9EE; --pine:#1F4A38; --pine-dk:#123027;
+    --sun:#E8A64B; --coral:#D96A4E; --ink:#22302B; --card:#FFFFFF;
+    --ok:#3E8E5F; --warn:#C25438;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{
+    font-family:"Avenir Next","Trebuchet MS","Segoe UI",Verdana,sans-serif;
+    background:linear-gradient(180deg,#F2E8D8 0%,var(--snow) 40%);
+    color:var(--ink); min-height:100vh; display:flex; flex-direction:column; align-items:center;
+  }
+  header{width:100%; max-width:1180px; padding:18px 20px 6px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  header h1{font-size:1.5rem; letter-spacing:.02em; color:var(--pine-dk); font-weight:700}
+  header .tag{font-size:.78rem; background:var(--pine); color:var(--snow); padding:3px 10px; border-radius:999px; letter-spacing:.06em}
+  main{width:100%; max-width:1180px; padding:10px 20px 30px; display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,1fr); gap:16px}
+  @media (max-width:900px){ main{grid-template-columns:1fr} }
+  .panel{background:var(--card); border:1px solid #E5DECF; border-radius:14px; padding:16px; box-shadow:0 2px 10px rgba(31,74,56,.06)}
+  .panel h2{font-size:.95rem; text-transform:uppercase; letter-spacing:.1em; color:var(--pine); margin-bottom:10px}
+  #gameWrap{position:relative}
+  canvas{display:block; width:100%; border-radius:14px; border:1px solid #E5DECF; background:var(--ice); touch-action:none}
+  .hud{position:absolute; top:12px; left:12px; right:12px; display:flex; justify-content:space-between; pointer-events:none; font-weight:700; color:var(--pine-dk)}
+  .hud .box{background:rgba(251,247,239,.88); border-radius:10px; padding:6px 12px; font-size:.95rem; border:1px solid #E5DECF}
+  .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:10px}
+  label{font-size:.85rem; font-weight:600}
+  input[type=text], select{padding:8px 10px; border:1px solid #CFC6B4; border-radius:8px; font-size:.9rem; background:#FFFDF8}
+  input[type=text]{width:110px}
+  button{cursor:pointer; border:none; border-radius:10px; padding:10px 18px; font-size:.95rem; font-weight:700; letter-spacing:.02em}
+  .btn-go{background:var(--pine); color:var(--snow)}
+  .btn-go:hover{background:var(--pine-dk)}
+  .btn-soft{background:#EFE8D8; color:var(--pine-dk)}
+  .btn-soft:hover{background:#E5DCC7}
+  .btn-coral{background:var(--coral); color:#fff}
+  .toggle{display:flex; align-items:center; gap:8px; font-size:.85rem; font-weight:600}
+  .pill{font-size:.75rem; padding:2px 8px; border-radius:999px; background:var(--ice); color:var(--pine-dk)}
+  #coach{min-height:74px; background:#F6FBF7; border:1px dashed var(--ok); border-radius:10px; padding:10px 12px; font-size:.92rem; line-height:1.45}
+  #coach b{color:var(--pine)}
+  #stateLog{max-height:300px; overflow-y:auto; font-size:.78rem; border:1px solid #E5DECF; border-radius:10px}
+  #stateLog table{width:100%; border-collapse:collapse}
+  #stateLog th,#stateLog td{padding:5px 7px; border-bottom:1px solid #F0EADB; text-align:left; vertical-align:top}
+  #stateLog th{position:sticky; top:0; background:var(--pine); color:var(--snow); font-weight:600}
+  .up{color:var(--ok); font-weight:700} .down{color:var(--warn); font-weight:700}
+  #padStatus{font-size:.8rem}
+  .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; background:#B9B2A2}
+  .dot.on{background:var(--ok)}
+  footer{font-size:.72rem; color:#6E6A5E; max-width:1180px; padding:0 20px 24px; line-height:1.5}
+  #summary{display:none}
+  #summary dl{display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:.86rem}
+  #summary dt{font-weight:700; color:var(--pine-dk)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Alpine Coordination Game</h1>
+  <span class="tag">STAGE 3 RESEARCH BUILD v1.0</span>
+  <span class="pill" id="modePill">Zero-failure mode</span>
+</header>
+
+<main>
+  <section>
+    <div class="panel" id="setup">
+      <h2>Session setup</h2>
+      <div class="row">
+        <label>Participant ID <input type="text" id="pid" placeholder="e.g. 3001" autocomplete="off"></label>
+        <label>Session № <select id="sessno"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></label>
+        <label>Run length <select id="goal"><option value="400">400 m</option><option value="800" selected>800 m</option><option value="1200">1200 m</option></select></label>
+      </div>
+      <div class="row">
+        <span class="toggle"><input type="checkbox" id="zeroFail" checked> Zero-failure mode (no game-over; collisions become learning moments)</span>
+      </div>
+      <div class="row">
+        <span class="toggle"><input type="checkbox" id="agentic" checked> Agentic AI difficulty (Claude decides; automatic rule fallback if offline)</span>
+      </div>
+      <div class="row">
+        <span id="padStatus"><span class="dot" id="padDot"></span>No controller detected — press a button or move the stick / foot pad to pair. Keyboard ← → also works.</span>
+      </div>
+      <div class="row">
+        <button class="btn-go" id="startBtn">Start run</button>
+        <button class="btn-soft" id="endBtn" style="display:none">End run early</button>
+      </div>
+    </div>
+
+    <div class="panel" id="gameWrap" style="margin-top:14px">
+      <canvas id="cv" width="840" height="560"></canvas>
+      <div class="hud">
+        <div class="box" id="hudL">0 m</div>
+        <div class="box" id="hudM">Difficulty ×1.00</div>
+        <div class="box" id="hudR">🪙 0</div>
+      </div>
+    </div>
+
+    <div class="panel" id="summary" style="margin-top:14px">
+      <h2>Run summary — transcribe or export</h2>
+      <dl id="sumList"></dl>
+      <div class="row" style="margin-top:10px">
+        <button class="btn-go" id="expSession">Export session row (CSV)</button>
+        <button class="btn-coral" id="expStates">Export state-change log (CSV)</button>
+      </div>
+    </div>
+  </section>
+
+  <aside>
+    <div class="panel">
+      <h2>AI coach</h2>
+      <div id="coach">The coach watches how you ride and adjusts the slope. It never sends your name or health data — only run numbers like speed and misses.</div>
+    </div>
+    <div class="panel" style="margin-top:14px">
+      <h2>Difficulty state changes</h2>
+      <div id="stateLog"><table><thead><tr>
+        <th>Play&nbsp;time</th><th>Change</th><th>Reason</th><th>Src</th>
+      </tr></thead><tbody id="stateBody"></tbody></table></div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  Research instrument for the Stage 3 decoupling study (coordination-game framing). Controls: USB joystick or foot pad via the browser Gamepad API (left/right axis or D-pad), or keyboard arrows. All telemetry stays in this browser until you export it. The agentic mode calls the Claude API with aggregate game parameters only; if the call fails or times out, the built-in rule agent takes over at the last set difficulty — the same fail-safe as the Phase 1 five-layer architecture. Exported CSV columns match the Stage 3 logbook "Game Telemetry" sheet so real sessions can be transcribed directly.
+</footer>
+
+<script>
+"use strict";
+/* ============ CONFIG ============ */
+const EVAL_INTERVAL_S = 20;          // agent evaluates every 20 s of play
+const DIFF_MIN = 0.30, DIFF_MAX = 1.50;
+const BASE_SPEED = 6;                // m/s at diff 1.0
+const TRAIL_FRAC = 0.62;             // trail width as fraction of canvas
+const DEADZONE = 0.18;
+
+/* ============ STATE ============ */
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let running=false, paused=false, tPrev=0;
+let S=null; // session state
+
+function newSession(){
+  return {
+    pid: document.getElementById('pid').value.trim() || 'UNSET',
+    sessNo: +document.getElementById('sessno').value,
+    zeroFail: document.getElementById('zeroFail').checked,
+    agentic: document.getElementById('agentic').checked,
+    goal: +document.getElementById('goal').value,
+    t0: Date.now(), playT:0, dist:0, coins:0, hits:0, livesLost:0,
+    maxSpeed:0, diff:0.60,            // gentle floor: first run must be winnable
+    obDensity:0.6, speedTier:'slow',
+    skierX:0.5, vx:0, obstacles:[], coinsArr:[], flakes:[],
+    onTrailT:0, offTrailT:0, nearMisses:0, avoided:0, spawned:0,
+    slowUntil:0, gameOver:false,
+    lastEval:0, evalWindow:{hits:0, avoided:0, spawned:0, coins:0},
+    stateChanges:[], balSamples:[], balSum:0
+  };
+}
+function logState(oldD,newD,reason,src){
+  const e={t:+S.playT.toFixed(1), playMin:+(S.playT/60).toFixed(2),
+    oldDiff:+oldD.toFixed(2), newDiff:+newD.toFixed(2),
+    dist:Math.round(S.dist), coins:S.coins, hits:S.hits,
+    balance:+curBalance().toFixed(1), reason, src};
+  S.stateChanges.push(e);
+  const dir = newD>oldD?'up':(newD<oldD?'down':'');
+  const arrow = newD>oldD?'▲':(newD<oldD?'▼':'▬');
+  const tb=document.getElementById('stateBody');
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${e.t}s</td><td class="${dir}">${arrow} ${e.oldDiff}→${e.newDiff}</td><td>${reason}</td><td>${src}</td>`;
+  tb.prepend(tr);
+}
+function curBalance(){
+  const tot=S.onTrailT+S.offTrailT;
+  const trail= tot>0 ? 100*S.onTrailT/tot : 100;
+  const avoid= S.spawned>0 ? 100*S.avoided/Math.max(1,(S.avoided+S.hits)) : 100;
+  return 0.5*trail+0.5*avoid;
+}
+
+/* ============ INPUT: gamepad + keyboard ============ */
+let padIndex=null, keyDir=0;
+window.addEventListener('gamepadconnected', e=>{ padIndex=e.gamepad.index; padUI(true, e.gamepad.id); });
+window.addEventListener('gamepaddisconnected', ()=>{ padIndex=null; padUI(false); });
+function padUI(on, id){
+  document.getElementById('padDot').className='dot'+(on?' on':'');
+  document.getElementById('padStatus').lastChild.textContent = on
+    ? ' Controller paired: '+ (id||'').slice(0,40) +' (axis 0 / D-pad → steer)'
+    : ' No controller detected — press a button or move the stick / foot pad to pair. Keyboard ← → also works.';
+}
+function pollInput(){
+  let dir=keyDir;
+  if(padIndex!==null){
+    const gp=navigator.getGamepads()[padIndex];
+    if(gp){
+      let ax=gp.axes[0]||0;
+      if(Math.abs(ax)<DEADZONE) ax=0;
+      // D-pad buttons 14/15 (left/right) for pads that report buttons only (many foot pads)
+      if(gp.buttons[14]&&gp.buttons[14].pressed) ax=-1;
+      if(gp.buttons[15]&&gp.buttons[15].pressed) ax=1;
+      if(ax!==0) dir=ax;
+    }
+  }
+  return Math.max(-1,Math.min(1,dir));
+}
+document.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft')keyDir=-1; if(e.key==='ArrowRight')keyDir=1; });
+document.addEventListener('keyup',e=>{ if(e.key==='ArrowLeft'&&keyDir<0)keyDir=0; if(e.key==='ArrowRight'&&keyDir>0)keyDir=0; });
+// keep pairing hint honest: some browsers only expose pads after user gesture
+setInterval(()=>{ if(padIndex===null){ const gps=navigator.getGamepads?navigator.getGamepads():[];
+  for(const g of gps){ if(g){ padIndex=g.index; padUI(true,g.id); break; } } } },1000);
+
+/* ============ AGENT ============ */
+const RULES = (w, diff)=>{
+  const faced = w.hits + w.avoided;
+  const avoidRate = faced>0 ? w.avoided/faced : 1;
+  if(avoidRate>0.8 && faced>=3) return {d:Math.min(DIFF_MAX,diff+0.10), r:`avoid rate ${(100*avoidRate)|0}% > 80% → step up`};
+  if(avoidRate<0.4 && faced>=3) return {d:Math.max(DIFF_MIN,diff-0.15), r:`avoid rate ${(100*avoidRate)|0}% < 40% → ease off`};
+  return {d:diff, r:`avoid rate ${(100*avoidRate)|0}% in band → hold`};
+};
+async function agentEvaluate(){
+  const w=S.evalWindow, oldD=S.diff;
+  const payload={window_s:EVAL_INTERVAL_S, obstacles_hit:w.hits, obstacles_avoided:w.avoided,
+    coins:w.coins, distance_m:Math.round(S.dist), balance_pct:+curBalance().toFixed(1),
+    current_difficulty:+S.diff.toFixed(2), zero_failure_mode:S.zeroFail};
+  let applied=null, src='rules';
+  if(S.agentic){
+    try{
+      const ctrl=new AbortController(); const to=setTimeout(()=>ctrl.abort(),4000);
+      const res=await fetch("https://api.anthropic.com/v1/messages",{
+        method:"POST", headers:{"Content-Type":"application/json"}, signal:ctrl.signal,
+        body:JSON.stringify({model:"claude-sonnet-4-6", max_tokens:1000, messages:[{role:"user",
+          content:`You are the adaptive-difficulty agent for a research skiing game played by adults aged 25-80. Zero-failure design: keep the player in flow; never let them fail repeatedly. Given this performance window, reply with ONLY a JSON object, no markdown fences: {"difficulty_multiplier": number between 0.30 and 1.50, "reason": short string <=60 chars}. Current data: ${JSON.stringify(payload)}. Adjust gently (max ±0.15 per step). If they hit many obstacles, ease off; if they avoided nearly all, step up slightly; otherwise hold.`}]})
+      });
+      clearTimeout(to);
+      const data=await res.json();
+      const txt=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').replace(/```json|```/g,'').trim();
+      const j=JSON.parse(txt);
+      let d=+j.difficulty_multiplier;
+      if(!isFinite(d)) throw new Error('bad value');
+      d=Math.max(DIFF_MIN,Math.min(DIFF_MAX, Math.max(oldD-0.15,Math.min(oldD+0.15,d)))); // clamp step
+      applied={d, r:(j.reason||'agent decision').slice(0,60)}; src='Claude';
+    }catch(err){ applied=null; }
+  }
+  if(!applied){ applied=RULES(w,oldD); src = S.agentic?'fallback':'rules'; }
+  S.diff=applied.d;
+  logState(oldD,S.diff,applied.r,src);
+  coach(applied.d>oldD?`Nice riding — the slope opens up a little. (${applied.r})`
+       :applied.d<oldD?`The coach eased the slope so you can find your rhythm. (${applied.r})`
+       :`Holding steady — you're in the flow band. (${applied.r})`);
+  S.evalWindow={hits:0,avoided:0,spawned:0,coins:0};
+}
+function coach(msg){ document.getElementById('coach').innerHTML='<b>Coach:</b> '+msg; }
+
+/* ============ GAME LOOP ============ */
+function spawn(dt){
+  const rate = S.obDensity*S.diff*0.9;               // obstacles per second
+  if(Math.random()<rate*dt){ S.obstacles.push({x:0.19+0.62*Math.random(), y:1.05, type:Math.random()<0.7?'tree':'rock'}); S.spawned++; S.evalWindow.spawned++; }
+  if(Math.random()<0.5*dt){ S.coinsArr.push({x:0.19+0.62*Math.random(), y:1.05}); }
+  if(Math.random()<3*dt){ S.flakes.push({x:Math.random(), y:1.02, s:0.4+Math.random()}); }
+}
+function step(dt){
+  const now=S.playT;
+  const slowed = now < S.slowUntil;
+  const spd = BASE_SPEED * S.diff * (slowed?0.45:1);
+  S.maxSpeed=Math.max(S.maxSpeed,spd);
+  S.dist += spd*dt;
+  S.playT += dt;
+
+  // steering
+  const dir=pollInput();
+  S.vx += dir*2.6*dt; S.vx*=Math.pow(0.02,dt); // damped
+  S.skierX = Math.max(0.06,Math.min(0.94, S.skierX + S.vx*dt));
+  const L=(1-TRAIL_FRAC)/2, R=1-L;
+  if(S.skierX>L+0.03 && S.skierX<R-0.03) S.onTrailT+=dt; else S.offTrailT+=dt;
+
+  spawn(dt);
+  const vy = spd/90; // world scroll in canvas fractions
+  for(const o of S.obstacles) o.y-=vy*dt*9;
+  for(const c of S.coinsArr) c.y-=vy*dt*9;
+  for(const f of S.flakes){ f.y-=vy*dt*4*f.s; }
+
+  // collisions at skier band y≈0.22
+  const px=S.skierX;
+  S.obstacles=S.obstacles.filter(o=>{
+    if(o.y< -0.05){ S.avoided++; S.evalWindow.avoided++; return false; }
+    if(Math.abs(o.y-0.22)<0.035 && Math.abs(o.x-px)<0.045){
+      S.hits++; S.evalWindow.hits++;
+      if(S.zeroFail){ S.slowUntil=S.playT+1.4; coach('A bump — the run keeps going. Bumps are how the slope learns your level.'); }
+      else { S.livesLost++; if(S.livesLost>=3){ S.gameOver=true; } }
+      return false;
+    }
+    return true;
+  });
+  S.coinsArr=S.coinsArr.filter(c=>{
+    if(c.y<-0.05) return false;
+    if(Math.abs(c.y-0.22)<0.04 && Math.abs(c.x-px)<0.05){ S.coins++; S.evalWindow.coins++; return false; }
+    return true;
+  });
+  S.flakes=S.flakes.filter(f=>f.y>-0.05);
+
+  // agent cadence
+  if(S.playT - S.lastEval >= EVAL_INTERVAL_S){ S.lastEval=S.playT; agentEvaluate(); }
+
+  // balance sampling each second
+  if(S.balSamples.length < Math.floor(S.playT)){ S.balSamples.push(curBalance()); }
+
+  // end conditions
+  if(S.dist>=S.goal || S.gameOver) endRun();
+}
+function draw(){
+  const W=cv.width,H=cv.height;
+  // sky→snow gradient
+  const g=ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0,'#F6E3C5'); g.addColorStop(0.35,'#EAF2F4'); g.addColorStop(1,'#FBF7EF');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+  // trail
+  const L=(1-TRAIL_FRAC)/2*W, R=(1-(1-TRAIL_FRAC)/2)*W;
+  ctx.fillStyle='#FFFFFF'; ctx.fillRect(L,0,R-L,H);
+  ctx.strokeStyle='#CBDDE2'; ctx.setLineDash([14,10]); ctx.lineWidth=3;
+  ctx.beginPath(); ctx.moveTo(L,0); ctx.lineTo(L,H); ctx.moveTo(R,0); ctx.lineTo(R,H); ctx.stroke(); ctx.setLineDash([]);
+  // flakes
+  ctx.fillStyle='rgba(255,255,255,.8)';
+  for(const f of S.flakes){ ctx.beginPath(); ctx.arc(f.x*W,f.y*H,2.2*f.s,0,7); ctx.fill(); }
+  // coins
+  for(const c of S.coinsArr){ ctx.fillStyle='#E8A64B'; ctx.beginPath(); ctx.arc(c.x*W,c.y*H,9,0,7); ctx.fill();
+    ctx.fillStyle='#B67A24'; ctx.beginPath(); ctx.arc(c.x*W,c.y*H,4.5,0,7); ctx.fill(); }
+  // obstacles
+  for(const o of S.obstacles){
+    const x=o.x*W,y=o.y*H;
+    if(o.type==='tree'){ ctx.fillStyle='#1F4A38'; ctx.beginPath(); ctx.moveTo(x,y-20); ctx.lineTo(x-14,y+12); ctx.lineTo(x+14,y+12); ctx.closePath(); ctx.fill();
+      ctx.fillStyle='#6B4A2B'; ctx.fillRect(x-3,y+12,6,8); }
+    else { ctx.fillStyle='#8B8578'; ctx.beginPath(); ctx.ellipse(x,y,15,11,0,0,7); ctx.fill(); }
+  }
+  // skier
+  const sx=S.skierX*W, sy=0.22*H, slowed=S.playT<S.slowUntil;
+  ctx.save(); ctx.translate(sx,sy); ctx.rotate(S.vx*0.5);
+  ctx.strokeStyle='#8A5A2B'; ctx.lineWidth=4;
+  ctx.beginPath(); ctx.moveTo(-12,14); ctx.lineTo(-2,26); ctx.moveTo(12,14); ctx.lineTo(2,26); ctx.stroke(); // skis
+  ctx.fillStyle= slowed? '#D96A4E' : '#2D6A8E';
+  ctx.beginPath(); ctx.ellipse(0,4,9,13,0,0,7); ctx.fill();       // body
+  ctx.fillStyle='#F1C79B'; ctx.beginPath(); ctx.arc(0,-12,7,0,7); ctx.fill(); // head
+  ctx.fillStyle='#D96A4E'; ctx.beginPath(); ctx.arc(0,-15,7,Math.PI,0); ctx.fill(); // hat
+  ctx.restore();
+  // HUD
+  document.getElementById('hudL').textContent=Math.round(S.dist)+' m / '+S.goal+' m';
+  document.getElementById('hudM').textContent='Difficulty ×'+S.diff.toFixed(2);
+  document.getElementById('hudR').textContent='🪙 '+S.coins+'   balance '+curBalance().toFixed(0)+'%';
+}
+function loop(ts){
+  if(!running) return;
+  if(!tPrev) tPrev=ts;
+  const dt=Math.min(0.05,(ts-tPrev)/1000); tPrev=ts;
+  step(dt); if(running){ draw(); requestAnimationFrame(loop); }
+}
+
+/* ============ RUN CONTROL ============ */
+document.getElementById('startBtn').onclick=()=>{
+  S=newSession(); tPrev=0; running=true;
+  document.getElementById('stateBody').innerHTML='';
+  document.getElementById('summary').style.display='none';
+  document.getElementById('endBtn').style.display='inline-block';
+  document.getElementById('modePill').textContent = S.zeroFail?'Zero-failure mode':'Classic mode (3 hits end run)';
+  logState(S.diff,S.diff,'run start — gentle floor (winnable first run)','init');
+  coach('Off we go. Lean left and right to steer between the trees. There is no losing here — only finding your rhythm.');
+  requestAnimationFrame(loop);
+};
+document.getElementById('endBtn').onclick=()=>{ if(running) endRun(true); };
+function endRun(early){
+  running=false;
+  document.getElementById('endBtn').style.display='none';
+  const avgBal = S.balSamples.length? S.balSamples.reduce((a,b)=>a+b,0)/S.balSamples.length : curBalance();
+  S.result={
+    Participant_ID:S.pid, Session_No:S.sessNo,
+    Session_Date:new Date().toISOString().slice(0,10),
+    Duration_Min:+(S.playT/60).toFixed(2),
+    Distance_m:Math.round(S.dist), Coins:S.coins,
+    Obstacles_Hit:S.hits, Lives_Lost:S.livesLost,
+    Avg_Balance_pct:+avgBal.toFixed(1),
+    Max_Speed:+S.maxSpeed.toFixed(1),
+    AI_DiffMult:+S.diff.toFixed(2),
+    Reached_GameOver: S.gameOver? 'TRUE':'FALSE',
+    Post_FRA_Index:'', Notes:(S.zeroFail?'zero-failure':'classic')+(early?'; ended early':'')+'; state changes='+S.stateChanges.length
+  };
+  const dl=document.getElementById('sumList'); dl.innerHTML='';
+  for(const[k,v] of Object.entries(S.result)){ dl.insertAdjacentHTML('beforeend',`<dt>${k}</dt><dd>${v===''?'—':v}</dd>`); }
+  document.getElementById('summary').style.display='block';
+  coach(S.gameOver? 'The run ended — and that is completely fine. Every run teaches the slope about you.'
+                  : `Run complete! ${Math.round(S.dist)} m, ${S.coins} coins, balance ${avgBal.toFixed(0)}%. The coach adjusted the slope ${S.stateChanges.length-1} time(s).`);
+}
+
+/* ============ EXPORT ============ */
+function dl(name, text){
+  const b=new Blob([text],{type:'text/csv'}); const a=document.createElement('a');
+  a.href=URL.createObjectURL(b); a.download=name; a.click(); URL.revokeObjectURL(a.href);
+}
+document.getElementById('expSession').onclick=()=>{
+  const r=S.result, cols=Object.keys(r);
+  dl(`session_${r.Participant_ID}_s${r.Session_No}.csv`,
+     cols.join(',')+'\n'+cols.map(c=>`"${String(r[c]).replace(/"/g,'""')}"`).join(','));
+};
+document.getElementById('expStates').onclick=()=>{
+  const cols=['t','playMin','oldDiff','newDiff','dist','coins','hits','balance','reason','src'];
+  const rows=S.stateChanges.map(e=>cols.map(c=>`"${String(e[c]).replace(/"/g,'""')}"`).join(','));
+  dl(`states_${S.result.Participant_ID}_s${S.result.Session_No}.csv`, cols.join(',')+'\n'+rows.join('\n'));
+};
+draw=draw; // keep linters calm
+</script>
+</body>
+</html>

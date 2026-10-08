@@ -1,0 +1,38 @@
+【滑雪遊戲研究結果 B59AGN——請原封不動傳送給研究員】
+exported_ts,2026-09-29T17:38:19.694Z
+[PARTICIPANT]
+field,value
+build,Alpine_Coordination_Game_v3.1s_Stage3B_FROZEN20260915
+device_id,D01
+participant_code,B59AGN
+arm,B
+failure_mode,ZF
+language,zh
+consent_agreed,yes
+consent_ts,2026-09-29T17:34:32.610Z
+age_band,45-64
+gender,M
+education,degree+
+prior_play,no
+
+[SESSIONS]
+Participant_ID,Session_No,Session_Date,Duration_Min,Distance_m,Coins,Obstacles_Hit,Lives_Lost,Avg_Balance_pct,Max_Speed,AI_DiffMult,Reached_GameOver,Score,Combo_Max,Dodges,Coins_Missed,Input_Mode,Post_FRA_Index,Notes,Arm,Lang,XP_Total,Skier_Level
+B59AGN,1,2026-09-29,0.5,459,9,0,0,93.3,15.3,0.85,FALSE,794,3,7,24,touch,,zero-failure; cap=30s; end: 30 s complete (goal reached); state changes=1,B,zh,794,3
+B59AGN,2,2026-09-29,0.5,459,18,0,0,95,15.3,0.85,FALSE,1009,3,4,9,keys,,zero-failure; cap=30s; end: 30 s complete (goal reached); state changes=1,B,zh,1803,5
+B59AGN,3,2026-09-29,0.5,459,11,2,0,92.2,15.3,0.85,FALSE,799,3,6,15,keys,,zero-failure; cap=30s; end: 30 s complete (goal reached); state changes=3,B,zh,2602,6
+
+[STATE_CHANGES]
+Session_No,t,playMin,oldDiff,newDiff,dist,coins,hits,balance,reason,src
+1,0,0,0.85,0.85,0,0,0,100,run start — arm B (static ×0.85),init
+2,0,0,0.85,0.85,0,0,0,100,run start — arm B (static ×0.85),init
+3,0,0,0.85,0.85,0,0,0,100,run start — arm B (static ×0.85),init
+3,26.5,0.44,0.85,0.85,406,9,1,96.8,"bump → cleared 3 obstacle(s), density ×0.75 (speed unchanged)",bump
+3,26.8,0.45,0.85,0.85,410,9,2,94.6,"bump → cleared 1 obstacle(s), density ×0.56 (speed unchanged)",bump
+
+[QUESTIONNAIRE]
+item,response (1 strongly disagree - 5 strongly agree)
+D1_coordination_challenge,3
+D2_play_regularly,2
+F1_matched_ability,3
+F2_progress_motivated,3
+answered_ts,2026-09-29T17:38:15.809Z
