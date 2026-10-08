@@ -149,3 +149,13 @@ earlier-version limitations led to the archived build and main play was postpone
 ## R21 (2 October 2026)
 
 Discussion: the Stage-3B record reported is closed at 30 September 2026 (author's decision of 2 October 2026), with the clean-run window still running to 15 October 2026. Matches thesis V68.
+
+## R22 (7 October 2026)
+
+Aligned with thesis V70–V90 after a five-dimension consistency review (47 confirmed corrections; 4 proposals refuted on verification). Substance:
+- Stage 2 described as recorded: 21 of 30 completed three or fewer game cycles (attended sessions), no re-engagement among the 21; the Stage-2 game was itself a browser game played at the station, steered by weight shifts on a pressure mat read as arrow keys; Stage 3A is a separately built HTML build, not a port or transfer; 'keypad' replaced by keyboard-arrow controls; F4 three-of-six statement carries the failed-verification flag.
+- Both Stage 3A builds archived (v1.0 received 30 Sep 2026, SHA-256 3200618c…, 21,521 bytes; v2.2 13 Jul 2026, SHA-256 42bc3df6…); both zero-failure by default with an optional game-over mode; built-in rule agent (80%/40%) operated in every session, no language-model call; return-window consequence of late-July play stated; invitation reconstruction dated by receipt (4 Aug 2026) and its arrow-key/touch-screen wording noted; Figure 1 caption names v2.2.
+- Ethics: PI advised on 3 Oct 2026 that no further request to the committee was needed; no itemised written determination on file and none sought; consent information stated as recorded; Stage-3B/Pro scope recorded as an open item with the Pro build's own condition.
+- Stage 3B: record restated (one verified return of 15 Aug 2026; five excluded 15 Sep; five clean-run 16/29 Sep; BYXXMT under verification; closed 30 Sep 2026); Pro: six paired checks across five codes (not three under two); two batch reports of 20 Sep; two later exports reached the record 29 Sep; 'demonstrates' → 'documents'; Stage 3B named as a pre-specified (repository-dated) 2×2 component study; Claude Code named consistently.
+- Declarations: Generative-AI statement restated (ChatGPT then Claude Code for the game under the first author's instruction; Claude for consistency review of later revisions); reference 1 accepted and presented; reference 2 under review at JIKM (JIKMS2602466, submitted 9 Sep 2026); Related Publications updated; abbreviations list completed (AI, CSV, SHA-256, UTC); 'AI' expanded at first use; Data Availability names both builds and the archived Stage-3B returns.
+Every Stage 3A number is unchanged. STROBE appendix re-dated (R22) with item 8 naming both builds. Not submitted: supervisor's approval required before any journal contact.
